@@ -1,0 +1,460 @@
+
+ About VBoxVmService (rel20100817-win7)
+------------------------------------------------------------------------------------------
+
+ Contents of this file
+
+	 0. What is new in this release?
+
+	 1. What is VBoxVmService?
+
+	 2. So why did you create it?
+
+	 3. How does it work?
+
+	 4. Why is it such a dirty hack?
+
+	 5. What are the plans for the future?
+
+	 6. Which versions of Windows are supported?
+
+	 7. Will VBoxVmService run on Mac OSX or Linux?
+
+	 8. Prerequisites for running VBoxVmService
+
+	 9. Installation and operation instructions
+
+	10. Uninstallation and removal instructions
+
+	11. Troubleshooting
+
+	12. Credits
+
+
+
+
+------------------------------------------------------------------------------------------
+
+
+0. What is new in this release?
+
+Changes since version rel20091210-win7
+
+VBOX_USER_HOME will now be set up during the installation process.
+Minor improvements on the overall code.
+Simplified the overall installation procedure.
+Reworked some of the documentation.
+
+
+Changes since version rel20091103-win7
+
+Support for the VBOX_USER_HOME environment variable has been added.
+Hardlinking was dropped from install procedure.
+Documentation was reworked.
+
+
+Changes since version rel20081010
+
+Windows 7 support has been added. Thanks to user FB2000 for his patches and his extensive 
+research regarding that topic!
+
+
+Changes since version rel20081009
+
+There have been errors while putting together the package. This Release was recalled!
+
+
+Changes since version rel20080728
+
+Improved the event-logging to “VBoxVmService.log”. It will now capture the response 
+messages from the VirtualBox components.
+A PARAMETER NAME WITHIN THE FILE VBoxVmService.ini HAS BEEN CHANGED: PLEASE RENAME THE 
+PARAMETER FROM "PathToVBoxVRDP" TO "PathToVBoxHeadless" IF YOU ARE UPGRADING FROM AN 
+EARLIER VERSION AND ARE PLANNING TO USE YOUR OLD INI-FILE!
+
+
+Changes since version rel20080422
+
+Added a BRUTEFORCE option to the startup-calls. This will kill any possibly remaining run- 
+or lockfiles for a VM before startup.
+The files startup and shutdown now save all their outputs to the logfile.
+
+
+Changes since version rel20080308
+
+A german documentation has been created and the documenation has seen an overall update. 
+A new option has been added to the .INI-File, enabling the individual configuration of 
+the VRDP-ports of virtual machines for remote administration purposes.
+
+
+Changes since version rel20080223
+
+For the helper application "bat2exe.exe" (by Fatih Kodak) was getting false positives on 
+several antivirus systems, it has been substituted by "bcompile.exe", which should work
+without further problems. The sourcecode of "bcompile.exe" can be found underneath the 
+"src\c#\"-subdirectory. For it had to be a quick solution, there is a small issue with 
+undeleted temp-files piling up in the temp-folder. This will be taken care of in the next 
+upcoming release.
+
+I added a "StartupMethod" flag to the .INI-file to support as well VRDP and SDL (the VM-
+controller of the OSE (Open Source Edition)). Thanks to 'Technologov' at the VirtualBox 
+Forums for triggering that! Yet, SDL support is still sort of buggy and needs some more 
+time and review... 
+
+
+
+------------------------------------------------------------------------------------------
+
+
+1. What is VBoxVmService?
+
+VBoxVmService is a Windows Service, that enables the host-system to run or shutdown 
+VirtualBox Virtual Machines (VMs) without a user being logged on to the system. 
+
+It acts as a wrapper service enabling automated startup or safe shutdown of Virtual 
+Machines without a user having to log on to the host-system running Windows (XP/2003).
+
+
+[UPDATE]: Vista should work too. See updates below...
+
+
+------------------------------------------------------------------------------------------
+
+
+2. So why did you create it?
+
+First off: I think, VirtualBox is a great piece of software. But it lacks one feature 
+that I really wanted: A method to operate my VMs controlled by a service and not having 
+to log on to the host-system to be able to start or shutdown the software.
+
+Looking for a solution, I went to the VirtualBox forums - just to find that many other 
+users where looking for a way to do the exact same thing.
+There are some methods out there to automate the start of virtual machines at the event 
+of a user logon (like placing a registry entry to call a startup batch file in 
+
+	"[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run]", 
+
+or simply to create a link to start a VM in your startup-folder.
+
+(More on this topic can be found here: http://www.bleepingcomputer.com/tutorials/tutorial44.html)
+
+But since this was not exactly what I had in mind, I started to google - hoping to find
+some easy solution to my problem. But I was out of luck. What I did find, was an interesting 
+article, written by Xiangyang Liu and issues on codeproject.com. 
+
+He described a method of running regular programs as NT Services. And alongside all the 
+useful infos, the article (found here: http://www.codeproject.com/KB/system/xyntservice.aspx )
+featured a built and ready to use version of the wrapper-service described, plus a complete 
+set of sourcecodes. So, Bingo then?  Well, ... not yet. :-( 
+
+I found the problem to be, that VirtualBox is not just one executable program, but consists
+of a host-service ("VBoxSVC.exe") and a set of tools and subservers to control and interact
+with the actual Virtual Machines. To make this a quick one: It just didn't work.
+
+In the end, I found myself spending some three or four nights reading about the concepts of
+windows' authorization methods on MSDN and taking a quick dive into general C++ programming,
+to understand Xiangyang Liu's code.
+
+Finally I got some basic understanding of what Xiangyang's code was doing and I managed to
+patch it, adding a method to safely shutdown running VMs when the master process is called 
+to terminate.
+ 
+To get around such set-backs as pathvalues or VM-names containing blanks, or finding a way
+how to obtain the needed administrative rights to run VirtualBox, I added some great tools 
+I found on the Internet, while looking for other things. *gg*
+
+And guess what? It finally worked! So here it is! :-)
+
+
+------------------------------------------------------------------------------------------
+
+
+3. How does it work?
+
+Basically, VBoxVmService consists of a wrapper-service plus a set of tools and batch-files.
+To achieve the task of running Virtual Machines automatically and without a user having to be 
+logged on to the host machine, VBoxVmService will impersonate a user to the system. This can 
+be your personal user account or another account, you choose to specially create for this purpose.
+In any case, this account will need to be granted administrative privileges (which is an issue
+of the VirtualBox Software itself, or else it will not run). Furthermore this account needs to 
+be protected by a password.
+
+If you are interested in further details, feel free to browse the supplied sourcecodes!
+
+
+------------------------------------------------------------------------------------------
+
+
+4. Why is it such a dirty hack?
+
+I am not, nor have I ever been a windows- or C#/C++ developer. My expertise is on PHP, Java,
+JS and all the web-application related topics. So please be gentle and feel free to improve the 
+code. A full set of all sourcecodes is supplied and can be found within the "src" folder of 
+VBoxVmService. :-)
+
+If you are not interested in changing or building VBoxVmService yourself, you can safely 
+delete this folder.
+
+
+------------------------------------------------------------------------------------------
+
+
+5. What are the plans for the future?
+
+Actually, there are no plans for future releases of this software. Yet, I have been thinking 
+about adding a system-tray control to interact with the VMs controlled by the service...
+
+
+------------------------------------------------------------------------------------------
+
+
+6. Which versions of Windows are supported?
+
+This release was built for the use with Windows 7.
+
+
+------------------------------------------------------------------------------------------
+
+
+7. Will VBoxVmService run on Mac OS-X or Linux?
+
+No. VBoxVmService is specially designed to suit the Windows operating system. And it doesn't
+need to run on Mac OS-X or Linux because these platforms supply adequate features to accomplish
+the same effect.
+
+
+------------------------------------------------------------------------------------------
+
+
+8. Prerequisites for running VBoxVmService
+
+Download and install VirtualBox from virtualbox.org (if you have not done so, already).
+
+If you are doing a fresh install, you might consider changing the paths, where your machine data
+and virtual disk drives (VDIs) are stored. You can do so, by changing the "global options",
+available from the "File"-menu from within VirtualBox. Consider changing these values to something
+more "globally available". (I keep mine in "C:\vbox\VDI" and "c:\vbox\Machines".) 
+
+Since VBoxVmService uses VirtualBox's built in VRDP-Server to start headless Virtual Machines, 
+you should definitely enable remote control on your machines!
+
+
+------------------------------------------------------------------------------------------
+
+
+9. Installation and operation instructions
+
+Unzip the files from this archive to a folder of your choice. (But if you are reading this 
+document, you probably passed that step already.) The safest thing would be to avoid any blanks 
+(' ') in the installation's pathname, though it should be working properly if you don't.
+       
+Why not choose "C:\vms" ? :-) That's where I put it.
+
+You will need the three (empty) folders contained in the VBoxVmService package for the software
+to operate correctly. Don't delete them! Double-check for their existance and create them, if 
+neccessary!
+
+There have to be three empty folders in your installation-directory: "tmp", "run" & "lock".
+
+Open up the "VBoxVmService.ini" file, located in the root directory of your installation.
+
+Adjust the values within to suit your environment:
+
+
+	----------------------------------------------------------------------------------
+	!!!IMPORTANT!!!	EVEN IF YOUR PATHVALUES OR VM-NAMES CONTAIN BLANKS: 
+
+			DON'T USE QUOTES ("" or '') WITH THE VALUES YOU ENTER HERE!!!
+	----------------------------------------------------------------------------------
+
+
+[Settings]		These are the global settings
+
+ServiceName=		The name to use for the service
+
+
+VBOX_USER_HOME=		The path to your user's VirtualBox settings directory. Usually something like:
+
+			"C:\Users\{YOUR NAME}\.VirtualBox" (no quotes!)
+
+[VmN]			These are the individual settings for each VM, where N is replaced by the
+				VMs actual ID. Starting from 0, this needs to be Vm0 for your first VM's 
+				config, the Vm1, etc...!
+
+VmName=			The name or UUID of the Virtual Machine
+
+CommandLineUp=		Path to VMS's startup.exe file, followed by the VM number of the 
+			current section. Since we are in section 0 now, should be something like: 
+			c:\vms\startup.exe 0
+
+CommandLineUp=		Path to VMS's shutdown.exe file, followed by the VM number of the 
+			current section. Since we are in section 0 now, should be something like: 
+			c:\vms\shutdown.exe 0
+
+WorkingDir=		The path, where VMS was istalled, NO TRAILING BACKSLASH! (C:\vms)
+
+StartupMethod=		The method to use for VM startup [sdl|vrdp]
+			vrdp is recommended if you are using the closed source edition for it 
+			produces no screen output at all. sdl-support is still in experimental
+			state and graphics errors most certainly will occur.
+
+ShutdownMethod=		The method to use for VM shutdown [savestate|poweroff]
+			savestate will save the VM's current state, where poweroff will be just 
+			the same as pulling a computers power cable.
+					
+VrdpPort=		The VRDP-Port, that is to be assigned to this VM for remote-management
+			purposes (relevant only, if StartupMethod is "vrdp", known to be NOT WORKING!).			
+
+
+[Vm1]			Would be introducing another VM to the service's control
+	
+ 			...
+	
+
+	----------------------------------------------------------------------------------
+	!!!IMPORTANT!!!	THE SERVICE WILL SHUTDOWN THE VMs IN REVERSE ORDER OF STARTUP:
+
+			STARTUP:	Vm0, Vm1, Vm2, ...
+
+			SHUTDOWN:	..., Vm2, Vm1, Vm0
+
+			THE MAXIMUM NUMBER OF VMs TO BE CONTROLLED BY THE SERVICE IS 127,
+
+			SO [Vm126] WOULD BE YOUR LAST POSSIBLE SECTION IN THE INI FILE!!!
+	----------------------------------------------------------------------------------
+
+
+Go to a command prompt and change ("cd") to the VBoxVmService's installation directory.
+
+Install the VBoxVmService by typing:
+
+	VBoxVmService.exe -i   [ENTER]
+
+Check the file "VBoxVmService.log" (created in the same directory) for the result of the
+previous command. It should say:
+
+	"Service VBoxVmService installed"
+
+
+
+=================================================
+       *** REBOOT YOUR MACHINE NOW!!! ***
+=================================================
+
+
+
+That's it. You're ready to go.
+
+Open up the Service Manager and start your VMs as services!
+
+
+------------------------------------------------------------------------------------------
+
+
+10. Uninstallation and removal instructions	
+
+Go to a command prompt and change ("cd") to the VBoxVmService installation directory
+
+Uninstall the VBoxVmService by typing
+
+	VBoxVmService.exe -u   [ENTER]
+
+Check the VBoxVmService.log-File (created in the same directory) for the result of the
+previous command. It should say:
+
+	"Service VBoxVmService removed"
+
+Delete the directory of your VBoxVmService installation.
+
+That's it.
+
+
+------------------------------------------------------------------------------------------
+
+
+11. Troubleshooting
+
+If the service does not bring your VMs up as desired, try this:
+
+Check whether there is any data in the folders "lock", "tmp" or "run" and delete it.
+If you are experiencing this issue frequently, add the option "BRUTEFORCE" (without quotes) to 
+the call to "startup.exe" within the .INI-File (e.g.: startup.exe 0 BRUTEFORCE"). 
+THE "BRUTEFORCE"-OPTION MUST BE GIVEN IN CAPS!
+This will delete any possibly existing run- or lockfiles for the VM before startup.
+
+Sollten Sie dieses Problem öfter beobachten, so ergänzen Sie den Aufruf für 
+"startup.exe" in der Datei "VBoxVmService.ini" um die Option "BRUTEFORCE" (ohne Anführungszeichen).
+Dadurch werden vor dem Start der VM alle eventuell existierenden Lockfiles entfernt.
+
+
+Carefully re-check the settings you made in "VBoxVmService.ini". 
+
+Reduce the number of VMs in your ini file to one (= only have section the section [Settings] 
+and the section [Vm0] in your ini-file) in your ini-file, for debugging.
+
+Switch to a command prompt, cd to the VBoxVmService directory and type:
+
+	startup.exe 0	[ENTER]
+
+to bring up the VM you set up in the section [Vm0] of the "VBoxVmService.ini" file.
+
+Hint:
+
+If you have successfully started a VM, you should end up with a "VBoxVRDP.exe" process, running
+as the impersonated user (check in task manager) plus a lockfile in the "run" folder. This 
+lockfile should be carrying the Id of the started VM as a file extension (for example: 
+"2002021812114503.vm0" for a running instance of the "Virtual Machine 0" set up by the section
+[Vm0] of the "VBoxVmServie.ini" file)
+
+
+IMPORTANT: If you want to control your VMs with VRDP, assign a dedicated port for each individual
+VM. Do NOT use the standard port 3389 (e.g. use: 3010 for Vm0, 3020 for Vm1, etc.)!
+
+The command:
+
+	shutdown.exe 0	[ENTER]
+
+can be used to check the output, generated by the steps of a shutdown process targeting [Vm0]. 
+Afterwards there should be no lockfile in the "run" folder with a ".vm0" extension and no run-
+ning "VBoxVRDP.exe"-process. Additionally, you should see a "VBoxSVC.exe"-process terminating 
+shortly after a successful shutdown of "VBoxVRDP.exe".
+
+If you manage to bring your Virtual Machine up and down from the command prompt, you should 
+be experiencing no further problems.
+
+Read the log-file! 
+
+Note: 
+
+Some errors are quite casual and result from the "multi-service" and "multi-tool" method used. 
+Common errors are "Service Control" errors, which result from the fact that starting a VM means 
+starting a whole bunch of tools and scripts and finally ending up with a distributed software-
+system, that is probably running as another user, so don't mind these.
+
+I might be on VirtualBox's official forums now and then, so feel free to contact me there.
+
+
+------------------------------------------------------------------------------------------
+
+
+12. Credits
+
+The VBoxVmService is based on sourcecode originally written by Xiangyang Liu and published on 
+codeproject.com ( http://www.codeproject.com/KB/system/xyntservice.aspx ).
+
+"bcompile.exe" is based on sourcecode originally written by Giorgi Dalakishvili and published on
+codeproject.com ( http://www.codeproject.com/KB/cs/BatCompiler.aspx ).
+
+"inifile.exe" was written by Horst Schaeffer and is available as one part of his great toolkit 
+collection, which is available on his homepage ( http://home.mnet-online.de/horst.muc/maind.htm ).
+
+The the puzzlework on "how the %$&!§! this thing works", (poorly) patching together the C++ code 
+of VBoxVmService and the helper tool "sleep.exe", messing with some c# for "bcompile.exe" plus 
+all the batch-scripting was done by me, Mathias Herrmann (mherrmann at assetive dot com).
+
+
+------------------------------------------------------------------------------------------
+
+
+Date released: 2010-08-17
+ 

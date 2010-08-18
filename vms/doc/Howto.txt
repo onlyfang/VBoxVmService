@@ -1,0 +1,80 @@
+##############################################################################
+#
+#   PART I - SETUP
+#
+##############################################################################
+
+Step 1. Download and unzip the latest release of VBoxVmService to c:\vms.
+
+Step 2. Open up VBoxVmService.ini with a texteditor of your choice and modify it to fit your needs. The file contains an example setup with two virtual machines.
+
+Key / Value pair                                            Description
+-----------------------------------------------------------------------------
+[Settings]
+ServiceName=VBoxVmService                                   The service name to use for the VBoxVmService.
+VBOX_USER_HOME=C:\Users\YOUR_NAME_HERE\.VirtualBox          The actual path to your user's .VirtualBox directory. It is usually located in your users' personal folder.
+[Vm0]
+VmName=ubuntu                                               The name of the VM to start (case sensitive!)
+CommandLineUp=c:\vms\startup.exe 0 BRUTEFORCE               The startup command (please note: the BRUTEFORCE parameter is optional).
+CommandLineDown=c:\vms\shutdown.exe 0                       The shutdown command
+WorkingDir=C:\vms                                           Usually the directory to which you unpacked VBoxVmService.
+StartupMethod=vrdp                                          VRDP is the only headless option that is reported to work at the moment.
+ShutdownMethod=savestate                                    The shutdown method ("savestate", or "poweroff")
+VrdpPort=3001                                               The port setting for your VRDP-Access, choose 1 unique port per VM that you set up.
+PauseShutdown=15000                                         A pause parameter to slow down the Windows shutdown process and to prevent VMs from crashing on shutdown/reboot. (15000 = 15 seconds)
+[Vm1]
+VmName=winxp                                                As you can see, the above values almost repeat for every [VmX] section of the file, 
+CommandLineUp=c:\vms\startup.exe 1                          where X is an ascending number.
+CommandLineDown=c:\vms\shutdown.exe 1
+WorkingDir=C:\vms
+StartupMethod=vrdp
+ShutdownMethod=poweroff
+VrdpPort=3002                                               
+PauseShutdown=15000 
+
+
+
+##############################################################################
+#
+#   PART II - INSTALLATION
+#
+##############################################################################
+
+Step 1. (for WINXP / SERVER2003) Launch CMD (Command Prompt) from your start menu.
+
+Step 1. (for VISTA / SERVER2008 / WIN7) Right-click on CMD (Command Prompt) and choose "Run as Administrator" from the context menu.
+
+Step 2. Within the terminal window type:
+    
+    cd C:\vms               [ENTER]
+    
+    VBoxVmService.exe -i    [ENTER]
+
+Step 3. Reboot your system!
+
+Step 4. You are done installing and ready to use VBoxVmService.
+
+
+
+##############################################################################
+#
+#   PART III - UNINSTALL
+#
+##############################################################################
+
+Step 1. Stop the VBoxVmService service.
+
+Step 2. (for WINXP / SERVER2003) Launch CMD (Command Prompt) from your start menu.
+
+Step 2. (for VISTA / SERVER2008 / WIN7) Right-click on CMD (Command Prompt) and choose "Run as Administrator" from the context menu.
+
+Step 3. Within the terminal window type:
+    
+    cd C:\vms               [ENTER]
+    
+    VBoxVmService.exe -u    [ENTER]
+    
+Step 4. Delete the installation directory (in this example "c:\vms").
+
+Step 5. You are done uninstalling VBoxVmService from your system.
+

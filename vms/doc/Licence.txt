@@ -1,0 +1,21 @@
+
+Licence
+----------------------------------------------------------------
+
+All the tools, all the sourcecode and just everything I used was 
+
+"free to use by anybody", so VBoxVmService is too, of course.
+
+Since I do not take any responsability for any eventual damage 
+
+using this software might possibly do to your system(s) and since 
+
+I am not a legal guy, let's just call it a "free as in 'free beer' 
+
+licence": If you like it, you are welcome to use it. And if you 
+
+don't, just don't sue me. :-)
+
+
+
+Cheers, Matt (mherrmann [at] assetive [dot] com)

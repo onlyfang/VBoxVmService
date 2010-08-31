@@ -54,90 +54,173 @@ SERVICE_TABLE_ENTRY   DispatchTable[] =
 
 
 // helper functions
-
+// start a VM with given index
 BOOL StartProcess(int nIndex) 
 { 
-    // start a process with given index
-    STARTUPINFO startUpInfo = { sizeof(STARTUPINFO),NULL,"",NULL,0,0,0,0,0,0,0,STARTF_USESHOWWINDOW,0,0,NULL,0,0,0};  
     char pItem[nBufferSize+1];
     sprintf_s(pItem,"Vm%d\0",nIndex);
 
-    char pCommandLine[nBufferSize+1];
-    GetPrivateProfileString(pItem,"CommandLineUp","",pCommandLine,nBufferSize,pInitFile);
-    if(strlen(pCommandLine)>4)
+    // get VmName
+    char pVmName[nBufferSize+1];
+    GetPrivateProfileString(pItem,"VmName","",pVmName,nBufferSize,pInitFile);
+    if (strlen(pVmName) == 0)
+        return FALSE;
+
+    // open handle to VBoxVmService.log
+    SECURITY_ATTRIBUTES sa;
+    sa.nLength = sizeof (SECURITY_ATTRIBUTES);
+    sa.lpSecurityDescriptor = NULL;
+    sa.bInheritHandle = TRUE;
+    HANDLE hStdOut = CreateFile(pLogFile, FILE_APPEND_DATA, FILE_SHARE_READ | FILE_SHARE_WRITE, &sa, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+    char pTemp[121];
+    sprintf_s(pTemp,"Starting VM : '%s'", pVmName); 
+    WriteLog(pTemp);
+
+    // get working dir
+    char pWorkingDir[nBufferSize+1];
+    GetPrivateProfileString(pItem,"WorkingDir","",pWorkingDir,nBufferSize,pInitFile);
+
+    // get VrdpPort
+    char pVrdpPort[nBufferSize+1];
+    GetPrivateProfileString(pItem,"VrdpPort","",pVrdpPort,nBufferSize,pInitFile);
+
+    // get full path to VBoxManage.exe
+    char pVBoxManagePath[nBufferSize+1];
+    if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxManagePath, nBufferSize) == 0)
     {
-        char pWorkingDir[nBufferSize+1];
-        GetPrivateProfileString(pItem,"WorkingDir","",pWorkingDir,nBufferSize,pInitFile);
-        BOOL bImpersonate = FALSE;
-        char CurrentDesktopName[512];
-
-        HDESK hCurrentDesktop = GetThreadDesktop(GetCurrentThreadId());
-        DWORD len;
-        GetUserObjectInformation(hCurrentDesktop,UOI_NAME,CurrentDesktopName,MAX_PATH,&len);
-        startUpInfo.wShowWindow = SW_HIDE;
-        startUpInfo.lpDesktop = (bImpersonate==FALSE)?CurrentDesktopName:"";
-
-        // create the process
-        if(CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&startUpInfo,&pProcInfo[nIndex]))
-        {
-            char pPause[nBufferSize+1];
-            GetPrivateProfileString(pItem,"PauseStartup","1000",pPause,nBufferSize,pInitFile);
-            Sleep(atoi(pPause));
-            return TRUE;
-        }
-        else
-        {
-            long nError = GetLastError();
-            char pTemp[121];
-            sprintf_s(pTemp,"Failed to start VM using command: '%s', error code = %d", pCommandLine, nError); 
-            WriteLog(pTemp);
-            return FALSE;
-        }
+        sprintf_s(pTemp, "Failed to start VM: VBOX_INSTALL_PATH not fould."); 
+        WriteLog(pTemp);
+        return FALSE;
     }
-    else return FALSE;
+    strcat(pVBoxManagePath, "VBoxManage.exe");
+
+    // prepare for creating process
+    STARTUPINFO si;
+    ZeroMemory(&si, sizeof(STARTUPINFO));
+    si.cb = sizeof(STARTUPINFO);
+    si.dwFlags = STARTF_USESHOWWINDOW | STARTF_USESTDHANDLES;
+    si.wShowWindow = SW_HIDE;
+    si.lpDesktop = "";
+    si.hStdOutput = hStdOut;
+
+    // run VBoxManage.exe showvminfo VmName
+    char pCommandLine[nBufferSize+1];
+    sprintf(pCommandLine, "\"%s\" showvminfo \"%s\"", pVBoxManagePath, pVmName);
+    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo[nIndex]))
+    {
+        long nError = GetLastError();
+        sprintf_s(pTemp,"Failed to start VM using command: '%s', error code = %d", pCommandLine, nError); 
+        WriteLog(pTemp);
+        return FALSE;
+    }
+    WaitForSingleObject(pProcInfo[nIndex].hProcess, INFINITE);
+    CloseHandle(pProcInfo[nIndex].hProcess);
+    CloseHandle(pProcInfo[nIndex].hThread);
+
+    // run VBoxManage.exe modifyvm VmName --vrdpport
+    sprintf(pCommandLine, "\"%s\" modifyvm \"%s\" --vrdpport %s", pVBoxManagePath, pVmName, pVrdpPort);
+    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo[nIndex]))
+    {
+        long nError = GetLastError();
+        sprintf_s(pTemp,"Failed to start VM using command: '%s', error code = %d", pCommandLine, nError); 
+        WriteLog(pTemp);
+        return FALSE;
+    }
+    WaitForSingleObject(pProcInfo[nIndex].hProcess, INFINITE);
+    CloseHandle(pProcInfo[nIndex].hProcess);
+    CloseHandle(pProcInfo[nIndex].hThread);
+
+    // run VBoxManage.exe startvm VmName --type vrdp
+    sprintf(pCommandLine, "\"%s\" startvm \"%s\" --type vrdp", pVBoxManagePath, pVmName, pLogFile);
+    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo[nIndex]))
+    {
+        long nError = GetLastError();
+        sprintf_s(pTemp,"Failed to start VM using command: '%s', error code = %d", pCommandLine, nError); 
+        WriteLog(pTemp);
+        return FALSE;
+    }
+    WaitForSingleObject(pProcInfo[nIndex].hProcess, INFINITE);
+    CloseHandle(pProcInfo[nIndex].hProcess);
+    CloseHandle(pProcInfo[nIndex].hThread);
+
+    CloseHandle(hStdOut);
+    // wait for VM starting up
+    char pPause[nBufferSize+1];
+    GetPrivateProfileString(pItem,"PauseStartup","1000",pPause,nBufferSize,pInitFile);
+    Sleep(atoi(pPause));
+    return TRUE;
 }
 
 
+// end a VM with given index
 BOOL EndProcess(int nIndex) 
 { 
-    // end a process with given index
-    STARTUPINFO startUpInfo = { sizeof(STARTUPINFO),NULL,"",NULL,0,0,0,0,0,0,0,STARTF_USESHOWWINDOW,0,0,NULL,0,0,0};  
     char pItem[nBufferSize+1];
     sprintf_s(pItem,"Vm%d\0",nIndex);
 
-    char pCommandLine[nBufferSize+1];
-    GetPrivateProfileString(pItem,"CommandLineDown","",pCommandLine,nBufferSize,pInitFile);
-    if(strlen(pCommandLine)>4)
+    // get VmName
+    char pVmName[nBufferSize+1];
+    GetPrivateProfileString(pItem,"VmName","",pVmName,nBufferSize,pInitFile);
+    if (strlen(pVmName) == 0)
+        return FALSE;
+
+    // get working dir
+    char pWorkingDir[nBufferSize+1];
+    GetPrivateProfileString(pItem,"WorkingDir","",pWorkingDir,nBufferSize,pInitFile);
+
+    // get ShutdownMethod
+    char pShutdownMethod[nBufferSize+1];
+    GetPrivateProfileString(pItem,"ShutdownMethod","",pShutdownMethod,nBufferSize,pInitFile);
+
+    // open handle to VBoxVmService.log
+    SECURITY_ATTRIBUTES sa;
+    sa.nLength = sizeof (SECURITY_ATTRIBUTES);
+    sa.lpSecurityDescriptor = NULL;
+    sa.bInheritHandle = TRUE;
+    HANDLE hStdOut = CreateFile(pLogFile, FILE_APPEND_DATA, FILE_SHARE_READ | FILE_SHARE_WRITE, &sa, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+    char pTemp[121];
+    sprintf_s(pTemp,"Shutting down VM : '%s' with option %s", pVmName, pShutdownMethod); 
+    WriteLog(pTemp);
+
+    // get full path to VBoxManage.exe
+    char pVBoxManagePath[nBufferSize+1];
+    if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxManagePath, nBufferSize) == 0)
     {
-        char pWorkingDir[nBufferSize+1];
-        GetPrivateProfileString(pItem,"WorkingDir","",pWorkingDir,nBufferSize,pInitFile);
-        BOOL bImpersonate = FALSE;
-        char CurrentDesktopName[512];
-
-        HDESK hCurrentDesktop = GetThreadDesktop(GetCurrentThreadId());
-        DWORD len;
-        GetUserObjectInformation(hCurrentDesktop,UOI_NAME,CurrentDesktopName,MAX_PATH,&len);
-        startUpInfo.wShowWindow = SW_HIDE;
-        startUpInfo.lpDesktop = (bImpersonate==FALSE)?CurrentDesktopName:"";
-
-        // create the process
-        if(CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&startUpInfo,&pProcInfo[nIndex]))
-        {
-            char pPause[nBufferSize+1];
-            GetPrivateProfileString(pItem,"PauseShutdown","1000",pPause,nBufferSize,pInitFile);
-            Sleep(atoi(pPause));
-            return TRUE;
-        }
-        else
-        {
-            long nError = GetLastError();
-            char pTemp[121];
-            sprintf_s(pTemp,"Failed to stop VM using command: '%s', error code = %d", pCommandLine, nError); 
-            WriteLog(pTemp);
-            return FALSE;
-        }
+        sprintf_s(pTemp, "Failed to stop VM: VBOX_INSTALL_PATH not fould."); 
+        WriteLog(pTemp);
+        return FALSE;
     }
-    else return FALSE;
+    strcat(pVBoxManagePath, "VBoxManage.exe");
+
+    // prepare for creating process
+    STARTUPINFO si;
+    ZeroMemory(&si, sizeof(STARTUPINFO));
+    si.cb = sizeof(STARTUPINFO);
+    si.dwFlags = STARTF_USESHOWWINDOW | STARTF_USESTDHANDLES;
+    si.wShowWindow = SW_HIDE;
+    si.lpDesktop = "";
+    si.hStdOutput = hStdOut;
+
+    // run VBoxManage.exe controlvm VmName ShutdownMethod
+    char pCommandLine[nBufferSize+1];
+    sprintf(pCommandLine, "\"%s\" controlvm \"%s\" %s", pVBoxManagePath, pVmName, pShutdownMethod);
+    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo[nIndex]))
+    {
+        long nError = GetLastError();
+        sprintf_s(pTemp,"Failed to stop VM using command: '%s', error code = %d", pCommandLine, nError); 
+        WriteLog(pTemp);
+        return FALSE;
+    }
+    WaitForSingleObject(pProcInfo[nIndex].hProcess, INFINITE);
+    CloseHandle(pProcInfo[nIndex].hProcess);
+    CloseHandle(pProcInfo[nIndex].hThread);
+
+    CloseHandle(hStdOut);
+    // wait for VM shutting down
+    char pPause[nBufferSize+1];
+    GetPrivateProfileString(pItem,"PauseShutdown","1000",pPause,nBufferSize,pInitFile);
+    Sleep(atoi(pPause));
+    return TRUE;
 }
 
 
@@ -328,7 +411,8 @@ VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv )
     for(int i=0;i<nMaxProcCount;i++)
     {
         pProcInfo[i].hProcess = 0;
-        StartProcess(i);
+        if (!StartProcess(i))
+            break;
     }
 }
 
@@ -389,7 +473,8 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
                     }
                     for(int i=0;i<nMaxProcCount;i++)
                     {
-                        StartProcess(i);
+                        if (!StartProcess(i))
+                            break;
                     }
                 }
             }
@@ -678,6 +763,7 @@ void main(int argc, char *argv[] )
     // assume user is starting this service 
     else 
     {
+        /* we don't seem to need this. pProcInfo[i].hProcess won't work anyway
         // start a worker thread to check for dead programs (and restart if necessary)
         if(_beginthread(WorkerProc, 0, NULL)==-1)
         {
@@ -686,6 +772,7 @@ void main(int argc, char *argv[] )
             sprintf_s(pTemp, "_beginthread failed, error code = %d", nError);
             WriteLog(pTemp);
         }
+        */
         // pass dispatch table to service controller
         if(!StartServiceCtrlDispatcher(DispatchTable))
         {

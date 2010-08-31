@@ -32,6 +32,7 @@
 
 Changes since version rel20100817-win7
 
+* Removed all the batch files and call VBoxManage.exe directly at VBoxVmService.
 * Reworked some of the documentation.
 
 Changes since version rel20091210-win7
@@ -133,11 +134,11 @@ And guess what? It finally worked! So here it is! :-)
 
 3. How does it work?
 
-Basically, VBoxVmService consists of a wrapper-service plus a set of tools and batch-files.
+Basically, VBoxVmService is just a wrapper-service that calls VirtualBox Command Line Interfaces.
 
 When windows starts up, the wrapper-service will start running. It will check for the settings in VBoxVmService.ini file, and call up the Virtual Machines as specified. Both the wrapper-service and Virtual Machines are run with LocalSystem Account by default.
 
-If you are interested in further details, feel free to browse the supplied sourcecodes!
+If you are interested in further details, feel free to browse the supplied source codes!
 
 
 ------------------------------------------------------------------------------

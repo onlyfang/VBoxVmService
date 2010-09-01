@@ -1,7 +1,0 @@
-C:\Dokumente und Einstellungen\Mathias Herrmann\Eigene Dateien\Visual Studio 2005\Projects\bcompile\bcompile\obj\Release\bcompile.exe
-C:\Dokumente und Einstellungen\Mathias Herrmann\Eigene Dateien\Visual Studio 2005\Projects\bcompile\bcompile\obj\Release\bcompile.pdb
-C:\Dokumente und Einstellungen\Mathias Herrmann\Eigene Dateien\Visual Studio 2005\Projects\bcompile\bcompile\bin\Release\bcompile.exe
-C:\Dokumente und Einstellungen\Mathias Herrmann\Eigene Dateien\Visual Studio 2005\Projects\bcompile\bcompile\bin\Release\bcompile.pdb
-C:\Dokumente und Einstellungen\Mathias Herrmann\Eigene Dateien\Visual Studio 2005\Projects\bcompile\bcompile\obj\Release\ResolveAssemblyReference.cache
-C:\Dokumente und Einstellungen\Mathias Herrmann\Eigene Dateien\Visual Studio 2005\Projects\bcompile\bcompile\obj\Release\bcompile.Properties.Resources.resources
-C:\Dokumente und Einstellungen\Mathias Herrmann\Eigene Dateien\Visual Studio 2005\Projects\bcompile\bcompile\obj\Release\bcompile.csproj.GenerateResource.Cache

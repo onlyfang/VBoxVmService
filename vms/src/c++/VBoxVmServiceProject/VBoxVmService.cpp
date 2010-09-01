@@ -600,6 +600,10 @@ VOID Install(char* pPath, char* pName)
                 WriteLog(pTemp);
             }
 
+            // also set environment variable for current process, so that
+            // no reboot is required after installation.
+            SetEnvironmentVariable("VBOX_USER_HOME", pVboxUserHome);
+
             sprintf_s(pTemp, "Service %s installed", pName);
             WriteLog(pTemp);
             CloseServiceHandle(schService); 
@@ -704,6 +708,7 @@ void main(int argc, char *argv[] )
     else if(argc==2&&_stricmp("-i",argv[1])==0)
     {			
         Install(pExeFile, pServiceName);
+        RunService(pServiceName,0,NULL);
     }
     // bounce service if switch is "-b"
     else if(argc==2&&_stricmp("-b",argv[1])==0)

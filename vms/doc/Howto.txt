@@ -44,9 +44,7 @@ Step 2. Within the terminal window type:
     
     VBoxVmService.exe -i    [ENTER]
 
-Step 3. Reboot your system!
-
-Step 4. You are done installing and ready to use VBoxVmService.
+Step 3. You are done installing and VBoxVmService service will starts running. You could now connect to your VMs with VRDP clients (or ssh clients, if you've configured ssh server inside your VM).
 
 
 

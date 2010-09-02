@@ -88,7 +88,7 @@ BOOL StartProcess(int nIndex)
     char pVBoxManagePath[nBufferSize+1];
     if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxManagePath, nBufferSize) == 0)
     {
-        sprintf_s(pTemp, "Failed to start VM: VBOX_INSTALL_PATH not fould."); 
+        sprintf_s(pTemp, "Failed to start VM: VBOX_INSTALL_PATH not found."); 
         WriteLog(pTemp);
         return FALSE;
     }
@@ -186,7 +186,7 @@ BOOL EndProcess(int nIndex)
     char pVBoxManagePath[nBufferSize+1];
     if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxManagePath, nBufferSize) == 0)
     {
-        sprintf_s(pTemp, "Failed to stop VM: VBOX_INSTALL_PATH not fould."); 
+        sprintf_s(pTemp, "Failed to stop VM: VBOX_INSTALL_PATH not found."); 
         WriteLog(pTemp);
         return FALSE;
     }

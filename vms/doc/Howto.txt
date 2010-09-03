@@ -111,6 +111,8 @@ IMPORTANT: If you want to control your VMs with VRDP, assign a dedicated port fo
 
 Read the log-file! 
 
-I might be on VirtualBox's official forums now and then, so feel free to contact me there.
 
+The VBoxVmService Dev Team might be on VirtualBox's official forums now and then, so feel free to contact us there.
+
+FB2000 & mattz
 

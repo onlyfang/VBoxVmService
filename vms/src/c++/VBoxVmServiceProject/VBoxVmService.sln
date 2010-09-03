@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual C++ Express 2005
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VBoxVm", "VBoxVmService.vcproj", "{69A7159E-2EC6-4884-BCC3-220CC5E2115C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VmServiceControl", "VmServiceControl.vcproj", "{DE12B8FD-0A1C-4101-B900-D24229BEFDB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{69A7159E-2EC6-4884-BCC3-220CC5E2115C}.Debug|Win32.Build.0 = Debug|Win32
 		{69A7159E-2EC6-4884-BCC3-220CC5E2115C}.Release|Win32.ActiveCfg = Release|Win32
 		{69A7159E-2EC6-4884-BCC3-220CC5E2115C}.Release|Win32.Build.0 = Release|Win32
+		{DE12B8FD-0A1C-4101-B900-D24229BEFDB3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DE12B8FD-0A1C-4101-B900-D24229BEFDB3}.Debug|Win32.Build.0 = Debug|Win32
+		{DE12B8FD-0A1C-4101-B900-D24229BEFDB3}.Release|Win32.ActiveCfg = Release|Win32
+		{DE12B8FD-0A1C-4101-B900-D24229BEFDB3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

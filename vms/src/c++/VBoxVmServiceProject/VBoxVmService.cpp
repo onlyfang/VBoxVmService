@@ -15,8 +15,7 @@ char pExeFile[nBufferSize+1];
 char pInitFile[nBufferSize+1];
 char pLogFile[nBufferSize+1];
 const int nMaxProcCount = 100;
-PROCESS_INFORMATION pProcInfo[nMaxProcCount];
-
+BOOL bServiceRunning;
 
 SERVICE_STATUS          serviceStatus; 
 SERVICE_STATUS_HANDLE   hServiceStatusHandle; 
@@ -24,12 +23,9 @@ SERVICE_STATUS_HANDLE   hServiceStatusHandle;
 VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv );
 VOID WINAPI VBoxVmServiceHandler( DWORD fdwControl );
 
-CRITICAL_SECTION myCS;
-
 void WriteLog(char* pMsg)
 {
     // write error or other information into log file
-    ::EnterCriticalSection(&myCS);
     try
     {
         SYSTEMTIME oT;
@@ -38,7 +34,6 @@ void WriteLog(char* pMsg)
         fprintf(pLog,"%02d/%02d/%04d, %02d:%02d:%02d - %s\n",oT.wMonth,oT.wDay,oT.wYear,oT.wHour,oT.wMinute,oT.wSecond,pMsg); 
         fclose(pLog);
     } catch(...) {}
-    ::LeaveCriticalSection(&myCS);
 }
 
 ////////////////////////////////////////////////////////////////////// 
@@ -106,42 +101,43 @@ BOOL StartProcess(int nIndex)
     // run VBoxManage.exe showvminfo VmName
     char pCommandLine[nBufferSize+1];
     sprintf(pCommandLine, "\"%s\" showvminfo \"%s\"", pVBoxManagePath, pVmName);
-    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo[nIndex]))
+    PROCESS_INFORMATION pProcInfo;
+    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo))
     {
         long nError = GetLastError();
         sprintf_s(pTemp,"Failed to start VM using command: '%s', error code = %d", pCommandLine, nError); 
         WriteLog(pTemp);
         return FALSE;
     }
-    WaitForSingleObject(pProcInfo[nIndex].hProcess, INFINITE);
-    CloseHandle(pProcInfo[nIndex].hProcess);
-    CloseHandle(pProcInfo[nIndex].hThread);
+    WaitForSingleObject(pProcInfo.hProcess, INFINITE);
+    CloseHandle(pProcInfo.hProcess);
+    CloseHandle(pProcInfo.hThread);
 
     // run VBoxManage.exe modifyvm VmName --vrdpport
     sprintf(pCommandLine, "\"%s\" modifyvm \"%s\" --vrdpport %s", pVBoxManagePath, pVmName, pVrdpPort);
-    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo[nIndex]))
+    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo))
     {
         long nError = GetLastError();
         sprintf_s(pTemp,"Failed to start VM using command: '%s', error code = %d", pCommandLine, nError); 
         WriteLog(pTemp);
         return FALSE;
     }
-    WaitForSingleObject(pProcInfo[nIndex].hProcess, INFINITE);
-    CloseHandle(pProcInfo[nIndex].hProcess);
-    CloseHandle(pProcInfo[nIndex].hThread);
+    WaitForSingleObject(pProcInfo.hProcess, INFINITE);
+    CloseHandle(pProcInfo.hProcess);
+    CloseHandle(pProcInfo.hThread);
 
     // run VBoxManage.exe startvm VmName --type vrdp
     sprintf(pCommandLine, "\"%s\" startvm \"%s\" --type vrdp", pVBoxManagePath, pVmName);
-    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo[nIndex]))
+    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo))
     {
         long nError = GetLastError();
         sprintf_s(pTemp,"Failed to start VM using command: '%s', error code = %d", pCommandLine, nError); 
         WriteLog(pTemp);
         return FALSE;
     }
-    WaitForSingleObject(pProcInfo[nIndex].hProcess, INFINITE);
-    CloseHandle(pProcInfo[nIndex].hProcess);
-    CloseHandle(pProcInfo[nIndex].hThread);
+    WaitForSingleObject(pProcInfo.hProcess, INFINITE);
+    CloseHandle(pProcInfo.hProcess);
+    CloseHandle(pProcInfo.hThread);
 
     CloseHandle(hStdOut);
     // wait for VM starting up
@@ -204,16 +200,17 @@ BOOL EndProcess(int nIndex)
     // run VBoxManage.exe controlvm VmName ShutdownMethod
     char pCommandLine[nBufferSize+1];
     sprintf(pCommandLine, "\"%s\" controlvm \"%s\" %s", pVBoxManagePath, pVmName, pShutdownMethod);
-    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo[nIndex]))
+    PROCESS_INFORMATION pProcInfo;
+    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo))
     {
         long nError = GetLastError();
         sprintf_s(pTemp,"Failed to stop VM using command: '%s', error code = %d", pCommandLine, nError); 
         WriteLog(pTemp);
         return FALSE;
     }
-    WaitForSingleObject(pProcInfo[nIndex].hProcess, INFINITE);
-    CloseHandle(pProcInfo[nIndex].hProcess);
-    CloseHandle(pProcInfo[nIndex].hThread);
+    WaitForSingleObject(pProcInfo.hProcess, INFINITE);
+    CloseHandle(pProcInfo.hProcess);
+    CloseHandle(pProcInfo.hThread);
 
     CloseHandle(hStdOut);
     // wait for VM shutting down
@@ -224,150 +221,6 @@ BOOL EndProcess(int nIndex)
 }
 
 
-BOOL BounceProcess(char* pName, int nIndex) 
-{ 
-    // bounce the process with given index
-    SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_ALL_ACCESS); 
-    if (schSCManager==0) 
-    {
-        long nError = GetLastError();
-        char pTemp[121];
-        sprintf_s(pTemp, "OpenSCManager failed, error code = %d", nError);
-        WriteLog(pTemp);
-    }
-    else
-    {
-        // open the service
-        SC_HANDLE schService = OpenService( schSCManager, pName, SERVICE_ALL_ACCESS);
-        if (schService==0) 
-        {
-            long nError = GetLastError();
-            char pTemp[121];
-            sprintf_s(pTemp, "OpenService failed, error code = %d", nError); 
-            WriteLog(pTemp);
-        }
-        else
-        {
-            // call ControlService to invoke handler
-            SERVICE_STATUS status;
-            if(nIndex>=0&&nIndex<128)
-            {
-                if(ControlService(schService,(nIndex|0x80),&status))
-                {
-                    CloseServiceHandle(schService); 
-                    CloseServiceHandle(schSCManager); 
-                    return TRUE;
-                }
-                long nError = GetLastError();
-                char pTemp[121];
-                sprintf_s(pTemp, "ControlService failed, error code = %d", nError); 
-                WriteLog(pTemp);
-            }
-            else
-            {
-                char pTemp[121];
-                sprintf_s(pTemp, "Invalid argument to BounceProcess: %d", nIndex); 
-                WriteLog(pTemp);
-            }
-            CloseServiceHandle(schService); 
-        }
-        CloseServiceHandle(schSCManager); 
-    }
-    return FALSE;
-}
-
-
-BOOL KillService(char* pName) 
-{ 
-    // kill service with given name
-    SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_ALL_ACCESS); 
-    if (schSCManager==0) 
-    {
-        long nError = GetLastError();
-        char pTemp[121];
-        sprintf_s(pTemp, "OpenSCManager failed, error code = %d", nError);
-        WriteLog(pTemp);
-    }
-    else
-    {
-        // open the service
-        SC_HANDLE schService = OpenService( schSCManager, pName, SERVICE_ALL_ACCESS);
-        if (schService==0) 
-        {
-            long nError = GetLastError();
-            char pTemp[121];
-            sprintf_s(pTemp, "OpenService failed, error code = %d", nError);
-            WriteLog(pTemp);
-        }
-        else
-        {
-            // call ControlService to kill the given service
-            SERVICE_STATUS status;
-            if(ControlService(schService,SERVICE_CONTROL_STOP,&status))
-            {
-                CloseServiceHandle(schService); 
-                CloseServiceHandle(schSCManager); 
-                return TRUE;
-            }
-            else
-            {
-                long nError = GetLastError();
-                char pTemp[121];
-                sprintf_s(pTemp, "ControlService failed, error code = %d", nError);
-                WriteLog(pTemp);
-            }
-            CloseServiceHandle(schService); 
-        }
-        CloseServiceHandle(schSCManager); 
-    }
-    return FALSE;
-}
-
-
-BOOL RunService(char* pName, int nArg, char** pArg) 
-{ 
-    // run service with given name
-    SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_ALL_ACCESS); 
-    if (schSCManager==0) 
-    {
-        long nError = GetLastError();
-        char pTemp[121];
-        sprintf_s(pTemp, "OpenSCManager failed, error code = %d", nError);
-        WriteLog(pTemp);
-    }
-    else
-    {
-        // open the service
-        SC_HANDLE schService = OpenService( schSCManager, pName, SERVICE_ALL_ACCESS);
-        if (schService==0) 
-        {
-            long nError = GetLastError();
-            char pTemp[121];
-            sprintf_s(pTemp, "OpenService failed, error code = %d", nError);
-            WriteLog(pTemp);
-        }
-        else
-        {
-            // call StartService to run the service
-            if(StartService(schService,nArg,(const char**)pArg))
-            {
-                CloseServiceHandle(schService); 
-                CloseServiceHandle(schSCManager); 
-                return TRUE;
-            }
-            else
-            {
-                long nError = GetLastError();
-                char pTemp[121];
-                sprintf_s(pTemp, "StartService failed, error code = %d", nError);
-                WriteLog(pTemp);
-            }
-            CloseServiceHandle(schService); 
-        }
-        CloseServiceHandle(schSCManager); 
-    }
-    return FALSE;
-}
 
 ////////////////////////////////////////////////////////////////////// 
 //
@@ -410,7 +263,6 @@ VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv )
 
     for(int i=0;i<nMaxProcCount;i++)
     {
-        pProcInfo[i].hProcess = 0;
         if (!StartProcess(i))
             break;
     }
@@ -430,6 +282,7 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
             serviceStatus.dwCurrentState  = SERVICE_STOPPED; 
             serviceStatus.dwCheckPoint    = 0; 
             serviceStatus.dwWaitHint      = 0;
+            bServiceRunning = FALSE;
             // terminate all processes started by this service before shutdown
             {
                 for(int i=nMaxProcCount-1;i>=0;i--)
@@ -496,176 +349,88 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
 }
 
 
-////////////////////////////////////////////////////////////////////// 
-//
-// Uninstall
-//
-VOID UnInstall(char* pName)
-{
-    SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_ALL_ACCESS); 
-    if (schSCManager==0) 
-    {
-        long nError = GetLastError();
-        char pTemp[121];
-        sprintf_s(pTemp, "OpenSCManager failed, error code = %d", nError);
-        WriteLog(pTemp);
-    }
-    else
-    {
-        SC_HANDLE schService = OpenService( schSCManager, pName, SERVICE_ALL_ACCESS);
-        if (schService==0) 
-        {
-            long nError = GetLastError();
-            char pTemp[121];
-            sprintf_s(pTemp, "OpenService failed, error code = %d", nError);
-            WriteLog(pTemp);
-        }
-        else
-        {
-            if(!DeleteService(schService)) 
-            {
-                char pTemp[121];
-                sprintf_s(pTemp, "Failed to delete service %s", pName);
-                WriteLog(pTemp);
-            }
-            else 
-            {
-                char pTemp[121];
-                sprintf_s(pTemp, "Service %s removed",pName);
-                WriteLog(pTemp);
-            }
-            CloseServiceHandle(schService); 
-        }
-        CloseServiceHandle(schSCManager);	
-    }
-}
-
-////////////////////////////////////////////////////////////////////// 
-//
-// Install
-//
-VOID Install(char* pPath, char* pName) 
-{  
-    SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_CREATE_SERVICE); 
-    if (schSCManager==0) 
-    {
-        long nError = GetLastError();
-        char pTemp[121];
-        sprintf_s(pTemp, "OpenSCManager failed, error code = %d", nError);
-        WriteLog(pTemp);
-    }
-    else
-    {
-        SC_HANDLE schService = CreateService
-            ( 
-             schSCManager,											/* SCManager database      */ 
-             pName,													/* name of service         */ 
-             pName,													/* service name to display */ 
-             SERVICE_ALL_ACCESS,										/* desired access          */ 
-             SERVICE_WIN32_OWN_PROCESS|SERVICE_INTERACTIVE_PROCESS ,	/* service type            */ 
-             SERVICE_AUTO_START,										/* start type              */ 
-             SERVICE_ERROR_NORMAL,									/* error control type      */ 
-             pPath,													/* service's binary        */ 
-             NULL,													/* no load ordering group  */ 
-             NULL,													/* no tag identifier       */ 
-             NULL,													/* no dependencies         */ 
-             NULL,													/* LocalSystem account     */ 
-             NULL													/* no password             */
-            );                      
-        if (schService==0) 
-        {
-            long nError =  GetLastError();
-            char pTemp[121];
-            sprintf_s(pTemp, "Failed to create service %s, error code = %d", pName, nError);
-            WriteLog(pTemp);
-        }
-        else
-        {
-            char pTemp[121];
-
-            // Set system wide VBOX_USER_HOME environment variable
-            char pVboxUserHome[nBufferSize+1];
-            GetPrivateProfileString("Settings","VBOX_USER_HOME","",pVboxUserHome,nBufferSize,pInitFile);
-            HKEY hKey;
-            DWORD dwDisp;
-            LONG lRet = RegCreateKeyEx(HKEY_LOCAL_MACHINE, "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment", 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &hKey, &dwDisp);
-            if (lRet == ERROR_SUCCESS)
-            {
-                lRet = RegSetValueEx(hKey, "VBOX_USER_HOME", 0, REG_SZ, (const BYTE *)pVboxUserHome, strlen(pVboxUserHome) + 1);
-                RegCloseKey(hKey);
-            }
-            if (lRet != ERROR_SUCCESS)
-            {
-                sprintf_s(pTemp, "Failed to set VBOX_USER_HOME environment");
-                WriteLog(pTemp);
-            }
-
-            // also set environment variable for current process, so that
-            // no reboot is required after installation.
-            SetEnvironmentVariable("VBOX_USER_HOME", pVboxUserHome);
-
-            sprintf_s(pTemp, "Service %s installed", pName);
-            WriteLog(pTemp);
-            CloseServiceHandle(schService); 
-        }
-        CloseServiceHandle(schSCManager);
-    }	
-}
-
 void WorkerProc(void* pParam)
 {
-    int nCheckProcessSeconds = 0;
-    char pCheckProcess[nBufferSize+1];
-    GetPrivateProfileString("Settings","CheckProcess","0",pCheckProcess,nBufferSize,pInitFile);
-    int nCheckProcess = atoi(pCheckProcess);
-    if(nCheckProcess>0) nCheckProcessSeconds = nCheckProcess*60;
-    else
+    const int nMessageSize = 80;
+    char pTemp[121];
+
+    // create named pipe
+    SECURITY_ATTRIBUTES sa;
+    sa.lpSecurityDescriptor = (PSECURITY_DESCRIPTOR)malloc(SECURITY_DESCRIPTOR_MIN_LENGTH);
+    if (!InitializeSecurityDescriptor(sa.lpSecurityDescriptor, SECURITY_DESCRIPTOR_REVISION))
     {
-        GetPrivateProfileString("Settings","CheckProcessSeconds","0",pCheckProcess,nBufferSize,pInitFile);
-        nCheckProcessSeconds = atoi(pCheckProcess);
+        DWORD er = ::GetLastError();
+        sprintf_s(pTemp, "InitializeSecurityDescriptor failed, error code = %d", er);
+        WriteLog(pTemp);
+        return;
     }
-    while(nCheckProcessSeconds>0)
+    if (!SetSecurityDescriptorDacl(sa.lpSecurityDescriptor, TRUE, (PACL)0, FALSE))
     {
-        ::Sleep(1000*nCheckProcessSeconds);
-        for(int i=0;i<nMaxProcCount;i++)
+        DWORD er = ::GetLastError();
+        sprintf_s(pTemp, "SetSecurityDescriptorDacl failed, error code = %d", er);
+        WriteLog(pTemp);
+        return;
+    }
+    sa.nLength = sizeof sa;
+    sa.bInheritHandle = TRUE;
+
+    HANDLE hPipe = ::CreateNamedPipe((LPSTR)"\\\\.\\pipe\\VBoxVmService",
+            PIPE_ACCESS_INBOUND, PIPE_TYPE_MESSAGE | 
+            PIPE_READMODE_MESSAGE | PIPE_WAIT, 
+            PIPE_UNLIMITED_INSTANCES, nMessageSize, 
+            nMessageSize, NMPWAIT_USE_DEFAULT_WAIT, &sa);
+
+    if (hPipe == INVALID_HANDLE_VALUE)
+    {
+        DWORD dwError = ::GetLastError();
+        sprintf_s(pTemp, "CreateNamedPipe failed, error code = %d", dwError);
+        WriteLog(pTemp);
+        return;
+    }
+
+    bServiceRunning = TRUE;
+
+    // waiting for commands
+    while (bServiceRunning)
+    {
+        BOOL bResult = ::ConnectNamedPipe(hPipe, 0);
+
+        if (bResult || GetLastError() == ERROR_PIPE_CONNECTED)
         {
-            if(pProcInfo[i].hProcess)
+            char buffer[80]; 
+            memset(buffer, 0, 80);
+            DWORD read = 0;
+
+            if (!(::ReadFile(hPipe, buffer, 80, &read, 0)))
             {
-                char pItem[nBufferSize+1];
-                sprintf_s(pItem,"Vm%d\0",i);
-                char pRestart[nBufferSize+1];
-                GetPrivateProfileString(pItem,"Restart","No",pRestart,nBufferSize,pInitFile);
-                if(pRestart[0]=='Y'||pRestart[0]=='y'||pRestart[0]=='1')
+                unsigned int error = GetLastError(); 
+            } 
+            else
+            {
+                sprintf_s(pTemp, "Received control command: %s", buffer);
+                WriteLog(pTemp);
+
+                // process command
+                if (strncmp(buffer, "start", 5) == 0)
                 {
-                    DWORD dwCode;
-                    if(::GetExitCodeProcess(pProcInfo[i].hProcess, &dwCode))
-                    {
-                        if(dwCode!=STILL_ACTIVE)
-                        {
-                            try // close handles to avoid ERROR_NO_SYSTEM_RESOURCES
-                            {
-                                ::CloseHandle(pProcInfo[i].hThread);
-                                ::CloseHandle(pProcInfo[i].hProcess);
-                            }
-                            catch(...) {}
-                            if(StartProcess(i))
-                            {
-                                char pTemp[121];
-                                sprintf_s(pTemp, "Restarted VM %d", i);
-                                WriteLog(pTemp);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        long nError = GetLastError();
-                        char pTemp[121];
-                        sprintf_s(pTemp, "GetExitCodeProcess failed, error code = %d", nError);
-                        WriteLog(pTemp);
-                    }
+                    int nIndex = atoi(buffer + 6);
+                    StartProcess(nIndex);
+                }
+                else if (strncmp(buffer, "stop", 4) == 0)
+                {
+                    int nIndex = atoi(buffer + 5);
+                    EndProcess(nIndex);
+                }
+                else if (strncmp(buffer, "status", 6) == 0)
+                {
+                    int nIndex = atoi(buffer + 7);
+                    // Todo: check status and write back to Pipe
                 }
             }
+            ::DisconnectNamedPipe(hPipe);
         }
+        // 
+        ::Sleep(500);
     }
 }
 
@@ -675,8 +440,6 @@ void WorkerProc(void* pParam)
 //
 void main(int argc, char *argv[] )
 {
-    // initialize global critical section
-    ::InitializeCriticalSection(&myCS);
     // initialize variables for .exe, .ini, and .log file names
     char pModuleFile[nBufferSize+1];
     DWORD dwSize = GetModuleFileName(NULL,pModuleFile,nBufferSize);
@@ -699,95 +462,24 @@ void main(int argc, char *argv[] )
     // read service name from .ini file
     GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
     WriteLog(pServiceName);
-    // uninstall service if switch is "-u"
-    if(argc==2&&_stricmp("-u",argv[1])==0)
+
+    // start a worker thread to check for pipe messages
+    if(_beginthread(WorkerProc, 0, NULL)==-1)
     {
-        UnInstall(pServiceName);
+        long nError = GetLastError();
+        char pTemp[121];
+        sprintf_s(pTemp, "_beginthread failed, error code = %d", nError);
+        WriteLog(pTemp);
     }
-    // install service if switch is "-i"
-    else if(argc==2&&_stricmp("-i",argv[1])==0)
-    {			
-        Install(pExeFile, pServiceName);
-        RunService(pServiceName,0,NULL);
-    }
-    // bounce service if switch is "-b"
-    else if(argc==2&&_stricmp("-b",argv[1])==0)
-    {			
-        KillService(pServiceName);
-        RunService(pServiceName,0,NULL);
-    }
-    // bounce a specifc program if the index is supplied
-    else if(argc==3&&_stricmp("-b",argv[1])==0)
+
+    // pass dispatch table to service controller
+    if(!StartServiceCtrlDispatcher(DispatchTable))
     {
-        int nIndex = atoi(argv[2]);
-        if(BounceProcess(pServiceName, nIndex))
-        {
-            char pTemp[121];
-            sprintf_s(pTemp, "Bounced process %d", nIndex);
-            WriteLog(pTemp);
-        }
-        else
-        {
-            char pTemp[121];
-            sprintf_s(pTemp, "Failed to bounce process %d", nIndex);
-            WriteLog(pTemp);
-        }
+        long nError = GetLastError();
+        char pTemp[121];
+        sprintf_s(pTemp, "StartServiceCtrlDispatcher failed, error code = %d", nError);
+        WriteLog(pTemp);
     }
-    // kill a service with given name
-    else if(argc==3&&_stricmp("-k",argv[1])==0)
-    {
-        if(KillService(argv[2]))
-        {
-            char pTemp[121];
-            sprintf_s(pTemp, "Killed service %s", argv[2]);
-            WriteLog(pTemp);
-        }
-        else
-        {
-            char pTemp[121];
-            sprintf_s(pTemp, "Failed to kill service %s", argv[2]);
-            WriteLog(pTemp);
-        }
-    }
-    // run a service with given name
-    else if(argc>=3&&_stricmp("-r",argv[1])==0)
-    {
-        if(RunService(argv[2], argc>3?(argc-3):0,argc>3?(&(argv[3])):NULL))
-        {
-            char pTemp[121];
-            sprintf_s(pTemp, "Ran service %s", argv[2]);
-            WriteLog(pTemp);
-        }
-        else
-        {
-            char pTemp[121];
-            sprintf_s(pTemp, "Failed to run service %s", argv[2]);
-            WriteLog(pTemp);
-        }
-    }
-    // assume user is starting this service 
-    else 
-    {
-        /* we don't seem to need this. pProcInfo[i].hProcess won't work anyway
-        // start a worker thread to check for dead programs (and restart if necessary)
-        if(_beginthread(WorkerProc, 0, NULL)==-1)
-        {
-            long nError = GetLastError();
-            char pTemp[121];
-            sprintf_s(pTemp, "_beginthread failed, error code = %d", nError);
-            WriteLog(pTemp);
-        }
-        */
-        // pass dispatch table to service controller
-        if(!StartServiceCtrlDispatcher(DispatchTable))
-        {
-            long nError = GetLastError();
-            char pTemp[121];
-            sprintf_s(pTemp, "StartServiceCtrlDispatcher failed, error code = %d", nError);
-            WriteLog(pTemp);
-        }
-        // you don't get here unless the service is shutdown
-    }
-    ::DeleteCriticalSection(&myCS);
+    // you don't get here unless the service is shutdown
 }
 

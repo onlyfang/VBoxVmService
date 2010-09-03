@@ -1,5 +1,5 @@
 
- About VBoxVmService
+ About VBoxVmService - Release 2.0 "Red Dragon"
 ------------------------------------------------------------------------------
 
  Contents of this file
@@ -34,6 +34,8 @@ Changes since version rel20100817-win7
 
 * Removed all the batch files and call VBoxManage.exe directly at VBoxVmService.
 * Reworked some of the documentation.
+* Dropped some parameters from the ini-file, please review Howto.txt for a list of currently valid options
+* DO NOT USE "BRUTEFORCE" OPTION ANY MORE!!!
 
 Changes since version rel20091210-win7
 
@@ -62,7 +64,7 @@ Changes since version rel20081009
 
 Changes since version rel20080728
 
-* Improved the event-logging to VBoxVmService.log? It will now capture the response messages from the VirtualBox components.
+* Improved the event-logging to VBoxVmService.log. It will now capture the response messages from the VirtualBox components.
 * A PARAMETER NAME WITHIN THE FILE VBoxVmService.ini HAS BEEN CHANGED: PLEASE RENAME THE PARAMETER FROM "PathToVBoxVRDP" TO "PathToVBoxHeadless" IF YOU ARE UPGRADING FROM AN EARLIER VERSION AND ARE PLANNING TO USE YOUR OLD INI-FILE!
 
 
@@ -187,6 +189,7 @@ The VBoxVmService is based on sourcecode originally written by Xiangyang Liu and
 
 The the puzzlework on "how the %$&!? this thing works", (poorly) patching together the C++ code of VBoxVmService and the helper tool "sleep.exe", messing with some c# for "bcompile.exe" plus all the batch-scripting was done by me, Mathias Herrmann (mherrmann at assetive dot com).
 
+Joining the project in August 2010, FB2000 has quickly lead the project into a new era. His clever concepts and his skillful codework made version 2.0 possible at all. It's great to have you, dude! ;-)
 
 ------------------------------------------------------------------------------
 

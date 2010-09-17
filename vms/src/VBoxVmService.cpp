@@ -15,6 +15,7 @@ char pExeFile[nBufferSize+1];
 char pInitFile[nBufferSize+1];
 char pLogFile[nBufferSize+1];
 const int nMaxProcCount = 100;
+int nProcStatus[nMaxProcCount];
 BOOL bServiceRunning;
 
 SERVICE_STATUS          serviceStatus; 
@@ -140,10 +141,7 @@ BOOL StartProcess(int nIndex)
     CloseHandle(pProcInfo.hThread);
 
     CloseHandle(hStdOut);
-    // wait for VM starting up
-    char pPause[nBufferSize+1];
-    GetPrivateProfileString(pItem,"PauseStartup","1000",pPause,nBufferSize,pInitFile);
-    Sleep(atoi(pPause));
+    nProcStatus[nIndex] = 1;
     return TRUE;
 }
 
@@ -213,10 +211,7 @@ BOOL EndProcess(int nIndex)
     CloseHandle(pProcInfo.hThread);
 
     CloseHandle(hStdOut);
-    // wait for VM shutting down
-    char pPause[nBufferSize+1];
-    GetPrivateProfileString(pItem,"PauseShutdown","1000",pPause,nBufferSize,pInitFile);
-    Sleep(atoi(pPause));
+    nProcStatus[nIndex] = 0;
     return TRUE;
 }
 
@@ -262,9 +257,22 @@ VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv )
     } 
 
     for(int i=0;i<nMaxProcCount;i++)
+        nProcStatus[i] = 0;
+
+    BOOL bShouldWait = FALSE;
+    for(int i=0;i<nMaxProcCount;i++)
     {
         if (!StartProcess(i))
             break;
+        bShouldWait = true;
+    }
+
+    // wait for VMs to start up
+    if (bShouldWait)
+    {
+        char pPause[nBufferSize+1];
+        GetPrivateProfileString("Settings","PauseStartup","1000",pPause,nBufferSize,pInitFile);
+        Sleep(atoi(pPause));
     }
 }
 
@@ -278,26 +286,16 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
     {
         case SERVICE_CONTROL_STOP:
         case SERVICE_CONTROL_SHUTDOWN:
-            serviceStatus.dwWin32ExitCode = 0; 
-            serviceStatus.dwCurrentState  = SERVICE_STOPPED; 
-            serviceStatus.dwCheckPoint    = 0; 
-            serviceStatus.dwWaitHint      = 0;
             bServiceRunning = FALSE;
-            // terminate all processes started by this service before shutdown
+
+            // also tell SCM we'll need some time to shutdown
+            serviceStatus.dwCurrentState = SERVICE_STOP_PENDING;
             {
-                for(int i=nMaxProcCount-1;i>=0;i--)
-                {
-                    EndProcess(i);
-                }			
-                if (!SetServiceStatus(hServiceStatusHandle, &serviceStatus))
-                { 
-                    long nError = GetLastError();
-                    char pTemp[121];
-                    sprintf_s(pTemp, "SetServiceStatus failed, error code = %d", nError);
-                    WriteLog(pTemp);
-                }
+                char pPause[nBufferSize+1];
+                GetPrivateProfileString("Settings","PauseShutdown","1000",pPause,nBufferSize,pInitFile);
+                serviceStatus.dwWaitHint = atoi(pPause) + 1000;  
             }
-            return; 
+            break;
         case SERVICE_CONTROL_PAUSE:
             serviceStatus.dwCurrentState = SERVICE_PAUSED; 
             break;
@@ -314,7 +312,8 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
                 // bounce a single process
                 if(nIndex>=0&&nIndex<nMaxProcCount)
                 {
-                    EndProcess(nIndex);
+                    if (nProcStatus[nIndex] == 1)
+                        EndProcess(nIndex);
                     StartProcess(nIndex);
                 }
                 // bounce all processes
@@ -322,7 +321,8 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
                 {
                     for(int i=nMaxProcCount-1;i>=0;i--)
                     {
-                        EndProcess(i);
+                        if (nProcStatus[i] == 1)
+                            EndProcess(i);
                     }
                     for(int i=0;i<nMaxProcCount;i++)
                     {
@@ -375,10 +375,10 @@ void WorkerProc(void* pParam)
     sa.bInheritHandle = TRUE;
 
     HANDLE hPipe = ::CreateNamedPipe((LPSTR)"\\\\.\\pipe\\VBoxVmService",
-            PIPE_ACCESS_INBOUND, PIPE_TYPE_MESSAGE | 
-            PIPE_READMODE_MESSAGE | PIPE_WAIT, 
+            PIPE_ACCESS_INBOUND | FILE_FLAG_OVERLAPPED, 
+            PIPE_TYPE_MESSAGE | PIPE_READMODE_MESSAGE | PIPE_WAIT, 
             PIPE_UNLIMITED_INSTANCES, nMessageSize, 
-            nMessageSize, NMPWAIT_USE_DEFAULT_WAIT, &sa);
+            nMessageSize, 500, &sa);
 
     if (hPipe == INVALID_HANDLE_VALUE)
     {
@@ -393,19 +393,65 @@ void WorkerProc(void* pParam)
     // waiting for commands
     while (bServiceRunning)
     {
-        BOOL bResult = ::ConnectNamedPipe(hPipe, 0);
+        OVERLAPPED ol;
 
-        if (bResult || GetLastError() == ERROR_PIPE_CONNECTED)
+        memset(&ol, 0, sizeof(OVERLAPPED));
+        ol.hEvent = CreateEvent( NULL, TRUE, FALSE, NULL);
+
+        BOOL bResult = ConnectNamedPipe( hPipe, &ol);
+
+        if( !bResult )
+        {
+            switch( GetLastError() )
+            {
+                case ERROR_PIPE_CONNECTED:
+                    bResult = TRUE;
+                    break;
+
+                case ERROR_IO_PENDING:
+                    if( WaitForSingleObject(ol.hEvent, 500) == WAIT_OBJECT_0 )
+                    {
+                        DWORD dwIgnore;
+
+                        bResult = GetOverlappedResult(
+                                hPipe,
+                                &ol,
+                                &dwIgnore,
+                                FALSE);
+                    }
+                    else
+                        CancelIo(hPipe);
+
+                    break;
+            }
+        }
+
+
+        if(bResult)
         {
             char buffer[80]; 
             memset(buffer, 0, 80);
-            DWORD read = 0;
+            DWORD dwRead = 0;
 
-            if (!(::ReadFile(hPipe, buffer, 80, &read, 0)))
+            bResult = ReadFile(hPipe, buffer, 80, &dwRead, &ol);
+            if (!bResult)
             {
-                unsigned int error = GetLastError(); 
+                if (GetLastError() == ERROR_IO_PENDING)
+                {
+                    if( WaitForSingleObject(ol.hEvent, 500) == WAIT_OBJECT_0 )
+                    {
+                        bResult = GetOverlappedResult(
+                                hPipe,
+                                &ol,
+                                &dwRead,
+                                FALSE);
+                    }
+                    else
+                        CancelIo(hPipe);
+                }
+
             } 
-            else
+            if (bResult && dwRead > 0)
             {
                 sprintf_s(pTemp, "Received control command: %s", buffer);
                 WriteLog(pTemp);
@@ -429,8 +475,38 @@ void WorkerProc(void* pParam)
             }
             ::DisconnectNamedPipe(hPipe);
         }
-        // 
-        ::Sleep(500);
+        CloseHandle(ol.hEvent);
+    }
+    CloseHandle(hPipe);
+
+    BOOL bShouldWait = FALSE;
+    // terminate all running processes before shutdown
+    for(int i=nMaxProcCount-1;i>=0;i--)
+    {
+        if (nProcStatus[i] == 1)
+        {
+            EndProcess(i);
+            bShouldWait = TRUE;
+        }
+    }			
+
+    // wait for VMs to shut down
+    if (bShouldWait)
+    {
+        char pPause[nBufferSize+1];
+        GetPrivateProfileString("Settings","PauseShutdown","1000",pPause,nBufferSize,pInitFile);
+        Sleep(atoi(pPause));
+    }
+
+    // notify SCM that we've finished
+    serviceStatus.dwCurrentState = SERVICE_STOPPED; 
+    serviceStatus.dwWaitHint     = 0;  
+    if (!SetServiceStatus(hServiceStatusHandle, &serviceStatus))
+    { 
+        long nError = GetLastError();
+        char pTemp[121];
+        sprintf_s(pTemp, "SetServiceStatus failed, error code = %d", nError);
+        WriteLog(pTemp);
     }
 }
 

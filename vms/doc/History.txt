@@ -1,5 +1,5 @@
 
- About VBoxVmService - Release 2.0 "Red Dragon"
+ About VBoxVmService
 ------------------------------------------------------------------------------
 
  Contents of this file
@@ -30,12 +30,16 @@
 
 0. What is new in this release?
 
+Changes since version Release 2.0 "Red Dragon"
+
+* PauseShutdown now became global setting. When service is stopped, it doesn't make sence to wait VM0 to shutdown, then VM1, then VM2, ..., etc. Now all the VMs will start shutting down at once, and all are expected to finish within time specified as PauseShutdown.
+
 Changes since version rel20100817-win7
 
 * Removed all the batch files and call VBoxManage.exe directly at VBoxVmService.
+* Added VmServiceControl.exe to do all the controlling job and VBoxVmService.exe now become a pure service program.
 * Reworked some of the documentation.
 * Dropped some parameters from the ini-file, please review Howto.txt for a list of currently valid options
-* DO NOT USE "BRUTEFORCE" OPTION ANY MORE!!!
 
 Changes since version rel20091210-win7
 

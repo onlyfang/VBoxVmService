@@ -18,7 +18,7 @@ PauseShutdown=5000                                          A pause parameter to
 [Vm0]
 VmName=ubuntu                                               The name of the VM to start (case sensitive!)
 WorkingDir=C:\vms                                           Usually the directory to which you unpacked VBoxVmService.
-ShutdownMethod=savestate                                    The shutdown method ("savestate", or "acpipowerbutton"). If your VM takes long time to poweroff, it's recommanded to use savestate, which could be done very quickly.
+ShutdownMethod=savestate                                    The shutdown method ("savestate", or "acpipowerbutton"). When "savestate" is used, the machine state is saved and will be resumed when you start VM next time. When "acpipowerbutton" is used, as long as client OS support it, the VM will get a clean shutdown. If your VM takes long time to poweroff, it's recommanded to use savestate, which could be done very quickly.
 VrdpPort=3001                                               The port setting for your VRDP-Access, choose 1 unique port per VM that you set up.
 
 [Vm1]
@@ -114,6 +114,12 @@ IMPORTANT: If you want to control your VMs with VRDP, assign a dedicated port fo
 
 Read the log-file! 
 
+If you see error like "ERROR: Could not find a registered machine named...", if VBOX_USER_HOME has been setup correctly, then it means VBoxVmService service, running as SYSTEM user by default, can't access the folder pointed to by
+VBOX_USER_HOME. Check the permission on this folder and change if necessary. 
+
+If you made a mistake on VBOX_USER_HOME, however, fixing it at VBoxVmService.ini is not enough. Because the value was get written into environment variable during installation. You need to open Control Panel -> System -> Advanced system settings -> Advanced -> Environment Variables, and fix it there. Please also make sure VBOX_USER_HOME appears only at system variables, not user variables.
+
+Some reported that a system reboot is required after installation to get VBoxVmService work correctly. So give it a try if you haven't. 
 
 The VBoxVmService Dev Team might be on VirtualBox's official forums now and then, so feel free to contact us there.
 

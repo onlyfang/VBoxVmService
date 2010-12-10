@@ -325,7 +325,7 @@ BOOL SendCommandToService(char * message, TCHAR chBuf[], int chBufSize)
     while (true) 
     { 
         hPipe = ::CreateFile((LPSTR)"\\\\.\\pipe\\VBoxVmService", 
-                GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
+                GENERIC_READ|GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
         dwError = GetLastError();
         if (hPipe != INVALID_HANDLE_VALUE)
         {
@@ -344,7 +344,22 @@ BOOL SendCommandToService(char * message, TCHAR chBuf[], int chBufSize)
             dwError = GetLastError();
             return FALSE;
         } 
-    }
+    } 
+
+	// The pipe connected; change to message-read mode. 
+	dwMode = PIPE_READMODE_MESSAGE; 
+	dwError = SetNamedPipeHandleState( 
+		hPipe,    // pipe handle 
+		&dwMode,  // new pipe mode 
+		NULL,     // don't set maximum bytes 
+		NULL);    // don't set maximum time 
+	if ( ! dwError) 
+	{
+		printf( TEXT("SetNamedPipeHandleState failed. GLE=%d\n"), GetLastError() ); 
+		return FALSE;
+	}
+
+	// Send the message to the pipe server. 
     DWORD dwRead = 0;
     if (!(WriteFile(hPipe, (LPVOID)message, strlen(message), &dwRead, 0)))
     {

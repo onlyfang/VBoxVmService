@@ -7,6 +7,12 @@
 #include <winbase.h>
 #include <winsvc.h>
 #include <process.h>
+#include <strsafe.h>
+#include <time.h>
+#include <stdarg.h>
+#include <io.h>
+
+#include "VBoxVmPipeManager.h"
 
 
 const int nBufferSize = 500;
@@ -629,7 +635,6 @@ void main(int argc, char *argv[] )
 	{	
 
 		hThread = (HANDLE)_beginthreadex( NULL, 0, &WorkerProc, NULL, 0, &threadID );
-		//hThread = _beginthread(WorkerProc, 0, NULL);
 		// start a worker thread to check for pipe messages
 		if(hThread==0)
 		{

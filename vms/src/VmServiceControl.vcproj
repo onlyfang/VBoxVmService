@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8,00"
+	Version="9,00"
 	Name="VmServiceControl"
 	ProjectGUID="{DE12B8FD-0A1C-4101-B900-D24229BEFDB3}"
+	RootNamespace="VmServiceControl"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -101,9 +103,6 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -119,6 +118,8 @@
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
+				Description="Removing the .exe file"
+				CommandLine="del &quot;$(TargetPath)&quot;&#x0D;&#x0A;exit 0"
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -194,9 +195,6 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -208,10 +206,6 @@
 			Name="Source Files"
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 			>
-			<File
-				RelativePath=".\VmServiceControl.rc"
-				>
-			</File>
 			<File
 				RelativePath=".\VmServiceControl.cpp"
 				>
@@ -229,8 +223,13 @@
 					<Tool
 						Name="VCCLCompilerTool"
 						PreprocessorDefinitions=""
+						DebugInformationFormat="3"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\VmServiceControl.rc"
+				>
 			</File>
 		</Filter>
 	</Files>

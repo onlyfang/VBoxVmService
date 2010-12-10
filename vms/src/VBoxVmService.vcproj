@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8,00"
+	Version="9,00"
 	Name="VBoxVm"
 	ProjectGUID="{69A7159E-2EC6-4884-BCC3-220CC5E2115C}"
 	>
@@ -101,9 +101,6 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -119,6 +116,8 @@
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
+				Description="Removing the .exe file"
+				CommandLine="del &quot;$(TargetPath)&quot;&#x0D;&#x0A;exit 0"
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -194,9 +193,6 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -209,8 +205,16 @@
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 			>
 			<File
-				RelativePath=".\VBoxVmService.rc"
+				RelativePath=".\VBoxVmPipeManager.cpp"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						DebugInformationFormat="3"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\VBoxVmService.cpp"
@@ -229,10 +233,27 @@
 					<Tool
 						Name="VCCLCompilerTool"
 						PreprocessorDefinitions=""
+						DebugInformationFormat="3"
 					/>
 				</FileConfiguration>
 			</File>
+			<File
+				RelativePath=".\VBoxVmService.rc"
+				>
+			</File>
 		</Filter>
+		<Filter
+			Name="Header Files"
+			>
+			<File
+				RelativePath=".\VBoxVmPipeManager.h"
+				>
+			</File>
+		</Filter>
+		<File
+			RelativePath=".\ClassDiagram1.cd"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

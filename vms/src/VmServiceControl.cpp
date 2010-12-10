@@ -316,10 +316,11 @@ VOID Install(char* pPath, char* pName)
     }   
 }
 
-BOOL SendCommandToService(char * message)
+BOOL SendCommandToService(char * message, TCHAR chBuf[], int chBufSize)
 {
     HANDLE hPipe = INVALID_HANDLE_VALUE;
     DWORD dwError = 0;
+	DWORD dwMode, cbRead;
 	
     while (true) 
     { 
@@ -350,6 +351,32 @@ BOOL SendCommandToService(char * message)
         CloseHandle(hPipe);
         return FALSE;
     }
+
+	// Read from the pipe. 
+	do 
+	{ 
+	
+		dwError = ReadFile( 
+			hPipe,    // pipe handle 
+			chBuf,    // buffer to receive reply 
+			chBufSize,  // size of buffer 
+			&cbRead,  // number of bytes read 
+			NULL);    // not overlapped 
+ 
+		if ( ! dwError && GetLastError() != ERROR_MORE_DATA )
+			break; 
+		//Debug: Uncoment to se what we have read from pipe
+		printf("Read %d bytes\n", cbRead);
+		//printf( TEXT("\n%s\n"), chBuf ); 
+	} while ( ! dwError);  // repeat loop if ERROR_MORE_DATA 
+
+	if ( ! dwError)
+	{
+      printf( TEXT("ReadFile from pipe failed. GLE=%d\n"), GetLastError() );
+      return -1;
+	}
+
+
     CloseHandle(hPipe);
     return TRUE;
 }

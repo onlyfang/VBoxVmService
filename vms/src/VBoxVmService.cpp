@@ -29,6 +29,7 @@ SERVICE_STATUS_HANDLE   hServiceStatusHandle;
 
 VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv );
 VOID WINAPI VBoxVmServiceHandler( DWORD fdwControl );
+char *pipelcat(LPPIPEINST pipe, const char *src, const int srclength);
 
 void WriteLog(char* pMsg)
 {

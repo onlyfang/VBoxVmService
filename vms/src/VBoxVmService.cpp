@@ -62,6 +62,27 @@ void WriteLogPipe(LPPIPEINST pipe, LPCSTR formatstring, ...){
 	//append to log
 	WriteLog(pTemp);
 }
+
+// Routine to make give human readable description, instead of just the error id.
+char *ErrorString(DWORD err)
+    {
+
+     const DWORD buffsize = 300+1;
+	 static char buff[buffsize];
+
+     if(FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
+            NULL,
+            err,
+            0,
+            buff,
+            buffsize,
+            NULL) == 0)
+	 { 
+		 // FormatMessage failed
+		 sprintf_s(buff,"Unknown error with error code = %d", err);
+	 }
+     return buff;
+} // ErrorString
 ////////////////////////////////////////////////////////////////////// 
 //
 // Configuration Data and Tables

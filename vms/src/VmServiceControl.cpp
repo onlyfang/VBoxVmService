@@ -414,7 +414,6 @@ void main(int argc, char *argv[] )
     sprintf_s(pExeFile,"%s\\VBoxVmService.exe",pModuleFile);
     sprintf_s(pInitFile,"%s\\VBoxVmService.ini",pModuleFile);
     
-
 	GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
     // uninstall service if switch is "-u"
     if(argc==2&&_stricmp("-u",argv[1])==0)
@@ -435,6 +434,14 @@ void main(int argc, char *argv[] )
     else if(argc==2&&_stricmp("-k",argv[1])==0)
     {           
         KillService(pServiceName);
+    }
+	// Simulates a shuddown if VBoxVmService is startet with -d
+	else if(argc==2&&_stricmp("-dk",argv[1])==0)
+    {           
+        if(SendCommandToService("shutdown", chBuf, sizeof(chBuf)))
+            fprintf_s(stdout, "Shutdown all your virtual machines\n\n%s\n", chBuf);
+        else
+            fprintf_s(stderr, "Failed to send command to service.\n");
     }
     // bounce service if switch is "-b"
     else if(argc==2&&_stricmp("-b",argv[1])==0)
@@ -484,6 +491,38 @@ void main(int argc, char *argv[] )
         sprintf_s(pCommand, "stop %u", nIndex);
         if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
             fprintf_s(stdout, "Shutdown your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
+        else
+            fprintf_s(stderr, "Failed to send command to service.\n");
+    }
+	// show status for a specifc vm (if the index is supplied)
+    else if(argc==3&&_stricmp("-st",argv[1])==0)
+    {
+        int nIndex = atoi(argv[2]);
+        char pCommand[80];
+        sprintf_s(pCommand, "status %u", nIndex);
+        if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
+            fprintf_s(stdout, "Status for your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
+        else
+            fprintf_s(stderr, "Failed to send command to service.\n");
+    }
+	// Print environment VirtualBox is run under
+    else if(argc==2&&_stricmp("-e",argv[1])==0)
+    {
+        char pCommand[80];
+        sprintf_s(pCommand, "env");
+        if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
+			fprintf_s(stdout, "Env:\n\n%s\n",chBuf);
+        else
+            fprintf_s(stderr, "Failed to send command to service.\n");
+    }
+	// Run Guest Additions enumerate to get guest properties 
+    else if(argc==3&&_stricmp("-sp",argv[1])==0)
+    {
+        int nIndex = atoi(argv[2]);
+        char pCommand[80];
+        sprintf_s(pCommand, "guestpropertys %u", nIndex);
+        if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
+            fprintf_s(stdout, "Guest Additions status for your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
         else
             fprintf_s(stderr, "Failed to send command to service.\n");
     }

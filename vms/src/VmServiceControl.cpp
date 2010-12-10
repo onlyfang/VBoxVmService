@@ -23,6 +23,67 @@ void show_usage()
     printf("\n");
 }
 
+/*
+Tests whether the current user and prossess has admin privileges.
+
+Note that this will return FALSE if called from a Vista program running in an 
+administrator account if the process was not launched with 'run as administrator'
+
+*/
+bool isAdmin() {
+
+SID_IDENTIFIER_AUTHORITY NtAuthority = SECURITY_NT_AUTHORITY;
+PSID AdministratorsGroup;
+// Initialize SID.
+if( !AllocateAndInitializeSid( &NtAuthority,
+                               2,
+                               SECURITY_BUILTIN_DOMAIN_RID,
+                               DOMAIN_ALIAS_RID_ADMINS,
+                               0, 0, 0, 0, 0, 0,
+                               &AdministratorsGroup))
+{
+    // Initializing SID Failed.
+    return false;
+}
+// Check whether the token is present in admin group.
+BOOL IsInAdminGroup = FALSE;
+if( !CheckTokenMembership( NULL,
+                           AdministratorsGroup,
+                           &IsInAdminGroup ))
+{
+    // Error occurred.
+    IsInAdminGroup = FALSE;
+}
+// Free SID and return.
+FreeSid(AdministratorsGroup);
+return IsInAdminGroup;
+
+}
+
+char *ErrorString(DWORD err)
+    {
+
+     const DWORD buffsize = 300+1;
+	 static char buff[buffsize];
+
+	 if ((err == ERROR_ACCESS_DENIED) && (!isAdmin())) {
+		sprintf_s(buff,"Access is denied.\n\nHave you tried to run the program as an administrator by starting the command prompt as 'run as administrator'?");
+	 }
+     else if(FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
+            NULL,
+            err,
+            0,
+            buff,
+            buffsize,
+            NULL) == 0)
+	 { 
+		 // FormatMessage failed
+		 sprintf_s(buff,"Unknown error with error code = %d", err);
+	 }
+     return buff;
+} // ErrorString
+
+
 BOOL KillService(char* pName) 
 { 
     // kill service with given name
@@ -30,7 +91,7 @@ BOOL KillService(char* pName)
     if (schSCManager==0) 
     {
         long nError = GetLastError();
-        fprintf_s(stderr, "OpenSCManager failed, error code = %d\n", nError);
+		fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
     }
     else
     {
@@ -39,7 +100,7 @@ BOOL KillService(char* pName)
         if (schService==0) 
         {
             long nError = GetLastError();
-            fprintf_s(stderr, "OpenService failed, error code = %d\n", nError);
+            fprintf_s(stderr, "OpenService failed: %s\n", ErrorString(nError));;
         }
         else
         {
@@ -55,7 +116,7 @@ BOOL KillService(char* pName)
             else
             {
                 long nError = GetLastError();
-                fprintf_s(stderr, "ControlService failed, error code = %d\n", nError);
+                fprintf_s(stderr, "ControlService failed: %s\n", ErrorString(nError));
             }
             CloseServiceHandle(schService); 
         }
@@ -72,7 +133,7 @@ BOOL RunService(char* pName, int nArg, char** pArg)
     if (schSCManager==0) 
     {
         long nError = GetLastError();
-        fprintf_s(stderr, "OpenSCManager failed, error code = %d\n", nError);
+        fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
     }
     else
     {
@@ -81,7 +142,7 @@ BOOL RunService(char* pName, int nArg, char** pArg)
         if (schService==0) 
         {
             long nError = GetLastError();
-            fprintf_s(stderr, "OpenService failed, error code = %d\n", nError);
+            fprintf_s(stderr, "OpenService failed: %s\n", ErrorString(nError));
         }
         else
         {
@@ -96,7 +157,7 @@ BOOL RunService(char* pName, int nArg, char** pArg)
             else
             {
                 long nError = GetLastError();
-                fprintf_s(stderr, "StartService failed, error code = %d\n", nError);
+				fprintf_s(stderr, "StartService failed: %s\n", ErrorString(nError));
             }
             CloseServiceHandle(schService); 
         }
@@ -112,7 +173,7 @@ BOOL BounceProcess(char* pName, int nIndex)
     if (schSCManager==0) 
     {
         long nError = GetLastError();
-        fprintf_s(stderr, "OpenSCManager failed, error code = %d\n", nError);
+        fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
     }
     else
     {
@@ -121,7 +182,7 @@ BOOL BounceProcess(char* pName, int nIndex)
         if (schService==0) 
         {
             long nError = GetLastError();
-            fprintf_s(stderr, "OpenService failed, error code = %d\n", nError); 
+            fprintf_s(stderr, "OpenService failed: %s\n", ErrorString(nError)); 
         }
         else
         {
@@ -136,7 +197,7 @@ BOOL BounceProcess(char* pName, int nIndex)
                     return TRUE;
                 }
                 long nError = GetLastError();
-                fprintf_s(stderr, "ControlService failed, error code = %d\n", nError); 
+				fprintf_s(stderr, "ControlService failed: %s\n", ErrorString(nError));
             }
             else
             {
@@ -159,7 +220,7 @@ VOID UnInstall(char* pName)
     if (schSCManager==0) 
     {
         long nError = GetLastError();
-        fprintf_s(stderr, "OpenSCManager failed, error code = %d\n", nError);
+        fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
     }
     else
     {
@@ -167,7 +228,7 @@ VOID UnInstall(char* pName)
         if (schService==0) 
         {
             long nError = GetLastError();
-            fprintf_s(stderr, "OpenService failed, error code = %d\n", nError);
+            fprintf_s(stderr, "OpenService failed: %s\n", ErrorString(nError));
         }
         else
         {
@@ -195,7 +256,7 @@ VOID Install(char* pPath, char* pName)
     if (schSCManager==0) 
     {
         long nError = GetLastError();
-        fprintf_s(stderr, "OpenSCManager failed, error code = %d\n", nError);
+        fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
     }
     else
     {
@@ -217,7 +278,7 @@ VOID Install(char* pPath, char* pName)
         if (schService==0) 
         {
             long nError =  GetLastError();
-            fprintf_s(stderr, "Failed to create service %s, error code = %d\n", pName, nError);
+			fprintf_s(stderr, "Failed to create service %s: %s\n", pName, ErrorString(nError));
         }
         else
         {
@@ -274,7 +335,7 @@ BOOL SendCommandToService(char * message)
             dwError = GetLastError();
             return FALSE;
         } 
-    } 
+    }
     DWORD dwRead = 0;
     if (!(WriteFile(hPipe, (LPVOID)message, strlen(message), &dwRead, 0)))
     {
@@ -284,6 +345,8 @@ BOOL SendCommandToService(char * message)
     CloseHandle(hPipe);
     return TRUE;
 }
+
+
 
 ////////////////////////////////////////////////////////////////////// 
 //
@@ -300,8 +363,9 @@ void main(int argc, char *argv[] )
     *(strrchr(pModuleFile, '\\')) = 0;
     sprintf_s(pExeFile,"%s\\VBoxVmService.exe",pModuleFile);
     sprintf_s(pInitFile,"%s\\VBoxVmService.ini",pModuleFile);
-    GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
+    
 
+    GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
     // uninstall service if switch is "-u"
     if(argc==2&&_stricmp("-u",argv[1])==0)
     {

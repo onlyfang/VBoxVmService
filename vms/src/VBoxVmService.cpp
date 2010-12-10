@@ -596,6 +596,9 @@ void main(int argc, char *argv[] )
     char pModuleFile[nBufferSize+1];
     DWORD dwSize = GetModuleFileName(NULL,pModuleFile,nBufferSize);
     pModuleFile[dwSize] = 0;
+	HANDLE hThread;
+	unsigned threadID;
+
     if(dwSize>4&&pModuleFile[dwSize-4]=='.')
     {
         sprintf_s(pExeFile,"%s",pModuleFile);
@@ -615,23 +618,42 @@ void main(int argc, char *argv[] )
     GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
     WriteLog(pServiceName);
 
-    // start a worker thread to check for pipe messages
-    if(_beginthread(WorkerProc, 0, NULL)==-1)
-    {
-        long nError = GetLastError();
-        char pTemp[121];
-        sprintf_s(pTemp, "_beginthread failed, error code = %d", nError);
-        WriteLog(pTemp);
-    }
 
-    // pass dispatch table to service controller
-    if(!StartServiceCtrlDispatcher(DispatchTable))
+	// Run in debug mode if switch is "-d"
+    if(argc==2&&_stricmp("-d",argv[1])==0)
     {
-        long nError = GetLastError();
-        char pTemp[121];
-        sprintf_s(pTemp, "StartServiceCtrlDispatcher failed, error code = %d", nError);
-        WriteLog(pTemp);
-    }
-    // you don't get here unless the service is shutdown
+		printf("Welcome to vms (debug mode)\n");
+		WorkerProc( NULL );
+	}
+	else 
+	{	
+
+		hThread = (HANDLE)_beginthreadex( NULL, 0, &WorkerProc, NULL, 0, &threadID );
+		//hThread = _beginthread(WorkerProc, 0, NULL);
+		// start a worker thread to check for pipe messages
+		if(hThread==0)
+		{
+			long nError = GetLastError();
+			char pTemp[121];
+			sprintf_s(pTemp, "_beginthread failed, error code = %d", nError);
+			WriteLog(pTemp);
+		}
+
+
+		// pass dispatch table to service controller
+		if(!StartServiceCtrlDispatcher(DispatchTable))
+		{
+			long nError = GetLastError();
+			char pTemp[121];
+			sprintf_s(pTemp, "StartServiceCtrlDispatcher failed, error code = %d", nError);
+			WriteLog(pTemp);
+		}
+		// you don't get here unless the service is shutdown
+
+		// Destroy the thread object.
+		CloseHandle( hThread );
+
+	}
+
+
 }
-

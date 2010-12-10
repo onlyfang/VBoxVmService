@@ -397,7 +397,7 @@ VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv )
     BOOL bShouldWait = FALSE;
     for(int i=0;i<nMaxProcCount;i++)
     {
-        if (!StartProcess(i))
+        if (!StartProcess(i, NULL))
             break;
         bShouldWait = true;
     }

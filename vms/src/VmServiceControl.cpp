@@ -414,6 +414,65 @@ void main(int argc, char *argv[] )
     sprintf_s(pExeFile,"%s\\VBoxVmService.exe",pModuleFile);
     sprintf_s(pInitFile,"%s\\VBoxVmService.ini",pModuleFile);
     
+	/*************************************************************************************************
+	Do some sanitizing on input data.
+	*************************************************************************************************/
+	//sanitizing VBoxVmService.ini
+	dwAttr = GetFileAttributes(pInitFile);
+	if(dwAttr == 0xffffffff)
+	{
+		// An error accrued 
+		DWORD dwError = GetLastError();
+		if(dwError == ERROR_FILE_NOT_FOUND)
+		{
+			printf("Error:\nUnable to open config file VBoxVmService.ini at \"%s\": file not found.\n", pInitFile);
+		}
+		else if(dwError == ERROR_PATH_NOT_FOUND)
+		{
+			printf("Error:\nUnable to open config file VBoxVmService.ini at \"%s\": path not found.\n", pInitFile);
+		}
+		else if(dwError == ERROR_ACCESS_DENIED)
+		{
+			printf("Error:\nUnable to open config file VBoxVmService.ini at \"%s\": file exists, but access is denied.\n", pInitFile); 
+		}
+		else
+		{
+			printf("Error:\nUnable to open config file VBoxVmService.ini at \"%s\": Unknown error.\n", pInitFile);
+		}
+		printf("\nPleas run VmServiceControl.exe from the directory where you installed it. Also check that the VBoxVmService.ini exists in that directory, and is readable.\n");
+		return;
+	}
+
+	//sanitizing VBOX_USER_HOME           
+	GetPrivateProfileString("Settings","VBOX_USER_HOME","",pVboxUserHome,nBufferSize,pInitFile);
+	dwAttr = GetFileAttributes(pVboxUserHome);
+	if(dwAttr == 0xffffffff)
+	{
+		// An error accrued 
+		DWORD dwError = GetLastError();
+		if(dwError == ERROR_FILE_NOT_FOUND)
+		{
+			printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": directory not found.\n", pVboxUserHome);
+		}
+		else if(dwError == ERROR_PATH_NOT_FOUND)
+		{
+			printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": path not found.\n", pVboxUserHome);
+		}
+		else if(dwError == ERROR_ACCESS_DENIED)
+		{
+			printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": directory exists, but access is denied.\n", pVboxUserHome); 
+		}
+		else
+		{
+			printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": Unknown error.\n", pVboxUserHome);
+		}
+		printf("\nPleas run VmServiceControl.exe from the directory where you installed it. Also check that the directory you specified in VBoxVmService.ini as variable VBOX_USER_HOME exists and is readable.\n");
+		return;
+	}
+	// done sanitizing
+	/************************************************************************************************/
+
+
 	GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
     // uninstall service if switch is "-u"
     if(argc==2&&_stricmp("-u",argv[1])==0)

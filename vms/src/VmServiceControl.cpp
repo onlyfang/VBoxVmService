@@ -407,6 +407,9 @@ void main(int argc, char *argv[] )
     char pModuleFile[nBufferSize+1];
     char pExeFile[nBufferSize+1];
     char pServiceName[nBufferSize+1];
+	TCHAR  chBuf[8192]; 
+	DWORD dwAttr;
+	char pVboxUserHome[nBufferSize+1];
 
     DWORD dwSize = GetModuleFileName(NULL,pModuleFile,nBufferSize);
     pModuleFile[dwSize] = 0;

@@ -68,47 +68,67 @@ SERVICE_TABLE_ENTRY   DispatchTable[] =
 
 
 // helper functions
-// start a VM with given index
-BOOL StartProcess(int nIndex) 
+// My own implementation of strlcat, but with optional length param. Used for appending to the pipe.
+char *pipelcat(LPPIPEINST pipe, const char *src, int srclength) {
+
+
+	if (pipe==NULL) {return NULL;}
+
+	if (srclength == -1) {
+		srclength = strlen(src);
+	}
+	//Debug: uncoment to see write stat
+	//printf("pipelcat(cbToWrite=%d, srclength=%d)\n",pipe->cbToWrite,srclength);
+
+	// test for free space, If we don't have space for the whole string we just return.
+	if (((srclength + pipe->cbToWrite)) > (sizeof(pipe->chReply) -1)) {
+		return NULL;
+	}
+
+	strncpy(pipe->chReply + pipe->cbToWrite, src, srclength);
+	pipe->cbToWrite += srclength;
+
+	pipe->chReply[pipe->cbToWrite +1] = '\0'; //Amen 
+
+	//Debug: Uncoment to se new size in cbToWrite
+	//printf("~pipelcat(cbToWrite=%d)\n",pipe->cbToWrite);
+	return pipe->chReply;
+}
+
+/*
+Run a console app by calling the pCommandLine.
+
+The stdout is loged to the VBoxVmService.log logfile. If chBufBufferSize is not 0 we also store the stdout output in the chBuf buffer. 
+An easy way of calling this is to use conditional assignment for chBuf and chBufBufferSize. For example “(pipe==NULL) ? NULL : pipe->chReply” means that if pipe is NULL we will send inn NULL, if it is not NULL we wil send “pipe->chReply”.
+
+Read more about conditional assignments at: http://en.wikipedia.org/wiki/%3F:
+
+*/
+BOOL RunConsoleApp(LPCTSTR ApplicationName, char pCommandLine[], char pWorkingDir[], LPPIPEINST pipe) 
 { 
-    char pItem[nBufferSize+1];
-    sprintf_s(pItem,"Vm%d\0",nIndex);
+    
 
-    // get VmName
-    char pVmName[nBufferSize+1];
-    GetPrivateProfileString(pItem,"VmName","",pVmName,nBufferSize,pInitFile);
-    if (strlen(pVmName) == 0)
-        return FALSE;
+	HANDLE g_hChildStd_OUT_Rd = NULL;
+	HANDLE g_hChildStd_OUT_Wr = NULL;
+	HANDLE hStdOut = NULL;
+	char pTemp[nBufferSize+1];
+	char cpBuf[nBufferSize];
 
-    // open handle to VBoxVmService.log
+	printf("RunConsoleApp(ApplicationName=%s, pCommandLine=%s)\n",ApplicationName,pCommandLine);
+	 
+	// Set the bInheritHandle flag so pipe handles are inherited.
     SECURITY_ATTRIBUTES sa;
     sa.nLength = sizeof (SECURITY_ATTRIBUTES);
     sa.lpSecurityDescriptor = NULL;
     sa.bInheritHandle = TRUE;
-    HANDLE hStdOut = CreateFile(pLogFile, FILE_APPEND_DATA, FILE_SHARE_READ | FILE_SHARE_WRITE, &sa, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
-    char pTemp[121];
-    sprintf_s(pTemp,"Starting VM : '%s'", pVmName); 
+	// open handle to VBoxVmService.log
+    hStdOut = CreateFile(pLogFile, FILE_APPEND_DATA, FILE_SHARE_READ | FILE_SHARE_WRITE, &sa, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+    
+
+	sprintf_s(pTemp,"Running coomand: '%s'.", pCommandLine); 
     WriteLog(pTemp);
 
-    // get working dir
-    char pWorkingDir[nBufferSize+1];
-    GetPrivateProfileString(pItem,"WorkingDir","",pWorkingDir,nBufferSize,pInitFile);
-
-    // get VrdpPort
-    char pVrdpPort[nBufferSize+1];
-    GetPrivateProfileString(pItem,"VrdpPort","",pVrdpPort,nBufferSize,pInitFile);
-
-    // get full path to VBoxManage.exe
-    char pVBoxManagePath[nBufferSize+1];
-    if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxManagePath, nBufferSize) == 0)
-    {
-        sprintf_s(pTemp, "Failed to start VM: VBOX_INSTALL_PATH not found."); 
-        WriteLog(pTemp);
-        return FALSE;
-    }
-    strcat(pVBoxManagePath, "VBoxManage.exe");
-
-    // prepare for creating process
+	// prepare for creating process
     STARTUPINFO si;
     ZeroMemory(&si, sizeof(STARTUPINFO));
     si.cb = sizeof(STARTUPINFO);
@@ -117,120 +137,197 @@ BOOL StartProcess(int nIndex)
     si.lpDesktop = "";
     si.hStdOutput = hStdOut;
 
-    // run VBoxManage.exe showvminfo VmName
-    char pCommandLine[nBufferSize+1];
-    sprintf(pCommandLine, "\"%s\" showvminfo \"%s\"", pVBoxManagePath, pVmName);
+
+	if (pipe != NULL) {
+		SECURITY_ATTRIBUTES sahChildStd; 
+		sahChildStd.nLength = sizeof(SECURITY_ATTRIBUTES); 
+		sahChildStd.bInheritHandle = TRUE; 
+		sahChildStd.lpSecurityDescriptor = NULL;
+		// Create a pipe for the child process's STDOUT.
+		if ( ! CreatePipe(&g_hChildStd_OUT_Rd, &g_hChildStd_OUT_Wr, &sahChildStd, 0) ) 
+		{
+			sprintf_s(pTemp,"Error StdoutRd CreatePipe while runing : '%s'.", pCommandLine); 
+			WriteLog(pTemp);
+		}
+		// Ensure the read handle to the pipe for STDOUT is not inherited.
+		if ( ! SetHandleInformation(g_hChildStd_OUT_Rd, HANDLE_FLAG_INHERIT, 0) )
+		{
+			sprintf_s(pTemp,"Error Stdout SetHandleInformation while runing: '%s'.", pCommandLine); 
+			WriteLog(pTemp);
+		}
+
+		// overriding VBoxVmService.log handler
+		si.hStdOutput = g_hChildStd_OUT_Wr;
+	}
+
+	// Run the command
     PROCESS_INFORMATION pProcInfo;
-    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo))
+    if(!CreateProcess(ApplicationName,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo))
     {
-        long nError = GetLastError();
-        sprintf_s(pTemp,"Failed to start VM using command: '%s', error code = %d", pCommandLine, nError); 
-        WriteLog(pTemp);
         return FALSE;
     }
+
+
+	// Close handles to the child process and its primary thread.
+    // Some applications might keep these handles to monitor the status
+    // of the child process, for example. 
     WaitForSingleObject(pProcInfo.hProcess, INFINITE);
     CloseHandle(pProcInfo.hProcess);
     CloseHandle(pProcInfo.hThread);
 
-    // run VBoxManage.exe modifyvm VmName --vrdpport
-    sprintf(pCommandLine, "\"%s\" modifyvm \"%s\" --vrdpport %s", pVBoxManagePath, pVmName, pVrdpPort);
-    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo))
-    {
-        long nError = GetLastError();
-        sprintf_s(pTemp,"Failed to start VM using command: '%s', error code = %d", pCommandLine, nError); 
-        WriteLog(pTemp);
-        return FALSE;
-    }
-    WaitForSingleObject(pProcInfo.hProcess, INFINITE);
-    CloseHandle(pProcInfo.hProcess);
-    CloseHandle(pProcInfo.hThread);
+	if (pipe != NULL) {
+		// Read output from the child process's pipe for STDOUT
+		// and write to the parent process's error log and buff. 
+		// Stop when there is no more data. 
+		DWORD dwRead, dwWritten; 
+		BOOL bSuccess = FALSE;
 
-    // run VBoxManage.exe startvm VmName --type vrdp
-    sprintf(pCommandLine, "\"%s\" startvm \"%s\" --type vrdp", pVBoxManagePath, pVmName);
-    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo))
-    {
-        long nError = GetLastError();
-        sprintf_s(pTemp,"Failed to start VM using command: '%s', error code = %d", pCommandLine, nError); 
-        WriteLog(pTemp);
-        return FALSE;
-    }
-    WaitForSingleObject(pProcInfo.hProcess, INFINITE);
-    CloseHandle(pProcInfo.hProcess);
-    CloseHandle(pProcInfo.hThread);
+		// Close the write end of the pipe before reading from the 
+		// read end of the pipe, to control child process execution.
+		if (!CloseHandle(g_hChildStd_OUT_Wr)) 
+		{
+  			sprintf_s(pTemp,"Error StdOutWr CloseHandle ruuing: '%s'.", pCommandLine); 
+			WriteLog(pTemp);
+		}
 
-    CloseHandle(hStdOut);
-    nProcStatus[nIndex] = 1;
+		// reading while we have data to read
+		for (;;) 
+		{ 
+
+			bSuccess = ReadFile( g_hChildStd_OUT_Rd, (LPVOID)cpBuf, sizeof(cpBuf) , &dwRead, NULL);
+			if( ! bSuccess || dwRead == 0 ) break;
+
+			pipelcat(pipe,cpBuf,dwRead);
+
+			bSuccess = WriteFile(hStdOut, (LPVOID)cpBuf, dwRead, &dwWritten, NULL);
+			if (! bSuccess ) break; 
+
+		} 
+
+	     // no need to close this because it got closed when the process exited. Closing it again will cast error if run under a debugger.
+		//CloseHandle(g_hChildStd_OUT_Wr);
+		CloseHandle(hStdOut);
+	}
+
+
     return TRUE;
+
 }
 
 
-// end a VM with given index
-BOOL EndProcess(int nIndex) 
+
+
+
+char *nIndexTopVmName(int nIndex) {
+	char pItem[nBufferSize+1];
+	static char pVmName[nBufferSize+1];
+
+
+	sprintf_s(pItem,"Vm%d\0",nIndex);
+
+	// get VmName
+	GetPrivateProfileString(pItem,"VmName","",pVmName,nBufferSize,pInitFile);
+	if (strlen(pVmName) == 0) {
+		return NULL;
+	}
+
+	return pVmName;
+}
+
+// helper function
+// RunVBoxManage with printf style arguments
+BOOL VBoxManage(LPPIPEINST pipe, LPCSTR formatstring, ...) {
+	int nSize = 0;
+	char myarguments[255];
+   	char pItem[nBufferSize+1];
+	char pWorkingDir[nBufferSize+1];
+	char pCommandLine[nBufferSize+1];
+	char pTemp[121];
+
+	// handle custom arguments
+	va_list args;
+	va_start(args, formatstring);
+
+	nSize = _vsnprintf( myarguments, sizeof(myarguments), formatstring, args);
+	if ( nSize > (sizeof(myarguments) -2) ) {
+		printf("VBoxManage: Arguments \"%s\" is to long\n", myarguments);
+		return false;
+	}
+
+
+
+	// get full path to VBoxManage.exe
+	char pVBoxManagePath[nBufferSize+1];
+	if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxManagePath, nBufferSize) == 0)
+	{
+	    sprintf_s(pTemp, "VBOX_INSTALL_PATH not found."); 
+	    WriteLog(pTemp);
+		return false;
+	}
+	strcat(pVBoxManagePath, "VBoxManage.exe");
+
+	// get working dir
+	GetPrivateProfileString(pItem,"WorkingDir","",pWorkingDir,nBufferSize,pInitFile);
+  
+
+	// runn the coomand to check status and write back to Pipe
+	if (!RunConsoleApp(pVBoxManagePath, myarguments, pWorkingDir, pipe)) {
+		long nError = GetLastError();
+		sprintf_s(pTemp,"Failed execute VBoxManage.exe using command: '%s', error code = %d", pCommandLine, nError); 
+		WriteLog(pTemp);
+		return FALSE;
+	}
+	return true;
+
+}
+
+// start a VM with given index
+BOOL StartProcess(int nIndex, LPPIPEINST pipe) 
 { 
-    char pItem[nBufferSize+1];
-    sprintf_s(pItem,"Vm%d\0",nIndex);
+		char pVrdpPort[nBufferSize+1];
+		char *cp;
+		char pItem[nBufferSize+1];
 
-    // get VmName
-    char pVmName[nBufferSize+1];
-    GetPrivateProfileString(pItem,"VmName","",pVmName,nBufferSize,pInitFile);
-    if (strlen(pVmName) == 0)
-        return FALSE;
+		cp = nIndexTopVmName( nIndex );
+		if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return false; }
 
-    // get working dir
-    char pWorkingDir[nBufferSize+1];
-    GetPrivateProfileString(pItem,"WorkingDir","",pWorkingDir,nBufferSize,pInitFile);
 
-    // get ShutdownMethod
-    char pShutdownMethod[nBufferSize+1];
-    GetPrivateProfileString(pItem,"ShutdownMethod","",pShutdownMethod,nBufferSize,pInitFile);
+		// get VrdpPort
+		sprintf_s(pItem,"Vm%d\0",nIndex);
+		GetPrivateProfileString(pItem,"VrdpPort","",pVrdpPort,nBufferSize,pInitFile);
 
-    // open handle to VBoxVmService.log
-    SECURITY_ATTRIBUTES sa;
-    sa.nLength = sizeof (SECURITY_ATTRIBUTES);
-    sa.lpSecurityDescriptor = NULL;
-    sa.bInheritHandle = TRUE;
-    HANDLE hStdOut = CreateFile(pLogFile, FILE_APPEND_DATA, FILE_SHARE_READ | FILE_SHARE_WRITE, &sa, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
-    char pTemp[121];
-    sprintf_s(pTemp,"Shutting down VM : '%s' with option %s", pVmName, pShutdownMethod); 
-    WriteLog(pTemp);
+		// run VBoxManage.exe showvminfo VmName
+		VBoxManage(pipe, "-nologo showvminfo \"%s\"", cp);
 
-    // get full path to VBoxManage.exe
-    char pVBoxManagePath[nBufferSize+1];
-    if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxManagePath, nBufferSize) == 0)
-    {
-        sprintf_s(pTemp, "Failed to stop VM: VBOX_INSTALL_PATH not found."); 
-        WriteLog(pTemp);
-        return FALSE;
-    }
-    strcat(pVBoxManagePath, "VBoxManage.exe");
+		// run VBoxManage.exe modifyvm VmName --vrdpport
+		VBoxManage(pipe, "-nologo modifyvm \"%s\" --vrdpport %s", cp, pVrdpPort);
 
-    // prepare for creating process
-    STARTUPINFO si;
-    ZeroMemory(&si, sizeof(STARTUPINFO));
-    si.cb = sizeof(STARTUPINFO);
-    si.dwFlags = STARTF_USESHOWWINDOW | STARTF_USESTDHANDLES;
-    si.wShowWindow = SW_HIDE;
-    si.lpDesktop = "";
-    si.hStdOutput = hStdOut;
+		// run VBoxManage.exe startvm VmName --type vrdp
+		VBoxManage(pipe, "-nologo startvm \"%s\" --type vrdp", cp);
 
-    // run VBoxManage.exe controlvm VmName ShutdownMethod
-    char pCommandLine[nBufferSize+1];
-    sprintf(pCommandLine, "\"%s\" controlvm \"%s\" %s", pVBoxManagePath, pVmName, pShutdownMethod);
-    PROCESS_INFORMATION pProcInfo;
-    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo))
-    {
-        long nError = GetLastError();
-        sprintf_s(pTemp,"Failed to stop VM using command: '%s', error code = %d", pCommandLine, nError); 
-        WriteLog(pTemp);
-        return FALSE;
-    }
-    WaitForSingleObject(pProcInfo.hProcess, INFINITE);
-    CloseHandle(pProcInfo.hProcess);
-    CloseHandle(pProcInfo.hThread);
+		nProcStatus[nIndex] = 1;
+		return true;
 
-    CloseHandle(hStdOut);
-    nProcStatus[nIndex] = 0;
-    return TRUE;
+}
+// end a VM with given index
+BOOL EndProcess(int nIndex, LPPIPEINST pipe) 
+{
+		char pItem[nBufferSize+1];
+		char pShutdownMethod[nBufferSize+1];
+		char *cp;
+
+
+        cp = nIndexTopVmName( nIndex );
+		if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return false; }
+
+		// get ShutdownMethod
+		sprintf_s(pItem,"Vm%d\0",nIndex);
+		GetPrivateProfileString(pItem,"ShutdownMethod","",pShutdownMethod,nBufferSize,pInitFile);
+
+		VBoxManage(pipe, "-nologo controlvm \"%s\" \"%s\"", cp, pShutdownMethod);
+
+		nProcStatus[nIndex] = 0;
+		return true;
 }
 
 

@@ -16,10 +16,13 @@ void show_usage()
     printf("       -s        Start VBoxVmService service\n");
     printf("       -k        Stop VBoxVmService service\n");
     printf("       -b        Restart VBoxVmService service\n");
+	printf("       -e        Print service environment\n");
     // this option is hidden because it's not very usefull
     //printf("       -b n      Restart VM with index n\n");
     printf("       -su n     Startup VM with index n\n");
     printf("       -sd n     Shutdown VM with index n\n");
+	printf("       -st n     Show status for VM with index n\n");
+	printf("       -sp n     Show guest properties if Guest Additions are installed\n                 for VM with index n\n");
     printf("\n");
 }
 

@@ -298,6 +298,13 @@ VOID Install(char* pPath, char* pName)
                 fprintf_s(stderr, "Failed to set VBOX_USER_HOME environment\n");
             }
 
+			// Broadcasting registry change to all of your processes/windows. Do not update prossesses for other users.
+			printf("Broadcasting registry change to all of your processes.\n");
+			DWORD dwReturnValue;
+			SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, 0,
+				(LPARAM) "Environment", SMTO_ABORTIFHUNG,
+				5000, &dwReturnValue);
+
             // also set environment variable for current process, so that
             // no reboot is required after installation.
             SetEnvironmentVariable("VBOX_USER_HOME", pVboxUserHome);

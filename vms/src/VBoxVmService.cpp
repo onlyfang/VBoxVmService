@@ -37,6 +37,24 @@ void WriteLog(char* pMsg)
     } catch(...) {}
 }
 
+//Write to both the pipe and log
+void WriteLogPipe(LPPIPEINST pipe, LPCSTR formatstring, ...){
+
+	char pTemp[nBufferSize+1];
+	DWORD pLen;
+	va_list args;
+	va_start(args, formatstring);
+
+	if (pipe==NULL) { return;}
+
+
+	pLen = _vsnprintf(pTemp, sizeof(pTemp), formatstring, args);
+
+	//append to pipe
+	pipelcat(pipe, pTemp, pLen);
+	//append to log
+	WriteLog(pTemp);
+}
 ////////////////////////////////////////////////////////////////////// 
 //
 // Configuration Data and Tables

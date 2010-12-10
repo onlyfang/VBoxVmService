@@ -320,6 +320,7 @@ BOOL SendCommandToService(char * message)
 {
     HANDLE hPipe = INVALID_HANDLE_VALUE;
     DWORD dwError = 0;
+	
     while (true) 
     { 
         hPipe = ::CreateFile((LPSTR)"\\\\.\\pipe\\VBoxVmService", 
@@ -372,7 +373,7 @@ void main(int argc, char *argv[] )
     sprintf_s(pInitFile,"%s\\VBoxVmService.ini",pModuleFile);
     
 
-    GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
+	GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
     // uninstall service if switch is "-u"
     if(argc==2&&_stricmp("-u",argv[1])==0)
     {
@@ -421,8 +422,8 @@ void main(int argc, char *argv[] )
         int nIndex = atoi(argv[2]);
         char pCommand[80];
         sprintf_s(pCommand, "start %u", nIndex);
-        if(SendCommandToService(pCommand))
-            fprintf_s(stdout, "Started your virtual machine, VM%d\n", nIndex);
+        if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
+            fprintf_s(stdout, "Started your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
         else
             fprintf_s(stderr, "Failed to send command to service.\n");
     }
@@ -439,8 +440,8 @@ void main(int argc, char *argv[] )
         int nIndex = atoi(argv[2]);
         char pCommand[80];
         sprintf_s(pCommand, "stop %u", nIndex);
-        if(SendCommandToService(pCommand))
-            fprintf_s(stdout, "Shutdown your virtual machine, VM%d\n", nIndex);
+        if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
+            fprintf_s(stdout, "Shutdown your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
         else
             fprintf_s(stderr, "Failed to send command to service.\n");
     }

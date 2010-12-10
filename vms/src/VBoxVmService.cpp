@@ -330,7 +330,20 @@ BOOL EndProcess(int nIndex, LPPIPEINST pipe)
 		return true;
 }
 
+// Run "set" on the windows commandline to get the execution environment
+BOOL CmdEnv(LPPIPEINST pipe) {
 
+	char pCommandLine[nBufferSize+1];
+
+	//create command to run.   
+	sprintf_s(pCommandLine, "C:\\Windows\\System32\\cmd /C set");
+
+	// runn the coomand to check status and write back to Pipe
+	RunConsoleApp(NULL, pCommandLine, "C:\\Windows\\System32", pipe);
+
+
+	return true;	
+}
 
 ////////////////////////////////////////////////////////////////////// 
 //

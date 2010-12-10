@@ -414,8 +414,9 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
     {
         case SERVICE_CONTROL_STOP:
         case SERVICE_CONTROL_SHUTDOWN:
-            bServiceRunning = FALSE;
 
+			//tell PipeManager to exit.
+			PipeManagerExit();
             // also tell SCM we'll need some time to shutdown
             serviceStatus.dwCurrentState = SERVICE_STOP_PENDING;
             {
@@ -441,8 +442,8 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
                 if(nIndex>=0&&nIndex<nMaxProcCount)
                 {
                     if (nProcStatus[nIndex] == 1)
-                        EndProcess(nIndex);
-                    StartProcess(nIndex);
+                        EndProcess(nIndex, NULL);
+                    StartProcess(nIndex, NULL);
                 }
                 // bounce all processes
                 else if(nIndex==127)
@@ -450,11 +451,11 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
                     for(int i=nMaxProcCount-1;i>=0;i--)
                     {
                         if (nProcStatus[i] == 1)
-                            EndProcess(i);
+                            EndProcess(i, NULL);
                     }
                     for(int i=0;i<nMaxProcCount;i++)
                     {
-                        if (!StartProcess(i))
+                        if (!StartProcess(i, NULL))
                             break;
                     }
                 }
@@ -477,143 +478,87 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
 }
 
 
-void WorkerProc(void* pParam)
+void WorkerHandleCommand(LPPIPEINST pipe) 
+{
+	char pVboxUserHome[nBufferSize+1];
+	char pTemp[121];
+    char buffer[80]; 
+	char *cp;
+    memset(buffer, 0, 80);
+
+
+	StringCchCopy(buffer, nBufferSize, pipe->chRequest);
+
+	sprintf_s(pTemp, "Received control command: %s", buffer);
+    WriteLog(pTemp);
+
+    // set environment variable for current process, so that
+    // no reboot is required after installation.
+    GetPrivateProfileString("Settings","VBOX_USER_HOME","",pVboxUserHome,nBufferSize,pInitFile);
+    if (! SetEnvironmentVariable("VBOX_USER_HOME", pVboxUserHome)) 
+    {
+        printf("SetEnvironmentVariable failed (%d)\n", GetLastError()); 
+    }
+            
+
+    // process command
+    if (strncmp(buffer, "start", 5) == 0)
+    {
+        int nIndex = atoi(buffer + 6);
+		StartProcess(nIndex,pipe);
+    }
+    else if (strncmp(buffer, "stop", 4) == 0)
+    {
+		int nIndex = atoi(buffer + 5);
+		EndProcess(nIndex,pipe);
+    }
+    else if (strncmp(buffer, "status", 6) == 0)
+    {
+		cp = nIndexTopVmName( atoi(buffer + 7) );
+		if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return; }
+		VBoxManage(pipe, "-nologo showvminfo \"%s\"", cp);	  
+    }
+	else if (strncmp(buffer, "env", 3) == 0)
+    {
+		CmdEnv(pipe);
+    }
+	else if (strncmp(buffer, "shutdown", 8) == 0)
+    {
+		VBoxVmServiceHandler(SERVICE_CONTROL_SHUTDOWN);
+    }
+	else if (strncmp(buffer, "guestpropertys", 14) == 0)
+    {
+        cp = nIndexTopVmName( atoi(buffer + 15) );
+		if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return; }
+		VBoxManage(pipe, "-nologo guestproperty enumerate \"%s\"", cp);
+    }	
+	else {
+		printf("Unknown command \"%s\"\n", buffer);
+	}
+
+
+
+
+
+}
+
+unsigned __stdcall WorkerProc(void* pParam)
 {
     const int nMessageSize = 80;
-    char pTemp[121];
-
-    // create named pipe
-    SECURITY_ATTRIBUTES sa;
-    sa.lpSecurityDescriptor = (PSECURITY_DESCRIPTOR)malloc(SECURITY_DESCRIPTOR_MIN_LENGTH);
-    if (!InitializeSecurityDescriptor(sa.lpSecurityDescriptor, SECURITY_DESCRIPTOR_REVISION))
-    {
-        DWORD er = ::GetLastError();
-        sprintf_s(pTemp, "InitializeSecurityDescriptor failed, error code = %d", er);
-        WriteLog(pTemp);
-        return;
-    }
-    if (!SetSecurityDescriptorDacl(sa.lpSecurityDescriptor, TRUE, (PACL)0, FALSE))
-    {
-        DWORD er = ::GetLastError();
-        sprintf_s(pTemp, "SetSecurityDescriptorDacl failed, error code = %d", er);
-        WriteLog(pTemp);
-        return;
-    }
-    sa.nLength = sizeof sa;
-    sa.bInheritHandle = TRUE;
-
-    HANDLE hPipe = ::CreateNamedPipe((LPSTR)"\\\\.\\pipe\\VBoxVmService",
-            PIPE_ACCESS_INBOUND | FILE_FLAG_OVERLAPPED, 
-            PIPE_TYPE_MESSAGE | PIPE_READMODE_MESSAGE | PIPE_WAIT, 
-            PIPE_UNLIMITED_INSTANCES, nMessageSize, 
-            nMessageSize, 500, &sa);
-
-    if (hPipe == INVALID_HANDLE_VALUE)
-    {
-        DWORD dwError = ::GetLastError();
-        sprintf_s(pTemp, "CreateNamedPipe failed, error code = %d", dwError);
-        WriteLog(pTemp);
-        return;
-    }
-
-    bServiceRunning = TRUE;
-
-    // waiting for commands
-    while (bServiceRunning)
-    {
-        OVERLAPPED ol;
-
-        memset(&ol, 0, sizeof(OVERLAPPED));
-        ol.hEvent = CreateEvent( NULL, TRUE, FALSE, NULL);
-
-        BOOL bResult = ConnectNamedPipe( hPipe, &ol);
-
-        if( !bResult )
-        {
-            switch( GetLastError() )
-            {
-                case ERROR_PIPE_CONNECTED:
-                    bResult = TRUE;
-                    break;
-
-                case ERROR_IO_PENDING:
-                    if( WaitForSingleObject(ol.hEvent, 500) == WAIT_OBJECT_0 )
-                    {
-                        DWORD dwIgnore;
-
-                        bResult = GetOverlappedResult(
-                                hPipe,
-                                &ol,
-                                &dwIgnore,
-                                FALSE);
-                    }
-                    else
-                        CancelIo(hPipe);
-
-                    break;
-            }
-        }
 
 
-        if(bResult)
-        {
-            char buffer[80]; 
-            memset(buffer, 0, 80);
-            DWORD dwRead = 0;
+	//PipeManager will handel all pipe connections
+	PipeManager("\\\\.\\pipe\\VBoxVmService", WorkerHandleCommand);
 
-            bResult = ReadFile(hPipe, buffer, 80, &dwRead, &ol);
-            if (!bResult)
-            {
-                if (GetLastError() == ERROR_IO_PENDING)
-                {
-                    if( WaitForSingleObject(ol.hEvent, 500) == WAIT_OBJECT_0 )
-                    {
-                        bResult = GetOverlappedResult(
-                                hPipe,
-                                &ol,
-                                &dwRead,
-                                FALSE);
-                    }
-                    else
-                        CancelIo(hPipe);
-                }
 
-            } 
-            if (bResult && dwRead > 0)
-            {
-                sprintf_s(pTemp, "Received control command: %s", buffer);
-                WriteLog(pTemp);
-
-                // process command
-                if (strncmp(buffer, "start", 5) == 0)
-                {
-                    int nIndex = atoi(buffer + 6);
-                    StartProcess(nIndex);
-                }
-                else if (strncmp(buffer, "stop", 4) == 0)
-                {
-                    int nIndex = atoi(buffer + 5);
-                    EndProcess(nIndex);
-                }
-                else if (strncmp(buffer, "status", 6) == 0)
-                {
-                    int nIndex = atoi(buffer + 7);
-                    // Todo: check status and write back to Pipe
-                }
-            }
-            ::DisconnectNamedPipe(hPipe);
-        }
-        CloseHandle(ol.hEvent);
-    }
-    CloseHandle(hPipe);
-
-    BOOL bShouldWait = FALSE;
+	//gracefully ending the service
+	BOOL bShouldWait = FALSE;
     // terminate all running processes before shutdown
     for(int i=nMaxProcCount-1;i>=0;i--)
     {
         if (nProcStatus[i] == 1)
         {
-            EndProcess(i);
+            EndProcess(i, NULL);
             bShouldWait = TRUE;
         }
     }			
@@ -636,6 +581,9 @@ void WorkerProc(void* pParam)
         sprintf_s(pTemp, "SetServiceStatus failed, error code = %d", nError);
         WriteLog(pTemp);
     }
+
+	return 1;
+
 }
 
 ////////////////////////////////////////////////////////////////////// 

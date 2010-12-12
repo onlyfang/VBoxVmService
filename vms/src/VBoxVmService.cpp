@@ -497,7 +497,6 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
 
 void WorkerHandleCommand(LPPIPEINST pipe) 
 {
-	char pVboxUserHome[nBufferSize+1];
     char pTemp[121];
     char buffer[80]; 
     char *cp;
@@ -508,15 +507,6 @@ void WorkerHandleCommand(LPPIPEINST pipe)
 
     sprintf_s(pTemp, "Received control command: %s", buffer);
     WriteLog(pTemp);
-
-    // set environment variable for current process, so that
-    // no reboot is required after installation.
-    GetPrivateProfileString("Settings","VBOX_USER_HOME","",pVboxUserHome,nBufferSize,pInitFile);
-    if (! SetEnvironmentVariable("VBOX_USER_HOME", pVboxUserHome)) 
-    {
-        printf("SetEnvironmentVariable failed (%d)\n", GetLastError()); 
-    }
-            
 
     // process command
     if (strncmp(buffer, "start", 5) == 0)

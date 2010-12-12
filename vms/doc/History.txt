@@ -33,6 +33,9 @@
 Changes since version Release 2.0 "Red Dragon"
 
 * PauseShutdown now became global setting. When service is stopped, it doesn't make sence to wait VM0 to shutdown, then VM1, then VM2, ..., etc. Now all the VMs will start shutting down at once, and all are expected to finish within time specified as PauseShutdown.
+* Added too way communication between the service and control program. Show service output after control command get executed.
+* Added new commands to show current VM status and check service environment.
+* Better input sanitizing.
 
 Changes since version rel20100817-win7
 

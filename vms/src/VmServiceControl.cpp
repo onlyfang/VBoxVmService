@@ -305,10 +305,6 @@ VOID Install(char* pPath, char* pName)
 				(LPARAM) "Environment", SMTO_ABORTIFHUNG,
 				5000, &dwReturnValue);
 
-            // also set environment variable for current process, so that
-            // no reboot is required after installation.
-            SetEnvironmentVariable("VBOX_USER_HOME", pVboxUserHome);
-
             fprintf_s(stdout, "Service %s installed\n", pName);
             CloseServiceHandle(schService); 
         }

@@ -22,7 +22,6 @@ char pInitFile[nBufferSize+1];
 char pLogFile[nBufferSize+1];
 const int nMaxProcCount = 100;
 int nProcStatus[nMaxProcCount];
-BOOL bServiceRunning;
 
 SERVICE_STATUS          serviceStatus; 
 SERVICE_STATUS_HANDLE   hServiceStatusHandle; 
@@ -44,45 +43,44 @@ void WriteLog(char* pMsg)
     } catch(...) {}
 }
 
-//Write to both the pipe and log
+// Write to both the pipe and log
 void WriteLogPipe(LPPIPEINST pipe, LPCSTR formatstring, ...){
 
-	char pTemp[nBufferSize+1];
-	DWORD pLen;
-	va_list args;
-	va_start(args, formatstring);
+    char pTemp[nBufferSize+1];
+    DWORD pLen;
+    va_list args;
+    va_start(args, formatstring);
 
-	if (pipe==NULL) { return;}
+    pLen = _vsnprintf(pTemp, sizeof(pTemp), formatstring, args);
 
+    //append to log
+    WriteLog(pTemp);
 
-	pLen = _vsnprintf(pTemp, sizeof(pTemp), formatstring, args);
-
-	//append to pipe
-	pipelcat(pipe, pTemp, pLen);
-	//append to log
-	WriteLog(pTemp);
+    //append to pipe
+    if (pipe)
+        pipelcat(pipe, pTemp, pLen);
 }
 
-// Routine to make give human readable description, instead of just the error id.
+// Routine to make human readable description, instead of just the error id.
 char *ErrorString(DWORD err)
-    {
+{
+    const DWORD buffsize = 300+1;
+    static char buff[buffsize];
 
-     const DWORD buffsize = 300+1;
-	 static char buff[buffsize];
-
-     if(FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
-            NULL,
-            err,
-            0,
-            buff,
-            buffsize,
-            NULL) == 0)
-	 { 
-		 // FormatMessage failed
-		 sprintf_s(buff,"Unknown error with error code = %d", err);
-	 }
-     return buff;
+    if(FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
+                NULL,
+                err,
+                0,
+                buff,
+                buffsize,
+                NULL) == 0)
+    { 
+        // FormatMessage failed
+        sprintf_s(buff,"Unknown error with error code = %d", err);
+    }
+    return buff;
 } // ErrorString
+
 ////////////////////////////////////////////////////////////////////// 
 //
 // Configuration Data and Tables
@@ -100,63 +98,61 @@ SERVICE_TABLE_ENTRY   DispatchTable[] =
 char *pipelcat(LPPIPEINST pipe, const char *src, int srclength) {
 
 
-	if (pipe==NULL) {return NULL;}
+    if (pipe==NULL) {return NULL;}
 
-	if (srclength == -1) {
-		srclength = strlen(src);
-	}
-	//Debug: uncoment to see write stat
-	//printf("pipelcat(cbToWrite=%d, srclength=%d)\n",pipe->cbToWrite,srclength);
+    if (srclength == -1) {
+        srclength = strlen(src);
+    }
+    //Debug: uncoment to see write stat
+    //printf("pipelcat(cbToWrite=%d, srclength=%d)\n",pipe->cbToWrite,srclength);
 
-	// test for free space, If we don't have space for the whole string we just return.
-	if (((srclength + pipe->cbToWrite)) > (sizeof(pipe->chReply) -1)) {
-		return NULL;
-	}
+    // test for free space, If we don't have space for the whole string we just return.
+    if (((srclength + pipe->cbToWrite)) > (sizeof(pipe->chReply) -1)) {
+        return NULL;
+    }
 
-	strncpy(pipe->chReply + pipe->cbToWrite, src, srclength);
-	pipe->cbToWrite += srclength;
+    strncpy(pipe->chReply + pipe->cbToWrite, src, srclength);
+    pipe->cbToWrite += srclength;
 
-	pipe->chReply[pipe->cbToWrite +1] = '\0'; //Amen 
+    pipe->chReply[pipe->cbToWrite +1] = '\0'; //Amen 
 
-	//Debug: Uncoment to se new size in cbToWrite
-	//printf("~pipelcat(cbToWrite=%d)\n",pipe->cbToWrite);
-	return pipe->chReply;
+    //Debug: Uncoment to se new size in cbToWrite
+    //printf("~pipelcat(cbToWrite=%d)\n",pipe->cbToWrite);
+    return pipe->chReply;
 }
 
 /*
-Run a console app by calling the pCommandLine.
+   Run a console app by calling the pCommandLine.
 
-The stdout is loged to the VBoxVmService.log logfile. If chBufBufferSize is not 0 we also store the stdout output in the chBuf buffer. 
-An easy way of calling this is to use conditional assignment for chBuf and chBufBufferSize. For example “(pipe==NULL) ? NULL : pipe->chReply” means that if pipe is NULL we will send inn NULL, if it is not NULL we wil send “pipe->chReply”.
+   The stdout is loged to the VBoxVmService.log logfile. If chBufBufferSize is not 0 we also store the stdout output in the chBuf buffer. 
+   An easy way of calling this is to use conditional assignment for chBuf and chBufBufferSize. For example (pipe==NULL) ? NULL : pipe->chReply means that if pipe is NULL we will send inn NULL, if it is not NULL we wil send pipe->chReply
 
-Read more about conditional assignments at: http://en.wikipedia.org/wiki/%3F:
+   Read more about conditional assignments at: http://en.wikipedia.org/wiki/%3F:
 
 */
 BOOL RunConsoleApp(LPCTSTR ApplicationName, char pCommandLine[], char pWorkingDir[], LPPIPEINST pipe) 
 { 
-    
 
-	HANDLE g_hChildStd_OUT_Rd = NULL;
-	HANDLE g_hChildStd_OUT_Wr = NULL;
-	HANDLE hStdOut = NULL;
-	char pTemp[nBufferSize+1];
-	char cpBuf[nBufferSize];
 
-	printf("RunConsoleApp(ApplicationName=%s, pCommandLine=%s)\n",ApplicationName,pCommandLine);
-	 
-	// Set the bInheritHandle flag so pipe handles are inherited.
+    HANDLE g_hChildStd_OUT_Rd = NULL;
+    HANDLE g_hChildStd_OUT_Wr = NULL;
+    HANDLE hStdOut = NULL;
+    char pTemp[nBufferSize+1];
+    char cpBuf[nBufferSize];
+
+    // Set the bInheritHandle flag so pipe handles are inherited.
     SECURITY_ATTRIBUTES sa;
     sa.nLength = sizeof (SECURITY_ATTRIBUTES);
     sa.lpSecurityDescriptor = NULL;
     sa.bInheritHandle = TRUE;
-	// open handle to VBoxVmService.log
+    // open handle to VBoxVmService.log
     hStdOut = CreateFile(pLogFile, FILE_APPEND_DATA, FILE_SHARE_READ | FILE_SHARE_WRITE, &sa, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
-    
 
-	sprintf_s(pTemp,"Running coomand: '%s'.", pCommandLine); 
+
+    sprintf_s(pTemp,"Running coomand: '%s'.", pCommandLine); 
     WriteLog(pTemp);
 
-	// prepare for creating process
+    // prepare for creating process
     STARTUPINFO si;
     ZeroMemory(&si, sizeof(STARTUPINFO));
     si.cb = sizeof(STARTUPINFO);
@@ -166,29 +162,29 @@ BOOL RunConsoleApp(LPCTSTR ApplicationName, char pCommandLine[], char pWorkingDi
     si.hStdOutput = hStdOut;
 
 
-	if (pipe != NULL) {
-		SECURITY_ATTRIBUTES sahChildStd; 
-		sahChildStd.nLength = sizeof(SECURITY_ATTRIBUTES); 
-		sahChildStd.bInheritHandle = TRUE; 
-		sahChildStd.lpSecurityDescriptor = NULL;
-		// Create a pipe for the child process's STDOUT.
-		if ( ! CreatePipe(&g_hChildStd_OUT_Rd, &g_hChildStd_OUT_Wr, &sahChildStd, 0) ) 
-		{
-			sprintf_s(pTemp,"Error StdoutRd CreatePipe while runing : '%s'.", pCommandLine); 
-			WriteLog(pTemp);
-		}
-		// Ensure the read handle to the pipe for STDOUT is not inherited.
-		if ( ! SetHandleInformation(g_hChildStd_OUT_Rd, HANDLE_FLAG_INHERIT, 0) )
-		{
-			sprintf_s(pTemp,"Error Stdout SetHandleInformation while runing: '%s'.", pCommandLine); 
-			WriteLog(pTemp);
-		}
+    if (pipe != NULL) {
+        SECURITY_ATTRIBUTES sahChildStd; 
+        sahChildStd.nLength = sizeof(SECURITY_ATTRIBUTES); 
+        sahChildStd.bInheritHandle = TRUE; 
+        sahChildStd.lpSecurityDescriptor = NULL;
+        // Create a pipe for the child process's STDOUT.
+        if ( ! CreatePipe(&g_hChildStd_OUT_Rd, &g_hChildStd_OUT_Wr, &sahChildStd, 0) ) 
+        {
+            sprintf_s(pTemp,"Error StdoutRd CreatePipe while runing : '%s'.", pCommandLine); 
+            WriteLog(pTemp);
+        }
+        // Ensure the read handle to the pipe for STDOUT is not inherited.
+        if ( ! SetHandleInformation(g_hChildStd_OUT_Rd, HANDLE_FLAG_INHERIT, 0) )
+        {
+            sprintf_s(pTemp,"Error Stdout SetHandleInformation while runing: '%s'.", pCommandLine); 
+            WriteLog(pTemp);
+        }
 
-		// overriding VBoxVmService.log handler
-		si.hStdOutput = g_hChildStd_OUT_Wr;
-	}
+        // overriding VBoxVmService.log handler
+        si.hStdOutput = g_hChildStd_OUT_Wr;
+    }
 
-	// Run the command
+    // Run the command
     PROCESS_INFORMATION pProcInfo;
     if(!CreateProcess(ApplicationName,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo))
     {
@@ -196,181 +192,174 @@ BOOL RunConsoleApp(LPCTSTR ApplicationName, char pCommandLine[], char pWorkingDi
     }
 
 
-	// Close handles to the child process and its primary thread.
+    // Close handles to the child process and its primary thread.
     // Some applications might keep these handles to monitor the status
     // of the child process, for example. 
     WaitForSingleObject(pProcInfo.hProcess, INFINITE);
     CloseHandle(pProcInfo.hProcess);
     CloseHandle(pProcInfo.hThread);
 
-	if (pipe != NULL) {
-		// Read output from the child process's pipe for STDOUT
-		// and write to the parent process's error log and buff. 
-		// Stop when there is no more data. 
-		DWORD dwRead, dwWritten; 
-		BOOL bSuccess = FALSE;
+    if (pipe != NULL) {
+        // Read output from the child process's pipe for STDOUT
+        // and write to the parent process's error log and buff. 
+        // Stop when there is no more data. 
+        DWORD dwRead, dwWritten; 
+        BOOL bSuccess = FALSE;
 
-		// Close the write end of the pipe before reading from the 
-		// read end of the pipe, to control child process execution.
-		if (!CloseHandle(g_hChildStd_OUT_Wr)) 
-		{
-  			sprintf_s(pTemp,"Error StdOutWr CloseHandle ruuing: '%s'.", pCommandLine); 
-			WriteLog(pTemp);
-		}
+        // Close the write end of the pipe before reading from the 
+        // read end of the pipe, to control child process execution.
+        if (!CloseHandle(g_hChildStd_OUT_Wr)) 
+        {
+            sprintf_s(pTemp,"Error StdOutWr CloseHandle ruuing: '%s'.", pCommandLine); 
+            WriteLog(pTemp);
+        }
 
-		// reading while we have data to read
-		for (;;) 
-		{ 
+        // reading while we have data to read
+        for (;;) 
+        { 
 
-			bSuccess = ReadFile( g_hChildStd_OUT_Rd, (LPVOID)cpBuf, sizeof(cpBuf) , &dwRead, NULL);
-			if( ! bSuccess || dwRead == 0 ) break;
+            bSuccess = ReadFile( g_hChildStd_OUT_Rd, (LPVOID)cpBuf, sizeof(cpBuf) , &dwRead, NULL);
+            if( ! bSuccess || dwRead == 0 ) break;
 
-			pipelcat(pipe,cpBuf,dwRead);
+            pipelcat(pipe,cpBuf,dwRead);
 
-			bSuccess = WriteFile(hStdOut, (LPVOID)cpBuf, dwRead, &dwWritten, NULL);
-			if (! bSuccess ) break; 
+            bSuccess = WriteFile(hStdOut, (LPVOID)cpBuf, dwRead, &dwWritten, NULL);
+            if (! bSuccess ) break; 
 
-		} 
+        } 
 
-	     // no need to close this because it got closed when the process exited. Closing it again will cast error if run under a debugger.
-		//CloseHandle(g_hChildStd_OUT_Wr);
-		CloseHandle(hStdOut);
-	}
-
+        // no need to close this because it got closed when the process exited. Closing it again will cast error if run under a debugger.
+        //CloseHandle(g_hChildStd_OUT_Wr);
+        CloseHandle(hStdOut);
+    }
 
     return TRUE;
-
 }
 
-
-
-
-
 char *nIndexTopVmName(int nIndex) {
-	char pItem[nBufferSize+1];
-	static char pVmName[nBufferSize+1];
+    char pItem[nBufferSize+1];
+    static char pVmName[nBufferSize+1];
 
+    sprintf_s(pItem,"Vm%d\0",nIndex);
 
-	sprintf_s(pItem,"Vm%d\0",nIndex);
+    // get VmName
+    GetPrivateProfileString(pItem,"VmName","",pVmName,nBufferSize,pInitFile);
+    if (strlen(pVmName) == 0) {
+        return NULL;
+    }
 
-	// get VmName
-	GetPrivateProfileString(pItem,"VmName","",pVmName,nBufferSize,pInitFile);
-	if (strlen(pVmName) == 0) {
-		return NULL;
-	}
-
-	return pVmName;
+    return pVmName;
 }
 
 // helper function
 // RunVBoxManage with printf style arguments
 BOOL VBoxManage(LPPIPEINST pipe, LPCSTR formatstring, ...) {
-	int nSize = 0;
-	char myarguments[255];
-   	char pItem[nBufferSize+1];
-	char pWorkingDir[nBufferSize+1];
-	char pCommandLine[nBufferSize+1];
-	char pTemp[121];
+    int nSize = 0;
+    char myarguments[255];
+    char pItem[nBufferSize+1];
+    char pWorkingDir[nBufferSize+1];
+    char pCommandLine[nBufferSize+1];
+    char pTemp[121];
 
-	// handle custom arguments
-	va_list args;
-	va_start(args, formatstring);
+    // handle custom arguments
+    va_list args;
+    va_start(args, formatstring);
 
-	nSize = _vsnprintf( myarguments, sizeof(myarguments), formatstring, args);
-	if ( nSize > (sizeof(myarguments) -2) ) {
-		printf("VBoxManage: Arguments \"%s\" is to long\n", myarguments);
-		return false;
-	}
+    nSize = _vsnprintf( myarguments, sizeof(myarguments), formatstring, args);
+    if ( nSize > (sizeof(myarguments) -2) ) {
+        sprintf_s(pTemp, "VBoxManage: Arguments \"%s\" is to long\n", myarguments);
+        WriteLog(pTemp);
+        return false;
+    }
 
 
 
-	// get full path to VBoxManage.exe
-	char pVBoxManagePath[nBufferSize+1];
-	if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxManagePath, nBufferSize) == 0)
-	{
-	    sprintf_s(pTemp, "VBOX_INSTALL_PATH not found."); 
-	    WriteLog(pTemp);
-		return false;
-	}
-	strcat(pVBoxManagePath, "VBoxManage.exe");
+    // get full path to VBoxManage.exe
+    char pVBoxManagePath[nBufferSize+1];
+    if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxManagePath, nBufferSize) == 0)
+    {
+        sprintf_s(pTemp, "VBOX_INSTALL_PATH not found."); 
+        WriteLog(pTemp);
+        return false;
+    }
+    strcat(pVBoxManagePath, "VBoxManage.exe");
 
-	// get working dir
-	GetPrivateProfileString(pItem,"WorkingDir","",pWorkingDir,nBufferSize,pInitFile);
-  
+    // get working dir
+    GetPrivateProfileString(pItem,"WorkingDir","",pWorkingDir,nBufferSize,pInitFile);
 
-	// runn the coomand to check status and write back to Pipe
-	if (!RunConsoleApp(pVBoxManagePath, myarguments, pWorkingDir, pipe)) {
-		long nError = GetLastError();
-		sprintf_s(pTemp,"Failed execute VBoxManage.exe using command: '%s', error code = %d", pCommandLine, nError); 
-		WriteLog(pTemp);
-		return FALSE;
-	}
-	return true;
+    // runn the coomand to check status and write back to Pipe
+    if (!RunConsoleApp(pVBoxManagePath, myarguments, pWorkingDir, pipe)) {
+        long nError = GetLastError();
+        sprintf_s(pTemp,"Failed execute VBoxManage.exe using command: '%s', error code = %d", pCommandLine, nError); 
+        WriteLog(pTemp);
+        return FALSE;
+    }
+    return true;
 
 }
 
 // start a VM with given index
 BOOL StartProcess(int nIndex, LPPIPEINST pipe) 
 { 
-		char pVrdpPort[nBufferSize+1];
-		char *cp;
-		char pItem[nBufferSize+1];
+    char pVrdpPort[nBufferSize+1];
+    char *cp;
+    char pItem[nBufferSize+1];
 
-		cp = nIndexTopVmName( nIndex );
-		if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return false; }
+    cp = nIndexTopVmName( nIndex );
+    if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return false; }
 
 
-		// get VrdpPort
-		sprintf_s(pItem,"Vm%d\0",nIndex);
-		GetPrivateProfileString(pItem,"VrdpPort","",pVrdpPort,nBufferSize,pInitFile);
+    // get VrdpPort
+    sprintf_s(pItem,"Vm%d\0",nIndex);
+    GetPrivateProfileString(pItem,"VrdpPort","",pVrdpPort,nBufferSize,pInitFile);
 
-		// run VBoxManage.exe showvminfo VmName
-		VBoxManage(pipe, "-nologo showvminfo \"%s\"", cp);
+    // run VBoxManage.exe showvminfo VmName
+    VBoxManage(pipe, "-nologo showvminfo \"%s\"", cp);
 
-		// run VBoxManage.exe modifyvm VmName --vrdpport
-		VBoxManage(pipe, "-nologo modifyvm \"%s\" --vrdpport %s", cp, pVrdpPort);
+    // run VBoxManage.exe modifyvm VmName --vrdpport
+    VBoxManage(pipe, "-nologo modifyvm \"%s\" --vrdpport %s", cp, pVrdpPort);
 
-		// run VBoxManage.exe startvm VmName --type vrdp
-		VBoxManage(pipe, "-nologo startvm \"%s\" --type vrdp", cp);
+    // run VBoxManage.exe startvm VmName --type vrdp
+    VBoxManage(pipe, "-nologo startvm \"%s\" --type vrdp", cp);
 
-		nProcStatus[nIndex] = 1;
-		return true;
+    nProcStatus[nIndex] = 1;
+    return true;
 
 }
 // end a VM with given index
 BOOL EndProcess(int nIndex, LPPIPEINST pipe) 
 {
-		char pItem[nBufferSize+1];
-		char pShutdownMethod[nBufferSize+1];
-		char *cp;
+    char pItem[nBufferSize+1];
+    char pShutdownMethod[nBufferSize+1];
+    char *cp;
 
 
-        cp = nIndexTopVmName( nIndex );
-		if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return false; }
+    cp = nIndexTopVmName( nIndex );
+    if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return false; }
 
-		// get ShutdownMethod
-		sprintf_s(pItem,"Vm%d\0",nIndex);
-		GetPrivateProfileString(pItem,"ShutdownMethod","",pShutdownMethod,nBufferSize,pInitFile);
+    // get ShutdownMethod
+    sprintf_s(pItem,"Vm%d\0",nIndex);
+    GetPrivateProfileString(pItem,"ShutdownMethod","",pShutdownMethod,nBufferSize,pInitFile);
 
-		VBoxManage(pipe, "-nologo controlvm \"%s\" \"%s\"", cp, pShutdownMethod);
+    VBoxManage(pipe, "-nologo controlvm \"%s\" \"%s\"", cp, pShutdownMethod);
 
-		nProcStatus[nIndex] = 0;
-		return true;
+    nProcStatus[nIndex] = 0;
+    return true;
 }
 
 // Run "set" on the windows commandline to get the execution environment
 BOOL CmdEnv(LPPIPEINST pipe) {
 
-	char pCommandLine[nBufferSize+1];
+    char pCommandLine[nBufferSize+1];
 
-	//create command to run.   
-	sprintf_s(pCommandLine, "C:\\Windows\\System32\\cmd /C set");
+    //create command to run.   
+    sprintf_s(pCommandLine, "C:\\Windows\\System32\\cmd /C set");
 
-	// runn the coomand to check status and write back to Pipe
-	RunConsoleApp(NULL, pCommandLine, "C:\\Windows\\System32", pipe);
+    // runn the coomand to check status and write back to Pipe
+    RunConsoleApp(NULL, pCommandLine, "C:\\Windows\\System32", pipe);
 
 
-	return true;	
+    return true;    
 }
 
 ////////////////////////////////////////////////////////////////////// 
@@ -443,8 +432,8 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
         case SERVICE_CONTROL_STOP:
         case SERVICE_CONTROL_SHUTDOWN:
 
-			//tell PipeManager to exit.
-			PipeManagerExit();
+            //tell PipeManager to exit.
+            PipeManagerExit();
             // also tell SCM we'll need some time to shutdown
             serviceStatus.dwCurrentState = SERVICE_STOP_PENDING;
             {
@@ -509,15 +498,15 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
 void WorkerHandleCommand(LPPIPEINST pipe) 
 {
 	char pVboxUserHome[nBufferSize+1];
-	char pTemp[121];
+    char pTemp[121];
     char buffer[80]; 
-	char *cp;
+    char *cp;
     memset(buffer, 0, 80);
 
 
-	StringCchCopy(buffer, nBufferSize, pipe->chRequest);
+    StringCchCopy(buffer, nBufferSize, pipe->chRequest);
 
-	sprintf_s(pTemp, "Received control command: %s", buffer);
+    sprintf_s(pTemp, "Received control command: %s", buffer);
     WriteLog(pTemp);
 
     // set environment variable for current process, so that
@@ -533,54 +522,55 @@ void WorkerHandleCommand(LPPIPEINST pipe)
     if (strncmp(buffer, "start", 5) == 0)
     {
         int nIndex = atoi(buffer + 6);
-		StartProcess(nIndex,pipe);
+        StartProcess(nIndex,pipe);
     }
     else if (strncmp(buffer, "stop", 4) == 0)
     {
-		int nIndex = atoi(buffer + 5);
-		EndProcess(nIndex,pipe);
+        int nIndex = atoi(buffer + 5);
+        EndProcess(nIndex,pipe);
     }
     else if (strncmp(buffer, "status", 6) == 0)
     {
-		cp = nIndexTopVmName( atoi(buffer + 7) );
-		if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return; }
-		VBoxManage(pipe, "-nologo showvminfo \"%s\"", cp);	  
+        cp = nIndexTopVmName( atoi(buffer + 7) );
+        if (cp==NULL)
+        {
+            WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); 
+            return;
+        }
+        VBoxManage(pipe, "-nologo showvminfo \"%s\"", cp);    
     }
-	else if (strncmp(buffer, "env", 3) == 0)
+    else if (strncmp(buffer, "env", 3) == 0)
     {
-		CmdEnv(pipe);
+        CmdEnv(pipe);
     }
-	else if (strncmp(buffer, "shutdown", 8) == 0)
+    else if (strncmp(buffer, "shutdown", 8) == 0)
     {
-		VBoxVmServiceHandler(SERVICE_CONTROL_SHUTDOWN);
+        VBoxVmServiceHandler(SERVICE_CONTROL_SHUTDOWN);
     }
-	else if (strncmp(buffer, "guestpropertys", 14) == 0)
+    else if (strncmp(buffer, "guestpropertys", 14) == 0)
     {
         cp = nIndexTopVmName( atoi(buffer + 15) );
-		if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return; }
-		VBoxManage(pipe, "-nologo guestproperty enumerate \"%s\"", cp);
-    }	
-	else {
-		printf("Unknown command \"%s\"\n", buffer);
-	}
-
-
-
-
-
+        if (cp==NULL) 
+        {
+            WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); 
+            return; 
+        }
+        VBoxManage(pipe, "-nologo guestproperty enumerate \"%s\"", cp);
+    }   
+    else {
+        printf("Unknown command \"%s\"\n", buffer);
+    }
 }
 
 unsigned __stdcall WorkerProc(void* pParam)
 {
     const int nMessageSize = 80;
 
+    //PipeManager will handel all pipe connections
+    PipeManager("\\\\.\\pipe\\VBoxVmService", WorkerHandleCommand);
 
-	//PipeManager will handel all pipe connections
-	PipeManager("\\\\.\\pipe\\VBoxVmService", WorkerHandleCommand);
-
-
-	//gracefully ending the service
-	BOOL bShouldWait = FALSE;
+    //gracefully ending the service
+    BOOL bShouldWait = FALSE;
     // terminate all running processes before shutdown
     for(int i=nMaxProcCount-1;i>=0;i--)
     {
@@ -589,7 +579,7 @@ unsigned __stdcall WorkerProc(void* pParam)
             EndProcess(i, NULL);
             bShouldWait = TRUE;
         }
-    }			
+    }           
 
     // wait for VMs to shut down
     if (bShouldWait)
@@ -610,8 +600,7 @@ unsigned __stdcall WorkerProc(void* pParam)
         WriteLog(pTemp);
     }
 
-	return 1;
-
+    return 1;
 }
 
 ////////////////////////////////////////////////////////////////////// 
@@ -624,8 +613,8 @@ void main(int argc, char *argv[] )
     char pModuleFile[nBufferSize+1];
     DWORD dwSize = GetModuleFileName(NULL,pModuleFile,nBufferSize);
     pModuleFile[dwSize] = 0;
-	HANDLE hThread;
-	unsigned threadID;
+    HANDLE hThread;
+    unsigned threadID;
 
     if(dwSize>4&&pModuleFile[dwSize-4]=='.')
     {
@@ -646,41 +635,36 @@ void main(int argc, char *argv[] )
     GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
     WriteLog(pServiceName);
 
-
-	// Run in debug mode if switch is "-d"
+    // Run in debug mode if switch is "-d"
     if(argc==2&&_stricmp("-d",argv[1])==0)
     {
-		printf("Welcome to vms (debug mode)\n");
-		WorkerProc( NULL );
-	}
-	else 
-	{	
+        printf("Welcome to vms (debug mode)\n");
+        WorkerProc( NULL );
+    }
+    else 
+    {   
 
-		hThread = (HANDLE)_beginthreadex( NULL, 0, &WorkerProc, NULL, 0, &threadID );
-		// start a worker thread to check for pipe messages
-		if(hThread==0)
-		{
-			long nError = GetLastError();
-			char pTemp[121];
-			sprintf_s(pTemp, "_beginthread failed, error code = %d", nError);
-			WriteLog(pTemp);
-		}
-
-
-		// pass dispatch table to service controller
-		if(!StartServiceCtrlDispatcher(DispatchTable))
-		{
-			long nError = GetLastError();
-			char pTemp[121];
-			sprintf_s(pTemp, "StartServiceCtrlDispatcher failed, error code = %d", nError);
-			WriteLog(pTemp);
-		}
-		// you don't get here unless the service is shutdown
-
-		// Destroy the thread object.
-		CloseHandle( hThread );
-
-	}
+        hThread = (HANDLE)_beginthreadex( NULL, 0, &WorkerProc, NULL, 0, &threadID );
+        // start a worker thread to check for pipe messages
+        if(hThread==0)
+        {
+            char pTemp[121];
+            sprintf_s(pTemp, "_beginthread failed, error code = %d", GetLastError());
+            WriteLog(pTemp);
+        }
 
 
+        // pass dispatch table to service controller
+        if(!StartServiceCtrlDispatcher(DispatchTable))
+        {
+            char pTemp[121];
+            sprintf_s(pTemp, "StartServiceCtrlDispatcher failed, error code = %d", GetLastError());
+            WriteLog(pTemp);
+        }
+        // you don't get here unless the service is shutdown
+
+        // Destroy the thread object.
+        CloseHandle( hThread );
+
+    }
 }

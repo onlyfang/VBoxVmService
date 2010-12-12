@@ -7,15 +7,15 @@
 
 typedef struct 
 { 
-   OVERLAPPED oOverlap; 
-   HANDLE hPipeInst; 
-   TCHAR chRequest[BUFSIZE]; 
-   DWORD cbRead;
-   TCHAR chReply[BUFSIZE];
-   DWORD cbToWrite; 
-   DWORD dwState; 
-   BOOL fPendingIO; 
-   SECURITY_ATTRIBUTES sa;
+    OVERLAPPED oOverlap; 
+    HANDLE hPipeInst; 
+    TCHAR chRequest[BUFSIZE]; 
+    DWORD cbRead;
+    TCHAR chReply[BUFSIZE];
+    DWORD cbToWrite; 
+    DWORD dwState; 
+    BOOL fPendingIO; 
+    SECURITY_ATTRIBUTES sa;
 } PIPEINST, *LPPIPEINST; 
 
 

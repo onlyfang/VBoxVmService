@@ -16,74 +16,71 @@ void show_usage()
     printf("       -s        Start VBoxVmService service\n");
     printf("       -k        Stop VBoxVmService service\n");
     printf("       -b        Restart VBoxVmService service\n");
-	printf("       -e        Print service environment\n");
+    printf("       -e        Print service environment\n");
     // this option is hidden because it's not very usefull
     //printf("       -b n      Restart VM with index n\n");
     printf("       -su n     Startup VM with index n\n");
     printf("       -sd n     Shutdown VM with index n\n");
-	printf("       -st n     Show status for VM with index n\n");
-	printf("       -sp n     Show guest properties if Guest Additions are installed\n                 for VM with index n\n");
+    printf("       -st n     Show status for VM with index n\n");
+    printf("       -sp n     Show guest properties if Guest Additions are installed\n                 for VM with index n\n");
     printf("\n");
 }
 
 /*
-Tests whether the current user and prossess has admin privileges.
+   Tests whether the current user and prossess has admin privileges.
 
-Note that this will return FALSE if called from a Vista program running in an 
-administrator account if the process was not launched with 'run as administrator'
-
+   Note that this will return FALSE if called from a Vista program running in an administrator account if the process was not launched with 'run as administrator'
 */
-bool isAdmin() {
-
-SID_IDENTIFIER_AUTHORITY NtAuthority = SECURITY_NT_AUTHORITY;
-PSID AdministratorsGroup;
-// Initialize SID.
-if( !AllocateAndInitializeSid( &NtAuthority,
-                               2,
-                               SECURITY_BUILTIN_DOMAIN_RID,
-                               DOMAIN_ALIAS_RID_ADMINS,
-                               0, 0, 0, 0, 0, 0,
-                               &AdministratorsGroup))
-{
-    // Initializing SID Failed.
-    return false;
-}
-// Check whether the token is present in admin group.
-BOOL IsInAdminGroup = FALSE;
-if( !CheckTokenMembership( NULL,
-                           AdministratorsGroup,
-                           &IsInAdminGroup ))
-{
-    // Error occurred.
-    IsInAdminGroup = FALSE;
-}
-// Free SID and return.
-FreeSid(AdministratorsGroup);
-return IsInAdminGroup;
+BOOL isAdmin() {
+    SID_IDENTIFIER_AUTHORITY NtAuthority = SECURITY_NT_AUTHORITY;
+    PSID AdministratorsGroup;
+    // Initialize SID.
+    if( !AllocateAndInitializeSid( &NtAuthority,
+                2,
+                SECURITY_BUILTIN_DOMAIN_RID,
+                DOMAIN_ALIAS_RID_ADMINS,
+                0, 0, 0, 0, 0, 0,
+                &AdministratorsGroup))
+    {
+        // Initializing SID Failed.
+        return false;
+    }
+    // Check whether the token is present in admin group.
+    BOOL IsInAdminGroup = FALSE;
+    if( !CheckTokenMembership( NULL,
+                AdministratorsGroup,
+                &IsInAdminGroup ))
+    {
+        // Error occurred.
+        IsInAdminGroup = FALSE;
+    }
+    // Free SID and return.
+    FreeSid(AdministratorsGroup);
+    return IsInAdminGroup;
 
 }
 
 char *ErrorString(DWORD err)
-    {
+{
 
-     const DWORD buffsize = 300+1;
-	 static char buff[buffsize];
+    const DWORD buffsize = 300+1;
+    static char buff[buffsize];
 
-	 if ((err == ERROR_ACCESS_DENIED) && (!isAdmin())) {
-		sprintf_s(buff,"Access is denied.\n\nHave you tried to run the program as an administrator by starting the command prompt as 'run as administrator'?");
-	 }
-     else if(FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
-            NULL,
-            err,
-            0,
-            buff,
-            buffsize,
-            NULL) == 0)
-	 { 
-		 // FormatMessage failed
-		 sprintf_s(buff,"Unknown error with error code = %d", err);
-	 }
-     return buff;
+    if ((err == ERROR_ACCESS_DENIED) && (!isAdmin())) {
+        sprintf_s(buff,"Access is denied.\n\nHave you tried to run the program as an administrator by starting the command prompt as 'run as administrator'?");
+    }
+    else if(FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
+                NULL,
+                err,
+                0,
+                buff,
+                buffsize,
+                NULL) == 0)
+    { 
+        // FormatMessage failed
+        sprintf_s(buff,"Unknown error with error code = %d", err);
+    }
+    return buff;
 } // ErrorString
 
 
@@ -94,7 +91,7 @@ BOOL KillService(char* pName)
     if (schSCManager==0) 
     {
         long nError = GetLastError();
-		fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
+        fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
     }
     else
     {
@@ -160,7 +157,7 @@ BOOL RunService(char* pName, int nArg, char** pArg)
             else
             {
                 long nError = GetLastError();
-				fprintf_s(stderr, "StartService failed: %s\n", ErrorString(nError));
+                fprintf_s(stderr, "StartService failed: %s\n", ErrorString(nError));
             }
             CloseServiceHandle(schService); 
         }
@@ -200,7 +197,7 @@ BOOL BounceProcess(char* pName, int nIndex)
                     return TRUE;
                 }
                 long nError = GetLastError();
-				fprintf_s(stderr, "ControlService failed: %s\n", ErrorString(nError));
+                fprintf_s(stderr, "ControlService failed: %s\n", ErrorString(nError));
             }
             else
             {
@@ -281,7 +278,7 @@ VOID Install(char* pPath, char* pName)
         if (schService==0) 
         {
             long nError =  GetLastError();
-			fprintf_s(stderr, "Failed to create service %s: %s\n", pName, ErrorString(nError));
+            fprintf_s(stderr, "Failed to create service %s: %s\n", pName, ErrorString(nError));
         }
         else
         {
@@ -323,8 +320,8 @@ BOOL SendCommandToService(char * message, TCHAR chBuf[], int chBufSize)
 {
     HANDLE hPipe = INVALID_HANDLE_VALUE;
     DWORD dwError = 0;
-	DWORD dwMode, cbRead;
-	
+    DWORD dwMode, cbRead;
+
     while (true) 
     { 
         hPipe = ::CreateFile((LPSTR)"\\\\.\\pipe\\VBoxVmService", 
@@ -349,20 +346,20 @@ BOOL SendCommandToService(char * message, TCHAR chBuf[], int chBufSize)
         } 
     } 
 
-	// The pipe connected; change to message-read mode. 
-	dwMode = PIPE_READMODE_MESSAGE; 
-	dwError = SetNamedPipeHandleState( 
-		hPipe,    // pipe handle 
-		&dwMode,  // new pipe mode 
-		NULL,     // don't set maximum bytes 
-		NULL);    // don't set maximum time 
-	if ( ! dwError) 
-	{
-		printf( TEXT("SetNamedPipeHandleState failed. GLE=%d\n"), GetLastError() ); 
-		return FALSE;
-	}
+    // The pipe connected; change to message-read mode. 
+    dwMode = PIPE_READMODE_MESSAGE; 
+    dwError = SetNamedPipeHandleState( 
+            hPipe,    // pipe handle 
+            &dwMode,  // new pipe mode 
+            NULL,     // don't set maximum bytes 
+            NULL);    // don't set maximum time 
+    if ( ! dwError) 
+    {
+        printf( TEXT("SetNamedPipeHandleState failed. GLE=%d\n"), GetLastError() ); 
+        return FALSE;
+    }
 
-	// Send the message to the pipe server. 
+    // Send the message to the pipe server. 
     DWORD dwRead = 0;
     if (!(WriteFile(hPipe, (LPVOID)message, strlen(message), &dwRead, 0)))
     {
@@ -370,29 +367,28 @@ BOOL SendCommandToService(char * message, TCHAR chBuf[], int chBufSize)
         return FALSE;
     }
 
-	// Read from the pipe. 
-	do 
-	{ 
-	
-		dwError = ReadFile( 
-			hPipe,    // pipe handle 
-			chBuf,    // buffer to receive reply 
-			chBufSize,  // size of buffer 
-			&cbRead,  // number of bytes read 
-			NULL);    // not overlapped 
- 
-		if ( ! dwError && GetLastError() != ERROR_MORE_DATA )
-			break; 
-		//Debug: Uncoment to se what we have read from pipe
-		printf("Read %d bytes\n", cbRead);
-		//printf( TEXT("\n%s\n"), chBuf ); 
-	} while ( ! dwError);  // repeat loop if ERROR_MORE_DATA 
+    // Read from the pipe. 
+    do 
+    { 
+        dwError = ReadFile( 
+                hPipe,    // pipe handle 
+                chBuf,    // buffer to receive reply 
+                chBufSize,  // size of buffer 
+                &cbRead,  // number of bytes read 
+                NULL);    // not overlapped 
 
-	if ( ! dwError)
-	{
-      printf( TEXT("ReadFile from pipe failed. GLE=%d\n"), GetLastError() );
-      return -1;
-	}
+        if ( ! dwError && GetLastError() != ERROR_MORE_DATA )
+            break; 
+        //Debug: Uncoment to se what we have read from pipe
+        printf("Read %d bytes\n", cbRead);
+        //printf( TEXT("\n%s\n"), chBuf ); 
+    } while ( ! dwError);  // repeat loop if ERROR_MORE_DATA 
+
+    if ( ! dwError)
+    {
+        printf( TEXT("ReadFile from pipe failed. GLE=%d\n"), GetLastError() );
+        return -1;
+    }
 
 
     CloseHandle(hPipe);
@@ -410,76 +406,77 @@ void main(int argc, char *argv[] )
     char pModuleFile[nBufferSize+1];
     char pExeFile[nBufferSize+1];
     char pServiceName[nBufferSize+1];
-	TCHAR  chBuf[8192]; 
-	DWORD dwAttr;
-	char pVboxUserHome[nBufferSize+1];
+    TCHAR  chBuf[8192]; 
+    DWORD dwAttr;
+    char pVboxUserHome[nBufferSize+1];
 
     DWORD dwSize = GetModuleFileName(NULL,pModuleFile,nBufferSize);
     pModuleFile[dwSize] = 0;
     *(strrchr(pModuleFile, '\\')) = 0;
     sprintf_s(pExeFile,"%s\\VBoxVmService.exe",pModuleFile);
     sprintf_s(pInitFile,"%s\\VBoxVmService.ini",pModuleFile);
-    
-	/*************************************************************************************************
-	Do some sanitizing on input data.
-	*************************************************************************************************/
-	//sanitizing VBoxVmService.ini
-	dwAttr = GetFileAttributes(pInitFile);
-	if(dwAttr == 0xffffffff)
-	{
-		// An error accrued 
-		DWORD dwError = GetLastError();
-		if(dwError == ERROR_FILE_NOT_FOUND)
-		{
-			printf("Error:\nUnable to open config file VBoxVmService.ini at \"%s\": file not found.\n", pInitFile);
-		}
-		else if(dwError == ERROR_PATH_NOT_FOUND)
-		{
-			printf("Error:\nUnable to open config file VBoxVmService.ini at \"%s\": path not found.\n", pInitFile);
-		}
-		else if(dwError == ERROR_ACCESS_DENIED)
-		{
-			printf("Error:\nUnable to open config file VBoxVmService.ini at \"%s\": file exists, but access is denied.\n", pInitFile); 
-		}
-		else
-		{
-			printf("Error:\nUnable to open config file VBoxVmService.ini at \"%s\": Unknown error.\n", pInitFile);
-		}
-		printf("\nPleas run VmServiceControl.exe from the directory where you installed it. Also check that the VBoxVmService.ini exists in that directory, and is readable.\n");
-		return;
-	}
 
-	//sanitizing VBOX_USER_HOME           
-	GetPrivateProfileString("Settings","VBOX_USER_HOME","",pVboxUserHome,nBufferSize,pInitFile);
-	dwAttr = GetFileAttributes(pVboxUserHome);
-	if(dwAttr == 0xffffffff)
-	{
-		// An error accrued 
-		DWORD dwError = GetLastError();
-		if(dwError == ERROR_FILE_NOT_FOUND)
-		{
-			printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": directory not found.\n", pVboxUserHome);
-		}
-		else if(dwError == ERROR_PATH_NOT_FOUND)
-		{
-			printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": path not found.\n", pVboxUserHome);
-		}
-		else if(dwError == ERROR_ACCESS_DENIED)
-		{
-			printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": directory exists, but access is denied.\n", pVboxUserHome); 
-		}
-		else
-		{
-			printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": Unknown error.\n", pVboxUserHome);
-		}
-		printf("\nPleas run VmServiceControl.exe from the directory where you installed it. Also check that the directory you specified in VBoxVmService.ini as variable VBOX_USER_HOME exists and is readable.\n");
-		return;
-	}
-	// done sanitizing
-	/************************************************************************************************/
+    /****************************************************************
+      Do some sanitizing on input data.
+     ****************************************************************/
+    //sanitizing VBoxVmService.ini
+    dwAttr = GetFileAttributes(pInitFile);
+    if(dwAttr == INVALID_FILE_ATTRIBUTES)
+    {
+        // An error accrued 
+        DWORD dwError = GetLastError();
+        if(dwError == ERROR_FILE_NOT_FOUND)
+        {
+            printf("Error:\nUnable to open config file at \"%s\": file not found.\n", pInitFile);
+        }
+        else if(dwError == ERROR_PATH_NOT_FOUND)
+        {
+            printf("Error:\nUnable to open config file at \"%s\": path not found.\n", pInitFile);
+        }
+        else if(dwError == ERROR_ACCESS_DENIED)
+        {
+            printf("Error:\nUnable to open config file at \"%s\": file exists, but access is denied.\n", pInitFile); 
+        }
+        else
+        {
+            printf("Error:\nUnable to open config file at \"%s\": Unknown error.\n", pInitFile);
+        }
+        printf("\nPleas run VmServiceControl.exe from the directory where you installed it. Also check that the VBoxVmService.ini exists in that directory, and is readable.\n");
+        return;
+    }
+
+    //sanitizing VBOX_USER_HOME           
+    GetPrivateProfileString("Settings","VBOX_USER_HOME","",pVboxUserHome,nBufferSize,pInitFile);
+    dwAttr = GetFileAttributes(pVboxUserHome);
+    if(dwAttr == INVALID_FILE_ATTRIBUTES)
+    {
+        // An error accrued 
+        DWORD dwError = GetLastError();
+        if(dwError == ERROR_FILE_NOT_FOUND)
+        {
+            printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": directory not found.\n", pVboxUserHome);
+        }
+        else if(dwError == ERROR_PATH_NOT_FOUND)
+        {
+            printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": path not found.\n", pVboxUserHome);
+        }
+        else if(dwError == ERROR_ACCESS_DENIED)
+        {
+            printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": directory exists, but access is denied.\n", pVboxUserHome); 
+        }
+        else
+        {
+            printf("Error:\nUnable to open directory VBOX_USER_HOME at \"%s\": Unknown error.\n", pVboxUserHome);
+        }
+        printf("\nPleas run VmServiceControl.exe from the directory where you installed it. Also check that the directory you specified in VBoxVmService.ini as variable VBOX_USER_HOME exists and is readable.\n");
+        return;
+    }
+    /****************************************************************
+      done sanitizing
+     ****************************************************************/
 
 
-	GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
+    GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
     // uninstall service if switch is "-u"
     if(argc==2&&_stricmp("-u",argv[1])==0)
     {
@@ -500,8 +497,8 @@ void main(int argc, char *argv[] )
     {           
         KillService(pServiceName);
     }
-	// Simulates a shuddown if VBoxVmService is startet with -d
-	else if(argc==2&&_stricmp("-dk",argv[1])==0)
+    // Simulates a shuddown if VBoxVmService is started with -d
+    else if(argc==2&&_stricmp("-dk",argv[1])==0)
     {           
         if(SendCommandToService("shutdown", chBuf, sizeof(chBuf)))
             fprintf_s(stdout, "Shutdown all your virtual machines\n\n%s\n", chBuf);
@@ -559,7 +556,7 @@ void main(int argc, char *argv[] )
         else
             fprintf_s(stderr, "Failed to send command to service.\n");
     }
-	// show status for a specifc vm (if the index is supplied)
+    // show status for a specifc vm (if the index is supplied)
     else if(argc==3&&_stricmp("-st",argv[1])==0)
     {
         int nIndex = atoi(argv[2]);
@@ -570,17 +567,17 @@ void main(int argc, char *argv[] )
         else
             fprintf_s(stderr, "Failed to send command to service.\n");
     }
-	// Print environment VirtualBox is run under
+    // Print environment VirtualBox is run under
     else if(argc==2&&_stricmp("-e",argv[1])==0)
     {
         char pCommand[80];
         sprintf_s(pCommand, "env");
         if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
-			fprintf_s(stdout, "Env:\n\n%s\n",chBuf);
+            fprintf_s(stdout, "Env:\n\n%s\n",chBuf);
         else
             fprintf_s(stderr, "Failed to send command to service.\n");
     }
-	// Run Guest Additions enumerate to get guest properties 
+    // Run Guest Additions enumerate to get guest properties 
     else if(argc==3&&_stricmp("-sp",argv[1])==0)
     {
         int nIndex = atoi(argv[2]);

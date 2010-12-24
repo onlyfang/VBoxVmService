@@ -4,9 +4,11 @@
 #
 ##############################################################################
 
-Step 1. Download and unzip the latest release of VBoxVmService to c:\vms.
+Step 1. Make sure VirtualBox has been installed and your VM can be started from VirtualBox GUI without any problem. Shutdown the VM and close VirtualBox GUI.
 
-Step 2. Open up VBoxVmService.ini with a texteditor of your choice and modify it to fit your needs. The file contains an example setup with two virtual machines.
+Step 2. Download and unzip the latest release of VBoxVmService to c:\vms.
+
+Step 3. Open up VBoxVmService.ini with a texteditor of your choice and modify it to fit your needs. The file contains an example setup with two virtual machines.
 
 Key / Value pair                                            Description
 -----------------------------------------------------------------------------
@@ -53,7 +55,7 @@ Step 3. Startup the service. Continue in the terminal window type:
 
 Note: you could also start the service from Computer Management Console in Control Panel. The service will also be startup automatically when your system reboots.
 
-Step 4: You are done installing. If everything goes on right, you could now connect to your VMs with VRDP clients (or ssh clients, if you've configured ssh server inside your VM).
+Step 4: You are done installing. If everything goes on right, you could now connect to your VMs with VRDP clients (or ssh clients, if you've configured ssh server inside your VM). If not, try reboot the system once to make sure VBoxVmService has been configured correctly. If still failed, refer to TROUBLESHOOTING section below for how to debug.
 
 
 ##############################################################################
@@ -127,7 +129,7 @@ If you made a mistake on VBOX_USER_HOME, however, fixing it at VBoxVmService.ini
 
 After installation and everytime when you changed VBOX_USER_HOME later, a system reboot might be required to get VBoxVmService work correctly. So give it a try if you haven't. 
 
-The VBoxVmService Dev Team might be on VirtualBox's official forums now and then, so feel free to contact us there.
+If you are still in trouble, you are welcome to create a support ticket at https://sourceforge.net/tracker/?group_id=219058&atid=1045322. We might be on VirtualBox's official forums now and then, so feel free to contact us there, too.
 
-FB2000 & mattz
-
+The VBoxVmService Development Team
+Mattz, FB2000 and Runar

@@ -301,7 +301,7 @@ BOOL VBoxManage(LPPIPEINST pipe, LPCSTR formatstring, ...) {
 // start a VM with given index
 BOOL StartProcess(int nIndex, LPPIPEINST pipe) 
 { 
-    char pVrdpPort[nBufferSize+1];
+    char pVrdePort[nBufferSize+1];
     char *cp;
     char pItem[nBufferSize+1];
 
@@ -309,18 +309,18 @@ BOOL StartProcess(int nIndex, LPPIPEINST pipe)
     if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return false; }
 
 
-    // get VrdpPort
+    // get VrdePort
     sprintf_s(pItem,"Vm%d\0",nIndex);
-    GetPrivateProfileString(pItem,"VrdpPort","",pVrdpPort,nBufferSize,pInitFile);
+    GetPrivateProfileString(pItem,"VrdePort","",pVrdePort,nBufferSize,pInitFile);
 
     // run VBoxManage.exe showvminfo VmName
     VBoxManage(pipe, "-nologo showvminfo \"%s\"", cp);
 
-    // run VBoxManage.exe modifyvm VmName --vrdpport
-    VBoxManage(pipe, "-nologo modifyvm \"%s\" --vrdpport %s", cp, pVrdpPort);
+    // run VBoxManage.exe modifyvm VmName --vrdeport
+    VBoxManage(pipe, "-nologo modifyvm \"%s\" --vrdeport %s", cp, pVrdePort);
 
-    // run VBoxManage.exe startvm VmName --type vrdp
-    VBoxManage(pipe, "-nologo startvm \"%s\" --type vrdp", cp);
+    // run VBoxManage.exe startvm VmName --type vrde
+    VBoxManage(pipe, "-nologo startvm \"%s\" --type headless", cp);
 
     nProcStatus[nIndex] = 1;
     return true;

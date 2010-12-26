@@ -287,7 +287,7 @@ BOOL VBoxManage(LPPIPEINST pipe, LPCSTR formatstring, ...) {
     // get working dir
     GetPrivateProfileString(pItem,"WorkingDir","",pWorkingDir,nBufferSize,pInitFile);
 
-    // runn the command to check status and write back to Pipe
+    // run the command to check status and write back to Pipe
     if (!RunConsoleApp(pVBoxManagePath, myarguments, pWorkingDir, pipe)) {
         long nError = GetLastError();
         sprintf_s(pTemp,"Failed execute VBoxManage.exe using command: '%s', error code = %d", pCommandLine, nError); 
@@ -355,7 +355,7 @@ BOOL CmdEnv(LPPIPEINST pipe) {
     //create command to run.   
     sprintf_s(pCommandLine, "C:\\Windows\\System32\\cmd /C set");
 
-    // runn the command to check status and write back to Pipe
+    // run the command to check status and write back to Pipe
     RunConsoleApp(NULL, pCommandLine, "C:\\Windows\\System32", pipe);
 
 

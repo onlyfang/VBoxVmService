@@ -306,8 +306,12 @@ BOOL StartProcess(int nIndex, LPPIPEINST pipe)
     char pItem[nBufferSize+1];
 
     cp = nIndexTopVmName( nIndex );
-    if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return false; }
-
+    if (cp == NULL) 
+    {
+        if (pipe)  // this message is invalid when StartProcess is called during service start, not by control command
+            WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); 
+        return false; 
+    }
 
     // get VrdePort
     sprintf_s(pItem,"Vm%d\0",nIndex);

@@ -30,6 +30,10 @@
 
 0. What is new in this release?
 
+2011-01-13 Release 2.2 "Fireworks"
+
+* Update to make VBoxVmService work with VirtualBox 4.0. Note this is incompatible with old versions of VBox, so stay with "Reindeer" if you are still running VBox 3.X.X.
+
 2010-12-24 Release 2.1 "Reindeer"
 
 * PauseShutdown now became global setting. When service is stopped, it doesn't make sence to wait VM0 to shutdown, then VM1, then VM2, ..., etc. Now all the VMs will start shutting down at once, and all are expected to finish within time specified as PauseShutdown.

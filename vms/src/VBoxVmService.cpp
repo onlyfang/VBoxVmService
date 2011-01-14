@@ -301,7 +301,6 @@ BOOL VBoxManage(LPPIPEINST pipe, LPCSTR formatstring, ...) {
 // start a VM with given index
 BOOL StartProcess(int nIndex, LPPIPEINST pipe) 
 { 
-    char pVrdePort[nBufferSize+1];
     char *cp;
     char pItem[nBufferSize+1];
 
@@ -313,15 +312,8 @@ BOOL StartProcess(int nIndex, LPPIPEINST pipe)
         return false; 
     }
 
-    // get VrdePort
-    sprintf_s(pItem,"Vm%d\0",nIndex);
-    GetPrivateProfileString(pItem,"VrdePort","",pVrdePort,nBufferSize,pInitFile);
-
     // run VBoxManage.exe showvminfo VmName
     VBoxManage(pipe, "-nologo showvminfo \"%s\"", cp);
-
-    // run VBoxManage.exe modifyvm VmName --vrdeport
-    VBoxManage(pipe, "-nologo modifyvm \"%s\" --vrdeport %s", cp, pVrdePort);
 
     // run VBoxManage.exe startvm VmName --type vrde
     VBoxManage(pipe, "-nologo startvm \"%s\" --type headless", cp);

@@ -302,7 +302,6 @@ BOOL VBoxManage(LPPIPEINST pipe, LPCSTR formatstring, ...) {
 BOOL StartProcess(int nIndex, LPPIPEINST pipe) 
 { 
     char *cp;
-    char pItem[nBufferSize+1];
 
     cp = nIndexTopVmName( nIndex );
     if (cp == NULL) 
@@ -310,6 +309,19 @@ BOOL StartProcess(int nIndex, LPPIPEINST pipe)
         if (pipe)  // this message is invalid when StartProcess is called during service start, not by control command
             WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); 
         return false; 
+    }
+
+    // if called during service start, check if AutoStart is disabled
+    if (pipe == NULL)
+    {
+        char pAutoStart[nBufferSize+1];
+        char pItem[nBufferSize+1];
+
+        // get AutoStart
+        sprintf_s(pItem,"Vm%d\0",nIndex);
+        GetPrivateProfileString(pItem,"AutoStart","",pAutoStart,nBufferSize,pInitFile);
+        if (stricmp(pAutoStart, "no") == 0)
+            return true;
     }
 
     // run VBoxManage.exe showvminfo VmName
@@ -447,33 +459,6 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
         case SERVICE_CONTROL_INTERROGATE:
             break;
         default: 
-            // bounce processes started by this service
-            if(fdwControl>=128&&fdwControl<256)
-            {
-                int nIndex = fdwControl&0x7F;
-                // bounce a single process
-                if(nIndex>=0&&nIndex<nMaxProcCount)
-                {
-                    if (nProcStatus[nIndex] == 1)
-                        EndProcess(nIndex, NULL);
-                    StartProcess(nIndex, NULL);
-                }
-                // bounce all processes
-                else if(nIndex==127)
-                {
-                    for(int i=nMaxProcCount-1;i>=0;i--)
-                    {
-                        if (nProcStatus[i] == 1)
-                            EndProcess(i, NULL);
-                    }
-                    for(int i=0;i<nMaxProcCount;i++)
-                    {
-                        if (!StartProcess(i, NULL))
-                            break;
-                    }
-                }
-            }
-            else
             {
                 long nError = GetLastError();
                 char pTemp[121];

@@ -166,50 +166,6 @@ BOOL RunService(char* pName, int nArg, char** pArg)
     return FALSE;
 }
 
-BOOL BounceProcess(char* pName, int nIndex) 
-{ 
-    // bounce the process with given index
-    SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_ALL_ACCESS); 
-    if (schSCManager==0) 
-    {
-        long nError = GetLastError();
-        fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
-    }
-    else
-    {
-        // open the service
-        SC_HANDLE schService = OpenService( schSCManager, pName, SERVICE_ALL_ACCESS);
-        if (schService==0) 
-        {
-            long nError = GetLastError();
-            fprintf_s(stderr, "OpenService failed: %s\n", ErrorString(nError)); 
-        }
-        else
-        {
-            // call ControlService to invoke handler
-            SERVICE_STATUS status;
-            if(nIndex>=0&&nIndex<128)
-            {
-                if(ControlService(schService,(nIndex|0x80),&status))
-                {
-                    CloseServiceHandle(schService); 
-                    CloseServiceHandle(schSCManager); 
-                    return TRUE;
-                }
-                long nError = GetLastError();
-                fprintf_s(stderr, "ControlService failed: %s\n", ErrorString(nError));
-            }
-            else
-            {
-                fprintf_s(stderr, "Invalid argument to BounceProcess: %d\n", nIndex); 
-            }
-            CloseServiceHandle(schService); 
-        }
-        CloseServiceHandle(schSCManager); 
-    }
-    return FALSE;
-}
-
 ////////////////////////////////////////////////////////////////////// 
 //
 // Uninstall
@@ -511,10 +467,20 @@ void main(int argc, char *argv[] )
     else if(argc==3&&_stricmp("-b",argv[1])==0)
     {
         int nIndex = atoi(argv[2]);
-        if(BounceProcess(pServiceName, nIndex))
-            fprintf_s(stdout, "Bounced VM %d\n", nIndex);
+        char pCommand[80];
+        sprintf_s(pCommand, "stop %u", nIndex);
+        if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
+        {
+            fprintf_s(stdout, "Shutdown your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
+
+            sprintf_s(pCommand, "start %u", nIndex);
+            if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
+                fprintf_s(stdout, "Started your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
+            else
+                fprintf_s(stderr, "Failed to send command to service.\n");
+        }
         else
-            fprintf_s(stderr, "Failed to bounce VM %d\n", nIndex);
+            fprintf_s(stderr, "Failed to send command to service.\n");
     }
     // STARTUP SWITCH
     // 

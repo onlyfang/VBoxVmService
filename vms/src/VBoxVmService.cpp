@@ -149,7 +149,7 @@ BOOL RunConsoleApp(LPCTSTR ApplicationName, char pCommandLine[], char pWorkingDi
     hStdOut = CreateFile(pLogFile, FILE_APPEND_DATA, FILE_SHARE_READ | FILE_SHARE_WRITE, &sa, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 
 
-    sprintf_s(pTemp,"Running command: '%s'.", pCommandLine); 
+    sprintf_s(pTemp,"Running command: '%s %s'.", ApplicationName, pCommandLine); 
     WriteLog(pTemp);
 
     // prepare for creating process
@@ -170,13 +170,13 @@ BOOL RunConsoleApp(LPCTSTR ApplicationName, char pCommandLine[], char pWorkingDi
         // Create a pipe for the child process's STDOUT.
         if ( ! CreatePipe(&g_hChildStd_OUT_Rd, &g_hChildStd_OUT_Wr, &sahChildStd, 0) ) 
         {
-            sprintf_s(pTemp,"Error StdoutRd CreatePipe while runing : '%s'.", pCommandLine); 
+            sprintf_s(pTemp,"Error StdoutRd CreatePipe while runing : '%s %s'.", ApplicationName, pCommandLine); 
             WriteLog(pTemp);
         }
         // Ensure the read handle to the pipe for STDOUT is not inherited.
         if ( ! SetHandleInformation(g_hChildStd_OUT_Rd, HANDLE_FLAG_INHERIT, 0) )
         {
-            sprintf_s(pTemp,"Error Stdout SetHandleInformation while runing: '%s'.", pCommandLine); 
+            sprintf_s(pTemp,"Error Stdout SetHandleInformation while runing: '%s %s'.", ApplicationName, pCommandLine); 
             WriteLog(pTemp);
         }
 
@@ -210,7 +210,7 @@ BOOL RunConsoleApp(LPCTSTR ApplicationName, char pCommandLine[], char pWorkingDi
         // read end of the pipe, to control child process execution.
         if (!CloseHandle(g_hChildStd_OUT_Wr)) 
         {
-            sprintf_s(pTemp,"Error StdOutWr CloseHandle ruuing: '%s'.", pCommandLine); 
+            sprintf_s(pTemp,"Error StdOutWr CloseHandle ruuing: '%s %s'.", ApplicationName, pCommandLine); 
             WriteLog(pTemp);
         }
 
@@ -258,7 +258,6 @@ BOOL VBoxManage(LPPIPEINST pipe, LPCSTR formatstring, ...) {
     char myarguments[255];
     char pItem[nBufferSize+1];
     char pWorkingDir[nBufferSize+1];
-    char pCommandLine[nBufferSize+1];
     char pTemp[121];
 
     // handle custom arguments
@@ -290,7 +289,7 @@ BOOL VBoxManage(LPPIPEINST pipe, LPCSTR formatstring, ...) {
     // run the command to check status and write back to Pipe
     if (!RunConsoleApp(pVBoxManagePath, myarguments, pWorkingDir, pipe)) {
         long nError = GetLastError();
-        sprintf_s(pTemp,"Failed execute VBoxManage.exe using command: '%s', error code = %d", pCommandLine, nError); 
+        sprintf_s(pTemp,"Failed execute VBoxManage.exe using command: '%s %s', error code = %d", pVBoxManagePath, myarguments, nError); 
         WriteLog(pTemp);
         return FALSE;
     }

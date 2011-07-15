@@ -53,13 +53,9 @@ Step 2. Install the service. Within the terminal window type:
     
     VmServiceControl.exe -i    [ENTER]
 
-Step 3. Startup the service. Continue in the terminal window type:
+Step 3. Reboot your system.
 
-    VmServiceControl.exe -s    [ENTER]
-
-Note: you could also start the service from Computer Management Console in Control Panel. The service will also be startup automatically when your system reboots.
-
-Step 4: You are done installing. If everything goes on right, you could now connect to your VMs with VRDP clients (or ssh clients, if you've configured ssh server inside your VM). If not, try reboot the system once to make sure VBoxVmService has been configured correctly. If still failed, refer to TROUBLESHOOTING section below for how to debug.
+If everything goes on right, you could now connect to your VMs with VRDP clients (or ssh clients, if you've configured ssh server inside your VM). If not, refer to TROUBLESHOOTING section below for how to debug.
 
 
 ##############################################################################
@@ -129,7 +125,7 @@ VBOX_USER_HOME. Check the permission on this folder and change if necessary.
 
 If you made a mistake on VBOX_USER_HOME, however, fixing it at VBoxVmService.ini is not enough. Because the value was get written into environment variable during installation. You need to open Control Panel -> System -> Advanced system settings -> Advanced -> Environment Variables, and fix it there. Please also make sure VBOX_USER_HOME appears only at system variables, not user variables.
 
-After installation and everytime when you changed VBOX_USER_HOME later, a system reboot might be required to get VBoxVmService work correctly. So give it a try if you haven't. 
+After installation and everytime when you changed VBOX_USER_HOME later, a system reboot is required to get VBoxVmService work correctly. So give it a try if you haven't. 
 
 If you are still in trouble, you are welcome to create a support ticket at https://sourceforge.net/tracker/?group_id=219058&atid=1045322. We might be on VirtualBox's official forums now and then, so feel free to contact us there, too.
 

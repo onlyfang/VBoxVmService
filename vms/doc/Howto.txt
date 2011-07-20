@@ -6,7 +6,7 @@
 
 Step 1. Make sure VirtualBox has been installed and your VM can be started from VirtualBox Manager without any problem. Shutdown the VM and close VirtualBox Manager.
 
-IMPORTANT: If you want to control your VMs with VRDP, enable remote display at display settings and assign a dedicated port for each individual VM. Do NOT use the standard port 3389 (e.g. use: 3010 for Vm0, 3020 for Vm1, etc.)!
+IMPORTANT: If you want to control your VMs with VRDP, enable remote display at display settings and assign a dedicated port for each individual VM (e.g. use: 3010 for Vm0, 3020 for Vm1, etc.). Do NOT use the standard port 3389!
 
 
 Step 2. Download and unzip the latest release of VBoxVmService to c:\vms.
@@ -30,7 +30,6 @@ AutoStart=yes                                               Whether or not this 
 VmName=winxp                                                As you can see, the above values almost repeat for every [VmX] section of the file. 
 WorkingDir=C:\vms
 ShutdownMethod=acpipowerbutton
-VrdePort=3002                                               
 AutoStart=no                                                This VM will not be started automatically.
 
 

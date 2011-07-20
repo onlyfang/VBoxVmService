@@ -30,7 +30,7 @@ void show_usage()
    Tests whether the current user and prossess has admin privileges.
 
    Note that this will return FALSE if called from a Vista program running in an administrator account if the process was not launched with 'run as administrator'
-*/
+   */
 BOOL isAdmin() {
     SID_IDENTIFIER_AUTHORITY NtAuthority = SECURITY_NT_AUTHORITY;
     PSID AdministratorsGroup;
@@ -172,6 +172,15 @@ BOOL RunService(char* pName, int nArg, char** pArg)
 //
 VOID UnInstall(char* pName)
 {
+    // Remove system wide VBOX_USER_HOME environment variable
+    HKEY hKey;
+    LONG lRet = RegOpenKeyEx(HKEY_LOCAL_MACHINE, "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment", 0, KEY_ALL_ACCESS, &hKey);
+    if (lRet == ERROR_SUCCESS)
+    {
+        lRet = RegDeleteValue(hKey, "VBOX_USER_HOME");
+        RegCloseKey(hKey);
+    }
+
     SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_ALL_ACCESS); 
     if (schSCManager==0) 
     {
@@ -238,6 +247,11 @@ VOID Install(char* pPath, char* pName)
         }
         else
         {
+            // Set delayed auto-start, this only has effect on Vista, Win7, Win2008 and later
+            SERVICE_DELAYED_AUTO_START_INFO info;
+            info.fDelayedAutostart = true;
+            ChangeServiceConfig2(schService, SERVICE_CONFIG_DELAYED_AUTO_START_INFO, &info);
+
             // Set system wide VBOX_USER_HOME environment variable
             char pVboxUserHome[nBufferSize+1];
             GetPrivateProfileString("Settings","VBOX_USER_HOME","",pVboxUserHome,nBufferSize,pInitFile);
@@ -253,13 +267,6 @@ VOID Install(char* pPath, char* pName)
             {
                 fprintf_s(stderr, "Failed to set VBOX_USER_HOME environment\n");
             }
-
-			// Broadcasting registry change to all of your processes/windows. Do not update prossesses for other users.
-			printf("Broadcasting registry change to all of your processes.\n");
-			DWORD dwReturnValue;
-			SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, 0,
-				(LPARAM) "Environment", SMTO_ABORTIFHUNG,
-				5000, &dwReturnValue);
 
             fprintf_s(stdout, "Service %s installed\n", pName);
             CloseServiceHandle(schService); 

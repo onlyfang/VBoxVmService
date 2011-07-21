@@ -30,6 +30,15 @@
 
 0. What is new in this release?
 
+2011-07-21 Release 2.3 "Watermelon"
+
+* Always require a reboot after installation;
+* Reuse VRDP settings from VirtualBox Manager, and don't call modifyvm to change port anymore;
+* Added an AutoStart option to control if a VM will be started automatically when VBoxVmService runs;
+* Show full command line including path during log;
+* Fixed a bug that meaningless chars are printed to log;
+* Set service to delayed auto-start if possible.
+
 2011-01-13 Release 2.2 "Fireworks"
 
 * Update to make VBoxVmService work with VirtualBox 4.0. Note this is incompatible with old versions of VBox, so stay with "Reindeer" if you are still running VBox 3.X.X.
@@ -203,7 +212,7 @@ The the puzzlework on "how the %$&!? this thing works", (poorly) patching togeth
 
 Joining the project in August 2010, FB2000 has quickly lead the project into a new era. His clever concepts and his skillful codework made version 2.0 possible at all. It's great to have you, dude! ;-)
 
-Runar joined the project in December 2010, bringing lots of creative improvements like too way communication between the service and control program, new commands to show current VM status and check service environment, etc.
+Runar joined the project in December 2010, bringing lots of creative improvements like two way communication between the service and control program, new commands to show current VM status and check service environment, etc.
 
 ------------------------------------------------------------------------------
 

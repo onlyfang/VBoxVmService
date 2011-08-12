@@ -17,6 +17,8 @@ Key / Value pair                                            Description
 -----------------------------------------------------------------------------
 [Settings]
 ServiceName=VBoxVmService                                   The service name to use for the VBoxVmService.
+RunAsUser=DomainName\UserName                               The name of the account under which the service should run. The service process will be logged on as this user. If the account belongs to the built-in domain, you can specify .\UserName.
+UserPassword=xxxxxxxx                                       MUST BE GIVEN! SET THE INI FILE TO BE ONLY READABLE BY YOURSELF AND THE SYSTEM!  
 VBOX_USER_HOME=C:\Users\YOUR_NAME_HERE\.VirtualBox          The actual path to your user's .VirtualBox directory. It is usually located in your users' personal folder.
 PauseShutdown=5000                                          A pause parameter to slow down the Windows shutdown process and to prevent VMs from crashing on shutdown/reboot. (5000 = 5 seconds) Note Windows has a limit to how long the service controller could wait when system reboots. The time limit is specified in the WaitToKillServiceTimeout value of the following registry key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control. Your PauseShutdown value should never exceed this time limit.
 
@@ -52,9 +54,13 @@ Step 2. Install the service. Within the terminal window type:
     
     VmServiceControl.exe -i    [ENTER]
 
-Step 3. Reboot your system.
+Step 3. Startup the service. Continue in the terminal window type:
 
-If everything goes on right, you could now connect to your VMs with VRDP clients (or ssh clients, if you've configured ssh server inside your VM). If not, refer to TROUBLESHOOTING section below for how to debug.
+    VmServiceControl.exe -s    [ENTER]
+
+Note: you could also start the service from Computer Management Console in Control Panel. The service will also be startup automatically when your system reboots.
+
+Step 4: You are done installing. If everything goes on right, you could now connect to your VMs with VRDP clients (or ssh clients, if you've configured ssh server inside your VM). If not, refer to TROUBLESHOOTING section below for how to debug.
 
 
 ##############################################################################
@@ -119,8 +125,7 @@ can be used to check the statue of the VM targeting [Vm0].
 
 Read the log-file! 
 
-If you see error like "ERROR: Could not find a registered machine named...", if VBOX_USER_HOME has been setup correctly, then it means VBoxVmService service, running as SYSTEM user by default, can't access the folder pointed to by
-VBOX_USER_HOME. Check the permission on this folder and change if necessary. 
+If you see error like "Could not find a registered machine named...", check if the environment variable VBOX_USER_HOME has been setup correctly.
 
 If you made a mistake on VBOX_USER_HOME, however, fixing it at VBoxVmService.ini is not enough. Because the value was get written into environment variable during installation. You need to open Control Panel -> System -> Advanced system settings -> Advanced -> Environment Variables, and fix it there. Please also make sure VBOX_USER_HOME appears only at system variables, not user variables.
 

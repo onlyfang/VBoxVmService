@@ -16,13 +16,11 @@ void show_usage()
     printf("       -s        Start VBoxVmService service\n");
     printf("       -k        Stop VBoxVmService service\n");
     printf("       -b        Restart VBoxVmService service\n");
-    printf("       -e        Print service environment\n");
     // this option is hidden because it's not very usefull
     //printf("       -b n      Restart VM with index n\n");
     printf("       -su n     Startup VM with index n\n");
     printf("       -sd n     Shutdown VM with index n\n");
     printf("       -st n     Show status for VM with index n\n");
-    printf("       -sp n     Show guest properties if Guest Additions are installed\n                 for VM with index n\n");
     printf("\n");
 }
 
@@ -225,20 +223,24 @@ VOID Install(char* pPath, char* pName)
     }
     else
     {
+        char pRunAsUser[nBufferSize+1];
+        char pUserPassword[nBufferSize+1];
+        GetPrivateProfileString("Settings","RunAsUser","",pRunAsUser,nBufferSize,pInitFile);
+        GetPrivateProfileString("Settings","UserPassword","",pUserPassword,nBufferSize,pInitFile);
         SC_HANDLE schService = CreateService( 
                 schSCManager,         /* SCManager database      */ 
                 pName,                /* name of service         */ 
                 pName,                /* service name to display */ 
                 SERVICE_ALL_ACCESS,   /* desired access          */ 
-                SERVICE_WIN32_OWN_PROCESS|SERVICE_INTERACTIVE_PROCESS ,    /* service type            */ 
+                SERVICE_WIN32_OWN_PROCESS,    /* service type            */ 
                 SERVICE_AUTO_START,   /* start type              */ 
                 SERVICE_ERROR_NORMAL, /* error control type      */ 
                 pPath,                /* service's binary        */ 
                 NULL,                 /* no load ordering group  */ 
                 NULL,                 /* no tag identifier       */ 
                 NULL,                 /* no dependencies         */ 
-                NULL,                 /* LocalSystem account     */ 
-                NULL                  /* no password             */
+                pRunAsUser, 
+                pUserPassword
                 );                      
         if (schService==0) 
         {
@@ -320,7 +322,7 @@ BOOL SendCommandToService(char * message, TCHAR chBuf[], int chBufSize)
 
     // Send the message to the pipe server. 
     DWORD dwRead = 0;
-    if (!(WriteFile(hPipe, (LPVOID)message, strlen(message), &dwRead, 0)))
+    if (!(WriteFile(hPipe, (LPVOID)message, (DWORD)strlen(message), &dwRead, 0)))
     {
         CloseHandle(hPipe);
         return FALSE;
@@ -339,7 +341,7 @@ BOOL SendCommandToService(char * message, TCHAR chBuf[], int chBufSize)
         if ( ! dwError && GetLastError() != ERROR_MORE_DATA )
             break; 
         //Debug: Uncoment to se what we have read from pipe
-        printf("Read %d bytes\n", cbRead);
+        //printf("Read %d bytes\n", cbRead);
         //printf( TEXT("\n%s\n"), chBuf ); 
     } while ( ! dwError);  // repeat loop if ERROR_MORE_DATA 
 
@@ -372,12 +374,27 @@ void main(int argc, char *argv[] )
     DWORD dwSize = GetModuleFileName(NULL,pModuleFile,nBufferSize);
     pModuleFile[dwSize] = 0;
     *(strrchr(pModuleFile, '\\')) = 0;
-    sprintf_s(pExeFile,"%s\\VBoxVmService.exe",pModuleFile);
+
+    // check 64bit or 32bit system
+    BOOL bIs64Bit = FALSE;
+
+#if defined(_WIN64)
+    bIs64Bit = TRUE;  // 64-bit programs run only on Win64
+#elif defined(_WIN32)
+    typedef BOOL (WINAPI *LPFNISWOW64PROCESS) (HANDLE, PBOOL);
+    LPFNISWOW64PROCESS pfnIsWow64Process = (LPFNISWOW64PROCESS)GetProcAddress(GetModuleHandle("kernel32"), "IsWow64Process");
+         
+    if (pfnIsWow64Process)
+        pfnIsWow64Process(GetCurrentProcess(), &bIs64Bit);
+#endif
+
+
+    if (bIs64Bit)
+        sprintf_s(pExeFile,"%s\\VBoxVmService64.exe",pModuleFile);
+    else
+        sprintf_s(pExeFile,"%s\\VBoxVmService.exe",pModuleFile);
     sprintf_s(pInitFile,"%s\\VBoxVmService.ini",pModuleFile);
 
-    /****************************************************************
-      Do some sanitizing on input data.
-     ****************************************************************/
     //sanitizing VBoxVmService.ini
     dwAttr = GetFileAttributes(pInitFile);
     if(dwAttr == INVALID_FILE_ATTRIBUTES)
@@ -430,11 +447,7 @@ void main(int argc, char *argv[] )
         printf("\nPleas run VmServiceControl.exe from the directory where you installed it. Also check that the directory you specified in VBoxVmService.ini as variable VBOX_USER_HOME exists and is readable.\n");
         return;
     }
-    /****************************************************************
-      done sanitizing
-     ****************************************************************/
-
-
+    
     GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
     // uninstall service if switch is "-u"
     if(argc==2&&_stricmp("-u",argv[1])==0)

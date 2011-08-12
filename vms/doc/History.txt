@@ -30,6 +30,9 @@
 
 0. What is new in this release?
 
+* Call VirtualBox COM API directly instead of using VBoxManage.exe. 
+* Service now runs as normal user, with username and password configed in VBoxVmService.ini.
+
 2011-07-21 Release 2.3 "Watermelon"
 
 * Always require a reboot after installation;
@@ -115,9 +118,7 @@ Changes since version rel20080223
 
 1. What is VBoxVmService?
 
-VBoxVmService is a Windows Service, that enables the host-system to run or shutdown VirtualBox Virtual Machines (VMs) without a user being logged on to the system. 
-
-It acts as a wrapper service enabling automated startup or safe shutdown of Virtual Machines without a user having to log on to the host-system running Windows (XP/2003/Vista/Win7/2008).
+VBoxVmService is a Windows Service, that enables the host-system to run or shutdown VirtualBox Virtual Machines (VMs) without a user being logged on to the host-system running Windows (XP/2003/Vista/Win7/2008).
 
 
 ------------------------------------------------------------------------------
@@ -157,9 +158,9 @@ And guess what? It finally worked! So here it is! :-)
 
 3. How does it work?
 
-Basically, VBoxVmService is just a wrapper-service that calls VirtualBox Command Line Interfaces.
+Basically, VBoxVmService is just a wrapper-service that calls VirtualBox COM API interfaces.
 
-When windows starts up, the wrapper-service will start running. It will check for the settings in VBoxVmService.ini file, and call up the Virtual Machines as specified. Both the wrapper-service and Virtual Machines are run with LocalSystem Account by default.
+When windows starts up, the wrapper-service will start running. It will check for the settings in VBoxVmService.ini file, and call up the Virtual Machines as specified. Both the wrapper-service and Virtual Machines are run with the account specified in the VBoxVmService.ini file.
 
 If you are interested in further details, feel free to browse the supplied source codes!
 

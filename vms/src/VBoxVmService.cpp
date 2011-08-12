@@ -2,6 +2,7 @@
 // VirtualBox VMs - managed by an NT Service (VBoxVmService)
 //////////////////////////////////////////////////////////////////////
 
+#include <atlbase.h>
 #include <stdio.h>
 #include <windows.h>
 #include <winbase.h>
@@ -11,6 +12,8 @@
 #include <time.h>
 #include <stdarg.h>
 #include <io.h>
+#include <winerror.h>
+#include "VirtualBox.h"
 
 #include "VBoxVmPipeManager.h"
 
@@ -22,6 +25,8 @@ char pInitFile[nBufferSize+1];
 char pLogFile[nBufferSize+1];
 const int nMaxProcCount = 100;
 int nProcStatus[nMaxProcCount];
+IVirtualBox *virtualBox;
+ISession *session = NULL;
 
 SERVICE_STATUS          serviceStatus; 
 SERVICE_STATUS_HANDLE   hServiceStatusHandle; 
@@ -29,6 +34,12 @@ SERVICE_STATUS_HANDLE   hServiceStatusHandle;
 VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv );
 VOID WINAPI VBoxVmServiceHandler( DWORD fdwControl );
 char *pipelcat(LPPIPEINST pipe, const char *src, const int srclength);
+
+#define SAFE_RELEASE(x) \
+    if (x) { \
+        x->Release(); \
+        x = NULL; \
+    }
 
 void WriteLog(char* pMsg)
 {
@@ -101,7 +112,7 @@ char *pipelcat(LPPIPEINST pipe, const char *src, int srclength) {
     if (pipe==NULL) {return NULL;}
 
     if (srclength == -1) {
-        srclength = strlen(src);
+        srclength = (int)strlen(src);
     }
     //Debug: uncoment to see write stat
     //printf("pipelcat(cbToWrite=%d, srclength=%d)\n",pipe->cbToWrite,srclength);
@@ -121,121 +132,6 @@ char *pipelcat(LPPIPEINST pipe, const char *src, int srclength) {
     return pipe->chReply;
 }
 
-/*
-   Run a console app by calling the pCommandLine.
-
-   The stdout is loged to the VBoxVmService.log logfile. If chBufBufferSize is not 0 we also store the stdout output in the chBuf buffer. 
-   An easy way of calling this is to use conditional assignment for chBuf and chBufBufferSize. For example (pipe==NULL) ? NULL : pipe->chReply means that if pipe is NULL we will send inn NULL, if it is not NULL we wil send pipe->chReply
-
-   Read more about conditional assignments at: http://en.wikipedia.org/wiki/%3F:
-
-*/
-BOOL RunConsoleApp(LPCTSTR ApplicationName, char pCommandLine[], char pWorkingDir[], LPPIPEINST pipe) 
-{ 
-
-
-    HANDLE g_hChildStd_OUT_Rd = NULL;
-    HANDLE g_hChildStd_OUT_Wr = NULL;
-    HANDLE hStdOut = NULL;
-    char pTemp[nBufferSize+1];
-    char cpBuf[nBufferSize];
-
-    // Set the bInheritHandle flag so pipe handles are inherited.
-    SECURITY_ATTRIBUTES sa;
-    sa.nLength = sizeof (SECURITY_ATTRIBUTES);
-    sa.lpSecurityDescriptor = NULL;
-    sa.bInheritHandle = TRUE;
-    // open handle to VBoxVmService.log
-    hStdOut = CreateFile(pLogFile, FILE_APPEND_DATA, FILE_SHARE_READ | FILE_SHARE_WRITE, &sa, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
-
-
-    sprintf_s(pTemp,"Running command: '%s %s'.", ApplicationName, pCommandLine); 
-    WriteLog(pTemp);
-
-    // prepare for creating process
-    STARTUPINFO si;
-    ZeroMemory(&si, sizeof(STARTUPINFO));
-    si.cb = sizeof(STARTUPINFO);
-    si.dwFlags = STARTF_USESHOWWINDOW | STARTF_USESTDHANDLES;
-    si.wShowWindow = SW_HIDE;
-    si.lpDesktop = "";
-    si.hStdOutput = hStdOut;
-
-
-    if (pipe != NULL) {
-        SECURITY_ATTRIBUTES sahChildStd; 
-        sahChildStd.nLength = sizeof(SECURITY_ATTRIBUTES); 
-        sahChildStd.bInheritHandle = TRUE; 
-        sahChildStd.lpSecurityDescriptor = NULL;
-        // Create a pipe for the child process's STDOUT.
-        if ( ! CreatePipe(&g_hChildStd_OUT_Rd, &g_hChildStd_OUT_Wr, &sahChildStd, 0) ) 
-        {
-            sprintf_s(pTemp,"Error StdoutRd CreatePipe while runing : '%s %s'.", ApplicationName, pCommandLine); 
-            WriteLog(pTemp);
-        }
-        // Ensure the read handle to the pipe for STDOUT is not inherited.
-        if ( ! SetHandleInformation(g_hChildStd_OUT_Rd, HANDLE_FLAG_INHERIT, 0) )
-        {
-            sprintf_s(pTemp,"Error Stdout SetHandleInformation while runing: '%s %s'.", ApplicationName, pCommandLine); 
-            WriteLog(pTemp);
-        }
-
-        // overriding VBoxVmService.log handler
-        si.hStdOutput = g_hChildStd_OUT_Wr;
-    }
-
-    // Run the command
-    PROCESS_INFORMATION pProcInfo;
-    if(!CreateProcess(ApplicationName,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,strlen(pWorkingDir)==0?NULL:pWorkingDir,&si,&pProcInfo))
-    {
-        return FALSE;
-    }
-
-
-    // Close handles to the child process and its primary thread.
-    // Some applications might keep these handles to monitor the status
-    // of the child process, for example. 
-    WaitForSingleObject(pProcInfo.hProcess, INFINITE);
-    CloseHandle(pProcInfo.hProcess);
-    CloseHandle(pProcInfo.hThread);
-
-    if (pipe != NULL) {
-        // Read output from the child process's pipe for STDOUT
-        // and write to the parent process's error log and buff. 
-        // Stop when there is no more data. 
-        DWORD dwRead, dwWritten; 
-        BOOL bSuccess = FALSE;
-
-        // Close the write end of the pipe before reading from the 
-        // read end of the pipe, to control child process execution.
-        if (!CloseHandle(g_hChildStd_OUT_Wr)) 
-        {
-            sprintf_s(pTemp,"Error StdOutWr CloseHandle ruuing: '%s %s'.", ApplicationName, pCommandLine); 
-            WriteLog(pTemp);
-        }
-
-        // reading while we have data to read
-        for (;;) 
-        { 
-
-            bSuccess = ReadFile( g_hChildStd_OUT_Rd, (LPVOID)cpBuf, sizeof(cpBuf) , &dwRead, NULL);
-            if( ! bSuccess || dwRead == 0 ) break;
-
-            pipelcat(pipe,cpBuf,dwRead);
-
-            bSuccess = WriteFile(hStdOut, (LPVOID)cpBuf, dwRead, &dwWritten, NULL);
-            if (! bSuccess ) break; 
-
-        } 
-
-        // no need to close this because it got closed when the process exited. Closing it again will cast error if run under a debugger.
-        //CloseHandle(g_hChildStd_OUT_Wr);
-        CloseHandle(hStdOut);
-    }
-
-    return TRUE;
-}
-
 char *nIndexTopVmName(int nIndex) {
     char pItem[nBufferSize+1];
     static char pVmName[nBufferSize+1];
@@ -251,51 +147,156 @@ char *nIndexTopVmName(int nIndex) {
     return pVmName;
 }
 
-// helper function
-// RunVBoxManage with printf style arguments
-BOOL VBoxManage(LPPIPEINST pipe, LPCSTR formatstring, ...) {
-    int nSize = 0;
-    char myarguments[255];
-    char pItem[nBufferSize+1];
-    char pWorkingDir[nBufferSize+1];
-    char pTemp[121];
+// Get VM status with given name
+void VMStatus(char *vm, LPPIPEINST pipe)
+{
+    CComBSTR vmName(vm);
+    HRESULT rc;
+    IMachine *machine = NULL;
 
-    // handle custom arguments
-    va_list args;
-    va_start(args, formatstring);
+    rc = virtualBox->FindMachine(vmName, &machine);
 
-    nSize = _vsnprintf( myarguments, sizeof(myarguments), formatstring, args);
-    if ( nSize > (sizeof(myarguments) -2) ) {
-        sprintf_s(pTemp, "VBoxManage: Arguments \"%s\" is to long\n", myarguments);
-        WriteLog(pTemp);
-        return false;
-    }
-
-
-
-    // get full path to VBoxManage.exe
-    char pVBoxManagePath[nBufferSize+1];
-    if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxManagePath, nBufferSize) == 0)
+    if (FAILED(rc))
     {
-        sprintf_s(pTemp, "VBOX_INSTALL_PATH not found."); 
-        WriteLog(pTemp);
-        return false;
-    }
-    strcat(pVBoxManagePath, "VBoxManage.exe");
+        IErrorInfo *errorInfo;
 
-    // get working dir
-    GetPrivateProfileString(pItem,"WorkingDir","",pWorkingDir,nBufferSize,pInitFile);
+        rc = GetErrorInfo(0, &errorInfo);
 
-    // run the command to check status and write back to Pipe
-    if (!RunConsoleApp(pVBoxManagePath, myarguments, pWorkingDir, pipe)) {
-        long nError = GetLastError();
-        sprintf_s(pTemp,"Failed execute VBoxManage.exe using command: '%s %s', error code = %d", pVBoxManagePath, myarguments, nError); 
-        WriteLog(pTemp);
-        return FALSE;
+        if (FAILED(rc))
+            WriteLogPipe(pipe,"Error getting error info! rc = 0x%x\n", rc); 
+        else
+        {
+            BSTR errorDescription = NULL;
+
+            rc = errorInfo->GetDescription(&errorDescription);
+
+            if (FAILED(rc) || !errorDescription)
+                WriteLogPipe(pipe, "Error getting error description! rc = 0x%x\n", rc);
+            else
+            {
+                WriteLogPipe(pipe, "Error finding machine: %S\n", errorDescription);
+                SysFreeString(errorDescription);
+            }
+
+            SAFE_RELEASE(errorInfo);
+        }
     }
-    return true;
+    else
+    {
+        MachineState state;
+
+        rc = machine->get_State(&state);
+        if (!SUCCEEDED(rc))
+        {
+            WriteLogPipe(pipe, "Error retrieving machine state! rc = 0x%x\n", rc);
+        }
+        else
+        {
+            switch (state) {
+                case MachineState_PoweredOff:
+                    WriteLogPipe(pipe, "VM %s is powered off.\n", vm);
+                    break;
+                case MachineState_Saved:
+                    WriteLogPipe(pipe, "VM %s is saved.\n", vm);
+                    break;
+                case MachineState_Aborted:
+                    WriteLogPipe(pipe, "VM %s is aborted.\n", vm);
+                    break;
+                case MachineState_Running:
+                    WriteLogPipe(pipe, "VM %s is running.\n", vm);
+                    break;
+                case MachineState_Paused:
+                    WriteLogPipe(pipe, "VM %s is paused.\n", vm);
+                    break;
+                default:
+                    WriteLogPipe(pipe, "VM %s is in unknown state %d.\n", vm, state);
+                    break;
+            }
+        }
+
+        SAFE_RELEASE(machine);
+    }
 
 }
+
+// start a VM with given name
+int StartVM(char *vm, LPPIPEINST pipe)
+{
+    CComBSTR vmName(vm);
+    HRESULT rc;
+    IMachine *machine = NULL;
+    int result = 1;
+
+    rc = virtualBox->FindMachine(vmName, &machine);
+
+    if (FAILED(rc))
+    {
+        IErrorInfo *errorInfo;
+
+        rc = GetErrorInfo(0, &errorInfo);
+
+        if (FAILED(rc))
+            WriteLogPipe(pipe,"Error getting error info! rc = 0x%x\n", rc); 
+        else
+        {
+            BSTR errorDescription = NULL;
+
+            rc = errorInfo->GetDescription(&errorDescription);
+
+            if (FAILED(rc) || !errorDescription)
+                WriteLogPipe(pipe, "Error getting error description! rc = 0x%x\n", rc);
+            else
+            {
+                WriteLogPipe(pipe, "Error finding machine: %S\n", errorDescription);
+                SysFreeString(errorDescription);
+            }
+
+            SAFE_RELEASE(errorInfo);
+        }
+    }
+    else
+    {
+        BSTR sessiontype = SysAllocString(L"headless");
+        IProgress *progress = NULL;
+        BSTR guid;
+
+        do
+        {
+            rc = machine->get_Id(&guid); // Get the GUID of the machine.
+            if (!SUCCEEDED(rc))
+            {
+                WriteLogPipe(pipe, "Error retrieving machine ID! rc = 0x%x\n", rc);
+                break;
+            }
+
+            // Start a VM session using the delivered VBox GUI.
+            rc = machine->LaunchVMProcess(session, sessiontype,
+                    NULL, &progress);
+            if (!SUCCEEDED(rc))
+            {
+                WriteLogPipe(pipe, "Could not open remote session! rc = 0x%x\n", rc);
+                break;
+            }
+            result = 0;
+
+            // Wait until VM is running. 
+            WriteLogPipe(pipe, "Starting VM %s, please wait ... ", vm);
+            rc = progress->WaitForCompletion (-1);
+            WriteLogPipe(pipe, "done.\n", vm);
+
+            // Close the session.
+            rc = session->UnlockMachine();
+
+        } while (0);
+
+        SAFE_RELEASE(progress);
+        SysFreeString(guid);
+        SysFreeString(sessiontype);
+        SAFE_RELEASE(machine);
+    }
+    return result;
+}
+
 
 // start a VM with given index
 BOOL StartProcess(int nIndex, LPPIPEINST pipe) 
@@ -323,16 +324,100 @@ BOOL StartProcess(int nIndex, LPPIPEINST pipe)
             return true;
     }
 
-    // run VBoxManage.exe showvminfo VmName
-    VBoxManage(pipe, "-nologo showvminfo \"%s\"", cp);
-
-    // run VBoxManage.exe startvm VmName --type vrde
-    VBoxManage(pipe, "-nologo startvm \"%s\" --type headless", cp);
-
-    nProcStatus[nIndex] = 1;
+    if (StartVM(cp, pipe) == 0)
+        nProcStatus[nIndex] = 1;
     return true;
 
 }
+
+// stop a VM with given name
+int StopVM(char *vm, char *method, LPPIPEINST pipe)
+{
+    CComBSTR vmName(vm);
+    HRESULT rc;
+    IMachine *machine = NULL;
+    int result = 1;
+
+    rc = virtualBox->FindMachine(vmName, &machine);
+
+    if (FAILED(rc))
+    {
+        IErrorInfo *errorInfo;
+
+        rc = GetErrorInfo(0, &errorInfo);
+
+        if (FAILED(rc))
+            WriteLogPipe(pipe,"Error getting error info! rc = 0x%x\n", rc); 
+        else
+        {
+            BSTR errorDescription = NULL;
+
+            rc = errorInfo->GetDescription(&errorDescription);
+
+            if (FAILED(rc) || !errorDescription)
+                WriteLogPipe(pipe, "Error getting error description! rc = 0x%x\n", rc);
+            else
+            {
+                WriteLogPipe(pipe, "Error finding machine: %S\n", errorDescription);
+                SysFreeString(errorDescription);
+            }
+
+            SAFE_RELEASE(errorInfo);
+        }
+    }
+    else
+    {
+        IConsole *console = NULL;
+        IProgress *progress = NULL;
+        BSTR guid;
+
+        do
+        {
+            rc = machine->get_Id(&guid); // Get the GUID of the machine.
+            if (!SUCCEEDED(rc))
+            {
+                WriteLogPipe(pipe, "Error retrieving machine ID! rc = 0x%x\n", rc);
+                break;
+            }
+
+            // Start a VM session using the delivered VBox GUI.
+            rc = machine->LockMachine(session, LockType_Shared);
+            if (!SUCCEEDED(rc))
+            {
+                WriteLogPipe(pipe, "Could not lock machine! rc = 0x%x\n", rc);
+                break;
+            }
+
+            // Get console object. 
+            session->get_Console(&console);
+
+            if (strcmp(method, "savestate") == 0)
+                rc = console->SaveState(&progress);
+            else
+                rc = console->PowerButton();
+            if (!SUCCEEDED(rc))
+            {
+                WriteLogPipe(pipe, "Could not stop machine! rc = 0x%x\n", rc);
+                break;
+            }
+
+            result = 0;
+
+            WriteLogPipe(pipe, "VM %s is being shutdown.", vm);
+
+            // Close the session.
+            rc = session->UnlockMachine();
+
+        } while (0);
+
+        SAFE_RELEASE(console);
+        SAFE_RELEASE(progress);
+        SysFreeString(guid);
+        SAFE_RELEASE(machine);
+    }
+    return result;
+}
+
 // end a VM with given index
 BOOL EndProcess(int nIndex, LPPIPEINST pipe) 
 {
@@ -348,25 +433,9 @@ BOOL EndProcess(int nIndex, LPPIPEINST pipe)
     sprintf_s(pItem,"Vm%d\0",nIndex);
     GetPrivateProfileString(pItem,"ShutdownMethod","",pShutdownMethod,nBufferSize,pInitFile);
 
-    VBoxManage(pipe, "-nologo controlvm \"%s\" \"%s\"", cp, pShutdownMethod);
-
+    StopVM(cp, pShutdownMethod, pipe);
     nProcStatus[nIndex] = 0;
     return true;
-}
-
-// Run "set" on the windows commandline to get the execution environment
-BOOL CmdEnv(LPPIPEINST pipe) {
-
-    char pCommandLine[nBufferSize+1];
-
-    //create command to run.   
-    sprintf_s(pCommandLine, "C:\\Windows\\System32\\cmd /C set");
-
-    // run the command to check status and write back to Pipe
-    RunConsoleApp(NULL, pCommandLine, "C:\\Windows\\System32", pipe);
-
-
-    return true;    
 }
 
 ////////////////////////////////////////////////////////////////////// 
@@ -408,24 +477,6 @@ VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv )
         WriteLog(pTemp);
     } 
 
-    for(int i=0;i<nMaxProcCount;i++)
-        nProcStatus[i] = 0;
-
-    BOOL bShouldWait = FALSE;
-    for(int i=0;i<nMaxProcCount;i++)
-    {
-        if (!StartProcess(i, NULL))
-            break;
-        bShouldWait = true;
-    }
-
-    // wait for VMs to start up
-    if (bShouldWait)
-    {
-        char pPause[nBufferSize+1];
-        GetPrivateProfileString("Settings","PauseStartup","1000",pPause,nBufferSize,pInitFile);
-        Sleep(atoi(pPause));
-    }
 }
 
 ////////////////////////////////////////////////////////////////////// 
@@ -507,40 +558,106 @@ void WorkerHandleCommand(LPPIPEINST pipe)
             WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); 
             return;
         }
-        VBoxManage(pipe, "-nologo showvminfo \"%s\"", cp);    
-    }
-    else if (strncmp(buffer, "env", 3) == 0)
-    {
-        CmdEnv(pipe);
+        VMStatus(cp, pipe);
     }
     else if (strncmp(buffer, "shutdown", 8) == 0)
     {
         VBoxVmServiceHandler(SERVICE_CONTROL_SHUTDOWN);
     }
-    else if (strncmp(buffer, "guestpropertys", 14) == 0)
-    {
-        cp = nIndexTopVmName( atoi(buffer + 15) );
-        if (cp==NULL) 
-        {
-            WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); 
-            return; 
-        }
-        VBoxManage(pipe, "-nologo guestproperty enumerate \"%s\"", cp);
-    }   
     else {
         printf("Unknown command \"%s\"\n", buffer);
     }
 }
 
+void listVMs(IVirtualBox *virtualBox)
+{
+    HRESULT rc;
+
+    SAFEARRAY *machinesArray = NULL;
+    WriteLogPipe(NULL, "List all the VMs found by VBoxVmService"); 
+ 
+    rc = virtualBox->get_Machines(&machinesArray);
+    if (SUCCEEDED(rc))
+    {
+        IMachine **machines;
+        rc = SafeArrayAccessData (machinesArray, (void **) &machines);
+        if (SUCCEEDED(rc))
+        {
+            for (ULONG i = 0; i < machinesArray->rgsabound[0].cElements; ++i)
+            {
+                BSTR str;
+
+                rc = machines[i]->get_Name(&str);
+                if (SUCCEEDED(rc))
+                {
+                    WriteLogPipe(NULL, "Name: %S", str); 
+                    SysFreeString(str);
+                }
+            }
+
+            SafeArrayUnaccessData (machinesArray);
+        }
+
+        SafeArrayDestroy (machinesArray);
+    }
+}
+
 unsigned __stdcall WorkerProc(void* pParam)
 {
+    HRESULT rc;
+    rc = CoInitialize(NULL);
+
+    rc = CoCreateInstance(CLSID_VirtualBox,
+            NULL,
+            CLSCTX_LOCAL_SERVER,
+            IID_IVirtualBox,
+            (void**)&virtualBox);
+    if (!SUCCEEDED(rc))
+    {
+        WriteLogPipe(NULL, "Error creating VirtualBox instance! rc = 0x%x\n", rc);
+        return 1;
+    }
+
+    // Create the session object.
+    rc = CoCreateInstance(CLSID_Session, // the VirtualBox base object
+            NULL,          // no aggregation
+            CLSCTX_INPROC_SERVER, // the object lives in a server process on this machine
+            IID_ISession,  // IID of the interface
+            (void**)&session);
+    if (!SUCCEEDED(rc))
+    {
+        WriteLogPipe(NULL, "Error creating Session instance! rc = 0x%x\n", rc);
+        return 1;
+    }
+
+    listVMs(virtualBox);
+
+    // Startup VMs
+    for(int i=0;i<nMaxProcCount;i++)
+        nProcStatus[i] = 0;
+
+    BOOL bShouldWait = FALSE;
+    for(int i=0;i<nMaxProcCount;i++)
+    {
+        if (!StartProcess(i, NULL))
+            break;
+        bShouldWait = true;
+    }
+
+    // wait for VMs to start up
+    if (bShouldWait)
+    {
+        char pPause[nBufferSize+1];
+        GetPrivateProfileString("Settings","PauseStartup","1000",pPause,nBufferSize,pInitFile);
+        Sleep(atoi(pPause));
+    }
     const int nMessageSize = 80;
 
     //PipeManager will handel all pipe connections
     PipeManager("\\\\.\\pipe\\VBoxVmService", WorkerHandleCommand);
 
     //gracefully ending the service
-    BOOL bShouldWait = FALSE;
+    bShouldWait = FALSE;
     // terminate all running processes before shutdown
     for(int i=nMaxProcCount-1;i>=0;i--)
     {
@@ -570,6 +687,10 @@ unsigned __stdcall WorkerProc(void* pParam)
         WriteLog(pTemp);
     }
 
+    SAFE_RELEASE(session);
+    virtualBox->Release();
+    CoUninitialize();
+
     return 1;
 }
 
@@ -589,9 +710,9 @@ void main(int argc, char *argv[] )
     if(dwSize>4&&pModuleFile[dwSize-4]=='.')
     {
         sprintf_s(pExeFile,"%s",pModuleFile);
-        pModuleFile[dwSize-4] = 0;
-        sprintf_s(pInitFile,"%s.ini",pModuleFile);
-        sprintf_s(pLogFile,"%s.log",pModuleFile);
+        *(strrchr(pModuleFile, '\\')) = 0;
+        sprintf_s(pInitFile,"%s\\VBoxVmService.ini",pModuleFile);
+        sprintf_s(pLogFile,"%s\\VBoxVmService.log",pModuleFile);
     }
     else
     {

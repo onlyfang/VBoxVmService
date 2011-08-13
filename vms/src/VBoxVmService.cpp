@@ -26,7 +26,6 @@ char pLogFile[nBufferSize+1];
 const int nMaxProcCount = 100;
 int nProcStatus[nMaxProcCount];
 IVirtualBox *virtualBox;
-ISession *session = NULL;
 
 SERVICE_STATUS          serviceStatus; 
 SERVICE_STATUS_HANDLE   hServiceStatusHandle; 
@@ -62,7 +61,7 @@ void WriteLogPipe(LPPIPEINST pipe, LPCSTR formatstring, ...){
     va_list args;
     va_start(args, formatstring);
 
-    pLen = _vsnprintf(pTemp, sizeof(pTemp), formatstring, args);
+    pLen = vsnprintf_s(pTemp, sizeof(pTemp), nBufferSize, formatstring, args);
 
     //append to log
     WriteLog(pTemp);
@@ -256,6 +255,7 @@ int StartVM(char *vm, LPPIPEINST pipe)
     }
     else
     {
+        ISession *session = NULL;
         BSTR sessiontype = SysAllocString(L"headless");
         IProgress *progress = NULL;
         BSTR guid;
@@ -268,6 +268,19 @@ int StartVM(char *vm, LPPIPEINST pipe)
                 WriteLogPipe(pipe, "Error retrieving machine ID! rc = 0x%x\n", rc);
                 break;
             }
+
+            // Create the session object.
+            rc = CoCreateInstance(CLSID_Session, // the VirtualBox base object
+                    NULL,          // no aggregation
+                    CLSCTX_INPROC_SERVER, // the object lives in a server process on this machine
+                    IID_ISession,  // IID of the interface
+                    (void**)&session);
+            if (!SUCCEEDED(rc))
+            {
+                WriteLogPipe(NULL, "Error creating Session instance! rc = 0x%x\n", rc);
+                return 1;
+            }
+
 
             // Start a VM session using the delivered VBox GUI.
             rc = machine->LaunchVMProcess(session, sessiontype,
@@ -282,7 +295,7 @@ int StartVM(char *vm, LPPIPEINST pipe)
             // Wait until VM is running. 
             WriteLogPipe(pipe, "Starting VM %s, please wait ... ", vm);
             rc = progress->WaitForCompletion (-1);
-            WriteLogPipe(pipe, "done.\n", vm);
+            WriteLogPipe(pipe, "done.\n");
 
             // Close the session.
             rc = session->UnlockMachine();
@@ -292,6 +305,7 @@ int StartVM(char *vm, LPPIPEINST pipe)
         SAFE_RELEASE(progress);
         SysFreeString(guid);
         SysFreeString(sessiontype);
+        SAFE_RELEASE(session);
         SAFE_RELEASE(machine);
     }
     return result;
@@ -320,7 +334,7 @@ BOOL StartProcess(int nIndex, LPPIPEINST pipe)
         // get AutoStart
         sprintf_s(pItem,"Vm%d\0",nIndex);
         GetPrivateProfileString(pItem,"AutoStart","",pAutoStart,nBufferSize,pInitFile);
-        if (stricmp(pAutoStart, "no") == 0)
+        if (_stricmp(pAutoStart, "no") == 0)
             return true;
     }
 
@@ -367,6 +381,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
     }
     else
     {
+        ISession *session = NULL;
         IConsole *console = NULL;
         IProgress *progress = NULL;
         BSTR guid;
@@ -380,7 +395,20 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
                 break;
             }
 
-            // Start a VM session using the delivered VBox GUI.
+            // Create the session object.
+            rc = CoCreateInstance(CLSID_Session, // the VirtualBox base object
+                    NULL,          // no aggregation
+                    CLSCTX_INPROC_SERVER, // the object lives in a server process on this machine
+                    IID_ISession,  // IID of the interface
+                    (void**)&session);
+            if (!SUCCEEDED(rc))
+            {
+                WriteLogPipe(NULL, "Error creating Session instance! rc = 0x%x\n", rc);
+                return 1;
+            }
+
+
+            // Lock the machine for session 
             rc = machine->LockMachine(session, LockType_Shared);
             if (!SUCCEEDED(rc))
             {
@@ -397,7 +425,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
                 rc = console->PowerButton();
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, "Could not stop machine! rc = 0x%x\n", rc);
+                WriteLogPipe(pipe, "Could not stop machine %s! rc = 0x%x\n", rc, vm);
                 break;
             }
 
@@ -413,6 +441,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
         SAFE_RELEASE(console);
         SAFE_RELEASE(progress);
         SysFreeString(guid);
+        SAFE_RELEASE(session);
         SAFE_RELEASE(machine);
     }
     return result;
@@ -575,7 +604,7 @@ void listVMs(IVirtualBox *virtualBox)
 
     SAFEARRAY *machinesArray = NULL;
     WriteLogPipe(NULL, "List all the VMs found by VBoxVmService"); 
- 
+
     rc = virtualBox->get_Machines(&machinesArray);
     if (SUCCEEDED(rc))
     {
@@ -615,18 +644,6 @@ unsigned __stdcall WorkerProc(void* pParam)
     if (!SUCCEEDED(rc))
     {
         WriteLogPipe(NULL, "Error creating VirtualBox instance! rc = 0x%x\n", rc);
-        return 1;
-    }
-
-    // Create the session object.
-    rc = CoCreateInstance(CLSID_Session, // the VirtualBox base object
-            NULL,          // no aggregation
-            CLSCTX_INPROC_SERVER, // the object lives in a server process on this machine
-            IID_ISession,  // IID of the interface
-            (void**)&session);
-    if (!SUCCEEDED(rc))
-    {
-        WriteLogPipe(NULL, "Error creating Session instance! rc = 0x%x\n", rc);
         return 1;
     }
 
@@ -676,6 +693,10 @@ unsigned __stdcall WorkerProc(void* pParam)
         Sleep(atoi(pPause));
     }
 
+    virtualBox->Release();
+    CoUninitialize();
+    WriteLogPipe(NULL, "%s stopped.\n", pServiceName);
+
     // notify SCM that we've finished
     serviceStatus.dwCurrentState = SERVICE_STOPPED; 
     serviceStatus.dwWaitHint     = 0;  
@@ -686,10 +707,6 @@ unsigned __stdcall WorkerProc(void* pParam)
         sprintf_s(pTemp, "SetServiceStatus failed, error code = %d", nError);
         WriteLog(pTemp);
     }
-
-    SAFE_RELEASE(session);
-    virtualBox->Release();
-    CoUninitialize();
 
     return 1;
 }
@@ -716,7 +733,7 @@ void main(int argc, char *argv[] )
     }
     else
     {
-        printf("Invalid module file name: %s\r\n", pModuleFile);
+        printf("Invalid module file name: %s\n", pModuleFile);
         return;
     }
     WriteLog(pExeFile);
@@ -724,7 +741,7 @@ void main(int argc, char *argv[] )
     WriteLog(pLogFile);
     // read service name from .ini file
     GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
-    WriteLog(pServiceName);
+    WriteLogPipe(NULL, "%s started.", pServiceName);
 
     // Run in debug mode if switch is "-d"
     if(argc==2&&_stricmp("-d",argv[1])==0)

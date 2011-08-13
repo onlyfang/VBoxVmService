@@ -262,7 +262,7 @@ VOID Install(char* pPath, char* pName)
             LONG lRet = RegCreateKeyEx(HKEY_LOCAL_MACHINE, "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment", 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &hKey, &dwDisp);
             if (lRet == ERROR_SUCCESS)
             {
-                lRet = RegSetValueEx(hKey, "VBOX_USER_HOME", 0, REG_SZ, (const BYTE *)pVboxUserHome, strlen(pVboxUserHome) + 1);
+                lRet = RegSetValueEx(hKey, "VBOX_USER_HOME", 0, REG_SZ, (const BYTE *)pVboxUserHome, (DWORD)strlen(pVboxUserHome) + 1);
                 RegCloseKey(hKey);
             }
             if (lRet != ERROR_SUCCESS)

@@ -47,7 +47,7 @@ void WriteLog(char* pMsg)
     {
         SYSTEMTIME oT;
         ::GetLocalTime(&oT);
-        FILE* pLog = fopen(pLogFile,"a");
+        FILE* pLog = fopen(pLogFile,"at");
         fprintf(pLog,"%02d/%02d/%04d, %02d:%02d:%02d - %s\n",oT.wMonth,oT.wDay,oT.wYear,oT.wHour,oT.wMinute,oT.wSecond,pMsg); 
         fclose(pLog);
     } catch(...) {}
@@ -145,6 +145,53 @@ char *nIndexTopVmName(int nIndex) {
 
     return pVmName;
 }
+
+//***********************************************************
+//  Run a console app by calling the pCommandLine.
+//  The stdout is loged to the VBoxVmService.log logfile. 
+//  The process ID of the started process is returned
+//***********************************************************
+
+DWORD RunConsoleApp(char pCommandLine[]) 
+{ 
+    HANDLE hStdOut = NULL;
+    char pTemp[nBufferSize+1];
+
+    // Set the bInheritHandle flag so pipe handles are inherited.
+    SECURITY_ATTRIBUTES sa;
+    sa.nLength = sizeof (SECURITY_ATTRIBUTES);
+    sa.lpSecurityDescriptor = NULL;
+    sa.bInheritHandle = TRUE;
+    // open handle to VBoxVmService.log
+    hStdOut = CreateFile(pLogFile, FILE_APPEND_DATA, FILE_SHARE_READ | FILE_SHARE_WRITE, &sa, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+
+
+    sprintf_s(pTemp,"Running command: '%s'.", pCommandLine); 
+    WriteLog(pTemp);
+
+    // prepare for creating process
+    STARTUPINFO si;
+    ZeroMemory(&si, sizeof(STARTUPINFO));
+    si.cb = sizeof(STARTUPINFO);
+    si.dwFlags = STARTF_USESHOWWINDOW | STARTF_USESTDHANDLES;
+    si.wShowWindow = SW_HIDE;
+    si.lpDesktop = "";
+    si.hStdOutput = hStdOut;
+
+    // Run the command
+    PROCESS_INFORMATION pProcInfo;
+    if(!CreateProcess(NULL,pCommandLine,NULL,NULL,TRUE,NORMAL_PRIORITY_CLASS,NULL,NULL,&si,&pProcInfo))
+    {
+        return -1;
+    }
+
+    WaitForInputIdle(pProcInfo.hProcess, 1000);
+    CloseHandle(pProcInfo.hProcess);
+    CloseHandle(pProcInfo.hThread);
+
+    return pProcInfo.dwProcessId;
+}
+
 
 // Get VM status with given name
 void VMStatus(char *vm, LPPIPEINST pipe)
@@ -431,7 +478,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
 
             result = 0;
 
-            WriteLogPipe(pipe, "VM %s is being shutdown.", vm);
+            WriteLogPipe(pipe, "VM %s is being shutdown.\n", vm);
 
             // Close the session.
             rc = session->UnlockMachine();
@@ -668,7 +715,26 @@ unsigned __stdcall WorkerProc(void* pParam)
         GetPrivateProfileString("Settings","PauseStartup","1000",pPause,nBufferSize,pInitFile);
         Sleep(atoi(pPause));
     }
-    const int nMessageSize = 80;
+
+    // start up web service if required
+    DWORD vBoxWebSrvPId = -1;
+    char pRunWebService[nBufferSize+1];
+    GetPrivateProfileString("Settings","RunWebService","",pRunWebService,nBufferSize,pInitFile);
+    if (_stricmp(pRunWebService, "yes") == 0) {
+        WriteLog("Start up VirtualBox web service");
+
+        // get full path to VBoxWebSrv.exe
+        char pVBoxWebSrvPath[nBufferSize+1];
+        if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxWebSrvPath, nBufferSize) == 0)
+        {
+            WriteLog("VBOX_INSTALL_PATH not found.");        
+        }
+        else
+        {
+            strcat_s(pVBoxWebSrvPath, nBufferSize, "VBoxWebSrv.exe");
+            vBoxWebSrvPId = RunConsoleApp(pVBoxWebSrvPath);
+        }
+    }
 
     //PipeManager will handel all pipe connections
     PipeManager("\\\\.\\pipe\\VBoxVmService", WorkerHandleCommand);
@@ -691,6 +757,17 @@ unsigned __stdcall WorkerProc(void* pParam)
         char pPause[nBufferSize+1];
         GetPrivateProfileString("Settings","PauseShutdown","1000",pPause,nBufferSize,pInitFile);
         Sleep(atoi(pPause));
+    }
+
+    // Shutdown vbox web service, if it's started by us
+    if (vBoxWebSrvPId != -1) {
+        HANDLE vboxWSHnd = OpenProcess(PROCESS_ALL_ACCESS, false, vBoxWebSrvPId);
+        if (vboxWSHnd != NULL)
+        {
+            WriteLog("Shutdown VirtualBox web service");
+            TerminateProcess(vboxWSHnd, -1);
+            CloseHandle(vboxWSHnd);
+        }
     }
 
     virtualBox->Release();

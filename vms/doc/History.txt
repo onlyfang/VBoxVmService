@@ -30,6 +30,7 @@
 
 0. What is new in this release?
 
+* Patch from Scholar Team and Harold Roussel: allow VBoxWebSrv.exe to run when VBoxVmService starts, giving access to the currently running virtual machines via phpVirtualBox.
 * Call VirtualBox COM API directly instead of using VBoxManage.exe. 
 * Service now runs as normal user, with username and password configed in VBoxVmService.ini.
 

@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include <atlbase.h>
+#include <vector>
 #include <stdio.h>
 #include <windows.h>
 #include <winbase.h>
@@ -23,8 +24,7 @@ char pServiceName[nBufferSize+1];
 char pExeFile[nBufferSize+1];
 char pInitFile[nBufferSize+1];
 char pLogFile[nBufferSize+1];
-const int nMaxProcCount = 100;
-int nProcStatus[nMaxProcCount];
+std::vector <int> nProcStatus;
 IVirtualBox *virtualBox;
 
 SERVICE_STATUS          serviceStatus; 
@@ -131,7 +131,7 @@ char *pipelcat(LPPIPEINST pipe, const char *src, int srclength) {
     return pipe->chReply;
 }
 
-char *nIndexTopVmName(int nIndex) {
+char *nIndexToVmName(int nIndex) {
     char pItem[nBufferSize+1];
     static char pVmName[nBufferSize+1];
 
@@ -305,17 +305,9 @@ int StartVM(char *vm, LPPIPEINST pipe)
         ISession *session = NULL;
         BSTR sessiontype = SysAllocString(L"headless");
         IProgress *progress = NULL;
-        BSTR guid;
 
         do
         {
-            rc = machine->get_Id(&guid); // Get the GUID of the machine.
-            if (!SUCCEEDED(rc))
-            {
-                WriteLogPipe(pipe, "Error retrieving machine ID! rc = 0x%x\n", rc);
-                break;
-            }
-
             // Create the session object.
             rc = CoCreateInstance(CLSID_Session, // the VirtualBox base object
                     NULL,          // no aggregation
@@ -325,7 +317,7 @@ int StartVM(char *vm, LPPIPEINST pipe)
             if (!SUCCEEDED(rc))
             {
                 WriteLogPipe(NULL, "Error creating Session instance! rc = 0x%x\n", rc);
-                return 1;
+                break;
             }
 
 
@@ -350,7 +342,6 @@ int StartVM(char *vm, LPPIPEINST pipe)
         } while (0);
 
         SAFE_RELEASE(progress);
-        SysFreeString(guid);
         SysFreeString(sessiontype);
         SAFE_RELEASE(session);
         SAFE_RELEASE(machine);
@@ -364,7 +355,7 @@ BOOL StartProcess(int nIndex, LPPIPEINST pipe)
 { 
     char *cp;
 
-    cp = nIndexTopVmName( nIndex );
+    cp = nIndexToVmName( nIndex );
     if (cp == NULL) 
     {
         if (pipe)  // this message is invalid when StartProcess is called during service start, not by control command
@@ -431,14 +422,21 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
         ISession *session = NULL;
         IConsole *console = NULL;
         IProgress *progress = NULL;
-        BSTR guid;
 
         do
         {
-            rc = machine->get_Id(&guid); // Get the GUID of the machine.
+            MachineState vmstate;
+            rc = machine->get_State(&vmstate); // Get the state of the machine.
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, "Error retrieving machine ID! rc = 0x%x\n", rc);
+                WriteLogPipe(pipe, "Error retrieving machine state! rc = 0x%x\n", rc);
+                break;
+            }
+
+            // check for running state
+            if( MachineState_Running != vmstate && 
+                    MachineState_Starting != vmstate ) 
+            {
                 break;
             }
 
@@ -450,8 +448,8 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
                     (void**)&session);
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(NULL, "Error creating Session instance! rc = 0x%x\n", rc);
-                return 1;
+                WriteLogPipe(pipe, "Error creating Session instance! rc = 0x%x\n", rc);
+                break;
             }
 
 
@@ -487,7 +485,6 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
 
         SAFE_RELEASE(console);
         SAFE_RELEASE(progress);
-        SysFreeString(guid);
         SAFE_RELEASE(session);
         SAFE_RELEASE(machine);
     }
@@ -502,7 +499,7 @@ BOOL EndProcess(int nIndex, LPPIPEINST pipe)
     char *cp;
 
 
-    cp = nIndexTopVmName( nIndex );
+    cp = nIndexToVmName( nIndex );
     if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return false; }
 
     // get ShutdownMethod
@@ -628,7 +625,7 @@ void WorkerHandleCommand(LPPIPEINST pipe)
     }
     else if (strncmp(buffer, "status", 6) == 0)
     {
-        cp = nIndexTopVmName( atoi(buffer + 7) );
+        cp = nIndexToVmName( atoi(buffer + 7) );
         if (cp==NULL)
         {
             WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); 
@@ -697,11 +694,19 @@ unsigned __stdcall WorkerProc(void* pParam)
     listVMs(virtualBox);
 
     // Startup VMs
-    for(int i=0;i<nMaxProcCount;i++)
-        nProcStatus[i] = 0;
+    int i = 0;
+    while (true)
+    {
+        char *pVmName = nIndexToVmName(i);
+        if (pVmName == NULL)
+            break;
+        nProcStatus.push_back(0);
+        i++;
+    }
 
     BOOL bShouldWait = FALSE;
-    for(int i=0;i<nMaxProcCount;i++)
+    int count = (int)nProcStatus.size();
+    for(i=0;i<count;i++)
     {
         if (!StartProcess(i, NULL))
             break;
@@ -742,9 +747,11 @@ unsigned __stdcall WorkerProc(void* pParam)
     //gracefully ending the service
     bShouldWait = FALSE;
     // terminate all running processes before shutdown
-    for(int i=nMaxProcCount-1;i>=0;i--)
+    for(int i= (int)nProcStatus.size() - 1;i>=0;i--)
     {
-        if (nProcStatus[i] == 1)
+        // if we started web service, then try to shutdown all configured VMs
+        // otherwise, only shutdown VMs started by us
+        if ((nProcStatus[i] == 1) || (vBoxWebSrvPId != -1))
         {
             EndProcess(i, NULL);
             bShouldWait = TRUE;

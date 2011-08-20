@@ -12,15 +12,13 @@
 
      3. How does it work?
 
-     4. Why is it such a dirty hack?
+     4. What are the plans for the future?
 
-     5. What are the plans for the future?
+     5. Which versions of Windows are supported?
 
-     6. Which versions of Windows are supported?
+     6. Will VBoxVmService run on Mac OSX or Linux?
 
-     7. Will VBoxVmService run on Mac OSX or Linux?
-
-     8. Credits
+     7. Credits
 
 
 
@@ -163,23 +161,17 @@ Basically, VBoxVmService is just a wrapper-service that calls VirtualBox COM API
 
 When windows starts up, the wrapper-service will start running. It will check for the settings in VBoxVmService.ini file, and call up the Virtual Machines as specified. Both the wrapper-service and Virtual Machines are run with the account specified in the VBoxVmService.ini file.
 
+If RunWebService=yes is specified in VBoxVmService.ini file,  the wrapper-service will also try to start VirtualBox web service automatically. This might be useful for people who use the web service a lot, like users of phpVirtualBox.
+
+When windows shuts down, the wrapper-service will try to stop all the VMs started by it, before it quit. If web service is started, then it will try to stop all the VMs configuered in VBoxVmService.ini, just in case some VMs started by web service might still be running.
+
 If you are interested in further details, feel free to browse the supplied source codes!
 
 
 ------------------------------------------------------------------------------
 
 
-4. Why is it such a dirty hack?
-
-I am not, nor have I ever been a windows- or C#/C++ developer. My expertise is on PHP, Java, JS and all the web-application related topics. So please be gentle and feel free to improve the code. A full set of all sourcecodes is supplied and can be found within the "src" folder of VBoxVmService. :-)
-
-If you are not interested in changing or building VBoxVmService yourself, you can safely delete this folder.
-
-
-------------------------------------------------------------------------------
-
-
-5. What are the plans for the future?
+4. What are the plans for the future?
 
 Actually, there are no plans for future releases of this software. Yet, I have been thinking about adding a system-tray control to interact with the VMs controlled by the service...
 
@@ -187,7 +179,7 @@ Actually, there are no plans for future releases of this software. Yet, I have b
 ------------------------------------------------------------------------------
 
 
-6. Which versions of Windows are supported?
+5. Which versions of Windows are supported?
 
 It hasn't been fully tested on systems other than WinXP and Windows7, but it should work on all Windows systems later than WinXP.
 
@@ -195,14 +187,14 @@ It hasn't been fully tested on systems other than WinXP and Windows7, but it sho
 ------------------------------------------------------------------------------
 
 
-7. Will VBoxVmService run on Mac OS-X or Linux?
+6. Will VBoxVmService run on Mac OS-X or Linux?
 
 No. VBoxVmService is specially designed to suit the Windows operating system. And it doesn't need to run on Mac OS-X or Linux because these platforms supply adequate features to accomplish the same effect.
 
 
 ------------------------------------------------------------------------------
 
-8. Credits
+7. Credits
 
 The VBoxVmService is based on sourcecode originally written by Xiangyang Liu and published on codeproject.com ( http://www.codeproject.com/KB/system/xyntservice.aspx ).
 

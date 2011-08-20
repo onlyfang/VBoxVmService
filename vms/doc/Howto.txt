@@ -4,7 +4,7 @@
 #
 ##############################################################################
 
-Step 1. Make sure VirtualBox has been installed and your VM can be started from VirtualBox Manager without any problem. Shutdown the VM and close VirtualBox Manager.
+Step 1. Make sure VirtualBox has been installed and your VMs can be started from VirtualBox Manager without any problem. Shutdown the VMs and close VirtualBox Manager.
 
 IMPORTANT: If you want to control your VMs with VRDP, enable remote display at display settings and assign a dedicated port for each individual VM (e.g. use: 3010 for Vm0, 3020 for Vm1, etc.). Do NOT use the standard port 3389!
 

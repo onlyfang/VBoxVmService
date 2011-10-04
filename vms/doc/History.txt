@@ -117,7 +117,7 @@ Changes since version rel20080223
 
 1. What is VBoxVmService?
 
-VBoxVmService is a Windows Service, that enables the host-system to run or shutdown VirtualBox Virtual Machines (VMs) without a user being logged on to the host-system running Windows (XP/2003/Vista/Win7/2008).
+VBoxVmService is a Windows Service, that enables the host-system to run or shutdown VirtualBox Virtual Machines (VMs) without a user being logged on to the host-system running Windows (XP/2003/Vista/Win7/2008, both x86 and x64 supported).
 
 
 ------------------------------------------------------------------------------

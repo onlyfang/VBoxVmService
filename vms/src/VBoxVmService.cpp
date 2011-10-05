@@ -3,7 +3,6 @@
 //////////////////////////////////////////////////////////////////////
 
 #include <atlbase.h>
-#include <vector>
 #include <stdio.h>
 #include <windows.h>
 #include <winbase.h>
@@ -24,7 +23,6 @@ char pServiceName[nBufferSize+1];
 char pExeFile[nBufferSize+1];
 char pInitFile[nBufferSize+1];
 char pLogFile[nBufferSize+1];
-std::vector <int> nProcStatus;
 IVirtualBox *virtualBox;
 
 SERVICE_STATUS          serviceStatus; 
@@ -193,9 +191,21 @@ DWORD RunConsoleApp(char pCommandLine[])
 }
 
 
-// Get VM status with given name
-void VMStatus(char *vm, LPPIPEINST pipe)
+// Get VM status with given index
+void VMStatus(int nIndex, LPPIPEINST pipe)
 {
+    char *vm;
+
+    // force ini file reload
+    WritePrivateProfileString(NULL, NULL, NULL, pInitFile);
+
+    vm = nIndexToVmName( nIndex );
+    if (vm == NULL) 
+    {
+        WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); 
+        return; 
+    }
+
     CComBSTR vmName(vm);
     HRESULT rc;
     IMachine *machine = NULL;
@@ -266,12 +276,14 @@ void VMStatus(char *vm, LPPIPEINST pipe)
 }
 
 // start a VM with given name
-int StartVM(char *vm, LPPIPEINST pipe)
+// return true on success
+// return false on failure
+bool StartVM(char *vm, LPPIPEINST pipe)
 {
     CComBSTR vmName(vm);
     HRESULT rc;
     IMachine *machine = NULL;
-    int result = 1;
+    bool result = false;
 
     rc = virtualBox->FindMachine(vmName, &machine);
 
@@ -329,7 +341,7 @@ int StartVM(char *vm, LPPIPEINST pipe)
                 WriteLogPipe(pipe, "Could not open remote session! rc = 0x%x\n", rc);
                 break;
             }
-            result = 0;
+            result = true;
 
             // Wait until VM is running. 
             WriteLogPipe(pipe, "Starting VM %s, please wait ... ", vm);
@@ -355,6 +367,9 @@ BOOL StartProcess(int nIndex, LPPIPEINST pipe)
 { 
     char *cp;
 
+    if (pipe)  // when called from VmServiceControl, reload ini file
+        WritePrivateProfileString(NULL, NULL, NULL, pInitFile);
+
     cp = nIndexToVmName( nIndex );
     if (cp == NULL) 
     {
@@ -376,19 +391,21 @@ BOOL StartProcess(int nIndex, LPPIPEINST pipe)
             return true;
     }
 
-    if (StartVM(cp, pipe) == 0)
-        nProcStatus[nIndex] = 1;
-    return true;
+    return StartVM(cp, pipe);
 
 }
 
 // stop a VM with given name
+// return value:
+// -1: error happened when trying to stop VM
+//  0: VM is not running, no need to stop 
+//  1: VM stopped successfully
 int StopVM(char *vm, char *method, LPPIPEINST pipe)
 {
     CComBSTR vmName(vm);
     HRESULT rc;
     IMachine *machine = NULL;
-    int result = 1;
+    int result = -1;
 
     rc = virtualBox->FindMachine(vmName, &machine);
 
@@ -437,6 +454,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
             if( MachineState_Running != vmstate && 
                     MachineState_Starting != vmstate ) 
             {
+                result = 0;
                 break;
             }
 
@@ -474,7 +492,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
                 break;
             }
 
-            result = 0;
+            result = 1;
 
             WriteLogPipe(pipe, "VM %s is being shutdown.\n", vm);
 
@@ -492,23 +510,33 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
 }
 
 // end a VM with given index
-BOOL EndProcess(int nIndex, LPPIPEINST pipe) 
+// return value:
+// -1: error happened when trying to stop VM
+//  0: VM is not running, no need to stop 
+//  1: VM stopped successfully
+int EndProcess(int nIndex, LPPIPEINST pipe) 
 {
     char pItem[nBufferSize+1];
     char pShutdownMethod[nBufferSize+1];
     char *cp;
 
 
+    if (pipe)  // when called from VmServiceControl, reload ini file
+        WritePrivateProfileString(NULL, NULL, NULL, pInitFile);
+
     cp = nIndexToVmName( nIndex );
-    if (cp==NULL) {WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); return false; }
+    if (cp==NULL)
+    {
+        if (pipe)
+            WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); 
+        return -1;
+    }
 
     // get ShutdownMethod
     sprintf_s(pItem,"Vm%d\0",nIndex);
     GetPrivateProfileString(pItem,"ShutdownMethod","",pShutdownMethod,nBufferSize,pInitFile);
 
-    StopVM(cp, pShutdownMethod, pipe);
-    nProcStatus[nIndex] = 0;
-    return true;
+    return StopVM(cp, pShutdownMethod, pipe);
 }
 
 ////////////////////////////////////////////////////////////////////// 
@@ -625,13 +653,8 @@ void WorkerHandleCommand(LPPIPEINST pipe)
     }
     else if (strncmp(buffer, "status", 6) == 0)
     {
-        cp = nIndexToVmName( atoi(buffer + 7) );
-        if (cp==NULL)
-        {
-            WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); 
-            return;
-        }
-        VMStatus(cp, pipe);
+        int nIndex = atoi(buffer + 7);
+        VMStatus(nIndex, pipe);
     }
     else if (strncmp(buffer, "shutdown", 8) == 0)
     {
@@ -693,24 +716,15 @@ unsigned __stdcall WorkerProc(void* pParam)
 
     listVMs(virtualBox);
 
-    // Startup VMs
+    // start all configured VMs
+    BOOL bShouldWait = FALSE;
     int i = 0;
     while (true)
-    {
-        char *pVmName = nIndexToVmName(i);
-        if (pVmName == NULL)
-            break;
-        nProcStatus.push_back(0);
-        i++;
-    }
-
-    BOOL bShouldWait = FALSE;
-    int count = (int)nProcStatus.size();
-    for(i=0;i<count;i++)
     {
         if (!StartProcess(i, NULL))
             break;
         bShouldWait = true;
+        i++;
     }
 
     // wait for VMs to start up
@@ -747,15 +761,15 @@ unsigned __stdcall WorkerProc(void* pParam)
     //gracefully ending the service
     bShouldWait = FALSE;
     // terminate all running processes before shutdown
-    for(int i= (int)nProcStatus.size() - 1;i>=0;i--)
+    i = 0;
+    while (true)
     {
-        // if we started web service, then try to shutdown all configured VMs
-        // otherwise, only shutdown VMs started by us
-        if ((nProcStatus[i] == 1) || (vBoxWebSrvPId != -1))
-        {
-            EndProcess(i, NULL);
+        int result = EndProcess(i, NULL);
+        if (result == -1)
+            break;
+        if (result == 1)
             bShouldWait = TRUE;
-        }
+        i++;
     }           
 
     // wait for VMs to shut down

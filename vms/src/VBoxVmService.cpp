@@ -24,6 +24,7 @@ char pExeFile[nBufferSize+1];
 char pInitFile[nBufferSize+1];
 char pLogFile[nBufferSize+1];
 IVirtualBox *virtualBox;
+ISession *session = NULL;
 
 SERVICE_STATUS          serviceStatus; 
 SERVICE_STATUS_HANDLE   hServiceStatusHandle; 
@@ -68,6 +69,21 @@ void WriteLogPipe(LPPIPEINST pipe, LPCSTR formatstring, ...){
     if (pipe)
         pipelcat(pipe, pTemp, pLen);
 }
+
+BOOL CtrlHandler( DWORD fdwCtrlType ) 
+{ 
+    if (fdwCtrlType == CTRL_SHUTDOWN_EVENT)
+    {
+        WriteLog("Received system shutdown event.");        
+
+        // tell PipeManager to exit.
+        PipeManagerExit();
+
+        // give a little time to VMs to start shutting down
+        Sleep(2000);
+    }
+    return FALSE; 
+} 
 
 // Routine to make human readable description, instead of just the error id.
 char *ErrorString(DWORD err)
@@ -314,25 +330,11 @@ bool StartVM(char *vm, LPPIPEINST pipe)
     }
     else
     {
-        ISession *session = NULL;
         BSTR sessiontype = SysAllocString(L"headless");
         IProgress *progress = NULL;
 
         do
         {
-            // Create the session object.
-            rc = CoCreateInstance(CLSID_Session, // the VirtualBox base object
-                    NULL,          // no aggregation
-                    CLSCTX_INPROC_SERVER, // the object lives in a server process on this machine
-                    IID_ISession,  // IID of the interface
-                    (void**)&session);
-            if (!SUCCEEDED(rc))
-            {
-                WriteLogPipe(NULL, "Error creating Session instance! rc = 0x%x\n", rc);
-                break;
-            }
-
-
             // Start a VM session using the delivered VBox GUI.
             rc = machine->LaunchVMProcess(session, sessiontype,
                     NULL, &progress);
@@ -355,7 +357,6 @@ bool StartVM(char *vm, LPPIPEINST pipe)
 
         SAFE_RELEASE(progress);
         SysFreeString(sessiontype);
-        SAFE_RELEASE(session);
         SAFE_RELEASE(machine);
     }
     return result;
@@ -436,7 +437,6 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
     }
     else
     {
-        ISession *session = NULL;
         IConsole *console = NULL;
         IProgress *progress = NULL;
 
@@ -457,19 +457,6 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
                 result = 0;
                 break;
             }
-
-            // Create the session object.
-            rc = CoCreateInstance(CLSID_Session, // the VirtualBox base object
-                    NULL,          // no aggregation
-                    CLSCTX_INPROC_SERVER, // the object lives in a server process on this machine
-                    IID_ISession,  // IID of the interface
-                    (void**)&session);
-            if (!SUCCEEDED(rc))
-            {
-                WriteLogPipe(pipe, "Error creating Session instance! rc = 0x%x\n", rc);
-                break;
-            }
-
 
             // Lock the machine for session 
             rc = machine->LockMachine(session, LockType_Shared);
@@ -503,7 +490,6 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
 
         SAFE_RELEASE(console);
         SAFE_RELEASE(progress);
-        SAFE_RELEASE(session);
         SAFE_RELEASE(machine);
     }
     return result;
@@ -714,6 +700,21 @@ unsigned __stdcall WorkerProc(void* pParam)
         return 1;
     }
 
+    // Create the session object.
+    rc = CoCreateInstance(CLSID_Session, // the VirtualBox base object
+            NULL,          // no aggregation
+            CLSCTX_INPROC_SERVER, // the object lives in a server process on this machine
+            IID_ISession,  // IID of the interface
+            (void**)&session);
+    if (!SUCCEEDED(rc))
+    {
+        virtualBox->Release();
+        WriteLogPipe(NULL, "Error creating Session instance! rc = 0x%x\n", rc);
+        return 1;
+    }
+
+
+
     listVMs(virtualBox);
 
     // start all configured VMs
@@ -771,6 +772,7 @@ unsigned __stdcall WorkerProc(void* pParam)
             bShouldWait = TRUE;
         i++;
     }           
+    SAFE_RELEASE(session);
 
     // wait for VMs to shut down
     if (bShouldWait)
@@ -849,7 +851,10 @@ void main(int argc, char *argv[] )
     }
     else 
     {   
-
+        // Since VBox COM runs as a normal process, it get killed before
+        // services get stopped. That's why we need to register a control
+        // handler to receive a notify when system get rebooted,
+        SetConsoleCtrlHandler( (PHANDLER_ROUTINE) CtrlHandler, TRUE );
         hThread = (HANDLE)_beginthreadex( NULL, 0, &WorkerProc, NULL, 0, &threadID );
         // start a worker thread to check for pipe messages
         if(hThread==0)

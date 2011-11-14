@@ -28,6 +28,8 @@
 
 0. What is new in this release?
 
+* Force reload INI file when VBoxVMService commands are executed;
+* Always try to stop all configured VMs when service is stopped.
 * Patch from Scholar Team and Harold Roussel: allow VBoxWebSrv.exe to run when VBoxVmService starts, giving access to the currently running virtual machines via phpVirtualBox.
 * Call VirtualBox COM API directly instead of using VBoxManage.exe. 
 * Service now runs as normal user, with username and password configed in VBoxVmService.ini.
@@ -163,7 +165,7 @@ When windows starts up, the wrapper-service will start running. It will check fo
 
 If RunWebService=yes is specified in VBoxVmService.ini file,  the wrapper-service will also try to start VirtualBox web service automatically. This might be useful for people who use the web service a lot, like users of phpVirtualBox.
 
-When windows shuts down, the wrapper-service will try to stop all the VMs started by it, before it quit. If web service is started, then it will try to stop all the VMs configuered in VBoxVmService.ini, just in case some VMs started by web service might still be running.
+When windows shuts down, the wrapper-service will try to stop all the VMs configuered in VBoxVmService.ini.
 
 If you are interested in further details, feel free to browse the supplied source codes!
 
@@ -181,7 +183,7 @@ Actually, there are no plans for future releases of this software. Yet, I have b
 
 5. Which versions of Windows are supported?
 
-It hasn't been fully tested on systems other than WinXP and Windows7, but it should work on all Windows systems later than WinXP.
+It hasn't been fully tested on systems other than WinXP and Windows7, but it should (and is reported to) work on all Windows systems later than WinXP, including Vista, Win2003 and Win 2008, both 32bit and 64bit versions.
 
 
 ------------------------------------------------------------------------------

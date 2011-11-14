@@ -25,6 +25,7 @@ char pInitFile[nBufferSize+1];
 char pLogFile[nBufferSize+1];
 IVirtualBox *virtualBox;
 ISession *session = NULL;
+HANDLE ghVMStoppedEvent = NULL;
 
 SERVICE_STATUS          serviceStatus; 
 SERVICE_STATUS_HANDLE   hServiceStatusHandle; 
@@ -79,8 +80,10 @@ BOOL CtrlHandler( DWORD fdwCtrlType )
         // tell PipeManager to exit.
         PipeManagerExit();
 
-        // give a little time to VMs to start shutting down
-        Sleep(2000);
+        // wait till all VMs stopped, but we must respond in 20 seconds
+        // in the control hander, use 15 seconds for safety here.
+        if (WaitForSingleObject(ghVMStoppedEvent, 15000) == WAIT_OBJECT_0)
+            WriteLog("Received all VM stopped event.");
     }
     return FALSE; 
 } 
@@ -230,28 +233,7 @@ void VMStatus(int nIndex, LPPIPEINST pipe)
 
     if (FAILED(rc))
     {
-        IErrorInfo *errorInfo;
-
-        rc = GetErrorInfo(0, &errorInfo);
-
-        if (FAILED(rc))
-            WriteLogPipe(pipe,"Error getting error info! rc = 0x%x\n", rc); 
-        else
-        {
-            BSTR errorDescription = NULL;
-
-            rc = errorInfo->GetDescription(&errorDescription);
-
-            if (FAILED(rc) || !errorDescription)
-                WriteLogPipe(pipe, "Error getting error description! rc = 0x%x\n", rc);
-            else
-            {
-                WriteLogPipe(pipe, "Error finding machine: %S\n", errorDescription);
-                SysFreeString(errorDescription);
-            }
-
-            SAFE_RELEASE(errorInfo);
-        }
+        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x\n", rc); 
     }
     else
     {
@@ -305,28 +287,7 @@ bool StartVM(char *vm, LPPIPEINST pipe)
 
     if (FAILED(rc))
     {
-        IErrorInfo *errorInfo;
-
-        rc = GetErrorInfo(0, &errorInfo);
-
-        if (FAILED(rc))
-            WriteLogPipe(pipe,"Error getting error info! rc = 0x%x\n", rc); 
-        else
-        {
-            BSTR errorDescription = NULL;
-
-            rc = errorInfo->GetDescription(&errorDescription);
-
-            if (FAILED(rc) || !errorDescription)
-                WriteLogPipe(pipe, "Error getting error description! rc = 0x%x\n", rc);
-            else
-            {
-                WriteLogPipe(pipe, "Error finding machine: %S\n", errorDescription);
-                SysFreeString(errorDescription);
-            }
-
-            SAFE_RELEASE(errorInfo);
-        }
+        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x\n", rc); 
     }
     else
     {
@@ -412,28 +373,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
 
     if (FAILED(rc))
     {
-        IErrorInfo *errorInfo;
-
-        rc = GetErrorInfo(0, &errorInfo);
-
-        if (FAILED(rc))
-            WriteLogPipe(pipe,"Error getting error info! rc = 0x%x\n", rc); 
-        else
-        {
-            BSTR errorDescription = NULL;
-
-            rc = errorInfo->GetDescription(&errorDescription);
-
-            if (FAILED(rc) || !errorDescription)
-                WriteLogPipe(pipe, "Error getting error description! rc = 0x%x\n", rc);
-            else
-            {
-                WriteLogPipe(pipe, "Error finding machine: %S\n", errorDescription);
-                SysFreeString(errorDescription);
-            }
-
-            SAFE_RELEASE(errorInfo);
-        }
+        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x\n", rc); 
     }
     else
     {
@@ -488,8 +428,8 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
 
         } while (0);
 
-        SAFE_RELEASE(console);
         SAFE_RELEASE(progress);
+        SAFE_RELEASE(console);
         SAFE_RELEASE(machine);
     }
     return result;
@@ -577,6 +517,7 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
         case SERVICE_CONTROL_STOP:
         case SERVICE_CONTROL_SHUTDOWN:
 
+            WriteLog("Received service shutdown event."); 
             //tell PipeManager to exit.
             PipeManagerExit();
             // also tell SCM we'll need some time to shutdown
@@ -584,7 +525,7 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
             {
                 char pPause[nBufferSize+1];
                 GetPrivateProfileString("Settings","PauseShutdown","1000",pPause,nBufferSize,pInitFile);
-                serviceStatus.dwWaitHint = atoi(pPause) + 1000;  
+                serviceStatus.dwWaitHint = atoi(pPause);  
             }
             break;
         case SERVICE_CONTROL_PAUSE:
@@ -686,6 +627,17 @@ void listVMs(IVirtualBox *virtualBox)
 
 unsigned __stdcall WorkerProc(void* pParam)
 {
+    ghVMStoppedEvent = CreateEvent(
+            NULL,    // default security attributes
+            TRUE,    // manual reset event
+            FALSE,   // not signaled
+            NULL);   // no name
+    if (ghVMStoppedEvent == NULL)
+    {
+        WriteLog("Failed to create VM stop event!");
+        goto end;
+    }
+
     HRESULT rc;
     rc = CoInitialize(NULL);
 
@@ -697,7 +649,7 @@ unsigned __stdcall WorkerProc(void* pParam)
     if (!SUCCEEDED(rc))
     {
         WriteLogPipe(NULL, "Error creating VirtualBox instance! rc = 0x%x\n", rc);
-        return 1;
+        goto end;
     }
 
     // Create the session object.
@@ -710,10 +662,8 @@ unsigned __stdcall WorkerProc(void* pParam)
     {
         virtualBox->Release();
         WriteLogPipe(NULL, "Error creating Session instance! rc = 0x%x\n", rc);
-        return 1;
+        goto end;
     }
-
-
 
     listVMs(virtualBox);
 
@@ -782,6 +732,9 @@ unsigned __stdcall WorkerProc(void* pParam)
         Sleep(atoi(pPause));
     }
 
+    // tell control handler that all VMs have been stopped
+    SetEvent(ghVMStoppedEvent);
+
     // Shutdown vbox web service, if it's started by us
     if (vBoxWebSrvPId != -1) {
         HANDLE vboxWSHnd = OpenProcess(PROCESS_ALL_ACCESS, false, vBoxWebSrvPId);
@@ -795,6 +748,11 @@ unsigned __stdcall WorkerProc(void* pParam)
 
     virtualBox->Release();
     CoUninitialize();
+
+end:
+    if (ghVMStoppedEvent)
+       CloseHandle(ghVMStoppedEvent);
+
     WriteLogPipe(NULL, "%s stopped.\n", pServiceName);
 
     // notify SCM that we've finished
@@ -852,8 +810,8 @@ void main(int argc, char *argv[] )
     else 
     {   
         // Since VBox COM runs as a normal process, it get killed before
-        // services get stopped. That's why we need to register a control
-        // handler to receive a notify when system get rebooted,
+        // services receive shutdown event. That's why we need to register a 
+        // control handler to receive notify before system get rebooted.
         SetConsoleCtrlHandler( (PHANDLER_ROUTINE) CtrlHandler, TRUE );
         hThread = (HANDLE)_beginthreadex( NULL, 0, &WorkerProc, NULL, 0, &threadID );
         // start a worker thread to check for pipe messages

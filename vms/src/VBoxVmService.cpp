@@ -558,7 +558,6 @@ void WorkerHandleCommand(LPPIPEINST pipe)
 {
     char pTemp[121];
     char buffer[80]; 
-    char *cp;
     memset(buffer, 0, 80);
 
 
@@ -597,7 +596,7 @@ void listVMs(IVirtualBox *virtualBox)
     HRESULT rc;
 
     SAFEARRAY *machinesArray = NULL;
-    WriteLogPipe(NULL, "List all the VMs found by VBoxVmService"); 
+    WriteLog("List all the VMs found by VBoxVmService"); 
 
     rc = virtualBox->get_Machines(&machinesArray);
     if (SUCCEEDED(rc))
@@ -613,8 +612,36 @@ void listVMs(IVirtualBox *virtualBox)
                 rc = machines[i]->get_Name(&str);
                 if (SUCCEEDED(rc))
                 {
-                    WriteLogPipe(NULL, "Name: %S", str); 
+                    char pTemp[nBufferSize+1];
+                    sprintf_s(pTemp, "Name: %S", str); 
                     SysFreeString(str);
+
+                    MachineState state;
+                    rc = machines[i]->get_State(&state);
+                    if (SUCCEEDED(rc))
+                    {
+                        switch (state) {
+                            case MachineState_PoweredOff:
+                                strcat_s(pTemp, ", powered off");
+                                break;
+                            case MachineState_Saved:
+                                strcat_s(pTemp, ", saved");
+                                break;
+                            case MachineState_Aborted:
+                                strcat_s(pTemp, ", aborted");
+                                break;
+                            case MachineState_Running:
+                                strcat_s(pTemp, ", running");
+                                break;
+                            case MachineState_Paused:
+                                strcat_s(pTemp, ", paused");
+                                break;
+                            default:
+                                strcat_s(pTemp, ", in unknown state");
+                                break;
+                        }
+                    }
+                    WriteLog(pTemp);
                 }
             }
 
@@ -751,7 +778,7 @@ unsigned __stdcall WorkerProc(void* pParam)
 
 end:
     if (ghVMStoppedEvent)
-       CloseHandle(ghVMStoppedEvent);
+        CloseHandle(ghVMStoppedEvent);
 
     WriteLogPipe(NULL, "%s stopped.\n", pServiceName);
 

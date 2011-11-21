@@ -53,13 +53,9 @@ Step 2. Install the service. Within the terminal window type:
     
     VmServiceControl.exe -i    [ENTER]
 
-Step 3. Startup the service. Continue in the terminal window type:
+Step 3. Reboot your system.
 
-    VmServiceControl.exe -s    [ENTER]
-
-Note: you could also start the service from Computer Management Console in Control Panel. The service will also be startup automatically when your system reboots.
-
-Step 4: You are done installing. If everything goes on right, you could now connect to your VMs with VRDP clients (or ssh clients, if you've configured ssh server inside your VM). If not, refer to TROUBLESHOOTING section below for how to debug.
+If everything goes on right, you could now connect to your VMs with VRDP clients (or ssh clients, if you've configured ssh server inside your VM). If not, refer to TROUBLESHOOTING section below for how to debug.
 
 
 ##############################################################################

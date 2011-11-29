@@ -28,10 +28,12 @@
 
 0. What is new in this release?
 
-* Force reload INI file when VBoxVMService commands are executed;
+2011-11-29 Release 3.0 "Sweet Potato"
+
+* Force reloading INI file when VBoxVMService commands are executed;
 * Always try to stop all configured VMs when service is stopped.
 * Patch from Scholar Team and Harold Roussel: allow VBoxWebSrv.exe to run when VBoxVmService starts, giving access to the currently running virtual machines via phpVirtualBox.
-* Call VirtualBox COM API directly instead of using VBoxManage.exe. 
+* Calling VirtualBox COM API directly instead of using VBoxManage.exe. 
 * Service now runs as normal user, with username and password configed in VBoxVmService.ini.
 
 2011-07-21 Release 2.3 "Watermelon"

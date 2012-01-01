@@ -32,7 +32,6 @@ SERVICE_STATUS_HANDLE   hServiceStatusHandle;
 
 VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv );
 VOID WINAPI VBoxVmServiceHandler( DWORD fdwControl );
-char *pipelcat(LPPIPEINST pipe, const char *src, const int srclength);
 
 #define SAFE_RELEASE(x) \
     if (x) { \
@@ -47,9 +46,12 @@ void WriteLog(char* pMsg)
     {
         SYSTEMTIME oT;
         ::GetLocalTime(&oT);
-        FILE* pLog = fopen(pLogFile,"at");
-        fprintf(pLog,"%02d/%02d/%04d, %02d:%02d:%02d - %s\n",oT.wMonth,oT.wDay,oT.wYear,oT.wHour,oT.wMinute,oT.wSecond,pMsg); 
-        fclose(pLog);
+        FILE *pLog;
+        if (fopen_s(&pLog, pLogFile, "at") == 0)
+        {
+            fprintf(pLog,"%02d/%02d/%04d, %02d:%02d:%02d - %s\n",oT.wMonth,oT.wDay,oT.wYear,oT.wHour,oT.wMinute,oT.wSecond,pMsg); 
+            fclose(pLog);
+        }
     } catch(...) {}
 }
 
@@ -66,9 +68,12 @@ void WriteLogPipe(LPPIPEINST pipe, LPCSTR formatstring, ...){
     //append to log
     WriteLog(pTemp);
 
-    //append to pipe
+    //write back to pipe
     if (pipe)
-        pipelcat(pipe, pTemp, pLen);
+    {
+        strncpy_s(pipe->chReply, BUFSIZE, pTemp, pLen);
+        pipe->cbToWrite = pLen;
+    }
 }
 
 BOOL CtrlHandler( DWORD fdwCtrlType ) 
@@ -119,34 +124,6 @@ SERVICE_TABLE_ENTRY   DispatchTable[] =
     {NULL, NULL}
 };
 
-
-// helper functions
-// My own implementation of strlcat, but with optional length param. Used for appending to the pipe.
-char *pipelcat(LPPIPEINST pipe, const char *src, int srclength) {
-
-
-    if (pipe==NULL) {return NULL;}
-
-    if (srclength == -1) {
-        srclength = (int)strlen(src);
-    }
-    //Debug: uncoment to see write stat
-    //printf("pipelcat(cbToWrite=%d, srclength=%d)\n",pipe->cbToWrite,srclength);
-
-    // test for free space, If we don't have space for the whole string we just return.
-    if (((srclength + pipe->cbToWrite)) > (sizeof(pipe->chReply) -1)) {
-        return NULL;
-    }
-
-    strncpy(pipe->chReply + pipe->cbToWrite, src, srclength);
-    pipe->cbToWrite += srclength;
-
-    pipe->chReply[pipe->cbToWrite +1] = '\0'; //Amen 
-
-    //Debug: Uncoment to se new size in cbToWrite
-    //printf("~pipelcat(cbToWrite=%d)\n",pipe->cbToWrite);
-    return pipe->chReply;
-}
 
 char *nIndexToVmName(int nIndex) {
     char pItem[nBufferSize+1];
@@ -233,7 +210,7 @@ void VMStatus(int nIndex, LPPIPEINST pipe)
 
     if (FAILED(rc))
     {
-        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x\n", rc); 
+        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x", rc); 
     }
     else
     {
@@ -242,28 +219,28 @@ void VMStatus(int nIndex, LPPIPEINST pipe)
         rc = machine->get_State(&state);
         if (!SUCCEEDED(rc))
         {
-            WriteLogPipe(pipe, "Error retrieving machine state! rc = 0x%x\n", rc);
+            WriteLogPipe(pipe, "Error retrieving machine state! rc = 0x%x", rc);
         }
         else
         {
             switch (state) {
                 case MachineState_PoweredOff:
-                    WriteLogPipe(pipe, "VM %s is powered off.\n", vm);
+                    WriteLogPipe(pipe, "VM %s is powered off.", vm);
                     break;
                 case MachineState_Saved:
-                    WriteLogPipe(pipe, "VM %s is saved.\n", vm);
+                    WriteLogPipe(pipe, "VM %s is saved.", vm);
                     break;
                 case MachineState_Aborted:
-                    WriteLogPipe(pipe, "VM %s is aborted.\n", vm);
+                    WriteLogPipe(pipe, "VM %s is aborted.", vm);
                     break;
                 case MachineState_Running:
-                    WriteLogPipe(pipe, "VM %s is running.\n", vm);
+                    WriteLogPipe(pipe, "VM %s is running.", vm);
                     break;
                 case MachineState_Paused:
-                    WriteLogPipe(pipe, "VM %s is paused.\n", vm);
+                    WriteLogPipe(pipe, "VM %s is paused.", vm);
                     break;
                 default:
-                    WriteLogPipe(pipe, "VM %s is in unknown state %d.\n", vm, state);
+                    WriteLogPipe(pipe, "VM %s is in unknown state %d.", vm, state);
                     break;
             }
         }
@@ -287,7 +264,7 @@ bool StartVM(char *vm, LPPIPEINST pipe)
 
     if (FAILED(rc))
     {
-        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x\n", rc); 
+        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x", rc); 
     }
     else
     {
@@ -301,15 +278,14 @@ bool StartVM(char *vm, LPPIPEINST pipe)
                     NULL, &progress);
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, "Could not open remote session! rc = 0x%x\n", rc);
+                WriteLogPipe(pipe, "Could not open remote session! rc = 0x%x", rc);
                 break;
             }
             result = true;
 
             // Wait until VM is running. 
-            WriteLogPipe(pipe, "Starting VM %s, please wait ... ", vm);
             rc = progress->WaitForCompletion (-1);
-            WriteLogPipe(pipe, "done.\n");
+            WriteLogPipe(pipe, "VM %s is started up.", vm);
 
             // Close the session.
             rc = session->UnlockMachine();
@@ -373,7 +349,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
 
     if (FAILED(rc))
     {
-        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x\n", rc); 
+        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x", rc); 
     }
     else
     {
@@ -386,7 +362,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
             rc = machine->get_State(&vmstate); // Get the state of the machine.
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, "Error retrieving machine state! rc = 0x%x\n", rc);
+                WriteLogPipe(pipe, "Error retrieving machine state! rc = 0x%x", rc);
                 break;
             }
 
@@ -394,6 +370,8 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
             if( MachineState_Running != vmstate && 
                     MachineState_Starting != vmstate ) 
             {
+                if (pipe)
+                     WriteLogPipe(pipe, "VM %s is not running.", vm);
                 result = 0;
                 break;
             }
@@ -402,7 +380,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
             rc = machine->LockMachine(session, LockType_Shared);
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, "Could not lock machine! rc = 0x%x\n", rc);
+                WriteLogPipe(pipe, "Could not lock machine! rc = 0x%x", rc);
                 break;
             }
 
@@ -415,13 +393,13 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
                 rc = console->PowerButton();
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, "Could not stop machine %s! rc = 0x%x\n", rc, vm);
+                WriteLogPipe(pipe, "Could not stop machine %s! rc = 0x%x", rc, vm);
                 break;
             }
 
             result = 1;
 
-            WriteLogPipe(pipe, "VM %s is being shutdown.\n", vm);
+            WriteLogPipe(pipe, "VM %s is being shutdown.", vm);
 
             // Close the session.
             rc = session->UnlockMachine();
@@ -558,10 +536,8 @@ void WorkerHandleCommand(LPPIPEINST pipe)
 {
     char pTemp[121];
     char buffer[80]; 
-    memset(buffer, 0, 80);
 
-
-    StringCchCopy(buffer, nBufferSize, pipe->chRequest);
+    strncpy_s(buffer, 80, pipe->chRequest, strlen(pipe->chRequest));
 
     sprintf_s(pTemp, "Received control command: %s", buffer);
     WriteLog(pTemp);
@@ -675,7 +651,9 @@ unsigned __stdcall WorkerProc(void* pParam)
             (void**)&virtualBox);
     if (!SUCCEEDED(rc))
     {
-        WriteLogPipe(NULL, "Error creating VirtualBox instance! rc = 0x%x\n", rc);
+        char pTemp[121];
+        sprintf_s(pTemp, "Error creating VirtualBox instance! rc = 0x%x", rc);
+        WriteLog(pTemp);
         goto end;
     }
 
@@ -688,7 +666,9 @@ unsigned __stdcall WorkerProc(void* pParam)
     if (!SUCCEEDED(rc))
     {
         virtualBox->Release();
-        WriteLogPipe(NULL, "Error creating Session instance! rc = 0x%x\n", rc);
+        char pTemp[121];
+        sprintf_s(pTemp, "Error creating Session instance! rc = 0x%x", rc);
+        WriteLog(pTemp);
         goto end;
     }
 
@@ -780,7 +760,9 @@ end:
     if (ghVMStoppedEvent)
         CloseHandle(ghVMStoppedEvent);
 
-    WriteLogPipe(NULL, "%s stopped.\n", pServiceName);
+    char pTemp[121];
+    sprintf_s(pTemp, "%s stopped.", pServiceName);
+    WriteLog(pTemp);
 
     // notify SCM that we've finished
     serviceStatus.dwCurrentState = SERVICE_STOPPED; 
@@ -826,7 +808,10 @@ void main(int argc, char *argv[] )
     WriteLog(pLogFile);
     // read service name from .ini file
     GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
-    WriteLogPipe(NULL, "%s started.", pServiceName);
+
+    char pTemp[121];
+    sprintf_s(pTemp, "%s started.", pServiceName);
+    WriteLog(pTemp);
 
     // Run in debug mode if switch is "-d"
     if(argc==2&&_stricmp("-d",argv[1])==0)

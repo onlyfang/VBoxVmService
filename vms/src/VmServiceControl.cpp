@@ -319,7 +319,7 @@ BOOL SendCommandToService(char * message, TCHAR chBuf[], int chBufSize)
 
     // Send the message to the pipe server. 
     DWORD dwRead = 0;
-    if (!(WriteFile(hPipe, (LPVOID)message, (DWORD)strlen(message), &dwRead, 0)))
+    if (!(WriteFile(hPipe, (LPVOID)message, (DWORD)(strlen(message) + 1), &dwRead, 0)))
     {
         CloseHandle(hPipe);
         return FALSE;
@@ -488,7 +488,7 @@ void main(int argc, char *argv[] )
         char pCommand[80];
         sprintf_s(pCommand, "start %u", nIndex);
         if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
-            fprintf_s(stdout, "Started your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
+            fprintf_s(stdout, "Start your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
         else
             fprintf_s(stderr, "Failed to send command to service.\n");
     }

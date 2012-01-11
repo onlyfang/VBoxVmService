@@ -235,7 +235,7 @@ VOID Install(char* pPath, char* pName)
                 pPath,                /* service's binary        */ 
                 NULL,                 /* no load ordering group  */ 
                 NULL,                 /* no tag identifier       */ 
-                NULL,                 /* no dependencies         */ 
+                "LanmanWorkstation\0ComSysApp\0\0", /* service dependencies */ 
                 pRunAsUser, 
                 pUserPassword
                 );                      
@@ -246,11 +246,6 @@ VOID Install(char* pPath, char* pName)
         }
         else
         {
-            // Set delayed auto-start, this only has effect on Vista, Win7, Win2008 and later
-            SERVICE_DELAYED_AUTO_START_INFO info;
-            info.fDelayedAutostart = true;
-            ChangeServiceConfig2(schService, SERVICE_CONFIG_DELAYED_AUTO_START_INFO, &info);
-
             // Set system wide VBOX_USER_HOME environment variable
             char pVboxUserHome[nBufferSize+1];
             GetPrivateProfileString("Settings","VBOX_USER_HOME","",pVboxUserHome,nBufferSize,pInitFile);

@@ -28,6 +28,11 @@
 
 0. What is new in this release?
 
+* Service is no longer set to DelayedAutostart. It's now Autostart and depends on Workstation and COM+.
+* Fixed a bug in sending pipe commands: need to write an additional null byte at end of message;
+* Removed pipelcat to simplify pipe comminication;
+* Fixed compile warnings.
+
 2011-11-29 Release 3.0 "Sweet Potato"
 
 * Force reloading INI file when VBoxVMService commands are executed;

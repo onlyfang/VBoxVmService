@@ -21,6 +21,7 @@ RunAsUser=DomainName\UserName                               The name of the acco
 UserPassword=xxxxxxxx                                       MUST BE GIVEN! SET THE INI FILE TO BE ONLY READABLE BY YOURSELF AND THE SYSTEM!  
 VBOX_USER_HOME=C:\Users\YOUR_NAME_HERE\.VirtualBox          The actual path to your user's .VirtualBox directory. It is usually located in your users' personal folder.
 RunWebService=no                                            Whether or not start up VBoxWebSrv.exe, the VirtualBox HTTP web service automatically. Could be "yes" or "no". Leave it to "no" if you don't know what it is.
+WebServiceParam=                                            If necessary, you can specify additional parameters for VBoxWebSrv.exe, like "--port" for binding to non-default port. 
 PauseShutdown=5000                                          A pause parameter to slow down the Windows shutdown process and to prevent VMs from crashing on shutdown/reboot. (5000 = 5 seconds) Note Windows has a limit to how long the service controller could wait when system reboots. The time limit is specified in the WaitToKillServiceTimeout value of the following registry key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control. Your PauseShutdown value should never exceed this time limit.
 
 [Vm0]

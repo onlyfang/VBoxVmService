@@ -709,6 +709,17 @@ unsigned __stdcall WorkerProc(void* pParam)
         else
         {
             strcat_s(pVBoxWebSrvPath, nBufferSize, "VBoxWebSrv.exe");
+
+            // add parameter to VBoxWebSrv.exe
+            char pWebServiceParam[nBufferSize+1];
+            GetPrivateProfileString("Settings","WebServiceParam","",pWebServiceParam,nBufferSize,pInitFile);
+            if (strlen(pWebServiceParam) > 0)
+            {
+                strcat_s(pVBoxWebSrvPath, nBufferSize, " ");
+                strcat_s(pVBoxWebSrvPath, nBufferSize, pWebServiceParam);
+            }
+            WriteLog(pVBoxWebSrvPath);
+
             vBoxWebSrvPId = RunConsoleApp(pVBoxWebSrvPath);
         }
     }

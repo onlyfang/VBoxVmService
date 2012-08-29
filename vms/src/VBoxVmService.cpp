@@ -660,7 +660,7 @@ unsigned __stdcall WorkerProc(void* pParam)
     // Create the session object.
     rc = CoCreateInstance(CLSID_Session, // the VirtualBox base object
             NULL,          // no aggregation
-            CLSCTX_INPROC_SERVER, // the object lives in a server process on this machine
+            CLSCTX_LOCAL_SERVER,
             IID_ISession,  // IID of the interface
             (void**)&session);
     if (!SUCCEEDED(rc))

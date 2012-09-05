@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Wed Aug 22 12:59:09 2012
+/* at Wed Aug 29 19:59:21 2012
  */
 /* Compiler settings for Z:\home\vbox\tinderbox\sdk\out\linux.amd64\release\bin\sdk\bindings\mscom\idl\VirtualBox.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -1877,10 +1877,10 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IVirtualBox_GETTER_GenericNetworkDrivers_TO(smth) HRESULT STDMETHODCALLTYPE get_GenericNetworkDrivers (SAFEARRAY * * aGenericNetworkDrivers) { return smth get_GenericNetworkDrivers (aGenericNetworkDrivers); }
 #define COM_FORWARD_IVirtualBox_GETTER_GenericNetworkDrivers_TO_OBJ(obj) COM_FORWARD_IVirtualBox_GETTER_GenericNetworkDrivers_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_GETTER_GenericNetworkDrivers_TO_BASE(base) COM_FORWARD_IVirtualBox_GETTER_GenericNetworkDrivers_TO (base::)
-#define COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO(smth) HRESULT STDMETHODCALLTYPE ComposeMachineFilename (BSTR aName, BSTR aGroup, BSTR aBaseFolder, BSTR * aFile) { return smth ComposeMachineFilename (aName, aGroup, aBaseFolder, aFile); }
+#define COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO(smth) HRESULT STDMETHODCALLTYPE ComposeMachineFilename (BSTR aName, BSTR aGroup, BSTR aCreateFlags, BSTR aBaseFolder, BSTR * aFile) { return smth ComposeMachineFilename (aName, aGroup, aCreateFlags, aBaseFolder, aFile); }
 #define COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO_OBJ(obj) COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO_BASE(base) COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO (base::)
-#define COM_FORWARD_IVirtualBox_CreateMachine_TO(smth) HRESULT STDMETHODCALLTYPE CreateMachine (BSTR aSettingsFile, BSTR aName, SAFEARRAY * * aGroups, BSTR aOsTypeId, BSTR aId, BOOL aForceOverwrite, IMachine * * aMachine) { return smth CreateMachine (aSettingsFile, aName, aGroups, aOsTypeId, aId, aForceOverwrite, aMachine); }
+#define COM_FORWARD_IVirtualBox_CreateMachine_TO(smth) HRESULT STDMETHODCALLTYPE CreateMachine (BSTR aSettingsFile, BSTR aName, SAFEARRAY * * aGroups, BSTR aOsTypeId, BSTR aFlags, IMachine * * aMachine) { return smth CreateMachine (aSettingsFile, aName, aGroups, aOsTypeId, aFlags, aMachine); }
 #define COM_FORWARD_IVirtualBox_CreateMachine_TO_OBJ(obj) COM_FORWARD_IVirtualBox_CreateMachine_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_CreateMachine_TO_BASE(base) COM_FORWARD_IVirtualBox_CreateMachine_TO (base::)
 #define COM_FORWARD_IVirtualBox_OpenMachine_TO(smth) HRESULT STDMETHODCALLTYPE OpenMachine (BSTR aSettingsFile, IMachine * * aMachine) { return smth OpenMachine (aSettingsFile, aMachine); }
@@ -4919,13 +4919,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IStorageController_GETTER_Bootable_TO(smth) HRESULT STDMETHODCALLTYPE get_Bootable (BOOL * aBootable) { return smth get_Bootable (aBootable); }
 #define COM_FORWARD_IStorageController_GETTER_Bootable_TO_OBJ(obj) COM_FORWARD_IStorageController_GETTER_Bootable_TO ((obj)->)
 #define COM_FORWARD_IStorageController_GETTER_Bootable_TO_BASE(base) COM_FORWARD_IStorageController_GETTER_Bootable_TO (base::)
-#define COM_FORWARD_IStorageController_GetIDEEmulationPort_TO(smth) HRESULT STDMETHODCALLTYPE GetIDEEmulationPort (LONG aDevicePosition, LONG * aPortNumber) { return smth GetIDEEmulationPort (aDevicePosition, aPortNumber); }
-#define COM_FORWARD_IStorageController_GetIDEEmulationPort_TO_OBJ(obj) COM_FORWARD_IStorageController_GetIDEEmulationPort_TO ((obj)->)
-#define COM_FORWARD_IStorageController_GetIDEEmulationPort_TO_BASE(base) COM_FORWARD_IStorageController_GetIDEEmulationPort_TO (base::)
-#define COM_FORWARD_IStorageController_SetIDEEmulationPort_TO(smth) HRESULT STDMETHODCALLTYPE SetIDEEmulationPort (LONG aDevicePosition, LONG aPortNumber) { return smth SetIDEEmulationPort (aDevicePosition, aPortNumber); }
-#define COM_FORWARD_IStorageController_SetIDEEmulationPort_TO_OBJ(obj) COM_FORWARD_IStorageController_SetIDEEmulationPort_TO ((obj)->)
-#define COM_FORWARD_IStorageController_SetIDEEmulationPort_TO_BASE(base) COM_FORWARD_IStorageController_SetIDEEmulationPort_TO (base::)
-#define COM_FORWARD_IStorageController_TO(smth) COM_FORWARD_IStorageController_GETTER_Name_TO (smth) COM_FORWARD_IStorageController_GETTER_MaxDevicesPerPortCount_TO (smth) COM_FORWARD_IStorageController_GETTER_MinPortCount_TO (smth) COM_FORWARD_IStorageController_GETTER_MaxPortCount_TO (smth) COM_FORWARD_IStorageController_GETTER_Instance_TO (smth) COM_FORWARD_IStorageController_SETTER_Instance_TO (smth) COM_FORWARD_IStorageController_GETTER_PortCount_TO (smth) COM_FORWARD_IStorageController_SETTER_PortCount_TO (smth) COM_FORWARD_IStorageController_GETTER_Bus_TO (smth) COM_FORWARD_IStorageController_GETTER_ControllerType_TO (smth) COM_FORWARD_IStorageController_SETTER_ControllerType_TO (smth) COM_FORWARD_IStorageController_GETTER_UseHostIOCache_TO (smth) COM_FORWARD_IStorageController_SETTER_UseHostIOCache_TO (smth) COM_FORWARD_IStorageController_GETTER_Bootable_TO (smth) COM_FORWARD_IStorageController_GetIDEEmulationPort_TO (smth) COM_FORWARD_IStorageController_SetIDEEmulationPort_TO (smth) 
+#define COM_FORWARD_IStorageController_TO(smth) COM_FORWARD_IStorageController_GETTER_Name_TO (smth) COM_FORWARD_IStorageController_GETTER_MaxDevicesPerPortCount_TO (smth) COM_FORWARD_IStorageController_GETTER_MinPortCount_TO (smth) COM_FORWARD_IStorageController_GETTER_MaxPortCount_TO (smth) COM_FORWARD_IStorageController_GETTER_Instance_TO (smth) COM_FORWARD_IStorageController_SETTER_Instance_TO (smth) COM_FORWARD_IStorageController_GETTER_PortCount_TO (smth) COM_FORWARD_IStorageController_SETTER_PortCount_TO (smth) COM_FORWARD_IStorageController_GETTER_Bus_TO (smth) COM_FORWARD_IStorageController_GETTER_ControllerType_TO (smth) COM_FORWARD_IStorageController_SETTER_ControllerType_TO (smth) COM_FORWARD_IStorageController_GETTER_UseHostIOCache_TO (smth) COM_FORWARD_IStorageController_SETTER_UseHostIOCache_TO (smth) COM_FORWARD_IStorageController_GETTER_Bootable_TO (smth) 
 #define COM_FORWARD_IStorageController_TO_OBJ(obj) COM_FORWARD_IStorageController_TO ((obj)->)
 #define COM_FORWARD_IStorageController_TO_BASE(base) COM_FORWARD_IStorageController_TO (base::)
 #define COM_FORWARD_IPerformanceMetric_GETTER_MetricName_TO(smth) HRESULT STDMETHODCALLTYPE get_MetricName (BSTR * aMetricName) { return smth get_MetricName (aMetricName); }
@@ -6021,7 +6015,7 @@ EXTERN_C const IID IID_IVirtualBox;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("5c8814a1-2a35-402d-8680-68e5cb4e72aa")
+    MIDL_INTERFACE("3b2f08eb-b810-4715-bee0-bb06b9880ad2")
     IVirtualBox : public IDispatch
     {
     public:
@@ -6097,6 +6091,7 @@ EXTERN_C const IID IID_IVirtualBox;
         virtual HRESULT STDMETHODCALLTYPE ComposeMachineFilename( 
             /* [in] */ BSTR aName,
             /* [in] */ BSTR aGroup,
+            /* [in] */ BSTR aCreateFlags,
             /* [in] */ BSTR aBaseFolder,
             /* [retval][out] */ BSTR *aFile) = 0;
         
@@ -6105,8 +6100,7 @@ EXTERN_C const IID IID_IVirtualBox;
             /* [in] */ BSTR aName,
             /* [in] */ SAFEARRAY * aGroups,
             /* [in] */ BSTR aOsTypeId,
-            /* [in] */ BSTR aId,
-            /* [in] */ BOOL aForceOverwrite,
+            /* [in] */ BSTR aFlags,
             /* [retval][out] */ IMachine **aMachine) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE OpenMachine( 
@@ -6333,6 +6327,7 @@ EXTERN_C const IID IID_IVirtualBox;
             IVirtualBox * This,
             /* [in] */ BSTR aName,
             /* [in] */ BSTR aGroup,
+            /* [in] */ BSTR aCreateFlags,
             /* [in] */ BSTR aBaseFolder,
             /* [retval][out] */ BSTR *aFile);
         
@@ -6342,8 +6337,7 @@ EXTERN_C const IID IID_IVirtualBox;
             /* [in] */ BSTR aName,
             /* [in] */ SAFEARRAY * aGroups,
             /* [in] */ BSTR aOsTypeId,
-            /* [in] */ BSTR aId,
-            /* [in] */ BOOL aForceOverwrite,
+            /* [in] */ BSTR aFlags,
             /* [retval][out] */ IMachine **aMachine);
         
         HRESULT ( STDMETHODCALLTYPE *OpenMachine )( 
@@ -6549,11 +6543,11 @@ EXTERN_C const IID IID_IVirtualBox;
 #define IVirtualBox_get_GenericNetworkDrivers(This,aGenericNetworkDrivers)	\
     ( (This)->lpVtbl -> get_GenericNetworkDrivers(This,aGenericNetworkDrivers) ) 
 
-#define IVirtualBox_ComposeMachineFilename(This,aName,aGroup,aBaseFolder,aFile)	\
-    ( (This)->lpVtbl -> ComposeMachineFilename(This,aName,aGroup,aBaseFolder,aFile) ) 
+#define IVirtualBox_ComposeMachineFilename(This,aName,aGroup,aCreateFlags,aBaseFolder,aFile)	\
+    ( (This)->lpVtbl -> ComposeMachineFilename(This,aName,aGroup,aCreateFlags,aBaseFolder,aFile) ) 
 
-#define IVirtualBox_CreateMachine(This,aSettingsFile,aName,aGroups,aOsTypeId,aId,aForceOverwrite,aMachine)	\
-    ( (This)->lpVtbl -> CreateMachine(This,aSettingsFile,aName,aGroups,aOsTypeId,aId,aForceOverwrite,aMachine) ) 
+#define IVirtualBox_CreateMachine(This,aSettingsFile,aName,aGroups,aOsTypeId,aFlags,aMachine)	\
+    ( (This)->lpVtbl -> CreateMachine(This,aSettingsFile,aName,aGroups,aOsTypeId,aFlags,aMachine) ) 
 
 #define IVirtualBox_OpenMachine(This,aSettingsFile,aMachine)	\
     ( (This)->lpVtbl -> OpenMachine(This,aSettingsFile,aMachine) ) 
@@ -24111,14 +24105,6 @@ EXTERN_C const IID IID_IStorageController;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Bootable( 
             /* [retval][out] */ BOOL *aBootable) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE GetIDEEmulationPort( 
-            /* [in] */ LONG aDevicePosition,
-            /* [retval][out] */ LONG *aPortNumber) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetIDEEmulationPort( 
-            /* [in] */ LONG aDevicePosition,
-            /* [in] */ LONG aPortNumber) = 0;
-        
     };
     
 #else 	/* C style interface */
@@ -24224,16 +24210,6 @@ EXTERN_C const IID IID_IStorageController;
             IStorageController * This,
             /* [retval][out] */ BOOL *aBootable);
         
-        HRESULT ( STDMETHODCALLTYPE *GetIDEEmulationPort )( 
-            IStorageController * This,
-            /* [in] */ LONG aDevicePosition,
-            /* [retval][out] */ LONG *aPortNumber);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetIDEEmulationPort )( 
-            IStorageController * This,
-            /* [in] */ LONG aDevicePosition,
-            /* [in] */ LONG aPortNumber);
-        
         END_INTERFACE
     } IStorageControllerVtbl;
 
@@ -24311,12 +24287,6 @@ EXTERN_C const IID IID_IStorageController;
 
 #define IStorageController_get_Bootable(This,aBootable)	\
     ( (This)->lpVtbl -> get_Bootable(This,aBootable) ) 
-
-#define IStorageController_GetIDEEmulationPort(This,aDevicePosition,aPortNumber)	\
-    ( (This)->lpVtbl -> GetIDEEmulationPort(This,aDevicePosition,aPortNumber) ) 
-
-#define IStorageController_SetIDEEmulationPort(This,aDevicePosition,aPortNumber)	\
-    ( (This)->lpVtbl -> SetIDEEmulationPort(This,aDevicePosition,aPortNumber) ) 
 
 #endif /* COBJMACROS */
 

@@ -229,15 +229,15 @@ VOID Install(char* pPath, char* pName)
                 pName,                /* name of service         */ 
                 pName,                /* service name to display */ 
                 SERVICE_ALL_ACCESS,   /* desired access          */ 
-                SERVICE_WIN32_OWN_PROCESS,    /* service type            */ 
+                SERVICE_WIN32_OWN_PROCESS|SERVICE_INTERACTIVE_PROCESS ,    /* service type            */ 
                 SERVICE_AUTO_START,   /* start type              */ 
                 SERVICE_ERROR_NORMAL, /* error control type      */ 
                 pPath,                /* service's binary        */ 
                 NULL,                 /* no load ordering group  */ 
                 NULL,                 /* no tag identifier       */ 
                 "LanmanWorkstation\0ComSysApp\0\0", /* service dependencies */ 
-                pRunAsUser, 
-                pUserPassword
+                NULL,                 /* LocalSystem account     */ 
+                NULL                  /* no password             */
                 );                      
         if (schService==0) 
         {

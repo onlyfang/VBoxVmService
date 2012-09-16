@@ -1,6 +1,6 @@
 @echo off
 
-set VERSION=3.0-Sweet_Potato
+set VERSION=3.1-Coconut
 
 mkdir vms
 copy ..\*.exe vms

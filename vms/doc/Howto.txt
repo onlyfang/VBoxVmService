@@ -17,8 +17,6 @@ Key / Value pair                                            Description
 -----------------------------------------------------------------------------
 [Settings]
 ServiceName=VBoxVmService                                   The service name to use for the VBoxVmService.
-RunAsUser=DomainName\UserName                               The name of the account under which the service should run. The service process will be logged on as this user. If the account belongs to the built-in domain, you can specify .\UserName.
-UserPassword=xxxxxxxx                                       MUST BE GIVEN! SET THE INI FILE TO BE ONLY READABLE BY YOURSELF AND THE SYSTEM!  
 VBOX_USER_HOME=C:\Users\YOUR_NAME_HERE\.VirtualBox          The actual path to your user's .VirtualBox directory. It is usually located in your users' personal folder.
 RunWebService=no                                            Whether or not start up VBoxWebSrv.exe, the VirtualBox HTTP web service automatically. Could be "yes" or "no". Leave it to "no" if you don't know what it is.
 WebServiceParam=                                            If necessary, you can specify additional parameters for VBoxWebSrv.exe, like "--port" for binding to non-default port. 
@@ -89,7 +87,24 @@ Step 5. You are done uninstalling VBoxVmService from your system.
 
 ##############################################################################
 #
-#   PART IV - TROUBLESHOOTING
+#   PART IV - KNOWN ISSUES
+#
+##############################################################################
+
+1. VboxVmService calls VirtualBox by COM API interface. Due to compatiblity changes in VirtualBox SDK, each VBoxVmService is only compatible with VirtualBox versions that use the same API interface. More specifically,
+   *) VboxVmService 3.0 will only work on VirtualBox 4.0.X and 4.1.X;
+   *) VboxVmService 3.1 will only work on VirtualBox 4.2.0 and later.
+
+2. When VMs are started by VBoxVmService, their running status are not shown on VirtualBox Manager, and vice versa. This is due to a limitation on Windows system that service processes runs at different session than user programs. They just can't see each other.
+
+3. VBoxVmService, and all the VMs it started, are run as LOCAL SYSTEM user by default installation. This default setting should just work "out of box". If for some reason, you need to run it with other account, you can change the user it run as at Computer Management Console. 
+
+If the user you use is not in Administrator group, you will need to make sure it has enough privilege to access DCOM Component. See discussion at http://sourceforge.net/tracker/?func=detail&aid=3483358&group_id=219058&atid=1045322 for more information.
+
+
+##############################################################################
+#
+#   PART V - TROUBLESHOOTING
 #
 ##############################################################################
 

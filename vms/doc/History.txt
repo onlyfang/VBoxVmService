@@ -4,7 +4,7 @@
 
  Contents of this file
 
-     0. What is new in this release?
+     0. Change log
 
      1. What is VBoxVmService?
 
@@ -26,11 +26,16 @@
 ------------------------------------------------------------------------------
 
 
-0. What is new in this release?
+0. Change log
+
+2012-09-15 Release 3.1 "Coconut"
+
+* Updated COM API to make it work with VirtualBox 4.2. Note this is not compatible with old versions of VirtualBox. If you need to use VirtualBox 4.1.X, please stay with 3.0 "Sweet Potato".
+* Service now runs (again) as LocalSystem account by default.
 * Allow additional parameters to be set for VBoxWebSrv.exe.
 * Service is no longer set to DelayedAutostart. It's now Autostart and depends on Workstation and COM+.
 * Fixed a bug in sending pipe commands: need to write an additional null byte at end of message;
-* Removed pipelcat to simplify pipe comminication;
+* Removed pipelcat to simplify pipe comminucation;
 * Fixed compile warnings.
 
 2011-11-29 Release 3.0 "Sweet Potato"

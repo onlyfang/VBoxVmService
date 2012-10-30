@@ -5,16 +5,17 @@ if not "%2"=="" goto ERROR
 if "%1"=="release" goto RELEASE
 
 :DEBUG
-vcbuild VBoxVmService.sln "Debug|x64"
+msbuild VboxVmService.vcxproj /t:Rebuild /p:Configuration=Debug;Platform=x64
 goto END
 
 :RELEASE
-del Release\*.obj
-vcbuild VBoxVmService.sln "Release|win32"
+msbuild VBoxVmService.vcxproj /t:Rebuild /p:Configuration=Release;Platform=Win32
 copy Release\*.exe ..
-del Release\*.obj
-vcbuild VBoxVmService.sln "Release|x64"
-copy Release\VBoxVmService.exe ..\VBoxVmService64.exe
+msbuild VmServiceControl.vcxproj /t:Rebuild /p:Configuration=Release;Platform=Win32
+copy Release\*.exe ..
+
+msbuild VBoxVmService.vcxproj /t:Rebuild /p:Configuration=Release;Platform=x64
+copy x64\Release\VBoxVmService.exe ..\VBoxVmService64.exe
 goto END
 
 :ERROR

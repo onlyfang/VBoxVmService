@@ -2,7 +2,6 @@
 // VirtualBox VMs - managed by an NT Service (VBoxVmService)
 //////////////////////////////////////////////////////////////////////
 
-#include <atlbase.h>
 #include <stdio.h>
 #include <windows.h>
 #include <winbase.h>
@@ -202,7 +201,10 @@ void VMStatus(int nIndex, LPPIPEINST pipe)
         return; 
     }
 
-    CComBSTR vmName(vm);
+    DWORD dwSize = MultiByteToWideChar (CP_ACP, 0, vm, -1, NULL, 0);
+    BSTR vmName = SysAllocStringLen(NULL, dwSize);
+    MultiByteToWideChar (CP_ACP, 0, vm, -1, vmName, dwSize);
+
     HRESULT rc;
     IMachine *machine = NULL;
 
@@ -247,7 +249,7 @@ void VMStatus(int nIndex, LPPIPEINST pipe)
 
         SAFE_RELEASE(machine);
     }
-
+    SysFreeString(vmName);
 }
 
 // start a VM with given name
@@ -255,7 +257,10 @@ void VMStatus(int nIndex, LPPIPEINST pipe)
 // return false on failure
 bool StartVM(char *vm, LPPIPEINST pipe)
 {
-    CComBSTR vmName(vm);
+    DWORD dwSize = MultiByteToWideChar (CP_ACP, 0, vm, -1, NULL, 0);
+    BSTR vmName = SysAllocStringLen(NULL, dwSize);
+    MultiByteToWideChar (CP_ACP, 0, vm, -1, vmName, dwSize);
+
     HRESULT rc;
     IMachine *machine = NULL;
     bool result = false;
@@ -296,6 +301,8 @@ bool StartVM(char *vm, LPPIPEINST pipe)
         SysFreeString(sessiontype);
         SAFE_RELEASE(machine);
     }
+
+    SysFreeString(vmName);
     return result;
 }
 
@@ -340,7 +347,10 @@ BOOL StartProcess(int nIndex, LPPIPEINST pipe)
 //  1: VM stopped successfully
 int StopVM(char *vm, char *method, LPPIPEINST pipe)
 {
-    CComBSTR vmName(vm);
+    DWORD dwSize = MultiByteToWideChar (CP_ACP, 0, vm, -1, NULL, 0);
+    BSTR vmName = SysAllocStringLen(NULL, dwSize);
+    MultiByteToWideChar (CP_ACP, 0, vm, -1, vmName, dwSize);
+
     HRESULT rc;
     IMachine *machine = NULL;
     int result = -1;
@@ -371,7 +381,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
                     MachineState_Starting != vmstate ) 
             {
                 if (pipe)
-                     WriteLogPipe(pipe, "VM %s is not running.", vm);
+                    WriteLogPipe(pipe, "VM %s is not running.", vm);
                 result = 0;
                 break;
             }
@@ -410,6 +420,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
         SAFE_RELEASE(console);
         SAFE_RELEASE(machine);
     }
+    SysFreeString(vmName);
     return result;
 }
 

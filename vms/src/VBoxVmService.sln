@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VBoxVmService", "VBoxVmServ
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VmServiceControl", "VmServiceControl.vcxproj", "{41B1FB22-6271-48DB-8C1E-1E98995CE8B9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VmServiceTray", "VmServiceTray.vcxproj", "{1A2B6C9E-4F56-4945-9909-F4BC311D3FAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -23,12 +25,16 @@ Global
 		{8548800A-F171-4FD3-ADAE-3361E061CFA9}.Release|x64.Build.0 = Release|x64
 		{41B1FB22-6271-48DB-8C1E-1E98995CE8B9}.Debug|Win32.ActiveCfg = Debug|Win32
 		{41B1FB22-6271-48DB-8C1E-1E98995CE8B9}.Debug|Win32.Build.0 = Debug|Win32
-		{41B1FB22-6271-48DB-8C1E-1E98995CE8B9}.Debug|x64.ActiveCfg = Debug|x64
-		{41B1FB22-6271-48DB-8C1E-1E98995CE8B9}.Debug|x64.Build.0 = Debug|x64
+		{41B1FB22-6271-48DB-8C1E-1E98995CE8B9}.Debug|x64.ActiveCfg = Debug|Win32
 		{41B1FB22-6271-48DB-8C1E-1E98995CE8B9}.Release|Win32.ActiveCfg = Release|Win32
 		{41B1FB22-6271-48DB-8C1E-1E98995CE8B9}.Release|Win32.Build.0 = Release|Win32
-		{41B1FB22-6271-48DB-8C1E-1E98995CE8B9}.Release|x64.ActiveCfg = Release|x64
-		{41B1FB22-6271-48DB-8C1E-1E98995CE8B9}.Release|x64.Build.0 = Release|x64
+		{41B1FB22-6271-48DB-8C1E-1E98995CE8B9}.Release|x64.ActiveCfg = Release|Win32
+		{1A2B6C9E-4F56-4945-9909-F4BC311D3FAC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A2B6C9E-4F56-4945-9909-F4BC311D3FAC}.Debug|Win32.Build.0 = Debug|Win32
+		{1A2B6C9E-4F56-4945-9909-F4BC311D3FAC}.Debug|x64.ActiveCfg = Debug|Win32
+		{1A2B6C9E-4F56-4945-9909-F4BC311D3FAC}.Release|Win32.ActiveCfg = Release|Win32
+		{1A2B6C9E-4F56-4945-9909-F4BC311D3FAC}.Release|Win32.Build.0 = Release|Win32
+		{1A2B6C9E-4F56-4945-9909-F4BC311D3FAC}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

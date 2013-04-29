@@ -2,3 +2,4 @@ Release
 Debug
 x64
 *.suo
+*.sdf

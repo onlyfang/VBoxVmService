@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Util.cpp" />
     <ClCompile Include="VBoxVmPipeManager.cpp" />
     <ClCompile Include="VBoxVmService.cpp" />
     <ClCompile Include="VirtualBox_i.c" />

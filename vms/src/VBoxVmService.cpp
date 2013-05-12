@@ -15,6 +15,7 @@
 #include "VirtualBox.h"
 
 #include "VBoxVmPipeManager.h"
+#include "Util.h"
 
 
 const int nBufferSize = 500;
@@ -70,8 +71,9 @@ void WriteLogPipe(LPPIPEINST pipe, LPCSTR formatstring, ...){
     //write back to pipe
     if (pipe)
     {
-        strncpy_s(pipe->chReply, BUFSIZE, pTemp, pLen);
-        pipe->cbToWrite = pLen;
+        pipe->chReply[0] = -1;                  // -1 means error was returned
+        strncpy_s(pipe->chReply + 1, BUFSIZE, pTemp, pLen);
+        pipe->cbToWrite = pLen + 1;
     }
 }
 
@@ -107,7 +109,7 @@ char *ErrorString(DWORD err)
                 NULL) == 0)
     { 
         // FormatMessage failed
-        sprintf_s(buff,"Unknown error with error code = %d", err);
+        sprintf_s(buff, buffsize, "Unknown error with error code = %d", err);
     }
     return buff;
 } // ErrorString
@@ -128,7 +130,7 @@ char *nIndexToVmName(int nIndex) {
     char pItem[nBufferSize+1];
     static char pVmName[nBufferSize+1];
 
-    sprintf_s(pItem,"Vm%d\0",nIndex);
+    sprintf_s(pItem, nBufferSize, "Vm%d\0",nIndex);
 
     // get VmName
     GetPrivateProfileString(pItem,"VmName","",pVmName,nBufferSize,pInitFile);
@@ -159,7 +161,7 @@ DWORD RunConsoleApp(char pCommandLine[])
     hStdOut = CreateFile(pLogFile, FILE_APPEND_DATA, FILE_SHARE_READ | FILE_SHARE_WRITE, &sa, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 
 
-    sprintf_s(pTemp,"Running command: '%s'.", pCommandLine); 
+    sprintf_s(pTemp, nBufferSize, "Running command: '%s'.", pCommandLine); 
     WriteLog(pTemp);
 
     // prepare for creating process
@@ -189,12 +191,7 @@ DWORD RunConsoleApp(char pCommandLine[])
 // Get VM status with given index
 void VMStatus(int nIndex, LPPIPEINST pipe)
 {
-    char *vm;
-
-    // force ini file reload
-    WritePrivateProfileString(NULL, NULL, NULL, pInitFile);
-
-    vm = nIndexToVmName( nIndex );
+    char *vm = nIndexToVmName( nIndex );
     if (vm == NULL) 
     {
         WriteLogPipe(pipe, "Unknown VM index number. Are you sure it is defined in the VBoxVmService.ini file?"); 
@@ -225,25 +222,20 @@ void VMStatus(int nIndex, LPPIPEINST pipe)
         }
         else
         {
-            switch (state) {
-                case MachineState_PoweredOff:
-                    WriteLogPipe(pipe, "VM %s is powered off.", vm);
-                    break;
-                case MachineState_Saved:
-                    WriteLogPipe(pipe, "VM %s is saved.", vm);
-                    break;
-                case MachineState_Aborted:
-                    WriteLogPipe(pipe, "VM %s is aborted.", vm);
-                    break;
-                case MachineState_Running:
-                    WriteLogPipe(pipe, "VM %s is running.", vm);
-                    break;
-                case MachineState_Paused:
-                    WriteLogPipe(pipe, "VM %s is paused.", vm);
-                    break;
-                default:
-                    WriteLogPipe(pipe, "VM %s is in unknown state %d.", vm, state);
-                    break;
+            // write to log
+            char pTemp[nBufferSize+1];
+            sprintf_s(pTemp, nBufferSize, "  VM%d: %s is %s.", nIndex, vm, MachineStateToString(state));
+            WriteLog(pTemp);
+
+            // write to pipe
+            if (pipe)
+            {
+                int len = (int)strlen(vm);
+                pipe->chReply[0] = 0;                // 0 means OK
+                pipe->chReply[1] = len;              // VM name length
+                memcpy(pipe->chReply + 2, vm, len);  // VM name
+                pipe->chReply[len + 2] = state;      // VM state
+                pipe->cbToWrite = len + 3;
             }
         }
 
@@ -290,7 +282,21 @@ bool StartVM(char *vm, LPPIPEINST pipe)
 
             // Wait until VM is running. 
             rc = progress->WaitForCompletion (-1);
-            WriteLogPipe(pipe, "VM %s is started up.", vm);
+
+            // write to log
+            char pTemp[nBufferSize+1];
+            sprintf_s(pTemp, nBufferSize, "  VM %s has been started up.", vm);
+            WriteLog(pTemp);
+
+            if (pipe)
+            {
+                // write to pipe
+                int len = (int)strlen(vm);
+                pipe->chReply[0] = 0;                // 0 means OK
+                pipe->chReply[1] = len;              // VM name length
+                memcpy(pipe->chReply + 2, vm, len);  // VM name
+                pipe->cbToWrite = len + 2;
+            }
 
             // Close the session.
             rc = session->UnlockMachine();
@@ -310,12 +316,7 @@ bool StartVM(char *vm, LPPIPEINST pipe)
 // start a VM with given index
 BOOL StartProcess(int nIndex, LPPIPEINST pipe) 
 { 
-    char *cp;
-
-    if (pipe)  // when called from VmServiceControl, reload ini file
-        WritePrivateProfileString(NULL, NULL, NULL, pInitFile);
-
-    cp = nIndexToVmName( nIndex );
+    char *cp = nIndexToVmName( nIndex );
     if (cp == NULL) 
     {
         if (pipe)  // this message is invalid when StartProcess is called during service start, not by control command
@@ -330,7 +331,7 @@ BOOL StartProcess(int nIndex, LPPIPEINST pipe)
         char pItem[nBufferSize+1];
 
         // get AutoStart
-        sprintf_s(pItem,"Vm%d\0",nIndex);
+        sprintf_s(pItem, nBufferSize, "Vm%d\0",nIndex);
         GetPrivateProfileString(pItem,"AutoStart","",pAutoStart,nBufferSize,pInitFile);
         if (_stricmp(pAutoStart, "no") == 0)
             return true;
@@ -403,13 +404,26 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
                 rc = console->PowerButton();
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, "Could not stop machine %s! rc = 0x%x", rc, vm);
+                WriteLogPipe(pipe, "Could not stop machine %s! rc = 0x%x", vm, rc);
                 break;
             }
 
             result = 1;
 
-            WriteLogPipe(pipe, "VM %s is being shutdown.", vm);
+            // write to log
+            char pTemp[nBufferSize+1];
+            sprintf_s(pTemp, nBufferSize, "  VM %s has being shutted down.", vm);
+            WriteLog(pTemp);
+
+            // write to pipe
+            if (pipe)
+            {
+                int len = (int)strlen(vm);
+                pipe->chReply[0] = 0;                // 0 means OK
+                pipe->chReply[1] = len;              // VM name length
+                memcpy(pipe->chReply + 2, vm, len);  // VM name
+                pipe->cbToWrite = len + 2;
+            }
 
             // Close the session.
             rc = session->UnlockMachine();
@@ -433,13 +447,8 @@ int EndProcess(int nIndex, LPPIPEINST pipe)
 {
     char pItem[nBufferSize+1];
     char pShutdownMethod[nBufferSize+1];
-    char *cp;
 
-
-    if (pipe)  // when called from VmServiceControl, reload ini file
-        WritePrivateProfileString(NULL, NULL, NULL, pInitFile);
-
-    cp = nIndexToVmName( nIndex );
+    char *cp = nIndexToVmName( nIndex );
     if (cp==NULL)
     {
         if (pipe)
@@ -448,10 +457,77 @@ int EndProcess(int nIndex, LPPIPEINST pipe)
     }
 
     // get ShutdownMethod
-    sprintf_s(pItem,"Vm%d\0",nIndex);
+    sprintf_s(pItem, nBufferSize, "Vm%d\0",nIndex);
     GetPrivateProfileString(pItem,"ShutdownMethod","",pShutdownMethod,nBufferSize,pInitFile);
 
     return StopVM(cp, pShutdownMethod, pipe);
+}
+
+// list all configured VMs
+void ListVMs(LPPIPEINST pipe)
+{
+    char chBuf[8192]; 
+    int buf_len = 0;
+
+    WriteLog("List all the VMs found by VBoxVmService"); 
+    int i = 0;
+    while (true)
+    {
+        char *vm = nIndexToVmName(i);
+        if (vm == NULL) 
+            break;
+
+        // get vmName
+        DWORD dwSize = MultiByteToWideChar (CP_ACP, 0, vm, -1, NULL, 0);
+        BSTR vmName = SysAllocStringLen(NULL, dwSize);
+        MultiByteToWideChar (CP_ACP, 0, vm, -1, vmName, dwSize);
+
+        // get machine
+        IMachine *machine = NULL;
+        HRESULT rc = virtualBox->FindMachine(vmName, &machine);
+        SysFreeString(vmName);
+
+        if (FAILED(rc))
+        {
+            WriteLogPipe(pipe,"Error finding machine! rc = 0x%x", rc); 
+            return;
+        }
+
+        MachineState state;
+        rc = machine->get_State(&state);
+        SAFE_RELEASE(machine);
+
+        if (!SUCCEEDED(rc))
+        {
+            WriteLogPipe(pipe, "Error retrieving machine state! rc = 0x%x", rc);
+            return;
+        }
+
+        // write to log
+        char pTemp[nBufferSize+1];
+        sprintf_s(pTemp, nBufferSize, "  VM%d: %s is %s.", i, vm, MachineStateToString(state));
+        WriteLog(pTemp);
+
+        // append to pipe buffer
+        if (pipe)
+        {
+            int len = (int)strlen(vm);
+            chBuf[buf_len] = len;
+            memcpy(chBuf + buf_len + 1, vm, len);
+            chBuf[buf_len + len + 1] = state;
+            buf_len += len + 2;
+        }
+
+        i++;
+    }
+
+    // write to pipe
+    if (pipe)
+    {
+        pipe->chReply[0] = 0;
+        memcpy(pipe->chReply + 1, chBuf, buf_len);
+        pipe->cbToWrite = buf_len + 1;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////// 
@@ -476,7 +552,7 @@ VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv )
     {
         long nError = GetLastError();
         char pTemp[121];
-        sprintf_s(pTemp, "RegisterServiceCtrlHandler failed, error code = %d", nError);
+        sprintf_s(pTemp, 120, "RegisterServiceCtrlHandler failed, error code = %d", nError);
         WriteLog(pTemp);
         return; 
     } 
@@ -489,7 +565,7 @@ VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv )
     { 
         long nError = GetLastError();
         char pTemp[121];
-        sprintf_s(pTemp, "SetServiceStatus failed, error code = %d", nError);
+        sprintf_s(pTemp, 120, "SetServiceStatus failed, error code = %d", nError);
         WriteLog(pTemp);
     } 
 
@@ -529,7 +605,7 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
             {
                 long nError = GetLastError();
                 char pTemp[121];
-                sprintf_s(pTemp,  "Unrecognized opcode %d", fdwControl);
+                sprintf_s(pTemp, 120, "Unrecognized opcode %d", fdwControl);
                 WriteLog(pTemp);
             }
     };
@@ -537,7 +613,7 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
     { 
         long nError = GetLastError();
         char pTemp[121];
-        sprintf_s(pTemp, "SetServiceStatus failed, error code = %d", nError);
+        sprintf_s(pTemp, 120, "SetServiceStatus failed, error code = %d", nError);
         WriteLog(pTemp);
     } 
 }
@@ -550,22 +626,28 @@ void WorkerHandleCommand(LPPIPEINST pipe)
 
     strncpy_s(buffer, 80, pipe->chRequest, strlen(pipe->chRequest));
 
-    sprintf_s(pTemp, "Received control command: %s", buffer);
+    sprintf_s(pTemp, 120, "Received control command: %s", buffer);
     WriteLog(pTemp);
 
     // process command
     if (strncmp(buffer, "start", 5) == 0)
     {
+        // reload ini file
+        WritePrivateProfileString(NULL, NULL, NULL, pInitFile);
         int nIndex = atoi(buffer + 6);
         StartProcess(nIndex,pipe);
     }
     else if (strncmp(buffer, "stop", 4) == 0)
     {
+        // reload ini file
+        WritePrivateProfileString(NULL, NULL, NULL, pInitFile);
         int nIndex = atoi(buffer + 5);
         EndProcess(nIndex,pipe);
     }
     else if (strncmp(buffer, "status", 6) == 0)
     {
+        // reload ini file
+        WritePrivateProfileString(NULL, NULL, NULL, pInitFile);
         int nIndex = atoi(buffer + 7);
         VMStatus(nIndex, pipe);
     }
@@ -573,69 +655,14 @@ void WorkerHandleCommand(LPPIPEINST pipe)
     {
         VBoxVmServiceHandler(SERVICE_CONTROL_SHUTDOWN);
     }
+    else if (strncmp(buffer, "list", 4) == 0)
+    {
+        // reload ini file
+        WritePrivateProfileString(NULL, NULL, NULL, pInitFile);
+        ListVMs(pipe);
+    }
     else {
         printf("Unknown command \"%s\"\n", buffer);
-    }
-}
-
-void listVMs(IVirtualBox *virtualBox)
-{
-    HRESULT rc;
-
-    SAFEARRAY *machinesArray = NULL;
-    WriteLog("List all the VMs found by VBoxVmService"); 
-
-    rc = virtualBox->get_Machines(&machinesArray);
-    if (SUCCEEDED(rc))
-    {
-        IMachine **machines;
-        rc = SafeArrayAccessData (machinesArray, (void **) &machines);
-        if (SUCCEEDED(rc))
-        {
-            for (ULONG i = 0; i < machinesArray->rgsabound[0].cElements; ++i)
-            {
-                BSTR str;
-
-                rc = machines[i]->get_Name(&str);
-                if (SUCCEEDED(rc))
-                {
-                    char pTemp[nBufferSize+1];
-                    sprintf_s(pTemp, "Name: %S", str); 
-                    SysFreeString(str);
-
-                    MachineState state;
-                    rc = machines[i]->get_State(&state);
-                    if (SUCCEEDED(rc))
-                    {
-                        switch (state) {
-                            case MachineState_PoweredOff:
-                                strcat_s(pTemp, ", powered off");
-                                break;
-                            case MachineState_Saved:
-                                strcat_s(pTemp, ", saved");
-                                break;
-                            case MachineState_Aborted:
-                                strcat_s(pTemp, ", aborted");
-                                break;
-                            case MachineState_Running:
-                                strcat_s(pTemp, ", running");
-                                break;
-                            case MachineState_Paused:
-                                strcat_s(pTemp, ", paused");
-                                break;
-                            default:
-                                strcat_s(pTemp, ", in unknown state");
-                                break;
-                        }
-                    }
-                    WriteLog(pTemp);
-                }
-            }
-
-            SafeArrayUnaccessData (machinesArray);
-        }
-
-        SafeArrayDestroy (machinesArray);
     }
 }
 
@@ -663,7 +690,7 @@ unsigned __stdcall WorkerProc(void* pParam)
     if (!SUCCEEDED(rc))
     {
         char pTemp[121];
-        sprintf_s(pTemp, "Error creating VirtualBox instance! rc = 0x%x", rc);
+        sprintf_s(pTemp, 120, "Error creating VirtualBox instance! rc = 0x%x", rc);
         WriteLog(pTemp);
         goto end;
     }
@@ -678,12 +705,12 @@ unsigned __stdcall WorkerProc(void* pParam)
     {
         virtualBox->Release();
         char pTemp[121];
-        sprintf_s(pTemp, "Error creating Session instance! rc = 0x%x", rc);
+        sprintf_s(pTemp, 120, "Error creating Session instance! rc = 0x%x", rc);
         WriteLog(pTemp);
         goto end;
     }
 
-    listVMs(virtualBox);
+    ListVMs(NULL);
 
     // start all configured VMs
     BOOL bShouldWait = FALSE;
@@ -783,7 +810,7 @@ end:
         CloseHandle(ghVMStoppedEvent);
 
     char pTemp[121];
-    sprintf_s(pTemp, "%s stopped.", pServiceName);
+    sprintf_s(pTemp, 120, "%s stopped.", pServiceName);
     WriteLog(pTemp);
 
     // notify SCM that we've finished
@@ -792,8 +819,7 @@ end:
     if (!SetServiceStatus(hServiceStatusHandle, &serviceStatus))
     { 
         long nError = GetLastError();
-        char pTemp[121];
-        sprintf_s(pTemp, "SetServiceStatus failed, error code = %d", nError);
+        sprintf_s(pTemp, 120, "SetServiceStatus failed, error code = %d", nError);
         WriteLog(pTemp);
     }
 
@@ -815,10 +841,10 @@ void main(int argc, char *argv[] )
 
     if(dwSize>4&&pModuleFile[dwSize-4]=='.')
     {
-        sprintf_s(pExeFile,"%s",pModuleFile);
+        sprintf_s(pExeFile, nBufferSize, "%s",pModuleFile);
         *(strrchr(pModuleFile, '\\')) = 0;
-        sprintf_s(pInitFile,"%s\\VBoxVmService.ini",pModuleFile);
-        sprintf_s(pLogFile,"%s\\VBoxVmService.log",pModuleFile);
+        sprintf_s(pInitFile, nBufferSize, "%s\\VBoxVmService.ini",pModuleFile);
+        sprintf_s(pLogFile, nBufferSize, "%s\\VBoxVmService.log",pModuleFile);
     }
     else
     {
@@ -832,7 +858,7 @@ void main(int argc, char *argv[] )
     GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
 
     char pTemp[121];
-    sprintf_s(pTemp, "%s started.", pServiceName);
+    sprintf_s(pTemp, 120, "%s started.", pServiceName);
     WriteLog(pTemp);
 
     // Run in debug mode if switch is "-d"
@@ -852,7 +878,7 @@ void main(int argc, char *argv[] )
         if(hThread==0)
         {
             char pTemp[121];
-            sprintf_s(pTemp, "_beginthread failed, error code = %d", GetLastError());
+            sprintf_s(pTemp, 120, "_beginthread failed, error code = %d", GetLastError());
             WriteLog(pTemp);
         }
 
@@ -861,7 +887,7 @@ void main(int argc, char *argv[] )
         if(!StartServiceCtrlDispatcher(DispatchTable))
         {
             char pTemp[121];
-            sprintf_s(pTemp, "StartServiceCtrlDispatcher failed, error code = %d", GetLastError());
+            sprintf_s(pTemp, 120, "StartServiceCtrlDispatcher failed, error code = %d", GetLastError());
             WriteLog(pTemp);
         }
         // you don't get here unless the service is shutdown

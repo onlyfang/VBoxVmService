@@ -74,13 +74,13 @@ int PipeManager(LPTSTR lpszPipename, void __cdecl GetAnswerToRequest(LPPIPEINST 
         Pipe[i].sa.lpSecurityDescriptor = (PSECURITY_DESCRIPTOR)malloc(SECURITY_DESCRIPTOR_MIN_LENGTH);
         if (!InitializeSecurityDescriptor(Pipe[i].sa.lpSecurityDescriptor, SECURITY_DESCRIPTOR_REVISION))
         {
-            sprintf_s(pTemp, "PipeManager: InitializeSecurityDescriptor failed, error code = %d", GetLastError());
+            sprintf_s(pTemp, 120, "PipeManager: InitializeSecurityDescriptor failed, error code = %d", GetLastError());
             WriteLog(pTemp);
             return 0;
         }
         if (!SetSecurityDescriptorDacl(Pipe[i].sa.lpSecurityDescriptor, TRUE, (PACL)0, FALSE))
         {
-            sprintf_s(pTemp, "PipeManager: SetSecurityDescriptorDacl failed, error code = %d", GetLastError());
+            sprintf_s(pTemp, 120, "PipeManager: SetSecurityDescriptorDacl failed, error code = %d", GetLastError());
             WriteLog(pTemp);
             return 0;
         }
@@ -96,7 +96,7 @@ int PipeManager(LPTSTR lpszPipename, void __cdecl GetAnswerToRequest(LPPIPEINST 
 
         if (hEvents[i] == NULL) 
         {
-            sprintf_s(pTemp, "PipeManager: CreateEvent failed with %d.\n", GetLastError()); 
+            sprintf_s(pTemp, 120, "PipeManager: CreateEvent failed with %d.\n", GetLastError()); 
             WriteLog(pTemp);
             return 0;
         }
@@ -118,7 +118,7 @@ int PipeManager(LPTSTR lpszPipename, void __cdecl GetAnswerToRequest(LPPIPEINST 
 
         if (Pipe[i].hPipeInst == INVALID_HANDLE_VALUE) 
         {
-            sprintf_s(pTemp, "PipeManager: CreateNamedPipe failed with %d.\n", GetLastError());
+            sprintf_s(pTemp, 120, "PipeManager: CreateNamedPipe failed with %d.\n", GetLastError());
             WriteLog(pTemp);
             return 0;
         }
@@ -142,7 +142,7 @@ int PipeManager(LPTSTR lpszPipename, void __cdecl GetAnswerToRequest(LPPIPEINST 
 
     if (hEvents[INSTANCES] == NULL) 
     {
-        sprintf_s(pTemp, "PipeManager: CreateEvent failed with %d.\n", GetLastError()); 
+        sprintf_s(pTemp, 120, "PipeManager: CreateEvent failed with %d.\n", GetLastError()); 
         WriteLog(pTemp);
         return 0;
     }
@@ -170,7 +170,7 @@ int PipeManager(LPTSTR lpszPipename, void __cdecl GetAnswerToRequest(LPPIPEINST 
         // Chack the range
         if (i < 0 || i > (INSTANCES - 1)) 
         {
-            sprintf_s(pTemp, "PipeManager: Index (%d) out of range. 0..%d\n", i, INSTANCES); 
+            sprintf_s(pTemp, 120, "PipeManager: Index (%d) out of range. 0..%d\n", i, INSTANCES); 
             WriteLog(pTemp);
             return 0;
         }
@@ -190,7 +190,7 @@ int PipeManager(LPTSTR lpszPipename, void __cdecl GetAnswerToRequest(LPPIPEINST 
                 case CONNECTING_STATE: 
                     if (! fSuccess) 
                     {
-                        sprintf_s(pTemp, "PipeManager, Pipe error %d.\n", GetLastError()); 
+                        sprintf_s(pTemp, 120, "PipeManager, Pipe error %d.\n", GetLastError()); 
                         WriteLog(pTemp);
                         return 0;
                     }
@@ -220,7 +220,7 @@ int PipeManager(LPTSTR lpszPipename, void __cdecl GetAnswerToRequest(LPPIPEINST 
 
                 default: 
                     {
-                        sprintf_s(pTemp, "PipeManager: Invalid pipe state.\n"); 
+                        sprintf_s(pTemp, 120, "PipeManager: Invalid pipe state.\n"); 
                         WriteLog(pTemp);
                         return 0;
                     }
@@ -296,7 +296,7 @@ int PipeManager(LPTSTR lpszPipename, void __cdecl GetAnswerToRequest(LPPIPEINST 
                 } 
                 else 
                 {
-                    sprintf_s(pTemp, "PipeManager: WRITING_STATE error 0x%x.\n", dwErr);
+                    sprintf_s(pTemp, 120, "PipeManager: WRITING_STATE error 0x%x.\n", dwErr);
                     WriteLog(pTemp);
                 }
 
@@ -306,7 +306,7 @@ int PipeManager(LPTSTR lpszPipename, void __cdecl GetAnswerToRequest(LPPIPEINST 
 
             default: 
                 {
-                    sprintf_s(pTemp, "PipeManager: Invalid pipe state.\n"); 
+                    sprintf_s(pTemp, 120, "PipeManager: Invalid pipe state.\n"); 
                     WriteLog(pTemp);
                     return 0;
                 }

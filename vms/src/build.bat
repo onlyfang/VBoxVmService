@@ -6,6 +6,7 @@ if "%1"=="release" goto RELEASE
 
 :DEBUG
 msbuild VboxVmService.vcxproj /t:Rebuild /p:Configuration=Debug;Platform=x64
+msbuild VmServiceControl.vcxproj /t:Rebuild /p:Configuration=Debug;Platform=Win32
 msbuild VmServiceTray.vcxproj /t:Rebuild /p:Configuration=Debug;Platform=Win32
 goto END
 

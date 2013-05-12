@@ -16,7 +16,6 @@ Step 3. Open up VBoxVmService.ini with a texteditor of your choice and modify it
 Key / Value pair                                            Description
 -----------------------------------------------------------------------------
 [Settings]
-ServiceName=VBoxVmService                                   The service name to use for the VBoxVmService.
 VBOX_USER_HOME=C:\Users\YOUR_NAME_HERE\.VirtualBox          The actual path to your user's .VirtualBox directory. It is usually located in your users' personal folder.
 RunWebService=no                                            Whether or not start up VBoxWebSrv.exe, the VirtualBox HTTP web service automatically. Could be "yes" or "no". Leave it to "no" if you don't know what it is.
 WebServiceParam=                                            If necessary, you can specify additional parameters for VBoxWebSrv.exe, like "--port" for binding to non-default port. 

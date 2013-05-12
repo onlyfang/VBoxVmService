@@ -4,8 +4,12 @@
 #include <winsvc.h>
 #include <process.h>
 
+#include "VirtualBox.h"
+#include "VBoxVmPipeManager.h"
+#include "Util.h"
+
 const int nBufferSize = 500;
-char pInitFile[nBufferSize+1];
+char  chBuf[8192]; 
 
 void show_usage()
 {
@@ -15,87 +19,29 @@ void show_usage()
     printf("       -u        Uninstall VBoxVmService service\n");
     printf("       -s        Start VBoxVmService service\n");
     printf("       -k        Stop VBoxVmService service\n");
+    printf("       -l        List all configured VMs\n");
     printf("       -su n     Startup VM with index n\n");
     printf("       -sd n     Shutdown VM with index n\n");
     printf("       -st n     Show status for VM with index n\n");
     printf("\n");
 }
 
-/*
-   Tests whether the current user and prossess has admin privileges.
 
-   Note that this will return FALSE if called from a Vista program running in an administrator account if the process was not launched with 'run as administrator'
-   */
-BOOL isAdmin() {
-    SID_IDENTIFIER_AUTHORITY NtAuthority = SECURITY_NT_AUTHORITY;
-    PSID AdministratorsGroup;
-    // Initialize SID.
-    if( !AllocateAndInitializeSid( &NtAuthority,
-                2,
-                SECURITY_BUILTIN_DOMAIN_RID,
-                DOMAIN_ALIAS_RID_ADMINS,
-                0, 0, 0, 0, 0, 0,
-                &AdministratorsGroup))
-    {
-        // Initializing SID Failed.
-        return false;
-    }
-    // Check whether the token is present in admin group.
-    BOOL IsInAdminGroup = FALSE;
-    if( !CheckTokenMembership( NULL,
-                AdministratorsGroup,
-                &IsInAdminGroup ))
-    {
-        // Error occurred.
-        IsInAdminGroup = FALSE;
-    }
-    // Free SID and return.
-    FreeSid(AdministratorsGroup);
-    return IsInAdminGroup;
-
-}
-
-char *ErrorString(DWORD err)
-{
-
-    const DWORD buffsize = 300+1;
-    static char buff[buffsize];
-
-    if ((err == ERROR_ACCESS_DENIED) && (!isAdmin())) {
-        sprintf_s(buff,"Access is denied.\n\nHave you tried to run the program as an administrator by starting the command prompt as 'run as administrator'?");
-    }
-    else if(FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
-                NULL,
-                err,
-                0,
-                buff,
-                buffsize,
-                NULL) == 0)
-    { 
-        // FormatMessage failed
-        sprintf_s(buff,"Unknown error with error code = %d", err);
-    }
-    return buff;
-} // ErrorString
-
-
-BOOL KillService(char* pName) 
+BOOL KillService() 
 { 
     // kill service with given name
     SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_ALL_ACCESS); 
     if (schSCManager==0) 
     {
-        long nError = GetLastError();
-        fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
+        printf("OpenSCManager failed: %s\n", LastErrorString());
     }
     else
     {
         // open the service
-        SC_HANDLE schService = OpenService( schSCManager, pName, SERVICE_ALL_ACCESS);
+        SC_HANDLE schService = OpenService( schSCManager, "VBoxVmService", SERVICE_ALL_ACCESS);
         if (schService==0) 
         {
-            long nError = GetLastError();
-            fprintf_s(stderr, "OpenService failed: %s\n", ErrorString(nError));;
+            printf("OpenService failed: %s\n", LastErrorString());;
         }
         else
         {
@@ -103,15 +49,14 @@ BOOL KillService(char* pName)
             SERVICE_STATUS status;
             if(ControlService(schService,SERVICE_CONTROL_STOP,&status))
             {
-                fprintf_s(stdout, "Service stopped successfully\n");
+                printf("Service stopped successfully\n");
                 CloseServiceHandle(schService); 
                 CloseServiceHandle(schSCManager); 
                 return TRUE;
             }
             else
             {
-                long nError = GetLastError();
-                fprintf_s(stderr, "ControlService failed: %s\n", ErrorString(nError));
+                printf("ControlService failed: %s\n", LastErrorString());
             }
             CloseServiceHandle(schService); 
         }
@@ -121,38 +66,35 @@ BOOL KillService(char* pName)
 }
 
 
-BOOL RunService(char* pName, int nArg, char** pArg) 
+BOOL RunService(int nArg, char** pArg) 
 { 
     // run service with given name
     SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_ALL_ACCESS); 
     if (schSCManager==0) 
     {
-        long nError = GetLastError();
-        fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
+        printf("OpenSCManager failed: %s\n", LastErrorString());
     }
     else
     {
         // open the service
-        SC_HANDLE schService = OpenService( schSCManager, pName, SERVICE_ALL_ACCESS);
+        SC_HANDLE schService = OpenService( schSCManager, "VBoxVmService", SERVICE_ALL_ACCESS);
         if (schService==0) 
         {
-            long nError = GetLastError();
-            fprintf_s(stderr, "OpenService failed: %s\n", ErrorString(nError));
+            printf("OpenService failed: %s\n", LastErrorString());
         }
         else
         {
             // call StartService to run the service
             if(StartService(schService,nArg,(const char**)pArg))
             {
-                fprintf_s(stdout, "Service started successfully\n");
+                printf("Service started successfully\n");
                 CloseServiceHandle(schService); 
                 CloseServiceHandle(schSCManager); 
                 return TRUE;
             }
             else
             {
-                long nError = GetLastError();
-                fprintf_s(stderr, "StartService failed: %s\n", ErrorString(nError));
+                printf("StartService failed: %s\n", LastErrorString());
             }
             CloseServiceHandle(schService); 
         }
@@ -165,7 +107,7 @@ BOOL RunService(char* pName, int nArg, char** pArg)
 //
 // Uninstall
 //
-VOID UnInstall(char* pName)
+VOID UnInstall()
 {
     // Remove system wide VBOX_USER_HOME environment variable
     HKEY hKey;
@@ -179,26 +121,24 @@ VOID UnInstall(char* pName)
     SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_ALL_ACCESS); 
     if (schSCManager==0) 
     {
-        long nError = GetLastError();
-        fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
+        printf("OpenSCManager failed: %s\n", LastErrorString());
     }
     else
     {
-        SC_HANDLE schService = OpenService( schSCManager, pName, SERVICE_ALL_ACCESS);
+        SC_HANDLE schService = OpenService( schSCManager, "VBoxVmService", SERVICE_ALL_ACCESS);
         if (schService==0) 
         {
-            long nError = GetLastError();
-            fprintf_s(stderr, "OpenService failed: %s\n", ErrorString(nError));
+            printf("OpenService failed: %s\n", LastErrorString());
         }
         else
         {
             if(!DeleteService(schService)) 
             {
-                fprintf_s(stderr, "Failed to delete service %s\n", pName);
+                printf("Failed to delete service VBoxVmService\n");
             }
             else 
             {
-                fprintf_s(stdout, "Service %s removed\n",pName);
+                printf("Service VBoxVmService removed\n");
             }
             CloseServiceHandle(schService); 
         }
@@ -210,156 +150,11 @@ VOID UnInstall(char* pName)
 //
 // Install
 //
-VOID Install(char* pPath, char* pName) 
+VOID Install() 
 {  
-    SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_CREATE_SERVICE); 
-    if (schSCManager==0) 
-    {
-        long nError = GetLastError();
-        fprintf_s(stderr, "OpenSCManager failed: %s\n", ErrorString(nError));
-    }
-    else
-    {
-        char pRunAsUser[nBufferSize+1];
-        char pUserPassword[nBufferSize+1];
-        GetPrivateProfileString("Settings","RunAsUser","",pRunAsUser,nBufferSize,pInitFile);
-        GetPrivateProfileString("Settings","UserPassword","",pUserPassword,nBufferSize,pInitFile);
-        SC_HANDLE schService = CreateService( 
-                schSCManager,         /* SCManager database      */ 
-                pName,                /* name of service         */ 
-                pName,                /* service name to display */ 
-                SERVICE_ALL_ACCESS,   /* desired access          */ 
-                SERVICE_WIN32_OWN_PROCESS|SERVICE_INTERACTIVE_PROCESS ,    /* service type            */ 
-                SERVICE_AUTO_START,   /* start type              */ 
-                SERVICE_ERROR_NORMAL, /* error control type      */ 
-                pPath,                /* service's binary        */ 
-                NULL,                 /* no load ordering group  */ 
-                NULL,                 /* no tag identifier       */ 
-                "LanmanWorkstation\0ComSysApp\0\0", /* service dependencies */ 
-                NULL,                 /* LocalSystem account     */ 
-                NULL                  /* no password             */
-                );                      
-        if (schService==0) 
-        {
-            long nError =  GetLastError();
-            fprintf_s(stderr, "Failed to create service %s: %s\n", pName, ErrorString(nError));
-        }
-        else
-        {
-            // Set system wide VBOX_USER_HOME environment variable
-            char pVboxUserHome[nBufferSize+1];
-            GetPrivateProfileString("Settings","VBOX_USER_HOME","",pVboxUserHome,nBufferSize,pInitFile);
-            HKEY hKey;
-            DWORD dwDisp;
-            LONG lRet = RegCreateKeyEx(HKEY_LOCAL_MACHINE, "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment", 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &hKey, &dwDisp);
-            if (lRet == ERROR_SUCCESS)
-            {
-                lRet = RegSetValueEx(hKey, "VBOX_USER_HOME", 0, REG_SZ, (const BYTE *)pVboxUserHome, (DWORD)strlen(pVboxUserHome) + 1);
-                RegCloseKey(hKey);
-            }
-            if (lRet != ERROR_SUCCESS)
-            {
-                fprintf_s(stderr, "Failed to set VBOX_USER_HOME environment\n");
-            }
-
-            fprintf_s(stdout, "Service %s installed\n", pName);
-            CloseServiceHandle(schService); 
-        }
-        CloseServiceHandle(schSCManager);
-    }   
-}
-
-BOOL SendCommandToService(char * message, TCHAR chBuf[], int chBufSize)
-{
-    HANDLE hPipe = INVALID_HANDLE_VALUE;
-    DWORD dwError = 0;
-    DWORD dwMode, cbRead;
-
-    while (true) 
-    { 
-        hPipe = ::CreateFile((LPSTR)"\\\\.\\pipe\\VBoxVmService", 
-                GENERIC_READ|GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
-        dwError = GetLastError();
-        if (hPipe != INVALID_HANDLE_VALUE)
-        {
-            break;
-        }
-
-        // If any error except the ERROR_PIPE_BUSY has occurred,
-        // we should return FALSE. 
-        if (dwError != ERROR_PIPE_BUSY) 
-        {
-            return FALSE;
-        }
-        // The named pipe is busy. Let¡¯s wait for 2 seconds. 
-        if (!WaitNamedPipe((LPSTR)"\\\\.\\pipe\\VBoxVmService", 2000)) 
-        { 
-            dwError = GetLastError();
-            return FALSE;
-        } 
-    } 
-
-    // The pipe connected; change to message-read mode. 
-    dwMode = PIPE_READMODE_MESSAGE; 
-    dwError = SetNamedPipeHandleState( 
-            hPipe,    // pipe handle 
-            &dwMode,  // new pipe mode 
-            NULL,     // don't set maximum bytes 
-            NULL);    // don't set maximum time 
-    if ( ! dwError) 
-    {
-        printf( TEXT("SetNamedPipeHandleState failed. GLE=%d\n"), GetLastError() ); 
-        return FALSE;
-    }
-
-    // Send the message to the pipe server. 
-    DWORD dwRead = 0;
-    if (!(WriteFile(hPipe, (LPVOID)message, (DWORD)(strlen(message) + 1), &dwRead, 0)))
-    {
-        CloseHandle(hPipe);
-        return FALSE;
-    }
-
-    // Read from the pipe. 
-    do 
-    { 
-        dwError = ReadFile( 
-                hPipe,    // pipe handle 
-                chBuf,    // buffer to receive reply 
-                chBufSize,  // size of buffer 
-                &cbRead,  // number of bytes read 
-                NULL);    // not overlapped 
-
-        if ( ! dwError && GetLastError() != ERROR_MORE_DATA )
-            break; 
-        //Debug: Uncoment to se what we have read from pipe
-        //printf("Read %d bytes\n", cbRead);
-        //printf( TEXT("\n%s\n"), chBuf ); 
-    } while ( ! dwError);  // repeat loop if ERROR_MORE_DATA 
-
-    if ( ! dwError)
-    {
-        printf( TEXT("ReadFile from pipe failed. GLE=%d\n"), GetLastError() );
-        return -1;
-    }
-
-
-    CloseHandle(hPipe);
-    return TRUE;
-}
-
-
-
-////////////////////////////////////////////////////////////////////// 
-//
-// Standard C Main
-//
-void main(int argc, char *argv[] )
-{
+    char pInitFile[nBufferSize+1];
     char pModuleFile[nBufferSize+1];
     char pExeFile[nBufferSize+1];
-    char pServiceName[nBufferSize+1];
-    TCHAR  chBuf[8192]; 
     DWORD dwAttr;
     char pVboxUserHome[nBufferSize+1];
 
@@ -375,17 +170,17 @@ void main(int argc, char *argv[] )
 #elif defined(_WIN32)
     typedef BOOL (WINAPI *LPFNISWOW64PROCESS) (HANDLE, PBOOL);
     LPFNISWOW64PROCESS pfnIsWow64Process = (LPFNISWOW64PROCESS)GetProcAddress(GetModuleHandle("kernel32"), "IsWow64Process");
-         
+
     if (pfnIsWow64Process)
         pfnIsWow64Process(GetCurrentProcess(), &bIs64Bit);
 #endif
 
 
     if (bIs64Bit)
-        sprintf_s(pExeFile,"%s\\VBoxVmService64.exe",pModuleFile);
+        sprintf_s(pExeFile, nBufferSize, "%s\\VBoxVmService64.exe",pModuleFile);
     else
-        sprintf_s(pExeFile,"%s\\VBoxVmService.exe",pModuleFile);
-    sprintf_s(pInitFile,"%s\\VBoxVmService.ini",pModuleFile);
+        sprintf_s(pExeFile, nBufferSize, "%s\\VBoxVmService.exe",pModuleFile);
+    sprintf_s(pInitFile, nBufferSize, "%s\\VBoxVmService.ini",pModuleFile);
 
     //sanitizing VBoxVmService.ini
     dwAttr = GetFileAttributes(pInitFile);
@@ -439,82 +234,248 @@ void main(int argc, char *argv[] )
         printf("\nPleas run VmServiceControl.exe from the directory where you installed it. Also check that the directory you specified in VBoxVmService.ini as variable VBOX_USER_HOME exists and is readable.\n");
         return;
     }
-    
-    GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
+
+
+    SC_HANDLE schSCManager = OpenSCManager( NULL, NULL, SC_MANAGER_CREATE_SERVICE); 
+    if (schSCManager==0) 
+    {
+        printf("OpenSCManager failed: %s\n", LastErrorString());
+    }
+    else
+    {
+        char pRunAsUser[nBufferSize+1];
+        char pUserPassword[nBufferSize+1];
+        GetPrivateProfileString("Settings","RunAsUser","",pRunAsUser,nBufferSize,pInitFile);
+        GetPrivateProfileString("Settings","UserPassword","",pUserPassword,nBufferSize,pInitFile);
+        SC_HANDLE schService = CreateService( 
+                schSCManager,         /* SCManager database      */ 
+                "VBoxVmService",      /* name of service         */ 
+                "VBoxVmService",      /* service name to display */ 
+                SERVICE_ALL_ACCESS,   /* desired access          */ 
+                SERVICE_WIN32_OWN_PROCESS|SERVICE_INTERACTIVE_PROCESS ,    /* service type            */ 
+                SERVICE_AUTO_START,   /* start type              */ 
+                SERVICE_ERROR_NORMAL, /* error control type      */ 
+                pExeFile,             /* service's binary        */ 
+                NULL,                 /* no load ordering group  */ 
+                NULL,                 /* no tag identifier       */ 
+                "LanmanWorkstation\0ComSysApp\0\0", /* service dependencies */ 
+                NULL,                 /* LocalSystem account     */ 
+                NULL                  /* no password             */
+                );                      
+        if (schService==0) 
+        {
+            printf("Failed to create service VBoxVmService: %s\n", LastErrorString());
+        }
+        else
+        {
+            // Set system wide VBOX_USER_HOME environment variable
+            char pVboxUserHome[nBufferSize+1];
+            GetPrivateProfileString("Settings","VBOX_USER_HOME","",pVboxUserHome,nBufferSize,pInitFile);
+            HKEY hKey;
+            DWORD dwDisp;
+            LONG lRet = RegCreateKeyEx(HKEY_LOCAL_MACHINE, "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment", 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &hKey, &dwDisp);
+            if (lRet == ERROR_SUCCESS)
+            {
+                lRet = RegSetValueEx(hKey, "VBOX_USER_HOME", 0, REG_SZ, (const BYTE *)pVboxUserHome, (DWORD)strlen(pVboxUserHome) + 1);
+                RegCloseKey(hKey);
+            }
+            if (lRet != ERROR_SUCCESS)
+            {
+                printf("Failed to set VBOX_USER_HOME environment\n");
+            }
+
+            printf("Service VBoxVmService installed\n");
+            CloseServiceHandle(schService); 
+        }
+        CloseServiceHandle(schSCManager);
+    }   
+}
+
+// start up specified VM
+void StartVM(int nIndex)
+{
+    char pCommand[80];
+    sprintf_s(pCommand, 80, "start %u", nIndex);
+    if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)) == FALSE)
+    {
+        printf("Failed to send command to service.\n%s\n", chBuf);
+        return;
+    }
+
+    if (chBuf[0] == -1)
+    {
+        printf("Failed to start up virtual machine.\n%s\n", chBuf + 1);
+        return;
+    }
+
+    int len = chBuf[1];
+    char vmName[256];
+    memcpy(vmName, chBuf + 2, len);
+    vmName[len] = 0;
+
+    printf("VM%d: %s has been started up.\n", nIndex, vmName);
+}
+
+// shut down specified VM
+void StopVM(int nIndex)
+{
+    char pCommand[80];
+    sprintf_s(pCommand, 80, "stop %u", nIndex);
+    if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)) == FALSE)
+    {
+        printf("Failed to send command to service.\n%s\n", chBuf);
+        return;
+    }
+
+    if (chBuf[0] == -1)
+    {
+        printf("Failed to shut down virtual machine.\n%s\n", chBuf + 1);
+        return;
+    }
+
+    int len = chBuf[1];
+    char vmName[256];
+    memcpy(vmName, chBuf + 2, len);
+    vmName[len] = 0;
+
+
+    printf("VM%d: %s has been shutted down.\n", nIndex, vmName);
+}
+
+// show specified VM status
+void VMStatus(int nIndex)
+{
+    char pCommand[80];
+    sprintf_s(pCommand, 80, "status %u", nIndex);
+    if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)) == FALSE)
+    {
+        printf("Failed to send command to service.\n%s\n", chBuf);
+        return;
+    }
+
+    if (chBuf[0] == -1)
+    {
+        printf("Failed to get virtual machine status.\n%s\n", chBuf + 1);
+        return;
+    }
+
+    int len = chBuf[1];
+    char vmName[256];
+    memcpy(vmName, chBuf + 2, len);
+    vmName[len] = 0;
+    MachineState state = (MachineState)chBuf[len + 2];
+    printf("VM%d: %s is %s.\n", nIndex, vmName, MachineStateToString(state));
+}
+
+// list all VM status
+void ListVMs()
+{
+    char pCommand[80];
+    sprintf_s(pCommand, 80, "list");
+    if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)) == FALSE)
+    {
+        printf("Failed to send command to service.\n%s\n", chBuf);
+        return;
+    }
+
+    if (chBuf[0] == -1)
+    {
+        printf("Failed to list all virtual machines.\n%s\n", chBuf + 1);
+        return;
+    }
+
+    int buf_len = 1;
+    int nIndex = 0;
+    while (true)
+    {
+        int len = chBuf[buf_len];
+        if (len == 0)
+            break;
+
+        char vmName[256];
+        memcpy(vmName, chBuf + buf_len + 1, len);
+        vmName[len] = 0;
+
+        MachineState state = (MachineState)chBuf[buf_len + len + 1];
+        printf("VM%d: %s is %s.\n", nIndex, vmName, MachineStateToString(state));
+
+        buf_len += len + 2;
+        nIndex++;
+    }
+
+}
+
+
+////////////////////////////////////////////////////////////////////// 
+//
+// Standard C Main
+//
+void main(int argc, char *argv[] )
+{
     // uninstall service if switch is "-u"
     if(argc==2&&_stricmp("-u",argv[1])==0)
     {
-        UnInstall(pServiceName);
+        UnInstall();
     }
     // install service if switch is "-i"
     else if(argc==2&&_stricmp("-i",argv[1])==0)
     {           
-        Install(pExeFile, pServiceName);
+        Install();
     }
     // start service if switch is "-s"
     else if(argc==2&&_stricmp("-s",argv[1])==0)
     {           
-        RunService(pServiceName,0,NULL);
+        RunService(0,NULL);
     }
     // stop service if switch is "-k"
     else if(argc==2&&_stricmp("-k",argv[1])==0)
     {           
-        KillService(pServiceName);
+        KillService();
     }
     // Simulates a shuddown if VBoxVmService is started with -d
     else if(argc==2&&_stricmp("-dk",argv[1])==0)
     {           
         if(SendCommandToService("shutdown", chBuf, sizeof(chBuf)))
-            fprintf_s(stdout, "Shutdown all your virtual machines\n\n%s\n", chBuf);
+            printf("Shutdown all your virtual machines\n\n\n");
         else
-            fprintf_s(stderr, "Failed to send command to service.\n");
+            printf("Failed to send command to service.\n");
     }
     // STARTUP SWITCH
     // 
     // exit with error if switch is "-su" and no VmId is supplied
     else if(argc==2&&_stricmp("-su",argv[1])==0)
     {
-        fprintf_s(stderr, "Startup option needs to be followed by a VM index.\n");
+        printf("Startup option needs to be followed by a VM index.\n");
     }
     // start a specific vm (if the index is supplied)
     else if(argc==3&&_stricmp("-su",argv[1])==0)
     {
         int nIndex = atoi(argv[2]);
-        char pCommand[80];
-        sprintf_s(pCommand, "start %u", nIndex);
-        if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
-            fprintf_s(stdout, "Start your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
-        else
-            fprintf_s(stderr, "Failed to send command to service.\n");
+        StartVM(nIndex);
     }
     // SHUTDOWN SWITCH
     // 
     // exit with error if switch is "-sd" and no VmId is supplied
     else if(argc==2&&_stricmp("-sd",argv[1])==0)
     {
-        fprintf_s(stderr, "Shutdown option needs to be followed by a VM index.\n");
+        printf("Shutdown option needs to be followed by a VM index.\n");
     }
     // shutdown a specifc vm (if the index is supplied)
     else if(argc==3&&_stricmp("-sd",argv[1])==0)
     {
         int nIndex = atoi(argv[2]);
-        char pCommand[80];
-        sprintf_s(pCommand, "stop %u", nIndex);
-        if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
-            fprintf_s(stdout, "Shutdown your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
-        else
-            fprintf_s(stderr, "Failed to send command to service.\n");
+        StopVM(nIndex);
     }
-    // show status for a specifc vm (if the index is supplied)
+    // show status for a specific vm (if the index is supplied)
     else if(argc==3&&_stricmp("-st",argv[1])==0)
     {
         int nIndex = atoi(argv[2]);
-        char pCommand[80];
-        sprintf_s(pCommand, "status %u", nIndex);
-        if(SendCommandToService(pCommand, chBuf, sizeof(chBuf)))
-            fprintf_s(stdout, "Status for your virtual machine, VM%d\n\n%s\n", nIndex, chBuf);
-        else
-            fprintf_s(stderr, "Failed to send command to service.\n");
+        VMStatus(nIndex);
+    }
+    // list all configed VMs' status if switch is "-l"
+    else if(argc==2&&_stricmp("-l",argv[1])==0)
+    {           
+        ListVMs();
     }
     else 
         show_usage();

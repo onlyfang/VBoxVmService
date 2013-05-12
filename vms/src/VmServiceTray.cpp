@@ -2,22 +2,30 @@
 #include <windows.h>
 
 // C RunTime Header Files
+#include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
 #include <memory.h>
-#include <tchar.h>
+
+#include "Util.h"
 
 #include "resource.h"
 
 #define TRAYICONID  1            // ID number for the Notify Icon
 #define SWM_TRAYMSG (WM_APP + 2) // the message ID sent to our window
 
+#define IDM_ABOUT                       103
+#define IDM_EXIT                        104
+#define IDT_TIMER                       105
+
 #define MAX_LOADSTRING 100
 
 // Global Variables:
 HINSTANCE hInst;								// current instance
+HWND hWnd;                                      // main window
 NOTIFYICONDATA niData;                          // notify icon data
-TCHAR szTitle[] = _T("VmServiceTray");			// The title bar text
+char szTitle[] = "VmServiceTray";               // The title bar text
+DWORD dwServiceStatus;
 
 // Forward declarations of functions included in this code module:
 ATOM				MyRegisterClass(HINSTANCE hInstance);
@@ -25,10 +33,12 @@ BOOL				InitInstance(HINSTANCE, int);
 void                ShowContextMenu(HWND hWnd);
 LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
+void                QueryStatus();
+void                ReportError(LPCSTR lpText);
 
-int APIENTRY _tWinMain(HINSTANCE hInstance,
+int APIENTRY WinMain(HINSTANCE hInstance,
         HINSTANCE hPrevInstance,
-        LPTSTR    lpCmdLine,
+        LPSTR     lpCmdLine,
         int       nCmdShow)
 {
     UNREFERENCED_PARAMETER(hPrevInstance);
@@ -87,8 +97,6 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 // Initialize the window and tray icon
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
-    HWND hWnd;
-
     hInst = hInstance; // Store instance handle in our global variable
 
     hWnd = CreateWindow(szTitle, szTitle, WS_OVERLAPPEDWINDOW,
@@ -112,6 +120,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     if(niData.hIcon && DestroyIcon(niData.hIcon))
         niData.hIcon = NULL;
 
+    QueryStatus();
     return TRUE;
 }
 
@@ -201,8 +210,8 @@ void ShowContextMenu(HWND hWnd)
     HMENU hMenu = CreatePopupMenu();
     if(hMenu)
     {
-        InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_ABOUT, _T("About"));
-        InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_EXIT, _T("Exit"));
+        InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_ABOUT, "About");
+        InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_EXIT, "Exit");
 
         // note:    must set window to the foreground or the
         //          menu won't disappear when it should
@@ -213,3 +222,15 @@ void ShowContextMenu(HWND hWnd)
         DestroyMenu(hMenu);
     }
 }
+
+// query VBoxVmService service status
+void QueryStatus()
+{
+
+}
+
+void ReportError(LPCSTR lpText)
+{
+    MessageBox(hWnd, lpText, NULL, MB_OK);
+}
+

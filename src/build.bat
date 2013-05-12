@@ -12,13 +12,13 @@ goto END
 
 :RELEASE
 msbuild VBoxVmService.vcxproj /t:Rebuild /p:Configuration=Release;Platform=Win32
-copy Release\VBoxVmService.exe ..
+copy Release\VBoxVmService.exe ..\vms
 msbuild VBoxVmService.vcxproj /t:Rebuild /p:Configuration=Release;Platform=x64
-copy x64\Release\VBoxVmService.exe ..\VBoxVmService64.exe
+copy x64\Release\VBoxVmService.exe ..\vms\VBoxVmService64.exe
 msbuild VmServiceControl.vcxproj /t:Rebuild /p:Configuration=Release;Platform=Win32
-copy Release\VmServiceControl.exe ..
+copy Release\VmServiceControl.exe ..\vms
 msbuild VmServiceTray.vcxproj /t:Rebuild /p:Configuration=Release;Platform=Win32
-copy Release\VmServiceTray.exe ..
+copy Release\VmServiceTray.exe ..\vms
 
 goto END
 

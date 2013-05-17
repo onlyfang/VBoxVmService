@@ -7,6 +7,9 @@
 // Note that this will return FALSE if called from a Vista program running in an administrator account if the process was not launched with 'run as administrator'
 BOOL isAdmin();
 
+// start an elevated process
+BOOL RunElevated(HWND hwnd, LPCTSTR pszPath, LPCTSTR pszParameters, LPCTSTR pszDirectoryL);
+
 // call GetLastError() and convert it to string with FormatMessage
 char *LastErrorString();
 

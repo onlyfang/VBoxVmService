@@ -16,16 +16,26 @@
 
 #define IDM_ABOUT                       103
 #define IDM_EXIT                        104
-#define IDT_TIMER                       105
+#define IDM_START_SERVICE               105
+#define IDM_STOP_SERVICE                106
+#define IDT_TIMER                       107
 
-#define MAX_LOADSTRING 100
+typedef struct {
+    char name[128];
+    MachineState state;
+} VM_STATE;
 
 // Global Variables:
 HINSTANCE hInst;								// current instance
 HWND hWnd;                                      // main window
 NOTIFYICONDATA niData;                          // notify icon data
 char szTitle[] = "VmServiceTray";               // The title bar text
-DWORD dwServiceStatus;
+const int nBufferSize = 500;
+char  chBuf[8192]; 
+
+BOOL bServiceStarted = false;
+VM_STATE *vm_status = NULL;
+int vm_count;
 
 // Forward declarations of functions included in this code module:
 ATOM				MyRegisterClass(HINSTANCE hInstance);
@@ -35,6 +45,8 @@ LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
 void                QueryStatus();
 void                ReportError(LPCSTR lpText);
+void                StartService();
+void                StopService();
 
 int APIENTRY WinMain(HINSTANCE hInstance,
         HINSTANCE hPrevInstance,
@@ -162,6 +174,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 case IDM_EXIT:
                     DestroyWindow(hWnd);
                     break;
+                case IDM_START_SERVICE:
+                    StartService();
+                    break;
+                case IDM_STOP_SERVICE:
+                    StopService();
+                    break;
                 default:
                     return DefWindowProc(hWnd, message, wParam, lParam);
             }
@@ -174,6 +192,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         case WM_DESTROY:
             niData.uFlags = 0;
             Shell_NotifyIcon(NIM_DELETE,&niData);
+            if (vm_status)
+                free (vm_status);
             PostQuitMessage(0);
             break;
         default:
@@ -210,6 +230,15 @@ void ShowContextMenu(HWND hWnd)
     HMENU hMenu = CreatePopupMenu();
     if(hMenu)
     {
+        InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_START_SERVICE, "Start VBoxVmService");
+        InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_STOP_SERVICE, "Stop VBoxVmService");
+        if (bServiceStarted)
+            EnableMenuItem(hMenu, IDM_START_SERVICE, MF_GRAYED);
+        else
+            EnableMenuItem(hMenu, IDM_STOP_SERVICE, MF_GRAYED);
+
+        InsertMenu(hMenu, -1, MF_BYPOSITION |  MF_SEPARATOR, 0, NULL);
+
         InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_ABOUT, "About");
         InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_EXIT, "Exit");
 
@@ -226,11 +255,86 @@ void ShowContextMenu(HWND hWnd)
 // query VBoxVmService service status
 void QueryStatus()
 {
+    char temp[80];
+    sprintf_s(temp, 80, "list");
+    if(SendCommandToService(temp, chBuf, sizeof(chBuf)) == FALSE)
+    {
+        bServiceStarted = false;
+        return;
+    }
+    bServiceStarted = true;
+
+    if (chBuf[0] == -1)
+    {
+        sprintf_s(temp, 80, "Failed to list all virtual machines.\n%s\n", chBuf + 1);
+        ReportError(temp);
+        return;
+    }
+
+    vm_count = chBuf[1];
+    if (vm_status)
+        free(vm_status);
+    vm_status = (VM_STATE *)calloc(vm_count, sizeof(VM_STATE));
+    int buf_len = 2;
+    for (int i = 0; i < vm_count; i++)
+    {
+        int len = chBuf[buf_len];
+        if (len == 0)
+            break;
+
+        // get VM name
+        memcpy(vm_status[i].name, chBuf + buf_len + 1, len);
+        vm_status[i].name[len] = 0;
+
+        // get VM state
+        vm_status[i].state = (MachineState)chBuf[buf_len + len + 1];
+
+        buf_len += len + 2;
+    }
 
 }
 
 void ReportError(LPCSTR lpText)
 {
     MessageBox(hWnd, lpText, NULL, MB_OK);
+}
+
+void StartService()
+{
+    char pModuleFile[nBufferSize+1];
+    char pExeFile[nBufferSize+1];
+
+    DWORD dwSize = GetModuleFileName(NULL,pModuleFile,nBufferSize);
+    pModuleFile[dwSize] = 0;
+    *(strrchr(pModuleFile, '\\')) = 0;
+    sprintf_s(pExeFile, nBufferSize, "%s\\VmServiceControl.exe",pModuleFile);
+
+    if (RunElevated(hWnd, pExeFile, "-s", pModuleFile))
+    {
+        Sleep(5000);
+        QueryStatus();
+    }
+}
+
+void StopService()
+{
+    char pModuleFile[nBufferSize+1];
+    char pExeFile[nBufferSize+1];
+
+    DWORD dwSize = GetModuleFileName(NULL,pModuleFile,nBufferSize);
+    pModuleFile[dwSize] = 0;
+    *(strrchr(pModuleFile, '\\')) = 0;
+    sprintf_s(pExeFile, nBufferSize, "%s\\VmServiceControl.exe",pModuleFile);
+
+    if (RunElevated(hWnd, pExeFile, "-k", pModuleFile))
+    {
+        bServiceStarted = false;
+        vm_count = 0;
+        if (vm_status)
+        {
+            free(vm_status);
+            vm_status = NULL;
+        }
+    }
 }
 

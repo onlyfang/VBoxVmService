@@ -3,7 +3,8 @@
 
 #include "Util.h"
 
-BOOL isAdmin() {
+BOOL isAdmin()
+{
     SID_IDENTIFIER_AUTHORITY NtAuthority = SECURITY_NT_AUTHORITY;
     PSID AdministratorsGroup;
     // Initialize SID.
@@ -30,6 +31,28 @@ BOOL isAdmin() {
     FreeSid(AdministratorsGroup);
     return IsInAdminGroup;
 
+}
+
+BOOL RunElevated(
+        HWND hwnd,
+        LPCTSTR pszPath,
+        LPCTSTR pszParameters = NULL,
+        LPCTSTR pszDirectory = NULL )
+{
+    SHELLEXECUTEINFO shex;
+
+    memset( &shex, 0, sizeof( shex) );
+
+    shex.cbSize        = sizeof( SHELLEXECUTEINFO );
+    shex.fMask        = 0;
+    shex.hwnd        = hwnd;
+    shex.lpVerb        = "runas";
+    shex.lpFile        = pszPath;
+    shex.lpParameters    = pszParameters;
+    shex.lpDirectory    = pszDirectory;
+    shex.nShow        = SW_HIDE;
+
+    return ::ShellExecuteEx( &shex );
 }
 
 char *LastErrorString()

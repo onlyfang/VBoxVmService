@@ -74,7 +74,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_ICON               ICON                    "gfx\\VBoxVmService.ico"
+IDI_ICON               ICON                    "gfx\\VmServiceControl.ico"
 /////////////////////////////////////////////////////////////////////////////
 
 #ifndef APSTUDIO_INVOKED

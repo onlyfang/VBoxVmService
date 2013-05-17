@@ -384,9 +384,9 @@ void ListVMs()
         return;
     }
 
-    int buf_len = 1;
-    int nIndex = 0;
-    while (true)
+    int count = chBuf[1];
+    int buf_len = 2;
+    for (int i = 0; i < count; i++)
     {
         int len = chBuf[buf_len];
         if (len == 0)
@@ -397,10 +397,9 @@ void ListVMs()
         vmName[len] = 0;
 
         MachineState state = (MachineState)chBuf[buf_len + len + 1];
-        printf("VM%d: %s is %s.\n", nIndex, vmName, MachineStateToString(state));
+        printf("VM%d: %s is %s.\n", i, vmName, MachineStateToString(state));
 
         buf_len += len + 2;
-        nIndex++;
     }
 
 }

@@ -525,8 +525,9 @@ void ListVMs(LPPIPEINST pipe)
     if (pipe)
     {
         pipe->chReply[0] = 0;
-        memcpy(pipe->chReply + 1, chBuf, buf_len);
-        pipe->cbToWrite = buf_len + 1;
+        pipe->chReply[1] = i;
+        memcpy(pipe->chReply + 2, chBuf, buf_len);
+        pipe->cbToWrite = buf_len + 2;
     }
 }
 

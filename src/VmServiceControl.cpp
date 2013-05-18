@@ -302,7 +302,7 @@ void StartVM(int nIndex)
         return;
     }
 
-    if (chBuf[0] == -1)
+    if (chBuf[0] != 0)
     {
         printf("Failed to start up virtual machine.\n%s\n", chBuf + 1);
         return;
@@ -327,7 +327,7 @@ void StopVM(int nIndex)
         return;
     }
 
-    if (chBuf[0] == -1)
+    if (chBuf[0] != 0)
     {
         printf("Failed to shut down virtual machine.\n%s\n", chBuf + 1);
         return;
@@ -353,7 +353,7 @@ void VMStatus(int nIndex)
         return;
     }
 
-    if (chBuf[0] == -1)
+    if (chBuf[0] != 0)
     {
         printf("Failed to get virtual machine status.\n%s\n", chBuf + 1);
         return;
@@ -378,7 +378,7 @@ void ListVMs()
         return;
     }
 
-    if (chBuf[0] == -1)
+    if (chBuf[0] != 0)
     {
         printf("Failed to list all virtual machines.\n%s\n", chBuf + 1);
         return;

@@ -75,6 +75,18 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDI_ICON               ICON                    "gfx\\VmServiceControl.ico"
+
+// Bitmaps used to show different VM status
+BMP_STATE_ABORTED      BITMAP                  "gfx\\state_aborted.bmp"
+BMP_STATE_DISCARDING   BITMAP                  "gfx\\state_discarding.bmp"
+BMP_STATE_ERROR        BITMAP                  "gfx\\state_error.bmp"
+BMP_STATE_PAUSED       BITMAP                  "gfx\\state_paused.bmp"
+BMP_STATE_POWEREDOFF   BITMAP                  "gfx\\state_powered_off.bmp"
+BMP_STATE_RESTORING    BITMAP                  "gfx\\state_restoring.bmp"
+BMP_STATE_RUNNING      BITMAP                  "gfx\\state_running.bmp"
+BMP_STATE_SAVED        BITMAP                  "gfx\\state_saved.bmp"
+BMP_STATE_SAVING       BITMAP                  "gfx\\state_saving.bmp"
+BMP_STATE_STUCK        BITMAP                  "gfx\\state_stuck.bmp"
 /////////////////////////////////////////////////////////////////////////////
 
 #ifndef APSTUDIO_INVOKED

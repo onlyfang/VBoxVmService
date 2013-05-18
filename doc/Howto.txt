@@ -111,13 +111,19 @@ If the service does not bring your VMs up as desired, try this:
 
 Carefully re-check the settings you made in "VBoxVmService.ini". 
 
-Reduce the number of VMs in your ini file to one (= only have the section [Settings] and the section [Vm0] in your ini-file) in your ini-file, for debugging.
-
 Switch to a command prompt, cd to the VBoxVmService directory and type:
+
+    VmServiceControl.exe -l   [ENTER]
+
+to list all the VMs you configured in "VBoxVmService.ini", and there current states.
+
+If something is wrong, reduce the number of VMs in your ini file to one (= only have the section [Settings] and the section [Vm0] in your ini-file) in your ini-file, for debugging.
+
+The command:
 
     VmServiceControl.exe -su 0   [ENTER]
 
-to bring up the VM you set up in the section [Vm0] of the "VBoxVmService.ini" file.
+can be used to bring up the VM you set up in the section [Vm0] of the "VBoxVmService.ini" file.
 
 If you have successfully started a VM, you should end up with a "VBoxHeadless.exe" process, running as the impersonated user (check in task manager).
 
@@ -141,7 +147,7 @@ If you made a mistake on VBOX_USER_HOME, however, fixing it at VBoxVmService.ini
 
 After installation and everytime when you changed VBOX_USER_HOME later, a system reboot is required to get VBoxVmService work correctly. So give it a try if you haven't. 
 
-If you are still in trouble, you are welcome to create a support ticket at https://sourceforge.net/tracker/?group_id=219058&atid=1045322. We might be on VirtualBox's official forums now and then, so feel free to contact us there, too.
+If you are still in trouble, you are welcome to create a support ticket at https://sourceforge.net/tracker/?group_id=219058&atid=1045322. Please be sure to include your VBoxVmService.ini and VBoxVmService.log, so that we can try to figure out what the problem might be. We might be on VirtualBox's official forums now and then, so feel free to contact us there, too.
 
 The VBoxVmService Development Team
 Mattz, FB2000 and Runar

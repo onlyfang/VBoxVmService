@@ -19,6 +19,8 @@
 #define IDM_START_SERVICE               105
 #define IDM_STOP_SERVICE                106
 #define IDT_TIMER                       107
+#define IDM_START_VM0                   128 // 0x80
+#define IDM_STOP_VM0                    256 // 0x100
 
 typedef struct {
     char name[128];
@@ -47,6 +49,8 @@ void                QueryStatus();
 void                ReportError(LPCSTR lpText);
 void                StartService();
 void                StopService();
+void                StartVM(int vm);
+void                StopVM(int vm);
 
 int APIENTRY WinMain(HINSTANCE hInstance,
         HINSTANCE hPrevInstance,
@@ -132,7 +136,6 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     if(niData.hIcon && DestroyIcon(niData.hIcon))
         niData.hIcon = NULL;
 
-    QueryStatus();
     return TRUE;
 }
 
@@ -157,8 +160,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         case SWM_TRAYMSG:
             switch(lParam)
             {
-                case WM_RBUTTONDOWN:
-                case WM_CONTEXTMENU:
+                case WM_RBUTTONUP:
                     ShowContextMenu(hWnd);
             }
             break;
@@ -181,7 +183,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                     StopService();
                     break;
                 default:
-                    return DefWindowProc(hWnd, message, wParam, lParam);
+                    if (wmId & IDM_START_VM0)
+                        StartVM(wmId & 0x7f);
+                    else if (wmId & IDM_STOP_VM0)
+                        StopVM(wmId & 0x7f);
+                    else
+                        return DefWindowProc(hWnd, message, wParam, lParam);
             }
             break;
         case WM_PAINT:
@@ -205,10 +212,26 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 // Message handler for about box.
 INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
+    HWND hwndOwner;
+    RECT rc, rcDlg, rcOwner;
     UNREFERENCED_PARAMETER(lParam);
     switch (message)
     {
         case WM_INITDIALOG:
+            // center window
+            if ((hwndOwner = GetParent(hDlg)) == NULL)
+                hwndOwner = GetDesktopWindow();
+            GetWindowRect(hwndOwner, &rcOwner);
+            GetWindowRect(hDlg, &rcDlg);
+            CopyRect(&rc, &rcOwner);
+            OffsetRect(&rcDlg, -rcDlg.left, -rcDlg.top);
+            OffsetRect(&rc, -rc.left, -rc.top);
+            OffsetRect(&rc, -rcDlg.right, -rcDlg.bottom);
+            SetWindowPos(hDlg, HWND_TOP,
+                         rcOwner.left + (rc.right / 2),
+                         rcOwner.top + (rc.bottom / 2),
+                         0, 0, SWP_NOSIZE);
+
             return (INT_PTR)TRUE;
 
         case WM_COMMAND:
@@ -230,7 +253,69 @@ void ShowContextMenu(HWND hWnd)
     HMENU hMenu = CreatePopupMenu();
     if(hMenu)
     {
+        QueryStatus();
+        if (vm_count > 0)
+        {
+            for (int i = 0; i < vm_count; i++)
+            {
+                // create sub menu
+                HMENU hSubMenu = CreatePopupMenu();
+                InsertMenu(hSubMenu, -1, MF_BYPOSITION, IDM_START_VM0 | i, "Start");
+                InsertMenu(hSubMenu, -1, MF_BYPOSITION, IDM_STOP_VM0 | i, "Stop");
+                // insert into main menu
+                InsertMenu(hMenu, -1, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hSubMenu, vm_status[i].name);
+                int res;
+                bool running = false;
+                switch (vm_status[i].state) {
+                    case MachineState_PoweredOff:
+                        res = BMP_STATE_POWEREDOFF; 
+                        break;
+                    case MachineState_Saved:
+                        res = BMP_STATE_SAVED;
+                        break;
+                    case MachineState_Aborted:
+                        res = BMP_STATE_ABORTED;
+                        break;
+                    case MachineState_Running:
+                    case MachineState_Starting:
+                        res = BMP_STATE_RUNNING;
+                        running = true;
+                        break;
+                    case MachineState_Paused:
+                        res = BMP_STATE_PAUSED;
+                        break;
+                    case MachineState_Stopping:
+                    case MachineState_Saving:
+                        res = BMP_STATE_SAVING;
+                        break;
+                    case MachineState_Restoring:
+                        res = BMP_STATE_RESTORING;
+                        running = true;
+                        break;
+                    default:
+                        res = BMP_STATE_ERROR;
+                        break;
+                }
+                // load state image
+                HBITMAP hBitmap = (HBITMAP)LoadImage(hInst, MAKEINTRESOURCE(res), IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION | LR_LOADTRANSPARENT | LR_SHARED);
+                MENUITEMINFO mii = { sizeof(mii) };
+                mii.fMask = MIIM_BITMAP;
+                mii.hbmpItem = hBitmap;
+                SetMenuItemInfo(hMenu, (UINT)hSubMenu, false, &mii);
+
+                // disable Start or Stop sub menu
+                if (running)
+                    EnableMenuItem(hSubMenu, IDM_START_VM0 | i, MF_GRAYED);
+                else
+                    EnableMenuItem(hSubMenu, IDM_STOP_VM0 | i, MF_GRAYED);
+                DestroyMenu(hSubMenu);
+            }
+            InsertMenu(hMenu, -1, MF_BYPOSITION |  MF_SEPARATOR, 0, NULL);
+        }
+
+        // Start or Stop VBoxVmService
         InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_START_SERVICE, "Start VBoxVmService");
+
         InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_STOP_SERVICE, "Stop VBoxVmService");
         if (bServiceStarted)
             EnableMenuItem(hMenu, IDM_START_SERVICE, MF_GRAYED);
@@ -239,7 +324,7 @@ void ShowContextMenu(HWND hWnd)
 
         InsertMenu(hMenu, -1, MF_BYPOSITION |  MF_SEPARATOR, 0, NULL);
 
-        InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_ABOUT, "About");
+        //InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_ABOUT, "About");
         InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_EXIT, "Exit");
 
         // note:    must set window to the foreground or the
@@ -255,25 +340,32 @@ void ShowContextMenu(HWND hWnd)
 // query VBoxVmService service status
 void QueryStatus()
 {
+    bServiceStarted = false;
+    vm_count = 0;
+    if (vm_status)
+    {
+        free(vm_status);
+        vm_status = NULL;
+    }
+
     char temp[80];
     sprintf_s(temp, 80, "list");
     if(SendCommandToService(temp, chBuf, sizeof(chBuf)) == FALSE)
     {
-        bServiceStarted = false;
         return;
     }
     bServiceStarted = true;
 
-    if (chBuf[0] == -1)
+    if (chBuf[0] != 0)
     {
-        sprintf_s(temp, 80, "Failed to list all virtual machines.\n%s\n", chBuf + 1);
-        ReportError(temp);
+        //sprintf_s(temp, 80, "Failed to list all virtual machines.\n%s\n", chBuf + 1);
+        //ReportError(temp);
         return;
     }
 
     vm_count = chBuf[1];
-    if (vm_status)
-        free(vm_status);
+    if (vm_count <= 0)
+        return;
     vm_status = (VM_STATE *)calloc(vm_count, sizeof(VM_STATE));
     int buf_len = 2;
     for (int i = 0; i < vm_count; i++)
@@ -309,11 +401,7 @@ void StartService()
     *(strrchr(pModuleFile, '\\')) = 0;
     sprintf_s(pExeFile, nBufferSize, "%s\\VmServiceControl.exe",pModuleFile);
 
-    if (RunElevated(hWnd, pExeFile, "-s", pModuleFile))
-    {
-        Sleep(5000);
-        QueryStatus();
-    }
+    RunElevated(hWnd, pExeFile, "-s", pModuleFile);
 }
 
 void StopService()
@@ -326,15 +414,44 @@ void StopService()
     *(strrchr(pModuleFile, '\\')) = 0;
     sprintf_s(pExeFile, nBufferSize, "%s\\VmServiceControl.exe",pModuleFile);
 
-    if (RunElevated(hWnd, pExeFile, "-k", pModuleFile))
+    RunElevated(hWnd, pExeFile, "-k", pModuleFile);
+}
+
+void StartVM(int vm)
+{
+    char temp[nBufferSize+1];
+    sprintf_s(temp, nBufferSize, "start %u", vm);
+    if(SendCommandToService(temp, chBuf, sizeof(chBuf)) == FALSE)
     {
-        bServiceStarted = false;
-        vm_count = 0;
-        if (vm_status)
-        {
-            free(vm_status);
-            vm_status = NULL;
-        }
+        sprintf_s(temp, nBufferSize, "Failed to send command to service.\n%s\n", chBuf);
+        ReportError(temp);
+        return;
+    }
+
+    if (chBuf[0] != 0)
+    {
+        sprintf_s(temp, nBufferSize, "Failed to start up virtual machine.\n%s\n", chBuf + 1);
+        ReportError(temp);
+        return;
+    }
+}
+
+void StopVM(int vm)
+{
+    char temp[nBufferSize+1];
+    sprintf_s(temp, nBufferSize, "stop %u", vm);
+    if(SendCommandToService(temp, chBuf, sizeof(chBuf)) == FALSE)
+    {
+        sprintf_s(temp, nBufferSize, "Failed to send command to service.\n%s\n", chBuf);
+        ReportError(temp);
+        return;
+    }
+
+    if (chBuf[0] != 0)
+    {
+        sprintf_s(temp, nBufferSize, "Failed to start up virtual machine.\n%s\n", chBuf + 1);
+        ReportError(temp);
+        return;
     }
 }
 

@@ -28,6 +28,13 @@
 
 0. Change log
 
+3012-TBD  Release 4.0 "TBD"
+* The long wanted system tray icon feature was finally implemented. The newly added VmServiceTray.exe works as the GUI counterpart to VmServiceControl.exe, it shows all configured VMs and their states, allows single VMs to be started/stopped. It can also be used to start/stop VBoxVmService directly (with UAC elevation on Vista and later).
+* Moved src and doc folders up to one level.
+* Added a new command "VmServiceControl -l" to list all VMs' states.
+* Removed ServiceName option from config file for simplify purpose. There is no need to change this anyway.
+* Project is now built with Visual Studio 2012 Express.
+
 2012-09-15 Release 3.1 "Coconut"
 
 * Updated COM API to make it work with VirtualBox 4.2. Note this is not compatible with old versions of VirtualBox. If you need to use VirtualBox 4.1.X, please stay with 3.0 "Sweet Potato".
@@ -179,6 +186,10 @@ If RunWebService=yes is specified in VBoxVmService.ini file,  the wrapper-servic
 
 When windows shuts down, the wrapper-service will try to stop all the VMs configuered in VBoxVmService.ini.
 
+VmServiceControl.exe is the CLI (command line interface) client that sends control commands to VBoxVmService and display returned results.
+
+VmServiceTray.exe is another client like VmServiceControl.exe, but comes with GUI interface and stays in system tray.
+
 If you are interested in further details, feel free to browse the supplied source codes!
 
 
@@ -187,7 +198,7 @@ If you are interested in further details, feel free to browse the supplied sourc
 
 4. What are the plans for the future?
 
-Actually, there are no plans for future releases of this software. Yet, I have been thinking about adding a system-tray control to interact with the VMs controlled by the service...
+Actually, there are no plans for future releases of this software, other than keeping it updated so that it can always work with latest version of VirtualBox.
 
 
 ------------------------------------------------------------------------------
@@ -195,7 +206,7 @@ Actually, there are no plans for future releases of this software. Yet, I have b
 
 5. Which versions of Windows are supported?
 
-It hasn't been fully tested on systems other than WinXP and Windows7, but it should (and is reported to) work on all Windows systems later than WinXP, including Vista, Win2003 and Win 2008, both 32bit and 64bit versions.
+It hasn't been fully tested on systems other than Windows XP, Windows 7 and Windows 8, but it is reported to work on all Windows systems later than WinXP, including Vista, Win2003, Win2008, Win8, ... etc, both 32bit and 64bit versions.
 
 
 ------------------------------------------------------------------------------
@@ -212,11 +223,7 @@ No. VBoxVmService is specially designed to suit the Windows operating system. An
 
 The VBoxVmService is based on sourcecode originally written by Xiangyang Liu and published on codeproject.com ( http://www.codeproject.com/KB/system/xyntservice.aspx ).
 
-"bcompile.exe" is based on sourcecode originally written by Giorgi Dalakishvili and published on codeproject.com ( http://www.codeproject.com/KB/cs/BatCompiler.aspx ).
-
-"inifile.exe" was written by Horst Schaeffer and is available as one part of his great toolkit collection, which is available on his homepage ( http://home.mnet-online.de/horst.muc/maind.htm ).
-
-The the puzzlework on "how the %$&!? this thing works", (poorly) patching together the C++ code of VBoxVmService and the helper tool "sleep.exe", messing with some c# for "bcompile.exe" plus all the batch-scripting was done by me, Mathias Herrmann (mherrmann at assetive dot com).
+The puzzlework on "how the %$&!? this thing works", (poorly) patching together the C++ code of VBoxVmService and the helper tool "sleep.exe", messing with some c# for "bcompile.exe" plus all the batch-scripting was done by me, Mathias Herrmann (mherrmann at assetive dot com).
 
 Joining the project in August 2010, FB2000 has quickly lead the project into a new era. His clever concepts and his skillful codework made version 2.0 possible at all. It's great to have you, dude! ;-)
 

@@ -28,9 +28,11 @@
 
 0. Change log
 
-3012-TBD  Release 4.0 "TBD"
+2013-TBD  Release 4.0 "TBD"
+* Added a GUI installer created with InnoSetup.
+* Exe files are no longer saved in git repository.
 * The long wanted system tray icon feature was finally implemented. The newly added VmServiceTray.exe works as the GUI counterpart to VmServiceControl.exe, it shows all configured VMs and their states, allows single VMs to be started/stopped. It can also be used to start/stop VBoxVmService directly (with UAC elevation on Vista and later).
-* Moved src and doc folders up to one level.
+* Moved folders up to one level.
 * Added a new command "VmServiceControl -l" to list all VMs' states.
 * Removed ServiceName option from config file for simplify purpose. There is no need to change this anyway.
 * Project is now built with Visual Studio 2012 Express.

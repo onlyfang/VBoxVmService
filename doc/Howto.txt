@@ -1,17 +1,22 @@
 ##############################################################################
 #
-#   PART I - SETUP
+#   PART I - BEFORE YOU START
+#
+##############################################################################
+Make sure VirtualBox has been installed and your VMs can be started from VirtualBox Manager without any problem. Shutdown all the VMs and close VirtualBox Manager.
+
+IMPORTANT: If you want to control your VMs with VRDP, enable remote display at display settings and assign a dedicated port for each individual VM (e.g. use: 3010 for Vm0, 3020 for Vm1, etc.). You should use a port other than the standard port 3389!
+
+
+##############################################################################
+#
+#   PART II - INSTALLATION
 #
 ##############################################################################
 
-Step 1. Make sure VirtualBox has been installed and your VMs can be started from VirtualBox Manager without any problem. Shutdown the VMs and close VirtualBox Manager.
+Step 1. Run the VBoxVmService setup program.
 
-IMPORTANT: If you want to control your VMs with VRDP, enable remote display at display settings and assign a dedicated port for each individual VM (e.g. use: 3010 for Vm0, 3020 for Vm1, etc.). Do NOT use the standard port 3389!
-
-
-Step 2. Download and unzip the latest release of VBoxVmService to c:\vms.
-
-Step 3. Open up VBoxVmService.ini with a texteditor of your choice and modify it to fit your needs. The file contains an example setup with two virtual machines.
+Step 2. Open up VBoxVmService.ini in installation folder and modify it to fit your needs. The file contains an example setup with two virtual machines.
 
 Key / Value pair                                            Description
 -----------------------------------------------------------------------------
@@ -31,26 +36,6 @@ VmName=winxp                                                As you can see, the 
 ShutdownMethod=acpipowerbutton
 AutoStart=no                                                This VM will not be started automatically.
 
-
-
-
-
-##############################################################################
-#
-#   PART II - INSTALLATION
-#
-##############################################################################
-
-Step 1. (for WINXP / SERVER2003) Launch CMD (Command Prompt) from your start menu.
-
-Step 1. (for VISTA / SERVER2008 / WIN7) Right-click on CMD (Command Prompt) and choose "Run as Administrator" from the context menu.
-
-Step 2. Install the service. Within the terminal window type:
-    
-    cd C:\vms               [ENTER]
-    
-    VmServiceControl.exe -i    [ENTER]
-
 Step 3. Reboot your system.
 
 If everything goes on right, you could now connect to your VMs with VRDP clients (or ssh clients, if you've configured ssh server inside your VM). If not, refer to TROUBLESHOOTING section below for how to debug.
@@ -62,26 +47,10 @@ If everything goes on right, you could now connect to your VMs with VRDP clients
 #
 ##############################################################################
 
-Step 1. (for WINXP / SERVER2003) Launch CMD (Command Prompt) from your start menu.
+Step 1. Stop running VBoxVmService service. Run VmServiceTray.exe to stop VBoxVmService, then exit VmServiceTray.exe.
 
-Step 1. (for VISTA / SERVER2008 / WIN7) Right-click on CMD (Command Prompt) and choose "Run as Administrator" from the context menu.
 
-Step 2. Stop the VBoxVmService service. Within the terminal window type:
-
-    cd C:\vms               [ENTER]
-
-    VmServiceControl.exe -k    [ENTER]
-
-Note: you could also stop the service from Computer Management Console in Control Panel.
-
-Step 3. Uninstall the service. Continue in the terminal window type:
-    
-    
-    VmServiceControl.exe -u    [ENTER]
-    
-Step 4. Delete the installation directory (in this example "c:\vms").
-
-Step 5. You are done uninstalling VBoxVmService from your system.
+Step 2. Open Control Panel -> Programs, select Uninstall VBoxVmService.
 
 
 ##############################################################################
@@ -98,7 +67,7 @@ Step 5. You are done uninstalling VBoxVmService from your system.
 
 3. VBoxVmService, and all the VMs it started, are run as LOCAL SYSTEM user by default installation. This default setting should just work "out of box". If for some reason, you need to run it with other account, you can change the user it run as at Computer Management Console. 
 
-If the user you use is not in Administrator group, you will need to make sure it has enough privilege to access DCOM Component. See discussion at http://sourceforge.net/tracker/?func=detail&aid=3483358&group_id=219058&atid=1045322 for more information.
+If the user you use is not in Administrator group, you will need to make sure it has enough privilege to access DCOM Component. See discussion at https://sourceforge.net/p/vboxvmservice/support-requests/29/ for more information.
 
 
 ##############################################################################
@@ -115,9 +84,9 @@ Switch to a command prompt, cd to the VBoxVmService directory and type:
 
     VmServiceControl.exe -l   [ENTER]
 
-to list all the VMs you configured in "VBoxVmService.ini", and there current states.
+to list all the VMs you configured in "VBoxVmService.ini", and their current states.
 
-If something is wrong, reduce the number of VMs in your ini file to one (= only have the section [Settings] and the section [Vm0] in your ini-file) in your ini-file, for debugging.
+If something goes wrong, reduce the number of VMs in your ini file to one (= only have the section [Settings] and the section [Vm0] in your ini-file) in your ini-file, for debugging.
 
 The command:
 
@@ -143,11 +112,11 @@ Read the log-file!
 
 If you see error like "Could not find a registered machine named...", check if the environment variable VBOX_USER_HOME has been setup correctly.
 
-If you made a mistake on VBOX_USER_HOME, however, fixing it at VBoxVmService.ini is not enough. Because the value was get written into environment variable during installation. You need to open Control Panel -> System -> Advanced system settings -> Advanced -> Environment Variables, and fix it there. Please also make sure VBOX_USER_HOME appears only at system variables, not user variables.
+If you made a mistake on VBOX_USER_HOME, however, fixing it at VBoxVmService.ini is not enough. Because the value was get written into environment variable during installation. You'll need to uninstall VBoxVmService first, then install again.
 
-After installation and everytime when you changed VBOX_USER_HOME later, a system reboot is required to get VBoxVmService work correctly. So give it a try if you haven't. 
+After installation and everytime when you changed VBOX_USER_HOME later, a system reboot might be required to get VBoxVmService work correctly. So give it a try if you haven't. 
 
-If you are still in trouble, you are welcome to create a support ticket at https://sourceforge.net/tracker/?group_id=219058&atid=1045322. Please be sure to include your VBoxVmService.ini and VBoxVmService.log, so that we can try to figure out what the problem might be. We might be on VirtualBox's official forums now and then, so feel free to contact us there, too.
+If you are still in trouble, you are welcome to create a support ticket at http://sourceforge.net/p/vboxvmservice/support-requests/. Please be sure to include your VBoxVmService.ini and VBoxVmService.log, so that we can help checking what might be wrong. We might be on VirtualBox's official forums now and then, so feel free to contact us there, too.
 
 The VBoxVmService Development Team
 Mattz, FB2000 and Runar

@@ -66,7 +66,7 @@ char *LastErrorString()
     if (( err == ERROR_ACCESS_DENIED) && (!isAdmin())) {
         sprintf_s(buff, buffsize, "Access is denied.\n\nHave you tried to run the program as an administrator by starting the command prompt as 'run as administrator'?");
     }
-    else if(FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM,
+    else if(FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
                 NULL,
                 err,
                 0,

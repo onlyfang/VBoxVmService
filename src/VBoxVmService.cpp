@@ -95,24 +95,35 @@ BOOL CtrlHandler( DWORD fdwCtrlType )
 } 
 
 // Routine to make human readable description, instead of just the error id.
-char *ErrorString(DWORD err)
+char *ErrorInfo(char *message, HRESULT err)
 {
     const DWORD buffsize = 300+1;
     static char buff[buffsize];
 
-    if(FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
-                NULL,
-                err,
-                0,
-                buff,
-                buffsize,
-                NULL) == 0)
-    { 
-        // FormatMessage failed
-        sprintf_s(buff, buffsize, "Unknown error with error code = %d", err);
+    bool bGotDescription = false;
+
+
+    IErrorInfo *errorInfo;
+    HRESULT rc = GetErrorInfo(0, &errorInfo);
+    if (!FAILED(rc))
+    {
+        BSTR errorDescription = NULL;
+        rc = errorInfo->GetDescription(&errorDescription);
+
+        if (!FAILED(rc)  && errorDescription)
+        {
+            sprintf_s(buff, buffsize, "%s %S", message, errorDescription);
+            SysFreeString(errorDescription);
+            bGotDescription = true;
+        }
+        errorInfo->Release();
     }
+
+    if (!bGotDescription)
+        sprintf_s(buff, buffsize, "%s rc = 0x%x", message, err);
+
     return buff;
-} // ErrorString
+}
 
 ////////////////////////////////////////////////////////////////////// 
 //
@@ -209,7 +220,7 @@ void VMStatus(int nIndex, LPPIPEINST pipe)
 
     if (FAILED(rc))
     {
-        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x", rc); 
+        WriteLogPipe(pipe, ErrorInfo("Error finding machine!", rc));
     }
     else
     {
@@ -218,7 +229,7 @@ void VMStatus(int nIndex, LPPIPEINST pipe)
         rc = machine->get_State(&state);
         if (!SUCCEEDED(rc))
         {
-            WriteLogPipe(pipe, "Error retrieving machine state! rc = 0x%x", rc);
+            WriteLogPipe(pipe, ErrorInfo("Error retrieving machine state!", rc));
         }
         else
         {
@@ -261,7 +272,7 @@ bool StartVM(char *vm, LPPIPEINST pipe)
 
     if (FAILED(rc))
     {
-        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x", rc); 
+        WriteLogPipe(pipe, ErrorInfo("Error finding machine!", rc));
     }
     else
     {
@@ -275,7 +286,7 @@ bool StartVM(char *vm, LPPIPEINST pipe)
                     NULL, &progress);
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, "Could not open remote session! rc = 0x%x", rc);
+                WriteLogPipe(pipe, ErrorInfo("Could not open remote session!", rc));
                 break;
             }
             result = true;
@@ -360,7 +371,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
 
     if (FAILED(rc))
     {
-        WriteLogPipe(pipe,"Error finding machine! rc = 0x%x", rc); 
+        WriteLogPipe(pipe, ErrorInfo("Error finding machine!", rc));
     }
     else
     {
@@ -373,7 +384,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
             rc = machine->get_State(&vmstate); // Get the state of the machine.
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, "Error retrieving machine state! rc = 0x%x", rc);
+                WriteLogPipe(pipe, ErrorInfo("Error retrieving machine state!", rc));
                 break;
             }
 
@@ -391,7 +402,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
             rc = machine->LockMachine(session, LockType_Shared);
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, "Could not lock machine! rc = 0x%x", rc);
+                WriteLogPipe(pipe, ErrorInfo("Could not lock machine!", rc));
                 break;
             }
 
@@ -404,7 +415,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
                 rc = console->PowerButton();
             if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, "Could not stop machine %s! rc = 0x%x", vm, rc);
+                WriteLogPipe(pipe, ErrorInfo("Could not stop machine!", rc));
                 break;
             }
 
@@ -489,7 +500,7 @@ void ListVMs(LPPIPEINST pipe)
 
         if (FAILED(rc))
         {
-            WriteLogPipe(pipe,"Error finding machine! rc = 0x%x", rc); 
+            WriteLogPipe(pipe, ErrorInfo("Error finding machine!", rc));
             return;
         }
 
@@ -499,7 +510,7 @@ void ListVMs(LPPIPEINST pipe)
 
         if (!SUCCEEDED(rc))
         {
-            WriteLogPipe(pipe, "Error retrieving machine state! rc = 0x%x", rc);
+            WriteLogPipe(pipe, ErrorInfo("Error retrieving machine state!", rc));
             return;
         }
 
@@ -551,9 +562,8 @@ VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv )
     hServiceStatusHandle = RegisterServiceCtrlHandler(pServiceName, VBoxVmServiceHandler); 
     if (hServiceStatusHandle==0) 
     {
-        long nError = GetLastError();
-        char pTemp[121];
-        sprintf_s(pTemp, 120, "RegisterServiceCtrlHandler failed, error code = %d", nError);
+        char pTemp[nBufferSize + 1];
+        sprintf_s(pTemp, nBufferSize, "RegisterServiceCtrlHandler failed: %s", LastErrorString());
         WriteLog(pTemp);
         return; 
     } 
@@ -564,9 +574,8 @@ VOID WINAPI VBoxVmServiceMain( DWORD dwArgc, LPTSTR *lpszArgv )
     serviceStatus.dwWaitHint           = 0;  
     if(!SetServiceStatus(hServiceStatusHandle, &serviceStatus)) 
     { 
-        long nError = GetLastError();
-        char pTemp[121];
-        sprintf_s(pTemp, 120, "SetServiceStatus failed, error code = %d", nError);
+        char pTemp[nBufferSize + 1];
+        sprintf_s(pTemp, nBufferSize, "SetServiceStatus failed: %s", LastErrorString());
         WriteLog(pTemp);
     } 
 
@@ -604,17 +613,15 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
             break;
         default: 
             {
-                long nError = GetLastError();
-                char pTemp[121];
-                sprintf_s(pTemp, 120, "Unrecognized opcode %d", fdwControl);
+                char pTemp[nBufferSize + 1];
+                sprintf_s(pTemp, nBufferSize, "Unrecognized opcode %d", fdwControl);
                 WriteLog(pTemp);
             }
     };
     if (!SetServiceStatus(hServiceStatusHandle,  &serviceStatus)) 
     { 
-        long nError = GetLastError();
-        char pTemp[121];
-        sprintf_s(pTemp, 120, "SetServiceStatus failed, error code = %d", nError);
+        char pTemp[nBufferSize + 1];
+        sprintf_s(pTemp, nBufferSize, "SetServiceStatus failed: %s", LastErrorString());
         WriteLog(pTemp);
     } 
 }
@@ -622,12 +629,12 @@ VOID WINAPI VBoxVmServiceHandler(DWORD fdwControl)
 
 void WorkerHandleCommand(LPPIPEINST pipe) 
 {
-    char pTemp[121];
+    char pTemp[nBufferSize + 1];
     char buffer[80]; 
 
     strncpy_s(buffer, 80, pipe->chRequest, strlen(pipe->chRequest));
 
-    sprintf_s(pTemp, 120, "Received control command: %s", buffer);
+    sprintf_s(pTemp, nBufferSize, "Received control command: %s", buffer);
     WriteLog(pTemp);
 
     // process command
@@ -690,8 +697,11 @@ unsigned __stdcall WorkerProc(void* pParam)
             (void**)&virtualBox);
     if (!SUCCEEDED(rc))
     {
-        char pTemp[121];
-        sprintf_s(pTemp, 120, "Error creating VirtualBox instance! rc = 0x%x", rc);
+        char pTemp[nBufferSize + 1];
+        sprintf_s(pTemp, nBufferSize, "Error creating VirtualBox instance! rc = 0x%x", rc);
+        if (rc == CO_E_SERVER_EXEC_FAILURE)
+            strcat_s(pTemp, nBufferSize, ". You need to stop VirtualBox GUI before starting VBoxVmService.");
+
         WriteLog(pTemp);
         goto end;
     }
@@ -705,8 +715,8 @@ unsigned __stdcall WorkerProc(void* pParam)
     if (!SUCCEEDED(rc))
     {
         virtualBox->Release();
-        char pTemp[121];
-        sprintf_s(pTemp, 120, "Error creating Session instance! rc = 0x%x", rc);
+        char pTemp[nBufferSize + 1];
+        sprintf_s(pTemp, nBufferSize, "Error creating Session instance! rc = 0x%x", rc);
         WriteLog(pTemp);
         goto end;
     }
@@ -810,8 +820,8 @@ end:
     if (ghVMStoppedEvent)
         CloseHandle(ghVMStoppedEvent);
 
-    char pTemp[121];
-    sprintf_s(pTemp, 120, "%s stopped.", pServiceName);
+    char pTemp[nBufferSize];
+    sprintf_s(pTemp, nBufferSize, "%s stopped.", pServiceName);
     WriteLog(pTemp);
 
     // notify SCM that we've finished
@@ -819,8 +829,7 @@ end:
     serviceStatus.dwWaitHint     = 0;  
     if (!SetServiceStatus(hServiceStatusHandle, &serviceStatus))
     { 
-        long nError = GetLastError();
-        sprintf_s(pTemp, 120, "SetServiceStatus failed, error code = %d", nError);
+        sprintf_s(pTemp, nBufferSize, "SetServiceStatus failed: %s", LastErrorString());
         WriteLog(pTemp);
     }
 
@@ -858,8 +867,8 @@ void main(int argc, char *argv[] )
     // read service name from .ini file
     GetPrivateProfileString("Settings","ServiceName","VBoxVmService",pServiceName,nBufferSize,pInitFile);
 
-    char pTemp[121];
-    sprintf_s(pTemp, 120, "%s started.", pServiceName);
+    char pTemp[nBufferSize];
+    sprintf_s(pTemp, nBufferSize, "%s started.", pServiceName);
     WriteLog(pTemp);
 
     // Run in debug mode if switch is "-d"
@@ -878,8 +887,8 @@ void main(int argc, char *argv[] )
         // start a worker thread to check for pipe messages
         if(hThread==0)
         {
-            char pTemp[121];
-            sprintf_s(pTemp, 120, "_beginthread failed, error code = %d", GetLastError());
+            char pTemp[nBufferSize + 1];
+            sprintf_s(pTemp, nBufferSize, "_beginthread failed, error code = %d", GetLastError());
             WriteLog(pTemp);
         }
 
@@ -887,8 +896,8 @@ void main(int argc, char *argv[] )
         // pass dispatch table to service controller
         if(!StartServiceCtrlDispatcher(DispatchTable))
         {
-            char pTemp[121];
-            sprintf_s(pTemp, 120, "StartServiceCtrlDispatcher failed, error code = %d", GetLastError());
+            char pTemp[nBufferSize + 1];
+            sprintf_s(pTemp, nBufferSize, "StartServiceCtrlDispatcher failed: %s", LastErrorString());
             WriteLog(pTemp);
         }
         // you don't get here unless the service is shutdown

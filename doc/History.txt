@@ -29,6 +29,7 @@
 0. Change log
 
 2013-TBD  Release 4.0 "TBD"
+* Return detailed description instead of error code.
 * Added a GUI installer created with InnoSetup.
 * Exe files are no longer saved in git repository.
 * The long wanted system tray icon feature was finally implemented. The newly added VmServiceTray.exe works as the GUI counterpart to VmServiceControl.exe, it shows all configured VMs and their states, allows single VMs to be started/stopped. It can also be used to start/stop VBoxVmService directly (with UAC elevation on Vista and later).

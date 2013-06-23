@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "VBoxVmService"
-#define MyAppVersion "pre-4.0"
+#define MyAppVersion "4.0-Bayberry"
 #define MyAppPublisher "VBoxVmService Developmenet Team"
 #define MyAppURL "http://sourceforge.net/projects/vboxvmservice/"
 

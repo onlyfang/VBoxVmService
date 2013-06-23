@@ -28,7 +28,9 @@
 
 0. Change log
 
-2013-TBD  Release 4.0 "TBD"
+2013-06-23  Release 4.0 "Bayberry"
+
+* Updated doc about trouble shooting steps.
 * Return detailed description instead of error code.
 * Added a GUI installer created with InnoSetup.
 * Exe files are no longer saved in git repository.

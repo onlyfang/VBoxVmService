@@ -4,9 +4,9 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Wed Aug 29 19:59:21 2012
+/* at Tue Oct 15 13:47:46 2013
  */
-/* Compiler settings for Z:\home\vbox\tinderbox\sdk\out\linux.amd64\release\bin\sdk\bindings\mscom\idl\VirtualBox.idl:
+/* Compiler settings for Z:\home\vbox\tinderbox\4.3-sdk\out\linux.amd64\release\bin\sdk\bindings\mscom\idl\VirtualBox.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
@@ -45,6 +45,12 @@
 #define __IVirtualBoxErrorInfo_FWD_DEFINED__
 typedef interface IVirtualBoxErrorInfo IVirtualBoxErrorInfo;
 #endif 	/* __IVirtualBoxErrorInfo_FWD_DEFINED__ */
+
+
+#ifndef __INATNetwork_FWD_DEFINED__
+#define __INATNetwork_FWD_DEFINED__
+typedef interface INATNetwork INATNetwork;
+#endif 	/* __INATNetwork_FWD_DEFINED__ */
 
 
 #ifndef __IDHCPServer_FWD_DEFINED__
@@ -107,6 +113,12 @@ typedef interface IMachine IMachine;
 #endif 	/* __IMachine_FWD_DEFINED__ */
 
 
+#ifndef __IEmulatedUSB_FWD_DEFINED__
+#define __IEmulatedUSB_FWD_DEFINED__
+typedef interface IEmulatedUSB IEmulatedUSB;
+#endif 	/* __IEmulatedUSB_FWD_DEFINED__ */
+
+
 #ifndef __IVRDEServerInfo_FWD_DEFINED__
 #define __IVRDEServerInfo_FWD_DEFINED__
 typedef interface IVRDEServerInfo IVRDEServerInfo;
@@ -123,6 +135,12 @@ typedef interface IConsole IConsole;
 #define __IHostNetworkInterface_FWD_DEFINED__
 typedef interface IHostNetworkInterface IHostNetworkInterface;
 #endif 	/* __IHostNetworkInterface_FWD_DEFINED__ */
+
+
+#ifndef __IHostVideoInputDevice_FWD_DEFINED__
+#define __IHostVideoInputDevice_FWD_DEFINED__
+typedef interface IHostVideoInputDevice IHostVideoInputDevice;
+#endif 	/* __IHostVideoInputDevice_FWD_DEFINED__ */
 
 
 #ifndef __IHost_FWD_DEFINED__
@@ -239,6 +257,12 @@ typedef interface IMediumFormat IMediumFormat;
 #endif 	/* __IMediumFormat_FWD_DEFINED__ */
 
 
+#ifndef __IToken_FWD_DEFINED__
+#define __IToken_FWD_DEFINED__
+typedef interface IToken IToken;
+#endif 	/* __IToken_FWD_DEFINED__ */
+
+
 #ifndef __IKeyboard_FWD_DEFINED__
 #define __IKeyboard_FWD_DEFINED__
 typedef interface IKeyboard IKeyboard;
@@ -291,6 +315,12 @@ typedef interface IParallelPort IParallelPort;
 #define __IMachineDebugger_FWD_DEFINED__
 typedef interface IMachineDebugger IMachineDebugger;
 #endif 	/* __IMachineDebugger_FWD_DEFINED__ */
+
+
+#ifndef __IUSBDeviceFilters_FWD_DEFINED__
+#define __IUSBDeviceFilters_FWD_DEFINED__
+typedef interface IUSBDeviceFilters IUSBDeviceFilters;
+#endif 	/* __IUSBDeviceFilters_FWD_DEFINED__ */
 
 
 #ifndef __IUSBController_FWD_DEFINED__
@@ -611,6 +641,108 @@ typedef interface IGuestMouseEvent IGuestMouseEvent;
 #endif 	/* __IGuestMouseEvent_FWD_DEFINED__ */
 
 
+#ifndef __IGuestMultiTouchEvent_FWD_DEFINED__
+#define __IGuestMultiTouchEvent_FWD_DEFINED__
+typedef interface IGuestMultiTouchEvent IGuestMultiTouchEvent;
+#endif 	/* __IGuestMultiTouchEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestSessionEvent_FWD_DEFINED__
+#define __IGuestSessionEvent_FWD_DEFINED__
+typedef interface IGuestSessionEvent IGuestSessionEvent;
+#endif 	/* __IGuestSessionEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestSessionStateChangedEvent_FWD_DEFINED__
+#define __IGuestSessionStateChangedEvent_FWD_DEFINED__
+typedef interface IGuestSessionStateChangedEvent IGuestSessionStateChangedEvent;
+#endif 	/* __IGuestSessionStateChangedEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestSessionRegisteredEvent_FWD_DEFINED__
+#define __IGuestSessionRegisteredEvent_FWD_DEFINED__
+typedef interface IGuestSessionRegisteredEvent IGuestSessionRegisteredEvent;
+#endif 	/* __IGuestSessionRegisteredEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestProcessEvent_FWD_DEFINED__
+#define __IGuestProcessEvent_FWD_DEFINED__
+typedef interface IGuestProcessEvent IGuestProcessEvent;
+#endif 	/* __IGuestProcessEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestProcessRegisteredEvent_FWD_DEFINED__
+#define __IGuestProcessRegisteredEvent_FWD_DEFINED__
+typedef interface IGuestProcessRegisteredEvent IGuestProcessRegisteredEvent;
+#endif 	/* __IGuestProcessRegisteredEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestProcessStateChangedEvent_FWD_DEFINED__
+#define __IGuestProcessStateChangedEvent_FWD_DEFINED__
+typedef interface IGuestProcessStateChangedEvent IGuestProcessStateChangedEvent;
+#endif 	/* __IGuestProcessStateChangedEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestProcessIOEvent_FWD_DEFINED__
+#define __IGuestProcessIOEvent_FWD_DEFINED__
+typedef interface IGuestProcessIOEvent IGuestProcessIOEvent;
+#endif 	/* __IGuestProcessIOEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestProcessInputNotifyEvent_FWD_DEFINED__
+#define __IGuestProcessInputNotifyEvent_FWD_DEFINED__
+typedef interface IGuestProcessInputNotifyEvent IGuestProcessInputNotifyEvent;
+#endif 	/* __IGuestProcessInputNotifyEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestProcessOutputEvent_FWD_DEFINED__
+#define __IGuestProcessOutputEvent_FWD_DEFINED__
+typedef interface IGuestProcessOutputEvent IGuestProcessOutputEvent;
+#endif 	/* __IGuestProcessOutputEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestFileEvent_FWD_DEFINED__
+#define __IGuestFileEvent_FWD_DEFINED__
+typedef interface IGuestFileEvent IGuestFileEvent;
+#endif 	/* __IGuestFileEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestFileRegisteredEvent_FWD_DEFINED__
+#define __IGuestFileRegisteredEvent_FWD_DEFINED__
+typedef interface IGuestFileRegisteredEvent IGuestFileRegisteredEvent;
+#endif 	/* __IGuestFileRegisteredEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestFileStateChangedEvent_FWD_DEFINED__
+#define __IGuestFileStateChangedEvent_FWD_DEFINED__
+typedef interface IGuestFileStateChangedEvent IGuestFileStateChangedEvent;
+#endif 	/* __IGuestFileStateChangedEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestFileIOEvent_FWD_DEFINED__
+#define __IGuestFileIOEvent_FWD_DEFINED__
+typedef interface IGuestFileIOEvent IGuestFileIOEvent;
+#endif 	/* __IGuestFileIOEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestFileOffsetChangedEvent_FWD_DEFINED__
+#define __IGuestFileOffsetChangedEvent_FWD_DEFINED__
+typedef interface IGuestFileOffsetChangedEvent IGuestFileOffsetChangedEvent;
+#endif 	/* __IGuestFileOffsetChangedEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestFileReadEvent_FWD_DEFINED__
+#define __IGuestFileReadEvent_FWD_DEFINED__
+typedef interface IGuestFileReadEvent IGuestFileReadEvent;
+#endif 	/* __IGuestFileReadEvent_FWD_DEFINED__ */
+
+
+#ifndef __IGuestFileWriteEvent_FWD_DEFINED__
+#define __IGuestFileWriteEvent_FWD_DEFINED__
+typedef interface IGuestFileWriteEvent IGuestFileWriteEvent;
+#endif 	/* __IGuestFileWriteEvent_FWD_DEFINED__ */
+
+
 #ifndef __IVRDEServerChangedEvent_FWD_DEFINED__
 #define __IVRDEServerChangedEvent_FWD_DEFINED__
 typedef interface IVRDEServerChangedEvent IVRDEServerChangedEvent;
@@ -621,6 +753,12 @@ typedef interface IVRDEServerChangedEvent IVRDEServerChangedEvent;
 #define __IVRDEServerInfoChangedEvent_FWD_DEFINED__
 typedef interface IVRDEServerInfoChangedEvent IVRDEServerInfoChangedEvent;
 #endif 	/* __IVRDEServerInfoChangedEvent_FWD_DEFINED__ */
+
+
+#ifndef __IVideoCaptureChangedEvent_FWD_DEFINED__
+#define __IVideoCaptureChangedEvent_FWD_DEFINED__
+typedef interface IVideoCaptureChangedEvent IVideoCaptureChangedEvent;
+#endif 	/* __IVideoCaptureChangedEvent_FWD_DEFINED__ */
 
 
 #ifndef __IUSBControllerChangedEvent_FWD_DEFINED__
@@ -713,10 +851,58 @@ typedef interface IGuestMonitorChangedEvent IGuestMonitorChangedEvent;
 #endif 	/* __IGuestMonitorChangedEvent_FWD_DEFINED__ */
 
 
+#ifndef __IGuestUserStateChangedEvent_FWD_DEFINED__
+#define __IGuestUserStateChangedEvent_FWD_DEFINED__
+typedef interface IGuestUserStateChangedEvent IGuestUserStateChangedEvent;
+#endif 	/* __IGuestUserStateChangedEvent_FWD_DEFINED__ */
+
+
 #ifndef __IStorageDeviceChangedEvent_FWD_DEFINED__
 #define __IStorageDeviceChangedEvent_FWD_DEFINED__
 typedef interface IStorageDeviceChangedEvent IStorageDeviceChangedEvent;
 #endif 	/* __IStorageDeviceChangedEvent_FWD_DEFINED__ */
+
+
+#ifndef __INATNetworkChangedEvent_FWD_DEFINED__
+#define __INATNetworkChangedEvent_FWD_DEFINED__
+typedef interface INATNetworkChangedEvent INATNetworkChangedEvent;
+#endif 	/* __INATNetworkChangedEvent_FWD_DEFINED__ */
+
+
+#ifndef __INATNetworkStartStopEvent_FWD_DEFINED__
+#define __INATNetworkStartStopEvent_FWD_DEFINED__
+typedef interface INATNetworkStartStopEvent INATNetworkStartStopEvent;
+#endif 	/* __INATNetworkStartStopEvent_FWD_DEFINED__ */
+
+
+#ifndef __INATNetworkAlterEvent_FWD_DEFINED__
+#define __INATNetworkAlterEvent_FWD_DEFINED__
+typedef interface INATNetworkAlterEvent INATNetworkAlterEvent;
+#endif 	/* __INATNetworkAlterEvent_FWD_DEFINED__ */
+
+
+#ifndef __INATNetworkCreationDeletionEvent_FWD_DEFINED__
+#define __INATNetworkCreationDeletionEvent_FWD_DEFINED__
+typedef interface INATNetworkCreationDeletionEvent INATNetworkCreationDeletionEvent;
+#endif 	/* __INATNetworkCreationDeletionEvent_FWD_DEFINED__ */
+
+
+#ifndef __INATNetworkSettingEvent_FWD_DEFINED__
+#define __INATNetworkSettingEvent_FWD_DEFINED__
+typedef interface INATNetworkSettingEvent INATNetworkSettingEvent;
+#endif 	/* __INATNetworkSettingEvent_FWD_DEFINED__ */
+
+
+#ifndef __INATNetworkPortForwardEvent_FWD_DEFINED__
+#define __INATNetworkPortForwardEvent_FWD_DEFINED__
+typedef interface INATNetworkPortForwardEvent INATNetworkPortForwardEvent;
+#endif 	/* __INATNetworkPortForwardEvent_FWD_DEFINED__ */
+
+
+#ifndef __IHostNameResolutionConfigurationChangeEvent_FWD_DEFINED__
+#define __IHostNameResolutionConfigurationChangeEvent_FWD_DEFINED__
+typedef interface IHostNameResolutionConfigurationChangeEvent IHostNameResolutionConfigurationChangeEvent;
+#endif 	/* __IHostNameResolutionConfigurationChangeEvent_FWD_DEFINED__ */
 
 
 #ifndef __VirtualBox_FWD_DEFINED__
@@ -768,7 +954,7 @@ extern "C"{
 
 enum {
     kTypeLibraryMajorVersion = 1,
-    kTypeLibraryMinorVersion = 0
+    kTypeLibraryMinorVersion = 3
 };
 
 
@@ -907,7 +1093,38 @@ extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0000_v0_0_s_ifspec;
 
 
 
-typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("52bd6f5f-1adb-4493-975d-581a9c4b803f") 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("d5b15ca7-3de7-46b2-a63a-ddcce42bfa3f") 
 enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0001
     {	SettingsVersion_Null	= 0,
 	SettingsVersion_v1_0	= 1,
@@ -925,6 +1142,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0001
 	SettingsVersion_v1_11	= 13,
 	SettingsVersion_v1_12	= 14,
 	SettingsVersion_v1_13	= 15,
+	SettingsVersion_v1_14	= 16,
 	SettingsVersion_Future	= 99999
     } 	SettingsVersion;
 
@@ -977,21 +1195,23 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0004
     } 	SessionState;
 
 #define SessionState_T SessionState
-typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("24d356a6-2f45-4abd-b977-1cbe9c4701f5") 
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("52bc41f4-a279-45da-88ab-3a1d86fb73eb") 
 enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0005
     {	CPUPropertyType_Null	= 0,
 	CPUPropertyType_PAE	= 1,
-	CPUPropertyType_Synthetic	= 2
+	CPUPropertyType_Synthetic	= 2,
+	CPUPropertyType_LongMode	= 3,
+	CPUPropertyType_TripleFaultReset	= 4
     } 	CPUPropertyType;
 
 #define CPUPropertyType_T CPUPropertyType
-typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("ce81dfdd-d2b8-4a90-bbea-40ee8b7ffcee") 
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("411ad0ea-aeeb-44cb-9d03-1624d0d025ac") 
 enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0006
     {	HWVirtExPropertyType_Null	= 0,
 	HWVirtExPropertyType_Enabled	= 1,
-	HWVirtExPropertyType_Exclusive	= 2,
-	HWVirtExPropertyType_VPID	= 3,
-	HWVirtExPropertyType_NestedPaging	= 4,
+	HWVirtExPropertyType_VPID	= 2,
+	HWVirtExPropertyType_NestedPaging	= 3,
+	HWVirtExPropertyType_UnrestrictedExecution	= 4,
 	HWVirtExPropertyType_LargePages	= 5,
 	HWVirtExPropertyType_Force	= 6
     } 	HWVirtExPropertyType;
@@ -1096,13 +1316,14 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0017
     } 	FirmwareType;
 
 #define FirmwareType_T FirmwareType
-typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("e44b2f7b-72ba-44fb-9e53-2186014f0d17") 
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("19964e93-0050-45c4-9382-a7bccc53e666") 
 enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0018
     {	PointingHIDType_None	= 1,
 	PointingHIDType_PS2Mouse	= 2,
 	PointingHIDType_USBMouse	= 3,
 	PointingHIDType_USBTablet	= 4,
-	PointingHIDType_ComboMouse	= 5
+	PointingHIDType_ComboMouse	= 5,
+	PointingHIDType_USBMultiTouch	= 6
     } 	PointingHIDType;
 
 #define PointingHIDType_T PointingHIDType
@@ -1115,8 +1336,76 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0019
     } 	KeyboardHIDType;
 
 #define KeyboardHIDType_T KeyboardHIDType
-typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("813999ba-b949-48a8-9230-aadc6285e2f2") 
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("40d99bd3-3ece-44d2-a07e-1085fe9c4f0b") 
 enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0020
+    {	DhcpOpt_SubnetMask	= 1,
+	DhcpOpt_TimeOffset	= 2,
+	DhcpOpt_Router	= 3,
+	DhcpOpt_TimeServer	= 4,
+	DhcpOpt_NameServer	= 5,
+	DhcpOpt_DomainNameServer	= 6,
+	DhcpOpt_LogServer	= 7,
+	DhcpOpt_Cookie	= 8,
+	DhcpOpt_LPRServer	= 9,
+	DhcpOpt_ImpressServer	= 10,
+	DhcpOpt_ResourseLocationServer	= 11,
+	DhcpOpt_HostName	= 12,
+	DhcpOpt_BootFileSize	= 13,
+	DhcpOpt_MeritDumpFile	= 14,
+	DhcpOpt_DomainName	= 15,
+	DhcpOpt_SwapServer	= 16,
+	DhcpOpt_RootPath	= 17,
+	DhcpOpt_ExtensionPath	= 18,
+	DhcpOpt_IPForwardingEnableDisable	= 19,
+	DhcpOpt_NonLocalSourceRoutingEnableDisable	= 20,
+	DhcpOpt_PolicyFilter	= 21,
+	DhcpOpt_MaximumDatagramReassemblySize	= 22,
+	DhcpOpt_DefaultIPTime2Live	= 23,
+	DhcpOpt_PathMTUAgingTimeout	= 24,
+	DhcpOpt_IPLayerParametersPerInterface	= 25,
+	DhcpOpt_InterfaceMTU	= 26,
+	DhcpOpt_AllSubnetsAreLocal	= 27,
+	DhcpOpt_BroadcastAddress	= 28,
+	DhcpOpt_PerformMaskDiscovery	= 29,
+	DhcpOpt_MaskSupplier	= 30,
+	DhcpOpt_PerformRouteDiscovery	= 31,
+	DhcpOpt_RouterSolicitationAddress	= 32,
+	DhcpOpt_StaticRoute	= 33,
+	DhcpOpt_TrailerEncapsulation	= 34,
+	DhcpOpt_ARPCacheTimeout	= 35,
+	DhcpOpt_EthernetEncapsulation	= 36,
+	DhcpOpt_TCPDefaultTTL	= 37,
+	DhcpOpt_TCPKeepAliveInterval	= 38,
+	DhcpOpt_TCPKeepAliveGarbage	= 39,
+	DhcpOpt_NetworkInformationServiceDomain	= 40,
+	DhcpOpt_NetworkInformationServiceServers	= 41,
+	DhcpOpt_NetworkTimeProtocolServers	= 42,
+	DhcpOpt_VendorSpecificInformation	= 43,
+	DhcpOpt_Option_44	= 44,
+	DhcpOpt_Option_45	= 45,
+	DhcpOpt_Option_46	= 46,
+	DhcpOpt_Option_47	= 47,
+	DhcpOpt_Option_48	= 48,
+	DhcpOpt_Option_49	= 49,
+	DhcpOpt_IPAddressLeaseTime	= 51,
+	DhcpOpt_Option_64	= 64,
+	DhcpOpt_Option_65	= 65,
+	DhcpOpt_TFTPServerName	= 66,
+	DhcpOpt_BootfileName	= 67,
+	DhcpOpt_Option_68	= 68,
+	DhcpOpt_Option_69	= 69,
+	DhcpOpt_Option_70	= 70,
+	DhcpOpt_Option_71	= 71,
+	DhcpOpt_Option_72	= 72,
+	DhcpOpt_Option_73	= 73,
+	DhcpOpt_Option_74	= 74,
+	DhcpOpt_Option_75	= 75,
+	DhcpOpt_Option_119	= 119
+    } 	DhcpOpt;
+
+#define DhcpOpt_T DhcpOpt
+typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("813999ba-b949-48a8-9230-aadc6285e2f2") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0021
     {	VFSType_File	= 1,
 	VFSType_Cloud	= 2,
 	VFSType_S3	= 3,
@@ -1125,7 +1414,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0020
 
 #define VFSType_T VFSType
 typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("714333cd-44e2-415f-a245-d378fa9b1242") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0021
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0022
     {	VFSFileType_Unknown	= 1,
 	VFSFileType_Fifo	= 2,
 	VFSFileType_DevChar	= 3,
@@ -1139,14 +1428,21 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0021
 
 #define VFSFileType_T VFSFileType
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("0a981523-3b20-4004-8ee3-dfd322202ace") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0022
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0023
     {	ImportOptions_KeepAllMACs	= 1,
 	ImportOptions_KeepNATMACs	= 2
     } 	ImportOptions;
 
 #define ImportOptions_T ImportOptions
+typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("8f45eb08-fd34-41ee-af95-a880bdee5554") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0024
+    {	ExportOptions_CreateManifest	= 1,
+	ExportOptions_ExportDVDImages	= 2
+    } 	ExportOptions;
+
+#define ExportOptions_T ExportOptions
 typedef /* [public][public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("303c0900-a746-4612-8c67-79003e91f459") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0023
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0025
     {	VirtualSystemDescriptionType_Ignore	= 1,
 	VirtualSystemDescriptionType_OS	= 2,
 	VirtualSystemDescriptionType_Name	= 3,
@@ -1175,7 +1471,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0023
 
 #define VirtualSystemDescriptionType_T VirtualSystemDescriptionType
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("56d9403f-3425-4118-9919-36f2a9b8c77c") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0024
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0026
     {	VirtualSystemDescriptionValueType_Reference	= 1,
 	VirtualSystemDescriptionValueType_Original	= 2,
 	VirtualSystemDescriptionValueType_Auto	= 3,
@@ -1183,8 +1479,15 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0024
     } 	VirtualSystemDescriptionValueType;
 
 #define VirtualSystemDescriptionValueType_T VirtualSystemDescriptionValueType
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("79c96ca0-9f39-4900-948e-68c41cbe127a") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0027
+    {	GraphicsControllerType_Null	= 0,
+	GraphicsControllerType_VBoxVGA	= 1
+    } 	GraphicsControllerType;
+
+#define GraphicsControllerType_T GraphicsControllerType
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("67897c50-7cca-47a9-83f6-ce8fd8eb5441") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0025
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0028
     {	CleanupMode_UnregisterOnly	= 1,
 	CleanupMode_DetachAllReturnNone	= 2,
 	CleanupMode_DetachAllReturnHardDisksOnly	= 3,
@@ -1193,7 +1496,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0025
 
 #define CleanupMode_T CleanupMode
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("A7A159FE-5096-4B8D-8C3C-D033CB0B35A8") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0026
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0029
     {	CloneMode_MachineState	= 1,
 	CloneMode_MachineAndChildStates	= 2,
 	CloneMode_AllStates	= 3
@@ -1201,7 +1504,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0026
 
 #define CloneMode_T CloneMode
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("22243f8e-96ab-497c-8cf0-f40a566c630b") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0027
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0030
     {	CloneOptions_Link	= 1,
 	CloneOptions_KeepAllMACs	= 2,
 	CloneOptions_KeepNATMACs	= 3,
@@ -1210,7 +1513,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0027
 
 #define CloneOptions_T CloneOptions
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("6bb96740-cf34-470d-aab2-2cd48ea2e10e") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0028
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0031
     {	AutostopType_Disabled	= 1,
 	AutostopType_SaveState	= 2,
 	AutostopType_PowerOff	= 3,
@@ -1219,7 +1522,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0028
 
 #define AutostopType_T AutostopType
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("1aa54aaf-2497-45a2-bfb1-8eb225e93d5b") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0029
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0032
     {	HostNetworkInterfaceMediumType_Unknown	= 0,
 	HostNetworkInterfaceMediumType_Ethernet	= 1,
 	HostNetworkInterfaceMediumType_PPP	= 2,
@@ -1228,7 +1531,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0029
 
 #define HostNetworkInterfaceMediumType_T HostNetworkInterfaceMediumType
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("CC474A69-2710-434B-8D99-C38E5D5A6F41") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0030
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0033
     {	HostNetworkInterfaceStatus_Unknown	= 0,
 	HostNetworkInterfaceStatus_Up	= 1,
 	HostNetworkInterfaceStatus_Down	= 2
@@ -1236,14 +1539,14 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0030
 
 #define HostNetworkInterfaceStatus_T HostNetworkInterfaceStatus
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("67431b00-9946-48a2-bc02-b25c5919f4f3") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0031
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0034
     {	HostNetworkInterfaceType_Bridged	= 1,
 	HostNetworkInterfaceType_HostOnly	= 2
     } 	HostNetworkInterfaceType;
 
 #define HostNetworkInterfaceType_T HostNetworkInterfaceType
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("98f7f957-89fb-49b6-a3b1-31e3285eb1d8") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0032
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0035
     {	AdditionsFacilityType_None	= 0,
 	AdditionsFacilityType_VBoxGuestDriver	= 20,
 	AdditionsFacilityType_AutoLogon	= 90,
@@ -1256,7 +1559,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0032
 
 #define AdditionsFacilityType_T AdditionsFacilityType
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("446451b2-c88d-4e5d-84c9-91bc7f533f5f") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0033
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0036
     {	AdditionsFacilityClass_None	= 0,
 	AdditionsFacilityClass_Driver	= 10,
 	AdditionsFacilityClass_Service	= 30,
@@ -1268,7 +1571,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0033
 
 #define AdditionsFacilityClass_T AdditionsFacilityClass
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("ce06f9e1-394e-4fe9-9368-5a88c567dbde") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0034
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0037
     {	AdditionsFacilityStatus_Inactive	= 0,
 	AdditionsFacilityStatus_Paused	= 1,
 	AdditionsFacilityStatus_PreInit	= 20,
@@ -1282,7 +1585,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0034
 
 #define AdditionsFacilityStatus_T AdditionsFacilityStatus
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("a25417ee-a9dd-4f5b-b0dc-377860087754") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0035
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0038
     {	AdditionsRunLevelType_None	= 0,
 	AdditionsRunLevelType_System	= 1,
 	AdditionsRunLevelType_Userland	= 2,
@@ -1291,35 +1594,91 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0035
 
 #define AdditionsRunLevelType_T AdditionsRunLevelType
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("726a818d-18d6-4389-94e8-3e9e6826171a") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0036
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0039
     {	AdditionsUpdateFlag_None	= 0,
 	AdditionsUpdateFlag_WaitForUpdateStartOnly	= 1
     } 	AdditionsUpdateFlag;
 
 #define AdditionsUpdateFlag_T AdditionsUpdateFlag
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("ac2669da-4624-44f2-85b5-0b0bfb8d8673") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0040
+    {	GuestSessionStatus_Undefined	= 0,
+	GuestSessionStatus_Starting	= 10,
+	GuestSessionStatus_Started	= 100,
+	GuestSessionStatus_Terminating	= 480,
+	GuestSessionStatus_Terminated	= 500,
+	GuestSessionStatus_TimedOutKilled	= 512,
+	GuestSessionStatus_TimedOutAbnormally	= 513,
+	GuestSessionStatus_Down	= 600,
+	GuestSessionStatus_Error	= 800
+    } 	GuestSessionStatus;
+
+#define GuestSessionStatus_T GuestSessionStatus
+typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("bb7a372a-f635-4e11-a81a-e707f3a52ef5") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0041
+    {	GuestSessionWaitForFlag_None	= 0,
+	GuestSessionWaitForFlag_Start	= 1,
+	GuestSessionWaitForFlag_Terminate	= 2,
+	GuestSessionWaitForFlag_Status	= 4
+    } 	GuestSessionWaitForFlag;
+
+#define GuestSessionWaitForFlag_T GuestSessionWaitForFlag
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("c0f6a8a5-fdb6-42bf-a582-56c6f82bcd2d") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0042
+    {	GuestSessionWaitResult_None	= 0,
+	GuestSessionWaitResult_Start	= 1,
+	GuestSessionWaitResult_Terminate	= 2,
+	GuestSessionWaitResult_Status	= 3,
+	GuestSessionWaitResult_Error	= 4,
+	GuestSessionWaitResult_Timeout	= 5,
+	GuestSessionWaitResult_WaitFlagNotSupported	= 6
+    } 	GuestSessionWaitResult;
+
+#define GuestSessionWaitResult_T GuestSessionWaitResult
+typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("b2a82b02-fd3d-4fc2-ba84-6ba5ac8be198") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0043
+    {	GuestUserState_Unknown	= 0,
+	GuestUserState_LoggedIn	= 1,
+	GuestUserState_LoggedOut	= 2,
+	GuestUserState_Locked	= 3,
+	GuestUserState_Unlocked	= 4,
+	GuestUserState_Disabled	= 5,
+	GuestUserState_Idle	= 6,
+	GuestUserState_InUse	= 7,
+	GuestUserState_Created	= 8,
+	GuestUserState_Deleted	= 9,
+	GuestUserState_SessionChanged	= 10,
+	GuestUserState_CredentialsChanged	= 11,
+	GuestUserState_RoleChanged	= 12,
+	GuestUserState_GroupAdded	= 13,
+	GuestUserState_GroupRemoved	= 14,
+	GuestUserState_Elevated	= 15
+    } 	GuestUserState;
+
+#define GuestUserState_T GuestUserState
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("1b73f4f3-3515-4073-a506-76878d9e2541") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0037
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0044
     {	FileSeekType_Set	= 0,
 	FileSeekType_Current	= 1
     } 	FileSeekType;
 
 #define FileSeekType_T FileSeekType
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("5d38c1dd-2604-4ddf-92e5-0c0cdd3bdbd5") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0038
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0045
     {	ProcessInputFlag_None	= 0,
 	ProcessInputFlag_EndOfFile	= 1
     } 	ProcessInputFlag;
 
 #define ProcessInputFlag_T ProcessInputFlag
 typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("9979e85a-52bb-40b7-870c-57115e27e0f1") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0039
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0046
     {	ProcessOutputFlag_None	= 0,
 	ProcessOutputFlag_StdErr	= 1
     } 	ProcessOutputFlag;
 
 #define ProcessOutputFlag_T ProcessOutputFlag
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("23b550c7-78e1-437e-98f0-65fd9757bcd2") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0040
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0047
     {	ProcessWaitForFlag_None	= 0,
 	ProcessWaitForFlag_Start	= 1,
 	ProcessWaitForFlag_Terminate	= 2,
@@ -1330,7 +1689,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0040
 
 #define ProcessWaitForFlag_T ProcessWaitForFlag
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("40719cbe-f192-4fe9-a231-6697b3c8e2b4") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0041
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0048
     {	ProcessWaitResult_None	= 0,
 	ProcessWaitResult_Start	= 1,
 	ProcessWaitResult_Terminate	= 2,
@@ -1345,7 +1704,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0041
 
 #define ProcessWaitResult_T ProcessWaitResult
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("23f79fdf-738a-493d-b80b-42d607c9b916") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0042
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0049
     {	CopyFileFlag_None	= 0,
 	CopyFileFlag_Recursive	= 1,
 	CopyFileFlag_Update	= 2,
@@ -1354,14 +1713,14 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0042
 
 #define CopyFileFlag_T CopyFileFlag
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("bd721b0e-ced5-4f79-b368-249897c32a36") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0043
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0050
     {	DirectoryCreateFlag_None	= 0,
 	DirectoryCreateFlag_Parents	= 1
     } 	DirectoryCreateFlag;
 
 #define DirectoryCreateFlag_T DirectoryCreateFlag
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("455aabf0-7692-48f6-9061-f21579b65769") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0044
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0051
     {	DirectoryRemoveRecFlag_None	= 0,
 	DirectoryRemoveRecFlag_ContentAndDir	= 1,
 	DirectoryRemoveRecFlag_ContentOnly	= 2
@@ -1369,7 +1728,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0044
 
 #define DirectoryRemoveRecFlag_T DirectoryRemoveRecFlag
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("f3baa09f-c758-453d-b91c-c7787d76351d") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0045
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0052
     {	PathRenameFlag_None	= 0,
 	PathRenameFlag_NoReplace	= 1,
 	PathRenameFlag_Replace	= 2,
@@ -1378,7 +1737,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0045
 
 #define PathRenameFlag_T PathRenameFlag
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("35192799-bfde-405d-9bea-c735ab9998e4") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0046
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0053
     {	ProcessCreateFlag_None	= 0,
 	ProcessCreateFlag_WaitForProcessStartOnly	= 1,
 	ProcessCreateFlag_IgnoreOrphanedProcesses	= 2,
@@ -1391,14 +1750,14 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0046
 
 #define ProcessCreateFlag_T ProcessCreateFlag
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("ee8cac50-e232-49fe-806b-d1214d9c2e49") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0047
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0054
     {	ProcessPriority_Invalid	= 0,
 	ProcessPriority_Default	= 1
     } 	ProcessPriority;
 
 #define ProcessPriority_T ProcessPriority
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("37794668-f8f1-4714-98a5-6f8fa2ed0118") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0048
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0055
     {	SymlinkType_Unknown	= 0,
 	SymlinkType_Directory	= 1,
 	SymlinkType_File	= 2
@@ -1406,14 +1765,14 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0048
 
 #define SymlinkType_T SymlinkType
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("b7fe2b9d-790e-4b25-8adf-1ca33026931f") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0049
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0056
     {	SymlinkReadFlag_None	= 0,
 	SymlinkReadFlag_NoSymlinks	= 1
     } 	SymlinkReadFlag;
 
 #define SymlinkReadFlag_T SymlinkReadFlag
-typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("4d52368f-5b48-4bfe-b486-acf89139b52f") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0050
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("4d52368f-5b48-4bfe-b486-acf89139b52f") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0057
     {	ProcessStatus_Undefined	= 0,
 	ProcessStatus_Starting	= 10,
 	ProcessStatus_Started	= 100,
@@ -1429,8 +1788,30 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0050
     } 	ProcessStatus;
 
 #define ProcessStatus_T ProcessStatus
+typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("a4a0ef9c-29cc-4805-9803-c8215ae9da6c") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0058
+    {	ProcessInputStatus_Undefined	= 0,
+	ProcessInputStatus_Broken	= 1,
+	ProcessInputStatus_Available	= 10,
+	ProcessInputStatus_Written	= 50,
+	ProcessInputStatus_Overflow	= 100
+    } 	ProcessInputStatus;
+
+#define ProcessInputStatus_T ProcessInputStatus
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("8c86468b-b97b-4080-8914-e29f5b0abd2c") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0059
+    {	FileStatus_Undefined	= 0,
+	FileStatus_Opening	= 10,
+	FileStatus_Open	= 100,
+	FileStatus_Closing	= 150,
+	FileStatus_Closed	= 200,
+	FileStatus_Down	= 600,
+	FileStatus_Error	= 800
+    } 	FileStatus;
+
+#define FileStatus_T FileStatus
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("a1ed437c-b3c3-4ca2-b19c-4239d658d5e8") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0051
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0060
     {	FsObjType_Undefined	= 0,
 	FsObjType_FIFO	= 1,
 	FsObjType_DevChar	= 10,
@@ -1444,7 +1825,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0051
 
 #define FsObjType_T FsObjType
 typedef /* [public][public][public][public][public][public][public][public][public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("47f3b162-c107-4fcd-bfa7-54b8135c441e") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0052
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0061
     {	DragAndDropAction_Ignore	= 0,
 	DragAndDropAction_Copy	= 1,
 	DragAndDropAction_Move	= 2,
@@ -1453,14 +1834,14 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0052
 
 #define DragAndDropAction_T DragAndDropAction
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("5138837a-8fd2-4194-a1b0-08f7bc3949d0") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0053
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0062
     {	DirectoryOpenFlag_None	= 0,
 	DirectoryOpenFlag_NoSymlinks	= 1
     } 	DirectoryOpenFlag;
 
 #define DirectoryOpenFlag_T DirectoryOpenFlag
-typedef /* [public][public][public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("ef41e980-e012-43cd-9dea-479d4ef14d13") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0054
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("ef41e980-e012-43cd-9dea-479d4ef14d13") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0063
     {	MediumState_NotCreated	= 0,
 	MediumState_Created	= 1,
 	MediumState_LockedRead	= 2,
@@ -1472,7 +1853,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0054
 
 #define MediumState_T MediumState
 typedef /* [public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("fe663fb5-c244-4e1b-9d81-c628b417dd04") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0055
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0064
     {	MediumType_Normal	= 0,
 	MediumType_Immutable	= 1,
 	MediumType_Writethrough	= 2,
@@ -1482,8 +1863,8 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0055
     } 	MediumType;
 
 #define MediumType_T MediumType
-typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("80685b6b-e42f-497d-8271-e77bf3c61ada") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0056
+typedef /* [public][public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("80685b6b-e42f-497d-8271-e77bf3c61ada") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0065
     {	MediumVariant_Standard	= 0,
 	MediumVariant_VmdkSplit2G	= 0x1,
 	MediumVariant_VmdkRawDisk	= 0x2,
@@ -1496,7 +1877,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0056
 
 #define MediumVariant_T MediumVariant
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("d90ea51e-a3f1-4a01-beb1-c1723c0d3ba7") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0057
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0066
     {	DataType_Int32	= 0,
 	DataType_Int8	= 1,
 	DataType_String	= 2
@@ -1504,7 +1885,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0057
 
 #define DataType_T DataType
 typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("86884dcf-1d6b-4f1b-b4bf-f5aa44959d60") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0058
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0067
     {	DataFlags_None	= 0,
 	DataFlags_Mandatory	= 0x1,
 	DataFlags_Expert	= 0x2,
@@ -1513,8 +1894,8 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0058
     } 	DataFlags;
 
 #define DataFlags_T DataFlags
-typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("7342ba79-7ce0-4d94-8f86-5ed5a185d9bd") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0059
+typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("7342ba79-7ce0-4d94-8f86-5ed5a185d9bd") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0068
     {	MediumFormatCapabilities_Uuid	= 0x1,
 	MediumFormatCapabilities_CreateFixed	= 0x2,
 	MediumFormatCapabilities_CreateDynamic	= 0x4,
@@ -1530,7 +1911,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0059
 
 #define MediumFormatCapabilities_T MediumFormatCapabilities
 typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("9ee094b8-b28a-4d56-a166-973cb588d7f8") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0060
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0069
     {	MouseButtonState_LeftButton	= 0x1,
 	MouseButtonState_RightButton	= 0x2,
 	MouseButtonState_MiddleButton	= 0x4,
@@ -1542,26 +1923,36 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0060
     } 	MouseButtonState;
 
 #define MouseButtonState_T MouseButtonState
+typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("3f942686-2506-421c-927c-90d4b45f4a38") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0070
+    {	TouchContactState_None	= 0,
+	TouchContactState_InContact	= 0x1,
+	TouchContactState_InRange	= 0x2,
+	TouchContactState_ContactStateMask	= 0x3
+    } 	TouchContactState;
+
+#define TouchContactState_T TouchContactState
 typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("7acfd5ed-29e3-45e3-8136-73c9224f3d2d") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0061
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0071
     {	FramebufferPixelFormat_Opaque	= 0,
 	FramebufferPixelFormat_FOURCC_RGB	= 0x32424752
     } 	FramebufferPixelFormat;
 
 #define FramebufferPixelFormat_T FramebufferPixelFormat
-typedef /* [public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("2ac4bc71-6b82-417a-acd1-f7426d2570d6") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0062
+typedef /* [public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("524a8f9d-4b86-4b51-877d-1aa27c4ebeac") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0072
     {	NetworkAttachmentType_Null	= 0,
 	NetworkAttachmentType_NAT	= 1,
 	NetworkAttachmentType_Bridged	= 2,
 	NetworkAttachmentType_Internal	= 3,
 	NetworkAttachmentType_HostOnly	= 4,
-	NetworkAttachmentType_Generic	= 5
+	NetworkAttachmentType_Generic	= 5,
+	NetworkAttachmentType_NATNetwork	= 6
     } 	NetworkAttachmentType;
 
 #define NetworkAttachmentType_T NetworkAttachmentType
 typedef /* [public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("3c2281e4-d952-4e87-8c7d-24379cb6a81c") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0063
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0073
     {	NetworkAdapterType_Null	= 0,
 	NetworkAdapterType_Am79C970A	= 1,
 	NetworkAdapterType_Am79C973	= 2,
@@ -1573,7 +1964,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0063
 
 #define NetworkAdapterType_T NetworkAdapterType
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("c963768a-376f-4c85-8d84-d8ced4b7269e") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0064
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0074
     {	NetworkAdapterPromiscModePolicy_Deny	= 1,
 	NetworkAdapterPromiscModePolicy_AllowNetwork	= 2,
 	NetworkAdapterPromiscModePolicy_AllowAll	= 3
@@ -1581,7 +1972,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0064
 
 #define NetworkAdapterPromiscModePolicy_T NetworkAdapterPromiscModePolicy
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("533b5fe3-0185-4197-86a7-17e37dd39d76") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0065
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0075
     {	PortMode_Disconnected	= 0,
 	PortMode_HostPipe	= 1,
 	PortMode_HostDevice	= 2,
@@ -1589,8 +1980,17 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0065
     } 	PortMode;
 
 #define PortMode_T PortMode
+typedef /* [public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("8fdd1c6a-5412-41da-ab07-7baed7d6e18e") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0076
+    {	USBControllerType_Null	= 0,
+	USBControllerType_OHCI	= 1,
+	USBControllerType_EHCI	= 2,
+	USBControllerType_Last	= 3
+    } 	USBControllerType;
+
+#define USBControllerType_T USBControllerType
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("b99a2e65-67fb-4882-82fd-f3e5e8193ab4") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0066
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0077
     {	USBDeviceState_NotSupported	= 0,
 	USBDeviceState_Unavailable	= 1,
 	USBDeviceState_Busy	= 2,
@@ -1601,7 +2001,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0066
 
 #define USBDeviceState_T USBDeviceState
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("cbc30a49-2f4e-43b5-9da6-121320475933") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0067
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
     {	USBDeviceFilterAction_Null	= 0,
 	USBDeviceFilterAction_Ignore	= 1,
 	USBDeviceFilterAction_Hold	= 2
@@ -1609,7 +2009,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0067
 
 #define USBDeviceFilterAction_T USBDeviceFilterAction
 typedef /* [public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("4bcc3d73-c2fe-40db-b72f-0c2ca9d68496") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0068
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0079
     {	AudioDriverType_Null	= 0,
 	AudioDriverType_WinMM	= 1,
 	AudioDriverType_OSS	= 2,
@@ -1623,7 +2023,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0068
 
 #define AudioDriverType_T AudioDriverType
 typedef /* [public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("7afd395c-42c3-444e-8788-3ce80292f36c") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0069
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0080
     {	AudioControllerType_AC97	= 0,
 	AudioControllerType_SB16	= 1,
 	AudioControllerType_HDA	= 2
@@ -1631,15 +2031,24 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0069
 
 #define AudioControllerType_T AudioControllerType
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("7eef6ef6-98c2-4dc2-ab35-10d2b292028d") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0070
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0081
     {	AuthType_Null	= 0,
 	AuthType_External	= 1,
 	AuthType_Guest	= 2
     } 	AuthType;
 
 #define AuthType_T AuthType
+typedef /* [public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("e7e8e097-299d-4e98-8bbc-c31c2d47d0cc") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0082
+    {	Reason_Unspecified	= 0,
+	Reason_HostSuspend	= 1,
+	Reason_HostResume	= 2,
+	Reason_HostBatteryLow	= 3
+    } 	Reason;
+
+#define Reason_T Reason
 typedef /* [public][public][public][public][public][public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("eee67ab3-668d-4ef5-91e0-7025fe4a0d7a") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0071
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0083
     {	StorageBus_Null	= 0,
 	StorageBus_IDE	= 1,
 	StorageBus_SATA	= 2,
@@ -1650,7 +2059,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0071
 
 #define StorageBus_T StorageBus
 typedef /* [public][public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("8a412b8a-f43e-4456-bd37-b474f0879a58") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0072
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0084
     {	StorageControllerType_Null	= 0,
 	StorageControllerType_LsiLogic	= 1,
 	StorageControllerType_BusLogic	= 2,
@@ -1663,8 +2072,8 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0072
     } 	StorageControllerType;
 
 #define StorageControllerType_T StorageControllerType
-typedef /* [public][public][public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("8b4096a8-a7c3-4d3b-bbb1-05a0a51ec394") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0073
+typedef /* [public][public][public][public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("8b4096a8-a7c3-4d3b-bbb1-05a0a51ec394") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0085
     {	ChipsetType_Null	= 0,
 	ChipsetType_PIIX3	= 1,
 	ChipsetType_ICH9	= 2
@@ -1672,30 +2081,30 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0073
 
 #define ChipsetType_T ChipsetType
 typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("67772168-50d9-11df-9669-7fb714ee4fa1") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0074
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0086
     {	NATAliasMode_AliasLog	= 0x1,
 	NATAliasMode_AliasProxyOnly	= 0x2,
 	NATAliasMode_AliasUseSamePorts	= 0x4
     } 	NATAliasMode;
 
 #define NATAliasMode_T NATAliasMode
-typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("e90164be-eb03-11de-94af-fff9b1c1b19f") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0075
+typedef /* [public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("e90164be-eb03-11de-94af-fff9b1c1b19f") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0087
     {	NATProtocol_UDP	= 0,
 	NATProtocol_TCP	= 1
     } 	NATProtocol;
 
 #define NATProtocol_T NATProtocol
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("1d92b67d-dc69-4be9-ad4c-93a01e1e0c8e") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0076
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0088
     {	BandwidthGroupType_Null	= 0,
 	BandwidthGroupType_Disk	= 1,
 	BandwidthGroupType_Network	= 2
     } 	BandwidthGroupType;
 
 #define BandwidthGroupType_T BandwidthGroupType
-typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("0d67e79e-b7b1-4919-aab3-b36866075515") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0077
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("5248e377-e578-47d7-b07b-84b1db6db8a8") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0089
     {	VBoxEventType_Invalid	= 0,
 	VBoxEventType_Any	= 1,
 	VBoxEventType_Vetoable	= 2,
@@ -1745,12 +2154,40 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0077
 	VBoxEventType_OnStorageDeviceChanged	= 71,
 	VBoxEventType_OnClipboardModeChanged	= 72,
 	VBoxEventType_OnDragAndDropModeChanged	= 73,
-	VBoxEventType_Last	= 74
+	VBoxEventType_OnNATNetworkChanged	= 74,
+	VBoxEventType_OnNATNetworkStartStop	= 75,
+	VBoxEventType_OnNATNetworkAlter	= 76,
+	VBoxEventType_OnNATNetworkCreationDeletion	= 77,
+	VBoxEventType_OnNATNetworkSetting	= 78,
+	VBoxEventType_OnNATNetworkPortForward	= 79,
+	VBoxEventType_OnGuestSessionStateChanged	= 80,
+	VBoxEventType_OnGuestSessionRegistered	= 81,
+	VBoxEventType_OnGuestProcessRegistered	= 82,
+	VBoxEventType_OnGuestProcessStateChanged	= 83,
+	VBoxEventType_OnGuestProcessInputNotify	= 84,
+	VBoxEventType_OnGuestProcessOutput	= 85,
+	VBoxEventType_OnGuestFileRegistered	= 86,
+	VBoxEventType_OnGuestFileStateChanged	= 87,
+	VBoxEventType_OnGuestFileOffsetChanged	= 88,
+	VBoxEventType_OnGuestFileRead	= 89,
+	VBoxEventType_OnGuestFileWrite	= 90,
+	VBoxEventType_OnVideoCaptureChanged	= 91,
+	VBoxEventType_OnGuestUserStateChanged	= 92,
+	VBoxEventType_OnGuestMultiTouch	= 93,
+	VBoxEventType_OnHostNameResolutionConfigurationChange	= 94,
+	VBoxEventType_Last	= 95
     } 	VBoxEventType;
 
 #define VBoxEventType_T VBoxEventType
+typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("4b500146-ebba-4b7c-bc29-69c2d57a5caf") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0090
+    {	GuestMouseEventMode_Relative	= 0,
+	GuestMouseEventMode_Absolute	= 1
+    } 	GuestMouseEventMode;
+
+#define GuestMouseEventMode_T GuestMouseEventMode
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("ef172985-7e36-4297-95be-e46396968d66") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0091
     {	GuestMonitorChangedEventType_Enabled	= 0,
 	GuestMonitorChangedEventType_Disabled	= 1,
 	GuestMonitorChangedEventType_NewOrigin	= 2
@@ -1760,6 +2197,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultCode_TO(smth) HRESULT STDMETHODCALLTYPE get_ResultCode (LONG * aResultCode) { return smth get_ResultCode (aResultCode); }
 #define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultCode_TO_OBJ(obj) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultCode_TO ((obj)->)
 #define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultCode_TO_BASE(base) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultCode_TO (base::)
+#define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultDetail_TO(smth) HRESULT STDMETHODCALLTYPE get_ResultDetail (LONG * aResultDetail) { return smth get_ResultDetail (aResultDetail); }
+#define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultDetail_TO_OBJ(obj) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultDetail_TO ((obj)->)
+#define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultDetail_TO_BASE(base) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultDetail_TO (base::)
 #define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_InterfaceID_TO(smth) HRESULT STDMETHODCALLTYPE get_InterfaceID (BSTR * aInterfaceID) { return smth get_InterfaceID (aInterfaceID); }
 #define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_InterfaceID_TO_OBJ(obj) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_InterfaceID_TO ((obj)->)
 #define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_InterfaceID_TO_BASE(base) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_InterfaceID_TO (base::)
@@ -1772,9 +2212,93 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_Next_TO(smth) HRESULT STDMETHODCALLTYPE get_Next (IVirtualBoxErrorInfo * * aNext) { return smth get_Next (aNext); }
 #define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_Next_TO_OBJ(obj) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_Next_TO ((obj)->)
 #define COM_FORWARD_IVirtualBoxErrorInfo_GETTER_Next_TO_BASE(base) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_Next_TO (base::)
-#define COM_FORWARD_IVirtualBoxErrorInfo_TO(smth) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultCode_TO (smth) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_InterfaceID_TO (smth) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_Component_TO (smth) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_Text_TO (smth) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_Next_TO (smth) 
+#define COM_FORWARD_IVirtualBoxErrorInfo_TO(smth) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultCode_TO (smth) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_ResultDetail_TO (smth) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_InterfaceID_TO (smth) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_Component_TO (smth) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_Text_TO (smth) COM_FORWARD_IVirtualBoxErrorInfo_GETTER_Next_TO (smth) 
 #define COM_FORWARD_IVirtualBoxErrorInfo_TO_OBJ(obj) COM_FORWARD_IVirtualBoxErrorInfo_TO ((obj)->)
 #define COM_FORWARD_IVirtualBoxErrorInfo_TO_BASE(base) COM_FORWARD_IVirtualBoxErrorInfo_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_NetworkName_TO(smth) HRESULT STDMETHODCALLTYPE get_NetworkName (BSTR * aNetworkName) { return smth get_NetworkName (aNetworkName); }
+#define COM_FORWARD_INATNetwork_GETTER_NetworkName_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_NetworkName_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_NetworkName_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_NetworkName_TO (base::)
+#define COM_FORWARD_INATNetwork_SETTER_NetworkName_TO(smth) HRESULT STDMETHODCALLTYPE put_NetworkName (BSTR aNetworkName) { return smth put_NetworkName (aNetworkName); }
+#define COM_FORWARD_INATNetwork_SETTER_NetworkName_TO_OBJ(obj) COM_FORWARD_INATNetwork_SETTER_NetworkName_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_SETTER_NetworkName_TO_BASE(base) COM_FORWARD_INATNetwork_SETTER_NetworkName_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_Enabled_TO(smth) HRESULT STDMETHODCALLTYPE get_Enabled (BOOL * aEnabled) { return smth get_Enabled (aEnabled); }
+#define COM_FORWARD_INATNetwork_GETTER_Enabled_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_Enabled_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_Enabled_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_Enabled_TO (base::)
+#define COM_FORWARD_INATNetwork_SETTER_Enabled_TO(smth) HRESULT STDMETHODCALLTYPE put_Enabled (BOOL aEnabled) { return smth put_Enabled (aEnabled); }
+#define COM_FORWARD_INATNetwork_SETTER_Enabled_TO_OBJ(obj) COM_FORWARD_INATNetwork_SETTER_Enabled_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_SETTER_Enabled_TO_BASE(base) COM_FORWARD_INATNetwork_SETTER_Enabled_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_Network_TO(smth) HRESULT STDMETHODCALLTYPE get_Network (BSTR * aNetwork) { return smth get_Network (aNetwork); }
+#define COM_FORWARD_INATNetwork_GETTER_Network_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_Network_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_Network_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_Network_TO (base::)
+#define COM_FORWARD_INATNetwork_SETTER_Network_TO(smth) HRESULT STDMETHODCALLTYPE put_Network (BSTR aNetwork) { return smth put_Network (aNetwork); }
+#define COM_FORWARD_INATNetwork_SETTER_Network_TO_OBJ(obj) COM_FORWARD_INATNetwork_SETTER_Network_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_SETTER_Network_TO_BASE(base) COM_FORWARD_INATNetwork_SETTER_Network_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_Gateway_TO(smth) HRESULT STDMETHODCALLTYPE get_Gateway (BSTR * aGateway) { return smth get_Gateway (aGateway); }
+#define COM_FORWARD_INATNetwork_GETTER_Gateway_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_Gateway_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_Gateway_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_Gateway_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_IPv6Enabled_TO(smth) HRESULT STDMETHODCALLTYPE get_IPv6Enabled (BOOL * aIPv6Enabled) { return smth get_IPv6Enabled (aIPv6Enabled); }
+#define COM_FORWARD_INATNetwork_GETTER_IPv6Enabled_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_IPv6Enabled_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_IPv6Enabled_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_IPv6Enabled_TO (base::)
+#define COM_FORWARD_INATNetwork_SETTER_IPv6Enabled_TO(smth) HRESULT STDMETHODCALLTYPE put_IPv6Enabled (BOOL aIPv6Enabled) { return smth put_IPv6Enabled (aIPv6Enabled); }
+#define COM_FORWARD_INATNetwork_SETTER_IPv6Enabled_TO_OBJ(obj) COM_FORWARD_INATNetwork_SETTER_IPv6Enabled_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_SETTER_IPv6Enabled_TO_BASE(base) COM_FORWARD_INATNetwork_SETTER_IPv6Enabled_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_IPv6Prefix_TO(smth) HRESULT STDMETHODCALLTYPE get_IPv6Prefix (BSTR * aIPv6Prefix) { return smth get_IPv6Prefix (aIPv6Prefix); }
+#define COM_FORWARD_INATNetwork_GETTER_IPv6Prefix_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_IPv6Prefix_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_IPv6Prefix_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_IPv6Prefix_TO (base::)
+#define COM_FORWARD_INATNetwork_SETTER_IPv6Prefix_TO(smth) HRESULT STDMETHODCALLTYPE put_IPv6Prefix (BSTR aIPv6Prefix) { return smth put_IPv6Prefix (aIPv6Prefix); }
+#define COM_FORWARD_INATNetwork_SETTER_IPv6Prefix_TO_OBJ(obj) COM_FORWARD_INATNetwork_SETTER_IPv6Prefix_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_SETTER_IPv6Prefix_TO_BASE(base) COM_FORWARD_INATNetwork_SETTER_IPv6Prefix_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO(smth) HRESULT STDMETHODCALLTYPE get_AdvertiseDefaultIPv6RouteEnabled (BOOL * aAdvertiseDefaultIPv6RouteEnabled) { return smth get_AdvertiseDefaultIPv6RouteEnabled (aAdvertiseDefaultIPv6RouteEnabled); }
+#define COM_FORWARD_INATNetwork_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO (base::)
+#define COM_FORWARD_INATNetwork_SETTER_AdvertiseDefaultIPv6RouteEnabled_TO(smth) HRESULT STDMETHODCALLTYPE put_AdvertiseDefaultIPv6RouteEnabled (BOOL aAdvertiseDefaultIPv6RouteEnabled) { return smth put_AdvertiseDefaultIPv6RouteEnabled (aAdvertiseDefaultIPv6RouteEnabled); }
+#define COM_FORWARD_INATNetwork_SETTER_AdvertiseDefaultIPv6RouteEnabled_TO_OBJ(obj) COM_FORWARD_INATNetwork_SETTER_AdvertiseDefaultIPv6RouteEnabled_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_SETTER_AdvertiseDefaultIPv6RouteEnabled_TO_BASE(base) COM_FORWARD_INATNetwork_SETTER_AdvertiseDefaultIPv6RouteEnabled_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_NeedDhcpServer_TO(smth) HRESULT STDMETHODCALLTYPE get_NeedDhcpServer (BOOL * aNeedDhcpServer) { return smth get_NeedDhcpServer (aNeedDhcpServer); }
+#define COM_FORWARD_INATNetwork_GETTER_NeedDhcpServer_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_NeedDhcpServer_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_NeedDhcpServer_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_NeedDhcpServer_TO (base::)
+#define COM_FORWARD_INATNetwork_SETTER_NeedDhcpServer_TO(smth) HRESULT STDMETHODCALLTYPE put_NeedDhcpServer (BOOL aNeedDhcpServer) { return smth put_NeedDhcpServer (aNeedDhcpServer); }
+#define COM_FORWARD_INATNetwork_SETTER_NeedDhcpServer_TO_OBJ(obj) COM_FORWARD_INATNetwork_SETTER_NeedDhcpServer_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_SETTER_NeedDhcpServer_TO_BASE(base) COM_FORWARD_INATNetwork_SETTER_NeedDhcpServer_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_EventSource_TO(smth) HRESULT STDMETHODCALLTYPE get_EventSource (IEventSource * * aEventSource) { return smth get_EventSource (aEventSource); }
+#define COM_FORWARD_INATNetwork_GETTER_EventSource_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_EventSource_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_EventSource_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_EventSource_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_PortForwardRules4_TO(smth) HRESULT STDMETHODCALLTYPE get_PortForwardRules4 (SAFEARRAY * * aPortForwardRules4) { return smth get_PortForwardRules4 (aPortForwardRules4); }
+#define COM_FORWARD_INATNetwork_GETTER_PortForwardRules4_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_PortForwardRules4_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_PortForwardRules4_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_PortForwardRules4_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_LocalMappings_TO(smth) HRESULT STDMETHODCALLTYPE get_LocalMappings (SAFEARRAY * * aLocalMappings) { return smth get_LocalMappings (aLocalMappings); }
+#define COM_FORWARD_INATNetwork_GETTER_LocalMappings_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_LocalMappings_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_LocalMappings_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_LocalMappings_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_LoopbackIp6_TO(smth) HRESULT STDMETHODCALLTYPE get_LoopbackIp6 (LONG * aLoopbackIp6) { return smth get_LoopbackIp6 (aLoopbackIp6); }
+#define COM_FORWARD_INATNetwork_GETTER_LoopbackIp6_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_LoopbackIp6_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_LoopbackIp6_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_LoopbackIp6_TO (base::)
+#define COM_FORWARD_INATNetwork_SETTER_LoopbackIp6_TO(smth) HRESULT STDMETHODCALLTYPE put_LoopbackIp6 (LONG aLoopbackIp6) { return smth put_LoopbackIp6 (aLoopbackIp6); }
+#define COM_FORWARD_INATNetwork_SETTER_LoopbackIp6_TO_OBJ(obj) COM_FORWARD_INATNetwork_SETTER_LoopbackIp6_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_SETTER_LoopbackIp6_TO_BASE(base) COM_FORWARD_INATNetwork_SETTER_LoopbackIp6_TO (base::)
+#define COM_FORWARD_INATNetwork_GETTER_PortForwardRules6_TO(smth) HRESULT STDMETHODCALLTYPE get_PortForwardRules6 (SAFEARRAY * * aPortForwardRules6) { return smth get_PortForwardRules6 (aPortForwardRules6); }
+#define COM_FORWARD_INATNetwork_GETTER_PortForwardRules6_TO_OBJ(obj) COM_FORWARD_INATNetwork_GETTER_PortForwardRules6_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_GETTER_PortForwardRules6_TO_BASE(base) COM_FORWARD_INATNetwork_GETTER_PortForwardRules6_TO (base::)
+#define COM_FORWARD_INATNetwork_AddLocalMapping_TO(smth) HRESULT STDMETHODCALLTYPE AddLocalMapping (BSTR aHostid, LONG aOffset) { return smth AddLocalMapping (aHostid, aOffset); }
+#define COM_FORWARD_INATNetwork_AddLocalMapping_TO_OBJ(obj) COM_FORWARD_INATNetwork_AddLocalMapping_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_AddLocalMapping_TO_BASE(base) COM_FORWARD_INATNetwork_AddLocalMapping_TO (base::)
+#define COM_FORWARD_INATNetwork_AddPortForwardRule_TO(smth) HRESULT STDMETHODCALLTYPE AddPortForwardRule (BOOL aIsIpv6, BSTR aRuleName, NATProtocol aProto, BSTR aHostIP, USHORT aHostPort, BSTR aGuestIP, USHORT aGuestPort) { return smth AddPortForwardRule (aIsIpv6, aRuleName, aProto, aHostIP, aHostPort, aGuestIP, aGuestPort); }
+#define COM_FORWARD_INATNetwork_AddPortForwardRule_TO_OBJ(obj) COM_FORWARD_INATNetwork_AddPortForwardRule_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_AddPortForwardRule_TO_BASE(base) COM_FORWARD_INATNetwork_AddPortForwardRule_TO (base::)
+#define COM_FORWARD_INATNetwork_RemovePortForwardRule_TO(smth) HRESULT STDMETHODCALLTYPE RemovePortForwardRule (BOOL aISipv6, BSTR aRuleName) { return smth RemovePortForwardRule (aISipv6, aRuleName); }
+#define COM_FORWARD_INATNetwork_RemovePortForwardRule_TO_OBJ(obj) COM_FORWARD_INATNetwork_RemovePortForwardRule_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_RemovePortForwardRule_TO_BASE(base) COM_FORWARD_INATNetwork_RemovePortForwardRule_TO (base::)
+#define COM_FORWARD_INATNetwork_Start_TO(smth) HRESULT STDMETHODCALLTYPE Start (BSTR aTrunkType) { return smth Start (aTrunkType); }
+#define COM_FORWARD_INATNetwork_Start_TO_OBJ(obj) COM_FORWARD_INATNetwork_Start_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_Start_TO_BASE(base) COM_FORWARD_INATNetwork_Start_TO (base::)
+#define COM_FORWARD_INATNetwork_Stop_TO(smth) HRESULT STDMETHODCALLTYPE Stop() { return smth Stop(); }
+#define COM_FORWARD_INATNetwork_Stop_TO_OBJ(obj) COM_FORWARD_INATNetwork_Stop_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_Stop_TO_BASE(base) COM_FORWARD_INATNetwork_Stop_TO (base::)
+#define COM_FORWARD_INATNetwork_TO(smth) COM_FORWARD_INATNetwork_GETTER_NetworkName_TO (smth) COM_FORWARD_INATNetwork_SETTER_NetworkName_TO (smth) COM_FORWARD_INATNetwork_GETTER_Enabled_TO (smth) COM_FORWARD_INATNetwork_SETTER_Enabled_TO (smth) COM_FORWARD_INATNetwork_GETTER_Network_TO (smth) COM_FORWARD_INATNetwork_SETTER_Network_TO (smth) COM_FORWARD_INATNetwork_GETTER_Gateway_TO (smth) COM_FORWARD_INATNetwork_GETTER_IPv6Enabled_TO (smth) COM_FORWARD_INATNetwork_SETTER_IPv6Enabled_TO (smth) COM_FORWARD_INATNetwork_GETTER_IPv6Prefix_TO (smth) COM_FORWARD_INATNetwork_SETTER_IPv6Prefix_TO (smth) COM_FORWARD_INATNetwork_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO (smth) COM_FORWARD_INATNetwork_SETTER_AdvertiseDefaultIPv6RouteEnabled_TO (smth) COM_FORWARD_INATNetwork_GETTER_NeedDhcpServer_TO (smth) COM_FORWARD_INATNetwork_SETTER_NeedDhcpServer_TO (smth) COM_FORWARD_INATNetwork_GETTER_EventSource_TO (smth) COM_FORWARD_INATNetwork_GETTER_PortForwardRules4_TO (smth) COM_FORWARD_INATNetwork_GETTER_LocalMappings_TO (smth) COM_FORWARD_INATNetwork_GETTER_LoopbackIp6_TO (smth) COM_FORWARD_INATNetwork_SETTER_LoopbackIp6_TO (smth) COM_FORWARD_INATNetwork_GETTER_PortForwardRules6_TO (smth) COM_FORWARD_INATNetwork_AddLocalMapping_TO (smth) COM_FORWARD_INATNetwork_AddPortForwardRule_TO (smth) COM_FORWARD_INATNetwork_RemovePortForwardRule_TO (smth) COM_FORWARD_INATNetwork_Start_TO (smth) COM_FORWARD_INATNetwork_Stop_TO (smth) 
+#define COM_FORWARD_INATNetwork_TO_OBJ(obj) COM_FORWARD_INATNetwork_TO ((obj)->)
+#define COM_FORWARD_INATNetwork_TO_BASE(base) COM_FORWARD_INATNetwork_TO (base::)
+#define COM_FORWARD_IDHCPServer_GETTER_EventSource_TO(smth) HRESULT STDMETHODCALLTYPE get_EventSource (IEventSource * * aEventSource) { return smth get_EventSource (aEventSource); }
+#define COM_FORWARD_IDHCPServer_GETTER_EventSource_TO_OBJ(obj) COM_FORWARD_IDHCPServer_GETTER_EventSource_TO ((obj)->)
+#define COM_FORWARD_IDHCPServer_GETTER_EventSource_TO_BASE(base) COM_FORWARD_IDHCPServer_GETTER_EventSource_TO (base::)
 #define COM_FORWARD_IDHCPServer_GETTER_Enabled_TO(smth) HRESULT STDMETHODCALLTYPE get_Enabled (BOOL * aEnabled) { return smth get_Enabled (aEnabled); }
 #define COM_FORWARD_IDHCPServer_GETTER_Enabled_TO_OBJ(obj) COM_FORWARD_IDHCPServer_GETTER_Enabled_TO ((obj)->)
 #define COM_FORWARD_IDHCPServer_GETTER_Enabled_TO_BASE(base) COM_FORWARD_IDHCPServer_GETTER_Enabled_TO (base::)
@@ -1796,6 +2320,27 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IDHCPServer_GETTER_UpperIP_TO(smth) HRESULT STDMETHODCALLTYPE get_UpperIP (BSTR * aUpperIP) { return smth get_UpperIP (aUpperIP); }
 #define COM_FORWARD_IDHCPServer_GETTER_UpperIP_TO_OBJ(obj) COM_FORWARD_IDHCPServer_GETTER_UpperIP_TO ((obj)->)
 #define COM_FORWARD_IDHCPServer_GETTER_UpperIP_TO_BASE(base) COM_FORWARD_IDHCPServer_GETTER_UpperIP_TO (base::)
+#define COM_FORWARD_IDHCPServer_GETTER_GlobalOptions_TO(smth) HRESULT STDMETHODCALLTYPE get_GlobalOptions (SAFEARRAY * * aGlobalOptions) { return smth get_GlobalOptions (aGlobalOptions); }
+#define COM_FORWARD_IDHCPServer_GETTER_GlobalOptions_TO_OBJ(obj) COM_FORWARD_IDHCPServer_GETTER_GlobalOptions_TO ((obj)->)
+#define COM_FORWARD_IDHCPServer_GETTER_GlobalOptions_TO_BASE(base) COM_FORWARD_IDHCPServer_GETTER_GlobalOptions_TO (base::)
+#define COM_FORWARD_IDHCPServer_GETTER_VmConfigs_TO(smth) HRESULT STDMETHODCALLTYPE get_VmConfigs (SAFEARRAY * * aVmConfigs) { return smth get_VmConfigs (aVmConfigs); }
+#define COM_FORWARD_IDHCPServer_GETTER_VmConfigs_TO_OBJ(obj) COM_FORWARD_IDHCPServer_GETTER_VmConfigs_TO ((obj)->)
+#define COM_FORWARD_IDHCPServer_GETTER_VmConfigs_TO_BASE(base) COM_FORWARD_IDHCPServer_GETTER_VmConfigs_TO (base::)
+#define COM_FORWARD_IDHCPServer_AddGlobalOption_TO(smth) HRESULT STDMETHODCALLTYPE AddGlobalOption (DhcpOpt aOption, BSTR aValue) { return smth AddGlobalOption (aOption, aValue); }
+#define COM_FORWARD_IDHCPServer_AddGlobalOption_TO_OBJ(obj) COM_FORWARD_IDHCPServer_AddGlobalOption_TO ((obj)->)
+#define COM_FORWARD_IDHCPServer_AddGlobalOption_TO_BASE(base) COM_FORWARD_IDHCPServer_AddGlobalOption_TO (base::)
+#define COM_FORWARD_IDHCPServer_AddVmSlotOption_TO(smth) HRESULT STDMETHODCALLTYPE AddVmSlotOption (BSTR aVmname, LONG aSlot, DhcpOpt aOption, BSTR aValue) { return smth AddVmSlotOption (aVmname, aSlot, aOption, aValue); }
+#define COM_FORWARD_IDHCPServer_AddVmSlotOption_TO_OBJ(obj) COM_FORWARD_IDHCPServer_AddVmSlotOption_TO ((obj)->)
+#define COM_FORWARD_IDHCPServer_AddVmSlotOption_TO_BASE(base) COM_FORWARD_IDHCPServer_AddVmSlotOption_TO (base::)
+#define COM_FORWARD_IDHCPServer_RemoveVmSlotOptions_TO(smth) HRESULT STDMETHODCALLTYPE RemoveVmSlotOptions (BSTR aVmname, LONG aSlot) { return smth RemoveVmSlotOptions (aVmname, aSlot); }
+#define COM_FORWARD_IDHCPServer_RemoveVmSlotOptions_TO_OBJ(obj) COM_FORWARD_IDHCPServer_RemoveVmSlotOptions_TO ((obj)->)
+#define COM_FORWARD_IDHCPServer_RemoveVmSlotOptions_TO_BASE(base) COM_FORWARD_IDHCPServer_RemoveVmSlotOptions_TO (base::)
+#define COM_FORWARD_IDHCPServer_GetVmSlotOptions_TO(smth) HRESULT STDMETHODCALLTYPE GetVmSlotOptions (BSTR aVmname, LONG aSlot, SAFEARRAY * * aOption) { return smth GetVmSlotOptions (aVmname, aSlot, aOption); }
+#define COM_FORWARD_IDHCPServer_GetVmSlotOptions_TO_OBJ(obj) COM_FORWARD_IDHCPServer_GetVmSlotOptions_TO ((obj)->)
+#define COM_FORWARD_IDHCPServer_GetVmSlotOptions_TO_BASE(base) COM_FORWARD_IDHCPServer_GetVmSlotOptions_TO (base::)
+#define COM_FORWARD_IDHCPServer_GetMacOptions_TO(smth) HRESULT STDMETHODCALLTYPE GetMacOptions (BSTR aMac, SAFEARRAY * * aOption) { return smth GetMacOptions (aMac, aOption); }
+#define COM_FORWARD_IDHCPServer_GetMacOptions_TO_OBJ(obj) COM_FORWARD_IDHCPServer_GetMacOptions_TO ((obj)->)
+#define COM_FORWARD_IDHCPServer_GetMacOptions_TO_BASE(base) COM_FORWARD_IDHCPServer_GetMacOptions_TO (base::)
 #define COM_FORWARD_IDHCPServer_SetConfiguration_TO(smth) HRESULT STDMETHODCALLTYPE SetConfiguration (BSTR aIPAddress, BSTR aNetworkMask, BSTR aFromIPAddress, BSTR aToIPAddress) { return smth SetConfiguration (aIPAddress, aNetworkMask, aFromIPAddress, aToIPAddress); }
 #define COM_FORWARD_IDHCPServer_SetConfiguration_TO_OBJ(obj) COM_FORWARD_IDHCPServer_SetConfiguration_TO ((obj)->)
 #define COM_FORWARD_IDHCPServer_SetConfiguration_TO_BASE(base) COM_FORWARD_IDHCPServer_SetConfiguration_TO (base::)
@@ -1805,7 +2350,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IDHCPServer_Stop_TO(smth) HRESULT STDMETHODCALLTYPE Stop() { return smth Stop(); }
 #define COM_FORWARD_IDHCPServer_Stop_TO_OBJ(obj) COM_FORWARD_IDHCPServer_Stop_TO ((obj)->)
 #define COM_FORWARD_IDHCPServer_Stop_TO_BASE(base) COM_FORWARD_IDHCPServer_Stop_TO (base::)
-#define COM_FORWARD_IDHCPServer_TO(smth) COM_FORWARD_IDHCPServer_GETTER_Enabled_TO (smth) COM_FORWARD_IDHCPServer_SETTER_Enabled_TO (smth) COM_FORWARD_IDHCPServer_GETTER_IPAddress_TO (smth) COM_FORWARD_IDHCPServer_GETTER_NetworkMask_TO (smth) COM_FORWARD_IDHCPServer_GETTER_NetworkName_TO (smth) COM_FORWARD_IDHCPServer_GETTER_LowerIP_TO (smth) COM_FORWARD_IDHCPServer_GETTER_UpperIP_TO (smth) COM_FORWARD_IDHCPServer_SetConfiguration_TO (smth) COM_FORWARD_IDHCPServer_Start_TO (smth) COM_FORWARD_IDHCPServer_Stop_TO (smth) 
+#define COM_FORWARD_IDHCPServer_TO(smth) COM_FORWARD_IDHCPServer_GETTER_EventSource_TO (smth) COM_FORWARD_IDHCPServer_GETTER_Enabled_TO (smth) COM_FORWARD_IDHCPServer_SETTER_Enabled_TO (smth) COM_FORWARD_IDHCPServer_GETTER_IPAddress_TO (smth) COM_FORWARD_IDHCPServer_GETTER_NetworkMask_TO (smth) COM_FORWARD_IDHCPServer_GETTER_NetworkName_TO (smth) COM_FORWARD_IDHCPServer_GETTER_LowerIP_TO (smth) COM_FORWARD_IDHCPServer_GETTER_UpperIP_TO (smth) COM_FORWARD_IDHCPServer_GETTER_GlobalOptions_TO (smth) COM_FORWARD_IDHCPServer_GETTER_VmConfigs_TO (smth) COM_FORWARD_IDHCPServer_AddGlobalOption_TO (smth) COM_FORWARD_IDHCPServer_AddVmSlotOption_TO (smth) COM_FORWARD_IDHCPServer_RemoveVmSlotOptions_TO (smth) COM_FORWARD_IDHCPServer_GetVmSlotOptions_TO (smth) COM_FORWARD_IDHCPServer_GetMacOptions_TO (smth) COM_FORWARD_IDHCPServer_SetConfiguration_TO (smth) COM_FORWARD_IDHCPServer_Start_TO (smth) COM_FORWARD_IDHCPServer_Stop_TO (smth) 
 #define COM_FORWARD_IDHCPServer_TO_OBJ(obj) COM_FORWARD_IDHCPServer_TO ((obj)->)
 #define COM_FORWARD_IDHCPServer_TO_BASE(base) COM_FORWARD_IDHCPServer_TO (base::)
 #define COM_FORWARD_IVirtualBox_GETTER_Version_TO(smth) HRESULT STDMETHODCALLTYPE get_Version (BSTR * aVersion) { return smth get_Version (aVersion); }
@@ -1865,6 +2410,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IVirtualBox_GETTER_DHCPServers_TO(smth) HRESULT STDMETHODCALLTYPE get_DHCPServers (SAFEARRAY * * aDHCPServers) { return smth get_DHCPServers (aDHCPServers); }
 #define COM_FORWARD_IVirtualBox_GETTER_DHCPServers_TO_OBJ(obj) COM_FORWARD_IVirtualBox_GETTER_DHCPServers_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_GETTER_DHCPServers_TO_BASE(base) COM_FORWARD_IVirtualBox_GETTER_DHCPServers_TO (base::)
+#define COM_FORWARD_IVirtualBox_GETTER_NATNetworks_TO(smth) HRESULT STDMETHODCALLTYPE get_NATNetworks (SAFEARRAY * * aNATNetworks) { return smth get_NATNetworks (aNATNetworks); }
+#define COM_FORWARD_IVirtualBox_GETTER_NATNetworks_TO_OBJ(obj) COM_FORWARD_IVirtualBox_GETTER_NATNetworks_TO ((obj)->)
+#define COM_FORWARD_IVirtualBox_GETTER_NATNetworks_TO_BASE(base) COM_FORWARD_IVirtualBox_GETTER_NATNetworks_TO (base::)
 #define COM_FORWARD_IVirtualBox_GETTER_EventSource_TO(smth) HRESULT STDMETHODCALLTYPE get_EventSource (IEventSource * * aEventSource) { return smth get_EventSource (aEventSource); }
 #define COM_FORWARD_IVirtualBox_GETTER_EventSource_TO_OBJ(obj) COM_FORWARD_IVirtualBox_GETTER_EventSource_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_GETTER_EventSource_TO_BASE(base) COM_FORWARD_IVirtualBox_GETTER_EventSource_TO (base::)
@@ -1916,7 +2464,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IVirtualBox_RemoveSharedFolder_TO(smth) HRESULT STDMETHODCALLTYPE RemoveSharedFolder (BSTR aName) { return smth RemoveSharedFolder (aName); }
 #define COM_FORWARD_IVirtualBox_RemoveSharedFolder_TO_OBJ(obj) COM_FORWARD_IVirtualBox_RemoveSharedFolder_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_RemoveSharedFolder_TO_BASE(base) COM_FORWARD_IVirtualBox_RemoveSharedFolder_TO (base::)
-#define COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO(smth) HRESULT STDMETHODCALLTYPE GetExtraDataKeys (SAFEARRAY * * aValue) { return smth GetExtraDataKeys (aValue); }
+#define COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO(smth) HRESULT STDMETHODCALLTYPE GetExtraDataKeys (SAFEARRAY * * aKeys) { return smth GetExtraDataKeys (aKeys); }
 #define COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO_OBJ(obj) COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO_BASE(base) COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO (base::)
 #define COM_FORWARD_IVirtualBox_GetExtraData_TO(smth) HRESULT STDMETHODCALLTYPE GetExtraData (BSTR aKey, BSTR * aValue) { return smth GetExtraData (aKey, aValue); }
@@ -1937,10 +2485,19 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IVirtualBox_RemoveDHCPServer_TO(smth) HRESULT STDMETHODCALLTYPE RemoveDHCPServer (IDHCPServer * aServer) { return smth RemoveDHCPServer (aServer); }
 #define COM_FORWARD_IVirtualBox_RemoveDHCPServer_TO_OBJ(obj) COM_FORWARD_IVirtualBox_RemoveDHCPServer_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_RemoveDHCPServer_TO_BASE(base) COM_FORWARD_IVirtualBox_RemoveDHCPServer_TO (base::)
+#define COM_FORWARD_IVirtualBox_CreateNATNetwork_TO(smth) HRESULT STDMETHODCALLTYPE CreateNATNetwork (BSTR aNetworkName, INATNetwork * * aNetwork) { return smth CreateNATNetwork (aNetworkName, aNetwork); }
+#define COM_FORWARD_IVirtualBox_CreateNATNetwork_TO_OBJ(obj) COM_FORWARD_IVirtualBox_CreateNATNetwork_TO ((obj)->)
+#define COM_FORWARD_IVirtualBox_CreateNATNetwork_TO_BASE(base) COM_FORWARD_IVirtualBox_CreateNATNetwork_TO (base::)
+#define COM_FORWARD_IVirtualBox_FindNATNetworkByName_TO(smth) HRESULT STDMETHODCALLTYPE FindNATNetworkByName (BSTR aNetworkName, INATNetwork * * aNetwork) { return smth FindNATNetworkByName (aNetworkName, aNetwork); }
+#define COM_FORWARD_IVirtualBox_FindNATNetworkByName_TO_OBJ(obj) COM_FORWARD_IVirtualBox_FindNATNetworkByName_TO ((obj)->)
+#define COM_FORWARD_IVirtualBox_FindNATNetworkByName_TO_BASE(base) COM_FORWARD_IVirtualBox_FindNATNetworkByName_TO (base::)
+#define COM_FORWARD_IVirtualBox_RemoveNATNetwork_TO(smth) HRESULT STDMETHODCALLTYPE RemoveNATNetwork (INATNetwork * aNetwork) { return smth RemoveNATNetwork (aNetwork); }
+#define COM_FORWARD_IVirtualBox_RemoveNATNetwork_TO_OBJ(obj) COM_FORWARD_IVirtualBox_RemoveNATNetwork_TO ((obj)->)
+#define COM_FORWARD_IVirtualBox_RemoveNATNetwork_TO_BASE(base) COM_FORWARD_IVirtualBox_RemoveNATNetwork_TO (base::)
 #define COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO(smth) HRESULT STDMETHODCALLTYPE CheckFirmwarePresent (FirmwareType aFirmwareType, BSTR aVersion, BSTR * aUrl, BSTR * aFile, BOOL * aResult) { return smth CheckFirmwarePresent (aFirmwareType, aVersion, aUrl, aFile, aResult); }
 #define COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO_OBJ(obj) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO_BASE(base) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO (base::)
-#define COM_FORWARD_IVirtualBox_TO(smth) COM_FORWARD_IVirtualBox_GETTER_Version_TO (smth) COM_FORWARD_IVirtualBox_GETTER_VersionNormalized_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Revision_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PackageType_TO (smth) COM_FORWARD_IVirtualBox_GETTER_APIVersion_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HomeFolder_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Host_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SystemProperties_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Machines_TO (smth) COM_FORWARD_IVirtualBox_GETTER_MachineGroups_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HardDisks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DVDImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_FloppyImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ProgressOperations_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GuestOSTypes_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SharedFolders_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PerformanceCollector_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DHCPServers_TO (smth) COM_FORWARD_IVirtualBox_GETTER_EventSource_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ExtensionPackManager_TO (smth) COM_FORWARD_IVirtualBox_GETTER_InternalNetworks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GenericNetworkDrivers_TO (smth) COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO (smth) COM_FORWARD_IVirtualBox_CreateMachine_TO (smth) COM_FORWARD_IVirtualBox_OpenMachine_TO (smth) COM_FORWARD_IVirtualBox_RegisterMachine_TO (smth) COM_FORWARD_IVirtualBox_FindMachine_TO (smth) COM_FORWARD_IVirtualBox_GetMachinesByGroups_TO (smth) COM_FORWARD_IVirtualBox_GetMachineStates_TO (smth) COM_FORWARD_IVirtualBox_CreateAppliance_TO (smth) COM_FORWARD_IVirtualBox_CreateHardDisk_TO (smth) COM_FORWARD_IVirtualBox_OpenMedium_TO (smth) COM_FORWARD_IVirtualBox_GetGuestOSType_TO (smth) COM_FORWARD_IVirtualBox_CreateSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_RemoveSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO (smth) COM_FORWARD_IVirtualBox_GetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetSettingsSecret_TO (smth) COM_FORWARD_IVirtualBox_CreateDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_FindDHCPServerByNetworkName_TO (smth) COM_FORWARD_IVirtualBox_RemoveDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO (smth) 
+#define COM_FORWARD_IVirtualBox_TO(smth) COM_FORWARD_IVirtualBox_GETTER_Version_TO (smth) COM_FORWARD_IVirtualBox_GETTER_VersionNormalized_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Revision_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PackageType_TO (smth) COM_FORWARD_IVirtualBox_GETTER_APIVersion_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HomeFolder_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Host_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SystemProperties_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Machines_TO (smth) COM_FORWARD_IVirtualBox_GETTER_MachineGroups_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HardDisks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DVDImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_FloppyImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ProgressOperations_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GuestOSTypes_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SharedFolders_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PerformanceCollector_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DHCPServers_TO (smth) COM_FORWARD_IVirtualBox_GETTER_NATNetworks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_EventSource_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ExtensionPackManager_TO (smth) COM_FORWARD_IVirtualBox_GETTER_InternalNetworks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GenericNetworkDrivers_TO (smth) COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO (smth) COM_FORWARD_IVirtualBox_CreateMachine_TO (smth) COM_FORWARD_IVirtualBox_OpenMachine_TO (smth) COM_FORWARD_IVirtualBox_RegisterMachine_TO (smth) COM_FORWARD_IVirtualBox_FindMachine_TO (smth) COM_FORWARD_IVirtualBox_GetMachinesByGroups_TO (smth) COM_FORWARD_IVirtualBox_GetMachineStates_TO (smth) COM_FORWARD_IVirtualBox_CreateAppliance_TO (smth) COM_FORWARD_IVirtualBox_CreateHardDisk_TO (smth) COM_FORWARD_IVirtualBox_OpenMedium_TO (smth) COM_FORWARD_IVirtualBox_GetGuestOSType_TO (smth) COM_FORWARD_IVirtualBox_CreateSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_RemoveSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO (smth) COM_FORWARD_IVirtualBox_GetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetSettingsSecret_TO (smth) COM_FORWARD_IVirtualBox_CreateDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_FindDHCPServerByNetworkName_TO (smth) COM_FORWARD_IVirtualBox_RemoveDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_CreateNATNetwork_TO (smth) COM_FORWARD_IVirtualBox_FindNATNetworkByName_TO (smth) COM_FORWARD_IVirtualBox_RemoveNATNetwork_TO (smth) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO (smth) 
 #define COM_FORWARD_IVirtualBox_TO_OBJ(obj) COM_FORWARD_IVirtualBox_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_TO_BASE(base) COM_FORWARD_IVirtualBox_TO (base::)
 #define COM_FORWARD_IVFSExplorer_GETTER_Path_TO(smth) HRESULT STDMETHODCALLTYPE get_Path (BSTR * aPath) { return smth get_Path (aPath); }
@@ -1949,22 +2506,22 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IVFSExplorer_GETTER_Type_TO(smth) HRESULT STDMETHODCALLTYPE get_Type (VFSType * aType) { return smth get_Type (aType); }
 #define COM_FORWARD_IVFSExplorer_GETTER_Type_TO_OBJ(obj) COM_FORWARD_IVFSExplorer_GETTER_Type_TO ((obj)->)
 #define COM_FORWARD_IVFSExplorer_GETTER_Type_TO_BASE(base) COM_FORWARD_IVFSExplorer_GETTER_Type_TO (base::)
-#define COM_FORWARD_IVFSExplorer_Update_TO(smth) HRESULT STDMETHODCALLTYPE Update (IProgress * * aAProgress) { return smth Update (aAProgress); }
+#define COM_FORWARD_IVFSExplorer_Update_TO(smth) HRESULT STDMETHODCALLTYPE Update (IProgress * * aProgress) { return smth Update (aProgress); }
 #define COM_FORWARD_IVFSExplorer_Update_TO_OBJ(obj) COM_FORWARD_IVFSExplorer_Update_TO ((obj)->)
 #define COM_FORWARD_IVFSExplorer_Update_TO_BASE(base) COM_FORWARD_IVFSExplorer_Update_TO (base::)
-#define COM_FORWARD_IVFSExplorer_Cd_TO(smth) HRESULT STDMETHODCALLTYPE Cd (BSTR aADir, IProgress * * aAProgress) { return smth Cd (aADir, aAProgress); }
+#define COM_FORWARD_IVFSExplorer_Cd_TO(smth) HRESULT STDMETHODCALLTYPE Cd (BSTR aDir, IProgress * * aProgress) { return smth Cd (aDir, aProgress); }
 #define COM_FORWARD_IVFSExplorer_Cd_TO_OBJ(obj) COM_FORWARD_IVFSExplorer_Cd_TO ((obj)->)
 #define COM_FORWARD_IVFSExplorer_Cd_TO_BASE(base) COM_FORWARD_IVFSExplorer_Cd_TO (base::)
-#define COM_FORWARD_IVFSExplorer_CdUp_TO(smth) HRESULT STDMETHODCALLTYPE CdUp (IProgress * * aAProgress) { return smth CdUp (aAProgress); }
+#define COM_FORWARD_IVFSExplorer_CdUp_TO(smth) HRESULT STDMETHODCALLTYPE CdUp (IProgress * * aProgress) { return smth CdUp (aProgress); }
 #define COM_FORWARD_IVFSExplorer_CdUp_TO_OBJ(obj) COM_FORWARD_IVFSExplorer_CdUp_TO ((obj)->)
 #define COM_FORWARD_IVFSExplorer_CdUp_TO_BASE(base) COM_FORWARD_IVFSExplorer_CdUp_TO (base::)
-#define COM_FORWARD_IVFSExplorer_EntryList_TO(smth) HRESULT STDMETHODCALLTYPE EntryList (SAFEARRAY * * aANames, SAFEARRAY * * aATypes, SAFEARRAY * * aASizes, SAFEARRAY * * aAModes) { return smth EntryList (aANames, aATypes, aASizes, aAModes); }
+#define COM_FORWARD_IVFSExplorer_EntryList_TO(smth) HRESULT STDMETHODCALLTYPE EntryList (SAFEARRAY * * aNames, SAFEARRAY * * aTypes, SAFEARRAY * * aSizes, SAFEARRAY * * aModes) { return smth EntryList (aNames, aTypes, aSizes, aModes); }
 #define COM_FORWARD_IVFSExplorer_EntryList_TO_OBJ(obj) COM_FORWARD_IVFSExplorer_EntryList_TO ((obj)->)
 #define COM_FORWARD_IVFSExplorer_EntryList_TO_BASE(base) COM_FORWARD_IVFSExplorer_EntryList_TO (base::)
-#define COM_FORWARD_IVFSExplorer_Exists_TO(smth) HRESULT STDMETHODCALLTYPE Exists (SAFEARRAY * * aANames, SAFEARRAY * * aAExists) { return smth Exists (aANames, aAExists); }
+#define COM_FORWARD_IVFSExplorer_Exists_TO(smth) HRESULT STDMETHODCALLTYPE Exists (SAFEARRAY * * aNames, SAFEARRAY * * aExists) { return smth Exists (aNames, aExists); }
 #define COM_FORWARD_IVFSExplorer_Exists_TO_OBJ(obj) COM_FORWARD_IVFSExplorer_Exists_TO ((obj)->)
 #define COM_FORWARD_IVFSExplorer_Exists_TO_BASE(base) COM_FORWARD_IVFSExplorer_Exists_TO (base::)
-#define COM_FORWARD_IVFSExplorer_Remove_TO(smth) HRESULT STDMETHODCALLTYPE Remove (SAFEARRAY * * aANames, IProgress * * aAProgress) { return smth Remove (aANames, aAProgress); }
+#define COM_FORWARD_IVFSExplorer_Remove_TO(smth) HRESULT STDMETHODCALLTYPE Remove (SAFEARRAY * * aNames, IProgress * * aProgress) { return smth Remove (aNames, aProgress); }
 #define COM_FORWARD_IVFSExplorer_Remove_TO_OBJ(obj) COM_FORWARD_IVFSExplorer_Remove_TO ((obj)->)
 #define COM_FORWARD_IVFSExplorer_Remove_TO_BASE(base) COM_FORWARD_IVFSExplorer_Remove_TO (base::)
 #define COM_FORWARD_IVFSExplorer_TO(smth) COM_FORWARD_IVFSExplorer_GETTER_Path_TO (smth) COM_FORWARD_IVFSExplorer_GETTER_Type_TO (smth) COM_FORWARD_IVFSExplorer_Update_TO (smth) COM_FORWARD_IVFSExplorer_Cd_TO (smth) COM_FORWARD_IVFSExplorer_CdUp_TO (smth) COM_FORWARD_IVFSExplorer_EntryList_TO (smth) COM_FORWARD_IVFSExplorer_Exists_TO (smth) COM_FORWARD_IVFSExplorer_Remove_TO (smth) 
@@ -1982,22 +2539,22 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IAppliance_GETTER_Machines_TO(smth) HRESULT STDMETHODCALLTYPE get_Machines (SAFEARRAY * * aMachines) { return smth get_Machines (aMachines); }
 #define COM_FORWARD_IAppliance_GETTER_Machines_TO_OBJ(obj) COM_FORWARD_IAppliance_GETTER_Machines_TO ((obj)->)
 #define COM_FORWARD_IAppliance_GETTER_Machines_TO_BASE(base) COM_FORWARD_IAppliance_GETTER_Machines_TO (base::)
-#define COM_FORWARD_IAppliance_Read_TO(smth) HRESULT STDMETHODCALLTYPE Read (BSTR aFile, IProgress * * aAProgress) { return smth Read (aFile, aAProgress); }
+#define COM_FORWARD_IAppliance_Read_TO(smth) HRESULT STDMETHODCALLTYPE Read (BSTR aFile, IProgress * * aProgress) { return smth Read (aFile, aProgress); }
 #define COM_FORWARD_IAppliance_Read_TO_OBJ(obj) COM_FORWARD_IAppliance_Read_TO ((obj)->)
 #define COM_FORWARD_IAppliance_Read_TO_BASE(base) COM_FORWARD_IAppliance_Read_TO (base::)
 #define COM_FORWARD_IAppliance_Interpret_TO(smth) HRESULT STDMETHODCALLTYPE Interpret() { return smth Interpret(); }
 #define COM_FORWARD_IAppliance_Interpret_TO_OBJ(obj) COM_FORWARD_IAppliance_Interpret_TO ((obj)->)
 #define COM_FORWARD_IAppliance_Interpret_TO_BASE(base) COM_FORWARD_IAppliance_Interpret_TO (base::)
-#define COM_FORWARD_IAppliance_ImportMachines_TO(smth) HRESULT STDMETHODCALLTYPE ImportMachines (SAFEARRAY * * aOptions, IProgress * * aAProgress) { return smth ImportMachines (aOptions, aAProgress); }
+#define COM_FORWARD_IAppliance_ImportMachines_TO(smth) HRESULT STDMETHODCALLTYPE ImportMachines (SAFEARRAY * * aOptions, IProgress * * aProgress) { return smth ImportMachines (aOptions, aProgress); }
 #define COM_FORWARD_IAppliance_ImportMachines_TO_OBJ(obj) COM_FORWARD_IAppliance_ImportMachines_TO ((obj)->)
 #define COM_FORWARD_IAppliance_ImportMachines_TO_BASE(base) COM_FORWARD_IAppliance_ImportMachines_TO (base::)
-#define COM_FORWARD_IAppliance_CreateVFSExplorer_TO(smth) HRESULT STDMETHODCALLTYPE CreateVFSExplorer (BSTR aAUri, IVFSExplorer * * aAExplorer) { return smth CreateVFSExplorer (aAUri, aAExplorer); }
+#define COM_FORWARD_IAppliance_CreateVFSExplorer_TO(smth) HRESULT STDMETHODCALLTYPE CreateVFSExplorer (BSTR aURI, IVFSExplorer * * aExplorer) { return smth CreateVFSExplorer (aURI, aExplorer); }
 #define COM_FORWARD_IAppliance_CreateVFSExplorer_TO_OBJ(obj) COM_FORWARD_IAppliance_CreateVFSExplorer_TO ((obj)->)
 #define COM_FORWARD_IAppliance_CreateVFSExplorer_TO_BASE(base) COM_FORWARD_IAppliance_CreateVFSExplorer_TO (base::)
-#define COM_FORWARD_IAppliance_Write_TO(smth) HRESULT STDMETHODCALLTYPE Write (BSTR aFormat, BOOL aManifest, BSTR aPath, IProgress * * aProgress) { return smth Write (aFormat, aManifest, aPath, aProgress); }
+#define COM_FORWARD_IAppliance_Write_TO(smth) HRESULT STDMETHODCALLTYPE Write (BSTR aFormat, SAFEARRAY * * aOptions, BSTR aPath, IProgress * * aProgress) { return smth Write (aFormat, aOptions, aPath, aProgress); }
 #define COM_FORWARD_IAppliance_Write_TO_OBJ(obj) COM_FORWARD_IAppliance_Write_TO ((obj)->)
 #define COM_FORWARD_IAppliance_Write_TO_BASE(base) COM_FORWARD_IAppliance_Write_TO (base::)
-#define COM_FORWARD_IAppliance_GetWarnings_TO(smth) HRESULT STDMETHODCALLTYPE GetWarnings (SAFEARRAY * * aAWarnings) { return smth GetWarnings (aAWarnings); }
+#define COM_FORWARD_IAppliance_GetWarnings_TO(smth) HRESULT STDMETHODCALLTYPE GetWarnings (SAFEARRAY * * aWarnings) { return smth GetWarnings (aWarnings); }
 #define COM_FORWARD_IAppliance_GetWarnings_TO_OBJ(obj) COM_FORWARD_IAppliance_GetWarnings_TO ((obj)->)
 #define COM_FORWARD_IAppliance_GetWarnings_TO_BASE(base) COM_FORWARD_IAppliance_GetWarnings_TO (base::)
 #define COM_FORWARD_IAppliance_TO(smth) COM_FORWARD_IAppliance_GETTER_Path_TO (smth) COM_FORWARD_IAppliance_GETTER_Disks_TO (smth) COM_FORWARD_IAppliance_GETTER_VirtualSystemDescriptions_TO (smth) COM_FORWARD_IAppliance_GETTER_Machines_TO (smth) COM_FORWARD_IAppliance_Read_TO (smth) COM_FORWARD_IAppliance_Interpret_TO (smth) COM_FORWARD_IAppliance_ImportMachines_TO (smth) COM_FORWARD_IAppliance_CreateVFSExplorer_TO (smth) COM_FORWARD_IAppliance_Write_TO (smth) COM_FORWARD_IAppliance_GetWarnings_TO (smth) 
@@ -2006,34 +2563,31 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IVirtualSystemDescription_GETTER_Count_TO(smth) HRESULT STDMETHODCALLTYPE get_Count (ULONG * aCount) { return smth get_Count (aCount); }
 #define COM_FORWARD_IVirtualSystemDescription_GETTER_Count_TO_OBJ(obj) COM_FORWARD_IVirtualSystemDescription_GETTER_Count_TO ((obj)->)
 #define COM_FORWARD_IVirtualSystemDescription_GETTER_Count_TO_BASE(base) COM_FORWARD_IVirtualSystemDescription_GETTER_Count_TO (base::)
-#define COM_FORWARD_IVirtualSystemDescription_GetDescription_TO(smth) HRESULT STDMETHODCALLTYPE GetDescription (SAFEARRAY * * aATypes, SAFEARRAY * * aARefs, SAFEARRAY * * aAOvfValues, SAFEARRAY * * aAVBoxValues, SAFEARRAY * * aAExtraConfigValues) { return smth GetDescription (aATypes, aARefs, aAOvfValues, aAVBoxValues, aAExtraConfigValues); }
+#define COM_FORWARD_IVirtualSystemDescription_GetDescription_TO(smth) HRESULT STDMETHODCALLTYPE GetDescription (SAFEARRAY * * aTypes, SAFEARRAY * * aRefs, SAFEARRAY * * aOVFValues, SAFEARRAY * * aVBoxValues, SAFEARRAY * * aExtraConfigValues) { return smth GetDescription (aTypes, aRefs, aOVFValues, aVBoxValues, aExtraConfigValues); }
 #define COM_FORWARD_IVirtualSystemDescription_GetDescription_TO_OBJ(obj) COM_FORWARD_IVirtualSystemDescription_GetDescription_TO ((obj)->)
 #define COM_FORWARD_IVirtualSystemDescription_GetDescription_TO_BASE(base) COM_FORWARD_IVirtualSystemDescription_GetDescription_TO (base::)
-#define COM_FORWARD_IVirtualSystemDescription_GetDescriptionByType_TO(smth) HRESULT STDMETHODCALLTYPE GetDescriptionByType (VirtualSystemDescriptionType aAType, SAFEARRAY * * aATypes, SAFEARRAY * * aARefs, SAFEARRAY * * aAOvfValues, SAFEARRAY * * aAVBoxValues, SAFEARRAY * * aAExtraConfigValues) { return smth GetDescriptionByType (aAType, aATypes, aARefs, aAOvfValues, aAVBoxValues, aAExtraConfigValues); }
+#define COM_FORWARD_IVirtualSystemDescription_GetDescriptionByType_TO(smth) HRESULT STDMETHODCALLTYPE GetDescriptionByType (VirtualSystemDescriptionType aType, SAFEARRAY * * aTypes, SAFEARRAY * * aRefs, SAFEARRAY * * aOVFValues, SAFEARRAY * * aVBoxValues, SAFEARRAY * * aExtraConfigValues) { return smth GetDescriptionByType (aType, aTypes, aRefs, aOVFValues, aVBoxValues, aExtraConfigValues); }
 #define COM_FORWARD_IVirtualSystemDescription_GetDescriptionByType_TO_OBJ(obj) COM_FORWARD_IVirtualSystemDescription_GetDescriptionByType_TO ((obj)->)
 #define COM_FORWARD_IVirtualSystemDescription_GetDescriptionByType_TO_BASE(base) COM_FORWARD_IVirtualSystemDescription_GetDescriptionByType_TO (base::)
-#define COM_FORWARD_IVirtualSystemDescription_GetValuesByType_TO(smth) HRESULT STDMETHODCALLTYPE GetValuesByType (VirtualSystemDescriptionType aAType, VirtualSystemDescriptionValueType aAWhich, SAFEARRAY * * aAValues) { return smth GetValuesByType (aAType, aAWhich, aAValues); }
+#define COM_FORWARD_IVirtualSystemDescription_GetValuesByType_TO(smth) HRESULT STDMETHODCALLTYPE GetValuesByType (VirtualSystemDescriptionType aType, VirtualSystemDescriptionValueType aWhich, SAFEARRAY * * aValues) { return smth GetValuesByType (aType, aWhich, aValues); }
 #define COM_FORWARD_IVirtualSystemDescription_GetValuesByType_TO_OBJ(obj) COM_FORWARD_IVirtualSystemDescription_GetValuesByType_TO ((obj)->)
 #define COM_FORWARD_IVirtualSystemDescription_GetValuesByType_TO_BASE(base) COM_FORWARD_IVirtualSystemDescription_GetValuesByType_TO (base::)
-#define COM_FORWARD_IVirtualSystemDescription_SetFinalValues_TO(smth) HRESULT STDMETHODCALLTYPE SetFinalValues (SAFEARRAY * * aAEnabled, SAFEARRAY * * aAVBoxValues, SAFEARRAY * * aAExtraConfigValues) { return smth SetFinalValues (aAEnabled, aAVBoxValues, aAExtraConfigValues); }
+#define COM_FORWARD_IVirtualSystemDescription_SetFinalValues_TO(smth) HRESULT STDMETHODCALLTYPE SetFinalValues (SAFEARRAY * * aEnabled, SAFEARRAY * * aVBoxValues, SAFEARRAY * * aExtraConfigValues) { return smth SetFinalValues (aEnabled, aVBoxValues, aExtraConfigValues); }
 #define COM_FORWARD_IVirtualSystemDescription_SetFinalValues_TO_OBJ(obj) COM_FORWARD_IVirtualSystemDescription_SetFinalValues_TO ((obj)->)
 #define COM_FORWARD_IVirtualSystemDescription_SetFinalValues_TO_BASE(base) COM_FORWARD_IVirtualSystemDescription_SetFinalValues_TO (base::)
-#define COM_FORWARD_IVirtualSystemDescription_AddDescription_TO(smth) HRESULT STDMETHODCALLTYPE AddDescription (VirtualSystemDescriptionType aAType, BSTR aAVBoxValue, BSTR aAExtraConfigValue) { return smth AddDescription (aAType, aAVBoxValue, aAExtraConfigValue); }
+#define COM_FORWARD_IVirtualSystemDescription_AddDescription_TO(smth) HRESULT STDMETHODCALLTYPE AddDescription (VirtualSystemDescriptionType aType, BSTR aVBoxValue, BSTR aExtraConfigValue) { return smth AddDescription (aType, aVBoxValue, aExtraConfigValue); }
 #define COM_FORWARD_IVirtualSystemDescription_AddDescription_TO_OBJ(obj) COM_FORWARD_IVirtualSystemDescription_AddDescription_TO ((obj)->)
 #define COM_FORWARD_IVirtualSystemDescription_AddDescription_TO_BASE(base) COM_FORWARD_IVirtualSystemDescription_AddDescription_TO (base::)
 #define COM_FORWARD_IVirtualSystemDescription_TO(smth) COM_FORWARD_IVirtualSystemDescription_GETTER_Count_TO (smth) COM_FORWARD_IVirtualSystemDescription_GetDescription_TO (smth) COM_FORWARD_IVirtualSystemDescription_GetDescriptionByType_TO (smth) COM_FORWARD_IVirtualSystemDescription_GetValuesByType_TO (smth) COM_FORWARD_IVirtualSystemDescription_SetFinalValues_TO (smth) COM_FORWARD_IVirtualSystemDescription_AddDescription_TO (smth) 
 #define COM_FORWARD_IVirtualSystemDescription_TO_OBJ(obj) COM_FORWARD_IVirtualSystemDescription_TO ((obj)->)
 #define COM_FORWARD_IVirtualSystemDescription_TO_BASE(base) COM_FORWARD_IVirtualSystemDescription_TO (base::)
-#define COM_FORWARD_IInternalMachineControl_SetRemoveSavedStateFile_TO(smth) HRESULT STDMETHODCALLTYPE SetRemoveSavedStateFile (BOOL aARemove) { return smth SetRemoveSavedStateFile (aARemove); }
+#define COM_FORWARD_IInternalMachineControl_SetRemoveSavedStateFile_TO(smth) HRESULT STDMETHODCALLTYPE SetRemoveSavedStateFile (BOOL aRemove) { return smth SetRemoveSavedStateFile (aRemove); }
 #define COM_FORWARD_IInternalMachineControl_SetRemoveSavedStateFile_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_SetRemoveSavedStateFile_TO ((obj)->)
 #define COM_FORWARD_IInternalMachineControl_SetRemoveSavedStateFile_TO_BASE(base) COM_FORWARD_IInternalMachineControl_SetRemoveSavedStateFile_TO (base::)
 #define COM_FORWARD_IInternalMachineControl_UpdateState_TO(smth) HRESULT STDMETHODCALLTYPE UpdateState (MachineState aState) { return smth UpdateState (aState); }
 #define COM_FORWARD_IInternalMachineControl_UpdateState_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_UpdateState_TO ((obj)->)
 #define COM_FORWARD_IInternalMachineControl_UpdateState_TO_BASE(base) COM_FORWARD_IInternalMachineControl_UpdateState_TO (base::)
-#define COM_FORWARD_IInternalMachineControl_GetIPCId_TO(smth) HRESULT STDMETHODCALLTYPE GetIPCId (BSTR * aId) { return smth GetIPCId (aId); }
-#define COM_FORWARD_IInternalMachineControl_GetIPCId_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_GetIPCId_TO ((obj)->)
-#define COM_FORWARD_IInternalMachineControl_GetIPCId_TO_BASE(base) COM_FORWARD_IInternalMachineControl_GetIPCId_TO (base::)
-#define COM_FORWARD_IInternalMachineControl_BeginPowerUp_TO(smth) HRESULT STDMETHODCALLTYPE BeginPowerUp (IProgress * aAProgress) { return smth BeginPowerUp (aAProgress); }
+#define COM_FORWARD_IInternalMachineControl_BeginPowerUp_TO(smth) HRESULT STDMETHODCALLTYPE BeginPowerUp (IProgress * aProgress) { return smth BeginPowerUp (aProgress); }
 #define COM_FORWARD_IInternalMachineControl_BeginPowerUp_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_BeginPowerUp_TO ((obj)->)
 #define COM_FORWARD_IInternalMachineControl_BeginPowerUp_TO_BASE(base) COM_FORWARD_IInternalMachineControl_BeginPowerUp_TO (base::)
 #define COM_FORWARD_IInternalMachineControl_EndPowerUp_TO(smth) HRESULT STDMETHODCALLTYPE EndPowerUp (LONG aResult) { return smth EndPowerUp (aResult); }
@@ -2081,13 +2635,13 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IInternalMachineControl_DeleteSnapshot_TO(smth) HRESULT STDMETHODCALLTYPE DeleteSnapshot (IConsole * aInitiator, BSTR aStartId, BSTR aEndId, BOOL aDeleteAllChildren, MachineState * aMachineState, IProgress * * aProgress) { return smth DeleteSnapshot (aInitiator, aStartId, aEndId, aDeleteAllChildren, aMachineState, aProgress); }
 #define COM_FORWARD_IInternalMachineControl_DeleteSnapshot_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_DeleteSnapshot_TO ((obj)->)
 #define COM_FORWARD_IInternalMachineControl_DeleteSnapshot_TO_BASE(base) COM_FORWARD_IInternalMachineControl_DeleteSnapshot_TO (base::)
-#define COM_FORWARD_IInternalMachineControl_FinishOnlineMergeMedium_TO(smth) HRESULT STDMETHODCALLTYPE FinishOnlineMergeMedium (IMediumAttachment * aMediumAttachment, IMedium * aSource, IMedium * aTarget, BOOL aMergeForward, IMedium * aParentForTarget, SAFEARRAY * * aChildrenToReparent) { return smth FinishOnlineMergeMedium (aMediumAttachment, aSource, aTarget, aMergeForward, aParentForTarget, aChildrenToReparent); }
+#define COM_FORWARD_IInternalMachineControl_FinishOnlineMergeMedium_TO(smth) HRESULT STDMETHODCALLTYPE FinishOnlineMergeMedium() { return smth FinishOnlineMergeMedium(); }
 #define COM_FORWARD_IInternalMachineControl_FinishOnlineMergeMedium_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_FinishOnlineMergeMedium_TO ((obj)->)
 #define COM_FORWARD_IInternalMachineControl_FinishOnlineMergeMedium_TO_BASE(base) COM_FORWARD_IInternalMachineControl_FinishOnlineMergeMedium_TO (base::)
 #define COM_FORWARD_IInternalMachineControl_RestoreSnapshot_TO(smth) HRESULT STDMETHODCALLTYPE RestoreSnapshot (IConsole * aInitiator, ISnapshot * aSnapshot, MachineState * aMachineState, IProgress * * aProgress) { return smth RestoreSnapshot (aInitiator, aSnapshot, aMachineState, aProgress); }
 #define COM_FORWARD_IInternalMachineControl_RestoreSnapshot_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_RestoreSnapshot_TO ((obj)->)
 #define COM_FORWARD_IInternalMachineControl_RestoreSnapshot_TO_BASE(base) COM_FORWARD_IInternalMachineControl_RestoreSnapshot_TO (base::)
-#define COM_FORWARD_IInternalMachineControl_PullGuestProperties_TO(smth) HRESULT STDMETHODCALLTYPE PullGuestProperties (SAFEARRAY * * aName, SAFEARRAY * * aValue, SAFEARRAY * * aTimestamp, SAFEARRAY * * aFlags) { return smth PullGuestProperties (aName, aValue, aTimestamp, aFlags); }
+#define COM_FORWARD_IInternalMachineControl_PullGuestProperties_TO(smth) HRESULT STDMETHODCALLTYPE PullGuestProperties (SAFEARRAY * * aNames, SAFEARRAY * * aValues, SAFEARRAY * * aTimestamps, SAFEARRAY * * aFlags) { return smth PullGuestProperties (aNames, aValues, aTimestamps, aFlags); }
 #define COM_FORWARD_IInternalMachineControl_PullGuestProperties_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_PullGuestProperties_TO ((obj)->)
 #define COM_FORWARD_IInternalMachineControl_PullGuestProperties_TO_BASE(base) COM_FORWARD_IInternalMachineControl_PullGuestProperties_TO (base::)
 #define COM_FORWARD_IInternalMachineControl_PushGuestProperty_TO(smth) HRESULT STDMETHODCALLTYPE PushGuestProperty (BSTR aName, BSTR aValue, LONG64 aTimestamp, BSTR aFlags) { return smth PushGuestProperty (aName, aValue, aTimestamp, aFlags); }
@@ -2102,10 +2656,10 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IInternalMachineControl_EjectMedium_TO(smth) HRESULT STDMETHODCALLTYPE EjectMedium (IMediumAttachment * aAttachment, IMediumAttachment * * aNewAttachment) { return smth EjectMedium (aAttachment, aNewAttachment); }
 #define COM_FORWARD_IInternalMachineControl_EjectMedium_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_EjectMedium_TO ((obj)->)
 #define COM_FORWARD_IInternalMachineControl_EjectMedium_TO_BASE(base) COM_FORWARD_IInternalMachineControl_EjectMedium_TO (base::)
-#define COM_FORWARD_IInternalMachineControl_ReportGuestStatistics_TO(smth) HRESULT STDMETHODCALLTYPE ReportGuestStatistics (ULONG aValidStats, ULONG aCpuUser, ULONG aCpuKernel, ULONG aCpuIdle, ULONG aMemTotal, ULONG aMemFree, ULONG aMemBalloon, ULONG aMemShared, ULONG aMemCache, ULONG aPagedTotal, ULONG aMemAllocTotal, ULONG aMemFreeTotal, ULONG aMemBalloonTotal, ULONG aMemSharedTotal) { return smth ReportGuestStatistics (aValidStats, aCpuUser, aCpuKernel, aCpuIdle, aMemTotal, aMemFree, aMemBalloon, aMemShared, aMemCache, aPagedTotal, aMemAllocTotal, aMemFreeTotal, aMemBalloonTotal, aMemSharedTotal); }
-#define COM_FORWARD_IInternalMachineControl_ReportGuestStatistics_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_ReportGuestStatistics_TO ((obj)->)
-#define COM_FORWARD_IInternalMachineControl_ReportGuestStatistics_TO_BASE(base) COM_FORWARD_IInternalMachineControl_ReportGuestStatistics_TO (base::)
-#define COM_FORWARD_IInternalMachineControl_TO(smth) COM_FORWARD_IInternalMachineControl_SetRemoveSavedStateFile_TO (smth) COM_FORWARD_IInternalMachineControl_UpdateState_TO (smth) COM_FORWARD_IInternalMachineControl_GetIPCId_TO (smth) COM_FORWARD_IInternalMachineControl_BeginPowerUp_TO (smth) COM_FORWARD_IInternalMachineControl_EndPowerUp_TO (smth) COM_FORWARD_IInternalMachineControl_BeginPoweringDown_TO (smth) COM_FORWARD_IInternalMachineControl_EndPoweringDown_TO (smth) COM_FORWARD_IInternalMachineControl_RunUSBDeviceFilters_TO (smth) COM_FORWARD_IInternalMachineControl_CaptureUSBDevice_TO (smth) COM_FORWARD_IInternalMachineControl_DetachUSBDevice_TO (smth) COM_FORWARD_IInternalMachineControl_AutoCaptureUSBDevices_TO (smth) COM_FORWARD_IInternalMachineControl_DetachAllUSBDevices_TO (smth) COM_FORWARD_IInternalMachineControl_OnSessionEnd_TO (smth) COM_FORWARD_IInternalMachineControl_BeginSavingState_TO (smth) COM_FORWARD_IInternalMachineControl_EndSavingState_TO (smth) COM_FORWARD_IInternalMachineControl_AdoptSavedState_TO (smth) COM_FORWARD_IInternalMachineControl_BeginTakingSnapshot_TO (smth) COM_FORWARD_IInternalMachineControl_EndTakingSnapshot_TO (smth) COM_FORWARD_IInternalMachineControl_DeleteSnapshot_TO (smth) COM_FORWARD_IInternalMachineControl_FinishOnlineMergeMedium_TO (smth) COM_FORWARD_IInternalMachineControl_RestoreSnapshot_TO (smth) COM_FORWARD_IInternalMachineControl_PullGuestProperties_TO (smth) COM_FORWARD_IInternalMachineControl_PushGuestProperty_TO (smth) COM_FORWARD_IInternalMachineControl_LockMedia_TO (smth) COM_FORWARD_IInternalMachineControl_UnlockMedia_TO (smth) COM_FORWARD_IInternalMachineControl_EjectMedium_TO (smth) COM_FORWARD_IInternalMachineControl_ReportGuestStatistics_TO (smth) 
+#define COM_FORWARD_IInternalMachineControl_ReportVmStatistics_TO(smth) HRESULT STDMETHODCALLTYPE ReportVmStatistics (ULONG aValidStats, ULONG aCpuUser, ULONG aCpuKernel, ULONG aCpuIdle, ULONG aMemTotal, ULONG aMemFree, ULONG aMemBalloon, ULONG aMemShared, ULONG aMemCache, ULONG aPagedTotal, ULONG aMemAllocTotal, ULONG aMemFreeTotal, ULONG aMemBalloonTotal, ULONG aMemSharedTotal, ULONG aVmNetRx, ULONG aVmNetTx) { return smth ReportVmStatistics (aValidStats, aCpuUser, aCpuKernel, aCpuIdle, aMemTotal, aMemFree, aMemBalloon, aMemShared, aMemCache, aPagedTotal, aMemAllocTotal, aMemFreeTotal, aMemBalloonTotal, aMemSharedTotal, aVmNetRx, aVmNetTx); }
+#define COM_FORWARD_IInternalMachineControl_ReportVmStatistics_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_ReportVmStatistics_TO ((obj)->)
+#define COM_FORWARD_IInternalMachineControl_ReportVmStatistics_TO_BASE(base) COM_FORWARD_IInternalMachineControl_ReportVmStatistics_TO (base::)
+#define COM_FORWARD_IInternalMachineControl_TO(smth) COM_FORWARD_IInternalMachineControl_SetRemoveSavedStateFile_TO (smth) COM_FORWARD_IInternalMachineControl_UpdateState_TO (smth) COM_FORWARD_IInternalMachineControl_BeginPowerUp_TO (smth) COM_FORWARD_IInternalMachineControl_EndPowerUp_TO (smth) COM_FORWARD_IInternalMachineControl_BeginPoweringDown_TO (smth) COM_FORWARD_IInternalMachineControl_EndPoweringDown_TO (smth) COM_FORWARD_IInternalMachineControl_RunUSBDeviceFilters_TO (smth) COM_FORWARD_IInternalMachineControl_CaptureUSBDevice_TO (smth) COM_FORWARD_IInternalMachineControl_DetachUSBDevice_TO (smth) COM_FORWARD_IInternalMachineControl_AutoCaptureUSBDevices_TO (smth) COM_FORWARD_IInternalMachineControl_DetachAllUSBDevices_TO (smth) COM_FORWARD_IInternalMachineControl_OnSessionEnd_TO (smth) COM_FORWARD_IInternalMachineControl_BeginSavingState_TO (smth) COM_FORWARD_IInternalMachineControl_EndSavingState_TO (smth) COM_FORWARD_IInternalMachineControl_AdoptSavedState_TO (smth) COM_FORWARD_IInternalMachineControl_BeginTakingSnapshot_TO (smth) COM_FORWARD_IInternalMachineControl_EndTakingSnapshot_TO (smth) COM_FORWARD_IInternalMachineControl_DeleteSnapshot_TO (smth) COM_FORWARD_IInternalMachineControl_FinishOnlineMergeMedium_TO (smth) COM_FORWARD_IInternalMachineControl_RestoreSnapshot_TO (smth) COM_FORWARD_IInternalMachineControl_PullGuestProperties_TO (smth) COM_FORWARD_IInternalMachineControl_PushGuestProperty_TO (smth) COM_FORWARD_IInternalMachineControl_LockMedia_TO (smth) COM_FORWARD_IInternalMachineControl_UnlockMedia_TO (smth) COM_FORWARD_IInternalMachineControl_EjectMedium_TO (smth) COM_FORWARD_IInternalMachineControl_ReportVmStatistics_TO (smth) 
 #define COM_FORWARD_IInternalMachineControl_TO_OBJ(obj) COM_FORWARD_IInternalMachineControl_TO ((obj)->)
 #define COM_FORWARD_IInternalMachineControl_TO_BASE(base) COM_FORWARD_IInternalMachineControl_TO (base::)
 #define COM_FORWARD_IBIOSSettings_GETTER_LogoFadeIn_TO(smth) HRESULT STDMETHODCALLTYPE get_LogoFadeIn (BOOL * aLogoFadeIn) { return smth get_LogoFadeIn (aLogoFadeIn); }
@@ -2162,7 +2716,10 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IBIOSSettings_SETTER_PXEDebugEnabled_TO(smth) HRESULT STDMETHODCALLTYPE put_PXEDebugEnabled (BOOL aPXEDebugEnabled) { return smth put_PXEDebugEnabled (aPXEDebugEnabled); }
 #define COM_FORWARD_IBIOSSettings_SETTER_PXEDebugEnabled_TO_OBJ(obj) COM_FORWARD_IBIOSSettings_SETTER_PXEDebugEnabled_TO ((obj)->)
 #define COM_FORWARD_IBIOSSettings_SETTER_PXEDebugEnabled_TO_BASE(base) COM_FORWARD_IBIOSSettings_SETTER_PXEDebugEnabled_TO (base::)
-#define COM_FORWARD_IBIOSSettings_TO(smth) COM_FORWARD_IBIOSSettings_GETTER_LogoFadeIn_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_LogoFadeIn_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_LogoFadeOut_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_LogoFadeOut_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_LogoDisplayTime_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_LogoDisplayTime_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_LogoImagePath_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_LogoImagePath_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_BootMenuMode_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_BootMenuMode_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_ACPIEnabled_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_ACPIEnabled_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_IOAPICEnabled_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_IOAPICEnabled_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_TimeOffset_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_TimeOffset_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_PXEDebugEnabled_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_PXEDebugEnabled_TO (smth) 
+#define COM_FORWARD_IBIOSSettings_GETTER_NonVolatileStorageFile_TO(smth) HRESULT STDMETHODCALLTYPE get_NonVolatileStorageFile (BSTR * aNonVolatileStorageFile) { return smth get_NonVolatileStorageFile (aNonVolatileStorageFile); }
+#define COM_FORWARD_IBIOSSettings_GETTER_NonVolatileStorageFile_TO_OBJ(obj) COM_FORWARD_IBIOSSettings_GETTER_NonVolatileStorageFile_TO ((obj)->)
+#define COM_FORWARD_IBIOSSettings_GETTER_NonVolatileStorageFile_TO_BASE(base) COM_FORWARD_IBIOSSettings_GETTER_NonVolatileStorageFile_TO (base::)
+#define COM_FORWARD_IBIOSSettings_TO(smth) COM_FORWARD_IBIOSSettings_GETTER_LogoFadeIn_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_LogoFadeIn_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_LogoFadeOut_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_LogoFadeOut_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_LogoDisplayTime_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_LogoDisplayTime_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_LogoImagePath_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_LogoImagePath_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_BootMenuMode_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_BootMenuMode_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_ACPIEnabled_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_ACPIEnabled_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_IOAPICEnabled_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_IOAPICEnabled_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_TimeOffset_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_TimeOffset_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_PXEDebugEnabled_TO (smth) COM_FORWARD_IBIOSSettings_SETTER_PXEDebugEnabled_TO (smth) COM_FORWARD_IBIOSSettings_GETTER_NonVolatileStorageFile_TO (smth) 
 #define COM_FORWARD_IBIOSSettings_TO_OBJ(obj) COM_FORWARD_IBIOSSettings_TO ((obj)->)
 #define COM_FORWARD_IBIOSSettings_TO_BASE(base) COM_FORWARD_IBIOSSettings_TO (base::)
 #define COM_FORWARD_IPCIAddress_GETTER_Bus_TO(smth) HRESULT STDMETHODCALLTYPE get_Bus (SHORT * aBus) { return smth get_Bus (aBus); }
@@ -2210,6 +2767,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_GETTER_Parent_TO(smth) HRESULT STDMETHODCALLTYPE get_Parent (IVirtualBox * * aParent) { return smth get_Parent (aParent); }
 #define COM_FORWARD_IMachine_GETTER_Parent_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_Parent_TO ((obj)->)
 #define COM_FORWARD_IMachine_GETTER_Parent_TO_BASE(base) COM_FORWARD_IMachine_GETTER_Parent_TO (base::)
+#define COM_FORWARD_IMachine_GETTER_Icon_TO(smth) HRESULT STDMETHODCALLTYPE get_Icon (SAFEARRAY * * aIcon) { return smth get_Icon (aIcon); }
+#define COM_FORWARD_IMachine_GETTER_Icon_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_Icon_TO ((obj)->)
+#define COM_FORWARD_IMachine_GETTER_Icon_TO_BASE(base) COM_FORWARD_IMachine_GETTER_Icon_TO (base::)
+#define COM_FORWARD_IMachine_SETTER_Icon_TO(smth) HRESULT STDMETHODCALLTYPE put_Icon (SAFEARRAY * aIcon) { return smth put_Icon (aIcon); }
+#define COM_FORWARD_IMachine_SETTER_Icon_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_Icon_TO ((obj)->)
+#define COM_FORWARD_IMachine_SETTER_Icon_TO_BASE(base) COM_FORWARD_IMachine_SETTER_Icon_TO (base::)
 #define COM_FORWARD_IMachine_GETTER_Accessible_TO(smth) HRESULT STDMETHODCALLTYPE get_Accessible (BOOL * aAccessible) { return smth get_Accessible (aAccessible); }
 #define COM_FORWARD_IMachine_GETTER_Accessible_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_Accessible_TO ((obj)->)
 #define COM_FORWARD_IMachine_GETTER_Accessible_TO_BASE(base) COM_FORWARD_IMachine_GETTER_Accessible_TO (base::)
@@ -2291,6 +2854,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_SETTER_PageFusionEnabled_TO(smth) HRESULT STDMETHODCALLTYPE put_PageFusionEnabled (BOOL aPageFusionEnabled) { return smth put_PageFusionEnabled (aPageFusionEnabled); }
 #define COM_FORWARD_IMachine_SETTER_PageFusionEnabled_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_PageFusionEnabled_TO ((obj)->)
 #define COM_FORWARD_IMachine_SETTER_PageFusionEnabled_TO_BASE(base) COM_FORWARD_IMachine_SETTER_PageFusionEnabled_TO (base::)
+#define COM_FORWARD_IMachine_GETTER_GraphicsControllerType_TO(smth) HRESULT STDMETHODCALLTYPE get_GraphicsControllerType (GraphicsControllerType * aGraphicsControllerType) { return smth get_GraphicsControllerType (aGraphicsControllerType); }
+#define COM_FORWARD_IMachine_GETTER_GraphicsControllerType_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_GraphicsControllerType_TO ((obj)->)
+#define COM_FORWARD_IMachine_GETTER_GraphicsControllerType_TO_BASE(base) COM_FORWARD_IMachine_GETTER_GraphicsControllerType_TO (base::)
+#define COM_FORWARD_IMachine_SETTER_GraphicsControllerType_TO(smth) HRESULT STDMETHODCALLTYPE put_GraphicsControllerType (GraphicsControllerType aGraphicsControllerType) { return smth put_GraphicsControllerType (aGraphicsControllerType); }
+#define COM_FORWARD_IMachine_SETTER_GraphicsControllerType_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_GraphicsControllerType_TO ((obj)->)
+#define COM_FORWARD_IMachine_SETTER_GraphicsControllerType_TO_BASE(base) COM_FORWARD_IMachine_SETTER_GraphicsControllerType_TO (base::)
 #define COM_FORWARD_IMachine_GETTER_VRAMSize_TO(smth) HRESULT STDMETHODCALLTYPE get_VRAMSize (ULONG * aVRAMSize) { return smth get_VRAMSize (aVRAMSize); }
 #define COM_FORWARD_IMachine_GETTER_VRAMSize_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_VRAMSize_TO ((obj)->)
 #define COM_FORWARD_IMachine_GETTER_VRAMSize_TO_BASE(base) COM_FORWARD_IMachine_GETTER_VRAMSize_TO (base::)
@@ -2321,6 +2890,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_SETTER_VideoCaptureEnabled_TO(smth) HRESULT STDMETHODCALLTYPE put_VideoCaptureEnabled (BOOL aVideoCaptureEnabled) { return smth put_VideoCaptureEnabled (aVideoCaptureEnabled); }
 #define COM_FORWARD_IMachine_SETTER_VideoCaptureEnabled_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_VideoCaptureEnabled_TO ((obj)->)
 #define COM_FORWARD_IMachine_SETTER_VideoCaptureEnabled_TO_BASE(base) COM_FORWARD_IMachine_SETTER_VideoCaptureEnabled_TO (base::)
+#define COM_FORWARD_IMachine_GETTER_VideoCaptureScreens_TO(smth) HRESULT STDMETHODCALLTYPE get_VideoCaptureScreens (SAFEARRAY * * aVideoCaptureScreens) { return smth get_VideoCaptureScreens (aVideoCaptureScreens); }
+#define COM_FORWARD_IMachine_GETTER_VideoCaptureScreens_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_VideoCaptureScreens_TO ((obj)->)
+#define COM_FORWARD_IMachine_GETTER_VideoCaptureScreens_TO_BASE(base) COM_FORWARD_IMachine_GETTER_VideoCaptureScreens_TO (base::)
+#define COM_FORWARD_IMachine_SETTER_VideoCaptureScreens_TO(smth) HRESULT STDMETHODCALLTYPE put_VideoCaptureScreens (SAFEARRAY * aVideoCaptureScreens) { return smth put_VideoCaptureScreens (aVideoCaptureScreens); }
+#define COM_FORWARD_IMachine_SETTER_VideoCaptureScreens_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_VideoCaptureScreens_TO ((obj)->)
+#define COM_FORWARD_IMachine_SETTER_VideoCaptureScreens_TO_BASE(base) COM_FORWARD_IMachine_SETTER_VideoCaptureScreens_TO (base::)
 #define COM_FORWARD_IMachine_GETTER_VideoCaptureFile_TO(smth) HRESULT STDMETHODCALLTYPE get_VideoCaptureFile (BSTR * aVideoCaptureFile) { return smth get_VideoCaptureFile (aVideoCaptureFile); }
 #define COM_FORWARD_IMachine_GETTER_VideoCaptureFile_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_VideoCaptureFile_TO ((obj)->)
 #define COM_FORWARD_IMachine_GETTER_VideoCaptureFile_TO_BASE(base) COM_FORWARD_IMachine_GETTER_VideoCaptureFile_TO (base::)
@@ -2339,6 +2914,18 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_SETTER_VideoCaptureHeight_TO(smth) HRESULT STDMETHODCALLTYPE put_VideoCaptureHeight (ULONG aVideoCaptureHeight) { return smth put_VideoCaptureHeight (aVideoCaptureHeight); }
 #define COM_FORWARD_IMachine_SETTER_VideoCaptureHeight_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_VideoCaptureHeight_TO ((obj)->)
 #define COM_FORWARD_IMachine_SETTER_VideoCaptureHeight_TO_BASE(base) COM_FORWARD_IMachine_SETTER_VideoCaptureHeight_TO (base::)
+#define COM_FORWARD_IMachine_GETTER_VideoCaptureRate_TO(smth) HRESULT STDMETHODCALLTYPE get_VideoCaptureRate (ULONG * aVideoCaptureRate) { return smth get_VideoCaptureRate (aVideoCaptureRate); }
+#define COM_FORWARD_IMachine_GETTER_VideoCaptureRate_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_VideoCaptureRate_TO ((obj)->)
+#define COM_FORWARD_IMachine_GETTER_VideoCaptureRate_TO_BASE(base) COM_FORWARD_IMachine_GETTER_VideoCaptureRate_TO (base::)
+#define COM_FORWARD_IMachine_SETTER_VideoCaptureRate_TO(smth) HRESULT STDMETHODCALLTYPE put_VideoCaptureRate (ULONG aVideoCaptureRate) { return smth put_VideoCaptureRate (aVideoCaptureRate); }
+#define COM_FORWARD_IMachine_SETTER_VideoCaptureRate_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_VideoCaptureRate_TO ((obj)->)
+#define COM_FORWARD_IMachine_SETTER_VideoCaptureRate_TO_BASE(base) COM_FORWARD_IMachine_SETTER_VideoCaptureRate_TO (base::)
+#define COM_FORWARD_IMachine_GETTER_VideoCaptureFPS_TO(smth) HRESULT STDMETHODCALLTYPE get_VideoCaptureFPS (ULONG * aVideoCaptureFPS) { return smth get_VideoCaptureFPS (aVideoCaptureFPS); }
+#define COM_FORWARD_IMachine_GETTER_VideoCaptureFPS_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_VideoCaptureFPS_TO ((obj)->)
+#define COM_FORWARD_IMachine_GETTER_VideoCaptureFPS_TO_BASE(base) COM_FORWARD_IMachine_GETTER_VideoCaptureFPS_TO (base::)
+#define COM_FORWARD_IMachine_SETTER_VideoCaptureFPS_TO(smth) HRESULT STDMETHODCALLTYPE put_VideoCaptureFPS (ULONG aVideoCaptureFPS) { return smth put_VideoCaptureFPS (aVideoCaptureFPS); }
+#define COM_FORWARD_IMachine_SETTER_VideoCaptureFPS_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_VideoCaptureFPS_TO ((obj)->)
+#define COM_FORWARD_IMachine_SETTER_VideoCaptureFPS_TO_BASE(base) COM_FORWARD_IMachine_SETTER_VideoCaptureFPS_TO (base::)
 #define COM_FORWARD_IMachine_GETTER_BIOSSettings_TO(smth) HRESULT STDMETHODCALLTYPE get_BIOSSettings (IBIOSSettings * * aBIOSSettings) { return smth get_BIOSSettings (aBIOSSettings); }
 #define COM_FORWARD_IMachine_GETTER_BIOSSettings_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_BIOSSettings_TO ((obj)->)
 #define COM_FORWARD_IMachine_GETTER_BIOSSettings_TO_BASE(base) COM_FORWARD_IMachine_GETTER_BIOSSettings_TO (base::)
@@ -2381,12 +2968,6 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_GETTER_VRDEServer_TO(smth) HRESULT STDMETHODCALLTYPE get_VRDEServer (IVRDEServer * * aVRDEServer) { return smth get_VRDEServer (aVRDEServer); }
 #define COM_FORWARD_IMachine_GETTER_VRDEServer_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_VRDEServer_TO ((obj)->)
 #define COM_FORWARD_IMachine_GETTER_VRDEServer_TO_BASE(base) COM_FORWARD_IMachine_GETTER_VRDEServer_TO (base::)
-#define COM_FORWARD_IMachine_GETTER_EmulatedUSBWebcameraEnabled_TO(smth) HRESULT STDMETHODCALLTYPE get_EmulatedUSBWebcameraEnabled (BOOL * aEmulatedUSBWebcameraEnabled) { return smth get_EmulatedUSBWebcameraEnabled (aEmulatedUSBWebcameraEnabled); }
-#define COM_FORWARD_IMachine_GETTER_EmulatedUSBWebcameraEnabled_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_EmulatedUSBWebcameraEnabled_TO ((obj)->)
-#define COM_FORWARD_IMachine_GETTER_EmulatedUSBWebcameraEnabled_TO_BASE(base) COM_FORWARD_IMachine_GETTER_EmulatedUSBWebcameraEnabled_TO (base::)
-#define COM_FORWARD_IMachine_SETTER_EmulatedUSBWebcameraEnabled_TO(smth) HRESULT STDMETHODCALLTYPE put_EmulatedUSBWebcameraEnabled (BOOL aEmulatedUSBWebcameraEnabled) { return smth put_EmulatedUSBWebcameraEnabled (aEmulatedUSBWebcameraEnabled); }
-#define COM_FORWARD_IMachine_SETTER_EmulatedUSBWebcameraEnabled_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_EmulatedUSBWebcameraEnabled_TO ((obj)->)
-#define COM_FORWARD_IMachine_SETTER_EmulatedUSBWebcameraEnabled_TO_BASE(base) COM_FORWARD_IMachine_SETTER_EmulatedUSBWebcameraEnabled_TO (base::)
 #define COM_FORWARD_IMachine_GETTER_EmulatedUSBCardReaderEnabled_TO(smth) HRESULT STDMETHODCALLTYPE get_EmulatedUSBCardReaderEnabled (BOOL * aEmulatedUSBCardReaderEnabled) { return smth get_EmulatedUSBCardReaderEnabled (aEmulatedUSBCardReaderEnabled); }
 #define COM_FORWARD_IMachine_GETTER_EmulatedUSBCardReaderEnabled_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_EmulatedUSBCardReaderEnabled_TO ((obj)->)
 #define COM_FORWARD_IMachine_GETTER_EmulatedUSBCardReaderEnabled_TO_BASE(base) COM_FORWARD_IMachine_GETTER_EmulatedUSBCardReaderEnabled_TO (base::)
@@ -2396,9 +2977,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_GETTER_MediumAttachments_TO(smth) HRESULT STDMETHODCALLTYPE get_MediumAttachments (SAFEARRAY * * aMediumAttachments) { return smth get_MediumAttachments (aMediumAttachments); }
 #define COM_FORWARD_IMachine_GETTER_MediumAttachments_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_MediumAttachments_TO ((obj)->)
 #define COM_FORWARD_IMachine_GETTER_MediumAttachments_TO_BASE(base) COM_FORWARD_IMachine_GETTER_MediumAttachments_TO (base::)
-#define COM_FORWARD_IMachine_GETTER_USBController_TO(smth) HRESULT STDMETHODCALLTYPE get_USBController (IUSBController * * aUSBController) { return smth get_USBController (aUSBController); }
-#define COM_FORWARD_IMachine_GETTER_USBController_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_USBController_TO ((obj)->)
-#define COM_FORWARD_IMachine_GETTER_USBController_TO_BASE(base) COM_FORWARD_IMachine_GETTER_USBController_TO (base::)
+#define COM_FORWARD_IMachine_GETTER_USBControllers_TO(smth) HRESULT STDMETHODCALLTYPE get_USBControllers (SAFEARRAY * * aUSBControllers) { return smth get_USBControllers (aUSBControllers); }
+#define COM_FORWARD_IMachine_GETTER_USBControllers_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_USBControllers_TO ((obj)->)
+#define COM_FORWARD_IMachine_GETTER_USBControllers_TO_BASE(base) COM_FORWARD_IMachine_GETTER_USBControllers_TO (base::)
+#define COM_FORWARD_IMachine_GETTER_USBDeviceFilters_TO(smth) HRESULT STDMETHODCALLTYPE get_USBDeviceFilters (IUSBDeviceFilters * * aUSBDeviceFilters) { return smth get_USBDeviceFilters (aUSBDeviceFilters); }
+#define COM_FORWARD_IMachine_GETTER_USBDeviceFilters_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_USBDeviceFilters_TO ((obj)->)
+#define COM_FORWARD_IMachine_GETTER_USBDeviceFilters_TO_BASE(base) COM_FORWARD_IMachine_GETTER_USBDeviceFilters_TO (base::)
 #define COM_FORWARD_IMachine_GETTER_AudioAdapter_TO(smth) HRESULT STDMETHODCALLTYPE get_AudioAdapter (IAudioAdapter * * aAudioAdapter) { return smth get_AudioAdapter (aAudioAdapter); }
 #define COM_FORWARD_IMachine_GETTER_AudioAdapter_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_AudioAdapter_TO ((obj)->)
 #define COM_FORWARD_IMachine_GETTER_AudioAdapter_TO_BASE(base) COM_FORWARD_IMachine_GETTER_AudioAdapter_TO (base::)
@@ -2576,6 +3160,15 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_SETTER_AutostopType_TO(smth) HRESULT STDMETHODCALLTYPE put_AutostopType (AutostopType aAutostopType) { return smth put_AutostopType (aAutostopType); }
 #define COM_FORWARD_IMachine_SETTER_AutostopType_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_AutostopType_TO ((obj)->)
 #define COM_FORWARD_IMachine_SETTER_AutostopType_TO_BASE(base) COM_FORWARD_IMachine_SETTER_AutostopType_TO (base::)
+#define COM_FORWARD_IMachine_GETTER_DefaultFrontend_TO(smth) HRESULT STDMETHODCALLTYPE get_DefaultFrontend (BSTR * aDefaultFrontend) { return smth get_DefaultFrontend (aDefaultFrontend); }
+#define COM_FORWARD_IMachine_GETTER_DefaultFrontend_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_DefaultFrontend_TO ((obj)->)
+#define COM_FORWARD_IMachine_GETTER_DefaultFrontend_TO_BASE(base) COM_FORWARD_IMachine_GETTER_DefaultFrontend_TO (base::)
+#define COM_FORWARD_IMachine_SETTER_DefaultFrontend_TO(smth) HRESULT STDMETHODCALLTYPE put_DefaultFrontend (BSTR aDefaultFrontend) { return smth put_DefaultFrontend (aDefaultFrontend); }
+#define COM_FORWARD_IMachine_SETTER_DefaultFrontend_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_DefaultFrontend_TO ((obj)->)
+#define COM_FORWARD_IMachine_SETTER_DefaultFrontend_TO_BASE(base) COM_FORWARD_IMachine_SETTER_DefaultFrontend_TO (base::)
+#define COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO(smth) HRESULT STDMETHODCALLTYPE get_USBProxyAvailable (BOOL * aUSBProxyAvailable) { return smth get_USBProxyAvailable (aUSBProxyAvailable); }
+#define COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO ((obj)->)
+#define COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO_BASE(base) COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO (base::)
 #define COM_FORWARD_IMachine_LockMachine_TO(smth) HRESULT STDMETHODCALLTYPE LockMachine (ISession * aSession, LockType aLockType) { return smth LockMachine (aSession, aLockType); }
 #define COM_FORWARD_IMachine_LockMachine_TO_OBJ(obj) COM_FORWARD_IMachine_LockMachine_TO ((obj)->)
 #define COM_FORWARD_IMachine_LockMachine_TO_BASE(base) COM_FORWARD_IMachine_LockMachine_TO (base::)
@@ -2609,6 +3202,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_SetAutoDiscardForDevice_TO(smth) HRESULT STDMETHODCALLTYPE SetAutoDiscardForDevice (BSTR aName, LONG aControllerPort, LONG aDevice, BOOL aDiscard) { return smth SetAutoDiscardForDevice (aName, aControllerPort, aDevice, aDiscard); }
 #define COM_FORWARD_IMachine_SetAutoDiscardForDevice_TO_OBJ(obj) COM_FORWARD_IMachine_SetAutoDiscardForDevice_TO ((obj)->)
 #define COM_FORWARD_IMachine_SetAutoDiscardForDevice_TO_BASE(base) COM_FORWARD_IMachine_SetAutoDiscardForDevice_TO (base::)
+#define COM_FORWARD_IMachine_SetHotPluggableForDevice_TO(smth) HRESULT STDMETHODCALLTYPE SetHotPluggableForDevice (BSTR aName, LONG aControllerPort, LONG aDevice, BOOL aHotPluggable) { return smth SetHotPluggableForDevice (aName, aControllerPort, aDevice, aHotPluggable); }
+#define COM_FORWARD_IMachine_SetHotPluggableForDevice_TO_OBJ(obj) COM_FORWARD_IMachine_SetHotPluggableForDevice_TO ((obj)->)
+#define COM_FORWARD_IMachine_SetHotPluggableForDevice_TO_BASE(base) COM_FORWARD_IMachine_SetHotPluggableForDevice_TO (base::)
 #define COM_FORWARD_IMachine_SetBandwidthGroupForDevice_TO(smth) HRESULT STDMETHODCALLTYPE SetBandwidthGroupForDevice (BSTR aName, LONG aControllerPort, LONG aDevice, IBandwidthGroup * aBandwidthGroup) { return smth SetBandwidthGroupForDevice (aName, aControllerPort, aDevice, aBandwidthGroup); }
 #define COM_FORWARD_IMachine_SetBandwidthGroupForDevice_TO_OBJ(obj) COM_FORWARD_IMachine_SetBandwidthGroupForDevice_TO ((obj)->)
 #define COM_FORWARD_IMachine_SetBandwidthGroupForDevice_TO_BASE(base) COM_FORWARD_IMachine_SetBandwidthGroupForDevice_TO (base::)
@@ -2654,13 +3250,25 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_SetStorageControllerBootable_TO(smth) HRESULT STDMETHODCALLTYPE SetStorageControllerBootable (BSTR aName, BOOL aBootable) { return smth SetStorageControllerBootable (aName, aBootable); }
 #define COM_FORWARD_IMachine_SetStorageControllerBootable_TO_OBJ(obj) COM_FORWARD_IMachine_SetStorageControllerBootable_TO ((obj)->)
 #define COM_FORWARD_IMachine_SetStorageControllerBootable_TO_BASE(base) COM_FORWARD_IMachine_SetStorageControllerBootable_TO (base::)
+#define COM_FORWARD_IMachine_AddUSBController_TO(smth) HRESULT STDMETHODCALLTYPE AddUSBController (BSTR aName, USBControllerType aType, IUSBController * * aController) { return smth AddUSBController (aName, aType, aController); }
+#define COM_FORWARD_IMachine_AddUSBController_TO_OBJ(obj) COM_FORWARD_IMachine_AddUSBController_TO ((obj)->)
+#define COM_FORWARD_IMachine_AddUSBController_TO_BASE(base) COM_FORWARD_IMachine_AddUSBController_TO (base::)
+#define COM_FORWARD_IMachine_RemoveUSBController_TO(smth) HRESULT STDMETHODCALLTYPE RemoveUSBController (BSTR aName) { return smth RemoveUSBController (aName); }
+#define COM_FORWARD_IMachine_RemoveUSBController_TO_OBJ(obj) COM_FORWARD_IMachine_RemoveUSBController_TO ((obj)->)
+#define COM_FORWARD_IMachine_RemoveUSBController_TO_BASE(base) COM_FORWARD_IMachine_RemoveUSBController_TO (base::)
+#define COM_FORWARD_IMachine_GetUSBControllerByName_TO(smth) HRESULT STDMETHODCALLTYPE GetUSBControllerByName (BSTR aName, IUSBController * * aController) { return smth GetUSBControllerByName (aName, aController); }
+#define COM_FORWARD_IMachine_GetUSBControllerByName_TO_OBJ(obj) COM_FORWARD_IMachine_GetUSBControllerByName_TO ((obj)->)
+#define COM_FORWARD_IMachine_GetUSBControllerByName_TO_BASE(base) COM_FORWARD_IMachine_GetUSBControllerByName_TO (base::)
+#define COM_FORWARD_IMachine_GetUSBControllerCountByType_TO(smth) HRESULT STDMETHODCALLTYPE GetUSBControllerCountByType (USBControllerType aType, ULONG * aControllers) { return smth GetUSBControllerCountByType (aType, aControllers); }
+#define COM_FORWARD_IMachine_GetUSBControllerCountByType_TO_OBJ(obj) COM_FORWARD_IMachine_GetUSBControllerCountByType_TO ((obj)->)
+#define COM_FORWARD_IMachine_GetUSBControllerCountByType_TO_BASE(base) COM_FORWARD_IMachine_GetUSBControllerCountByType_TO (base::)
 #define COM_FORWARD_IMachine_GetSerialPort_TO(smth) HRESULT STDMETHODCALLTYPE GetSerialPort (ULONG aSlot, ISerialPort * * aPort) { return smth GetSerialPort (aSlot, aPort); }
 #define COM_FORWARD_IMachine_GetSerialPort_TO_OBJ(obj) COM_FORWARD_IMachine_GetSerialPort_TO ((obj)->)
 #define COM_FORWARD_IMachine_GetSerialPort_TO_BASE(base) COM_FORWARD_IMachine_GetSerialPort_TO (base::)
 #define COM_FORWARD_IMachine_GetParallelPort_TO(smth) HRESULT STDMETHODCALLTYPE GetParallelPort (ULONG aSlot, IParallelPort * * aPort) { return smth GetParallelPort (aSlot, aPort); }
 #define COM_FORWARD_IMachine_GetParallelPort_TO_OBJ(obj) COM_FORWARD_IMachine_GetParallelPort_TO ((obj)->)
 #define COM_FORWARD_IMachine_GetParallelPort_TO_BASE(base) COM_FORWARD_IMachine_GetParallelPort_TO (base::)
-#define COM_FORWARD_IMachine_GetExtraDataKeys_TO(smth) HRESULT STDMETHODCALLTYPE GetExtraDataKeys (SAFEARRAY * * aValue) { return smth GetExtraDataKeys (aValue); }
+#define COM_FORWARD_IMachine_GetExtraDataKeys_TO(smth) HRESULT STDMETHODCALLTYPE GetExtraDataKeys (SAFEARRAY * * aKeys) { return smth GetExtraDataKeys (aKeys); }
 #define COM_FORWARD_IMachine_GetExtraDataKeys_TO_OBJ(obj) COM_FORWARD_IMachine_GetExtraDataKeys_TO ((obj)->)
 #define COM_FORWARD_IMachine_GetExtraDataKeys_TO_BASE(base) COM_FORWARD_IMachine_GetExtraDataKeys_TO (base::)
 #define COM_FORWARD_IMachine_GetExtraData_TO(smth) HRESULT STDMETHODCALLTYPE GetExtraData (BSTR aKey, BSTR * aValue) { return smth GetExtraData (aKey, aValue); }
@@ -2693,21 +3301,24 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_SetHWVirtExProperty_TO(smth) HRESULT STDMETHODCALLTYPE SetHWVirtExProperty (HWVirtExPropertyType aProperty, BOOL aValue) { return smth SetHWVirtExProperty (aProperty, aValue); }
 #define COM_FORWARD_IMachine_SetHWVirtExProperty_TO_OBJ(obj) COM_FORWARD_IMachine_SetHWVirtExProperty_TO ((obj)->)
 #define COM_FORWARD_IMachine_SetHWVirtExProperty_TO_BASE(base) COM_FORWARD_IMachine_SetHWVirtExProperty_TO (base::)
+#define COM_FORWARD_IMachine_SetSettingsFilePath_TO(smth) HRESULT STDMETHODCALLTYPE SetSettingsFilePath (BSTR aSettingsFilePath, IProgress * * aProgress) { return smth SetSettingsFilePath (aSettingsFilePath, aProgress); }
+#define COM_FORWARD_IMachine_SetSettingsFilePath_TO_OBJ(obj) COM_FORWARD_IMachine_SetSettingsFilePath_TO ((obj)->)
+#define COM_FORWARD_IMachine_SetSettingsFilePath_TO_BASE(base) COM_FORWARD_IMachine_SetSettingsFilePath_TO (base::)
 #define COM_FORWARD_IMachine_SaveSettings_TO(smth) HRESULT STDMETHODCALLTYPE SaveSettings() { return smth SaveSettings(); }
 #define COM_FORWARD_IMachine_SaveSettings_TO_OBJ(obj) COM_FORWARD_IMachine_SaveSettings_TO ((obj)->)
 #define COM_FORWARD_IMachine_SaveSettings_TO_BASE(base) COM_FORWARD_IMachine_SaveSettings_TO (base::)
 #define COM_FORWARD_IMachine_DiscardSettings_TO(smth) HRESULT STDMETHODCALLTYPE DiscardSettings() { return smth DiscardSettings(); }
 #define COM_FORWARD_IMachine_DiscardSettings_TO_OBJ(obj) COM_FORWARD_IMachine_DiscardSettings_TO ((obj)->)
 #define COM_FORWARD_IMachine_DiscardSettings_TO_BASE(base) COM_FORWARD_IMachine_DiscardSettings_TO (base::)
-#define COM_FORWARD_IMachine_Unregister_TO(smth) HRESULT STDMETHODCALLTYPE Unregister (CleanupMode aCleanupMode, SAFEARRAY * * aAMedia) { return smth Unregister (aCleanupMode, aAMedia); }
+#define COM_FORWARD_IMachine_Unregister_TO(smth) HRESULT STDMETHODCALLTYPE Unregister (CleanupMode aCleanupMode, SAFEARRAY * * aMedia) { return smth Unregister (aCleanupMode, aMedia); }
 #define COM_FORWARD_IMachine_Unregister_TO_OBJ(obj) COM_FORWARD_IMachine_Unregister_TO ((obj)->)
 #define COM_FORWARD_IMachine_Unregister_TO_BASE(base) COM_FORWARD_IMachine_Unregister_TO (base::)
-#define COM_FORWARD_IMachine_Delete_TO(smth) HRESULT STDMETHODCALLTYPE Delete (SAFEARRAY * * aAMedia, IProgress * * aAProgress) { return smth Delete (aAMedia, aAProgress); }
-#define COM_FORWARD_IMachine_Delete_TO_OBJ(obj) COM_FORWARD_IMachine_Delete_TO ((obj)->)
-#define COM_FORWARD_IMachine_Delete_TO_BASE(base) COM_FORWARD_IMachine_Delete_TO (base::)
-#define COM_FORWARD_IMachine_Export_TO(smth) HRESULT STDMETHODCALLTYPE Export (IAppliance * aAAppliance, BSTR aLocation, IVirtualSystemDescription * * aADescription) { return smth Export (aAAppliance, aLocation, aADescription); }
-#define COM_FORWARD_IMachine_Export_TO_OBJ(obj) COM_FORWARD_IMachine_Export_TO ((obj)->)
-#define COM_FORWARD_IMachine_Export_TO_BASE(base) COM_FORWARD_IMachine_Export_TO (base::)
+#define COM_FORWARD_IMachine_DeleteConfig_TO(smth) HRESULT STDMETHODCALLTYPE DeleteConfig (SAFEARRAY * * aMedia, IProgress * * aProgress) { return smth DeleteConfig (aMedia, aProgress); }
+#define COM_FORWARD_IMachine_DeleteConfig_TO_OBJ(obj) COM_FORWARD_IMachine_DeleteConfig_TO ((obj)->)
+#define COM_FORWARD_IMachine_DeleteConfig_TO_BASE(base) COM_FORWARD_IMachine_DeleteConfig_TO (base::)
+#define COM_FORWARD_IMachine_ExportTo_TO(smth) HRESULT STDMETHODCALLTYPE ExportTo (IAppliance * aAppliance, BSTR aLocation, IVirtualSystemDescription * * aDescription) { return smth ExportTo (aAppliance, aLocation, aDescription); }
+#define COM_FORWARD_IMachine_ExportTo_TO_OBJ(obj) COM_FORWARD_IMachine_ExportTo_TO ((obj)->)
+#define COM_FORWARD_IMachine_ExportTo_TO_BASE(base) COM_FORWARD_IMachine_ExportTo_TO (base::)
 #define COM_FORWARD_IMachine_FindSnapshot_TO(smth) HRESULT STDMETHODCALLTYPE FindSnapshot (BSTR aNameOrId, ISnapshot * * aSnapshot) { return smth FindSnapshot (aNameOrId, aSnapshot); }
 #define COM_FORWARD_IMachine_FindSnapshot_TO_OBJ(obj) COM_FORWARD_IMachine_FindSnapshot_TO ((obj)->)
 #define COM_FORWARD_IMachine_FindSnapshot_TO_BASE(base) COM_FORWARD_IMachine_FindSnapshot_TO (base::)
@@ -2741,7 +3352,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_DeleteGuestProperty_TO(smth) HRESULT STDMETHODCALLTYPE DeleteGuestProperty (BSTR aName) { return smth DeleteGuestProperty (aName); }
 #define COM_FORWARD_IMachine_DeleteGuestProperty_TO_OBJ(obj) COM_FORWARD_IMachine_DeleteGuestProperty_TO ((obj)->)
 #define COM_FORWARD_IMachine_DeleteGuestProperty_TO_BASE(base) COM_FORWARD_IMachine_DeleteGuestProperty_TO (base::)
-#define COM_FORWARD_IMachine_EnumerateGuestProperties_TO(smth) HRESULT STDMETHODCALLTYPE EnumerateGuestProperties (BSTR aPatterns, SAFEARRAY * * aName, SAFEARRAY * * aValue, SAFEARRAY * * aTimestamp, SAFEARRAY * * aFlags) { return smth EnumerateGuestProperties (aPatterns, aName, aValue, aTimestamp, aFlags); }
+#define COM_FORWARD_IMachine_EnumerateGuestProperties_TO(smth) HRESULT STDMETHODCALLTYPE EnumerateGuestProperties (BSTR aPatterns, SAFEARRAY * * aNames, SAFEARRAY * * aValues, SAFEARRAY * * aTimestamps, SAFEARRAY * * aFlags) { return smth EnumerateGuestProperties (aPatterns, aNames, aValues, aTimestamps, aFlags); }
 #define COM_FORWARD_IMachine_EnumerateGuestProperties_TO_OBJ(obj) COM_FORWARD_IMachine_EnumerateGuestProperties_TO ((obj)->)
 #define COM_FORWARD_IMachine_EnumerateGuestProperties_TO_BASE(base) COM_FORWARD_IMachine_EnumerateGuestProperties_TO (base::)
 #define COM_FORWARD_IMachine_QuerySavedGuestScreenInfo_TO(smth) HRESULT STDMETHODCALLTYPE QuerySavedGuestScreenInfo (ULONG aScreenId, ULONG * aOriginX, ULONG * aOriginY, ULONG * aWidth, ULONG * aHeight, BOOL * aEnabled) { return smth QuerySavedGuestScreenInfo (aScreenId, aOriginX, aOriginY, aWidth, aHeight, aEnabled); }
@@ -2780,9 +3391,21 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachine_CloneTo_TO(smth) HRESULT STDMETHODCALLTYPE CloneTo (IMachine * aTarget, CloneMode aMode, SAFEARRAY * * aOptions, IProgress * * aProgress) { return smth CloneTo (aTarget, aMode, aOptions, aProgress); }
 #define COM_FORWARD_IMachine_CloneTo_TO_OBJ(obj) COM_FORWARD_IMachine_CloneTo_TO ((obj)->)
 #define COM_FORWARD_IMachine_CloneTo_TO_BASE(base) COM_FORWARD_IMachine_CloneTo_TO (base::)
-#define COM_FORWARD_IMachine_TO(smth) COM_FORWARD_IMachine_GETTER_Parent_TO (smth) COM_FORWARD_IMachine_GETTER_Accessible_TO (smth) COM_FORWARD_IMachine_GETTER_AccessError_TO (smth) COM_FORWARD_IMachine_GETTER_Name_TO (smth) COM_FORWARD_IMachine_SETTER_Name_TO (smth) COM_FORWARD_IMachine_GETTER_Description_TO (smth) COM_FORWARD_IMachine_SETTER_Description_TO (smth) COM_FORWARD_IMachine_GETTER_Id_TO (smth) COM_FORWARD_IMachine_GETTER_Groups_TO (smth) COM_FORWARD_IMachine_SETTER_Groups_TO (smth) COM_FORWARD_IMachine_GETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_SETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_GETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_SETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_GETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_SETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_GETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_SETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_GETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_SETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_GETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_SETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_SETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_GETTER_BIOSSettings_TO (smth) COM_FORWARD_IMachine_GETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_SETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_GETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_SETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_SETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_GETTER_VRDEServer_TO (smth) COM_FORWARD_IMachine_GETTER_EmulatedUSBWebcameraEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_EmulatedUSBWebcameraEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MediumAttachments_TO (smth) COM_FORWARD_IMachine_GETTER_USBController_TO (smth) COM_FORWARD_IMachine_GETTER_AudioAdapter_TO (smth) COM_FORWARD_IMachine_GETTER_StorageControllers_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsModified_TO (smth) COM_FORWARD_IMachine_GETTER_SessionState_TO (smth) COM_FORWARD_IMachine_GETTER_SessionType_TO (smth) COM_FORWARD_IMachine_GETTER_SessionPID_TO (smth) COM_FORWARD_IMachine_GETTER_State_TO (smth) COM_FORWARD_IMachine_GETTER_LastStateChange_TO (smth) COM_FORWARD_IMachine_GETTER_StateFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_LogFolder_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentSnapshot_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotCount_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentStateModified_TO (smth) COM_FORWARD_IMachine_GETTER_SharedFolders_TO (smth) COM_FORWARD_IMachine_GETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_SETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_GETTER_DragAndDropMode_TO (smth) COM_FORWARD_IMachine_SETTER_DragAndDropMode_TO (smth) COM_FORWARD_IMachine_GETTER_GuestPropertyNotificationPatterns_TO (smth) COM_FORWARD_IMachine_SETTER_GuestPropertyNotificationPatterns_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_GETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_SETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_GETTER_PCIDeviceAssignments_TO (smth) COM_FORWARD_IMachine_GETTER_BandwidthControl_TO (smth) COM_FORWARD_IMachine_GETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_SETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_GETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_SETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_GETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_SETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_LockMachine_TO (smth) COM_FORWARD_IMachine_LaunchVMProcess_TO (smth) COM_FORWARD_IMachine_SetBootOrder_TO (smth) COM_FORWARD_IMachine_GetBootOrder_TO (smth) COM_FORWARD_IMachine_AttachDevice_TO (smth) COM_FORWARD_IMachine_AttachDeviceWithoutMedium_TO (smth) COM_FORWARD_IMachine_DetachDevice_TO (smth) COM_FORWARD_IMachine_PassthroughDevice_TO (smth) COM_FORWARD_IMachine_TemporaryEjectDevice_TO (smth) COM_FORWARD_IMachine_NonRotationalDevice_TO (smth) COM_FORWARD_IMachine_SetAutoDiscardForDevice_TO (smth) COM_FORWARD_IMachine_SetBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_SetNoBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_UnmountMedium_TO (smth) COM_FORWARD_IMachine_MountMedium_TO (smth) COM_FORWARD_IMachine_GetMedium_TO (smth) COM_FORWARD_IMachine_GetMediumAttachmentsOfController_TO (smth) COM_FORWARD_IMachine_GetMediumAttachment_TO (smth) COM_FORWARD_IMachine_AttachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_DetachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_GetNetworkAdapter_TO (smth) COM_FORWARD_IMachine_AddStorageController_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByName_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByInstance_TO (smth) COM_FORWARD_IMachine_RemoveStorageController_TO (smth) COM_FORWARD_IMachine_SetStorageControllerBootable_TO (smth) COM_FORWARD_IMachine_GetSerialPort_TO (smth) COM_FORWARD_IMachine_GetParallelPort_TO (smth) COM_FORWARD_IMachine_GetExtraDataKeys_TO (smth) COM_FORWARD_IMachine_GetExtraData_TO (smth) COM_FORWARD_IMachine_SetExtraData_TO (smth) COM_FORWARD_IMachine_GetCPUProperty_TO (smth) COM_FORWARD_IMachine_SetCPUProperty_TO (smth) COM_FORWARD_IMachine_GetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_SetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveAllCPUIDLeaves_TO (smth) COM_FORWARD_IMachine_GetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SaveSettings_TO (smth) COM_FORWARD_IMachine_DiscardSettings_TO (smth) COM_FORWARD_IMachine_Unregister_TO (smth) COM_FORWARD_IMachine_Delete_TO (smth) COM_FORWARD_IMachine_Export_TO (smth) COM_FORWARD_IMachine_FindSnapshot_TO (smth) COM_FORWARD_IMachine_CreateSharedFolder_TO (smth) COM_FORWARD_IMachine_RemoveSharedFolder_TO (smth) COM_FORWARD_IMachine_CanShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_ShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_GetGuestProperty_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyTimestamp_TO (smth) COM_FORWARD_IMachine_SetGuestProperty_TO (smth) COM_FORWARD_IMachine_SetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_DeleteGuestProperty_TO (smth) COM_FORWARD_IMachine_EnumerateGuestProperties_TO (smth) COM_FORWARD_IMachine_QuerySavedGuestScreenInfo_TO (smth) COM_FORWARD_IMachine_QuerySavedThumbnailSize_TO (smth) COM_FORWARD_IMachine_ReadSavedThumbnailToArray_TO (smth) COM_FORWARD_IMachine_ReadSavedThumbnailPNGToArray_TO (smth) COM_FORWARD_IMachine_QuerySavedScreenshotPNGSize_TO (smth) COM_FORWARD_IMachine_ReadSavedScreenshotPNGToArray_TO (smth) COM_FORWARD_IMachine_HotPlugCPU_TO (smth) COM_FORWARD_IMachine_HotUnplugCPU_TO (smth) COM_FORWARD_IMachine_GetCPUStatus_TO (smth) COM_FORWARD_IMachine_QueryLogFilename_TO (smth) COM_FORWARD_IMachine_ReadLog_TO (smth) COM_FORWARD_IMachine_CloneTo_TO (smth) 
+#define COM_FORWARD_IMachine_TO(smth) COM_FORWARD_IMachine_GETTER_Parent_TO (smth) COM_FORWARD_IMachine_GETTER_Icon_TO (smth) COM_FORWARD_IMachine_SETTER_Icon_TO (smth) COM_FORWARD_IMachine_GETTER_Accessible_TO (smth) COM_FORWARD_IMachine_GETTER_AccessError_TO (smth) COM_FORWARD_IMachine_GETTER_Name_TO (smth) COM_FORWARD_IMachine_SETTER_Name_TO (smth) COM_FORWARD_IMachine_GETTER_Description_TO (smth) COM_FORWARD_IMachine_SETTER_Description_TO (smth) COM_FORWARD_IMachine_GETTER_Id_TO (smth) COM_FORWARD_IMachine_GETTER_Groups_TO (smth) COM_FORWARD_IMachine_SETTER_Groups_TO (smth) COM_FORWARD_IMachine_GETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_SETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_GETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_SETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_GETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_SETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_GETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_SETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_GETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_SETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_GETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_GraphicsControllerType_TO (smth) COM_FORWARD_IMachine_SETTER_GraphicsControllerType_TO (smth) COM_FORWARD_IMachine_GETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_SETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_SETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureScreens_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureScreens_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureRate_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureRate_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureFPS_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureFPS_TO (smth) COM_FORWARD_IMachine_GETTER_BIOSSettings_TO (smth) COM_FORWARD_IMachine_GETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_SETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_GETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_SETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_SETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_GETTER_VRDEServer_TO (smth) COM_FORWARD_IMachine_GETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MediumAttachments_TO (smth) COM_FORWARD_IMachine_GETTER_USBControllers_TO (smth) COM_FORWARD_IMachine_GETTER_USBDeviceFilters_TO (smth) COM_FORWARD_IMachine_GETTER_AudioAdapter_TO (smth) COM_FORWARD_IMachine_GETTER_StorageControllers_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsModified_TO (smth) COM_FORWARD_IMachine_GETTER_SessionState_TO (smth) COM_FORWARD_IMachine_GETTER_SessionType_TO (smth) COM_FORWARD_IMachine_GETTER_SessionPID_TO (smth) COM_FORWARD_IMachine_GETTER_State_TO (smth) COM_FORWARD_IMachine_GETTER_LastStateChange_TO (smth) COM_FORWARD_IMachine_GETTER_StateFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_LogFolder_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentSnapshot_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotCount_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentStateModified_TO (smth) COM_FORWARD_IMachine_GETTER_SharedFolders_TO (smth) COM_FORWARD_IMachine_GETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_SETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_GETTER_DragAndDropMode_TO (smth) COM_FORWARD_IMachine_SETTER_DragAndDropMode_TO (smth) COM_FORWARD_IMachine_GETTER_GuestPropertyNotificationPatterns_TO (smth) COM_FORWARD_IMachine_SETTER_GuestPropertyNotificationPatterns_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_GETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_SETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_GETTER_PCIDeviceAssignments_TO (smth) COM_FORWARD_IMachine_GETTER_BandwidthControl_TO (smth) COM_FORWARD_IMachine_GETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_SETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_GETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_SETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_GETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_SETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_GETTER_DefaultFrontend_TO (smth) COM_FORWARD_IMachine_SETTER_DefaultFrontend_TO (smth) COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO (smth) COM_FORWARD_IMachine_LockMachine_TO (smth) COM_FORWARD_IMachine_LaunchVMProcess_TO (smth) COM_FORWARD_IMachine_SetBootOrder_TO (smth) COM_FORWARD_IMachine_GetBootOrder_TO (smth) COM_FORWARD_IMachine_AttachDevice_TO (smth) COM_FORWARD_IMachine_AttachDeviceWithoutMedium_TO (smth) COM_FORWARD_IMachine_DetachDevice_TO (smth) COM_FORWARD_IMachine_PassthroughDevice_TO (smth) COM_FORWARD_IMachine_TemporaryEjectDevice_TO (smth) COM_FORWARD_IMachine_NonRotationalDevice_TO (smth) COM_FORWARD_IMachine_SetAutoDiscardForDevice_TO (smth) COM_FORWARD_IMachine_SetHotPluggableForDevice_TO (smth) COM_FORWARD_IMachine_SetBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_SetNoBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_UnmountMedium_TO (smth) COM_FORWARD_IMachine_MountMedium_TO (smth) COM_FORWARD_IMachine_GetMedium_TO (smth) COM_FORWARD_IMachine_GetMediumAttachmentsOfController_TO (smth) COM_FORWARD_IMachine_GetMediumAttachment_TO (smth) COM_FORWARD_IMachine_AttachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_DetachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_GetNetworkAdapter_TO (smth) COM_FORWARD_IMachine_AddStorageController_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByName_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByInstance_TO (smth) COM_FORWARD_IMachine_RemoveStorageController_TO (smth) COM_FORWARD_IMachine_SetStorageControllerBootable_TO (smth) COM_FORWARD_IMachine_AddUSBController_TO (smth) COM_FORWARD_IMachine_RemoveUSBController_TO (smth) COM_FORWARD_IMachine_GetUSBControllerByName_TO (smth) COM_FORWARD_IMachine_GetUSBControllerCountByType_TO (smth) COM_FORWARD_IMachine_GetSerialPort_TO (smth) COM_FORWARD_IMachine_GetParallelPort_TO (smth) COM_FORWARD_IMachine_GetExtraDataKeys_TO (smth) COM_FORWARD_IMachine_GetExtraData_TO (smth) COM_FORWARD_IMachine_SetExtraData_TO (smth) COM_FORWARD_IMachine_GetCPUProperty_TO (smth) COM_FORWARD_IMachine_SetCPUProperty_TO (smth) COM_FORWARD_IMachine_GetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_SetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveAllCPUIDLeaves_TO (smth) COM_FORWARD_IMachine_GetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SetSettingsFilePath_TO (smth) COM_FORWARD_IMachine_SaveSettings_TO (smth) COM_FORWARD_IMachine_DiscardSettings_TO (smth) COM_FORWARD_IMachine_Unregister_TO (smth) COM_FORWARD_IMachine_DeleteConfig_TO (smth) COM_FORWARD_IMachine_ExportTo_TO (smth) COM_FORWARD_IMachine_FindSnapshot_TO (smth) COM_FORWARD_IMachine_CreateSharedFolder_TO (smth) COM_FORWARD_IMachine_RemoveSharedFolder_TO (smth) COM_FORWARD_IMachine_CanShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_ShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_GetGuestProperty_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyTimestamp_TO (smth) COM_FORWARD_IMachine_SetGuestProperty_TO (smth) COM_FORWARD_IMachine_SetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_DeleteGuestProperty_TO (smth) COM_FORWARD_IMachine_EnumerateGuestProperties_TO (smth) COM_FORWARD_IMachine_QuerySavedGuestScreenInfo_TO (smth) COM_FORWARD_IMachine_QuerySavedThumbnailSize_TO (smth) COM_FORWARD_IMachine_ReadSavedThumbnailToArray_TO (smth) COM_FORWARD_IMachine_ReadSavedThumbnailPNGToArray_TO (smth) COM_FORWARD_IMachine_QuerySavedScreenshotPNGSize_TO (smth) COM_FORWARD_IMachine_ReadSavedScreenshotPNGToArray_TO (smth) COM_FORWARD_IMachine_HotPlugCPU_TO (smth) COM_FORWARD_IMachine_HotUnplugCPU_TO (smth) COM_FORWARD_IMachine_GetCPUStatus_TO (smth) COM_FORWARD_IMachine_QueryLogFilename_TO (smth) COM_FORWARD_IMachine_ReadLog_TO (smth) COM_FORWARD_IMachine_CloneTo_TO (smth) 
 #define COM_FORWARD_IMachine_TO_OBJ(obj) COM_FORWARD_IMachine_TO ((obj)->)
 #define COM_FORWARD_IMachine_TO_BASE(base) COM_FORWARD_IMachine_TO (base::)
+#define COM_FORWARD_IEmulatedUSB_GETTER_Webcams_TO(smth) HRESULT STDMETHODCALLTYPE get_Webcams (SAFEARRAY * * aWebcams) { return smth get_Webcams (aWebcams); }
+#define COM_FORWARD_IEmulatedUSB_GETTER_Webcams_TO_OBJ(obj) COM_FORWARD_IEmulatedUSB_GETTER_Webcams_TO ((obj)->)
+#define COM_FORWARD_IEmulatedUSB_GETTER_Webcams_TO_BASE(base) COM_FORWARD_IEmulatedUSB_GETTER_Webcams_TO (base::)
+#define COM_FORWARD_IEmulatedUSB_WebcamAttach_TO(smth) HRESULT STDMETHODCALLTYPE WebcamAttach (BSTR aPath, BSTR aSettings) { return smth WebcamAttach (aPath, aSettings); }
+#define COM_FORWARD_IEmulatedUSB_WebcamAttach_TO_OBJ(obj) COM_FORWARD_IEmulatedUSB_WebcamAttach_TO ((obj)->)
+#define COM_FORWARD_IEmulatedUSB_WebcamAttach_TO_BASE(base) COM_FORWARD_IEmulatedUSB_WebcamAttach_TO (base::)
+#define COM_FORWARD_IEmulatedUSB_WebcamDetach_TO(smth) HRESULT STDMETHODCALLTYPE WebcamDetach (BSTR aPath) { return smth WebcamDetach (aPath); }
+#define COM_FORWARD_IEmulatedUSB_WebcamDetach_TO_OBJ(obj) COM_FORWARD_IEmulatedUSB_WebcamDetach_TO ((obj)->)
+#define COM_FORWARD_IEmulatedUSB_WebcamDetach_TO_BASE(base) COM_FORWARD_IEmulatedUSB_WebcamDetach_TO (base::)
+#define COM_FORWARD_IEmulatedUSB_TO(smth) COM_FORWARD_IEmulatedUSB_GETTER_Webcams_TO (smth) COM_FORWARD_IEmulatedUSB_WebcamAttach_TO (smth) COM_FORWARD_IEmulatedUSB_WebcamDetach_TO (smth) 
+#define COM_FORWARD_IEmulatedUSB_TO_OBJ(obj) COM_FORWARD_IEmulatedUSB_TO ((obj)->)
+#define COM_FORWARD_IEmulatedUSB_TO_BASE(base) COM_FORWARD_IEmulatedUSB_TO (base::)
 #define COM_FORWARD_IVRDEServerInfo_GETTER_Active_TO(smth) HRESULT STDMETHODCALLTYPE get_Active (BOOL * aActive) { return smth get_Active (aActive); }
 #define COM_FORWARD_IVRDEServerInfo_GETTER_Active_TO_OBJ(obj) COM_FORWARD_IVRDEServerInfo_GETTER_Active_TO ((obj)->)
 #define COM_FORWARD_IVRDEServerInfo_GETTER_Active_TO_BASE(base) COM_FORWARD_IVRDEServerInfo_GETTER_Active_TO (base::)
@@ -2876,6 +3499,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IConsole_SETTER_UseHostClipboard_TO(smth) HRESULT STDMETHODCALLTYPE put_UseHostClipboard (BOOL aUseHostClipboard) { return smth put_UseHostClipboard (aUseHostClipboard); }
 #define COM_FORWARD_IConsole_SETTER_UseHostClipboard_TO_OBJ(obj) COM_FORWARD_IConsole_SETTER_UseHostClipboard_TO ((obj)->)
 #define COM_FORWARD_IConsole_SETTER_UseHostClipboard_TO_BASE(base) COM_FORWARD_IConsole_SETTER_UseHostClipboard_TO (base::)
+#define COM_FORWARD_IConsole_GETTER_EmulatedUSB_TO(smth) HRESULT STDMETHODCALLTYPE get_EmulatedUSB (IEmulatedUSB * * aEmulatedUSB) { return smth get_EmulatedUSB (aEmulatedUSB); }
+#define COM_FORWARD_IConsole_GETTER_EmulatedUSB_TO_OBJ(obj) COM_FORWARD_IConsole_GETTER_EmulatedUSB_TO ((obj)->)
+#define COM_FORWARD_IConsole_GETTER_EmulatedUSB_TO_BASE(base) COM_FORWARD_IConsole_GETTER_EmulatedUSB_TO (base::)
 #define COM_FORWARD_IConsole_PowerUp_TO(smth) HRESULT STDMETHODCALLTYPE PowerUp (IProgress * * aProgress) { return smth PowerUp (aProgress); }
 #define COM_FORWARD_IConsole_PowerUp_TO_OBJ(obj) COM_FORWARD_IConsole_PowerUp_TO ((obj)->)
 #define COM_FORWARD_IConsole_PowerUp_TO_BASE(base) COM_FORWARD_IConsole_PowerUp_TO (base::)
@@ -2954,12 +3580,15 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IConsole_Teleport_TO(smth) HRESULT STDMETHODCALLTYPE Teleport (BSTR aHostname, ULONG aTcpport, BSTR aPassword, ULONG aMaxDowntime, IProgress * * aProgress) { return smth Teleport (aHostname, aTcpport, aPassword, aMaxDowntime, aProgress); }
 #define COM_FORWARD_IConsole_Teleport_TO_OBJ(obj) COM_FORWARD_IConsole_Teleport_TO ((obj)->)
 #define COM_FORWARD_IConsole_Teleport_TO_BASE(base) COM_FORWARD_IConsole_Teleport_TO (base::)
-#define COM_FORWARD_IConsole_TO(smth) COM_FORWARD_IConsole_GETTER_Machine_TO (smth) COM_FORWARD_IConsole_GETTER_State_TO (smth) COM_FORWARD_IConsole_GETTER_Guest_TO (smth) COM_FORWARD_IConsole_GETTER_Keyboard_TO (smth) COM_FORWARD_IConsole_GETTER_Mouse_TO (smth) COM_FORWARD_IConsole_GETTER_Display_TO (smth) COM_FORWARD_IConsole_GETTER_Debugger_TO (smth) COM_FORWARD_IConsole_GETTER_USBDevices_TO (smth) COM_FORWARD_IConsole_GETTER_RemoteUSBDevices_TO (smth) COM_FORWARD_IConsole_GETTER_SharedFolders_TO (smth) COM_FORWARD_IConsole_GETTER_VRDEServerInfo_TO (smth) COM_FORWARD_IConsole_GETTER_EventSource_TO (smth) COM_FORWARD_IConsole_GETTER_AttachedPCIDevices_TO (smth) COM_FORWARD_IConsole_GETTER_UseHostClipboard_TO (smth) COM_FORWARD_IConsole_SETTER_UseHostClipboard_TO (smth) COM_FORWARD_IConsole_PowerUp_TO (smth) COM_FORWARD_IConsole_PowerUpPaused_TO (smth) COM_FORWARD_IConsole_PowerDown_TO (smth) COM_FORWARD_IConsole_Reset_TO (smth) COM_FORWARD_IConsole_Pause_TO (smth) COM_FORWARD_IConsole_Resume_TO (smth) COM_FORWARD_IConsole_PowerButton_TO (smth) COM_FORWARD_IConsole_SleepButton_TO (smth) COM_FORWARD_IConsole_GetPowerButtonHandled_TO (smth) COM_FORWARD_IConsole_GetGuestEnteredACPIMode_TO (smth) COM_FORWARD_IConsole_SaveState_TO (smth) COM_FORWARD_IConsole_AdoptSavedState_TO (smth) COM_FORWARD_IConsole_DiscardSavedState_TO (smth) COM_FORWARD_IConsole_GetDeviceActivity_TO (smth) COM_FORWARD_IConsole_AttachUSBDevice_TO (smth) COM_FORWARD_IConsole_DetachUSBDevice_TO (smth) COM_FORWARD_IConsole_FindUSBDeviceByAddress_TO (smth) COM_FORWARD_IConsole_FindUSBDeviceById_TO (smth) COM_FORWARD_IConsole_CreateSharedFolder_TO (smth) COM_FORWARD_IConsole_RemoveSharedFolder_TO (smth) COM_FORWARD_IConsole_TakeSnapshot_TO (smth) COM_FORWARD_IConsole_DeleteSnapshot_TO (smth) COM_FORWARD_IConsole_DeleteSnapshotAndAllChildren_TO (smth) COM_FORWARD_IConsole_DeleteSnapshotRange_TO (smth) COM_FORWARD_IConsole_RestoreSnapshot_TO (smth) COM_FORWARD_IConsole_Teleport_TO (smth) 
+#define COM_FORWARD_IConsole_TO(smth) COM_FORWARD_IConsole_GETTER_Machine_TO (smth) COM_FORWARD_IConsole_GETTER_State_TO (smth) COM_FORWARD_IConsole_GETTER_Guest_TO (smth) COM_FORWARD_IConsole_GETTER_Keyboard_TO (smth) COM_FORWARD_IConsole_GETTER_Mouse_TO (smth) COM_FORWARD_IConsole_GETTER_Display_TO (smth) COM_FORWARD_IConsole_GETTER_Debugger_TO (smth) COM_FORWARD_IConsole_GETTER_USBDevices_TO (smth) COM_FORWARD_IConsole_GETTER_RemoteUSBDevices_TO (smth) COM_FORWARD_IConsole_GETTER_SharedFolders_TO (smth) COM_FORWARD_IConsole_GETTER_VRDEServerInfo_TO (smth) COM_FORWARD_IConsole_GETTER_EventSource_TO (smth) COM_FORWARD_IConsole_GETTER_AttachedPCIDevices_TO (smth) COM_FORWARD_IConsole_GETTER_UseHostClipboard_TO (smth) COM_FORWARD_IConsole_SETTER_UseHostClipboard_TO (smth) COM_FORWARD_IConsole_GETTER_EmulatedUSB_TO (smth) COM_FORWARD_IConsole_PowerUp_TO (smth) COM_FORWARD_IConsole_PowerUpPaused_TO (smth) COM_FORWARD_IConsole_PowerDown_TO (smth) COM_FORWARD_IConsole_Reset_TO (smth) COM_FORWARD_IConsole_Pause_TO (smth) COM_FORWARD_IConsole_Resume_TO (smth) COM_FORWARD_IConsole_PowerButton_TO (smth) COM_FORWARD_IConsole_SleepButton_TO (smth) COM_FORWARD_IConsole_GetPowerButtonHandled_TO (smth) COM_FORWARD_IConsole_GetGuestEnteredACPIMode_TO (smth) COM_FORWARD_IConsole_SaveState_TO (smth) COM_FORWARD_IConsole_AdoptSavedState_TO (smth) COM_FORWARD_IConsole_DiscardSavedState_TO (smth) COM_FORWARD_IConsole_GetDeviceActivity_TO (smth) COM_FORWARD_IConsole_AttachUSBDevice_TO (smth) COM_FORWARD_IConsole_DetachUSBDevice_TO (smth) COM_FORWARD_IConsole_FindUSBDeviceByAddress_TO (smth) COM_FORWARD_IConsole_FindUSBDeviceById_TO (smth) COM_FORWARD_IConsole_CreateSharedFolder_TO (smth) COM_FORWARD_IConsole_RemoveSharedFolder_TO (smth) COM_FORWARD_IConsole_TakeSnapshot_TO (smth) COM_FORWARD_IConsole_DeleteSnapshot_TO (smth) COM_FORWARD_IConsole_DeleteSnapshotAndAllChildren_TO (smth) COM_FORWARD_IConsole_DeleteSnapshotRange_TO (smth) COM_FORWARD_IConsole_RestoreSnapshot_TO (smth) COM_FORWARD_IConsole_Teleport_TO (smth) 
 #define COM_FORWARD_IConsole_TO_OBJ(obj) COM_FORWARD_IConsole_TO ((obj)->)
 #define COM_FORWARD_IConsole_TO_BASE(base) COM_FORWARD_IConsole_TO (base::)
 #define COM_FORWARD_IHostNetworkInterface_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
 #define COM_FORWARD_IHostNetworkInterface_GETTER_Name_TO_OBJ(obj) COM_FORWARD_IHostNetworkInterface_GETTER_Name_TO ((obj)->)
 #define COM_FORWARD_IHostNetworkInterface_GETTER_Name_TO_BASE(base) COM_FORWARD_IHostNetworkInterface_GETTER_Name_TO (base::)
+#define COM_FORWARD_IHostNetworkInterface_GETTER_ShortName_TO(smth) HRESULT STDMETHODCALLTYPE get_ShortName (BSTR * aShortName) { return smth get_ShortName (aShortName); }
+#define COM_FORWARD_IHostNetworkInterface_GETTER_ShortName_TO_OBJ(obj) COM_FORWARD_IHostNetworkInterface_GETTER_ShortName_TO ((obj)->)
+#define COM_FORWARD_IHostNetworkInterface_GETTER_ShortName_TO_BASE(base) COM_FORWARD_IHostNetworkInterface_GETTER_ShortName_TO (base::)
 #define COM_FORWARD_IHostNetworkInterface_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (BSTR * aId) { return smth get_Id (aId); }
 #define COM_FORWARD_IHostNetworkInterface_GETTER_Id_TO_OBJ(obj) COM_FORWARD_IHostNetworkInterface_GETTER_Id_TO ((obj)->)
 #define COM_FORWARD_IHostNetworkInterface_GETTER_Id_TO_BASE(base) COM_FORWARD_IHostNetworkInterface_GETTER_Id_TO (base::)
@@ -3008,9 +3637,21 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO(smth) HRESULT STDMETHODCALLTYPE DHCPRediscover() { return smth DHCPRediscover(); }
 #define COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO_OBJ(obj) COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO ((obj)->)
 #define COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO_BASE(base) COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO (base::)
-#define COM_FORWARD_IHostNetworkInterface_TO(smth) COM_FORWARD_IHostNetworkInterface_GETTER_Name_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_Id_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_NetworkName_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_DHCPEnabled_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPAddress_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_NetworkMask_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6Supported_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6Address_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6NetworkMaskPrefixLength_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_HardwareAddress_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_MediumType_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_Status_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_InterfaceType_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfig_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfigV6_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableDynamicIPConfig_TO (smth) COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO (smth) 
+#define COM_FORWARD_IHostNetworkInterface_TO(smth) COM_FORWARD_IHostNetworkInterface_GETTER_Name_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_ShortName_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_Id_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_NetworkName_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_DHCPEnabled_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPAddress_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_NetworkMask_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6Supported_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6Address_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6NetworkMaskPrefixLength_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_HardwareAddress_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_MediumType_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_Status_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_InterfaceType_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfig_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfigV6_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableDynamicIPConfig_TO (smth) COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO (smth) 
 #define COM_FORWARD_IHostNetworkInterface_TO_OBJ(obj) COM_FORWARD_IHostNetworkInterface_TO ((obj)->)
 #define COM_FORWARD_IHostNetworkInterface_TO_BASE(base) COM_FORWARD_IHostNetworkInterface_TO (base::)
+#define COM_FORWARD_IHostVideoInputDevice_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
+#define COM_FORWARD_IHostVideoInputDevice_GETTER_Name_TO_OBJ(obj) COM_FORWARD_IHostVideoInputDevice_GETTER_Name_TO ((obj)->)
+#define COM_FORWARD_IHostVideoInputDevice_GETTER_Name_TO_BASE(base) COM_FORWARD_IHostVideoInputDevice_GETTER_Name_TO (base::)
+#define COM_FORWARD_IHostVideoInputDevice_GETTER_Path_TO(smth) HRESULT STDMETHODCALLTYPE get_Path (BSTR * aPath) { return smth get_Path (aPath); }
+#define COM_FORWARD_IHostVideoInputDevice_GETTER_Path_TO_OBJ(obj) COM_FORWARD_IHostVideoInputDevice_GETTER_Path_TO ((obj)->)
+#define COM_FORWARD_IHostVideoInputDevice_GETTER_Path_TO_BASE(base) COM_FORWARD_IHostVideoInputDevice_GETTER_Path_TO (base::)
+#define COM_FORWARD_IHostVideoInputDevice_GETTER_Alias_TO(smth) HRESULT STDMETHODCALLTYPE get_Alias (BSTR * aAlias) { return smth get_Alias (aAlias); }
+#define COM_FORWARD_IHostVideoInputDevice_GETTER_Alias_TO_OBJ(obj) COM_FORWARD_IHostVideoInputDevice_GETTER_Alias_TO ((obj)->)
+#define COM_FORWARD_IHostVideoInputDevice_GETTER_Alias_TO_BASE(base) COM_FORWARD_IHostVideoInputDevice_GETTER_Alias_TO (base::)
+#define COM_FORWARD_IHostVideoInputDevice_TO(smth) COM_FORWARD_IHostVideoInputDevice_GETTER_Name_TO (smth) COM_FORWARD_IHostVideoInputDevice_GETTER_Path_TO (smth) COM_FORWARD_IHostVideoInputDevice_GETTER_Alias_TO (smth) 
+#define COM_FORWARD_IHostVideoInputDevice_TO_OBJ(obj) COM_FORWARD_IHostVideoInputDevice_TO ((obj)->)
+#define COM_FORWARD_IHostVideoInputDevice_TO_BASE(base) COM_FORWARD_IHostVideoInputDevice_TO (base::)
 #define COM_FORWARD_IHost_GETTER_DVDDrives_TO(smth) HRESULT STDMETHODCALLTYPE get_DVDDrives (SAFEARRAY * * aDVDDrives) { return smth get_DVDDrives (aDVDDrives); }
 #define COM_FORWARD_IHost_GETTER_DVDDrives_TO_OBJ(obj) COM_FORWARD_IHost_GETTER_DVDDrives_TO ((obj)->)
 #define COM_FORWARD_IHost_GETTER_DVDDrives_TO_BASE(base) COM_FORWARD_IHost_GETTER_DVDDrives_TO (base::)
@@ -3026,6 +3667,15 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IHost_GETTER_NetworkInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_NetworkInterfaces (SAFEARRAY * * aNetworkInterfaces) { return smth get_NetworkInterfaces (aNetworkInterfaces); }
 #define COM_FORWARD_IHost_GETTER_NetworkInterfaces_TO_OBJ(obj) COM_FORWARD_IHost_GETTER_NetworkInterfaces_TO ((obj)->)
 #define COM_FORWARD_IHost_GETTER_NetworkInterfaces_TO_BASE(base) COM_FORWARD_IHost_GETTER_NetworkInterfaces_TO (base::)
+#define COM_FORWARD_IHost_GETTER_NameServers_TO(smth) HRESULT STDMETHODCALLTYPE get_NameServers (SAFEARRAY * * aNameServers) { return smth get_NameServers (aNameServers); }
+#define COM_FORWARD_IHost_GETTER_NameServers_TO_OBJ(obj) COM_FORWARD_IHost_GETTER_NameServers_TO ((obj)->)
+#define COM_FORWARD_IHost_GETTER_NameServers_TO_BASE(base) COM_FORWARD_IHost_GETTER_NameServers_TO (base::)
+#define COM_FORWARD_IHost_GETTER_DomainName_TO(smth) HRESULT STDMETHODCALLTYPE get_DomainName (BSTR * aDomainName) { return smth get_DomainName (aDomainName); }
+#define COM_FORWARD_IHost_GETTER_DomainName_TO_OBJ(obj) COM_FORWARD_IHost_GETTER_DomainName_TO ((obj)->)
+#define COM_FORWARD_IHost_GETTER_DomainName_TO_BASE(base) COM_FORWARD_IHost_GETTER_DomainName_TO (base::)
+#define COM_FORWARD_IHost_GETTER_SearchStrings_TO(smth) HRESULT STDMETHODCALLTYPE get_SearchStrings (SAFEARRAY * * aSearchStrings) { return smth get_SearchStrings (aSearchStrings); }
+#define COM_FORWARD_IHost_GETTER_SearchStrings_TO_OBJ(obj) COM_FORWARD_IHost_GETTER_SearchStrings_TO ((obj)->)
+#define COM_FORWARD_IHost_GETTER_SearchStrings_TO_BASE(base) COM_FORWARD_IHost_GETTER_SearchStrings_TO (base::)
 #define COM_FORWARD_IHost_GETTER_ProcessorCount_TO(smth) HRESULT STDMETHODCALLTYPE get_ProcessorCount (ULONG * aProcessorCount) { return smth get_ProcessorCount (aProcessorCount); }
 #define COM_FORWARD_IHost_GETTER_ProcessorCount_TO_OBJ(obj) COM_FORWARD_IHost_GETTER_ProcessorCount_TO ((obj)->)
 #define COM_FORWARD_IHost_GETTER_ProcessorCount_TO_BASE(base) COM_FORWARD_IHost_GETTER_ProcessorCount_TO (base::)
@@ -3035,6 +3685,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IHost_GETTER_ProcessorCoreCount_TO(smth) HRESULT STDMETHODCALLTYPE get_ProcessorCoreCount (ULONG * aProcessorCoreCount) { return smth get_ProcessorCoreCount (aProcessorCoreCount); }
 #define COM_FORWARD_IHost_GETTER_ProcessorCoreCount_TO_OBJ(obj) COM_FORWARD_IHost_GETTER_ProcessorCoreCount_TO ((obj)->)
 #define COM_FORWARD_IHost_GETTER_ProcessorCoreCount_TO_BASE(base) COM_FORWARD_IHost_GETTER_ProcessorCoreCount_TO (base::)
+#define COM_FORWARD_IHost_GETTER_ProcessorOnlineCoreCount_TO(smth) HRESULT STDMETHODCALLTYPE get_ProcessorOnlineCoreCount (ULONG * aProcessorOnlineCoreCount) { return smth get_ProcessorOnlineCoreCount (aProcessorOnlineCoreCount); }
+#define COM_FORWARD_IHost_GETTER_ProcessorOnlineCoreCount_TO_OBJ(obj) COM_FORWARD_IHost_GETTER_ProcessorOnlineCoreCount_TO ((obj)->)
+#define COM_FORWARD_IHost_GETTER_ProcessorOnlineCoreCount_TO_BASE(base) COM_FORWARD_IHost_GETTER_ProcessorOnlineCoreCount_TO (base::)
 #define COM_FORWARD_IHost_GETTER_MemorySize_TO(smth) HRESULT STDMETHODCALLTYPE get_MemorySize (ULONG * aMemorySize) { return smth get_MemorySize (aMemorySize); }
 #define COM_FORWARD_IHost_GETTER_MemorySize_TO_OBJ(obj) COM_FORWARD_IHost_GETTER_MemorySize_TO ((obj)->)
 #define COM_FORWARD_IHost_GETTER_MemorySize_TO_BASE(base) COM_FORWARD_IHost_GETTER_MemorySize_TO (base::)
@@ -3053,6 +3706,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IHost_GETTER_Acceleration3DAvailable_TO(smth) HRESULT STDMETHODCALLTYPE get_Acceleration3DAvailable (BOOL * aAcceleration3DAvailable) { return smth get_Acceleration3DAvailable (aAcceleration3DAvailable); }
 #define COM_FORWARD_IHost_GETTER_Acceleration3DAvailable_TO_OBJ(obj) COM_FORWARD_IHost_GETTER_Acceleration3DAvailable_TO ((obj)->)
 #define COM_FORWARD_IHost_GETTER_Acceleration3DAvailable_TO_BASE(base) COM_FORWARD_IHost_GETTER_Acceleration3DAvailable_TO (base::)
+#define COM_FORWARD_IHost_GETTER_VideoInputDevices_TO(smth) HRESULT STDMETHODCALLTYPE get_VideoInputDevices (SAFEARRAY * * aVideoInputDevices) { return smth get_VideoInputDevices (aVideoInputDevices); }
+#define COM_FORWARD_IHost_GETTER_VideoInputDevices_TO_OBJ(obj) COM_FORWARD_IHost_GETTER_VideoInputDevices_TO ((obj)->)
+#define COM_FORWARD_IHost_GETTER_VideoInputDevices_TO_BASE(base) COM_FORWARD_IHost_GETTER_VideoInputDevices_TO (base::)
 #define COM_FORWARD_IHost_GetProcessorSpeed_TO(smth) HRESULT STDMETHODCALLTYPE GetProcessorSpeed (ULONG aCpuId, ULONG * aSpeed) { return smth GetProcessorSpeed (aCpuId, aSpeed); }
 #define COM_FORWARD_IHost_GetProcessorSpeed_TO_OBJ(obj) COM_FORWARD_IHost_GetProcessorSpeed_TO ((obj)->)
 #define COM_FORWARD_IHost_GetProcessorSpeed_TO_BASE(base) COM_FORWARD_IHost_GetProcessorSpeed_TO (base::)
@@ -3104,7 +3760,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IHost_GenerateMACAddress_TO(smth) HRESULT STDMETHODCALLTYPE GenerateMACAddress (BSTR * aAddress) { return smth GenerateMACAddress (aAddress); }
 #define COM_FORWARD_IHost_GenerateMACAddress_TO_OBJ(obj) COM_FORWARD_IHost_GenerateMACAddress_TO ((obj)->)
 #define COM_FORWARD_IHost_GenerateMACAddress_TO_BASE(base) COM_FORWARD_IHost_GenerateMACAddress_TO (base::)
-#define COM_FORWARD_IHost_TO(smth) COM_FORWARD_IHost_GETTER_DVDDrives_TO (smth) COM_FORWARD_IHost_GETTER_FloppyDrives_TO (smth) COM_FORWARD_IHost_GETTER_USBDevices_TO (smth) COM_FORWARD_IHost_GETTER_USBDeviceFilters_TO (smth) COM_FORWARD_IHost_GETTER_NetworkInterfaces_TO (smth) COM_FORWARD_IHost_GETTER_ProcessorCount_TO (smth) COM_FORWARD_IHost_GETTER_ProcessorOnlineCount_TO (smth) COM_FORWARD_IHost_GETTER_ProcessorCoreCount_TO (smth) COM_FORWARD_IHost_GETTER_MemorySize_TO (smth) COM_FORWARD_IHost_GETTER_MemoryAvailable_TO (smth) COM_FORWARD_IHost_GETTER_OperatingSystem_TO (smth) COM_FORWARD_IHost_GETTER_OSVersion_TO (smth) COM_FORWARD_IHost_GETTER_UTCTime_TO (smth) COM_FORWARD_IHost_GETTER_Acceleration3DAvailable_TO (smth) COM_FORWARD_IHost_GetProcessorSpeed_TO (smth) COM_FORWARD_IHost_GetProcessorFeature_TO (smth) COM_FORWARD_IHost_GetProcessorDescription_TO (smth) COM_FORWARD_IHost_GetProcessorCPUIDLeaf_TO (smth) COM_FORWARD_IHost_CreateHostOnlyNetworkInterface_TO (smth) COM_FORWARD_IHost_RemoveHostOnlyNetworkInterface_TO (smth) COM_FORWARD_IHost_CreateUSBDeviceFilter_TO (smth) COM_FORWARD_IHost_InsertUSBDeviceFilter_TO (smth) COM_FORWARD_IHost_RemoveUSBDeviceFilter_TO (smth) COM_FORWARD_IHost_FindHostDVDDrive_TO (smth) COM_FORWARD_IHost_FindHostFloppyDrive_TO (smth) COM_FORWARD_IHost_FindHostNetworkInterfaceByName_TO (smth) COM_FORWARD_IHost_FindHostNetworkInterfaceById_TO (smth) COM_FORWARD_IHost_FindHostNetworkInterfacesOfType_TO (smth) COM_FORWARD_IHost_FindUSBDeviceById_TO (smth) COM_FORWARD_IHost_FindUSBDeviceByAddress_TO (smth) COM_FORWARD_IHost_GenerateMACAddress_TO (smth) 
+#define COM_FORWARD_IHost_TO(smth) COM_FORWARD_IHost_GETTER_DVDDrives_TO (smth) COM_FORWARD_IHost_GETTER_FloppyDrives_TO (smth) COM_FORWARD_IHost_GETTER_USBDevices_TO (smth) COM_FORWARD_IHost_GETTER_USBDeviceFilters_TO (smth) COM_FORWARD_IHost_GETTER_NetworkInterfaces_TO (smth) COM_FORWARD_IHost_GETTER_NameServers_TO (smth) COM_FORWARD_IHost_GETTER_DomainName_TO (smth) COM_FORWARD_IHost_GETTER_SearchStrings_TO (smth) COM_FORWARD_IHost_GETTER_ProcessorCount_TO (smth) COM_FORWARD_IHost_GETTER_ProcessorOnlineCount_TO (smth) COM_FORWARD_IHost_GETTER_ProcessorCoreCount_TO (smth) COM_FORWARD_IHost_GETTER_ProcessorOnlineCoreCount_TO (smth) COM_FORWARD_IHost_GETTER_MemorySize_TO (smth) COM_FORWARD_IHost_GETTER_MemoryAvailable_TO (smth) COM_FORWARD_IHost_GETTER_OperatingSystem_TO (smth) COM_FORWARD_IHost_GETTER_OSVersion_TO (smth) COM_FORWARD_IHost_GETTER_UTCTime_TO (smth) COM_FORWARD_IHost_GETTER_Acceleration3DAvailable_TO (smth) COM_FORWARD_IHost_GETTER_VideoInputDevices_TO (smth) COM_FORWARD_IHost_GetProcessorSpeed_TO (smth) COM_FORWARD_IHost_GetProcessorFeature_TO (smth) COM_FORWARD_IHost_GetProcessorDescription_TO (smth) COM_FORWARD_IHost_GetProcessorCPUIDLeaf_TO (smth) COM_FORWARD_IHost_CreateHostOnlyNetworkInterface_TO (smth) COM_FORWARD_IHost_RemoveHostOnlyNetworkInterface_TO (smth) COM_FORWARD_IHost_CreateUSBDeviceFilter_TO (smth) COM_FORWARD_IHost_InsertUSBDeviceFilter_TO (smth) COM_FORWARD_IHost_RemoveUSBDeviceFilter_TO (smth) COM_FORWARD_IHost_FindHostDVDDrive_TO (smth) COM_FORWARD_IHost_FindHostFloppyDrive_TO (smth) COM_FORWARD_IHost_FindHostNetworkInterfaceByName_TO (smth) COM_FORWARD_IHost_FindHostNetworkInterfaceById_TO (smth) COM_FORWARD_IHost_FindHostNetworkInterfacesOfType_TO (smth) COM_FORWARD_IHost_FindUSBDeviceById_TO (smth) COM_FORWARD_IHost_FindUSBDeviceByAddress_TO (smth) COM_FORWARD_IHost_GenerateMACAddress_TO (smth) 
 #define COM_FORWARD_IHost_TO_OBJ(obj) COM_FORWARD_IHost_TO ((obj)->)
 #define COM_FORWARD_IHost_TO_BASE(base) COM_FORWARD_IHost_TO (base::)
 #define COM_FORWARD_ISystemProperties_GETTER_MinGuestRAM_TO(smth) HRESULT STDMETHODCALLTYPE get_MinGuestRAM (ULONG * aMinGuestRAM) { return smth get_MinGuestRAM (aMinGuestRAM); }
@@ -3140,12 +3796,24 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO(smth) HRESULT STDMETHODCALLTYPE get_MaxBootPosition (ULONG * aMaxBootPosition) { return smth get_MaxBootPosition (aMaxBootPosition); }
 #define COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO_BASE(base) COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO (base::)
+#define COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO(smth) HRESULT STDMETHODCALLTYPE get_ExclusiveHwVirt (BOOL * aExclusiveHwVirt) { return smth get_ExclusiveHwVirt (aExclusiveHwVirt); }
+#define COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO ((obj)->)
+#define COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO_BASE(base) COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO (base::)
+#define COM_FORWARD_ISystemProperties_SETTER_ExclusiveHwVirt_TO(smth) HRESULT STDMETHODCALLTYPE put_ExclusiveHwVirt (BOOL aExclusiveHwVirt) { return smth put_ExclusiveHwVirt (aExclusiveHwVirt); }
+#define COM_FORWARD_ISystemProperties_SETTER_ExclusiveHwVirt_TO_OBJ(obj) COM_FORWARD_ISystemProperties_SETTER_ExclusiveHwVirt_TO ((obj)->)
+#define COM_FORWARD_ISystemProperties_SETTER_ExclusiveHwVirt_TO_BASE(base) COM_FORWARD_ISystemProperties_SETTER_ExclusiveHwVirt_TO (base::)
 #define COM_FORWARD_ISystemProperties_GETTER_DefaultMachineFolder_TO(smth) HRESULT STDMETHODCALLTYPE get_DefaultMachineFolder (BSTR * aDefaultMachineFolder) { return smth get_DefaultMachineFolder (aDefaultMachineFolder); }
 #define COM_FORWARD_ISystemProperties_GETTER_DefaultMachineFolder_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GETTER_DefaultMachineFolder_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_GETTER_DefaultMachineFolder_TO_BASE(base) COM_FORWARD_ISystemProperties_GETTER_DefaultMachineFolder_TO (base::)
 #define COM_FORWARD_ISystemProperties_SETTER_DefaultMachineFolder_TO(smth) HRESULT STDMETHODCALLTYPE put_DefaultMachineFolder (BSTR aDefaultMachineFolder) { return smth put_DefaultMachineFolder (aDefaultMachineFolder); }
 #define COM_FORWARD_ISystemProperties_SETTER_DefaultMachineFolder_TO_OBJ(obj) COM_FORWARD_ISystemProperties_SETTER_DefaultMachineFolder_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_SETTER_DefaultMachineFolder_TO_BASE(base) COM_FORWARD_ISystemProperties_SETTER_DefaultMachineFolder_TO (base::)
+#define COM_FORWARD_ISystemProperties_GETTER_LoggingLevel_TO(smth) HRESULT STDMETHODCALLTYPE get_LoggingLevel (BSTR * aLoggingLevel) { return smth get_LoggingLevel (aLoggingLevel); }
+#define COM_FORWARD_ISystemProperties_GETTER_LoggingLevel_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GETTER_LoggingLevel_TO ((obj)->)
+#define COM_FORWARD_ISystemProperties_GETTER_LoggingLevel_TO_BASE(base) COM_FORWARD_ISystemProperties_GETTER_LoggingLevel_TO (base::)
+#define COM_FORWARD_ISystemProperties_SETTER_LoggingLevel_TO(smth) HRESULT STDMETHODCALLTYPE put_LoggingLevel (BSTR aLoggingLevel) { return smth put_LoggingLevel (aLoggingLevel); }
+#define COM_FORWARD_ISystemProperties_SETTER_LoggingLevel_TO_OBJ(obj) COM_FORWARD_ISystemProperties_SETTER_LoggingLevel_TO ((obj)->)
+#define COM_FORWARD_ISystemProperties_SETTER_LoggingLevel_TO_BASE(base) COM_FORWARD_ISystemProperties_SETTER_LoggingLevel_TO (base::)
 #define COM_FORWARD_ISystemProperties_GETTER_MediumFormats_TO(smth) HRESULT STDMETHODCALLTYPE get_MediumFormats (SAFEARRAY * * aMediumFormats) { return smth get_MediumFormats (aMediumFormats); }
 #define COM_FORWARD_ISystemProperties_GETTER_MediumFormats_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GETTER_MediumFormats_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_GETTER_MediumFormats_TO_BASE(base) COM_FORWARD_ISystemProperties_GETTER_MediumFormats_TO (base::)
@@ -3218,6 +3886,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_ISystemProperties_SETTER_DefaultAdditionsISO_TO(smth) HRESULT STDMETHODCALLTYPE put_DefaultAdditionsISO (BSTR aDefaultAdditionsISO) { return smth put_DefaultAdditionsISO (aDefaultAdditionsISO); }
 #define COM_FORWARD_ISystemProperties_SETTER_DefaultAdditionsISO_TO_OBJ(obj) COM_FORWARD_ISystemProperties_SETTER_DefaultAdditionsISO_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_SETTER_DefaultAdditionsISO_TO_BASE(base) COM_FORWARD_ISystemProperties_SETTER_DefaultAdditionsISO_TO (base::)
+#define COM_FORWARD_ISystemProperties_GETTER_DefaultFrontend_TO(smth) HRESULT STDMETHODCALLTYPE get_DefaultFrontend (BSTR * aDefaultFrontend) { return smth get_DefaultFrontend (aDefaultFrontend); }
+#define COM_FORWARD_ISystemProperties_GETTER_DefaultFrontend_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GETTER_DefaultFrontend_TO ((obj)->)
+#define COM_FORWARD_ISystemProperties_GETTER_DefaultFrontend_TO_BASE(base) COM_FORWARD_ISystemProperties_GETTER_DefaultFrontend_TO (base::)
+#define COM_FORWARD_ISystemProperties_SETTER_DefaultFrontend_TO(smth) HRESULT STDMETHODCALLTYPE put_DefaultFrontend (BSTR aDefaultFrontend) { return smth put_DefaultFrontend (aDefaultFrontend); }
+#define COM_FORWARD_ISystemProperties_SETTER_DefaultFrontend_TO_OBJ(obj) COM_FORWARD_ISystemProperties_SETTER_DefaultFrontend_TO ((obj)->)
+#define COM_FORWARD_ISystemProperties_SETTER_DefaultFrontend_TO_BASE(base) COM_FORWARD_ISystemProperties_SETTER_DefaultFrontend_TO (base::)
 #define COM_FORWARD_ISystemProperties_GetMaxNetworkAdapters_TO(smth) HRESULT STDMETHODCALLTYPE GetMaxNetworkAdapters (ChipsetType aChipset, ULONG * aMaxNetworkAdapters) { return smth GetMaxNetworkAdapters (aChipset, aMaxNetworkAdapters); }
 #define COM_FORWARD_ISystemProperties_GetMaxNetworkAdapters_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GetMaxNetworkAdapters_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_GetMaxNetworkAdapters_TO_BASE(base) COM_FORWARD_ISystemProperties_GetMaxNetworkAdapters_TO (base::)
@@ -3242,7 +3916,10 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_ISystemProperties_GetDefaultIoCacheSettingForStorageController_TO(smth) HRESULT STDMETHODCALLTYPE GetDefaultIoCacheSettingForStorageController (StorageControllerType aControllerType, BOOL * aEnabled) { return smth GetDefaultIoCacheSettingForStorageController (aControllerType, aEnabled); }
 #define COM_FORWARD_ISystemProperties_GetDefaultIoCacheSettingForStorageController_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GetDefaultIoCacheSettingForStorageController_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_GetDefaultIoCacheSettingForStorageController_TO_BASE(base) COM_FORWARD_ISystemProperties_GetDefaultIoCacheSettingForStorageController_TO (base::)
-#define COM_FORWARD_ISystemProperties_TO(smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestVRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestVRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestCPUCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestCPUCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestMonitors_TO (smth) COM_FORWARD_ISystemProperties_GETTER_InfoVDSize_TO (smth) COM_FORWARD_ISystemProperties_GETTER_SerialPortCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_ParallelPortCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultMachineFolder_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultMachineFolder_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MediumFormats_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultHardDiskFormat_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultHardDiskFormat_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpaceWarning_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpaceWarning_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpacePercentWarning_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpacePercentWarning_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpaceError_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpaceError_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpacePercentError_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpacePercentError_TO (smth) COM_FORWARD_ISystemProperties_GETTER_VRDEAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_SETTER_VRDEAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_GETTER_WebServiceAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_SETTER_WebServiceAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultVRDEExtPack_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultVRDEExtPack_TO (smth) COM_FORWARD_ISystemProperties_GETTER_LogHistoryCount_TO (smth) COM_FORWARD_ISystemProperties_SETTER_LogHistoryCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultAudioDriver_TO (smth) COM_FORWARD_ISystemProperties_GETTER_AutostartDatabasePath_TO (smth) COM_FORWARD_ISystemProperties_SETTER_AutostartDatabasePath_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultAdditionsISO_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultAdditionsISO_TO (smth) COM_FORWARD_ISystemProperties_GetMaxNetworkAdapters_TO (smth) COM_FORWARD_ISystemProperties_GetMaxNetworkAdaptersOfType_TO (smth) COM_FORWARD_ISystemProperties_GetMaxDevicesPerPortForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMinPortCountForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMaxPortCountForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMaxInstancesOfStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetDeviceTypesForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetDefaultIoCacheSettingForStorageController_TO (smth) 
+#define COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO(smth) HRESULT STDMETHODCALLTYPE GetMaxInstancesOfUSBControllerType (ChipsetType aChipset, USBControllerType aType, ULONG * aMaxInstances) { return smth GetMaxInstancesOfUSBControllerType (aChipset, aType, aMaxInstances); }
+#define COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO ((obj)->)
+#define COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO_BASE(base) COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO (base::)
+#define COM_FORWARD_ISystemProperties_TO(smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestVRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestVRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestCPUCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestCPUCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestMonitors_TO (smth) COM_FORWARD_ISystemProperties_GETTER_InfoVDSize_TO (smth) COM_FORWARD_ISystemProperties_GETTER_SerialPortCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_ParallelPortCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO (smth) COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO (smth) COM_FORWARD_ISystemProperties_SETTER_ExclusiveHwVirt_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultMachineFolder_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultMachineFolder_TO (smth) COM_FORWARD_ISystemProperties_GETTER_LoggingLevel_TO (smth) COM_FORWARD_ISystemProperties_SETTER_LoggingLevel_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MediumFormats_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultHardDiskFormat_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultHardDiskFormat_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpaceWarning_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpaceWarning_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpacePercentWarning_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpacePercentWarning_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpaceError_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpaceError_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpacePercentError_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpacePercentError_TO (smth) COM_FORWARD_ISystemProperties_GETTER_VRDEAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_SETTER_VRDEAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_GETTER_WebServiceAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_SETTER_WebServiceAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultVRDEExtPack_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultVRDEExtPack_TO (smth) COM_FORWARD_ISystemProperties_GETTER_LogHistoryCount_TO (smth) COM_FORWARD_ISystemProperties_SETTER_LogHistoryCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultAudioDriver_TO (smth) COM_FORWARD_ISystemProperties_GETTER_AutostartDatabasePath_TO (smth) COM_FORWARD_ISystemProperties_SETTER_AutostartDatabasePath_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultAdditionsISO_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultAdditionsISO_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultFrontend_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultFrontend_TO (smth) COM_FORWARD_ISystemProperties_GetMaxNetworkAdapters_TO (smth) COM_FORWARD_ISystemProperties_GetMaxNetworkAdaptersOfType_TO (smth) COM_FORWARD_ISystemProperties_GetMaxDevicesPerPortForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMinPortCountForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMaxPortCountForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMaxInstancesOfStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetDeviceTypesForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetDefaultIoCacheSettingForStorageController_TO (smth) COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO (smth) 
 #define COM_FORWARD_ISystemProperties_TO_OBJ(obj) COM_FORWARD_ISystemProperties_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_TO_BASE(base) COM_FORWARD_ISystemProperties_TO (base::)
 #define COM_FORWARD_IGuestOSType_GETTER_FamilyId_TO(smth) HRESULT STDMETHODCALLTYPE get_FamilyId (BSTR * aFamilyId) { return smth get_FamilyId (aFamilyId); }
@@ -3365,6 +4042,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IGuestSession_SETTER_Timeout_TO(smth) HRESULT STDMETHODCALLTYPE put_Timeout (ULONG aTimeout) { return smth put_Timeout (aTimeout); }
 #define COM_FORWARD_IGuestSession_SETTER_Timeout_TO_OBJ(obj) COM_FORWARD_IGuestSession_SETTER_Timeout_TO ((obj)->)
 #define COM_FORWARD_IGuestSession_SETTER_Timeout_TO_BASE(base) COM_FORWARD_IGuestSession_SETTER_Timeout_TO (base::)
+#define COM_FORWARD_IGuestSession_GETTER_ProtocolVersion_TO(smth) HRESULT STDMETHODCALLTYPE get_ProtocolVersion (ULONG * aProtocolVersion) { return smth get_ProtocolVersion (aProtocolVersion); }
+#define COM_FORWARD_IGuestSession_GETTER_ProtocolVersion_TO_OBJ(obj) COM_FORWARD_IGuestSession_GETTER_ProtocolVersion_TO ((obj)->)
+#define COM_FORWARD_IGuestSession_GETTER_ProtocolVersion_TO_BASE(base) COM_FORWARD_IGuestSession_GETTER_ProtocolVersion_TO (base::)
+#define COM_FORWARD_IGuestSession_GETTER_Status_TO(smth) HRESULT STDMETHODCALLTYPE get_Status (GuestSessionStatus * aStatus) { return smth get_Status (aStatus); }
+#define COM_FORWARD_IGuestSession_GETTER_Status_TO_OBJ(obj) COM_FORWARD_IGuestSession_GETTER_Status_TO ((obj)->)
+#define COM_FORWARD_IGuestSession_GETTER_Status_TO_BASE(base) COM_FORWARD_IGuestSession_GETTER_Status_TO (base::)
 #define COM_FORWARD_IGuestSession_GETTER_Environment_TO(smth) HRESULT STDMETHODCALLTYPE get_Environment (SAFEARRAY * * aEnvironment) { return smth get_Environment (aEnvironment); }
 #define COM_FORWARD_IGuestSession_GETTER_Environment_TO_OBJ(obj) COM_FORWARD_IGuestSession_GETTER_Environment_TO ((obj)->)
 #define COM_FORWARD_IGuestSession_GETTER_Environment_TO_BASE(base) COM_FORWARD_IGuestSession_GETTER_Environment_TO (base::)
@@ -3380,6 +4063,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IGuestSession_GETTER_Files_TO(smth) HRESULT STDMETHODCALLTYPE get_Files (SAFEARRAY * * aFiles) { return smth get_Files (aFiles); }
 #define COM_FORWARD_IGuestSession_GETTER_Files_TO_OBJ(obj) COM_FORWARD_IGuestSession_GETTER_Files_TO ((obj)->)
 #define COM_FORWARD_IGuestSession_GETTER_Files_TO_BASE(base) COM_FORWARD_IGuestSession_GETTER_Files_TO (base::)
+#define COM_FORWARD_IGuestSession_GETTER_EventSource_TO(smth) HRESULT STDMETHODCALLTYPE get_EventSource (IEventSource * * aEventSource) { return smth get_EventSource (aEventSource); }
+#define COM_FORWARD_IGuestSession_GETTER_EventSource_TO_OBJ(obj) COM_FORWARD_IGuestSession_GETTER_EventSource_TO ((obj)->)
+#define COM_FORWARD_IGuestSession_GETTER_EventSource_TO_BASE(base) COM_FORWARD_IGuestSession_GETTER_EventSource_TO (base::)
 #define COM_FORWARD_IGuestSession_Close_TO(smth) HRESULT STDMETHODCALLTYPE Close() { return smth Close(); }
 #define COM_FORWARD_IGuestSession_Close_TO_OBJ(obj) COM_FORWARD_IGuestSession_Close_TO ((obj)->)
 #define COM_FORWARD_IGuestSession_Close_TO_BASE(base) COM_FORWARD_IGuestSession_Close_TO (base::)
@@ -3437,9 +4123,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IGuestSession_FileRemove_TO(smth) HRESULT STDMETHODCALLTYPE FileRemove (BSTR aPath) { return smth FileRemove (aPath); }
 #define COM_FORWARD_IGuestSession_FileRemove_TO_OBJ(obj) COM_FORWARD_IGuestSession_FileRemove_TO ((obj)->)
 #define COM_FORWARD_IGuestSession_FileRemove_TO_BASE(base) COM_FORWARD_IGuestSession_FileRemove_TO (base::)
-#define COM_FORWARD_IGuestSession_FileOpen_TO(smth) HRESULT STDMETHODCALLTYPE FileOpen (BSTR aPath, BSTR aOpenMode, BSTR aDisposition, ULONG aCreationMode, LONG64 aOffset, IGuestFile * * aFile) { return smth FileOpen (aPath, aOpenMode, aDisposition, aCreationMode, aOffset, aFile); }
+#define COM_FORWARD_IGuestSession_FileOpen_TO(smth) HRESULT STDMETHODCALLTYPE FileOpen (BSTR aPath, BSTR aOpenMode, BSTR aDisposition, ULONG aCreationMode, IGuestFile * * aFile) { return smth FileOpen (aPath, aOpenMode, aDisposition, aCreationMode, aFile); }
 #define COM_FORWARD_IGuestSession_FileOpen_TO_OBJ(obj) COM_FORWARD_IGuestSession_FileOpen_TO ((obj)->)
 #define COM_FORWARD_IGuestSession_FileOpen_TO_BASE(base) COM_FORWARD_IGuestSession_FileOpen_TO (base::)
+#define COM_FORWARD_IGuestSession_FileOpenEx_TO(smth) HRESULT STDMETHODCALLTYPE FileOpenEx (BSTR aPath, BSTR aOpenMode, BSTR aDisposition, BSTR aSharingMode, ULONG aCreationMode, LONG64 aOffset, IGuestFile * * aFile) { return smth FileOpenEx (aPath, aOpenMode, aDisposition, aSharingMode, aCreationMode, aOffset, aFile); }
+#define COM_FORWARD_IGuestSession_FileOpenEx_TO_OBJ(obj) COM_FORWARD_IGuestSession_FileOpenEx_TO ((obj)->)
+#define COM_FORWARD_IGuestSession_FileOpenEx_TO_BASE(base) COM_FORWARD_IGuestSession_FileOpenEx_TO (base::)
 #define COM_FORWARD_IGuestSession_FileQueryInfo_TO(smth) HRESULT STDMETHODCALLTYPE FileQueryInfo (BSTR aPath, IGuestFsObjInfo * * aInfo) { return smth FileQueryInfo (aPath, aInfo); }
 #define COM_FORWARD_IGuestSession_FileQueryInfo_TO_OBJ(obj) COM_FORWARD_IGuestSession_FileQueryInfo_TO ((obj)->)
 #define COM_FORWARD_IGuestSession_FileQueryInfo_TO_BASE(base) COM_FORWARD_IGuestSession_FileQueryInfo_TO (base::)
@@ -3476,30 +4165,39 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IGuestSession_SymlinkRemoveFile_TO(smth) HRESULT STDMETHODCALLTYPE SymlinkRemoveFile (BSTR aFile) { return smth SymlinkRemoveFile (aFile); }
 #define COM_FORWARD_IGuestSession_SymlinkRemoveFile_TO_OBJ(obj) COM_FORWARD_IGuestSession_SymlinkRemoveFile_TO ((obj)->)
 #define COM_FORWARD_IGuestSession_SymlinkRemoveFile_TO_BASE(base) COM_FORWARD_IGuestSession_SymlinkRemoveFile_TO (base::)
-#define COM_FORWARD_IGuestSession_TO(smth) COM_FORWARD_IGuestSession_GETTER_User_TO (smth) COM_FORWARD_IGuestSession_GETTER_Domain_TO (smth) COM_FORWARD_IGuestSession_GETTER_Name_TO (smth) COM_FORWARD_IGuestSession_GETTER_Id_TO (smth) COM_FORWARD_IGuestSession_GETTER_Timeout_TO (smth) COM_FORWARD_IGuestSession_SETTER_Timeout_TO (smth) COM_FORWARD_IGuestSession_GETTER_Environment_TO (smth) COM_FORWARD_IGuestSession_SETTER_Environment_TO (smth) COM_FORWARD_IGuestSession_GETTER_Processes_TO (smth) COM_FORWARD_IGuestSession_GETTER_Directories_TO (smth) COM_FORWARD_IGuestSession_GETTER_Files_TO (smth) COM_FORWARD_IGuestSession_Close_TO (smth) COM_FORWARD_IGuestSession_CopyFrom_TO (smth) COM_FORWARD_IGuestSession_CopyTo_TO (smth) COM_FORWARD_IGuestSession_DirectoryCreate_TO (smth) COM_FORWARD_IGuestSession_DirectoryCreateTemp_TO (smth) COM_FORWARD_IGuestSession_DirectoryExists_TO (smth) COM_FORWARD_IGuestSession_DirectoryOpen_TO (smth) COM_FORWARD_IGuestSession_DirectoryQueryInfo_TO (smth) COM_FORWARD_IGuestSession_DirectoryRemove_TO (smth) COM_FORWARD_IGuestSession_DirectoryRemoveRecursive_TO (smth) COM_FORWARD_IGuestSession_DirectoryRename_TO (smth) COM_FORWARD_IGuestSession_DirectorySetACL_TO (smth) COM_FORWARD_IGuestSession_EnvironmentClear_TO (smth) COM_FORWARD_IGuestSession_EnvironmentGet_TO (smth) COM_FORWARD_IGuestSession_EnvironmentSet_TO (smth) COM_FORWARD_IGuestSession_EnvironmentUnset_TO (smth) COM_FORWARD_IGuestSession_FileCreateTemp_TO (smth) COM_FORWARD_IGuestSession_FileExists_TO (smth) COM_FORWARD_IGuestSession_FileRemove_TO (smth) COM_FORWARD_IGuestSession_FileOpen_TO (smth) COM_FORWARD_IGuestSession_FileQueryInfo_TO (smth) COM_FORWARD_IGuestSession_FileQuerySize_TO (smth) COM_FORWARD_IGuestSession_FileRename_TO (smth) COM_FORWARD_IGuestSession_FileSetACL_TO (smth) COM_FORWARD_IGuestSession_ProcessCreate_TO (smth) COM_FORWARD_IGuestSession_ProcessCreateEx_TO (smth) COM_FORWARD_IGuestSession_ProcessGet_TO (smth) COM_FORWARD_IGuestSession_SymlinkCreate_TO (smth) COM_FORWARD_IGuestSession_SymlinkExists_TO (smth) COM_FORWARD_IGuestSession_SymlinkRead_TO (smth) COM_FORWARD_IGuestSession_SymlinkRemoveDirectory_TO (smth) COM_FORWARD_IGuestSession_SymlinkRemoveFile_TO (smth) 
+#define COM_FORWARD_IGuestSession_WaitFor_TO(smth) HRESULT STDMETHODCALLTYPE WaitFor (ULONG aWaitFor, ULONG aTimeoutMS, GuestSessionWaitResult * aReason) { return smth WaitFor (aWaitFor, aTimeoutMS, aReason); }
+#define COM_FORWARD_IGuestSession_WaitFor_TO_OBJ(obj) COM_FORWARD_IGuestSession_WaitFor_TO ((obj)->)
+#define COM_FORWARD_IGuestSession_WaitFor_TO_BASE(base) COM_FORWARD_IGuestSession_WaitFor_TO (base::)
+#define COM_FORWARD_IGuestSession_WaitForArray_TO(smth) HRESULT STDMETHODCALLTYPE WaitForArray (SAFEARRAY * * aWaitFor, ULONG aTimeoutMS, GuestSessionWaitResult * aReason) { return smth WaitForArray (aWaitFor, aTimeoutMS, aReason); }
+#define COM_FORWARD_IGuestSession_WaitForArray_TO_OBJ(obj) COM_FORWARD_IGuestSession_WaitForArray_TO ((obj)->)
+#define COM_FORWARD_IGuestSession_WaitForArray_TO_BASE(base) COM_FORWARD_IGuestSession_WaitForArray_TO (base::)
+#define COM_FORWARD_IGuestSession_TO(smth) COM_FORWARD_IGuestSession_GETTER_User_TO (smth) COM_FORWARD_IGuestSession_GETTER_Domain_TO (smth) COM_FORWARD_IGuestSession_GETTER_Name_TO (smth) COM_FORWARD_IGuestSession_GETTER_Id_TO (smth) COM_FORWARD_IGuestSession_GETTER_Timeout_TO (smth) COM_FORWARD_IGuestSession_SETTER_Timeout_TO (smth) COM_FORWARD_IGuestSession_GETTER_ProtocolVersion_TO (smth) COM_FORWARD_IGuestSession_GETTER_Status_TO (smth) COM_FORWARD_IGuestSession_GETTER_Environment_TO (smth) COM_FORWARD_IGuestSession_SETTER_Environment_TO (smth) COM_FORWARD_IGuestSession_GETTER_Processes_TO (smth) COM_FORWARD_IGuestSession_GETTER_Directories_TO (smth) COM_FORWARD_IGuestSession_GETTER_Files_TO (smth) COM_FORWARD_IGuestSession_GETTER_EventSource_TO (smth) COM_FORWARD_IGuestSession_Close_TO (smth) COM_FORWARD_IGuestSession_CopyFrom_TO (smth) COM_FORWARD_IGuestSession_CopyTo_TO (smth) COM_FORWARD_IGuestSession_DirectoryCreate_TO (smth) COM_FORWARD_IGuestSession_DirectoryCreateTemp_TO (smth) COM_FORWARD_IGuestSession_DirectoryExists_TO (smth) COM_FORWARD_IGuestSession_DirectoryOpen_TO (smth) COM_FORWARD_IGuestSession_DirectoryQueryInfo_TO (smth) COM_FORWARD_IGuestSession_DirectoryRemove_TO (smth) COM_FORWARD_IGuestSession_DirectoryRemoveRecursive_TO (smth) COM_FORWARD_IGuestSession_DirectoryRename_TO (smth) COM_FORWARD_IGuestSession_DirectorySetACL_TO (smth) COM_FORWARD_IGuestSession_EnvironmentClear_TO (smth) COM_FORWARD_IGuestSession_EnvironmentGet_TO (smth) COM_FORWARD_IGuestSession_EnvironmentSet_TO (smth) COM_FORWARD_IGuestSession_EnvironmentUnset_TO (smth) COM_FORWARD_IGuestSession_FileCreateTemp_TO (smth) COM_FORWARD_IGuestSession_FileExists_TO (smth) COM_FORWARD_IGuestSession_FileRemove_TO (smth) COM_FORWARD_IGuestSession_FileOpen_TO (smth) COM_FORWARD_IGuestSession_FileOpenEx_TO (smth) COM_FORWARD_IGuestSession_FileQueryInfo_TO (smth) COM_FORWARD_IGuestSession_FileQuerySize_TO (smth) COM_FORWARD_IGuestSession_FileRename_TO (smth) COM_FORWARD_IGuestSession_FileSetACL_TO (smth) COM_FORWARD_IGuestSession_ProcessCreate_TO (smth) COM_FORWARD_IGuestSession_ProcessCreateEx_TO (smth) COM_FORWARD_IGuestSession_ProcessGet_TO (smth) COM_FORWARD_IGuestSession_SymlinkCreate_TO (smth) COM_FORWARD_IGuestSession_SymlinkExists_TO (smth) COM_FORWARD_IGuestSession_SymlinkRead_TO (smth) COM_FORWARD_IGuestSession_SymlinkRemoveDirectory_TO (smth) COM_FORWARD_IGuestSession_SymlinkRemoveFile_TO (smth) COM_FORWARD_IGuestSession_WaitFor_TO (smth) COM_FORWARD_IGuestSession_WaitForArray_TO (smth) 
 #define COM_FORWARD_IGuestSession_TO_OBJ(obj) COM_FORWARD_IGuestSession_TO ((obj)->)
 #define COM_FORWARD_IGuestSession_TO_BASE(base) COM_FORWARD_IGuestSession_TO (base::)
+#define COM_FORWARD_IProcess_GETTER_Arguments_TO(smth) HRESULT STDMETHODCALLTYPE get_Arguments (SAFEARRAY * * aArguments) { return smth get_Arguments (aArguments); }
+#define COM_FORWARD_IProcess_GETTER_Arguments_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_Arguments_TO ((obj)->)
+#define COM_FORWARD_IProcess_GETTER_Arguments_TO_BASE(base) COM_FORWARD_IProcess_GETTER_Arguments_TO (base::)
+#define COM_FORWARD_IProcess_GETTER_Environment_TO(smth) HRESULT STDMETHODCALLTYPE get_Environment (SAFEARRAY * * aEnvironment) { return smth get_Environment (aEnvironment); }
+#define COM_FORWARD_IProcess_GETTER_Environment_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_Environment_TO ((obj)->)
+#define COM_FORWARD_IProcess_GETTER_Environment_TO_BASE(base) COM_FORWARD_IProcess_GETTER_Environment_TO (base::)
+#define COM_FORWARD_IProcess_GETTER_EventSource_TO(smth) HRESULT STDMETHODCALLTYPE get_EventSource (IEventSource * * aEventSource) { return smth get_EventSource (aEventSource); }
+#define COM_FORWARD_IProcess_GETTER_EventSource_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_EventSource_TO ((obj)->)
+#define COM_FORWARD_IProcess_GETTER_EventSource_TO_BASE(base) COM_FORWARD_IProcess_GETTER_EventSource_TO (base::)
+#define COM_FORWARD_IProcess_GETTER_ExecutablePath_TO(smth) HRESULT STDMETHODCALLTYPE get_ExecutablePath (BSTR * aExecutablePath) { return smth get_ExecutablePath (aExecutablePath); }
+#define COM_FORWARD_IProcess_GETTER_ExecutablePath_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_ExecutablePath_TO ((obj)->)
+#define COM_FORWARD_IProcess_GETTER_ExecutablePath_TO_BASE(base) COM_FORWARD_IProcess_GETTER_ExecutablePath_TO (base::)
+#define COM_FORWARD_IProcess_GETTER_ExitCode_TO(smth) HRESULT STDMETHODCALLTYPE get_ExitCode (LONG * aExitCode) { return smth get_ExitCode (aExitCode); }
+#define COM_FORWARD_IProcess_GETTER_ExitCode_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_ExitCode_TO ((obj)->)
+#define COM_FORWARD_IProcess_GETTER_ExitCode_TO_BASE(base) COM_FORWARD_IProcess_GETTER_ExitCode_TO (base::)
+#define COM_FORWARD_IProcess_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
+#define COM_FORWARD_IProcess_GETTER_Name_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_Name_TO ((obj)->)
+#define COM_FORWARD_IProcess_GETTER_Name_TO_BASE(base) COM_FORWARD_IProcess_GETTER_Name_TO (base::)
 #define COM_FORWARD_IProcess_GETTER_PID_TO(smth) HRESULT STDMETHODCALLTYPE get_PID (ULONG * aPID) { return smth get_PID (aPID); }
 #define COM_FORWARD_IProcess_GETTER_PID_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_PID_TO ((obj)->)
 #define COM_FORWARD_IProcess_GETTER_PID_TO_BASE(base) COM_FORWARD_IProcess_GETTER_PID_TO (base::)
 #define COM_FORWARD_IProcess_GETTER_Status_TO(smth) HRESULT STDMETHODCALLTYPE get_Status (ProcessStatus * aStatus) { return smth get_Status (aStatus); }
 #define COM_FORWARD_IProcess_GETTER_Status_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_Status_TO ((obj)->)
 #define COM_FORWARD_IProcess_GETTER_Status_TO_BASE(base) COM_FORWARD_IProcess_GETTER_Status_TO (base::)
-#define COM_FORWARD_IProcess_GETTER_ExitCode_TO(smth) HRESULT STDMETHODCALLTYPE get_ExitCode (LONG * aExitCode) { return smth get_ExitCode (aExitCode); }
-#define COM_FORWARD_IProcess_GETTER_ExitCode_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_ExitCode_TO ((obj)->)
-#define COM_FORWARD_IProcess_GETTER_ExitCode_TO_BASE(base) COM_FORWARD_IProcess_GETTER_ExitCode_TO (base::)
-#define COM_FORWARD_IProcess_GETTER_Environment_TO(smth) HRESULT STDMETHODCALLTYPE get_Environment (SAFEARRAY * * aEnvironment) { return smth get_Environment (aEnvironment); }
-#define COM_FORWARD_IProcess_GETTER_Environment_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_Environment_TO ((obj)->)
-#define COM_FORWARD_IProcess_GETTER_Environment_TO_BASE(base) COM_FORWARD_IProcess_GETTER_Environment_TO (base::)
-#define COM_FORWARD_IProcess_GETTER_Arguments_TO(smth) HRESULT STDMETHODCALLTYPE get_Arguments (SAFEARRAY * * aArguments) { return smth get_Arguments (aArguments); }
-#define COM_FORWARD_IProcess_GETTER_Arguments_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_Arguments_TO ((obj)->)
-#define COM_FORWARD_IProcess_GETTER_Arguments_TO_BASE(base) COM_FORWARD_IProcess_GETTER_Arguments_TO (base::)
-#define COM_FORWARD_IProcess_GETTER_ExecutablePath_TO(smth) HRESULT STDMETHODCALLTYPE get_ExecutablePath (BSTR * aExecutablePath) { return smth get_ExecutablePath (aExecutablePath); }
-#define COM_FORWARD_IProcess_GETTER_ExecutablePath_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_ExecutablePath_TO ((obj)->)
-#define COM_FORWARD_IProcess_GETTER_ExecutablePath_TO_BASE(base) COM_FORWARD_IProcess_GETTER_ExecutablePath_TO (base::)
-#define COM_FORWARD_IProcess_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
-#define COM_FORWARD_IProcess_GETTER_Name_TO_OBJ(obj) COM_FORWARD_IProcess_GETTER_Name_TO ((obj)->)
-#define COM_FORWARD_IProcess_GETTER_Name_TO_BASE(base) COM_FORWARD_IProcess_GETTER_Name_TO (base::)
 #define COM_FORWARD_IProcess_WaitFor_TO(smth) HRESULT STDMETHODCALLTYPE WaitFor (ULONG aWaitFor, ULONG aTimeoutMS, ProcessWaitResult * aReason) { return smth WaitFor (aWaitFor, aTimeoutMS, aReason); }
 #define COM_FORWARD_IProcess_WaitFor_TO_OBJ(obj) COM_FORWARD_IProcess_WaitFor_TO ((obj)->)
 #define COM_FORWARD_IProcess_WaitFor_TO_BASE(base) COM_FORWARD_IProcess_WaitFor_TO (base::)
@@ -3518,7 +4216,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IProcess_Terminate_TO(smth) HRESULT STDMETHODCALLTYPE Terminate() { return smth Terminate(); }
 #define COM_FORWARD_IProcess_Terminate_TO_OBJ(obj) COM_FORWARD_IProcess_Terminate_TO ((obj)->)
 #define COM_FORWARD_IProcess_Terminate_TO_BASE(base) COM_FORWARD_IProcess_Terminate_TO (base::)
-#define COM_FORWARD_IProcess_TO(smth) COM_FORWARD_IProcess_GETTER_PID_TO (smth) COM_FORWARD_IProcess_GETTER_Status_TO (smth) COM_FORWARD_IProcess_GETTER_ExitCode_TO (smth) COM_FORWARD_IProcess_GETTER_Environment_TO (smth) COM_FORWARD_IProcess_GETTER_Arguments_TO (smth) COM_FORWARD_IProcess_GETTER_ExecutablePath_TO (smth) COM_FORWARD_IProcess_GETTER_Name_TO (smth) COM_FORWARD_IProcess_WaitFor_TO (smth) COM_FORWARD_IProcess_WaitForArray_TO (smth) COM_FORWARD_IProcess_Read_TO (smth) COM_FORWARD_IProcess_Write_TO (smth) COM_FORWARD_IProcess_WriteArray_TO (smth) COM_FORWARD_IProcess_Terminate_TO (smth) 
+#define COM_FORWARD_IProcess_TO(smth) COM_FORWARD_IProcess_GETTER_Arguments_TO (smth) COM_FORWARD_IProcess_GETTER_Environment_TO (smth) COM_FORWARD_IProcess_GETTER_EventSource_TO (smth) COM_FORWARD_IProcess_GETTER_ExecutablePath_TO (smth) COM_FORWARD_IProcess_GETTER_ExitCode_TO (smth) COM_FORWARD_IProcess_GETTER_Name_TO (smth) COM_FORWARD_IProcess_GETTER_PID_TO (smth) COM_FORWARD_IProcess_GETTER_Status_TO (smth) COM_FORWARD_IProcess_WaitFor_TO (smth) COM_FORWARD_IProcess_WaitForArray_TO (smth) COM_FORWARD_IProcess_Read_TO (smth) COM_FORWARD_IProcess_Write_TO (smth) COM_FORWARD_IProcess_WriteArray_TO (smth) COM_FORWARD_IProcess_Terminate_TO (smth) 
 #define COM_FORWARD_IProcess_TO_OBJ(obj) COM_FORWARD_IProcess_TO ((obj)->)
 #define COM_FORWARD_IProcess_TO_BASE(base) COM_FORWARD_IProcess_TO (base::)
 #define COM_FORWARD_IGuestProcess_TO(smth) 
@@ -3545,21 +4243,30 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IFile_GETTER_CreationMode_TO(smth) HRESULT STDMETHODCALLTYPE get_CreationMode (ULONG * aCreationMode) { return smth get_CreationMode (aCreationMode); }
 #define COM_FORWARD_IFile_GETTER_CreationMode_TO_OBJ(obj) COM_FORWARD_IFile_GETTER_CreationMode_TO ((obj)->)
 #define COM_FORWARD_IFile_GETTER_CreationMode_TO_BASE(base) COM_FORWARD_IFile_GETTER_CreationMode_TO (base::)
-#define COM_FORWARD_IFile_GETTER_Disposition_TO(smth) HRESULT STDMETHODCALLTYPE get_Disposition (ULONG * aDisposition) { return smth get_Disposition (aDisposition); }
+#define COM_FORWARD_IFile_GETTER_Disposition_TO(smth) HRESULT STDMETHODCALLTYPE get_Disposition (BSTR * aDisposition) { return smth get_Disposition (aDisposition); }
 #define COM_FORWARD_IFile_GETTER_Disposition_TO_OBJ(obj) COM_FORWARD_IFile_GETTER_Disposition_TO ((obj)->)
 #define COM_FORWARD_IFile_GETTER_Disposition_TO_BASE(base) COM_FORWARD_IFile_GETTER_Disposition_TO (base::)
+#define COM_FORWARD_IFile_GETTER_EventSource_TO(smth) HRESULT STDMETHODCALLTYPE get_EventSource (IEventSource * * aEventSource) { return smth get_EventSource (aEventSource); }
+#define COM_FORWARD_IFile_GETTER_EventSource_TO_OBJ(obj) COM_FORWARD_IFile_GETTER_EventSource_TO ((obj)->)
+#define COM_FORWARD_IFile_GETTER_EventSource_TO_BASE(base) COM_FORWARD_IFile_GETTER_EventSource_TO (base::)
 #define COM_FORWARD_IFile_GETTER_FileName_TO(smth) HRESULT STDMETHODCALLTYPE get_FileName (BSTR * aFileName) { return smth get_FileName (aFileName); }
 #define COM_FORWARD_IFile_GETTER_FileName_TO_OBJ(obj) COM_FORWARD_IFile_GETTER_FileName_TO ((obj)->)
 #define COM_FORWARD_IFile_GETTER_FileName_TO_BASE(base) COM_FORWARD_IFile_GETTER_FileName_TO (base::)
+#define COM_FORWARD_IFile_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (ULONG * aId) { return smth get_Id (aId); }
+#define COM_FORWARD_IFile_GETTER_Id_TO_OBJ(obj) COM_FORWARD_IFile_GETTER_Id_TO ((obj)->)
+#define COM_FORWARD_IFile_GETTER_Id_TO_BASE(base) COM_FORWARD_IFile_GETTER_Id_TO (base::)
 #define COM_FORWARD_IFile_GETTER_InitialSize_TO(smth) HRESULT STDMETHODCALLTYPE get_InitialSize (LONG64 * aInitialSize) { return smth get_InitialSize (aInitialSize); }
 #define COM_FORWARD_IFile_GETTER_InitialSize_TO_OBJ(obj) COM_FORWARD_IFile_GETTER_InitialSize_TO ((obj)->)
 #define COM_FORWARD_IFile_GETTER_InitialSize_TO_BASE(base) COM_FORWARD_IFile_GETTER_InitialSize_TO (base::)
-#define COM_FORWARD_IFile_GETTER_OpenMode_TO(smth) HRESULT STDMETHODCALLTYPE get_OpenMode (ULONG * aOpenMode) { return smth get_OpenMode (aOpenMode); }
+#define COM_FORWARD_IFile_GETTER_OpenMode_TO(smth) HRESULT STDMETHODCALLTYPE get_OpenMode (BSTR * aOpenMode) { return smth get_OpenMode (aOpenMode); }
 #define COM_FORWARD_IFile_GETTER_OpenMode_TO_OBJ(obj) COM_FORWARD_IFile_GETTER_OpenMode_TO ((obj)->)
 #define COM_FORWARD_IFile_GETTER_OpenMode_TO_BASE(base) COM_FORWARD_IFile_GETTER_OpenMode_TO (base::)
 #define COM_FORWARD_IFile_GETTER_Offset_TO(smth) HRESULT STDMETHODCALLTYPE get_Offset (LONG64 * aOffset) { return smth get_Offset (aOffset); }
 #define COM_FORWARD_IFile_GETTER_Offset_TO_OBJ(obj) COM_FORWARD_IFile_GETTER_Offset_TO ((obj)->)
 #define COM_FORWARD_IFile_GETTER_Offset_TO_BASE(base) COM_FORWARD_IFile_GETTER_Offset_TO (base::)
+#define COM_FORWARD_IFile_GETTER_Status_TO(smth) HRESULT STDMETHODCALLTYPE get_Status (FileStatus * aStatus) { return smth get_Status (aStatus); }
+#define COM_FORWARD_IFile_GETTER_Status_TO_OBJ(obj) COM_FORWARD_IFile_GETTER_Status_TO ((obj)->)
+#define COM_FORWARD_IFile_GETTER_Status_TO_BASE(base) COM_FORWARD_IFile_GETTER_Status_TO (base::)
 #define COM_FORWARD_IFile_Close_TO(smth) HRESULT STDMETHODCALLTYPE Close() { return smth Close(); }
 #define COM_FORWARD_IFile_Close_TO_OBJ(obj) COM_FORWARD_IFile_Close_TO ((obj)->)
 #define COM_FORWARD_IFile_Close_TO_BASE(base) COM_FORWARD_IFile_Close_TO (base::)
@@ -3584,7 +4291,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IFile_WriteAt_TO(smth) HRESULT STDMETHODCALLTYPE WriteAt (LONG64 aOffset, SAFEARRAY * * aData, ULONG aTimeoutMS, ULONG * aWritten) { return smth WriteAt (aOffset, aData, aTimeoutMS, aWritten); }
 #define COM_FORWARD_IFile_WriteAt_TO_OBJ(obj) COM_FORWARD_IFile_WriteAt_TO ((obj)->)
 #define COM_FORWARD_IFile_WriteAt_TO_BASE(base) COM_FORWARD_IFile_WriteAt_TO (base::)
-#define COM_FORWARD_IFile_TO(smth) COM_FORWARD_IFile_GETTER_CreationMode_TO (smth) COM_FORWARD_IFile_GETTER_Disposition_TO (smth) COM_FORWARD_IFile_GETTER_FileName_TO (smth) COM_FORWARD_IFile_GETTER_InitialSize_TO (smth) COM_FORWARD_IFile_GETTER_OpenMode_TO (smth) COM_FORWARD_IFile_GETTER_Offset_TO (smth) COM_FORWARD_IFile_Close_TO (smth) COM_FORWARD_IFile_QueryInfo_TO (smth) COM_FORWARD_IFile_Read_TO (smth) COM_FORWARD_IFile_ReadAt_TO (smth) COM_FORWARD_IFile_Seek_TO (smth) COM_FORWARD_IFile_SetACL_TO (smth) COM_FORWARD_IFile_Write_TO (smth) COM_FORWARD_IFile_WriteAt_TO (smth) 
+#define COM_FORWARD_IFile_TO(smth) COM_FORWARD_IFile_GETTER_CreationMode_TO (smth) COM_FORWARD_IFile_GETTER_Disposition_TO (smth) COM_FORWARD_IFile_GETTER_EventSource_TO (smth) COM_FORWARD_IFile_GETTER_FileName_TO (smth) COM_FORWARD_IFile_GETTER_Id_TO (smth) COM_FORWARD_IFile_GETTER_InitialSize_TO (smth) COM_FORWARD_IFile_GETTER_OpenMode_TO (smth) COM_FORWARD_IFile_GETTER_Offset_TO (smth) COM_FORWARD_IFile_GETTER_Status_TO (smth) COM_FORWARD_IFile_Close_TO (smth) COM_FORWARD_IFile_QueryInfo_TO (smth) COM_FORWARD_IFile_Read_TO (smth) COM_FORWARD_IFile_ReadAt_TO (smth) COM_FORWARD_IFile_Seek_TO (smth) COM_FORWARD_IFile_SetACL_TO (smth) COM_FORWARD_IFile_Write_TO (smth) COM_FORWARD_IFile_WriteAt_TO (smth) 
 #define COM_FORWARD_IFile_TO_OBJ(obj) COM_FORWARD_IFile_TO ((obj)->)
 #define COM_FORWARD_IFile_TO_BASE(base) COM_FORWARD_IFile_TO (base::)
 #define COM_FORWARD_IGuestFile_TO(smth) 
@@ -3665,6 +4372,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IGuest_GETTER_AdditionsRevision_TO(smth) HRESULT STDMETHODCALLTYPE get_AdditionsRevision (ULONG * aAdditionsRevision) { return smth get_AdditionsRevision (aAdditionsRevision); }
 #define COM_FORWARD_IGuest_GETTER_AdditionsRevision_TO_OBJ(obj) COM_FORWARD_IGuest_GETTER_AdditionsRevision_TO ((obj)->)
 #define COM_FORWARD_IGuest_GETTER_AdditionsRevision_TO_BASE(base) COM_FORWARD_IGuest_GETTER_AdditionsRevision_TO (base::)
+#define COM_FORWARD_IGuest_GETTER_EventSource_TO(smth) HRESULT STDMETHODCALLTYPE get_EventSource (IEventSource * * aEventSource) { return smth get_EventSource (aEventSource); }
+#define COM_FORWARD_IGuest_GETTER_EventSource_TO_OBJ(obj) COM_FORWARD_IGuest_GETTER_EventSource_TO ((obj)->)
+#define COM_FORWARD_IGuest_GETTER_EventSource_TO_BASE(base) COM_FORWARD_IGuest_GETTER_EventSource_TO (base::)
 #define COM_FORWARD_IGuest_GETTER_Facilities_TO(smth) HRESULT STDMETHODCALLTYPE get_Facilities (SAFEARRAY * * aFacilities) { return smth get_Facilities (aFacilities); }
 #define COM_FORWARD_IGuest_GETTER_Facilities_TO_OBJ(obj) COM_FORWARD_IGuest_GETTER_Facilities_TO ((obj)->)
 #define COM_FORWARD_IGuest_GETTER_Facilities_TO_BASE(base) COM_FORWARD_IGuest_GETTER_Facilities_TO (base::)
@@ -3710,7 +4420,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IGuest_DragHGPutData_TO(smth) HRESULT STDMETHODCALLTYPE DragHGPutData (ULONG aScreenId, BSTR aFormat, SAFEARRAY * * aData, IProgress * * aProgress) { return smth DragHGPutData (aScreenId, aFormat, aData, aProgress); }
 #define COM_FORWARD_IGuest_DragHGPutData_TO_OBJ(obj) COM_FORWARD_IGuest_DragHGPutData_TO ((obj)->)
 #define COM_FORWARD_IGuest_DragHGPutData_TO_BASE(base) COM_FORWARD_IGuest_DragHGPutData_TO (base::)
-#define COM_FORWARD_IGuest_DragGHPending_TO(smth) HRESULT STDMETHODCALLTYPE DragGHPending (ULONG aScreenId, SAFEARRAY * * aFormat, SAFEARRAY * * aAllowedActions, DragAndDropAction * aDefaultAction) { return smth DragGHPending (aScreenId, aFormat, aAllowedActions, aDefaultAction); }
+#define COM_FORWARD_IGuest_DragGHPending_TO(smth) HRESULT STDMETHODCALLTYPE DragGHPending (ULONG aScreenId, SAFEARRAY * * aFormats, SAFEARRAY * * aAllowedActions, DragAndDropAction * aDefaultAction) { return smth DragGHPending (aScreenId, aFormats, aAllowedActions, aDefaultAction); }
 #define COM_FORWARD_IGuest_DragGHPending_TO_OBJ(obj) COM_FORWARD_IGuest_DragGHPending_TO ((obj)->)
 #define COM_FORWARD_IGuest_DragGHPending_TO_BASE(base) COM_FORWARD_IGuest_DragGHPending_TO (base::)
 #define COM_FORWARD_IGuest_DragGHDropped_TO(smth) HRESULT STDMETHODCALLTYPE DragGHDropped (BSTR aFormat, DragAndDropAction aAction, IProgress * * aProgress) { return smth DragGHDropped (aFormat, aAction, aProgress); }
@@ -3725,10 +4435,10 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IGuest_FindSession_TO(smth) HRESULT STDMETHODCALLTYPE FindSession (BSTR aSessionName, SAFEARRAY * * aSessions) { return smth FindSession (aSessionName, aSessions); }
 #define COM_FORWARD_IGuest_FindSession_TO_OBJ(obj) COM_FORWARD_IGuest_FindSession_TO ((obj)->)
 #define COM_FORWARD_IGuest_FindSession_TO_BASE(base) COM_FORWARD_IGuest_FindSession_TO (base::)
-#define COM_FORWARD_IGuest_UpdateGuestAdditions_TO(smth) HRESULT STDMETHODCALLTYPE UpdateGuestAdditions (BSTR aSource, SAFEARRAY * * aFlags, IProgress * * aProgress) { return smth UpdateGuestAdditions (aSource, aFlags, aProgress); }
+#define COM_FORWARD_IGuest_UpdateGuestAdditions_TO(smth) HRESULT STDMETHODCALLTYPE UpdateGuestAdditions (BSTR aSource, SAFEARRAY * * aArguments, SAFEARRAY * * aFlags, IProgress * * aProgress) { return smth UpdateGuestAdditions (aSource, aArguments, aFlags, aProgress); }
 #define COM_FORWARD_IGuest_UpdateGuestAdditions_TO_OBJ(obj) COM_FORWARD_IGuest_UpdateGuestAdditions_TO ((obj)->)
 #define COM_FORWARD_IGuest_UpdateGuestAdditions_TO_BASE(base) COM_FORWARD_IGuest_UpdateGuestAdditions_TO (base::)
-#define COM_FORWARD_IGuest_TO(smth) COM_FORWARD_IGuest_GETTER_OSTypeId_TO (smth) COM_FORWARD_IGuest_GETTER_AdditionsRunLevel_TO (smth) COM_FORWARD_IGuest_GETTER_AdditionsVersion_TO (smth) COM_FORWARD_IGuest_GETTER_AdditionsRevision_TO (smth) COM_FORWARD_IGuest_GETTER_Facilities_TO (smth) COM_FORWARD_IGuest_GETTER_Sessions_TO (smth) COM_FORWARD_IGuest_GETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IGuest_SETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IGuest_GETTER_StatisticsUpdateInterval_TO (smth) COM_FORWARD_IGuest_SETTER_StatisticsUpdateInterval_TO (smth) COM_FORWARD_IGuest_InternalGetStatistics_TO (smth) COM_FORWARD_IGuest_GetFacilityStatus_TO (smth) COM_FORWARD_IGuest_GetAdditionsStatus_TO (smth) COM_FORWARD_IGuest_SetCredentials_TO (smth) COM_FORWARD_IGuest_DragHGEnter_TO (smth) COM_FORWARD_IGuest_DragHGMove_TO (smth) COM_FORWARD_IGuest_DragHGLeave_TO (smth) COM_FORWARD_IGuest_DragHGDrop_TO (smth) COM_FORWARD_IGuest_DragHGPutData_TO (smth) COM_FORWARD_IGuest_DragGHPending_TO (smth) COM_FORWARD_IGuest_DragGHDropped_TO (smth) COM_FORWARD_IGuest_DragGHGetData_TO (smth) COM_FORWARD_IGuest_CreateSession_TO (smth) COM_FORWARD_IGuest_FindSession_TO (smth) COM_FORWARD_IGuest_UpdateGuestAdditions_TO (smth) 
+#define COM_FORWARD_IGuest_TO(smth) COM_FORWARD_IGuest_GETTER_OSTypeId_TO (smth) COM_FORWARD_IGuest_GETTER_AdditionsRunLevel_TO (smth) COM_FORWARD_IGuest_GETTER_AdditionsVersion_TO (smth) COM_FORWARD_IGuest_GETTER_AdditionsRevision_TO (smth) COM_FORWARD_IGuest_GETTER_EventSource_TO (smth) COM_FORWARD_IGuest_GETTER_Facilities_TO (smth) COM_FORWARD_IGuest_GETTER_Sessions_TO (smth) COM_FORWARD_IGuest_GETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IGuest_SETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IGuest_GETTER_StatisticsUpdateInterval_TO (smth) COM_FORWARD_IGuest_SETTER_StatisticsUpdateInterval_TO (smth) COM_FORWARD_IGuest_InternalGetStatistics_TO (smth) COM_FORWARD_IGuest_GetFacilityStatus_TO (smth) COM_FORWARD_IGuest_GetAdditionsStatus_TO (smth) COM_FORWARD_IGuest_SetCredentials_TO (smth) COM_FORWARD_IGuest_DragHGEnter_TO (smth) COM_FORWARD_IGuest_DragHGMove_TO (smth) COM_FORWARD_IGuest_DragHGLeave_TO (smth) COM_FORWARD_IGuest_DragHGDrop_TO (smth) COM_FORWARD_IGuest_DragHGPutData_TO (smth) COM_FORWARD_IGuest_DragGHPending_TO (smth) COM_FORWARD_IGuest_DragGHDropped_TO (smth) COM_FORWARD_IGuest_DragGHGetData_TO (smth) COM_FORWARD_IGuest_CreateSession_TO (smth) COM_FORWARD_IGuest_FindSession_TO (smth) COM_FORWARD_IGuest_UpdateGuestAdditions_TO (smth) 
 #define COM_FORWARD_IGuest_TO_OBJ(obj) COM_FORWARD_IGuest_TO ((obj)->)
 #define COM_FORWARD_IGuest_TO_BASE(base) COM_FORWARD_IGuest_TO (base::)
 #define COM_FORWARD_IProgress_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (BSTR * aId) { return smth get_Id (aId); }
@@ -3869,10 +4579,13 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMediumAttachment_GETTER_Discard_TO(smth) HRESULT STDMETHODCALLTYPE get_Discard (BOOL * aDiscard) { return smth get_Discard (aDiscard); }
 #define COM_FORWARD_IMediumAttachment_GETTER_Discard_TO_OBJ(obj) COM_FORWARD_IMediumAttachment_GETTER_Discard_TO ((obj)->)
 #define COM_FORWARD_IMediumAttachment_GETTER_Discard_TO_BASE(base) COM_FORWARD_IMediumAttachment_GETTER_Discard_TO (base::)
+#define COM_FORWARD_IMediumAttachment_GETTER_HotPluggable_TO(smth) HRESULT STDMETHODCALLTYPE get_HotPluggable (BOOL * aHotPluggable) { return smth get_HotPluggable (aHotPluggable); }
+#define COM_FORWARD_IMediumAttachment_GETTER_HotPluggable_TO_OBJ(obj) COM_FORWARD_IMediumAttachment_GETTER_HotPluggable_TO ((obj)->)
+#define COM_FORWARD_IMediumAttachment_GETTER_HotPluggable_TO_BASE(base) COM_FORWARD_IMediumAttachment_GETTER_HotPluggable_TO (base::)
 #define COM_FORWARD_IMediumAttachment_GETTER_BandwidthGroup_TO(smth) HRESULT STDMETHODCALLTYPE get_BandwidthGroup (IBandwidthGroup * * aBandwidthGroup) { return smth get_BandwidthGroup (aBandwidthGroup); }
 #define COM_FORWARD_IMediumAttachment_GETTER_BandwidthGroup_TO_OBJ(obj) COM_FORWARD_IMediumAttachment_GETTER_BandwidthGroup_TO ((obj)->)
 #define COM_FORWARD_IMediumAttachment_GETTER_BandwidthGroup_TO_BASE(base) COM_FORWARD_IMediumAttachment_GETTER_BandwidthGroup_TO (base::)
-#define COM_FORWARD_IMediumAttachment_TO(smth) COM_FORWARD_IMediumAttachment_GETTER_Medium_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Controller_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Port_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Device_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Type_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Passthrough_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_TemporaryEject_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_IsEjected_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_NonRotational_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Discard_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_BandwidthGroup_TO (smth) 
+#define COM_FORWARD_IMediumAttachment_TO(smth) COM_FORWARD_IMediumAttachment_GETTER_Medium_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Controller_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Port_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Device_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Type_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Passthrough_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_TemporaryEject_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_IsEjected_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_NonRotational_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_Discard_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_HotPluggable_TO (smth) COM_FORWARD_IMediumAttachment_GETTER_BandwidthGroup_TO (smth) 
 #define COM_FORWARD_IMediumAttachment_TO_OBJ(obj) COM_FORWARD_IMediumAttachment_TO ((obj)->)
 #define COM_FORWARD_IMediumAttachment_TO_BASE(base) COM_FORWARD_IMediumAttachment_TO (base::)
 #define COM_FORWARD_IMedium_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (BSTR * aId) { return smth get_Id (aId); }
@@ -3887,15 +4600,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMedium_GETTER_State_TO(smth) HRESULT STDMETHODCALLTYPE get_State (MediumState * aState) { return smth get_State (aState); }
 #define COM_FORWARD_IMedium_GETTER_State_TO_OBJ(obj) COM_FORWARD_IMedium_GETTER_State_TO ((obj)->)
 #define COM_FORWARD_IMedium_GETTER_State_TO_BASE(base) COM_FORWARD_IMedium_GETTER_State_TO (base::)
-#define COM_FORWARD_IMedium_GETTER_Variant_TO(smth) HRESULT STDMETHODCALLTYPE get_Variant (ULONG * aVariant) { return smth get_Variant (aVariant); }
+#define COM_FORWARD_IMedium_GETTER_Variant_TO(smth) HRESULT STDMETHODCALLTYPE get_Variant (SAFEARRAY * * aVariant) { return smth get_Variant (aVariant); }
 #define COM_FORWARD_IMedium_GETTER_Variant_TO_OBJ(obj) COM_FORWARD_IMedium_GETTER_Variant_TO ((obj)->)
 #define COM_FORWARD_IMedium_GETTER_Variant_TO_BASE(base) COM_FORWARD_IMedium_GETTER_Variant_TO (base::)
 #define COM_FORWARD_IMedium_GETTER_Location_TO(smth) HRESULT STDMETHODCALLTYPE get_Location (BSTR * aLocation) { return smth get_Location (aLocation); }
 #define COM_FORWARD_IMedium_GETTER_Location_TO_OBJ(obj) COM_FORWARD_IMedium_GETTER_Location_TO ((obj)->)
 #define COM_FORWARD_IMedium_GETTER_Location_TO_BASE(base) COM_FORWARD_IMedium_GETTER_Location_TO (base::)
-#define COM_FORWARD_IMedium_SETTER_Location_TO(smth) HRESULT STDMETHODCALLTYPE put_Location (BSTR aLocation) { return smth put_Location (aLocation); }
-#define COM_FORWARD_IMedium_SETTER_Location_TO_OBJ(obj) COM_FORWARD_IMedium_SETTER_Location_TO ((obj)->)
-#define COM_FORWARD_IMedium_SETTER_Location_TO_BASE(base) COM_FORWARD_IMedium_SETTER_Location_TO (base::)
 #define COM_FORWARD_IMedium_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
 #define COM_FORWARD_IMedium_GETTER_Name_TO_OBJ(obj) COM_FORWARD_IMedium_GETTER_Name_TO ((obj)->)
 #define COM_FORWARD_IMedium_GETTER_Name_TO_BASE(base) COM_FORWARD_IMedium_GETTER_Name_TO (base::)
@@ -3959,18 +4669,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMedium_GetSnapshotIds_TO(smth) HRESULT STDMETHODCALLTYPE GetSnapshotIds (BSTR aMachineId, SAFEARRAY * * aSnapshotIds) { return smth GetSnapshotIds (aMachineId, aSnapshotIds); }
 #define COM_FORWARD_IMedium_GetSnapshotIds_TO_OBJ(obj) COM_FORWARD_IMedium_GetSnapshotIds_TO ((obj)->)
 #define COM_FORWARD_IMedium_GetSnapshotIds_TO_BASE(base) COM_FORWARD_IMedium_GetSnapshotIds_TO (base::)
-#define COM_FORWARD_IMedium_LockRead_TO(smth) HRESULT STDMETHODCALLTYPE LockRead (MediumState * aState) { return smth LockRead (aState); }
+#define COM_FORWARD_IMedium_LockRead_TO(smth) HRESULT STDMETHODCALLTYPE LockRead (IToken * * aToken) { return smth LockRead (aToken); }
 #define COM_FORWARD_IMedium_LockRead_TO_OBJ(obj) COM_FORWARD_IMedium_LockRead_TO ((obj)->)
 #define COM_FORWARD_IMedium_LockRead_TO_BASE(base) COM_FORWARD_IMedium_LockRead_TO (base::)
-#define COM_FORWARD_IMedium_UnlockRead_TO(smth) HRESULT STDMETHODCALLTYPE UnlockRead (MediumState * aState) { return smth UnlockRead (aState); }
-#define COM_FORWARD_IMedium_UnlockRead_TO_OBJ(obj) COM_FORWARD_IMedium_UnlockRead_TO ((obj)->)
-#define COM_FORWARD_IMedium_UnlockRead_TO_BASE(base) COM_FORWARD_IMedium_UnlockRead_TO (base::)
-#define COM_FORWARD_IMedium_LockWrite_TO(smth) HRESULT STDMETHODCALLTYPE LockWrite (MediumState * aState) { return smth LockWrite (aState); }
+#define COM_FORWARD_IMedium_LockWrite_TO(smth) HRESULT STDMETHODCALLTYPE LockWrite (IToken * * aToken) { return smth LockWrite (aToken); }
 #define COM_FORWARD_IMedium_LockWrite_TO_OBJ(obj) COM_FORWARD_IMedium_LockWrite_TO ((obj)->)
 #define COM_FORWARD_IMedium_LockWrite_TO_BASE(base) COM_FORWARD_IMedium_LockWrite_TO (base::)
-#define COM_FORWARD_IMedium_UnlockWrite_TO(smth) HRESULT STDMETHODCALLTYPE UnlockWrite (MediumState * aState) { return smth UnlockWrite (aState); }
-#define COM_FORWARD_IMedium_UnlockWrite_TO_OBJ(obj) COM_FORWARD_IMedium_UnlockWrite_TO ((obj)->)
-#define COM_FORWARD_IMedium_UnlockWrite_TO_BASE(base) COM_FORWARD_IMedium_UnlockWrite_TO (base::)
 #define COM_FORWARD_IMedium_Close_TO(smth) HRESULT STDMETHODCALLTYPE Close() { return smth Close(); }
 #define COM_FORWARD_IMedium_Close_TO_OBJ(obj) COM_FORWARD_IMedium_Close_TO ((obj)->)
 #define COM_FORWARD_IMedium_Close_TO_BASE(base) COM_FORWARD_IMedium_Close_TO (base::)
@@ -3986,24 +4690,27 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMedium_SetProperties_TO(smth) HRESULT STDMETHODCALLTYPE SetProperties (SAFEARRAY * * aNames, SAFEARRAY * * aValues) { return smth SetProperties (aNames, aValues); }
 #define COM_FORWARD_IMedium_SetProperties_TO_OBJ(obj) COM_FORWARD_IMedium_SetProperties_TO ((obj)->)
 #define COM_FORWARD_IMedium_SetProperties_TO_BASE(base) COM_FORWARD_IMedium_SetProperties_TO (base::)
-#define COM_FORWARD_IMedium_CreateBaseStorage_TO(smth) HRESULT STDMETHODCALLTYPE CreateBaseStorage (LONG64 aLogicalSize, ULONG aVariant, IProgress * * aProgress) { return smth CreateBaseStorage (aLogicalSize, aVariant, aProgress); }
+#define COM_FORWARD_IMedium_CreateBaseStorage_TO(smth) HRESULT STDMETHODCALLTYPE CreateBaseStorage (LONG64 aLogicalSize, SAFEARRAY * * aVariant, IProgress * * aProgress) { return smth CreateBaseStorage (aLogicalSize, aVariant, aProgress); }
 #define COM_FORWARD_IMedium_CreateBaseStorage_TO_OBJ(obj) COM_FORWARD_IMedium_CreateBaseStorage_TO ((obj)->)
 #define COM_FORWARD_IMedium_CreateBaseStorage_TO_BASE(base) COM_FORWARD_IMedium_CreateBaseStorage_TO (base::)
 #define COM_FORWARD_IMedium_DeleteStorage_TO(smth) HRESULT STDMETHODCALLTYPE DeleteStorage (IProgress * * aProgress) { return smth DeleteStorage (aProgress); }
 #define COM_FORWARD_IMedium_DeleteStorage_TO_OBJ(obj) COM_FORWARD_IMedium_DeleteStorage_TO ((obj)->)
 #define COM_FORWARD_IMedium_DeleteStorage_TO_BASE(base) COM_FORWARD_IMedium_DeleteStorage_TO (base::)
-#define COM_FORWARD_IMedium_CreateDiffStorage_TO(smth) HRESULT STDMETHODCALLTYPE CreateDiffStorage (IMedium * aTarget, ULONG aVariant, IProgress * * aProgress) { return smth CreateDiffStorage (aTarget, aVariant, aProgress); }
+#define COM_FORWARD_IMedium_CreateDiffStorage_TO(smth) HRESULT STDMETHODCALLTYPE CreateDiffStorage (IMedium * aTarget, SAFEARRAY * * aVariant, IProgress * * aProgress) { return smth CreateDiffStorage (aTarget, aVariant, aProgress); }
 #define COM_FORWARD_IMedium_CreateDiffStorage_TO_OBJ(obj) COM_FORWARD_IMedium_CreateDiffStorage_TO ((obj)->)
 #define COM_FORWARD_IMedium_CreateDiffStorage_TO_BASE(base) COM_FORWARD_IMedium_CreateDiffStorage_TO (base::)
 #define COM_FORWARD_IMedium_MergeTo_TO(smth) HRESULT STDMETHODCALLTYPE MergeTo (IMedium * aTarget, IProgress * * aProgress) { return smth MergeTo (aTarget, aProgress); }
 #define COM_FORWARD_IMedium_MergeTo_TO_OBJ(obj) COM_FORWARD_IMedium_MergeTo_TO ((obj)->)
 #define COM_FORWARD_IMedium_MergeTo_TO_BASE(base) COM_FORWARD_IMedium_MergeTo_TO (base::)
-#define COM_FORWARD_IMedium_CloneTo_TO(smth) HRESULT STDMETHODCALLTYPE CloneTo (IMedium * aTarget, ULONG aVariant, IMedium * aParent, IProgress * * aProgress) { return smth CloneTo (aTarget, aVariant, aParent, aProgress); }
+#define COM_FORWARD_IMedium_CloneTo_TO(smth) HRESULT STDMETHODCALLTYPE CloneTo (IMedium * aTarget, SAFEARRAY * * aVariant, IMedium * aParent, IProgress * * aProgress) { return smth CloneTo (aTarget, aVariant, aParent, aProgress); }
 #define COM_FORWARD_IMedium_CloneTo_TO_OBJ(obj) COM_FORWARD_IMedium_CloneTo_TO ((obj)->)
 #define COM_FORWARD_IMedium_CloneTo_TO_BASE(base) COM_FORWARD_IMedium_CloneTo_TO (base::)
-#define COM_FORWARD_IMedium_CloneToBase_TO(smth) HRESULT STDMETHODCALLTYPE CloneToBase (IMedium * aTarget, ULONG aVariant, IProgress * * aProgress) { return smth CloneToBase (aTarget, aVariant, aProgress); }
+#define COM_FORWARD_IMedium_CloneToBase_TO(smth) HRESULT STDMETHODCALLTYPE CloneToBase (IMedium * aTarget, SAFEARRAY * * aVariant, IProgress * * aProgress) { return smth CloneToBase (aTarget, aVariant, aProgress); }
 #define COM_FORWARD_IMedium_CloneToBase_TO_OBJ(obj) COM_FORWARD_IMedium_CloneToBase_TO ((obj)->)
 #define COM_FORWARD_IMedium_CloneToBase_TO_BASE(base) COM_FORWARD_IMedium_CloneToBase_TO (base::)
+#define COM_FORWARD_IMedium_SetLocation_TO(smth) HRESULT STDMETHODCALLTYPE SetLocation (BSTR aLocation, IProgress * * aProgress) { return smth SetLocation (aLocation, aProgress); }
+#define COM_FORWARD_IMedium_SetLocation_TO_OBJ(obj) COM_FORWARD_IMedium_SetLocation_TO ((obj)->)
+#define COM_FORWARD_IMedium_SetLocation_TO_BASE(base) COM_FORWARD_IMedium_SetLocation_TO (base::)
 #define COM_FORWARD_IMedium_Compact_TO(smth) HRESULT STDMETHODCALLTYPE Compact (IProgress * * aProgress) { return smth Compact (aProgress); }
 #define COM_FORWARD_IMedium_Compact_TO_OBJ(obj) COM_FORWARD_IMedium_Compact_TO ((obj)->)
 #define COM_FORWARD_IMedium_Compact_TO_BASE(base) COM_FORWARD_IMedium_Compact_TO (base::)
@@ -4013,7 +4720,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMedium_Reset_TO(smth) HRESULT STDMETHODCALLTYPE Reset (IProgress * * aProgress) { return smth Reset (aProgress); }
 #define COM_FORWARD_IMedium_Reset_TO_OBJ(obj) COM_FORWARD_IMedium_Reset_TO ((obj)->)
 #define COM_FORWARD_IMedium_Reset_TO_BASE(base) COM_FORWARD_IMedium_Reset_TO (base::)
-#define COM_FORWARD_IMedium_TO(smth) COM_FORWARD_IMedium_GETTER_Id_TO (smth) COM_FORWARD_IMedium_GETTER_Description_TO (smth) COM_FORWARD_IMedium_SETTER_Description_TO (smth) COM_FORWARD_IMedium_GETTER_State_TO (smth) COM_FORWARD_IMedium_GETTER_Variant_TO (smth) COM_FORWARD_IMedium_GETTER_Location_TO (smth) COM_FORWARD_IMedium_SETTER_Location_TO (smth) COM_FORWARD_IMedium_GETTER_Name_TO (smth) COM_FORWARD_IMedium_GETTER_DeviceType_TO (smth) COM_FORWARD_IMedium_GETTER_HostDrive_TO (smth) COM_FORWARD_IMedium_GETTER_Size_TO (smth) COM_FORWARD_IMedium_GETTER_Format_TO (smth) COM_FORWARD_IMedium_GETTER_MediumFormat_TO (smth) COM_FORWARD_IMedium_GETTER_Type_TO (smth) COM_FORWARD_IMedium_SETTER_Type_TO (smth) COM_FORWARD_IMedium_GETTER_AllowedTypes_TO (smth) COM_FORWARD_IMedium_GETTER_Parent_TO (smth) COM_FORWARD_IMedium_GETTER_Children_TO (smth) COM_FORWARD_IMedium_GETTER_Base_TO (smth) COM_FORWARD_IMedium_GETTER_ReadOnly_TO (smth) COM_FORWARD_IMedium_GETTER_LogicalSize_TO (smth) COM_FORWARD_IMedium_GETTER_AutoReset_TO (smth) COM_FORWARD_IMedium_SETTER_AutoReset_TO (smth) COM_FORWARD_IMedium_GETTER_LastAccessError_TO (smth) COM_FORWARD_IMedium_GETTER_MachineIds_TO (smth) COM_FORWARD_IMedium_SetIds_TO (smth) COM_FORWARD_IMedium_RefreshState_TO (smth) COM_FORWARD_IMedium_GetSnapshotIds_TO (smth) COM_FORWARD_IMedium_LockRead_TO (smth) COM_FORWARD_IMedium_UnlockRead_TO (smth) COM_FORWARD_IMedium_LockWrite_TO (smth) COM_FORWARD_IMedium_UnlockWrite_TO (smth) COM_FORWARD_IMedium_Close_TO (smth) COM_FORWARD_IMedium_GetProperty_TO (smth) COM_FORWARD_IMedium_SetProperty_TO (smth) COM_FORWARD_IMedium_GetProperties_TO (smth) COM_FORWARD_IMedium_SetProperties_TO (smth) COM_FORWARD_IMedium_CreateBaseStorage_TO (smth) COM_FORWARD_IMedium_DeleteStorage_TO (smth) COM_FORWARD_IMedium_CreateDiffStorage_TO (smth) COM_FORWARD_IMedium_MergeTo_TO (smth) COM_FORWARD_IMedium_CloneTo_TO (smth) COM_FORWARD_IMedium_CloneToBase_TO (smth) COM_FORWARD_IMedium_Compact_TO (smth) COM_FORWARD_IMedium_Resize_TO (smth) COM_FORWARD_IMedium_Reset_TO (smth) 
+#define COM_FORWARD_IMedium_TO(smth) COM_FORWARD_IMedium_GETTER_Id_TO (smth) COM_FORWARD_IMedium_GETTER_Description_TO (smth) COM_FORWARD_IMedium_SETTER_Description_TO (smth) COM_FORWARD_IMedium_GETTER_State_TO (smth) COM_FORWARD_IMedium_GETTER_Variant_TO (smth) COM_FORWARD_IMedium_GETTER_Location_TO (smth) COM_FORWARD_IMedium_GETTER_Name_TO (smth) COM_FORWARD_IMedium_GETTER_DeviceType_TO (smth) COM_FORWARD_IMedium_GETTER_HostDrive_TO (smth) COM_FORWARD_IMedium_GETTER_Size_TO (smth) COM_FORWARD_IMedium_GETTER_Format_TO (smth) COM_FORWARD_IMedium_GETTER_MediumFormat_TO (smth) COM_FORWARD_IMedium_GETTER_Type_TO (smth) COM_FORWARD_IMedium_SETTER_Type_TO (smth) COM_FORWARD_IMedium_GETTER_AllowedTypes_TO (smth) COM_FORWARD_IMedium_GETTER_Parent_TO (smth) COM_FORWARD_IMedium_GETTER_Children_TO (smth) COM_FORWARD_IMedium_GETTER_Base_TO (smth) COM_FORWARD_IMedium_GETTER_ReadOnly_TO (smth) COM_FORWARD_IMedium_GETTER_LogicalSize_TO (smth) COM_FORWARD_IMedium_GETTER_AutoReset_TO (smth) COM_FORWARD_IMedium_SETTER_AutoReset_TO (smth) COM_FORWARD_IMedium_GETTER_LastAccessError_TO (smth) COM_FORWARD_IMedium_GETTER_MachineIds_TO (smth) COM_FORWARD_IMedium_SetIds_TO (smth) COM_FORWARD_IMedium_RefreshState_TO (smth) COM_FORWARD_IMedium_GetSnapshotIds_TO (smth) COM_FORWARD_IMedium_LockRead_TO (smth) COM_FORWARD_IMedium_LockWrite_TO (smth) COM_FORWARD_IMedium_Close_TO (smth) COM_FORWARD_IMedium_GetProperty_TO (smth) COM_FORWARD_IMedium_SetProperty_TO (smth) COM_FORWARD_IMedium_GetProperties_TO (smth) COM_FORWARD_IMedium_SetProperties_TO (smth) COM_FORWARD_IMedium_CreateBaseStorage_TO (smth) COM_FORWARD_IMedium_DeleteStorage_TO (smth) COM_FORWARD_IMedium_CreateDiffStorage_TO (smth) COM_FORWARD_IMedium_MergeTo_TO (smth) COM_FORWARD_IMedium_CloneTo_TO (smth) COM_FORWARD_IMedium_CloneToBase_TO (smth) COM_FORWARD_IMedium_SetLocation_TO (smth) COM_FORWARD_IMedium_Compact_TO (smth) COM_FORWARD_IMedium_Resize_TO (smth) COM_FORWARD_IMedium_Reset_TO (smth) 
 #define COM_FORWARD_IMedium_TO_OBJ(obj) COM_FORWARD_IMedium_TO ((obj)->)
 #define COM_FORWARD_IMedium_TO_BASE(base) COM_FORWARD_IMedium_TO (base::)
 #define COM_FORWARD_IMediumFormat_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (BSTR * aId) { return smth get_Id (aId); }
@@ -4022,18 +4729,27 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMediumFormat_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
 #define COM_FORWARD_IMediumFormat_GETTER_Name_TO_OBJ(obj) COM_FORWARD_IMediumFormat_GETTER_Name_TO ((obj)->)
 #define COM_FORWARD_IMediumFormat_GETTER_Name_TO_BASE(base) COM_FORWARD_IMediumFormat_GETTER_Name_TO (base::)
-#define COM_FORWARD_IMediumFormat_GETTER_Capabilities_TO(smth) HRESULT STDMETHODCALLTYPE get_Capabilities (ULONG * aCapabilities) { return smth get_Capabilities (aCapabilities); }
+#define COM_FORWARD_IMediumFormat_GETTER_Capabilities_TO(smth) HRESULT STDMETHODCALLTYPE get_Capabilities (SAFEARRAY * * aCapabilities) { return smth get_Capabilities (aCapabilities); }
 #define COM_FORWARD_IMediumFormat_GETTER_Capabilities_TO_OBJ(obj) COM_FORWARD_IMediumFormat_GETTER_Capabilities_TO ((obj)->)
 #define COM_FORWARD_IMediumFormat_GETTER_Capabilities_TO_BASE(base) COM_FORWARD_IMediumFormat_GETTER_Capabilities_TO (base::)
-#define COM_FORWARD_IMediumFormat_DescribeFileExtensions_TO(smth) HRESULT STDMETHODCALLTYPE DescribeFileExtensions (SAFEARRAY * * aExtensions, SAFEARRAY * * aType) { return smth DescribeFileExtensions (aExtensions, aType); }
+#define COM_FORWARD_IMediumFormat_DescribeFileExtensions_TO(smth) HRESULT STDMETHODCALLTYPE DescribeFileExtensions (SAFEARRAY * * aExtensions, SAFEARRAY * * aTypes) { return smth DescribeFileExtensions (aExtensions, aTypes); }
 #define COM_FORWARD_IMediumFormat_DescribeFileExtensions_TO_OBJ(obj) COM_FORWARD_IMediumFormat_DescribeFileExtensions_TO ((obj)->)
 #define COM_FORWARD_IMediumFormat_DescribeFileExtensions_TO_BASE(base) COM_FORWARD_IMediumFormat_DescribeFileExtensions_TO (base::)
-#define COM_FORWARD_IMediumFormat_DescribeProperties_TO(smth) HRESULT STDMETHODCALLTYPE DescribeProperties (SAFEARRAY * * aNames, SAFEARRAY * * aDescription, SAFEARRAY * * aTypes, SAFEARRAY * * aFlags, SAFEARRAY * * aDefaults) { return smth DescribeProperties (aNames, aDescription, aTypes, aFlags, aDefaults); }
+#define COM_FORWARD_IMediumFormat_DescribeProperties_TO(smth) HRESULT STDMETHODCALLTYPE DescribeProperties (SAFEARRAY * * aNames, SAFEARRAY * * aDescriptions, SAFEARRAY * * aTypes, SAFEARRAY * * aFlags, SAFEARRAY * * aDefaults) { return smth DescribeProperties (aNames, aDescriptions, aTypes, aFlags, aDefaults); }
 #define COM_FORWARD_IMediumFormat_DescribeProperties_TO_OBJ(obj) COM_FORWARD_IMediumFormat_DescribeProperties_TO ((obj)->)
 #define COM_FORWARD_IMediumFormat_DescribeProperties_TO_BASE(base) COM_FORWARD_IMediumFormat_DescribeProperties_TO (base::)
 #define COM_FORWARD_IMediumFormat_TO(smth) COM_FORWARD_IMediumFormat_GETTER_Id_TO (smth) COM_FORWARD_IMediumFormat_GETTER_Name_TO (smth) COM_FORWARD_IMediumFormat_GETTER_Capabilities_TO (smth) COM_FORWARD_IMediumFormat_DescribeFileExtensions_TO (smth) COM_FORWARD_IMediumFormat_DescribeProperties_TO (smth) 
 #define COM_FORWARD_IMediumFormat_TO_OBJ(obj) COM_FORWARD_IMediumFormat_TO ((obj)->)
 #define COM_FORWARD_IMediumFormat_TO_BASE(base) COM_FORWARD_IMediumFormat_TO (base::)
+#define COM_FORWARD_IToken_Abandon_TO(smth) HRESULT STDMETHODCALLTYPE Abandon() { return smth Abandon(); }
+#define COM_FORWARD_IToken_Abandon_TO_OBJ(obj) COM_FORWARD_IToken_Abandon_TO ((obj)->)
+#define COM_FORWARD_IToken_Abandon_TO_BASE(base) COM_FORWARD_IToken_Abandon_TO (base::)
+#define COM_FORWARD_IToken_Dummy_TO(smth) HRESULT STDMETHODCALLTYPE Dummy() { return smth Dummy(); }
+#define COM_FORWARD_IToken_Dummy_TO_OBJ(obj) COM_FORWARD_IToken_Dummy_TO ((obj)->)
+#define COM_FORWARD_IToken_Dummy_TO_BASE(base) COM_FORWARD_IToken_Dummy_TO (base::)
+#define COM_FORWARD_IToken_TO(smth) COM_FORWARD_IToken_Abandon_TO (smth) COM_FORWARD_IToken_Dummy_TO (smth) 
+#define COM_FORWARD_IToken_TO_OBJ(obj) COM_FORWARD_IToken_TO ((obj)->)
+#define COM_FORWARD_IToken_TO_BASE(base) COM_FORWARD_IToken_TO (base::)
 #define COM_FORWARD_IKeyboard_GETTER_EventSource_TO(smth) HRESULT STDMETHODCALLTYPE get_EventSource (IEventSource * * aEventSource) { return smth get_EventSource (aEventSource); }
 #define COM_FORWARD_IKeyboard_GETTER_EventSource_TO_OBJ(obj) COM_FORWARD_IKeyboard_GETTER_EventSource_TO ((obj)->)
 #define COM_FORWARD_IKeyboard_GETTER_EventSource_TO_BASE(base) COM_FORWARD_IKeyboard_GETTER_EventSource_TO (base::)
@@ -4055,6 +4771,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMouse_GETTER_RelativeSupported_TO(smth) HRESULT STDMETHODCALLTYPE get_RelativeSupported (BOOL * aRelativeSupported) { return smth get_RelativeSupported (aRelativeSupported); }
 #define COM_FORWARD_IMouse_GETTER_RelativeSupported_TO_OBJ(obj) COM_FORWARD_IMouse_GETTER_RelativeSupported_TO ((obj)->)
 #define COM_FORWARD_IMouse_GETTER_RelativeSupported_TO_BASE(base) COM_FORWARD_IMouse_GETTER_RelativeSupported_TO (base::)
+#define COM_FORWARD_IMouse_GETTER_MultiTouchSupported_TO(smth) HRESULT STDMETHODCALLTYPE get_MultiTouchSupported (BOOL * aMultiTouchSupported) { return smth get_MultiTouchSupported (aMultiTouchSupported); }
+#define COM_FORWARD_IMouse_GETTER_MultiTouchSupported_TO_OBJ(obj) COM_FORWARD_IMouse_GETTER_MultiTouchSupported_TO ((obj)->)
+#define COM_FORWARD_IMouse_GETTER_MultiTouchSupported_TO_BASE(base) COM_FORWARD_IMouse_GETTER_MultiTouchSupported_TO (base::)
 #define COM_FORWARD_IMouse_GETTER_NeedsHostCursor_TO(smth) HRESULT STDMETHODCALLTYPE get_NeedsHostCursor (BOOL * aNeedsHostCursor) { return smth get_NeedsHostCursor (aNeedsHostCursor); }
 #define COM_FORWARD_IMouse_GETTER_NeedsHostCursor_TO_OBJ(obj) COM_FORWARD_IMouse_GETTER_NeedsHostCursor_TO ((obj)->)
 #define COM_FORWARD_IMouse_GETTER_NeedsHostCursor_TO_BASE(base) COM_FORWARD_IMouse_GETTER_NeedsHostCursor_TO (base::)
@@ -4067,7 +4786,13 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMouse_PutMouseEventAbsolute_TO(smth) HRESULT STDMETHODCALLTYPE PutMouseEventAbsolute (LONG aX, LONG aY, LONG aDz, LONG aDw, LONG aButtonState) { return smth PutMouseEventAbsolute (aX, aY, aDz, aDw, aButtonState); }
 #define COM_FORWARD_IMouse_PutMouseEventAbsolute_TO_OBJ(obj) COM_FORWARD_IMouse_PutMouseEventAbsolute_TO ((obj)->)
 #define COM_FORWARD_IMouse_PutMouseEventAbsolute_TO_BASE(base) COM_FORWARD_IMouse_PutMouseEventAbsolute_TO (base::)
-#define COM_FORWARD_IMouse_TO(smth) COM_FORWARD_IMouse_GETTER_AbsoluteSupported_TO (smth) COM_FORWARD_IMouse_GETTER_RelativeSupported_TO (smth) COM_FORWARD_IMouse_GETTER_NeedsHostCursor_TO (smth) COM_FORWARD_IMouse_GETTER_EventSource_TO (smth) COM_FORWARD_IMouse_PutMouseEvent_TO (smth) COM_FORWARD_IMouse_PutMouseEventAbsolute_TO (smth) 
+#define COM_FORWARD_IMouse_PutEventMultiTouch_TO(smth) HRESULT STDMETHODCALLTYPE PutEventMultiTouch (LONG aCount, SAFEARRAY * * aContacts, ULONG aScanTime) { return smth PutEventMultiTouch (aCount, aContacts, aScanTime); }
+#define COM_FORWARD_IMouse_PutEventMultiTouch_TO_OBJ(obj) COM_FORWARD_IMouse_PutEventMultiTouch_TO ((obj)->)
+#define COM_FORWARD_IMouse_PutEventMultiTouch_TO_BASE(base) COM_FORWARD_IMouse_PutEventMultiTouch_TO (base::)
+#define COM_FORWARD_IMouse_PutEventMultiTouchString_TO(smth) HRESULT STDMETHODCALLTYPE PutEventMultiTouchString (LONG aCount, BSTR aContacts, ULONG aScanTime) { return smth PutEventMultiTouchString (aCount, aContacts, aScanTime); }
+#define COM_FORWARD_IMouse_PutEventMultiTouchString_TO_OBJ(obj) COM_FORWARD_IMouse_PutEventMultiTouchString_TO ((obj)->)
+#define COM_FORWARD_IMouse_PutEventMultiTouchString_TO_BASE(base) COM_FORWARD_IMouse_PutEventMultiTouchString_TO (base::)
+#define COM_FORWARD_IMouse_TO(smth) COM_FORWARD_IMouse_GETTER_AbsoluteSupported_TO (smth) COM_FORWARD_IMouse_GETTER_RelativeSupported_TO (smth) COM_FORWARD_IMouse_GETTER_MultiTouchSupported_TO (smth) COM_FORWARD_IMouse_GETTER_NeedsHostCursor_TO (smth) COM_FORWARD_IMouse_GETTER_EventSource_TO (smth) COM_FORWARD_IMouse_PutMouseEvent_TO (smth) COM_FORWARD_IMouse_PutMouseEventAbsolute_TO (smth) COM_FORWARD_IMouse_PutEventMultiTouch_TO (smth) COM_FORWARD_IMouse_PutEventMultiTouchString_TO (smth) 
 #define COM_FORWARD_IMouse_TO_OBJ(obj) COM_FORWARD_IMouse_TO ((obj)->)
 #define COM_FORWARD_IMouse_TO_BASE(base) COM_FORWARD_IMouse_TO (base::)
 #define COM_FORWARD_IFramebuffer_GETTER_Address_TO(smth) HRESULT STDMETHODCALLTYPE get_Address (BYTE * * aAddress) { return smth get_Address (aAddress); }
@@ -4124,7 +4849,10 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IFramebuffer_ProcessVHWACommand_TO(smth) HRESULT STDMETHODCALLTYPE ProcessVHWACommand (BYTE * aCommand) { return smth ProcessVHWACommand (aCommand); }
 #define COM_FORWARD_IFramebuffer_ProcessVHWACommand_TO_OBJ(obj) COM_FORWARD_IFramebuffer_ProcessVHWACommand_TO ((obj)->)
 #define COM_FORWARD_IFramebuffer_ProcessVHWACommand_TO_BASE(base) COM_FORWARD_IFramebuffer_ProcessVHWACommand_TO (base::)
-#define COM_FORWARD_IFramebuffer_TO(smth) COM_FORWARD_IFramebuffer_GETTER_Address_TO (smth) COM_FORWARD_IFramebuffer_GETTER_Width_TO (smth) COM_FORWARD_IFramebuffer_GETTER_Height_TO (smth) COM_FORWARD_IFramebuffer_GETTER_BitsPerPixel_TO (smth) COM_FORWARD_IFramebuffer_GETTER_BytesPerLine_TO (smth) COM_FORWARD_IFramebuffer_GETTER_PixelFormat_TO (smth) COM_FORWARD_IFramebuffer_GETTER_UsesGuestVRAM_TO (smth) COM_FORWARD_IFramebuffer_GETTER_HeightReduction_TO (smth) COM_FORWARD_IFramebuffer_GETTER_Overlay_TO (smth) COM_FORWARD_IFramebuffer_GETTER_WinId_TO (smth) COM_FORWARD_IFramebuffer_Lock_TO (smth) COM_FORWARD_IFramebuffer_Unlock_TO (smth) COM_FORWARD_IFramebuffer_NotifyUpdate_TO (smth) COM_FORWARD_IFramebuffer_RequestResize_TO (smth) COM_FORWARD_IFramebuffer_VideoModeSupported_TO (smth) COM_FORWARD_IFramebuffer_GetVisibleRegion_TO (smth) COM_FORWARD_IFramebuffer_SetVisibleRegion_TO (smth) COM_FORWARD_IFramebuffer_ProcessVHWACommand_TO (smth) 
+#define COM_FORWARD_IFramebuffer_Notify3DEvent_TO(smth) HRESULT STDMETHODCALLTYPE Notify3DEvent (ULONG aType, BYTE * aData) { return smth Notify3DEvent (aType, aData); }
+#define COM_FORWARD_IFramebuffer_Notify3DEvent_TO_OBJ(obj) COM_FORWARD_IFramebuffer_Notify3DEvent_TO ((obj)->)
+#define COM_FORWARD_IFramebuffer_Notify3DEvent_TO_BASE(base) COM_FORWARD_IFramebuffer_Notify3DEvent_TO (base::)
+#define COM_FORWARD_IFramebuffer_TO(smth) COM_FORWARD_IFramebuffer_GETTER_Address_TO (smth) COM_FORWARD_IFramebuffer_GETTER_Width_TO (smth) COM_FORWARD_IFramebuffer_GETTER_Height_TO (smth) COM_FORWARD_IFramebuffer_GETTER_BitsPerPixel_TO (smth) COM_FORWARD_IFramebuffer_GETTER_BytesPerLine_TO (smth) COM_FORWARD_IFramebuffer_GETTER_PixelFormat_TO (smth) COM_FORWARD_IFramebuffer_GETTER_UsesGuestVRAM_TO (smth) COM_FORWARD_IFramebuffer_GETTER_HeightReduction_TO (smth) COM_FORWARD_IFramebuffer_GETTER_Overlay_TO (smth) COM_FORWARD_IFramebuffer_GETTER_WinId_TO (smth) COM_FORWARD_IFramebuffer_Lock_TO (smth) COM_FORWARD_IFramebuffer_Unlock_TO (smth) COM_FORWARD_IFramebuffer_NotifyUpdate_TO (smth) COM_FORWARD_IFramebuffer_RequestResize_TO (smth) COM_FORWARD_IFramebuffer_VideoModeSupported_TO (smth) COM_FORWARD_IFramebuffer_GetVisibleRegion_TO (smth) COM_FORWARD_IFramebuffer_SetVisibleRegion_TO (smth) COM_FORWARD_IFramebuffer_ProcessVHWACommand_TO (smth) COM_FORWARD_IFramebuffer_Notify3DEvent_TO (smth) 
 #define COM_FORWARD_IFramebuffer_TO_OBJ(obj) COM_FORWARD_IFramebuffer_TO ((obj)->)
 #define COM_FORWARD_IFramebuffer_TO_BASE(base) COM_FORWARD_IFramebuffer_TO (base::)
 #define COM_FORWARD_IFramebufferOverlay_GETTER_X_TO(smth) HRESULT STDMETHODCALLTYPE get_X (ULONG * aX) { return smth get_X (aX); }
@@ -4151,7 +4879,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IFramebufferOverlay_TO(smth) COM_FORWARD_IFramebufferOverlay_GETTER_X_TO (smth) COM_FORWARD_IFramebufferOverlay_GETTER_Y_TO (smth) COM_FORWARD_IFramebufferOverlay_GETTER_Visible_TO (smth) COM_FORWARD_IFramebufferOverlay_SETTER_Visible_TO (smth) COM_FORWARD_IFramebufferOverlay_GETTER_Alpha_TO (smth) COM_FORWARD_IFramebufferOverlay_SETTER_Alpha_TO (smth) COM_FORWARD_IFramebufferOverlay_Move_TO (smth) 
 #define COM_FORWARD_IFramebufferOverlay_TO_OBJ(obj) COM_FORWARD_IFramebufferOverlay_TO ((obj)->)
 #define COM_FORWARD_IFramebufferOverlay_TO_BASE(base) COM_FORWARD_IFramebufferOverlay_TO (base::)
-#define COM_FORWARD_IDisplay_GetScreenResolution_TO(smth) HRESULT STDMETHODCALLTYPE GetScreenResolution (ULONG aScreenId, ULONG * aWidth, ULONG * aHeight, ULONG * aBitsPerPixel) { return smth GetScreenResolution (aScreenId, aWidth, aHeight, aBitsPerPixel); }
+#define COM_FORWARD_IDisplay_GetScreenResolution_TO(smth) HRESULT STDMETHODCALLTYPE GetScreenResolution (ULONG aScreenId, ULONG * aWidth, ULONG * aHeight, ULONG * aBitsPerPixel, LONG * aXOrigin, LONG * aYOrigin) { return smth GetScreenResolution (aScreenId, aWidth, aHeight, aBitsPerPixel, aXOrigin, aYOrigin); }
 #define COM_FORWARD_IDisplay_GetScreenResolution_TO_OBJ(obj) COM_FORWARD_IDisplay_GetScreenResolution_TO ((obj)->)
 #define COM_FORWARD_IDisplay_GetScreenResolution_TO_BASE(base) COM_FORWARD_IDisplay_GetScreenResolution_TO (base::)
 #define COM_FORWARD_IDisplay_SetFramebuffer_TO(smth) HRESULT STDMETHODCALLTYPE SetFramebuffer (ULONG aScreenId, IFramebuffer * aFramebuffer) { return smth SetFramebuffer (aScreenId, aFramebuffer); }
@@ -4397,6 +5125,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachineDebugger_SETTER_RecompileSupervisor_TO(smth) HRESULT STDMETHODCALLTYPE put_RecompileSupervisor (BOOL aRecompileSupervisor) { return smth put_RecompileSupervisor (aRecompileSupervisor); }
 #define COM_FORWARD_IMachineDebugger_SETTER_RecompileSupervisor_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_SETTER_RecompileSupervisor_TO ((obj)->)
 #define COM_FORWARD_IMachineDebugger_SETTER_RecompileSupervisor_TO_BASE(base) COM_FORWARD_IMachineDebugger_SETTER_RecompileSupervisor_TO (base::)
+#define COM_FORWARD_IMachineDebugger_GETTER_ExecuteAllInIEM_TO(smth) HRESULT STDMETHODCALLTYPE get_ExecuteAllInIEM (BOOL * aExecuteAllInIEM) { return smth get_ExecuteAllInIEM (aExecuteAllInIEM); }
+#define COM_FORWARD_IMachineDebugger_GETTER_ExecuteAllInIEM_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_GETTER_ExecuteAllInIEM_TO ((obj)->)
+#define COM_FORWARD_IMachineDebugger_GETTER_ExecuteAllInIEM_TO_BASE(base) COM_FORWARD_IMachineDebugger_GETTER_ExecuteAllInIEM_TO (base::)
+#define COM_FORWARD_IMachineDebugger_SETTER_ExecuteAllInIEM_TO(smth) HRESULT STDMETHODCALLTYPE put_ExecuteAllInIEM (BOOL aExecuteAllInIEM) { return smth put_ExecuteAllInIEM (aExecuteAllInIEM); }
+#define COM_FORWARD_IMachineDebugger_SETTER_ExecuteAllInIEM_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_SETTER_ExecuteAllInIEM_TO ((obj)->)
+#define COM_FORWARD_IMachineDebugger_SETTER_ExecuteAllInIEM_TO_BASE(base) COM_FORWARD_IMachineDebugger_SETTER_ExecuteAllInIEM_TO (base::)
 #define COM_FORWARD_IMachineDebugger_GETTER_PATMEnabled_TO(smth) HRESULT STDMETHODCALLTYPE get_PATMEnabled (BOOL * aPATMEnabled) { return smth get_PATMEnabled (aPATMEnabled); }
 #define COM_FORWARD_IMachineDebugger_GETTER_PATMEnabled_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_GETTER_PATMEnabled_TO ((obj)->)
 #define COM_FORWARD_IMachineDebugger_GETTER_PATMEnabled_TO_BASE(base) COM_FORWARD_IMachineDebugger_GETTER_PATMEnabled_TO (base::)
@@ -4442,6 +5176,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachineDebugger_GETTER_HWVirtExVPIDEnabled_TO(smth) HRESULT STDMETHODCALLTYPE get_HWVirtExVPIDEnabled (BOOL * aHWVirtExVPIDEnabled) { return smth get_HWVirtExVPIDEnabled (aHWVirtExVPIDEnabled); }
 #define COM_FORWARD_IMachineDebugger_GETTER_HWVirtExVPIDEnabled_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExVPIDEnabled_TO ((obj)->)
 #define COM_FORWARD_IMachineDebugger_GETTER_HWVirtExVPIDEnabled_TO_BASE(base) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExVPIDEnabled_TO (base::)
+#define COM_FORWARD_IMachineDebugger_GETTER_HWVirtExUXEnabled_TO(smth) HRESULT STDMETHODCALLTYPE get_HWVirtExUXEnabled (BOOL * aHWVirtExUXEnabled) { return smth get_HWVirtExUXEnabled (aHWVirtExUXEnabled); }
+#define COM_FORWARD_IMachineDebugger_GETTER_HWVirtExUXEnabled_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExUXEnabled_TO ((obj)->)
+#define COM_FORWARD_IMachineDebugger_GETTER_HWVirtExUXEnabled_TO_BASE(base) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExUXEnabled_TO (base::)
 #define COM_FORWARD_IMachineDebugger_GETTER_OSName_TO(smth) HRESULT STDMETHODCALLTYPE get_OSName (BSTR * aOSName) { return smth get_OSName (aOSName); }
 #define COM_FORWARD_IMachineDebugger_GETTER_OSName_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_GETTER_OSName_TO ((obj)->)
 #define COM_FORWARD_IMachineDebugger_GETTER_OSName_TO_BASE(base) COM_FORWARD_IMachineDebugger_GETTER_OSName_TO (base::)
@@ -4520,40 +5257,34 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMachineDebugger_GetStats_TO(smth) HRESULT STDMETHODCALLTYPE GetStats (BSTR aPattern, BOOL aWithDescriptions, BSTR * aStats) { return smth GetStats (aPattern, aWithDescriptions, aStats); }
 #define COM_FORWARD_IMachineDebugger_GetStats_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_GetStats_TO ((obj)->)
 #define COM_FORWARD_IMachineDebugger_GetStats_TO_BASE(base) COM_FORWARD_IMachineDebugger_GetStats_TO (base::)
-#define COM_FORWARD_IMachineDebugger_TO(smth) COM_FORWARD_IMachineDebugger_GETTER_SingleStep_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_SingleStep_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_RecompileUser_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_RecompileUser_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_RecompileSupervisor_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_RecompileSupervisor_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_PATMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_PATMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_CSAMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_CSAMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_LogEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgFlags_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgGroups_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgDestinations_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelFlags_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelGroups_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelDestinations_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExNestedPagingEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExVPIDEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_OSName_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_OSVersion_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_PAEEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_VirtualTimeRate_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_VirtualTimeRate_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_VM_TO (smth) COM_FORWARD_IMachineDebugger_DumpGuestCore_TO (smth) COM_FORWARD_IMachineDebugger_DumpHostProcessCore_TO (smth) COM_FORWARD_IMachineDebugger_Info_TO (smth) COM_FORWARD_IMachineDebugger_InjectNMI_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogGroups_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogFlags_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogDestinations_TO (smth) COM_FORWARD_IMachineDebugger_ReadPhysicalMemory_TO (smth) COM_FORWARD_IMachineDebugger_WritePhysicalMemory_TO (smth) COM_FORWARD_IMachineDebugger_ReadVirtualMemory_TO (smth) COM_FORWARD_IMachineDebugger_WriteVirtualMemory_TO (smth) COM_FORWARD_IMachineDebugger_DetectOS_TO (smth) COM_FORWARD_IMachineDebugger_GetRegister_TO (smth) COM_FORWARD_IMachineDebugger_GetRegisters_TO (smth) COM_FORWARD_IMachineDebugger_SetRegister_TO (smth) COM_FORWARD_IMachineDebugger_SetRegisters_TO (smth) COM_FORWARD_IMachineDebugger_DumpGuestStack_TO (smth) COM_FORWARD_IMachineDebugger_ResetStats_TO (smth) COM_FORWARD_IMachineDebugger_DumpStats_TO (smth) COM_FORWARD_IMachineDebugger_GetStats_TO (smth) 
+#define COM_FORWARD_IMachineDebugger_TO(smth) COM_FORWARD_IMachineDebugger_GETTER_SingleStep_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_SingleStep_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_RecompileUser_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_RecompileUser_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_RecompileSupervisor_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_RecompileSupervisor_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_ExecuteAllInIEM_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_ExecuteAllInIEM_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_PATMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_PATMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_CSAMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_CSAMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_LogEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgFlags_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgGroups_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgDestinations_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelFlags_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelGroups_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelDestinations_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExNestedPagingEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExVPIDEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExUXEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_OSName_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_OSVersion_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_PAEEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_VirtualTimeRate_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_VirtualTimeRate_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_VM_TO (smth) COM_FORWARD_IMachineDebugger_DumpGuestCore_TO (smth) COM_FORWARD_IMachineDebugger_DumpHostProcessCore_TO (smth) COM_FORWARD_IMachineDebugger_Info_TO (smth) COM_FORWARD_IMachineDebugger_InjectNMI_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogGroups_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogFlags_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogDestinations_TO (smth) COM_FORWARD_IMachineDebugger_ReadPhysicalMemory_TO (smth) COM_FORWARD_IMachineDebugger_WritePhysicalMemory_TO (smth) COM_FORWARD_IMachineDebugger_ReadVirtualMemory_TO (smth) COM_FORWARD_IMachineDebugger_WriteVirtualMemory_TO (smth) COM_FORWARD_IMachineDebugger_DetectOS_TO (smth) COM_FORWARD_IMachineDebugger_GetRegister_TO (smth) COM_FORWARD_IMachineDebugger_GetRegisters_TO (smth) COM_FORWARD_IMachineDebugger_SetRegister_TO (smth) COM_FORWARD_IMachineDebugger_SetRegisters_TO (smth) COM_FORWARD_IMachineDebugger_DumpGuestStack_TO (smth) COM_FORWARD_IMachineDebugger_ResetStats_TO (smth) COM_FORWARD_IMachineDebugger_DumpStats_TO (smth) COM_FORWARD_IMachineDebugger_GetStats_TO (smth) 
 #define COM_FORWARD_IMachineDebugger_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_TO ((obj)->)
 #define COM_FORWARD_IMachineDebugger_TO_BASE(base) COM_FORWARD_IMachineDebugger_TO (base::)
-#define COM_FORWARD_IUSBController_GETTER_Enabled_TO(smth) HRESULT STDMETHODCALLTYPE get_Enabled (BOOL * aEnabled) { return smth get_Enabled (aEnabled); }
-#define COM_FORWARD_IUSBController_GETTER_Enabled_TO_OBJ(obj) COM_FORWARD_IUSBController_GETTER_Enabled_TO ((obj)->)
-#define COM_FORWARD_IUSBController_GETTER_Enabled_TO_BASE(base) COM_FORWARD_IUSBController_GETTER_Enabled_TO (base::)
-#define COM_FORWARD_IUSBController_SETTER_Enabled_TO(smth) HRESULT STDMETHODCALLTYPE put_Enabled (BOOL aEnabled) { return smth put_Enabled (aEnabled); }
-#define COM_FORWARD_IUSBController_SETTER_Enabled_TO_OBJ(obj) COM_FORWARD_IUSBController_SETTER_Enabled_TO ((obj)->)
-#define COM_FORWARD_IUSBController_SETTER_Enabled_TO_BASE(base) COM_FORWARD_IUSBController_SETTER_Enabled_TO (base::)
-#define COM_FORWARD_IUSBController_GETTER_EnabledEHCI_TO(smth) HRESULT STDMETHODCALLTYPE get_EnabledEHCI (BOOL * aEnabledEHCI) { return smth get_EnabledEHCI (aEnabledEHCI); }
-#define COM_FORWARD_IUSBController_GETTER_EnabledEHCI_TO_OBJ(obj) COM_FORWARD_IUSBController_GETTER_EnabledEHCI_TO ((obj)->)
-#define COM_FORWARD_IUSBController_GETTER_EnabledEHCI_TO_BASE(base) COM_FORWARD_IUSBController_GETTER_EnabledEHCI_TO (base::)
-#define COM_FORWARD_IUSBController_SETTER_EnabledEHCI_TO(smth) HRESULT STDMETHODCALLTYPE put_EnabledEHCI (BOOL aEnabledEHCI) { return smth put_EnabledEHCI (aEnabledEHCI); }
-#define COM_FORWARD_IUSBController_SETTER_EnabledEHCI_TO_OBJ(obj) COM_FORWARD_IUSBController_SETTER_EnabledEHCI_TO ((obj)->)
-#define COM_FORWARD_IUSBController_SETTER_EnabledEHCI_TO_BASE(base) COM_FORWARD_IUSBController_SETTER_EnabledEHCI_TO (base::)
-#define COM_FORWARD_IUSBController_GETTER_ProxyAvailable_TO(smth) HRESULT STDMETHODCALLTYPE get_ProxyAvailable (BOOL * aProxyAvailable) { return smth get_ProxyAvailable (aProxyAvailable); }
-#define COM_FORWARD_IUSBController_GETTER_ProxyAvailable_TO_OBJ(obj) COM_FORWARD_IUSBController_GETTER_ProxyAvailable_TO ((obj)->)
-#define COM_FORWARD_IUSBController_GETTER_ProxyAvailable_TO_BASE(base) COM_FORWARD_IUSBController_GETTER_ProxyAvailable_TO (base::)
+#define COM_FORWARD_IUSBDeviceFilters_GETTER_DeviceFilters_TO(smth) HRESULT STDMETHODCALLTYPE get_DeviceFilters (SAFEARRAY * * aDeviceFilters) { return smth get_DeviceFilters (aDeviceFilters); }
+#define COM_FORWARD_IUSBDeviceFilters_GETTER_DeviceFilters_TO_OBJ(obj) COM_FORWARD_IUSBDeviceFilters_GETTER_DeviceFilters_TO ((obj)->)
+#define COM_FORWARD_IUSBDeviceFilters_GETTER_DeviceFilters_TO_BASE(base) COM_FORWARD_IUSBDeviceFilters_GETTER_DeviceFilters_TO (base::)
+#define COM_FORWARD_IUSBDeviceFilters_CreateDeviceFilter_TO(smth) HRESULT STDMETHODCALLTYPE CreateDeviceFilter (BSTR aName, IUSBDeviceFilter * * aFilter) { return smth CreateDeviceFilter (aName, aFilter); }
+#define COM_FORWARD_IUSBDeviceFilters_CreateDeviceFilter_TO_OBJ(obj) COM_FORWARD_IUSBDeviceFilters_CreateDeviceFilter_TO ((obj)->)
+#define COM_FORWARD_IUSBDeviceFilters_CreateDeviceFilter_TO_BASE(base) COM_FORWARD_IUSBDeviceFilters_CreateDeviceFilter_TO (base::)
+#define COM_FORWARD_IUSBDeviceFilters_InsertDeviceFilter_TO(smth) HRESULT STDMETHODCALLTYPE InsertDeviceFilter (ULONG aPosition, IUSBDeviceFilter * aFilter) { return smth InsertDeviceFilter (aPosition, aFilter); }
+#define COM_FORWARD_IUSBDeviceFilters_InsertDeviceFilter_TO_OBJ(obj) COM_FORWARD_IUSBDeviceFilters_InsertDeviceFilter_TO ((obj)->)
+#define COM_FORWARD_IUSBDeviceFilters_InsertDeviceFilter_TO_BASE(base) COM_FORWARD_IUSBDeviceFilters_InsertDeviceFilter_TO (base::)
+#define COM_FORWARD_IUSBDeviceFilters_RemoveDeviceFilter_TO(smth) HRESULT STDMETHODCALLTYPE RemoveDeviceFilter (ULONG aPosition, IUSBDeviceFilter * * aFilter) { return smth RemoveDeviceFilter (aPosition, aFilter); }
+#define COM_FORWARD_IUSBDeviceFilters_RemoveDeviceFilter_TO_OBJ(obj) COM_FORWARD_IUSBDeviceFilters_RemoveDeviceFilter_TO ((obj)->)
+#define COM_FORWARD_IUSBDeviceFilters_RemoveDeviceFilter_TO_BASE(base) COM_FORWARD_IUSBDeviceFilters_RemoveDeviceFilter_TO (base::)
+#define COM_FORWARD_IUSBDeviceFilters_TO(smth) COM_FORWARD_IUSBDeviceFilters_GETTER_DeviceFilters_TO (smth) COM_FORWARD_IUSBDeviceFilters_CreateDeviceFilter_TO (smth) COM_FORWARD_IUSBDeviceFilters_InsertDeviceFilter_TO (smth) COM_FORWARD_IUSBDeviceFilters_RemoveDeviceFilter_TO (smth) 
+#define COM_FORWARD_IUSBDeviceFilters_TO_OBJ(obj) COM_FORWARD_IUSBDeviceFilters_TO ((obj)->)
+#define COM_FORWARD_IUSBDeviceFilters_TO_BASE(base) COM_FORWARD_IUSBDeviceFilters_TO (base::)
+#define COM_FORWARD_IUSBController_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
+#define COM_FORWARD_IUSBController_GETTER_Name_TO_OBJ(obj) COM_FORWARD_IUSBController_GETTER_Name_TO ((obj)->)
+#define COM_FORWARD_IUSBController_GETTER_Name_TO_BASE(base) COM_FORWARD_IUSBController_GETTER_Name_TO (base::)
+#define COM_FORWARD_IUSBController_GETTER_Type_TO(smth) HRESULT STDMETHODCALLTYPE get_Type (USBControllerType * aType) { return smth get_Type (aType); }
+#define COM_FORWARD_IUSBController_GETTER_Type_TO_OBJ(obj) COM_FORWARD_IUSBController_GETTER_Type_TO ((obj)->)
+#define COM_FORWARD_IUSBController_GETTER_Type_TO_BASE(base) COM_FORWARD_IUSBController_GETTER_Type_TO (base::)
 #define COM_FORWARD_IUSBController_GETTER_USBStandard_TO(smth) HRESULT STDMETHODCALLTYPE get_USBStandard (USHORT * aUSBStandard) { return smth get_USBStandard (aUSBStandard); }
 #define COM_FORWARD_IUSBController_GETTER_USBStandard_TO_OBJ(obj) COM_FORWARD_IUSBController_GETTER_USBStandard_TO ((obj)->)
 #define COM_FORWARD_IUSBController_GETTER_USBStandard_TO_BASE(base) COM_FORWARD_IUSBController_GETTER_USBStandard_TO (base::)
-#define COM_FORWARD_IUSBController_GETTER_DeviceFilters_TO(smth) HRESULT STDMETHODCALLTYPE get_DeviceFilters (SAFEARRAY * * aDeviceFilters) { return smth get_DeviceFilters (aDeviceFilters); }
-#define COM_FORWARD_IUSBController_GETTER_DeviceFilters_TO_OBJ(obj) COM_FORWARD_IUSBController_GETTER_DeviceFilters_TO ((obj)->)
-#define COM_FORWARD_IUSBController_GETTER_DeviceFilters_TO_BASE(base) COM_FORWARD_IUSBController_GETTER_DeviceFilters_TO (base::)
-#define COM_FORWARD_IUSBController_CreateDeviceFilter_TO(smth) HRESULT STDMETHODCALLTYPE CreateDeviceFilter (BSTR aName, IUSBDeviceFilter * * aFilter) { return smth CreateDeviceFilter (aName, aFilter); }
-#define COM_FORWARD_IUSBController_CreateDeviceFilter_TO_OBJ(obj) COM_FORWARD_IUSBController_CreateDeviceFilter_TO ((obj)->)
-#define COM_FORWARD_IUSBController_CreateDeviceFilter_TO_BASE(base) COM_FORWARD_IUSBController_CreateDeviceFilter_TO (base::)
-#define COM_FORWARD_IUSBController_InsertDeviceFilter_TO(smth) HRESULT STDMETHODCALLTYPE InsertDeviceFilter (ULONG aPosition, IUSBDeviceFilter * aFilter) { return smth InsertDeviceFilter (aPosition, aFilter); }
-#define COM_FORWARD_IUSBController_InsertDeviceFilter_TO_OBJ(obj) COM_FORWARD_IUSBController_InsertDeviceFilter_TO ((obj)->)
-#define COM_FORWARD_IUSBController_InsertDeviceFilter_TO_BASE(base) COM_FORWARD_IUSBController_InsertDeviceFilter_TO (base::)
-#define COM_FORWARD_IUSBController_RemoveDeviceFilter_TO(smth) HRESULT STDMETHODCALLTYPE RemoveDeviceFilter (ULONG aPosition, IUSBDeviceFilter * * aFilter) { return smth RemoveDeviceFilter (aPosition, aFilter); }
-#define COM_FORWARD_IUSBController_RemoveDeviceFilter_TO_OBJ(obj) COM_FORWARD_IUSBController_RemoveDeviceFilter_TO ((obj)->)
-#define COM_FORWARD_IUSBController_RemoveDeviceFilter_TO_BASE(base) COM_FORWARD_IUSBController_RemoveDeviceFilter_TO (base::)
-#define COM_FORWARD_IUSBController_TO(smth) COM_FORWARD_IUSBController_GETTER_Enabled_TO (smth) COM_FORWARD_IUSBController_SETTER_Enabled_TO (smth) COM_FORWARD_IUSBController_GETTER_EnabledEHCI_TO (smth) COM_FORWARD_IUSBController_SETTER_EnabledEHCI_TO (smth) COM_FORWARD_IUSBController_GETTER_ProxyAvailable_TO (smth) COM_FORWARD_IUSBController_GETTER_USBStandard_TO (smth) COM_FORWARD_IUSBController_GETTER_DeviceFilters_TO (smth) COM_FORWARD_IUSBController_CreateDeviceFilter_TO (smth) COM_FORWARD_IUSBController_InsertDeviceFilter_TO (smth) COM_FORWARD_IUSBController_RemoveDeviceFilter_TO (smth) 
+#define COM_FORWARD_IUSBController_TO(smth) COM_FORWARD_IUSBController_GETTER_Name_TO (smth) COM_FORWARD_IUSBController_GETTER_Type_TO (smth) COM_FORWARD_IUSBController_GETTER_USBStandard_TO (smth) 
 #define COM_FORWARD_IUSBController_TO_OBJ(obj) COM_FORWARD_IUSBController_TO ((obj)->)
 #define COM_FORWARD_IUSBController_TO_BASE(base) COM_FORWARD_IUSBController_TO (base::)
 #define COM_FORWARD_IUSBDevice_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (BSTR * aId) { return smth get_Id (aId); }
@@ -4781,13 +5512,10 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IInternalSessionControl_GetRemoteConsole_TO(smth) HRESULT STDMETHODCALLTYPE GetRemoteConsole (IConsole * * aConsole) { return smth GetRemoteConsole (aConsole); }
 #define COM_FORWARD_IInternalSessionControl_GetRemoteConsole_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_GetRemoteConsole_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_GetRemoteConsole_TO_BASE(base) COM_FORWARD_IInternalSessionControl_GetRemoteConsole_TO (base::)
-#define COM_FORWARD_IInternalSessionControl_AssignMachine_TO(smth) HRESULT STDMETHODCALLTYPE AssignMachine (IMachine * aMachine, LockType aLockType) { return smth AssignMachine (aMachine, aLockType); }
-#define COM_FORWARD_IInternalSessionControl_AssignMachine_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_AssignMachine_TO ((obj)->)
-#define COM_FORWARD_IInternalSessionControl_AssignMachine_TO_BASE(base) COM_FORWARD_IInternalSessionControl_AssignMachine_TO (base::)
 #define COM_FORWARD_IInternalSessionControl_AssignRemoteMachine_TO(smth) HRESULT STDMETHODCALLTYPE AssignRemoteMachine (IMachine * aMachine, IConsole * aConsole) { return smth AssignRemoteMachine (aMachine, aConsole); }
 #define COM_FORWARD_IInternalSessionControl_AssignRemoteMachine_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_AssignRemoteMachine_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_AssignRemoteMachine_TO_BASE(base) COM_FORWARD_IInternalSessionControl_AssignRemoteMachine_TO (base::)
-#define COM_FORWARD_IInternalSessionControl_UpdateMachineState_TO(smth) HRESULT STDMETHODCALLTYPE UpdateMachineState (MachineState aAMachineState) { return smth UpdateMachineState (aAMachineState); }
+#define COM_FORWARD_IInternalSessionControl_UpdateMachineState_TO(smth) HRESULT STDMETHODCALLTYPE UpdateMachineState (MachineState aMachineState) { return smth UpdateMachineState (aMachineState); }
 #define COM_FORWARD_IInternalSessionControl_UpdateMachineState_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_UpdateMachineState_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_UpdateMachineState_TO_BASE(base) COM_FORWARD_IInternalSessionControl_UpdateMachineState_TO (base::)
 #define COM_FORWARD_IInternalSessionControl_Uninitialize_TO(smth) HRESULT STDMETHODCALLTYPE Uninitialize() { return smth Uninitialize(); }
@@ -4808,7 +5536,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IInternalSessionControl_OnMediumChange_TO(smth) HRESULT STDMETHODCALLTYPE OnMediumChange (IMediumAttachment * aMediumAttachment, BOOL aForce) { return smth OnMediumChange (aMediumAttachment, aForce); }
 #define COM_FORWARD_IInternalSessionControl_OnMediumChange_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_OnMediumChange_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_OnMediumChange_TO_BASE(base) COM_FORWARD_IInternalSessionControl_OnMediumChange_TO (base::)
-#define COM_FORWARD_IInternalSessionControl_OnStorageDeviceChange_TO(smth) HRESULT STDMETHODCALLTYPE OnStorageDeviceChange (IMediumAttachment * aMediumAttachment, BOOL aRemove) { return smth OnStorageDeviceChange (aMediumAttachment, aRemove); }
+#define COM_FORWARD_IInternalSessionControl_OnStorageDeviceChange_TO(smth) HRESULT STDMETHODCALLTYPE OnStorageDeviceChange (IMediumAttachment * aMediumAttachment, BOOL aRemove, BOOL aSilent) { return smth OnStorageDeviceChange (aMediumAttachment, aRemove, aSilent); }
 #define COM_FORWARD_IInternalSessionControl_OnStorageDeviceChange_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_OnStorageDeviceChange_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_OnStorageDeviceChange_TO_BASE(base) COM_FORWARD_IInternalSessionControl_OnStorageDeviceChange_TO (base::)
 #define COM_FORWARD_IInternalSessionControl_OnClipboardModeChange_TO(smth) HRESULT STDMETHODCALLTYPE OnClipboardModeChange (ClipboardMode aClipboardMode) { return smth OnClipboardModeChange (aClipboardMode); }
@@ -4826,6 +5554,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IInternalSessionControl_OnVRDEServerChange_TO(smth) HRESULT STDMETHODCALLTYPE OnVRDEServerChange (BOOL aRestart) { return smth OnVRDEServerChange (aRestart); }
 #define COM_FORWARD_IInternalSessionControl_OnVRDEServerChange_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_OnVRDEServerChange_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_OnVRDEServerChange_TO_BASE(base) COM_FORWARD_IInternalSessionControl_OnVRDEServerChange_TO (base::)
+#define COM_FORWARD_IInternalSessionControl_OnVideoCaptureChange_TO(smth) HRESULT STDMETHODCALLTYPE OnVideoCaptureChange() { return smth OnVideoCaptureChange(); }
+#define COM_FORWARD_IInternalSessionControl_OnVideoCaptureChange_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_OnVideoCaptureChange_TO ((obj)->)
+#define COM_FORWARD_IInternalSessionControl_OnVideoCaptureChange_TO_BASE(base) COM_FORWARD_IInternalSessionControl_OnVideoCaptureChange_TO (base::)
 #define COM_FORWARD_IInternalSessionControl_OnUSBControllerChange_TO(smth) HRESULT STDMETHODCALLTYPE OnUSBControllerChange() { return smth OnUSBControllerChange(); }
 #define COM_FORWARD_IInternalSessionControl_OnUSBControllerChange_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_OnUSBControllerChange_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_OnUSBControllerChange_TO_BASE(base) COM_FORWARD_IInternalSessionControl_OnUSBControllerChange_TO (base::)
@@ -4847,16 +5578,28 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IInternalSessionControl_AccessGuestProperty_TO(smth) HRESULT STDMETHODCALLTYPE AccessGuestProperty (BSTR aName, BSTR aValue, BSTR aFlags, BOOL aIsSetter, BSTR * aRetValue, LONG64 * aRetTimestamp, BSTR * aRetFlags) { return smth AccessGuestProperty (aName, aValue, aFlags, aIsSetter, aRetValue, aRetTimestamp, aRetFlags); }
 #define COM_FORWARD_IInternalSessionControl_AccessGuestProperty_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_AccessGuestProperty_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_AccessGuestProperty_TO_BASE(base) COM_FORWARD_IInternalSessionControl_AccessGuestProperty_TO (base::)
-#define COM_FORWARD_IInternalSessionControl_EnumerateGuestProperties_TO(smth) HRESULT STDMETHODCALLTYPE EnumerateGuestProperties (BSTR aPatterns, SAFEARRAY * * aKey, SAFEARRAY * * aValue, SAFEARRAY * * aTimestamp, SAFEARRAY * * aFlags) { return smth EnumerateGuestProperties (aPatterns, aKey, aValue, aTimestamp, aFlags); }
+#define COM_FORWARD_IInternalSessionControl_EnumerateGuestProperties_TO(smth) HRESULT STDMETHODCALLTYPE EnumerateGuestProperties (BSTR aPatterns, SAFEARRAY * * aKeys, SAFEARRAY * * aValues, SAFEARRAY * * aTimestamps, SAFEARRAY * * aFlags) { return smth EnumerateGuestProperties (aPatterns, aKeys, aValues, aTimestamps, aFlags); }
 #define COM_FORWARD_IInternalSessionControl_EnumerateGuestProperties_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_EnumerateGuestProperties_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_EnumerateGuestProperties_TO_BASE(base) COM_FORWARD_IInternalSessionControl_EnumerateGuestProperties_TO (base::)
-#define COM_FORWARD_IInternalSessionControl_OnlineMergeMedium_TO(smth) HRESULT STDMETHODCALLTYPE OnlineMergeMedium (IMediumAttachment * aMediumAttachment, ULONG aSourceIdx, ULONG aTargetIdx, IMedium * aSource, IMedium * aTarget, BOOL aMergeForward, IMedium * aParentForTarget, SAFEARRAY * * aChildrenToReparent, IProgress * aProgress) { return smth OnlineMergeMedium (aMediumAttachment, aSourceIdx, aTargetIdx, aSource, aTarget, aMergeForward, aParentForTarget, aChildrenToReparent, aProgress); }
+#define COM_FORWARD_IInternalSessionControl_OnlineMergeMedium_TO(smth) HRESULT STDMETHODCALLTYPE OnlineMergeMedium (IMediumAttachment * aMediumAttachment, ULONG aSourceIdx, ULONG aTargetIdx, IProgress * aProgress) { return smth OnlineMergeMedium (aMediumAttachment, aSourceIdx, aTargetIdx, aProgress); }
 #define COM_FORWARD_IInternalSessionControl_OnlineMergeMedium_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_OnlineMergeMedium_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_OnlineMergeMedium_TO_BASE(base) COM_FORWARD_IInternalSessionControl_OnlineMergeMedium_TO (base::)
 #define COM_FORWARD_IInternalSessionControl_EnableVMMStatistics_TO(smth) HRESULT STDMETHODCALLTYPE EnableVMMStatistics (BOOL aEnable) { return smth EnableVMMStatistics (aEnable); }
 #define COM_FORWARD_IInternalSessionControl_EnableVMMStatistics_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_EnableVMMStatistics_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_EnableVMMStatistics_TO_BASE(base) COM_FORWARD_IInternalSessionControl_EnableVMMStatistics_TO (base::)
-#define COM_FORWARD_IInternalSessionControl_TO(smth) COM_FORWARD_IInternalSessionControl_GetPID_TO (smth) COM_FORWARD_IInternalSessionControl_GetRemoteConsole_TO (smth) COM_FORWARD_IInternalSessionControl_AssignMachine_TO (smth) COM_FORWARD_IInternalSessionControl_AssignRemoteMachine_TO (smth) COM_FORWARD_IInternalSessionControl_UpdateMachineState_TO (smth) COM_FORWARD_IInternalSessionControl_Uninitialize_TO (smth) COM_FORWARD_IInternalSessionControl_OnNetworkAdapterChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnSerialPortChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnParallelPortChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnStorageControllerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnMediumChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnStorageDeviceChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnClipboardModeChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnDragAndDropModeChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnCPUChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnCPUExecutionCapChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnVRDEServerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBControllerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnSharedFolderChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBDeviceAttach_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBDeviceDetach_TO (smth) COM_FORWARD_IInternalSessionControl_OnShowWindow_TO (smth) COM_FORWARD_IInternalSessionControl_OnBandwidthGroupChange_TO (smth) COM_FORWARD_IInternalSessionControl_AccessGuestProperty_TO (smth) COM_FORWARD_IInternalSessionControl_EnumerateGuestProperties_TO (smth) COM_FORWARD_IInternalSessionControl_OnlineMergeMedium_TO (smth) COM_FORWARD_IInternalSessionControl_EnableVMMStatistics_TO (smth) 
+#define COM_FORWARD_IInternalSessionControl_PauseWithReason_TO(smth) HRESULT STDMETHODCALLTYPE PauseWithReason (Reason aReason) { return smth PauseWithReason (aReason); }
+#define COM_FORWARD_IInternalSessionControl_PauseWithReason_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_PauseWithReason_TO ((obj)->)
+#define COM_FORWARD_IInternalSessionControl_PauseWithReason_TO_BASE(base) COM_FORWARD_IInternalSessionControl_PauseWithReason_TO (base::)
+#define COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO(smth) HRESULT STDMETHODCALLTYPE ResumeWithReason (Reason aReason) { return smth ResumeWithReason (aReason); }
+#define COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO ((obj)->)
+#define COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO_BASE(base) COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO (base::)
+#define COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO(smth) HRESULT STDMETHODCALLTYPE SaveStateWithReason (Reason aReason, IProgress * * aProgress) { return smth SaveStateWithReason (aReason, aProgress); }
+#define COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO ((obj)->)
+#define COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO_BASE(base) COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO (base::)
+#define COM_FORWARD_IInternalSessionControl_AssignMachine_TO(smth) HRESULT STDMETHODCALLTYPE AssignMachine (IMachine * aMachine, LockType aLockType, BSTR aTokenId) { return smth AssignMachine (aMachine, aLockType, aTokenId); }
+#define COM_FORWARD_IInternalSessionControl_AssignMachine_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_AssignMachine_TO ((obj)->)
+#define COM_FORWARD_IInternalSessionControl_AssignMachine_TO_BASE(base) COM_FORWARD_IInternalSessionControl_AssignMachine_TO (base::)
+#define COM_FORWARD_IInternalSessionControl_TO(smth) COM_FORWARD_IInternalSessionControl_GetPID_TO (smth) COM_FORWARD_IInternalSessionControl_GetRemoteConsole_TO (smth) COM_FORWARD_IInternalSessionControl_AssignRemoteMachine_TO (smth) COM_FORWARD_IInternalSessionControl_UpdateMachineState_TO (smth) COM_FORWARD_IInternalSessionControl_Uninitialize_TO (smth) COM_FORWARD_IInternalSessionControl_OnNetworkAdapterChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnSerialPortChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnParallelPortChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnStorageControllerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnMediumChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnStorageDeviceChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnClipboardModeChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnDragAndDropModeChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnCPUChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnCPUExecutionCapChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnVRDEServerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnVideoCaptureChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBControllerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnSharedFolderChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBDeviceAttach_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBDeviceDetach_TO (smth) COM_FORWARD_IInternalSessionControl_OnShowWindow_TO (smth) COM_FORWARD_IInternalSessionControl_OnBandwidthGroupChange_TO (smth) COM_FORWARD_IInternalSessionControl_AccessGuestProperty_TO (smth) COM_FORWARD_IInternalSessionControl_EnumerateGuestProperties_TO (smth) COM_FORWARD_IInternalSessionControl_OnlineMergeMedium_TO (smth) COM_FORWARD_IInternalSessionControl_EnableVMMStatistics_TO (smth) COM_FORWARD_IInternalSessionControl_PauseWithReason_TO (smth) COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO (smth) COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO (smth) COM_FORWARD_IInternalSessionControl_AssignMachine_TO (smth) 
 #define COM_FORWARD_IInternalSessionControl_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_TO_BASE(base) COM_FORWARD_IInternalSessionControl_TO (base::)
 #define COM_FORWARD_ISession_GETTER_State_TO(smth) HRESULT STDMETHODCALLTYPE get_State (SessionState * aState) { return smth get_State (aState); }
@@ -5180,7 +5923,10 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IVirtualBoxClient_GETTER_EventSource_TO(smth) HRESULT STDMETHODCALLTYPE get_EventSource (IEventSource * * aEventSource) { return smth get_EventSource (aEventSource); }
 #define COM_FORWARD_IVirtualBoxClient_GETTER_EventSource_TO_OBJ(obj) COM_FORWARD_IVirtualBoxClient_GETTER_EventSource_TO ((obj)->)
 #define COM_FORWARD_IVirtualBoxClient_GETTER_EventSource_TO_BASE(base) COM_FORWARD_IVirtualBoxClient_GETTER_EventSource_TO (base::)
-#define COM_FORWARD_IVirtualBoxClient_TO(smth) COM_FORWARD_IVirtualBoxClient_GETTER_VirtualBox_TO (smth) COM_FORWARD_IVirtualBoxClient_GETTER_Session_TO (smth) COM_FORWARD_IVirtualBoxClient_GETTER_EventSource_TO (smth) 
+#define COM_FORWARD_IVirtualBoxClient_CheckMachineError_TO(smth) HRESULT STDMETHODCALLTYPE CheckMachineError (IMachine * aMachine) { return smth CheckMachineError (aMachine); }
+#define COM_FORWARD_IVirtualBoxClient_CheckMachineError_TO_OBJ(obj) COM_FORWARD_IVirtualBoxClient_CheckMachineError_TO ((obj)->)
+#define COM_FORWARD_IVirtualBoxClient_CheckMachineError_TO_BASE(base) COM_FORWARD_IVirtualBoxClient_CheckMachineError_TO (base::)
+#define COM_FORWARD_IVirtualBoxClient_TO(smth) COM_FORWARD_IVirtualBoxClient_GETTER_VirtualBox_TO (smth) COM_FORWARD_IVirtualBoxClient_GETTER_Session_TO (smth) COM_FORWARD_IVirtualBoxClient_GETTER_EventSource_TO (smth) COM_FORWARD_IVirtualBoxClient_CheckMachineError_TO (smth) 
 #define COM_FORWARD_IVirtualBoxClient_TO_OBJ(obj) COM_FORWARD_IVirtualBoxClient_TO ((obj)->)
 #define COM_FORWARD_IVirtualBoxClient_TO_BASE(base) COM_FORWARD_IVirtualBoxClient_TO (base::)
 #define COM_FORWARD_IEventSource_CreateListener_TO(smth) HRESULT STDMETHODCALLTYPE CreateListener (IEventListener * * aListener) { return smth CreateListener (aListener); }
@@ -5339,10 +6085,13 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsRelative_TO(smth) HRESULT STDMETHODCALLTYPE get_SupportsRelative (BOOL * aSupportsRelative) { return smth get_SupportsRelative (aSupportsRelative); }
 #define COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsRelative_TO_OBJ(obj) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsRelative_TO ((obj)->)
 #define COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsRelative_TO_BASE(base) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsRelative_TO (base::)
+#define COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsMultiTouch_TO(smth) HRESULT STDMETHODCALLTYPE get_SupportsMultiTouch (BOOL * aSupportsMultiTouch) { return smth get_SupportsMultiTouch (aSupportsMultiTouch); }
+#define COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsMultiTouch_TO_OBJ(obj) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsMultiTouch_TO ((obj)->)
+#define COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsMultiTouch_TO_BASE(base) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsMultiTouch_TO (base::)
 #define COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_NeedsHostCursor_TO(smth) HRESULT STDMETHODCALLTYPE get_NeedsHostCursor (BOOL * aNeedsHostCursor) { return smth get_NeedsHostCursor (aNeedsHostCursor); }
 #define COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_NeedsHostCursor_TO_OBJ(obj) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_NeedsHostCursor_TO ((obj)->)
 #define COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_NeedsHostCursor_TO_BASE(base) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_NeedsHostCursor_TO (base::)
-#define COM_FORWARD_IMouseCapabilityChangedEvent_TO(smth) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsAbsolute_TO (smth) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsRelative_TO (smth) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_NeedsHostCursor_TO (smth) 
+#define COM_FORWARD_IMouseCapabilityChangedEvent_TO(smth) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsAbsolute_TO (smth) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsRelative_TO (smth) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsMultiTouch_TO (smth) COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_NeedsHostCursor_TO (smth) 
 #define COM_FORWARD_IMouseCapabilityChangedEvent_TO_OBJ(obj) COM_FORWARD_IMouseCapabilityChangedEvent_TO ((obj)->)
 #define COM_FORWARD_IMouseCapabilityChangedEvent_TO_BASE(base) COM_FORWARD_IMouseCapabilityChangedEvent_TO (base::)
 #define COM_FORWARD_IKeyboardLedsChangedEvent_GETTER_NumLock_TO(smth) HRESULT STDMETHODCALLTYPE get_NumLock (BOOL * aNumLock) { return smth get_NumLock (aNumLock); }
@@ -5426,9 +6175,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IGuestKeyboardEvent_TO(smth) COM_FORWARD_IGuestKeyboardEvent_GETTER_Scancodes_TO (smth) 
 #define COM_FORWARD_IGuestKeyboardEvent_TO_OBJ(obj) COM_FORWARD_IGuestKeyboardEvent_TO ((obj)->)
 #define COM_FORWARD_IGuestKeyboardEvent_TO_BASE(base) COM_FORWARD_IGuestKeyboardEvent_TO (base::)
-#define COM_FORWARD_IGuestMouseEvent_GETTER_Absolute_TO(smth) HRESULT STDMETHODCALLTYPE get_Absolute (BOOL * aAbsolute) { return smth get_Absolute (aAbsolute); }
-#define COM_FORWARD_IGuestMouseEvent_GETTER_Absolute_TO_OBJ(obj) COM_FORWARD_IGuestMouseEvent_GETTER_Absolute_TO ((obj)->)
-#define COM_FORWARD_IGuestMouseEvent_GETTER_Absolute_TO_BASE(base) COM_FORWARD_IGuestMouseEvent_GETTER_Absolute_TO (base::)
+#define COM_FORWARD_IGuestMouseEvent_GETTER_Mode_TO(smth) HRESULT STDMETHODCALLTYPE get_Mode (GuestMouseEventMode * aMode) { return smth get_Mode (aMode); }
+#define COM_FORWARD_IGuestMouseEvent_GETTER_Mode_TO_OBJ(obj) COM_FORWARD_IGuestMouseEvent_GETTER_Mode_TO ((obj)->)
+#define COM_FORWARD_IGuestMouseEvent_GETTER_Mode_TO_BASE(base) COM_FORWARD_IGuestMouseEvent_GETTER_Mode_TO (base::)
 #define COM_FORWARD_IGuestMouseEvent_GETTER_X_TO(smth) HRESULT STDMETHODCALLTYPE get_X (LONG * aX) { return smth get_X (aX); }
 #define COM_FORWARD_IGuestMouseEvent_GETTER_X_TO_OBJ(obj) COM_FORWARD_IGuestMouseEvent_GETTER_X_TO ((obj)->)
 #define COM_FORWARD_IGuestMouseEvent_GETTER_X_TO_BASE(base) COM_FORWARD_IGuestMouseEvent_GETTER_X_TO (base::)
@@ -5444,15 +6193,150 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IGuestMouseEvent_GETTER_Buttons_TO(smth) HRESULT STDMETHODCALLTYPE get_Buttons (LONG * aButtons) { return smth get_Buttons (aButtons); }
 #define COM_FORWARD_IGuestMouseEvent_GETTER_Buttons_TO_OBJ(obj) COM_FORWARD_IGuestMouseEvent_GETTER_Buttons_TO ((obj)->)
 #define COM_FORWARD_IGuestMouseEvent_GETTER_Buttons_TO_BASE(base) COM_FORWARD_IGuestMouseEvent_GETTER_Buttons_TO (base::)
-#define COM_FORWARD_IGuestMouseEvent_TO(smth) COM_FORWARD_IGuestMouseEvent_GETTER_Absolute_TO (smth) COM_FORWARD_IGuestMouseEvent_GETTER_X_TO (smth) COM_FORWARD_IGuestMouseEvent_GETTER_Y_TO (smth) COM_FORWARD_IGuestMouseEvent_GETTER_Z_TO (smth) COM_FORWARD_IGuestMouseEvent_GETTER_W_TO (smth) COM_FORWARD_IGuestMouseEvent_GETTER_Buttons_TO (smth) 
+#define COM_FORWARD_IGuestMouseEvent_TO(smth) COM_FORWARD_IGuestMouseEvent_GETTER_Mode_TO (smth) COM_FORWARD_IGuestMouseEvent_GETTER_X_TO (smth) COM_FORWARD_IGuestMouseEvent_GETTER_Y_TO (smth) COM_FORWARD_IGuestMouseEvent_GETTER_Z_TO (smth) COM_FORWARD_IGuestMouseEvent_GETTER_W_TO (smth) COM_FORWARD_IGuestMouseEvent_GETTER_Buttons_TO (smth) 
 #define COM_FORWARD_IGuestMouseEvent_TO_OBJ(obj) COM_FORWARD_IGuestMouseEvent_TO ((obj)->)
 #define COM_FORWARD_IGuestMouseEvent_TO_BASE(base) COM_FORWARD_IGuestMouseEvent_TO (base::)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactCount_TO(smth) HRESULT STDMETHODCALLTYPE get_ContactCount (LONG * aContactCount) { return smth get_ContactCount (aContactCount); }
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactCount_TO_OBJ(obj) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactCount_TO ((obj)->)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactCount_TO_BASE(base) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactCount_TO (base::)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_XPositions_TO(smth) HRESULT STDMETHODCALLTYPE get_XPositions (SAFEARRAY * * aXPositions) { return smth get_XPositions (aXPositions); }
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_XPositions_TO_OBJ(obj) COM_FORWARD_IGuestMultiTouchEvent_GETTER_XPositions_TO ((obj)->)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_XPositions_TO_BASE(base) COM_FORWARD_IGuestMultiTouchEvent_GETTER_XPositions_TO (base::)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_YPositions_TO(smth) HRESULT STDMETHODCALLTYPE get_YPositions (SAFEARRAY * * aYPositions) { return smth get_YPositions (aYPositions); }
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_YPositions_TO_OBJ(obj) COM_FORWARD_IGuestMultiTouchEvent_GETTER_YPositions_TO ((obj)->)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_YPositions_TO_BASE(base) COM_FORWARD_IGuestMultiTouchEvent_GETTER_YPositions_TO (base::)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactIds_TO(smth) HRESULT STDMETHODCALLTYPE get_ContactIds (SAFEARRAY * * aContactIds) { return smth get_ContactIds (aContactIds); }
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactIds_TO_OBJ(obj) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactIds_TO ((obj)->)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactIds_TO_BASE(base) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactIds_TO (base::)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactFlags_TO(smth) HRESULT STDMETHODCALLTYPE get_ContactFlags (SAFEARRAY * * aContactFlags) { return smth get_ContactFlags (aContactFlags); }
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactFlags_TO_OBJ(obj) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactFlags_TO ((obj)->)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactFlags_TO_BASE(base) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactFlags_TO (base::)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ScanTime_TO(smth) HRESULT STDMETHODCALLTYPE get_ScanTime (ULONG * aScanTime) { return smth get_ScanTime (aScanTime); }
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ScanTime_TO_OBJ(obj) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ScanTime_TO ((obj)->)
+#define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ScanTime_TO_BASE(base) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ScanTime_TO (base::)
+#define COM_FORWARD_IGuestMultiTouchEvent_TO(smth) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactCount_TO (smth) COM_FORWARD_IGuestMultiTouchEvent_GETTER_XPositions_TO (smth) COM_FORWARD_IGuestMultiTouchEvent_GETTER_YPositions_TO (smth) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactIds_TO (smth) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactFlags_TO (smth) COM_FORWARD_IGuestMultiTouchEvent_GETTER_ScanTime_TO (smth) 
+#define COM_FORWARD_IGuestMultiTouchEvent_TO_OBJ(obj) COM_FORWARD_IGuestMultiTouchEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestMultiTouchEvent_TO_BASE(base) COM_FORWARD_IGuestMultiTouchEvent_TO (base::)
+#define COM_FORWARD_IGuestSessionEvent_GETTER_Session_TO(smth) HRESULT STDMETHODCALLTYPE get_Session (IGuestSession * * aSession) { return smth get_Session (aSession); }
+#define COM_FORWARD_IGuestSessionEvent_GETTER_Session_TO_OBJ(obj) COM_FORWARD_IGuestSessionEvent_GETTER_Session_TO ((obj)->)
+#define COM_FORWARD_IGuestSessionEvent_GETTER_Session_TO_BASE(base) COM_FORWARD_IGuestSessionEvent_GETTER_Session_TO (base::)
+#define COM_FORWARD_IGuestSessionEvent_TO(smth) COM_FORWARD_IGuestSessionEvent_GETTER_Session_TO (smth) 
+#define COM_FORWARD_IGuestSessionEvent_TO_OBJ(obj) COM_FORWARD_IGuestSessionEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestSessionEvent_TO_BASE(base) COM_FORWARD_IGuestSessionEvent_TO (base::)
+#define COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (ULONG * aId) { return smth get_Id (aId); }
+#define COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Id_TO_OBJ(obj) COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Id_TO ((obj)->)
+#define COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Id_TO_BASE(base) COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Id_TO (base::)
+#define COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Status_TO(smth) HRESULT STDMETHODCALLTYPE get_Status (GuestSessionStatus * aStatus) { return smth get_Status (aStatus); }
+#define COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Status_TO_OBJ(obj) COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Status_TO ((obj)->)
+#define COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Status_TO_BASE(base) COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Status_TO (base::)
+#define COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Error_TO(smth) HRESULT STDMETHODCALLTYPE get_Error (IVirtualBoxErrorInfo * * aError) { return smth get_Error (aError); }
+#define COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Error_TO_OBJ(obj) COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Error_TO ((obj)->)
+#define COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Error_TO_BASE(base) COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Error_TO (base::)
+#define COM_FORWARD_IGuestSessionStateChangedEvent_TO(smth) COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Id_TO (smth) COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Status_TO (smth) COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Error_TO (smth) 
+#define COM_FORWARD_IGuestSessionStateChangedEvent_TO_OBJ(obj) COM_FORWARD_IGuestSessionStateChangedEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestSessionStateChangedEvent_TO_BASE(base) COM_FORWARD_IGuestSessionStateChangedEvent_TO (base::)
+#define COM_FORWARD_IGuestSessionRegisteredEvent_GETTER_Registered_TO(smth) HRESULT STDMETHODCALLTYPE get_Registered (BOOL * aRegistered) { return smth get_Registered (aRegistered); }
+#define COM_FORWARD_IGuestSessionRegisteredEvent_GETTER_Registered_TO_OBJ(obj) COM_FORWARD_IGuestSessionRegisteredEvent_GETTER_Registered_TO ((obj)->)
+#define COM_FORWARD_IGuestSessionRegisteredEvent_GETTER_Registered_TO_BASE(base) COM_FORWARD_IGuestSessionRegisteredEvent_GETTER_Registered_TO (base::)
+#define COM_FORWARD_IGuestSessionRegisteredEvent_TO(smth) COM_FORWARD_IGuestSessionRegisteredEvent_GETTER_Registered_TO (smth) 
+#define COM_FORWARD_IGuestSessionRegisteredEvent_TO_OBJ(obj) COM_FORWARD_IGuestSessionRegisteredEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestSessionRegisteredEvent_TO_BASE(base) COM_FORWARD_IGuestSessionRegisteredEvent_TO (base::)
+#define COM_FORWARD_IGuestProcessEvent_GETTER_Process_TO(smth) HRESULT STDMETHODCALLTYPE get_Process (IGuestProcess * * aProcess) { return smth get_Process (aProcess); }
+#define COM_FORWARD_IGuestProcessEvent_GETTER_Process_TO_OBJ(obj) COM_FORWARD_IGuestProcessEvent_GETTER_Process_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessEvent_GETTER_Process_TO_BASE(base) COM_FORWARD_IGuestProcessEvent_GETTER_Process_TO (base::)
+#define COM_FORWARD_IGuestProcessEvent_GETTER_Pid_TO(smth) HRESULT STDMETHODCALLTYPE get_Pid (ULONG * aPid) { return smth get_Pid (aPid); }
+#define COM_FORWARD_IGuestProcessEvent_GETTER_Pid_TO_OBJ(obj) COM_FORWARD_IGuestProcessEvent_GETTER_Pid_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessEvent_GETTER_Pid_TO_BASE(base) COM_FORWARD_IGuestProcessEvent_GETTER_Pid_TO (base::)
+#define COM_FORWARD_IGuestProcessEvent_TO(smth) COM_FORWARD_IGuestProcessEvent_GETTER_Process_TO (smth) COM_FORWARD_IGuestProcessEvent_GETTER_Pid_TO (smth) 
+#define COM_FORWARD_IGuestProcessEvent_TO_OBJ(obj) COM_FORWARD_IGuestProcessEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessEvent_TO_BASE(base) COM_FORWARD_IGuestProcessEvent_TO (base::)
+#define COM_FORWARD_IGuestProcessRegisteredEvent_GETTER_Registered_TO(smth) HRESULT STDMETHODCALLTYPE get_Registered (BOOL * aRegistered) { return smth get_Registered (aRegistered); }
+#define COM_FORWARD_IGuestProcessRegisteredEvent_GETTER_Registered_TO_OBJ(obj) COM_FORWARD_IGuestProcessRegisteredEvent_GETTER_Registered_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessRegisteredEvent_GETTER_Registered_TO_BASE(base) COM_FORWARD_IGuestProcessRegisteredEvent_GETTER_Registered_TO (base::)
+#define COM_FORWARD_IGuestProcessRegisteredEvent_TO(smth) COM_FORWARD_IGuestProcessRegisteredEvent_GETTER_Registered_TO (smth) 
+#define COM_FORWARD_IGuestProcessRegisteredEvent_TO_OBJ(obj) COM_FORWARD_IGuestProcessRegisteredEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessRegisteredEvent_TO_BASE(base) COM_FORWARD_IGuestProcessRegisteredEvent_TO (base::)
+#define COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Status_TO(smth) HRESULT STDMETHODCALLTYPE get_Status (ProcessStatus * aStatus) { return smth get_Status (aStatus); }
+#define COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Status_TO_OBJ(obj) COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Status_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Status_TO_BASE(base) COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Status_TO (base::)
+#define COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Error_TO(smth) HRESULT STDMETHODCALLTYPE get_Error (IVirtualBoxErrorInfo * * aError) { return smth get_Error (aError); }
+#define COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Error_TO_OBJ(obj) COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Error_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Error_TO_BASE(base) COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Error_TO (base::)
+#define COM_FORWARD_IGuestProcessStateChangedEvent_TO(smth) COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Status_TO (smth) COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Error_TO (smth) 
+#define COM_FORWARD_IGuestProcessStateChangedEvent_TO_OBJ(obj) COM_FORWARD_IGuestProcessStateChangedEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessStateChangedEvent_TO_BASE(base) COM_FORWARD_IGuestProcessStateChangedEvent_TO (base::)
+#define COM_FORWARD_IGuestProcessIOEvent_GETTER_Handle_TO(smth) HRESULT STDMETHODCALLTYPE get_Handle (ULONG * aHandle) { return smth get_Handle (aHandle); }
+#define COM_FORWARD_IGuestProcessIOEvent_GETTER_Handle_TO_OBJ(obj) COM_FORWARD_IGuestProcessIOEvent_GETTER_Handle_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessIOEvent_GETTER_Handle_TO_BASE(base) COM_FORWARD_IGuestProcessIOEvent_GETTER_Handle_TO (base::)
+#define COM_FORWARD_IGuestProcessIOEvent_GETTER_Processed_TO(smth) HRESULT STDMETHODCALLTYPE get_Processed (ULONG * aProcessed) { return smth get_Processed (aProcessed); }
+#define COM_FORWARD_IGuestProcessIOEvent_GETTER_Processed_TO_OBJ(obj) COM_FORWARD_IGuestProcessIOEvent_GETTER_Processed_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessIOEvent_GETTER_Processed_TO_BASE(base) COM_FORWARD_IGuestProcessIOEvent_GETTER_Processed_TO (base::)
+#define COM_FORWARD_IGuestProcessIOEvent_TO(smth) COM_FORWARD_IGuestProcessIOEvent_GETTER_Handle_TO (smth) COM_FORWARD_IGuestProcessIOEvent_GETTER_Processed_TO (smth) 
+#define COM_FORWARD_IGuestProcessIOEvent_TO_OBJ(obj) COM_FORWARD_IGuestProcessIOEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessIOEvent_TO_BASE(base) COM_FORWARD_IGuestProcessIOEvent_TO (base::)
+#define COM_FORWARD_IGuestProcessInputNotifyEvent_GETTER_Status_TO(smth) HRESULT STDMETHODCALLTYPE get_Status (ProcessInputStatus * aStatus) { return smth get_Status (aStatus); }
+#define COM_FORWARD_IGuestProcessInputNotifyEvent_GETTER_Status_TO_OBJ(obj) COM_FORWARD_IGuestProcessInputNotifyEvent_GETTER_Status_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessInputNotifyEvent_GETTER_Status_TO_BASE(base) COM_FORWARD_IGuestProcessInputNotifyEvent_GETTER_Status_TO (base::)
+#define COM_FORWARD_IGuestProcessInputNotifyEvent_TO(smth) COM_FORWARD_IGuestProcessInputNotifyEvent_GETTER_Status_TO (smth) 
+#define COM_FORWARD_IGuestProcessInputNotifyEvent_TO_OBJ(obj) COM_FORWARD_IGuestProcessInputNotifyEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessInputNotifyEvent_TO_BASE(base) COM_FORWARD_IGuestProcessInputNotifyEvent_TO (base::)
+#define COM_FORWARD_IGuestProcessOutputEvent_GETTER_Data_TO(smth) HRESULT STDMETHODCALLTYPE get_Data (SAFEARRAY * * aData) { return smth get_Data (aData); }
+#define COM_FORWARD_IGuestProcessOutputEvent_GETTER_Data_TO_OBJ(obj) COM_FORWARD_IGuestProcessOutputEvent_GETTER_Data_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessOutputEvent_GETTER_Data_TO_BASE(base) COM_FORWARD_IGuestProcessOutputEvent_GETTER_Data_TO (base::)
+#define COM_FORWARD_IGuestProcessOutputEvent_TO(smth) COM_FORWARD_IGuestProcessOutputEvent_GETTER_Data_TO (smth) 
+#define COM_FORWARD_IGuestProcessOutputEvent_TO_OBJ(obj) COM_FORWARD_IGuestProcessOutputEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestProcessOutputEvent_TO_BASE(base) COM_FORWARD_IGuestProcessOutputEvent_TO (base::)
+#define COM_FORWARD_IGuestFileEvent_GETTER_File_TO(smth) HRESULT STDMETHODCALLTYPE get_File (IGuestFile * * aFile) { return smth get_File (aFile); }
+#define COM_FORWARD_IGuestFileEvent_GETTER_File_TO_OBJ(obj) COM_FORWARD_IGuestFileEvent_GETTER_File_TO ((obj)->)
+#define COM_FORWARD_IGuestFileEvent_GETTER_File_TO_BASE(base) COM_FORWARD_IGuestFileEvent_GETTER_File_TO (base::)
+#define COM_FORWARD_IGuestFileEvent_TO(smth) COM_FORWARD_IGuestFileEvent_GETTER_File_TO (smth) 
+#define COM_FORWARD_IGuestFileEvent_TO_OBJ(obj) COM_FORWARD_IGuestFileEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestFileEvent_TO_BASE(base) COM_FORWARD_IGuestFileEvent_TO (base::)
+#define COM_FORWARD_IGuestFileRegisteredEvent_GETTER_Registered_TO(smth) HRESULT STDMETHODCALLTYPE get_Registered (BOOL * aRegistered) { return smth get_Registered (aRegistered); }
+#define COM_FORWARD_IGuestFileRegisteredEvent_GETTER_Registered_TO_OBJ(obj) COM_FORWARD_IGuestFileRegisteredEvent_GETTER_Registered_TO ((obj)->)
+#define COM_FORWARD_IGuestFileRegisteredEvent_GETTER_Registered_TO_BASE(base) COM_FORWARD_IGuestFileRegisteredEvent_GETTER_Registered_TO (base::)
+#define COM_FORWARD_IGuestFileRegisteredEvent_TO(smth) COM_FORWARD_IGuestFileRegisteredEvent_GETTER_Registered_TO (smth) 
+#define COM_FORWARD_IGuestFileRegisteredEvent_TO_OBJ(obj) COM_FORWARD_IGuestFileRegisteredEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestFileRegisteredEvent_TO_BASE(base) COM_FORWARD_IGuestFileRegisteredEvent_TO (base::)
+#define COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Status_TO(smth) HRESULT STDMETHODCALLTYPE get_Status (FileStatus * aStatus) { return smth get_Status (aStatus); }
+#define COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Status_TO_OBJ(obj) COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Status_TO ((obj)->)
+#define COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Status_TO_BASE(base) COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Status_TO (base::)
+#define COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Error_TO(smth) HRESULT STDMETHODCALLTYPE get_Error (IVirtualBoxErrorInfo * * aError) { return smth get_Error (aError); }
+#define COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Error_TO_OBJ(obj) COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Error_TO ((obj)->)
+#define COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Error_TO_BASE(base) COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Error_TO (base::)
+#define COM_FORWARD_IGuestFileStateChangedEvent_TO(smth) COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Status_TO (smth) COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Error_TO (smth) 
+#define COM_FORWARD_IGuestFileStateChangedEvent_TO_OBJ(obj) COM_FORWARD_IGuestFileStateChangedEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestFileStateChangedEvent_TO_BASE(base) COM_FORWARD_IGuestFileStateChangedEvent_TO (base::)
+#define COM_FORWARD_IGuestFileIOEvent_GETTER_Offset_TO(smth) HRESULT STDMETHODCALLTYPE get_Offset (LONG64 * aOffset) { return smth get_Offset (aOffset); }
+#define COM_FORWARD_IGuestFileIOEvent_GETTER_Offset_TO_OBJ(obj) COM_FORWARD_IGuestFileIOEvent_GETTER_Offset_TO ((obj)->)
+#define COM_FORWARD_IGuestFileIOEvent_GETTER_Offset_TO_BASE(base) COM_FORWARD_IGuestFileIOEvent_GETTER_Offset_TO (base::)
+#define COM_FORWARD_IGuestFileIOEvent_GETTER_Processed_TO(smth) HRESULT STDMETHODCALLTYPE get_Processed (ULONG * aProcessed) { return smth get_Processed (aProcessed); }
+#define COM_FORWARD_IGuestFileIOEvent_GETTER_Processed_TO_OBJ(obj) COM_FORWARD_IGuestFileIOEvent_GETTER_Processed_TO ((obj)->)
+#define COM_FORWARD_IGuestFileIOEvent_GETTER_Processed_TO_BASE(base) COM_FORWARD_IGuestFileIOEvent_GETTER_Processed_TO (base::)
+#define COM_FORWARD_IGuestFileIOEvent_TO(smth) COM_FORWARD_IGuestFileIOEvent_GETTER_Offset_TO (smth) COM_FORWARD_IGuestFileIOEvent_GETTER_Processed_TO (smth) 
+#define COM_FORWARD_IGuestFileIOEvent_TO_OBJ(obj) COM_FORWARD_IGuestFileIOEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestFileIOEvent_TO_BASE(base) COM_FORWARD_IGuestFileIOEvent_TO (base::)
+#define COM_FORWARD_IGuestFileOffsetChangedEvent_TO(smth) 
+#define COM_FORWARD_IGuestFileOffsetChangedEvent_TO_OBJ(obj) COM_FORWARD_IGuestFileOffsetChangedEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestFileOffsetChangedEvent_TO_BASE(base) COM_FORWARD_IGuestFileOffsetChangedEvent_TO (base::)
+#define COM_FORWARD_IGuestFileReadEvent_GETTER_Data_TO(smth) HRESULT STDMETHODCALLTYPE get_Data (SAFEARRAY * * aData) { return smth get_Data (aData); }
+#define COM_FORWARD_IGuestFileReadEvent_GETTER_Data_TO_OBJ(obj) COM_FORWARD_IGuestFileReadEvent_GETTER_Data_TO ((obj)->)
+#define COM_FORWARD_IGuestFileReadEvent_GETTER_Data_TO_BASE(base) COM_FORWARD_IGuestFileReadEvent_GETTER_Data_TO (base::)
+#define COM_FORWARD_IGuestFileReadEvent_TO(smth) COM_FORWARD_IGuestFileReadEvent_GETTER_Data_TO (smth) 
+#define COM_FORWARD_IGuestFileReadEvent_TO_OBJ(obj) COM_FORWARD_IGuestFileReadEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestFileReadEvent_TO_BASE(base) COM_FORWARD_IGuestFileReadEvent_TO (base::)
+#define COM_FORWARD_IGuestFileWriteEvent_TO(smth) 
+#define COM_FORWARD_IGuestFileWriteEvent_TO_OBJ(obj) COM_FORWARD_IGuestFileWriteEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestFileWriteEvent_TO_BASE(base) COM_FORWARD_IGuestFileWriteEvent_TO (base::)
 #define COM_FORWARD_IVRDEServerChangedEvent_TO(smth) 
 #define COM_FORWARD_IVRDEServerChangedEvent_TO_OBJ(obj) COM_FORWARD_IVRDEServerChangedEvent_TO ((obj)->)
 #define COM_FORWARD_IVRDEServerChangedEvent_TO_BASE(base) COM_FORWARD_IVRDEServerChangedEvent_TO (base::)
 #define COM_FORWARD_IVRDEServerInfoChangedEvent_TO(smth) 
 #define COM_FORWARD_IVRDEServerInfoChangedEvent_TO_OBJ(obj) COM_FORWARD_IVRDEServerInfoChangedEvent_TO ((obj)->)
 #define COM_FORWARD_IVRDEServerInfoChangedEvent_TO_BASE(base) COM_FORWARD_IVRDEServerInfoChangedEvent_TO (base::)
+#define COM_FORWARD_IVideoCaptureChangedEvent_TO(smth) 
+#define COM_FORWARD_IVideoCaptureChangedEvent_TO_OBJ(obj) COM_FORWARD_IVideoCaptureChangedEvent_TO ((obj)->)
+#define COM_FORWARD_IVideoCaptureChangedEvent_TO_BASE(base) COM_FORWARD_IVideoCaptureChangedEvent_TO (base::)
 #define COM_FORWARD_IUSBControllerChangedEvent_TO(smth) 
 #define COM_FORWARD_IUSBControllerChangedEvent_TO_OBJ(obj) COM_FORWARD_IUSBControllerChangedEvent_TO ((obj)->)
 #define COM_FORWARD_IUSBControllerChangedEvent_TO_BASE(base) COM_FORWARD_IUSBControllerChangedEvent_TO (base::)
@@ -5618,15 +6502,102 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0078
 #define COM_FORWARD_IGuestMonitorChangedEvent_TO(smth) COM_FORWARD_IGuestMonitorChangedEvent_GETTER_ChangeType_TO (smth) COM_FORWARD_IGuestMonitorChangedEvent_GETTER_ScreenId_TO (smth) COM_FORWARD_IGuestMonitorChangedEvent_GETTER_OriginX_TO (smth) COM_FORWARD_IGuestMonitorChangedEvent_GETTER_OriginY_TO (smth) COM_FORWARD_IGuestMonitorChangedEvent_GETTER_Width_TO (smth) COM_FORWARD_IGuestMonitorChangedEvent_GETTER_Height_TO (smth) 
 #define COM_FORWARD_IGuestMonitorChangedEvent_TO_OBJ(obj) COM_FORWARD_IGuestMonitorChangedEvent_TO ((obj)->)
 #define COM_FORWARD_IGuestMonitorChangedEvent_TO_BASE(base) COM_FORWARD_IGuestMonitorChangedEvent_TO (base::)
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Name_TO_OBJ(obj) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Name_TO ((obj)->)
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Name_TO_BASE(base) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Name_TO (base::)
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Domain_TO(smth) HRESULT STDMETHODCALLTYPE get_Domain (BSTR * aDomain) { return smth get_Domain (aDomain); }
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Domain_TO_OBJ(obj) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Domain_TO ((obj)->)
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Domain_TO_BASE(base) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Domain_TO (base::)
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_State_TO(smth) HRESULT STDMETHODCALLTYPE get_State (GuestUserState * aState) { return smth get_State (aState); }
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_State_TO_OBJ(obj) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_State_TO ((obj)->)
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_State_TO_BASE(base) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_State_TO (base::)
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_StateDetails_TO(smth) HRESULT STDMETHODCALLTYPE get_StateDetails (BSTR * aStateDetails) { return smth get_StateDetails (aStateDetails); }
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_StateDetails_TO_OBJ(obj) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_StateDetails_TO ((obj)->)
+#define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_StateDetails_TO_BASE(base) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_StateDetails_TO (base::)
+#define COM_FORWARD_IGuestUserStateChangedEvent_TO(smth) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Name_TO (smth) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Domain_TO (smth) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_State_TO (smth) COM_FORWARD_IGuestUserStateChangedEvent_GETTER_StateDetails_TO (smth) 
+#define COM_FORWARD_IGuestUserStateChangedEvent_TO_OBJ(obj) COM_FORWARD_IGuestUserStateChangedEvent_TO ((obj)->)
+#define COM_FORWARD_IGuestUserStateChangedEvent_TO_BASE(base) COM_FORWARD_IGuestUserStateChangedEvent_TO (base::)
 #define COM_FORWARD_IStorageDeviceChangedEvent_GETTER_StorageDevice_TO(smth) HRESULT STDMETHODCALLTYPE get_StorageDevice (IMediumAttachment * * aStorageDevice) { return smth get_StorageDevice (aStorageDevice); }
 #define COM_FORWARD_IStorageDeviceChangedEvent_GETTER_StorageDevice_TO_OBJ(obj) COM_FORWARD_IStorageDeviceChangedEvent_GETTER_StorageDevice_TO ((obj)->)
 #define COM_FORWARD_IStorageDeviceChangedEvent_GETTER_StorageDevice_TO_BASE(base) COM_FORWARD_IStorageDeviceChangedEvent_GETTER_StorageDevice_TO (base::)
 #define COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Removed_TO(smth) HRESULT STDMETHODCALLTYPE get_Removed (BOOL * aRemoved) { return smth get_Removed (aRemoved); }
 #define COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Removed_TO_OBJ(obj) COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Removed_TO ((obj)->)
 #define COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Removed_TO_BASE(base) COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Removed_TO (base::)
-#define COM_FORWARD_IStorageDeviceChangedEvent_TO(smth) COM_FORWARD_IStorageDeviceChangedEvent_GETTER_StorageDevice_TO (smth) COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Removed_TO (smth) 
+#define COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Silent_TO(smth) HRESULT STDMETHODCALLTYPE get_Silent (BOOL * aSilent) { return smth get_Silent (aSilent); }
+#define COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Silent_TO_OBJ(obj) COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Silent_TO ((obj)->)
+#define COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Silent_TO_BASE(base) COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Silent_TO (base::)
+#define COM_FORWARD_IStorageDeviceChangedEvent_TO(smth) COM_FORWARD_IStorageDeviceChangedEvent_GETTER_StorageDevice_TO (smth) COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Removed_TO (smth) COM_FORWARD_IStorageDeviceChangedEvent_GETTER_Silent_TO (smth) 
 #define COM_FORWARD_IStorageDeviceChangedEvent_TO_OBJ(obj) COM_FORWARD_IStorageDeviceChangedEvent_TO ((obj)->)
 #define COM_FORWARD_IStorageDeviceChangedEvent_TO_BASE(base) COM_FORWARD_IStorageDeviceChangedEvent_TO (base::)
+#define COM_FORWARD_INATNetworkChangedEvent_GETTER_NetworkName_TO(smth) HRESULT STDMETHODCALLTYPE get_NetworkName (BSTR * aNetworkName) { return smth get_NetworkName (aNetworkName); }
+#define COM_FORWARD_INATNetworkChangedEvent_GETTER_NetworkName_TO_OBJ(obj) COM_FORWARD_INATNetworkChangedEvent_GETTER_NetworkName_TO ((obj)->)
+#define COM_FORWARD_INATNetworkChangedEvent_GETTER_NetworkName_TO_BASE(base) COM_FORWARD_INATNetworkChangedEvent_GETTER_NetworkName_TO (base::)
+#define COM_FORWARD_INATNetworkChangedEvent_TO(smth) COM_FORWARD_INATNetworkChangedEvent_GETTER_NetworkName_TO (smth) 
+#define COM_FORWARD_INATNetworkChangedEvent_TO_OBJ(obj) COM_FORWARD_INATNetworkChangedEvent_TO ((obj)->)
+#define COM_FORWARD_INATNetworkChangedEvent_TO_BASE(base) COM_FORWARD_INATNetworkChangedEvent_TO (base::)
+#define COM_FORWARD_INATNetworkStartStopEvent_GETTER_StartEvent_TO(smth) HRESULT STDMETHODCALLTYPE get_StartEvent (BOOL * aStartEvent) { return smth get_StartEvent (aStartEvent); }
+#define COM_FORWARD_INATNetworkStartStopEvent_GETTER_StartEvent_TO_OBJ(obj) COM_FORWARD_INATNetworkStartStopEvent_GETTER_StartEvent_TO ((obj)->)
+#define COM_FORWARD_INATNetworkStartStopEvent_GETTER_StartEvent_TO_BASE(base) COM_FORWARD_INATNetworkStartStopEvent_GETTER_StartEvent_TO (base::)
+#define COM_FORWARD_INATNetworkStartStopEvent_TO(smth) COM_FORWARD_INATNetworkStartStopEvent_GETTER_StartEvent_TO (smth) 
+#define COM_FORWARD_INATNetworkStartStopEvent_TO_OBJ(obj) COM_FORWARD_INATNetworkStartStopEvent_TO ((obj)->)
+#define COM_FORWARD_INATNetworkStartStopEvent_TO_BASE(base) COM_FORWARD_INATNetworkStartStopEvent_TO (base::)
+#define COM_FORWARD_INATNetworkAlterEvent_TO(smth) 
+#define COM_FORWARD_INATNetworkAlterEvent_TO_OBJ(obj) COM_FORWARD_INATNetworkAlterEvent_TO ((obj)->)
+#define COM_FORWARD_INATNetworkAlterEvent_TO_BASE(base) COM_FORWARD_INATNetworkAlterEvent_TO (base::)
+#define COM_FORWARD_INATNetworkCreationDeletionEvent_GETTER_CreationEvent_TO(smth) HRESULT STDMETHODCALLTYPE get_CreationEvent (BOOL * aCreationEvent) { return smth get_CreationEvent (aCreationEvent); }
+#define COM_FORWARD_INATNetworkCreationDeletionEvent_GETTER_CreationEvent_TO_OBJ(obj) COM_FORWARD_INATNetworkCreationDeletionEvent_GETTER_CreationEvent_TO ((obj)->)
+#define COM_FORWARD_INATNetworkCreationDeletionEvent_GETTER_CreationEvent_TO_BASE(base) COM_FORWARD_INATNetworkCreationDeletionEvent_GETTER_CreationEvent_TO (base::)
+#define COM_FORWARD_INATNetworkCreationDeletionEvent_TO(smth) COM_FORWARD_INATNetworkCreationDeletionEvent_GETTER_CreationEvent_TO (smth) 
+#define COM_FORWARD_INATNetworkCreationDeletionEvent_TO_OBJ(obj) COM_FORWARD_INATNetworkCreationDeletionEvent_TO ((obj)->)
+#define COM_FORWARD_INATNetworkCreationDeletionEvent_TO_BASE(base) COM_FORWARD_INATNetworkCreationDeletionEvent_TO (base::)
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_Enabled_TO(smth) HRESULT STDMETHODCALLTYPE get_Enabled (BOOL * aEnabled) { return smth get_Enabled (aEnabled); }
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_Enabled_TO_OBJ(obj) COM_FORWARD_INATNetworkSettingEvent_GETTER_Enabled_TO ((obj)->)
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_Enabled_TO_BASE(base) COM_FORWARD_INATNetworkSettingEvent_GETTER_Enabled_TO (base::)
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_Network_TO(smth) HRESULT STDMETHODCALLTYPE get_Network (BSTR * aNetwork) { return smth get_Network (aNetwork); }
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_Network_TO_OBJ(obj) COM_FORWARD_INATNetworkSettingEvent_GETTER_Network_TO ((obj)->)
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_Network_TO_BASE(base) COM_FORWARD_INATNetworkSettingEvent_GETTER_Network_TO (base::)
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_Gateway_TO(smth) HRESULT STDMETHODCALLTYPE get_Gateway (BSTR * aGateway) { return smth get_Gateway (aGateway); }
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_Gateway_TO_OBJ(obj) COM_FORWARD_INATNetworkSettingEvent_GETTER_Gateway_TO ((obj)->)
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_Gateway_TO_BASE(base) COM_FORWARD_INATNetworkSettingEvent_GETTER_Gateway_TO (base::)
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO(smth) HRESULT STDMETHODCALLTYPE get_AdvertiseDefaultIPv6RouteEnabled (BOOL * aAdvertiseDefaultIPv6RouteEnabled) { return smth get_AdvertiseDefaultIPv6RouteEnabled (aAdvertiseDefaultIPv6RouteEnabled); }
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO_OBJ(obj) COM_FORWARD_INATNetworkSettingEvent_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO ((obj)->)
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO_BASE(base) COM_FORWARD_INATNetworkSettingEvent_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO (base::)
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_NeedDhcpServer_TO(smth) HRESULT STDMETHODCALLTYPE get_NeedDhcpServer (BOOL * aNeedDhcpServer) { return smth get_NeedDhcpServer (aNeedDhcpServer); }
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_NeedDhcpServer_TO_OBJ(obj) COM_FORWARD_INATNetworkSettingEvent_GETTER_NeedDhcpServer_TO ((obj)->)
+#define COM_FORWARD_INATNetworkSettingEvent_GETTER_NeedDhcpServer_TO_BASE(base) COM_FORWARD_INATNetworkSettingEvent_GETTER_NeedDhcpServer_TO (base::)
+#define COM_FORWARD_INATNetworkSettingEvent_TO(smth) COM_FORWARD_INATNetworkSettingEvent_GETTER_Enabled_TO (smth) COM_FORWARD_INATNetworkSettingEvent_GETTER_Network_TO (smth) COM_FORWARD_INATNetworkSettingEvent_GETTER_Gateway_TO (smth) COM_FORWARD_INATNetworkSettingEvent_GETTER_AdvertiseDefaultIPv6RouteEnabled_TO (smth) COM_FORWARD_INATNetworkSettingEvent_GETTER_NeedDhcpServer_TO (smth) 
+#define COM_FORWARD_INATNetworkSettingEvent_TO_OBJ(obj) COM_FORWARD_INATNetworkSettingEvent_TO ((obj)->)
+#define COM_FORWARD_INATNetworkSettingEvent_TO_BASE(base) COM_FORWARD_INATNetworkSettingEvent_TO (base::)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Create_TO(smth) HRESULT STDMETHODCALLTYPE get_Create (BOOL * aCreate) { return smth get_Create (aCreate); }
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Create_TO_OBJ(obj) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Create_TO ((obj)->)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Create_TO_BASE(base) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Create_TO (base::)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Ipv6_TO(smth) HRESULT STDMETHODCALLTYPE get_Ipv6 (BOOL * aIpv6) { return smth get_Ipv6 (aIpv6); }
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Ipv6_TO_OBJ(obj) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Ipv6_TO ((obj)->)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Ipv6_TO_BASE(base) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Ipv6_TO (base::)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Name_TO_OBJ(obj) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Name_TO ((obj)->)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Name_TO_BASE(base) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Name_TO (base::)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Proto_TO(smth) HRESULT STDMETHODCALLTYPE get_Proto (NATProtocol * aProto) { return smth get_Proto (aProto); }
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Proto_TO_OBJ(obj) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Proto_TO ((obj)->)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Proto_TO_BASE(base) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Proto_TO (base::)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostIp_TO(smth) HRESULT STDMETHODCALLTYPE get_HostIp (BSTR * aHostIp) { return smth get_HostIp (aHostIp); }
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostIp_TO_OBJ(obj) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostIp_TO ((obj)->)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostIp_TO_BASE(base) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostIp_TO (base::)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostPort_TO(smth) HRESULT STDMETHODCALLTYPE get_HostPort (LONG * aHostPort) { return smth get_HostPort (aHostPort); }
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostPort_TO_OBJ(obj) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostPort_TO ((obj)->)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostPort_TO_BASE(base) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostPort_TO (base::)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestIp_TO(smth) HRESULT STDMETHODCALLTYPE get_GuestIp (BSTR * aGuestIp) { return smth get_GuestIp (aGuestIp); }
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestIp_TO_OBJ(obj) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestIp_TO ((obj)->)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestIp_TO_BASE(base) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestIp_TO (base::)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestPort_TO(smth) HRESULT STDMETHODCALLTYPE get_GuestPort (LONG * aGuestPort) { return smth get_GuestPort (aGuestPort); }
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestPort_TO_OBJ(obj) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestPort_TO ((obj)->)
+#define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestPort_TO_BASE(base) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestPort_TO (base::)
+#define COM_FORWARD_INATNetworkPortForwardEvent_TO(smth) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Create_TO (smth) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Ipv6_TO (smth) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Name_TO (smth) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Proto_TO (smth) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostIp_TO (smth) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_HostPort_TO (smth) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestIp_TO (smth) COM_FORWARD_INATNetworkPortForwardEvent_GETTER_GuestPort_TO (smth) 
+#define COM_FORWARD_INATNetworkPortForwardEvent_TO_OBJ(obj) COM_FORWARD_INATNetworkPortForwardEvent_TO ((obj)->)
+#define COM_FORWARD_INATNetworkPortForwardEvent_TO_BASE(base) COM_FORWARD_INATNetworkPortForwardEvent_TO (base::)
+#define COM_FORWARD_IHostNameResolutionConfigurationChangeEvent_TO(smth) 
+#define COM_FORWARD_IHostNameResolutionConfigurationChangeEvent_TO_OBJ(obj) COM_FORWARD_IHostNameResolutionConfigurationChangeEvent_TO ((obj)->)
+#define COM_FORWARD_IHostNameResolutionConfigurationChangeEvent_TO_BASE(base) COM_FORWARD_IHostNameResolutionConfigurationChangeEvent_TO (base::)
 
 EXTERN_C const IID LIBID_VirtualBox;
 
@@ -5641,12 +6612,15 @@ EXTERN_C const IID IID_IVirtualBoxErrorInfo;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("f91e6e91-49e1-4fd2-b21e-269003350d06")
+    MIDL_INTERFACE("c1bcc6d5-7966-481d-ab0b-d0ed73e28135")
     IVirtualBoxErrorInfo : public IErrorInfo
     {
     public:
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ResultCode( 
             /* [retval][out] */ LONG *aResultCode) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ResultDetail( 
+            /* [retval][out] */ LONG *aResultDetail) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InterfaceID( 
             /* [retval][out] */ BSTR *aInterfaceID) = 0;
@@ -5703,6 +6677,10 @@ EXTERN_C const IID IID_IVirtualBoxErrorInfo;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ResultCode )( 
             IVirtualBoxErrorInfo * This,
             /* [retval][out] */ LONG *aResultCode);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ResultDetail )( 
+            IVirtualBoxErrorInfo * This,
+            /* [retval][out] */ LONG *aResultDetail);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InterfaceID )( 
             IVirtualBoxErrorInfo * This,
@@ -5762,6 +6740,9 @@ EXTERN_C const IID IID_IVirtualBoxErrorInfo;
 #define IVirtualBoxErrorInfo_get_ResultCode(This,aResultCode)	\
     ( (This)->lpVtbl -> get_ResultCode(This,aResultCode) ) 
 
+#define IVirtualBoxErrorInfo_get_ResultDetail(This,aResultDetail)	\
+    ( (This)->lpVtbl -> get_ResultDetail(This,aResultDetail) ) 
+
 #define IVirtualBoxErrorInfo_get_InterfaceID(This,aInterfaceID)	\
     ( (This)->lpVtbl -> get_InterfaceID(This,aInterfaceID) ) 
 
@@ -5785,6 +6766,391 @@ EXTERN_C const IID IID_IVirtualBoxErrorInfo;
 #endif 	/* __IVirtualBoxErrorInfo_INTERFACE_DEFINED__ */
 
 
+#ifndef __INATNetwork_INTERFACE_DEFINED__
+#define __INATNetwork_INTERFACE_DEFINED__
+
+/* interface INATNetwork */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_INATNetwork;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("a63c75da-4c99-4e9d-8351-eb73651c18cc")
+    INATNetwork : public IDispatch
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NetworkName( 
+            /* [retval][out] */ BSTR *aNetworkName) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_NetworkName( 
+            /* [in] */ BSTR aNetworkName) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Enabled( 
+            /* [retval][out] */ BOOL *aEnabled) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Enabled( 
+            /* [in] */ BOOL aEnabled) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Network( 
+            /* [retval][out] */ BSTR *aNetwork) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Network( 
+            /* [in] */ BSTR aNetwork) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Gateway( 
+            /* [retval][out] */ BSTR *aGateway) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IPv6Enabled( 
+            /* [retval][out] */ BOOL *aIPv6Enabled) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IPv6Enabled( 
+            /* [in] */ BOOL aIPv6Enabled) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IPv6Prefix( 
+            /* [retval][out] */ BSTR *aIPv6Prefix) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IPv6Prefix( 
+            /* [in] */ BSTR aIPv6Prefix) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AdvertiseDefaultIPv6RouteEnabled( 
+            /* [retval][out] */ BOOL *aAdvertiseDefaultIPv6RouteEnabled) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AdvertiseDefaultIPv6RouteEnabled( 
+            /* [in] */ BOOL aAdvertiseDefaultIPv6RouteEnabled) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NeedDhcpServer( 
+            /* [retval][out] */ BOOL *aNeedDhcpServer) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_NeedDhcpServer( 
+            /* [in] */ BOOL aNeedDhcpServer) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
+            /* [retval][out] */ IEventSource **aEventSource) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PortForwardRules4( 
+            /* [retval][out] */ SAFEARRAY * *aPortForwardRules4) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LocalMappings( 
+            /* [retval][out] */ SAFEARRAY * *aLocalMappings) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LoopbackIp6( 
+            /* [retval][out] */ LONG *aLoopbackIp6) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_LoopbackIp6( 
+            /* [in] */ LONG aLoopbackIp6) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PortForwardRules6( 
+            /* [retval][out] */ SAFEARRAY * *aPortForwardRules6) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE AddLocalMapping( 
+            /* [in] */ BSTR aHostid,
+            /* [in] */ LONG aOffset) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE AddPortForwardRule( 
+            /* [in] */ BOOL aIsIpv6,
+            /* [in] */ BSTR aRuleName,
+            /* [in] */ NATProtocol aProto,
+            /* [in] */ BSTR aHostIP,
+            /* [in] */ USHORT aHostPort,
+            /* [in] */ BSTR aGuestIP,
+            /* [in] */ USHORT aGuestPort) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RemovePortForwardRule( 
+            /* [in] */ BOOL aISipv6,
+            /* [in] */ BSTR aRuleName) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Start( 
+            /* [in] */ BSTR aTrunkType) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Stop( void) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct INATNetworkVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            INATNetwork * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            INATNetwork * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            INATNetwork * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            INATNetwork * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            INATNetwork * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            INATNetwork * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            INATNetwork * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NetworkName )( 
+            INATNetwork * This,
+            /* [retval][out] */ BSTR *aNetworkName);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_NetworkName )( 
+            INATNetwork * This,
+            /* [in] */ BSTR aNetworkName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Enabled )( 
+            INATNetwork * This,
+            /* [retval][out] */ BOOL *aEnabled);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Enabled )( 
+            INATNetwork * This,
+            /* [in] */ BOOL aEnabled);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Network )( 
+            INATNetwork * This,
+            /* [retval][out] */ BSTR *aNetwork);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Network )( 
+            INATNetwork * This,
+            /* [in] */ BSTR aNetwork);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Gateway )( 
+            INATNetwork * This,
+            /* [retval][out] */ BSTR *aGateway);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IPv6Enabled )( 
+            INATNetwork * This,
+            /* [retval][out] */ BOOL *aIPv6Enabled);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IPv6Enabled )( 
+            INATNetwork * This,
+            /* [in] */ BOOL aIPv6Enabled);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IPv6Prefix )( 
+            INATNetwork * This,
+            /* [retval][out] */ BSTR *aIPv6Prefix);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IPv6Prefix )( 
+            INATNetwork * This,
+            /* [in] */ BSTR aIPv6Prefix);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AdvertiseDefaultIPv6RouteEnabled )( 
+            INATNetwork * This,
+            /* [retval][out] */ BOOL *aAdvertiseDefaultIPv6RouteEnabled);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AdvertiseDefaultIPv6RouteEnabled )( 
+            INATNetwork * This,
+            /* [in] */ BOOL aAdvertiseDefaultIPv6RouteEnabled);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NeedDhcpServer )( 
+            INATNetwork * This,
+            /* [retval][out] */ BOOL *aNeedDhcpServer);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_NeedDhcpServer )( 
+            INATNetwork * This,
+            /* [in] */ BOOL aNeedDhcpServer);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventSource )( 
+            INATNetwork * This,
+            /* [retval][out] */ IEventSource **aEventSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PortForwardRules4 )( 
+            INATNetwork * This,
+            /* [retval][out] */ SAFEARRAY * *aPortForwardRules4);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_LocalMappings )( 
+            INATNetwork * This,
+            /* [retval][out] */ SAFEARRAY * *aLocalMappings);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_LoopbackIp6 )( 
+            INATNetwork * This,
+            /* [retval][out] */ LONG *aLoopbackIp6);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_LoopbackIp6 )( 
+            INATNetwork * This,
+            /* [in] */ LONG aLoopbackIp6);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PortForwardRules6 )( 
+            INATNetwork * This,
+            /* [retval][out] */ SAFEARRAY * *aPortForwardRules6);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddLocalMapping )( 
+            INATNetwork * This,
+            /* [in] */ BSTR aHostid,
+            /* [in] */ LONG aOffset);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddPortForwardRule )( 
+            INATNetwork * This,
+            /* [in] */ BOOL aIsIpv6,
+            /* [in] */ BSTR aRuleName,
+            /* [in] */ NATProtocol aProto,
+            /* [in] */ BSTR aHostIP,
+            /* [in] */ USHORT aHostPort,
+            /* [in] */ BSTR aGuestIP,
+            /* [in] */ USHORT aGuestPort);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemovePortForwardRule )( 
+            INATNetwork * This,
+            /* [in] */ BOOL aISipv6,
+            /* [in] */ BSTR aRuleName);
+        
+        HRESULT ( STDMETHODCALLTYPE *Start )( 
+            INATNetwork * This,
+            /* [in] */ BSTR aTrunkType);
+        
+        HRESULT ( STDMETHODCALLTYPE *Stop )( 
+            INATNetwork * This);
+        
+        END_INTERFACE
+    } INATNetworkVtbl;
+
+    interface INATNetwork
+    {
+        CONST_VTBL struct INATNetworkVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define INATNetwork_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define INATNetwork_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define INATNetwork_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define INATNetwork_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define INATNetwork_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define INATNetwork_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define INATNetwork_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define INATNetwork_get_NetworkName(This,aNetworkName)	\
+    ( (This)->lpVtbl -> get_NetworkName(This,aNetworkName) ) 
+
+#define INATNetwork_put_NetworkName(This,aNetworkName)	\
+    ( (This)->lpVtbl -> put_NetworkName(This,aNetworkName) ) 
+
+#define INATNetwork_get_Enabled(This,aEnabled)	\
+    ( (This)->lpVtbl -> get_Enabled(This,aEnabled) ) 
+
+#define INATNetwork_put_Enabled(This,aEnabled)	\
+    ( (This)->lpVtbl -> put_Enabled(This,aEnabled) ) 
+
+#define INATNetwork_get_Network(This,aNetwork)	\
+    ( (This)->lpVtbl -> get_Network(This,aNetwork) ) 
+
+#define INATNetwork_put_Network(This,aNetwork)	\
+    ( (This)->lpVtbl -> put_Network(This,aNetwork) ) 
+
+#define INATNetwork_get_Gateway(This,aGateway)	\
+    ( (This)->lpVtbl -> get_Gateway(This,aGateway) ) 
+
+#define INATNetwork_get_IPv6Enabled(This,aIPv6Enabled)	\
+    ( (This)->lpVtbl -> get_IPv6Enabled(This,aIPv6Enabled) ) 
+
+#define INATNetwork_put_IPv6Enabled(This,aIPv6Enabled)	\
+    ( (This)->lpVtbl -> put_IPv6Enabled(This,aIPv6Enabled) ) 
+
+#define INATNetwork_get_IPv6Prefix(This,aIPv6Prefix)	\
+    ( (This)->lpVtbl -> get_IPv6Prefix(This,aIPv6Prefix) ) 
+
+#define INATNetwork_put_IPv6Prefix(This,aIPv6Prefix)	\
+    ( (This)->lpVtbl -> put_IPv6Prefix(This,aIPv6Prefix) ) 
+
+#define INATNetwork_get_AdvertiseDefaultIPv6RouteEnabled(This,aAdvertiseDefaultIPv6RouteEnabled)	\
+    ( (This)->lpVtbl -> get_AdvertiseDefaultIPv6RouteEnabled(This,aAdvertiseDefaultIPv6RouteEnabled) ) 
+
+#define INATNetwork_put_AdvertiseDefaultIPv6RouteEnabled(This,aAdvertiseDefaultIPv6RouteEnabled)	\
+    ( (This)->lpVtbl -> put_AdvertiseDefaultIPv6RouteEnabled(This,aAdvertiseDefaultIPv6RouteEnabled) ) 
+
+#define INATNetwork_get_NeedDhcpServer(This,aNeedDhcpServer)	\
+    ( (This)->lpVtbl -> get_NeedDhcpServer(This,aNeedDhcpServer) ) 
+
+#define INATNetwork_put_NeedDhcpServer(This,aNeedDhcpServer)	\
+    ( (This)->lpVtbl -> put_NeedDhcpServer(This,aNeedDhcpServer) ) 
+
+#define INATNetwork_get_EventSource(This,aEventSource)	\
+    ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
+
+#define INATNetwork_get_PortForwardRules4(This,aPortForwardRules4)	\
+    ( (This)->lpVtbl -> get_PortForwardRules4(This,aPortForwardRules4) ) 
+
+#define INATNetwork_get_LocalMappings(This,aLocalMappings)	\
+    ( (This)->lpVtbl -> get_LocalMappings(This,aLocalMappings) ) 
+
+#define INATNetwork_get_LoopbackIp6(This,aLoopbackIp6)	\
+    ( (This)->lpVtbl -> get_LoopbackIp6(This,aLoopbackIp6) ) 
+
+#define INATNetwork_put_LoopbackIp6(This,aLoopbackIp6)	\
+    ( (This)->lpVtbl -> put_LoopbackIp6(This,aLoopbackIp6) ) 
+
+#define INATNetwork_get_PortForwardRules6(This,aPortForwardRules6)	\
+    ( (This)->lpVtbl -> get_PortForwardRules6(This,aPortForwardRules6) ) 
+
+#define INATNetwork_AddLocalMapping(This,aHostid,aOffset)	\
+    ( (This)->lpVtbl -> AddLocalMapping(This,aHostid,aOffset) ) 
+
+#define INATNetwork_AddPortForwardRule(This,aIsIpv6,aRuleName,aProto,aHostIP,aHostPort,aGuestIP,aGuestPort)	\
+    ( (This)->lpVtbl -> AddPortForwardRule(This,aIsIpv6,aRuleName,aProto,aHostIP,aHostPort,aGuestIP,aGuestPort) ) 
+
+#define INATNetwork_RemovePortForwardRule(This,aISipv6,aRuleName)	\
+    ( (This)->lpVtbl -> RemovePortForwardRule(This,aISipv6,aRuleName) ) 
+
+#define INATNetwork_Start(This,aTrunkType)	\
+    ( (This)->lpVtbl -> Start(This,aTrunkType) ) 
+
+#define INATNetwork_Stop(This)	\
+    ( (This)->lpVtbl -> Stop(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __INATNetwork_INTERFACE_DEFINED__ */
+
+
 #ifndef __IDHCPServer_INTERFACE_DEFINED__
 #define __IDHCPServer_INTERFACE_DEFINED__
 
@@ -5796,10 +7162,13 @@ EXTERN_C const IID IID_IDHCPServer;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("6cfe387c-74fb-4ca7-bff6-973bec8af7a3")
+    MIDL_INTERFACE("ff0774c5-1f62-4bc3-919c-7fc942bf1d25")
     IDHCPServer : public IDispatch
     {
     public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
+            /* [retval][out] */ IEventSource **aEventSource) = 0;
+        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Enabled( 
             /* [retval][out] */ BOOL *aEnabled) = 0;
         
@@ -5820,6 +7189,35 @@ EXTERN_C const IID IID_IDHCPServer;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_UpperIP( 
             /* [retval][out] */ BSTR *aUpperIP) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_GlobalOptions( 
+            /* [retval][out] */ SAFEARRAY * *aGlobalOptions) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VmConfigs( 
+            /* [retval][out] */ SAFEARRAY * *aVmConfigs) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE AddGlobalOption( 
+            /* [in] */ DhcpOpt aOption,
+            /* [in] */ BSTR aValue) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE AddVmSlotOption( 
+            /* [in] */ BSTR aVmname,
+            /* [in] */ LONG aSlot,
+            /* [in] */ DhcpOpt aOption,
+            /* [in] */ BSTR aValue) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RemoveVmSlotOptions( 
+            /* [in] */ BSTR aVmname,
+            /* [in] */ LONG aSlot) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetVmSlotOptions( 
+            /* [in] */ BSTR aVmname,
+            /* [in] */ LONG aSlot,
+            /* [retval][out] */ SAFEARRAY * *aOption) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMacOptions( 
+            /* [in] */ BSTR aMac,
+            /* [retval][out] */ SAFEARRAY * *aOption) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE SetConfiguration( 
             /* [in] */ BSTR aIPAddress,
@@ -5883,6 +7281,10 @@ EXTERN_C const IID IID_IDHCPServer;
             /* [out] */ EXCEPINFO *pExcepInfo,
             /* [out] */ UINT *puArgErr);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventSource )( 
+            IDHCPServer * This,
+            /* [retval][out] */ IEventSource **aEventSource);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Enabled )( 
             IDHCPServer * This,
             /* [retval][out] */ BOOL *aEnabled);
@@ -5910,6 +7312,42 @@ EXTERN_C const IID IID_IDHCPServer;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_UpperIP )( 
             IDHCPServer * This,
             /* [retval][out] */ BSTR *aUpperIP);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_GlobalOptions )( 
+            IDHCPServer * This,
+            /* [retval][out] */ SAFEARRAY * *aGlobalOptions);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_VmConfigs )( 
+            IDHCPServer * This,
+            /* [retval][out] */ SAFEARRAY * *aVmConfigs);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddGlobalOption )( 
+            IDHCPServer * This,
+            /* [in] */ DhcpOpt aOption,
+            /* [in] */ BSTR aValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddVmSlotOption )( 
+            IDHCPServer * This,
+            /* [in] */ BSTR aVmname,
+            /* [in] */ LONG aSlot,
+            /* [in] */ DhcpOpt aOption,
+            /* [in] */ BSTR aValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveVmSlotOptions )( 
+            IDHCPServer * This,
+            /* [in] */ BSTR aVmname,
+            /* [in] */ LONG aSlot);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetVmSlotOptions )( 
+            IDHCPServer * This,
+            /* [in] */ BSTR aVmname,
+            /* [in] */ LONG aSlot,
+            /* [retval][out] */ SAFEARRAY * *aOption);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMacOptions )( 
+            IDHCPServer * This,
+            /* [in] */ BSTR aMac,
+            /* [retval][out] */ SAFEARRAY * *aOption);
         
         HRESULT ( STDMETHODCALLTYPE *SetConfiguration )( 
             IDHCPServer * This,
@@ -5963,6 +7401,9 @@ EXTERN_C const IID IID_IDHCPServer;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
+#define IDHCPServer_get_EventSource(This,aEventSource)	\
+    ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
+
 #define IDHCPServer_get_Enabled(This,aEnabled)	\
     ( (This)->lpVtbl -> get_Enabled(This,aEnabled) ) 
 
@@ -5983,6 +7424,27 @@ EXTERN_C const IID IID_IDHCPServer;
 
 #define IDHCPServer_get_UpperIP(This,aUpperIP)	\
     ( (This)->lpVtbl -> get_UpperIP(This,aUpperIP) ) 
+
+#define IDHCPServer_get_GlobalOptions(This,aGlobalOptions)	\
+    ( (This)->lpVtbl -> get_GlobalOptions(This,aGlobalOptions) ) 
+
+#define IDHCPServer_get_VmConfigs(This,aVmConfigs)	\
+    ( (This)->lpVtbl -> get_VmConfigs(This,aVmConfigs) ) 
+
+#define IDHCPServer_AddGlobalOption(This,aOption,aValue)	\
+    ( (This)->lpVtbl -> AddGlobalOption(This,aOption,aValue) ) 
+
+#define IDHCPServer_AddVmSlotOption(This,aVmname,aSlot,aOption,aValue)	\
+    ( (This)->lpVtbl -> AddVmSlotOption(This,aVmname,aSlot,aOption,aValue) ) 
+
+#define IDHCPServer_RemoveVmSlotOptions(This,aVmname,aSlot)	\
+    ( (This)->lpVtbl -> RemoveVmSlotOptions(This,aVmname,aSlot) ) 
+
+#define IDHCPServer_GetVmSlotOptions(This,aVmname,aSlot,aOption)	\
+    ( (This)->lpVtbl -> GetVmSlotOptions(This,aVmname,aSlot,aOption) ) 
+
+#define IDHCPServer_GetMacOptions(This,aMac,aOption)	\
+    ( (This)->lpVtbl -> GetMacOptions(This,aMac,aOption) ) 
 
 #define IDHCPServer_SetConfiguration(This,aIPAddress,aNetworkMask,aFromIPAddress,aToIPAddress)	\
     ( (This)->lpVtbl -> SetConfiguration(This,aIPAddress,aNetworkMask,aFromIPAddress,aToIPAddress) ) 
@@ -6015,7 +7477,7 @@ EXTERN_C const IID IID_IVirtualBox;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("3b2f08eb-b810-4715-bee0-bb06b9880ad2")
+    MIDL_INTERFACE("fafa4e17-1ee2-4905-a10e-fe7c18bf5554")
     IVirtualBox : public IDispatch
     {
     public:
@@ -6075,6 +7537,9 @@ EXTERN_C const IID IID_IVirtualBox;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DHCPServers( 
             /* [retval][out] */ SAFEARRAY * *aDHCPServers) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NATNetworks( 
+            /* [retval][out] */ SAFEARRAY * *aNATNetworks) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
             /* [retval][out] */ IEventSource **aEventSource) = 0;
@@ -6151,7 +7616,7 @@ EXTERN_C const IID IID_IVirtualBox;
             /* [in] */ BSTR aName) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetExtraDataKeys( 
-            /* [retval][out] */ SAFEARRAY * *aValue) = 0;
+            /* [retval][out] */ SAFEARRAY * *aKeys) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetExtraData( 
             /* [in] */ BSTR aKey,
@@ -6174,6 +7639,17 @@ EXTERN_C const IID IID_IVirtualBox;
         
         virtual HRESULT STDMETHODCALLTYPE RemoveDHCPServer( 
             /* [in] */ IDHCPServer *aServer) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE CreateNATNetwork( 
+            /* [in] */ BSTR aNetworkName,
+            /* [retval][out] */ INATNetwork **aNetwork) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE FindNATNetworkByName( 
+            /* [in] */ BSTR aNetworkName,
+            /* [retval][out] */ INATNetwork **aNetwork) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RemoveNATNetwork( 
+            /* [in] */ INATNetwork *aNetwork) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE CheckFirmwarePresent( 
             /* [in] */ FirmwareType aFirmwareType,
@@ -6307,6 +7783,10 @@ EXTERN_C const IID IID_IVirtualBox;
             IVirtualBox * This,
             /* [retval][out] */ SAFEARRAY * *aDHCPServers);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NATNetworks )( 
+            IVirtualBox * This,
+            /* [retval][out] */ SAFEARRAY * *aNATNetworks);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventSource )( 
             IVirtualBox * This,
             /* [retval][out] */ IEventSource **aEventSource);
@@ -6400,7 +7880,7 @@ EXTERN_C const IID IID_IVirtualBox;
         
         HRESULT ( STDMETHODCALLTYPE *GetExtraDataKeys )( 
             IVirtualBox * This,
-            /* [retval][out] */ SAFEARRAY * *aValue);
+            /* [retval][out] */ SAFEARRAY * *aKeys);
         
         HRESULT ( STDMETHODCALLTYPE *GetExtraData )( 
             IVirtualBox * This,
@@ -6429,6 +7909,20 @@ EXTERN_C const IID IID_IVirtualBox;
         HRESULT ( STDMETHODCALLTYPE *RemoveDHCPServer )( 
             IVirtualBox * This,
             /* [in] */ IDHCPServer *aServer);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateNATNetwork )( 
+            IVirtualBox * This,
+            /* [in] */ BSTR aNetworkName,
+            /* [retval][out] */ INATNetwork **aNetwork);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindNATNetworkByName )( 
+            IVirtualBox * This,
+            /* [in] */ BSTR aNetworkName,
+            /* [retval][out] */ INATNetwork **aNetwork);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveNATNetwork )( 
+            IVirtualBox * This,
+            /* [in] */ INATNetwork *aNetwork);
         
         HRESULT ( STDMETHODCALLTYPE *CheckFirmwarePresent )( 
             IVirtualBox * This,
@@ -6531,6 +8025,9 @@ EXTERN_C const IID IID_IVirtualBox;
 #define IVirtualBox_get_DHCPServers(This,aDHCPServers)	\
     ( (This)->lpVtbl -> get_DHCPServers(This,aDHCPServers) ) 
 
+#define IVirtualBox_get_NATNetworks(This,aNATNetworks)	\
+    ( (This)->lpVtbl -> get_NATNetworks(This,aNATNetworks) ) 
+
 #define IVirtualBox_get_EventSource(This,aEventSource)	\
     ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
 
@@ -6582,8 +8079,8 @@ EXTERN_C const IID IID_IVirtualBox;
 #define IVirtualBox_RemoveSharedFolder(This,aName)	\
     ( (This)->lpVtbl -> RemoveSharedFolder(This,aName) ) 
 
-#define IVirtualBox_GetExtraDataKeys(This,aValue)	\
-    ( (This)->lpVtbl -> GetExtraDataKeys(This,aValue) ) 
+#define IVirtualBox_GetExtraDataKeys(This,aKeys)	\
+    ( (This)->lpVtbl -> GetExtraDataKeys(This,aKeys) ) 
 
 #define IVirtualBox_GetExtraData(This,aKey,aValue)	\
     ( (This)->lpVtbl -> GetExtraData(This,aKey,aValue) ) 
@@ -6602,6 +8099,15 @@ EXTERN_C const IID IID_IVirtualBox;
 
 #define IVirtualBox_RemoveDHCPServer(This,aServer)	\
     ( (This)->lpVtbl -> RemoveDHCPServer(This,aServer) ) 
+
+#define IVirtualBox_CreateNATNetwork(This,aNetworkName,aNetwork)	\
+    ( (This)->lpVtbl -> CreateNATNetwork(This,aNetworkName,aNetwork) ) 
+
+#define IVirtualBox_FindNATNetworkByName(This,aNetworkName,aNetwork)	\
+    ( (This)->lpVtbl -> FindNATNetworkByName(This,aNetworkName,aNetwork) ) 
+
+#define IVirtualBox_RemoveNATNetwork(This,aNetwork)	\
+    ( (This)->lpVtbl -> RemoveNATNetwork(This,aNetwork) ) 
 
 #define IVirtualBox_CheckFirmwarePresent(This,aFirmwareType,aVersion,aUrl,aFile,aResult)	\
     ( (This)->lpVtbl -> CheckFirmwarePresent(This,aFirmwareType,aVersion,aUrl,aFile,aResult) ) 
@@ -6628,7 +8134,7 @@ EXTERN_C const IID IID_IVFSExplorer;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("003d7f92-d38e-487f-b790-8c5e8631cb2f")
+    MIDL_INTERFACE("fb220201-2fd3-47e2-a5dc-2c2431d833cc")
     IVFSExplorer : public IDispatch
     {
     public:
@@ -6639,28 +8145,28 @@ EXTERN_C const IID IID_IVFSExplorer;
             /* [retval][out] */ VFSType *aType) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Update( 
-            /* [retval][out] */ IProgress **aAProgress) = 0;
+            /* [retval][out] */ IProgress **aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Cd( 
-            /* [in] */ BSTR aADir,
-            /* [retval][out] */ IProgress **aAProgress) = 0;
+            /* [in] */ BSTR aDir,
+            /* [retval][out] */ IProgress **aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE CdUp( 
-            /* [retval][out] */ IProgress **aAProgress) = 0;
+            /* [retval][out] */ IProgress **aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE EntryList( 
-            /* [out] */ SAFEARRAY * *aANames,
-            /* [out] */ SAFEARRAY * *aATypes,
-            /* [out] */ SAFEARRAY * *aASizes,
-            /* [out] */ SAFEARRAY * *aAModes) = 0;
+            /* [out] */ SAFEARRAY * *aNames,
+            /* [out] */ SAFEARRAY * *aTypes,
+            /* [out] */ SAFEARRAY * *aSizes,
+            /* [out] */ SAFEARRAY * *aModes) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Exists( 
-            /* [in] */ SAFEARRAY * aANames,
-            /* [retval][out] */ SAFEARRAY * *aAExists) = 0;
+            /* [in] */ SAFEARRAY * aNames,
+            /* [retval][out] */ SAFEARRAY * *aExists) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Remove( 
-            /* [in] */ SAFEARRAY * aANames,
-            /* [retval][out] */ IProgress **aAProgress) = 0;
+            /* [in] */ SAFEARRAY * aNames,
+            /* [retval][out] */ IProgress **aProgress) = 0;
         
     };
     
@@ -6721,33 +8227,33 @@ EXTERN_C const IID IID_IVFSExplorer;
         
         HRESULT ( STDMETHODCALLTYPE *Update )( 
             IVFSExplorer * This,
-            /* [retval][out] */ IProgress **aAProgress);
+            /* [retval][out] */ IProgress **aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *Cd )( 
             IVFSExplorer * This,
-            /* [in] */ BSTR aADir,
-            /* [retval][out] */ IProgress **aAProgress);
+            /* [in] */ BSTR aDir,
+            /* [retval][out] */ IProgress **aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *CdUp )( 
             IVFSExplorer * This,
-            /* [retval][out] */ IProgress **aAProgress);
+            /* [retval][out] */ IProgress **aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *EntryList )( 
             IVFSExplorer * This,
-            /* [out] */ SAFEARRAY * *aANames,
-            /* [out] */ SAFEARRAY * *aATypes,
-            /* [out] */ SAFEARRAY * *aASizes,
-            /* [out] */ SAFEARRAY * *aAModes);
+            /* [out] */ SAFEARRAY * *aNames,
+            /* [out] */ SAFEARRAY * *aTypes,
+            /* [out] */ SAFEARRAY * *aSizes,
+            /* [out] */ SAFEARRAY * *aModes);
         
         HRESULT ( STDMETHODCALLTYPE *Exists )( 
             IVFSExplorer * This,
-            /* [in] */ SAFEARRAY * aANames,
-            /* [retval][out] */ SAFEARRAY * *aAExists);
+            /* [in] */ SAFEARRAY * aNames,
+            /* [retval][out] */ SAFEARRAY * *aExists);
         
         HRESULT ( STDMETHODCALLTYPE *Remove )( 
             IVFSExplorer * This,
-            /* [in] */ SAFEARRAY * aANames,
-            /* [retval][out] */ IProgress **aAProgress);
+            /* [in] */ SAFEARRAY * aNames,
+            /* [retval][out] */ IProgress **aProgress);
         
         END_INTERFACE
     } IVFSExplorerVtbl;
@@ -6791,23 +8297,23 @@ EXTERN_C const IID IID_IVFSExplorer;
 #define IVFSExplorer_get_Type(This,aType)	\
     ( (This)->lpVtbl -> get_Type(This,aType) ) 
 
-#define IVFSExplorer_Update(This,aAProgress)	\
-    ( (This)->lpVtbl -> Update(This,aAProgress) ) 
+#define IVFSExplorer_Update(This,aProgress)	\
+    ( (This)->lpVtbl -> Update(This,aProgress) ) 
 
-#define IVFSExplorer_Cd(This,aADir,aAProgress)	\
-    ( (This)->lpVtbl -> Cd(This,aADir,aAProgress) ) 
+#define IVFSExplorer_Cd(This,aDir,aProgress)	\
+    ( (This)->lpVtbl -> Cd(This,aDir,aProgress) ) 
 
-#define IVFSExplorer_CdUp(This,aAProgress)	\
-    ( (This)->lpVtbl -> CdUp(This,aAProgress) ) 
+#define IVFSExplorer_CdUp(This,aProgress)	\
+    ( (This)->lpVtbl -> CdUp(This,aProgress) ) 
 
-#define IVFSExplorer_EntryList(This,aANames,aATypes,aASizes,aAModes)	\
-    ( (This)->lpVtbl -> EntryList(This,aANames,aATypes,aASizes,aAModes) ) 
+#define IVFSExplorer_EntryList(This,aNames,aTypes,aSizes,aModes)	\
+    ( (This)->lpVtbl -> EntryList(This,aNames,aTypes,aSizes,aModes) ) 
 
-#define IVFSExplorer_Exists(This,aANames,aAExists)	\
-    ( (This)->lpVtbl -> Exists(This,aANames,aAExists) ) 
+#define IVFSExplorer_Exists(This,aNames,aExists)	\
+    ( (This)->lpVtbl -> Exists(This,aNames,aExists) ) 
 
-#define IVFSExplorer_Remove(This,aANames,aAProgress)	\
-    ( (This)->lpVtbl -> Remove(This,aANames,aAProgress) ) 
+#define IVFSExplorer_Remove(This,aNames,aProgress)	\
+    ( (This)->lpVtbl -> Remove(This,aNames,aProgress) ) 
 
 #endif /* COBJMACROS */
 
@@ -6849,26 +8355,26 @@ EXTERN_C const IID IID_IAppliance;
         
         virtual HRESULT STDMETHODCALLTYPE Read( 
             /* [in] */ BSTR aFile,
-            /* [retval][out] */ IProgress **aAProgress) = 0;
+            /* [retval][out] */ IProgress **aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Interpret( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE ImportMachines( 
             /* [in] */ SAFEARRAY * aOptions,
-            /* [retval][out] */ IProgress **aAProgress) = 0;
+            /* [retval][out] */ IProgress **aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE CreateVFSExplorer( 
-            /* [in] */ BSTR aAUri,
-            /* [retval][out] */ IVFSExplorer **aAExplorer) = 0;
+            /* [in] */ BSTR aURI,
+            /* [retval][out] */ IVFSExplorer **aExplorer) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Write( 
             /* [in] */ BSTR aFormat,
-            /* [in] */ BOOL aManifest,
+            /* [in] */ SAFEARRAY * aOptions,
             /* [in] */ BSTR aPath,
             /* [retval][out] */ IProgress **aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetWarnings( 
-            /* [retval][out] */ SAFEARRAY * *aAWarnings) = 0;
+            /* [retval][out] */ SAFEARRAY * *aWarnings) = 0;
         
     };
     
@@ -6938,7 +8444,7 @@ EXTERN_C const IID IID_IAppliance;
         HRESULT ( STDMETHODCALLTYPE *Read )( 
             IAppliance * This,
             /* [in] */ BSTR aFile,
-            /* [retval][out] */ IProgress **aAProgress);
+            /* [retval][out] */ IProgress **aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *Interpret )( 
             IAppliance * This);
@@ -6946,23 +8452,23 @@ EXTERN_C const IID IID_IAppliance;
         HRESULT ( STDMETHODCALLTYPE *ImportMachines )( 
             IAppliance * This,
             /* [in] */ SAFEARRAY * aOptions,
-            /* [retval][out] */ IProgress **aAProgress);
+            /* [retval][out] */ IProgress **aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *CreateVFSExplorer )( 
             IAppliance * This,
-            /* [in] */ BSTR aAUri,
-            /* [retval][out] */ IVFSExplorer **aAExplorer);
+            /* [in] */ BSTR aURI,
+            /* [retval][out] */ IVFSExplorer **aExplorer);
         
         HRESULT ( STDMETHODCALLTYPE *Write )( 
             IAppliance * This,
             /* [in] */ BSTR aFormat,
-            /* [in] */ BOOL aManifest,
+            /* [in] */ SAFEARRAY * aOptions,
             /* [in] */ BSTR aPath,
             /* [retval][out] */ IProgress **aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *GetWarnings )( 
             IAppliance * This,
-            /* [retval][out] */ SAFEARRAY * *aAWarnings);
+            /* [retval][out] */ SAFEARRAY * *aWarnings);
         
         END_INTERFACE
     } IApplianceVtbl;
@@ -7012,23 +8518,23 @@ EXTERN_C const IID IID_IAppliance;
 #define IAppliance_get_Machines(This,aMachines)	\
     ( (This)->lpVtbl -> get_Machines(This,aMachines) ) 
 
-#define IAppliance_Read(This,aFile,aAProgress)	\
-    ( (This)->lpVtbl -> Read(This,aFile,aAProgress) ) 
+#define IAppliance_Read(This,aFile,aProgress)	\
+    ( (This)->lpVtbl -> Read(This,aFile,aProgress) ) 
 
 #define IAppliance_Interpret(This)	\
     ( (This)->lpVtbl -> Interpret(This) ) 
 
-#define IAppliance_ImportMachines(This,aOptions,aAProgress)	\
-    ( (This)->lpVtbl -> ImportMachines(This,aOptions,aAProgress) ) 
+#define IAppliance_ImportMachines(This,aOptions,aProgress)	\
+    ( (This)->lpVtbl -> ImportMachines(This,aOptions,aProgress) ) 
 
-#define IAppliance_CreateVFSExplorer(This,aAUri,aAExplorer)	\
-    ( (This)->lpVtbl -> CreateVFSExplorer(This,aAUri,aAExplorer) ) 
+#define IAppliance_CreateVFSExplorer(This,aURI,aExplorer)	\
+    ( (This)->lpVtbl -> CreateVFSExplorer(This,aURI,aExplorer) ) 
 
-#define IAppliance_Write(This,aFormat,aManifest,aPath,aProgress)	\
-    ( (This)->lpVtbl -> Write(This,aFormat,aManifest,aPath,aProgress) ) 
+#define IAppliance_Write(This,aFormat,aOptions,aPath,aProgress)	\
+    ( (This)->lpVtbl -> Write(This,aFormat,aOptions,aPath,aProgress) ) 
 
-#define IAppliance_GetWarnings(This,aAWarnings)	\
-    ( (This)->lpVtbl -> GetWarnings(This,aAWarnings) ) 
+#define IAppliance_GetWarnings(This,aWarnings)	\
+    ( (This)->lpVtbl -> GetWarnings(This,aWarnings) ) 
 
 #endif /* COBJMACROS */
 
@@ -7060,34 +8566,34 @@ EXTERN_C const IID IID_IVirtualSystemDescription;
             /* [retval][out] */ ULONG *aCount) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetDescription( 
-            /* [out] */ SAFEARRAY * *aATypes,
-            /* [out] */ SAFEARRAY * *aARefs,
-            /* [out] */ SAFEARRAY * *aAOvfValues,
-            /* [out] */ SAFEARRAY * *aAVBoxValues,
-            /* [out] */ SAFEARRAY * *aAExtraConfigValues) = 0;
+            /* [out] */ SAFEARRAY * *aTypes,
+            /* [out] */ SAFEARRAY * *aRefs,
+            /* [out] */ SAFEARRAY * *aOVFValues,
+            /* [out] */ SAFEARRAY * *aVBoxValues,
+            /* [out] */ SAFEARRAY * *aExtraConfigValues) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetDescriptionByType( 
-            /* [in] */ VirtualSystemDescriptionType aAType,
-            /* [out] */ SAFEARRAY * *aATypes,
-            /* [out] */ SAFEARRAY * *aARefs,
-            /* [out] */ SAFEARRAY * *aAOvfValues,
-            /* [out] */ SAFEARRAY * *aAVBoxValues,
-            /* [out] */ SAFEARRAY * *aAExtraConfigValues) = 0;
+            /* [in] */ VirtualSystemDescriptionType aType,
+            /* [out] */ SAFEARRAY * *aTypes,
+            /* [out] */ SAFEARRAY * *aRefs,
+            /* [out] */ SAFEARRAY * *aOVFValues,
+            /* [out] */ SAFEARRAY * *aVBoxValues,
+            /* [out] */ SAFEARRAY * *aExtraConfigValues) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetValuesByType( 
-            /* [in] */ VirtualSystemDescriptionType aAType,
-            /* [in] */ VirtualSystemDescriptionValueType aAWhich,
-            /* [retval][out] */ SAFEARRAY * *aAValues) = 0;
+            /* [in] */ VirtualSystemDescriptionType aType,
+            /* [in] */ VirtualSystemDescriptionValueType aWhich,
+            /* [retval][out] */ SAFEARRAY * *aValues) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE SetFinalValues( 
-            /* [in] */ SAFEARRAY * aAEnabled,
-            /* [in] */ SAFEARRAY * aAVBoxValues,
-            /* [in] */ SAFEARRAY * aAExtraConfigValues) = 0;
+            /* [in] */ SAFEARRAY * aEnabled,
+            /* [in] */ SAFEARRAY * aVBoxValues,
+            /* [in] */ SAFEARRAY * aExtraConfigValues) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE AddDescription( 
-            /* [in] */ VirtualSystemDescriptionType aAType,
-            /* [in] */ BSTR aAVBoxValue,
-            /* [in] */ BSTR aAExtraConfigValue) = 0;
+            /* [in] */ VirtualSystemDescriptionType aType,
+            /* [in] */ BSTR aVBoxValue,
+            /* [in] */ BSTR aExtraConfigValue) = 0;
         
     };
     
@@ -7144,38 +8650,38 @@ EXTERN_C const IID IID_IVirtualSystemDescription;
         
         HRESULT ( STDMETHODCALLTYPE *GetDescription )( 
             IVirtualSystemDescription * This,
-            /* [out] */ SAFEARRAY * *aATypes,
-            /* [out] */ SAFEARRAY * *aARefs,
-            /* [out] */ SAFEARRAY * *aAOvfValues,
-            /* [out] */ SAFEARRAY * *aAVBoxValues,
-            /* [out] */ SAFEARRAY * *aAExtraConfigValues);
+            /* [out] */ SAFEARRAY * *aTypes,
+            /* [out] */ SAFEARRAY * *aRefs,
+            /* [out] */ SAFEARRAY * *aOVFValues,
+            /* [out] */ SAFEARRAY * *aVBoxValues,
+            /* [out] */ SAFEARRAY * *aExtraConfigValues);
         
         HRESULT ( STDMETHODCALLTYPE *GetDescriptionByType )( 
             IVirtualSystemDescription * This,
-            /* [in] */ VirtualSystemDescriptionType aAType,
-            /* [out] */ SAFEARRAY * *aATypes,
-            /* [out] */ SAFEARRAY * *aARefs,
-            /* [out] */ SAFEARRAY * *aAOvfValues,
-            /* [out] */ SAFEARRAY * *aAVBoxValues,
-            /* [out] */ SAFEARRAY * *aAExtraConfigValues);
+            /* [in] */ VirtualSystemDescriptionType aType,
+            /* [out] */ SAFEARRAY * *aTypes,
+            /* [out] */ SAFEARRAY * *aRefs,
+            /* [out] */ SAFEARRAY * *aOVFValues,
+            /* [out] */ SAFEARRAY * *aVBoxValues,
+            /* [out] */ SAFEARRAY * *aExtraConfigValues);
         
         HRESULT ( STDMETHODCALLTYPE *GetValuesByType )( 
             IVirtualSystemDescription * This,
-            /* [in] */ VirtualSystemDescriptionType aAType,
-            /* [in] */ VirtualSystemDescriptionValueType aAWhich,
-            /* [retval][out] */ SAFEARRAY * *aAValues);
+            /* [in] */ VirtualSystemDescriptionType aType,
+            /* [in] */ VirtualSystemDescriptionValueType aWhich,
+            /* [retval][out] */ SAFEARRAY * *aValues);
         
         HRESULT ( STDMETHODCALLTYPE *SetFinalValues )( 
             IVirtualSystemDescription * This,
-            /* [in] */ SAFEARRAY * aAEnabled,
-            /* [in] */ SAFEARRAY * aAVBoxValues,
-            /* [in] */ SAFEARRAY * aAExtraConfigValues);
+            /* [in] */ SAFEARRAY * aEnabled,
+            /* [in] */ SAFEARRAY * aVBoxValues,
+            /* [in] */ SAFEARRAY * aExtraConfigValues);
         
         HRESULT ( STDMETHODCALLTYPE *AddDescription )( 
             IVirtualSystemDescription * This,
-            /* [in] */ VirtualSystemDescriptionType aAType,
-            /* [in] */ BSTR aAVBoxValue,
-            /* [in] */ BSTR aAExtraConfigValue);
+            /* [in] */ VirtualSystemDescriptionType aType,
+            /* [in] */ BSTR aVBoxValue,
+            /* [in] */ BSTR aExtraConfigValue);
         
         END_INTERFACE
     } IVirtualSystemDescriptionVtbl;
@@ -7216,20 +8722,20 @@ EXTERN_C const IID IID_IVirtualSystemDescription;
 #define IVirtualSystemDescription_get_Count(This,aCount)	\
     ( (This)->lpVtbl -> get_Count(This,aCount) ) 
 
-#define IVirtualSystemDescription_GetDescription(This,aATypes,aARefs,aAOvfValues,aAVBoxValues,aAExtraConfigValues)	\
-    ( (This)->lpVtbl -> GetDescription(This,aATypes,aARefs,aAOvfValues,aAVBoxValues,aAExtraConfigValues) ) 
+#define IVirtualSystemDescription_GetDescription(This,aTypes,aRefs,aOVFValues,aVBoxValues,aExtraConfigValues)	\
+    ( (This)->lpVtbl -> GetDescription(This,aTypes,aRefs,aOVFValues,aVBoxValues,aExtraConfigValues) ) 
 
-#define IVirtualSystemDescription_GetDescriptionByType(This,aAType,aATypes,aARefs,aAOvfValues,aAVBoxValues,aAExtraConfigValues)	\
-    ( (This)->lpVtbl -> GetDescriptionByType(This,aAType,aATypes,aARefs,aAOvfValues,aAVBoxValues,aAExtraConfigValues) ) 
+#define IVirtualSystemDescription_GetDescriptionByType(This,aType,aTypes,aRefs,aOVFValues,aVBoxValues,aExtraConfigValues)	\
+    ( (This)->lpVtbl -> GetDescriptionByType(This,aType,aTypes,aRefs,aOVFValues,aVBoxValues,aExtraConfigValues) ) 
 
-#define IVirtualSystemDescription_GetValuesByType(This,aAType,aAWhich,aAValues)	\
-    ( (This)->lpVtbl -> GetValuesByType(This,aAType,aAWhich,aAValues) ) 
+#define IVirtualSystemDescription_GetValuesByType(This,aType,aWhich,aValues)	\
+    ( (This)->lpVtbl -> GetValuesByType(This,aType,aWhich,aValues) ) 
 
-#define IVirtualSystemDescription_SetFinalValues(This,aAEnabled,aAVBoxValues,aAExtraConfigValues)	\
-    ( (This)->lpVtbl -> SetFinalValues(This,aAEnabled,aAVBoxValues,aAExtraConfigValues) ) 
+#define IVirtualSystemDescription_SetFinalValues(This,aEnabled,aVBoxValues,aExtraConfigValues)	\
+    ( (This)->lpVtbl -> SetFinalValues(This,aEnabled,aVBoxValues,aExtraConfigValues) ) 
 
-#define IVirtualSystemDescription_AddDescription(This,aAType,aAVBoxValue,aAExtraConfigValue)	\
-    ( (This)->lpVtbl -> AddDescription(This,aAType,aAVBoxValue,aAExtraConfigValue) ) 
+#define IVirtualSystemDescription_AddDescription(This,aType,aVBoxValue,aExtraConfigValue)	\
+    ( (This)->lpVtbl -> AddDescription(This,aType,aVBoxValue,aExtraConfigValue) ) 
 
 #endif /* COBJMACROS */
 
@@ -7253,21 +8759,18 @@ EXTERN_C const IID IID_IInternalMachineControl;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("ec824977-e43f-479c-81c9-ac6cae1423a5")
+    MIDL_INTERFACE("2d9ce4b7-0ab2-4931-ac4a-e45aa66465ef")
     IInternalMachineControl : public IDispatch
     {
     public:
         virtual HRESULT STDMETHODCALLTYPE SetRemoveSavedStateFile( 
-            /* [in] */ BOOL aARemove) = 0;
+            /* [in] */ BOOL aRemove) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE UpdateState( 
             /* [in] */ MachineState aState) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE GetIPCId( 
-            /* [retval][out] */ BSTR *aId) = 0;
-        
         virtual HRESULT STDMETHODCALLTYPE BeginPowerUp( 
-            /* [in] */ IProgress *aAProgress) = 0;
+            /* [in] */ IProgress *aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE EndPowerUp( 
             /* [in] */ LONG aResult) = 0;
@@ -7330,13 +8833,7 @@ EXTERN_C const IID IID_IInternalMachineControl;
             /* [out] */ MachineState *aMachineState,
             /* [retval][out] */ IProgress **aProgress) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE FinishOnlineMergeMedium( 
-            /* [in] */ IMediumAttachment *aMediumAttachment,
-            /* [in] */ IMedium *aSource,
-            /* [in] */ IMedium *aTarget,
-            /* [in] */ BOOL aMergeForward,
-            /* [in] */ IMedium *aParentForTarget,
-            /* [in] */ SAFEARRAY * aChildrenToReparent) = 0;
+        virtual HRESULT STDMETHODCALLTYPE FinishOnlineMergeMedium( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE RestoreSnapshot( 
             /* [in] */ IConsole *aInitiator,
@@ -7345,9 +8842,9 @@ EXTERN_C const IID IID_IInternalMachineControl;
             /* [retval][out] */ IProgress **aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE PullGuestProperties( 
-            /* [out] */ SAFEARRAY * *aName,
-            /* [out] */ SAFEARRAY * *aValue,
-            /* [out] */ SAFEARRAY * *aTimestamp,
+            /* [out] */ SAFEARRAY * *aNames,
+            /* [out] */ SAFEARRAY * *aValues,
+            /* [out] */ SAFEARRAY * *aTimestamps,
             /* [out] */ SAFEARRAY * *aFlags) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE PushGuestProperty( 
@@ -7364,7 +8861,7 @@ EXTERN_C const IID IID_IInternalMachineControl;
             /* [in] */ IMediumAttachment *aAttachment,
             /* [retval][out] */ IMediumAttachment **aNewAttachment) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE ReportGuestStatistics( 
+        virtual HRESULT STDMETHODCALLTYPE ReportVmStatistics( 
             /* [in] */ ULONG aValidStats,
             /* [in] */ ULONG aCpuUser,
             /* [in] */ ULONG aCpuKernel,
@@ -7378,7 +8875,9 @@ EXTERN_C const IID IID_IInternalMachineControl;
             /* [in] */ ULONG aMemAllocTotal,
             /* [in] */ ULONG aMemFreeTotal,
             /* [in] */ ULONG aMemBalloonTotal,
-            /* [in] */ ULONG aMemSharedTotal) = 0;
+            /* [in] */ ULONG aMemSharedTotal,
+            /* [in] */ ULONG aVmNetRx,
+            /* [in] */ ULONG aVmNetTx) = 0;
         
     };
     
@@ -7431,19 +8930,15 @@ EXTERN_C const IID IID_IInternalMachineControl;
         
         HRESULT ( STDMETHODCALLTYPE *SetRemoveSavedStateFile )( 
             IInternalMachineControl * This,
-            /* [in] */ BOOL aARemove);
+            /* [in] */ BOOL aRemove);
         
         HRESULT ( STDMETHODCALLTYPE *UpdateState )( 
             IInternalMachineControl * This,
             /* [in] */ MachineState aState);
         
-        HRESULT ( STDMETHODCALLTYPE *GetIPCId )( 
-            IInternalMachineControl * This,
-            /* [retval][out] */ BSTR *aId);
-        
         HRESULT ( STDMETHODCALLTYPE *BeginPowerUp )( 
             IInternalMachineControl * This,
-            /* [in] */ IProgress *aAProgress);
+            /* [in] */ IProgress *aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *EndPowerUp )( 
             IInternalMachineControl * This,
@@ -7522,13 +9017,7 @@ EXTERN_C const IID IID_IInternalMachineControl;
             /* [retval][out] */ IProgress **aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *FinishOnlineMergeMedium )( 
-            IInternalMachineControl * This,
-            /* [in] */ IMediumAttachment *aMediumAttachment,
-            /* [in] */ IMedium *aSource,
-            /* [in] */ IMedium *aTarget,
-            /* [in] */ BOOL aMergeForward,
-            /* [in] */ IMedium *aParentForTarget,
-            /* [in] */ SAFEARRAY * aChildrenToReparent);
+            IInternalMachineControl * This);
         
         HRESULT ( STDMETHODCALLTYPE *RestoreSnapshot )( 
             IInternalMachineControl * This,
@@ -7539,9 +9028,9 @@ EXTERN_C const IID IID_IInternalMachineControl;
         
         HRESULT ( STDMETHODCALLTYPE *PullGuestProperties )( 
             IInternalMachineControl * This,
-            /* [out] */ SAFEARRAY * *aName,
-            /* [out] */ SAFEARRAY * *aValue,
-            /* [out] */ SAFEARRAY * *aTimestamp,
+            /* [out] */ SAFEARRAY * *aNames,
+            /* [out] */ SAFEARRAY * *aValues,
+            /* [out] */ SAFEARRAY * *aTimestamps,
             /* [out] */ SAFEARRAY * *aFlags);
         
         HRESULT ( STDMETHODCALLTYPE *PushGuestProperty )( 
@@ -7562,7 +9051,7 @@ EXTERN_C const IID IID_IInternalMachineControl;
             /* [in] */ IMediumAttachment *aAttachment,
             /* [retval][out] */ IMediumAttachment **aNewAttachment);
         
-        HRESULT ( STDMETHODCALLTYPE *ReportGuestStatistics )( 
+        HRESULT ( STDMETHODCALLTYPE *ReportVmStatistics )( 
             IInternalMachineControl * This,
             /* [in] */ ULONG aValidStats,
             /* [in] */ ULONG aCpuUser,
@@ -7577,7 +9066,9 @@ EXTERN_C const IID IID_IInternalMachineControl;
             /* [in] */ ULONG aMemAllocTotal,
             /* [in] */ ULONG aMemFreeTotal,
             /* [in] */ ULONG aMemBalloonTotal,
-            /* [in] */ ULONG aMemSharedTotal);
+            /* [in] */ ULONG aMemSharedTotal,
+            /* [in] */ ULONG aVmNetRx,
+            /* [in] */ ULONG aVmNetTx);
         
         END_INTERFACE
     } IInternalMachineControlVtbl;
@@ -7615,17 +9106,14 @@ EXTERN_C const IID IID_IInternalMachineControl;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define IInternalMachineControl_SetRemoveSavedStateFile(This,aARemove)	\
-    ( (This)->lpVtbl -> SetRemoveSavedStateFile(This,aARemove) ) 
+#define IInternalMachineControl_SetRemoveSavedStateFile(This,aRemove)	\
+    ( (This)->lpVtbl -> SetRemoveSavedStateFile(This,aRemove) ) 
 
 #define IInternalMachineControl_UpdateState(This,aState)	\
     ( (This)->lpVtbl -> UpdateState(This,aState) ) 
 
-#define IInternalMachineControl_GetIPCId(This,aId)	\
-    ( (This)->lpVtbl -> GetIPCId(This,aId) ) 
-
-#define IInternalMachineControl_BeginPowerUp(This,aAProgress)	\
-    ( (This)->lpVtbl -> BeginPowerUp(This,aAProgress) ) 
+#define IInternalMachineControl_BeginPowerUp(This,aProgress)	\
+    ( (This)->lpVtbl -> BeginPowerUp(This,aProgress) ) 
 
 #define IInternalMachineControl_EndPowerUp(This,aResult)	\
     ( (This)->lpVtbl -> EndPowerUp(This,aResult) ) 
@@ -7672,14 +9160,14 @@ EXTERN_C const IID IID_IInternalMachineControl;
 #define IInternalMachineControl_DeleteSnapshot(This,aInitiator,aStartId,aEndId,aDeleteAllChildren,aMachineState,aProgress)	\
     ( (This)->lpVtbl -> DeleteSnapshot(This,aInitiator,aStartId,aEndId,aDeleteAllChildren,aMachineState,aProgress) ) 
 
-#define IInternalMachineControl_FinishOnlineMergeMedium(This,aMediumAttachment,aSource,aTarget,aMergeForward,aParentForTarget,aChildrenToReparent)	\
-    ( (This)->lpVtbl -> FinishOnlineMergeMedium(This,aMediumAttachment,aSource,aTarget,aMergeForward,aParentForTarget,aChildrenToReparent) ) 
+#define IInternalMachineControl_FinishOnlineMergeMedium(This)	\
+    ( (This)->lpVtbl -> FinishOnlineMergeMedium(This) ) 
 
 #define IInternalMachineControl_RestoreSnapshot(This,aInitiator,aSnapshot,aMachineState,aProgress)	\
     ( (This)->lpVtbl -> RestoreSnapshot(This,aInitiator,aSnapshot,aMachineState,aProgress) ) 
 
-#define IInternalMachineControl_PullGuestProperties(This,aName,aValue,aTimestamp,aFlags)	\
-    ( (This)->lpVtbl -> PullGuestProperties(This,aName,aValue,aTimestamp,aFlags) ) 
+#define IInternalMachineControl_PullGuestProperties(This,aNames,aValues,aTimestamps,aFlags)	\
+    ( (This)->lpVtbl -> PullGuestProperties(This,aNames,aValues,aTimestamps,aFlags) ) 
 
 #define IInternalMachineControl_PushGuestProperty(This,aName,aValue,aTimestamp,aFlags)	\
     ( (This)->lpVtbl -> PushGuestProperty(This,aName,aValue,aTimestamp,aFlags) ) 
@@ -7693,8 +9181,8 @@ EXTERN_C const IID IID_IInternalMachineControl;
 #define IInternalMachineControl_EjectMedium(This,aAttachment,aNewAttachment)	\
     ( (This)->lpVtbl -> EjectMedium(This,aAttachment,aNewAttachment) ) 
 
-#define IInternalMachineControl_ReportGuestStatistics(This,aValidStats,aCpuUser,aCpuKernel,aCpuIdle,aMemTotal,aMemFree,aMemBalloon,aMemShared,aMemCache,aPagedTotal,aMemAllocTotal,aMemFreeTotal,aMemBalloonTotal,aMemSharedTotal)	\
-    ( (This)->lpVtbl -> ReportGuestStatistics(This,aValidStats,aCpuUser,aCpuKernel,aCpuIdle,aMemTotal,aMemFree,aMemBalloon,aMemShared,aMemCache,aPagedTotal,aMemAllocTotal,aMemFreeTotal,aMemBalloonTotal,aMemSharedTotal) ) 
+#define IInternalMachineControl_ReportVmStatistics(This,aValidStats,aCpuUser,aCpuKernel,aCpuIdle,aMemTotal,aMemFree,aMemBalloon,aMemShared,aMemCache,aPagedTotal,aMemAllocTotal,aMemFreeTotal,aMemBalloonTotal,aMemSharedTotal,aVmNetRx,aVmNetTx)	\
+    ( (This)->lpVtbl -> ReportVmStatistics(This,aValidStats,aCpuUser,aCpuKernel,aCpuIdle,aMemTotal,aMemFree,aMemBalloon,aMemShared,aMemCache,aPagedTotal,aMemAllocTotal,aMemFreeTotal,aMemBalloonTotal,aMemSharedTotal,aVmNetRx,aVmNetTx) ) 
 
 #endif /* COBJMACROS */
 
@@ -7775,6 +9263,9 @@ EXTERN_C const IID IID_IBIOSSettings;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_PXEDebugEnabled( 
             /* [in] */ BOOL aPXEDebugEnabled) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NonVolatileStorageFile( 
+            /* [retval][out] */ BSTR *aNonVolatileStorageFile) = 0;
         
     };
     
@@ -7897,6 +9388,10 @@ EXTERN_C const IID IID_IBIOSSettings;
             IBIOSSettings * This,
             /* [in] */ BOOL aPXEDebugEnabled);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NonVolatileStorageFile )( 
+            IBIOSSettings * This,
+            /* [retval][out] */ BSTR *aNonVolatileStorageFile);
+        
         END_INTERFACE
     } IBIOSSettingsVtbl;
 
@@ -7987,6 +9482,9 @@ EXTERN_C const IID IID_IBIOSSettings;
 #define IBIOSSettings_put_PXEDebugEnabled(This,aPXEDebugEnabled)	\
     ( (This)->lpVtbl -> put_PXEDebugEnabled(This,aPXEDebugEnabled) ) 
 
+#define IBIOSSettings_get_NonVolatileStorageFile(This,aNonVolatileStorageFile)	\
+    ( (This)->lpVtbl -> get_NonVolatileStorageFile(This,aNonVolatileStorageFile) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -8009,7 +9507,7 @@ EXTERN_C const IID IID_IPCIAddress;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("D88B324F-DB19-4D3B-A1A9-BF5B127199A8")
+    MIDL_INTERFACE("c984d15f-e191-400b-840e-970f3dad7296")
     IPCIAddress : public IDispatch
     {
     public:
@@ -8351,12 +9849,18 @@ EXTERN_C const IID IID_IMachine;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("22781af3-1c96-4126-9edf-67a020e0e858")
+    MIDL_INTERFACE("480cf695-2d8d-4256-9c7c-cce4184fa048")
     IMachine : public IDispatch
     {
     public:
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Parent( 
             /* [retval][out] */ IVirtualBox **aParent) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Icon( 
+            /* [retval][out] */ SAFEARRAY * *aIcon) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Icon( 
+            /* [in] */ SAFEARRAY * aIcon) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Accessible( 
             /* [retval][out] */ BOOL *aAccessible) = 0;
@@ -8439,6 +9943,12 @@ EXTERN_C const IID IID_IMachine;
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_PageFusionEnabled( 
             /* [in] */ BOOL aPageFusionEnabled) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_GraphicsControllerType( 
+            /* [retval][out] */ GraphicsControllerType *aGraphicsControllerType) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_GraphicsControllerType( 
+            /* [in] */ GraphicsControllerType aGraphicsControllerType) = 0;
+        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VRAMSize( 
             /* [retval][out] */ ULONG *aVRAMSize) = 0;
         
@@ -8469,6 +9979,12 @@ EXTERN_C const IID IID_IMachine;
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_VideoCaptureEnabled( 
             /* [in] */ BOOL aVideoCaptureEnabled) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VideoCaptureScreens( 
+            /* [retval][out] */ SAFEARRAY * *aVideoCaptureScreens) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_VideoCaptureScreens( 
+            /* [in] */ SAFEARRAY * aVideoCaptureScreens) = 0;
+        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VideoCaptureFile( 
             /* [retval][out] */ BSTR *aVideoCaptureFile) = 0;
         
@@ -8486,6 +10002,18 @@ EXTERN_C const IID IID_IMachine;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_VideoCaptureHeight( 
             /* [in] */ ULONG aVideoCaptureHeight) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VideoCaptureRate( 
+            /* [retval][out] */ ULONG *aVideoCaptureRate) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_VideoCaptureRate( 
+            /* [in] */ ULONG aVideoCaptureRate) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VideoCaptureFPS( 
+            /* [retval][out] */ ULONG *aVideoCaptureFPS) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_VideoCaptureFPS( 
+            /* [in] */ ULONG aVideoCaptureFPS) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_BIOSSettings( 
             /* [retval][out] */ IBIOSSettings **aBIOSSettings) = 0;
@@ -8529,12 +10057,6 @@ EXTERN_C const IID IID_IMachine;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VRDEServer( 
             /* [retval][out] */ IVRDEServer **aVRDEServer) = 0;
         
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EmulatedUSBWebcameraEnabled( 
-            /* [retval][out] */ BOOL *aEmulatedUSBWebcameraEnabled) = 0;
-        
-        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_EmulatedUSBWebcameraEnabled( 
-            /* [in] */ BOOL aEmulatedUSBWebcameraEnabled) = 0;
-        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EmulatedUSBCardReaderEnabled( 
             /* [retval][out] */ BOOL *aEmulatedUSBCardReaderEnabled) = 0;
         
@@ -8544,8 +10066,11 @@ EXTERN_C const IID IID_IMachine;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MediumAttachments( 
             /* [retval][out] */ SAFEARRAY * *aMediumAttachments) = 0;
         
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_USBController( 
-            /* [retval][out] */ IUSBController **aUSBController) = 0;
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_USBControllers( 
+            /* [retval][out] */ SAFEARRAY * *aUSBControllers) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_USBDeviceFilters( 
+            /* [retval][out] */ IUSBDeviceFilters **aUSBDeviceFilters) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AudioAdapter( 
             /* [retval][out] */ IAudioAdapter **aAudioAdapter) = 0;
@@ -8724,6 +10249,15 @@ EXTERN_C const IID IID_IMachine;
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AutostopType( 
             /* [in] */ AutostopType aAutostopType) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DefaultFrontend( 
+            /* [retval][out] */ BSTR *aDefaultFrontend) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DefaultFrontend( 
+            /* [in] */ BSTR aDefaultFrontend) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_USBProxyAvailable( 
+            /* [retval][out] */ BOOL *aUSBProxyAvailable) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE LockMachine( 
             /* [in] */ ISession *aSession,
             /* [in] */ LockType aLockType) = 0;
@@ -8783,6 +10317,12 @@ EXTERN_C const IID IID_IMachine;
             /* [in] */ LONG aControllerPort,
             /* [in] */ LONG aDevice,
             /* [in] */ BOOL aDiscard) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SetHotPluggableForDevice( 
+            /* [in] */ BSTR aName,
+            /* [in] */ LONG aControllerPort,
+            /* [in] */ LONG aDevice,
+            /* [in] */ BOOL aHotPluggable) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE SetBandwidthGroupForDevice( 
             /* [in] */ BSTR aName,
@@ -8856,6 +10396,22 @@ EXTERN_C const IID IID_IMachine;
             /* [in] */ BSTR aName,
             /* [in] */ BOOL aBootable) = 0;
         
+        virtual HRESULT STDMETHODCALLTYPE AddUSBController( 
+            /* [in] */ BSTR aName,
+            /* [in] */ USBControllerType aType,
+            /* [retval][out] */ IUSBController **aController) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RemoveUSBController( 
+            /* [in] */ BSTR aName) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetUSBControllerByName( 
+            /* [in] */ BSTR aName,
+            /* [retval][out] */ IUSBController **aController) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetUSBControllerCountByType( 
+            /* [in] */ USBControllerType aType,
+            /* [retval][out] */ ULONG *aControllers) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE GetSerialPort( 
             /* [in] */ ULONG aSlot,
             /* [retval][out] */ ISerialPort **aPort) = 0;
@@ -8865,7 +10421,7 @@ EXTERN_C const IID IID_IMachine;
             /* [retval][out] */ IParallelPort **aPort) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetExtraDataKeys( 
-            /* [retval][out] */ SAFEARRAY * *aValue) = 0;
+            /* [retval][out] */ SAFEARRAY * *aKeys) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetExtraData( 
             /* [in] */ BSTR aKey,
@@ -8910,22 +10466,26 @@ EXTERN_C const IID IID_IMachine;
             /* [in] */ HWVirtExPropertyType aProperty,
             /* [in] */ BOOL aValue) = 0;
         
+        virtual HRESULT STDMETHODCALLTYPE SetSettingsFilePath( 
+            /* [in] */ BSTR aSettingsFilePath,
+            /* [retval][out] */ IProgress **aProgress) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE SaveSettings( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE DiscardSettings( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Unregister( 
             /* [in] */ CleanupMode aCleanupMode,
-            /* [retval][out] */ SAFEARRAY * *aAMedia) = 0;
+            /* [retval][out] */ SAFEARRAY * *aMedia) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE Delete( 
-            /* [in] */ SAFEARRAY * aAMedia,
-            /* [retval][out] */ IProgress **aAProgress) = 0;
+        virtual HRESULT STDMETHODCALLTYPE DeleteConfig( 
+            /* [in] */ SAFEARRAY * aMedia,
+            /* [retval][out] */ IProgress **aProgress) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE Export( 
-            /* [in] */ IAppliance *aAAppliance,
+        virtual HRESULT STDMETHODCALLTYPE ExportTo( 
+            /* [in] */ IAppliance *aAppliance,
             /* [in] */ BSTR aLocation,
-            /* [retval][out] */ IVirtualSystemDescription **aADescription) = 0;
+            /* [retval][out] */ IVirtualSystemDescription **aDescription) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE FindSnapshot( 
             /* [in] */ BSTR aNameOrId,
@@ -8974,9 +10534,9 @@ EXTERN_C const IID IID_IMachine;
         
         virtual HRESULT STDMETHODCALLTYPE EnumerateGuestProperties( 
             /* [in] */ BSTR aPatterns,
-            /* [out] */ SAFEARRAY * *aName,
-            /* [out] */ SAFEARRAY * *aValue,
-            /* [out] */ SAFEARRAY * *aTimestamp,
+            /* [out] */ SAFEARRAY * *aNames,
+            /* [out] */ SAFEARRAY * *aValues,
+            /* [out] */ SAFEARRAY * *aTimestamps,
             /* [out] */ SAFEARRAY * *aFlags) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE QuerySavedGuestScreenInfo( 
@@ -9097,6 +10657,14 @@ EXTERN_C const IID IID_IMachine;
             IMachine * This,
             /* [retval][out] */ IVirtualBox **aParent);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Icon )( 
+            IMachine * This,
+            /* [retval][out] */ SAFEARRAY * *aIcon);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Icon )( 
+            IMachine * This,
+            /* [in] */ SAFEARRAY * aIcon);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Accessible )( 
             IMachine * This,
             /* [retval][out] */ BOOL *aAccessible);
@@ -9205,6 +10773,14 @@ EXTERN_C const IID IID_IMachine;
             IMachine * This,
             /* [in] */ BOOL aPageFusionEnabled);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_GraphicsControllerType )( 
+            IMachine * This,
+            /* [retval][out] */ GraphicsControllerType *aGraphicsControllerType);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_GraphicsControllerType )( 
+            IMachine * This,
+            /* [in] */ GraphicsControllerType aGraphicsControllerType);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_VRAMSize )( 
             IMachine * This,
             /* [retval][out] */ ULONG *aVRAMSize);
@@ -9245,6 +10821,14 @@ EXTERN_C const IID IID_IMachine;
             IMachine * This,
             /* [in] */ BOOL aVideoCaptureEnabled);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_VideoCaptureScreens )( 
+            IMachine * This,
+            /* [retval][out] */ SAFEARRAY * *aVideoCaptureScreens);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_VideoCaptureScreens )( 
+            IMachine * This,
+            /* [in] */ SAFEARRAY * aVideoCaptureScreens);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_VideoCaptureFile )( 
             IMachine * This,
             /* [retval][out] */ BSTR *aVideoCaptureFile);
@@ -9268,6 +10852,22 @@ EXTERN_C const IID IID_IMachine;
         /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_VideoCaptureHeight )( 
             IMachine * This,
             /* [in] */ ULONG aVideoCaptureHeight);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_VideoCaptureRate )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aVideoCaptureRate);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_VideoCaptureRate )( 
+            IMachine * This,
+            /* [in] */ ULONG aVideoCaptureRate);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_VideoCaptureFPS )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aVideoCaptureFPS);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_VideoCaptureFPS )( 
+            IMachine * This,
+            /* [in] */ ULONG aVideoCaptureFPS);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_BIOSSettings )( 
             IMachine * This,
@@ -9325,14 +10925,6 @@ EXTERN_C const IID IID_IMachine;
             IMachine * This,
             /* [retval][out] */ IVRDEServer **aVRDEServer);
         
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EmulatedUSBWebcameraEnabled )( 
-            IMachine * This,
-            /* [retval][out] */ BOOL *aEmulatedUSBWebcameraEnabled);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_EmulatedUSBWebcameraEnabled )( 
-            IMachine * This,
-            /* [in] */ BOOL aEmulatedUSBWebcameraEnabled);
-        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EmulatedUSBCardReaderEnabled )( 
             IMachine * This,
             /* [retval][out] */ BOOL *aEmulatedUSBCardReaderEnabled);
@@ -9345,9 +10937,13 @@ EXTERN_C const IID IID_IMachine;
             IMachine * This,
             /* [retval][out] */ SAFEARRAY * *aMediumAttachments);
         
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_USBController )( 
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_USBControllers )( 
             IMachine * This,
-            /* [retval][out] */ IUSBController **aUSBController);
+            /* [retval][out] */ SAFEARRAY * *aUSBControllers);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_USBDeviceFilters )( 
+            IMachine * This,
+            /* [retval][out] */ IUSBDeviceFilters **aUSBDeviceFilters);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AudioAdapter )( 
             IMachine * This,
@@ -9585,6 +11181,18 @@ EXTERN_C const IID IID_IMachine;
             IMachine * This,
             /* [in] */ AutostopType aAutostopType);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DefaultFrontend )( 
+            IMachine * This,
+            /* [retval][out] */ BSTR *aDefaultFrontend);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DefaultFrontend )( 
+            IMachine * This,
+            /* [in] */ BSTR aDefaultFrontend);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_USBProxyAvailable )( 
+            IMachine * This,
+            /* [retval][out] */ BOOL *aUSBProxyAvailable);
+        
         HRESULT ( STDMETHODCALLTYPE *LockMachine )( 
             IMachine * This,
             /* [in] */ ISession *aSession,
@@ -9655,6 +11263,13 @@ EXTERN_C const IID IID_IMachine;
             /* [in] */ LONG aControllerPort,
             /* [in] */ LONG aDevice,
             /* [in] */ BOOL aDiscard);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetHotPluggableForDevice )( 
+            IMachine * This,
+            /* [in] */ BSTR aName,
+            /* [in] */ LONG aControllerPort,
+            /* [in] */ LONG aDevice,
+            /* [in] */ BOOL aHotPluggable);
         
         HRESULT ( STDMETHODCALLTYPE *SetBandwidthGroupForDevice )( 
             IMachine * This,
@@ -9743,6 +11358,26 @@ EXTERN_C const IID IID_IMachine;
             /* [in] */ BSTR aName,
             /* [in] */ BOOL aBootable);
         
+        HRESULT ( STDMETHODCALLTYPE *AddUSBController )( 
+            IMachine * This,
+            /* [in] */ BSTR aName,
+            /* [in] */ USBControllerType aType,
+            /* [retval][out] */ IUSBController **aController);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveUSBController )( 
+            IMachine * This,
+            /* [in] */ BSTR aName);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetUSBControllerByName )( 
+            IMachine * This,
+            /* [in] */ BSTR aName,
+            /* [retval][out] */ IUSBController **aController);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetUSBControllerCountByType )( 
+            IMachine * This,
+            /* [in] */ USBControllerType aType,
+            /* [retval][out] */ ULONG *aControllers);
+        
         HRESULT ( STDMETHODCALLTYPE *GetSerialPort )( 
             IMachine * This,
             /* [in] */ ULONG aSlot,
@@ -9755,7 +11390,7 @@ EXTERN_C const IID IID_IMachine;
         
         HRESULT ( STDMETHODCALLTYPE *GetExtraDataKeys )( 
             IMachine * This,
-            /* [retval][out] */ SAFEARRAY * *aValue);
+            /* [retval][out] */ SAFEARRAY * *aKeys);
         
         HRESULT ( STDMETHODCALLTYPE *GetExtraData )( 
             IMachine * This,
@@ -9810,6 +11445,11 @@ EXTERN_C const IID IID_IMachine;
             /* [in] */ HWVirtExPropertyType aProperty,
             /* [in] */ BOOL aValue);
         
+        HRESULT ( STDMETHODCALLTYPE *SetSettingsFilePath )( 
+            IMachine * This,
+            /* [in] */ BSTR aSettingsFilePath,
+            /* [retval][out] */ IProgress **aProgress);
+        
         HRESULT ( STDMETHODCALLTYPE *SaveSettings )( 
             IMachine * This);
         
@@ -9819,18 +11459,18 @@ EXTERN_C const IID IID_IMachine;
         HRESULT ( STDMETHODCALLTYPE *Unregister )( 
             IMachine * This,
             /* [in] */ CleanupMode aCleanupMode,
-            /* [retval][out] */ SAFEARRAY * *aAMedia);
+            /* [retval][out] */ SAFEARRAY * *aMedia);
         
-        HRESULT ( STDMETHODCALLTYPE *Delete )( 
+        HRESULT ( STDMETHODCALLTYPE *DeleteConfig )( 
             IMachine * This,
-            /* [in] */ SAFEARRAY * aAMedia,
-            /* [retval][out] */ IProgress **aAProgress);
+            /* [in] */ SAFEARRAY * aMedia,
+            /* [retval][out] */ IProgress **aProgress);
         
-        HRESULT ( STDMETHODCALLTYPE *Export )( 
+        HRESULT ( STDMETHODCALLTYPE *ExportTo )( 
             IMachine * This,
-            /* [in] */ IAppliance *aAAppliance,
+            /* [in] */ IAppliance *aAppliance,
             /* [in] */ BSTR aLocation,
-            /* [retval][out] */ IVirtualSystemDescription **aADescription);
+            /* [retval][out] */ IVirtualSystemDescription **aDescription);
         
         HRESULT ( STDMETHODCALLTYPE *FindSnapshot )( 
             IMachine * This,
@@ -9891,9 +11531,9 @@ EXTERN_C const IID IID_IMachine;
         HRESULT ( STDMETHODCALLTYPE *EnumerateGuestProperties )( 
             IMachine * This,
             /* [in] */ BSTR aPatterns,
-            /* [out] */ SAFEARRAY * *aName,
-            /* [out] */ SAFEARRAY * *aValue,
-            /* [out] */ SAFEARRAY * *aTimestamp,
+            /* [out] */ SAFEARRAY * *aNames,
+            /* [out] */ SAFEARRAY * *aValues,
+            /* [out] */ SAFEARRAY * *aTimestamps,
             /* [out] */ SAFEARRAY * *aFlags);
         
         HRESULT ( STDMETHODCALLTYPE *QuerySavedGuestScreenInfo )( 
@@ -10012,6 +11652,12 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_get_Parent(This,aParent)	\
     ( (This)->lpVtbl -> get_Parent(This,aParent) ) 
 
+#define IMachine_get_Icon(This,aIcon)	\
+    ( (This)->lpVtbl -> get_Icon(This,aIcon) ) 
+
+#define IMachine_put_Icon(This,aIcon)	\
+    ( (This)->lpVtbl -> put_Icon(This,aIcon) ) 
+
 #define IMachine_get_Accessible(This,aAccessible)	\
     ( (This)->lpVtbl -> get_Accessible(This,aAccessible) ) 
 
@@ -10093,6 +11739,12 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_put_PageFusionEnabled(This,aPageFusionEnabled)	\
     ( (This)->lpVtbl -> put_PageFusionEnabled(This,aPageFusionEnabled) ) 
 
+#define IMachine_get_GraphicsControllerType(This,aGraphicsControllerType)	\
+    ( (This)->lpVtbl -> get_GraphicsControllerType(This,aGraphicsControllerType) ) 
+
+#define IMachine_put_GraphicsControllerType(This,aGraphicsControllerType)	\
+    ( (This)->lpVtbl -> put_GraphicsControllerType(This,aGraphicsControllerType) ) 
+
 #define IMachine_get_VRAMSize(This,aVRAMSize)	\
     ( (This)->lpVtbl -> get_VRAMSize(This,aVRAMSize) ) 
 
@@ -10123,6 +11775,12 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_put_VideoCaptureEnabled(This,aVideoCaptureEnabled)	\
     ( (This)->lpVtbl -> put_VideoCaptureEnabled(This,aVideoCaptureEnabled) ) 
 
+#define IMachine_get_VideoCaptureScreens(This,aVideoCaptureScreens)	\
+    ( (This)->lpVtbl -> get_VideoCaptureScreens(This,aVideoCaptureScreens) ) 
+
+#define IMachine_put_VideoCaptureScreens(This,aVideoCaptureScreens)	\
+    ( (This)->lpVtbl -> put_VideoCaptureScreens(This,aVideoCaptureScreens) ) 
+
 #define IMachine_get_VideoCaptureFile(This,aVideoCaptureFile)	\
     ( (This)->lpVtbl -> get_VideoCaptureFile(This,aVideoCaptureFile) ) 
 
@@ -10140,6 +11798,18 @@ EXTERN_C const IID IID_IMachine;
 
 #define IMachine_put_VideoCaptureHeight(This,aVideoCaptureHeight)	\
     ( (This)->lpVtbl -> put_VideoCaptureHeight(This,aVideoCaptureHeight) ) 
+
+#define IMachine_get_VideoCaptureRate(This,aVideoCaptureRate)	\
+    ( (This)->lpVtbl -> get_VideoCaptureRate(This,aVideoCaptureRate) ) 
+
+#define IMachine_put_VideoCaptureRate(This,aVideoCaptureRate)	\
+    ( (This)->lpVtbl -> put_VideoCaptureRate(This,aVideoCaptureRate) ) 
+
+#define IMachine_get_VideoCaptureFPS(This,aVideoCaptureFPS)	\
+    ( (This)->lpVtbl -> get_VideoCaptureFPS(This,aVideoCaptureFPS) ) 
+
+#define IMachine_put_VideoCaptureFPS(This,aVideoCaptureFPS)	\
+    ( (This)->lpVtbl -> put_VideoCaptureFPS(This,aVideoCaptureFPS) ) 
 
 #define IMachine_get_BIOSSettings(This,aBIOSSettings)	\
     ( (This)->lpVtbl -> get_BIOSSettings(This,aBIOSSettings) ) 
@@ -10183,12 +11853,6 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_get_VRDEServer(This,aVRDEServer)	\
     ( (This)->lpVtbl -> get_VRDEServer(This,aVRDEServer) ) 
 
-#define IMachine_get_EmulatedUSBWebcameraEnabled(This,aEmulatedUSBWebcameraEnabled)	\
-    ( (This)->lpVtbl -> get_EmulatedUSBWebcameraEnabled(This,aEmulatedUSBWebcameraEnabled) ) 
-
-#define IMachine_put_EmulatedUSBWebcameraEnabled(This,aEmulatedUSBWebcameraEnabled)	\
-    ( (This)->lpVtbl -> put_EmulatedUSBWebcameraEnabled(This,aEmulatedUSBWebcameraEnabled) ) 
-
 #define IMachine_get_EmulatedUSBCardReaderEnabled(This,aEmulatedUSBCardReaderEnabled)	\
     ( (This)->lpVtbl -> get_EmulatedUSBCardReaderEnabled(This,aEmulatedUSBCardReaderEnabled) ) 
 
@@ -10198,8 +11862,11 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_get_MediumAttachments(This,aMediumAttachments)	\
     ( (This)->lpVtbl -> get_MediumAttachments(This,aMediumAttachments) ) 
 
-#define IMachine_get_USBController(This,aUSBController)	\
-    ( (This)->lpVtbl -> get_USBController(This,aUSBController) ) 
+#define IMachine_get_USBControllers(This,aUSBControllers)	\
+    ( (This)->lpVtbl -> get_USBControllers(This,aUSBControllers) ) 
+
+#define IMachine_get_USBDeviceFilters(This,aUSBDeviceFilters)	\
+    ( (This)->lpVtbl -> get_USBDeviceFilters(This,aUSBDeviceFilters) ) 
 
 #define IMachine_get_AudioAdapter(This,aAudioAdapter)	\
     ( (This)->lpVtbl -> get_AudioAdapter(This,aAudioAdapter) ) 
@@ -10378,6 +12045,15 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_put_AutostopType(This,aAutostopType)	\
     ( (This)->lpVtbl -> put_AutostopType(This,aAutostopType) ) 
 
+#define IMachine_get_DefaultFrontend(This,aDefaultFrontend)	\
+    ( (This)->lpVtbl -> get_DefaultFrontend(This,aDefaultFrontend) ) 
+
+#define IMachine_put_DefaultFrontend(This,aDefaultFrontend)	\
+    ( (This)->lpVtbl -> put_DefaultFrontend(This,aDefaultFrontend) ) 
+
+#define IMachine_get_USBProxyAvailable(This,aUSBProxyAvailable)	\
+    ( (This)->lpVtbl -> get_USBProxyAvailable(This,aUSBProxyAvailable) ) 
+
 #define IMachine_LockMachine(This,aSession,aLockType)	\
     ( (This)->lpVtbl -> LockMachine(This,aSession,aLockType) ) 
 
@@ -10410,6 +12086,9 @@ EXTERN_C const IID IID_IMachine;
 
 #define IMachine_SetAutoDiscardForDevice(This,aName,aControllerPort,aDevice,aDiscard)	\
     ( (This)->lpVtbl -> SetAutoDiscardForDevice(This,aName,aControllerPort,aDevice,aDiscard) ) 
+
+#define IMachine_SetHotPluggableForDevice(This,aName,aControllerPort,aDevice,aHotPluggable)	\
+    ( (This)->lpVtbl -> SetHotPluggableForDevice(This,aName,aControllerPort,aDevice,aHotPluggable) ) 
 
 #define IMachine_SetBandwidthGroupForDevice(This,aName,aControllerPort,aDevice,aBandwidthGroup)	\
     ( (This)->lpVtbl -> SetBandwidthGroupForDevice(This,aName,aControllerPort,aDevice,aBandwidthGroup) ) 
@@ -10456,14 +12135,26 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_SetStorageControllerBootable(This,aName,aBootable)	\
     ( (This)->lpVtbl -> SetStorageControllerBootable(This,aName,aBootable) ) 
 
+#define IMachine_AddUSBController(This,aName,aType,aController)	\
+    ( (This)->lpVtbl -> AddUSBController(This,aName,aType,aController) ) 
+
+#define IMachine_RemoveUSBController(This,aName)	\
+    ( (This)->lpVtbl -> RemoveUSBController(This,aName) ) 
+
+#define IMachine_GetUSBControllerByName(This,aName,aController)	\
+    ( (This)->lpVtbl -> GetUSBControllerByName(This,aName,aController) ) 
+
+#define IMachine_GetUSBControllerCountByType(This,aType,aControllers)	\
+    ( (This)->lpVtbl -> GetUSBControllerCountByType(This,aType,aControllers) ) 
+
 #define IMachine_GetSerialPort(This,aSlot,aPort)	\
     ( (This)->lpVtbl -> GetSerialPort(This,aSlot,aPort) ) 
 
 #define IMachine_GetParallelPort(This,aSlot,aPort)	\
     ( (This)->lpVtbl -> GetParallelPort(This,aSlot,aPort) ) 
 
-#define IMachine_GetExtraDataKeys(This,aValue)	\
-    ( (This)->lpVtbl -> GetExtraDataKeys(This,aValue) ) 
+#define IMachine_GetExtraDataKeys(This,aKeys)	\
+    ( (This)->lpVtbl -> GetExtraDataKeys(This,aKeys) ) 
 
 #define IMachine_GetExtraData(This,aKey,aValue)	\
     ( (This)->lpVtbl -> GetExtraData(This,aKey,aValue) ) 
@@ -10495,20 +12186,23 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_SetHWVirtExProperty(This,aProperty,aValue)	\
     ( (This)->lpVtbl -> SetHWVirtExProperty(This,aProperty,aValue) ) 
 
+#define IMachine_SetSettingsFilePath(This,aSettingsFilePath,aProgress)	\
+    ( (This)->lpVtbl -> SetSettingsFilePath(This,aSettingsFilePath,aProgress) ) 
+
 #define IMachine_SaveSettings(This)	\
     ( (This)->lpVtbl -> SaveSettings(This) ) 
 
 #define IMachine_DiscardSettings(This)	\
     ( (This)->lpVtbl -> DiscardSettings(This) ) 
 
-#define IMachine_Unregister(This,aCleanupMode,aAMedia)	\
-    ( (This)->lpVtbl -> Unregister(This,aCleanupMode,aAMedia) ) 
+#define IMachine_Unregister(This,aCleanupMode,aMedia)	\
+    ( (This)->lpVtbl -> Unregister(This,aCleanupMode,aMedia) ) 
 
-#define IMachine_Delete(This,aAMedia,aAProgress)	\
-    ( (This)->lpVtbl -> Delete(This,aAMedia,aAProgress) ) 
+#define IMachine_DeleteConfig(This,aMedia,aProgress)	\
+    ( (This)->lpVtbl -> DeleteConfig(This,aMedia,aProgress) ) 
 
-#define IMachine_Export(This,aAAppliance,aLocation,aADescription)	\
-    ( (This)->lpVtbl -> Export(This,aAAppliance,aLocation,aADescription) ) 
+#define IMachine_ExportTo(This,aAppliance,aLocation,aDescription)	\
+    ( (This)->lpVtbl -> ExportTo(This,aAppliance,aLocation,aDescription) ) 
 
 #define IMachine_FindSnapshot(This,aNameOrId,aSnapshot)	\
     ( (This)->lpVtbl -> FindSnapshot(This,aNameOrId,aSnapshot) ) 
@@ -10543,8 +12237,8 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_DeleteGuestProperty(This,aName)	\
     ( (This)->lpVtbl -> DeleteGuestProperty(This,aName) ) 
 
-#define IMachine_EnumerateGuestProperties(This,aPatterns,aName,aValue,aTimestamp,aFlags)	\
-    ( (This)->lpVtbl -> EnumerateGuestProperties(This,aPatterns,aName,aValue,aTimestamp,aFlags) ) 
+#define IMachine_EnumerateGuestProperties(This,aPatterns,aNames,aValues,aTimestamps,aFlags)	\
+    ( (This)->lpVtbl -> EnumerateGuestProperties(This,aPatterns,aNames,aValues,aTimestamps,aFlags) ) 
 
 #define IMachine_QuerySavedGuestScreenInfo(This,aScreenId,aOriginX,aOriginY,aWidth,aHeight,aEnabled)	\
     ( (This)->lpVtbl -> QuerySavedGuestScreenInfo(This,aScreenId,aOriginX,aOriginY,aWidth,aHeight,aEnabled) ) 
@@ -10589,6 +12283,114 @@ EXTERN_C const IID IID_IMachine;
 
 
 
+/* [propput] */ HRESULT STDMETHODCALLTYPE IMachine_put_TracingEnabled_Proxy( 
+    IMachine * This,
+    /* [in] */ BOOL aTracingEnabled);
+
+
+void __RPC_STUB IMachine_put_TracingEnabled_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_TracingConfig_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ BSTR *aTracingConfig);
+
+
+void __RPC_STUB IMachine_get_TracingConfig_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propput] */ HRESULT STDMETHODCALLTYPE IMachine_put_TracingConfig_Proxy( 
+    IMachine * This,
+    /* [in] */ BSTR aTracingConfig);
+
+
+void __RPC_STUB IMachine_put_TracingConfig_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_AllowTracingToAccessVM_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ BOOL *aAllowTracingToAccessVM);
+
+
+void __RPC_STUB IMachine_get_AllowTracingToAccessVM_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propput] */ HRESULT STDMETHODCALLTYPE IMachine_put_AllowTracingToAccessVM_Proxy( 
+    IMachine * This,
+    /* [in] */ BOOL aAllowTracingToAccessVM);
+
+
+void __RPC_STUB IMachine_put_AllowTracingToAccessVM_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_AutostartEnabled_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ BOOL *aAutostartEnabled);
+
+
+void __RPC_STUB IMachine_get_AutostartEnabled_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propput] */ HRESULT STDMETHODCALLTYPE IMachine_put_AutostartEnabled_Proxy( 
+    IMachine * This,
+    /* [in] */ BOOL aAutostartEnabled);
+
+
+void __RPC_STUB IMachine_put_AutostartEnabled_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_AutostartDelay_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aAutostartDelay);
+
+
+void __RPC_STUB IMachine_get_AutostartDelay_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propput] */ HRESULT STDMETHODCALLTYPE IMachine_put_AutostartDelay_Proxy( 
+    IMachine * This,
+    /* [in] */ ULONG aAutostartDelay);
+
+
+void __RPC_STUB IMachine_put_AutostartDelay_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
 /* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_AutostopType_Proxy( 
     IMachine * This,
     /* [retval][out] */ AutostopType *aAutostopType);
@@ -10607,6 +12409,42 @@ void __RPC_STUB IMachine_get_AutostopType_Stub(
 
 
 void __RPC_STUB IMachine_put_AutostopType_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_DefaultFrontend_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ BSTR *aDefaultFrontend);
+
+
+void __RPC_STUB IMachine_get_DefaultFrontend_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propput] */ HRESULT STDMETHODCALLTYPE IMachine_put_DefaultFrontend_Proxy( 
+    IMachine * This,
+    /* [in] */ BSTR aDefaultFrontend);
+
+
+void __RPC_STUB IMachine_put_DefaultFrontend_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_USBProxyAvailable_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ BOOL *aUSBProxyAvailable);
+
+
+void __RPC_STUB IMachine_get_USBProxyAvailable_Stub(
     IRpcStubBuffer *This,
     IRpcChannelBuffer *_pRpcChannelBuffer,
     PRPC_MESSAGE _pRpcMessage,
@@ -10766,6 +12604,21 @@ HRESULT STDMETHODCALLTYPE IMachine_SetAutoDiscardForDevice_Proxy(
 
 
 void __RPC_STUB IMachine_SetAutoDiscardForDevice_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_SetHotPluggableForDevice_Proxy( 
+    IMachine * This,
+    /* [in] */ BSTR aName,
+    /* [in] */ LONG aControllerPort,
+    /* [in] */ LONG aDevice,
+    /* [in] */ BOOL aHotPluggable);
+
+
+void __RPC_STUB IMachine_SetHotPluggableForDevice_Stub(
     IRpcStubBuffer *This,
     IRpcChannelBuffer *_pRpcChannelBuffer,
     PRPC_MESSAGE _pRpcMessage,
@@ -10979,6 +12832,58 @@ void __RPC_STUB IMachine_SetStorageControllerBootable_Stub(
     DWORD *_pdwStubPhase);
 
 
+HRESULT STDMETHODCALLTYPE IMachine_AddUSBController_Proxy( 
+    IMachine * This,
+    /* [in] */ BSTR aName,
+    /* [in] */ USBControllerType aType,
+    /* [retval][out] */ IUSBController **aController);
+
+
+void __RPC_STUB IMachine_AddUSBController_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_RemoveUSBController_Proxy( 
+    IMachine * This,
+    /* [in] */ BSTR aName);
+
+
+void __RPC_STUB IMachine_RemoveUSBController_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_GetUSBControllerByName_Proxy( 
+    IMachine * This,
+    /* [in] */ BSTR aName,
+    /* [retval][out] */ IUSBController **aController);
+
+
+void __RPC_STUB IMachine_GetUSBControllerByName_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_GetUSBControllerCountByType_Proxy( 
+    IMachine * This,
+    /* [in] */ USBControllerType aType,
+    /* [retval][out] */ ULONG *aControllers);
+
+
+void __RPC_STUB IMachine_GetUSBControllerCountByType_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
 HRESULT STDMETHODCALLTYPE IMachine_GetSerialPort_Proxy( 
     IMachine * This,
     /* [in] */ ULONG aSlot,
@@ -11007,7 +12912,7 @@ void __RPC_STUB IMachine_GetParallelPort_Stub(
 
 HRESULT STDMETHODCALLTYPE IMachine_GetExtraDataKeys_Proxy( 
     IMachine * This,
-    /* [retval][out] */ SAFEARRAY * *aValue);
+    /* [retval][out] */ SAFEARRAY * *aKeys);
 
 
 void __RPC_STUB IMachine_GetExtraDataKeys_Stub(
@@ -11150,6 +13055,19 @@ void __RPC_STUB IMachine_SetHWVirtExProperty_Stub(
     DWORD *_pdwStubPhase);
 
 
+HRESULT STDMETHODCALLTYPE IMachine_SetSettingsFilePath_Proxy( 
+    IMachine * This,
+    /* [in] */ BSTR aSettingsFilePath,
+    /* [retval][out] */ IProgress **aProgress);
+
+
+void __RPC_STUB IMachine_SetSettingsFilePath_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
 HRESULT STDMETHODCALLTYPE IMachine_SaveSettings_Proxy( 
     IMachine * This);
 
@@ -11175,7 +13093,7 @@ void __RPC_STUB IMachine_DiscardSettings_Stub(
 HRESULT STDMETHODCALLTYPE IMachine_Unregister_Proxy( 
     IMachine * This,
     /* [in] */ CleanupMode aCleanupMode,
-    /* [retval][out] */ SAFEARRAY * *aAMedia);
+    /* [retval][out] */ SAFEARRAY * *aMedia);
 
 
 void __RPC_STUB IMachine_Unregister_Stub(
@@ -11185,27 +13103,27 @@ void __RPC_STUB IMachine_Unregister_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IMachine_Delete_Proxy( 
+HRESULT STDMETHODCALLTYPE IMachine_DeleteConfig_Proxy( 
     IMachine * This,
-    /* [in] */ SAFEARRAY * aAMedia,
-    /* [retval][out] */ IProgress **aAProgress);
+    /* [in] */ SAFEARRAY * aMedia,
+    /* [retval][out] */ IProgress **aProgress);
 
 
-void __RPC_STUB IMachine_Delete_Stub(
+void __RPC_STUB IMachine_DeleteConfig_Stub(
     IRpcStubBuffer *This,
     IRpcChannelBuffer *_pRpcChannelBuffer,
     PRPC_MESSAGE _pRpcMessage,
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IMachine_Export_Proxy( 
+HRESULT STDMETHODCALLTYPE IMachine_ExportTo_Proxy( 
     IMachine * This,
-    /* [in] */ IAppliance *aAAppliance,
+    /* [in] */ IAppliance *aAppliance,
     /* [in] */ BSTR aLocation,
-    /* [retval][out] */ IVirtualSystemDescription **aADescription);
+    /* [retval][out] */ IVirtualSystemDescription **aDescription);
 
 
-void __RPC_STUB IMachine_Export_Stub(
+void __RPC_STUB IMachine_ExportTo_Stub(
     IRpcStubBuffer *This,
     IRpcChannelBuffer *_pRpcChannelBuffer,
     PRPC_MESSAGE _pRpcMessage,
@@ -11359,9 +13277,9 @@ void __RPC_STUB IMachine_DeleteGuestProperty_Stub(
 HRESULT STDMETHODCALLTYPE IMachine_EnumerateGuestProperties_Proxy( 
     IMachine * This,
     /* [in] */ BSTR aPatterns,
-    /* [out] */ SAFEARRAY * *aName,
-    /* [out] */ SAFEARRAY * *aValue,
-    /* [out] */ SAFEARRAY * *aTimestamp,
+    /* [out] */ SAFEARRAY * *aNames,
+    /* [out] */ SAFEARRAY * *aValues,
+    /* [out] */ SAFEARRAY * *aTimestamps,
     /* [out] */ SAFEARRAY * *aFlags);
 
 
@@ -11547,6 +13465,149 @@ void __RPC_STUB IMachine_CloneTo_Stub(
 
 
 #endif 	/* __IMachine_INTERFACE_DEFINED__ */
+
+
+#ifndef __IEmulatedUSB_INTERFACE_DEFINED__
+#define __IEmulatedUSB_INTERFACE_DEFINED__
+
+/* interface IEmulatedUSB */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IEmulatedUSB;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("38cc4dfd-8bb2-4d40-aebe-699eead8c2dd")
+    IEmulatedUSB : public IDispatch
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Webcams( 
+            /* [retval][out] */ SAFEARRAY * *aWebcams) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE WebcamAttach( 
+            /* [in] */ BSTR aPath,
+            /* [in] */ BSTR aSettings) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE WebcamDetach( 
+            /* [in] */ BSTR aPath) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IEmulatedUSBVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IEmulatedUSB * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IEmulatedUSB * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IEmulatedUSB * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IEmulatedUSB * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IEmulatedUSB * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IEmulatedUSB * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IEmulatedUSB * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Webcams )( 
+            IEmulatedUSB * This,
+            /* [retval][out] */ SAFEARRAY * *aWebcams);
+        
+        HRESULT ( STDMETHODCALLTYPE *WebcamAttach )( 
+            IEmulatedUSB * This,
+            /* [in] */ BSTR aPath,
+            /* [in] */ BSTR aSettings);
+        
+        HRESULT ( STDMETHODCALLTYPE *WebcamDetach )( 
+            IEmulatedUSB * This,
+            /* [in] */ BSTR aPath);
+        
+        END_INTERFACE
+    } IEmulatedUSBVtbl;
+
+    interface IEmulatedUSB
+    {
+        CONST_VTBL struct IEmulatedUSBVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IEmulatedUSB_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IEmulatedUSB_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IEmulatedUSB_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IEmulatedUSB_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IEmulatedUSB_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IEmulatedUSB_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IEmulatedUSB_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IEmulatedUSB_get_Webcams(This,aWebcams)	\
+    ( (This)->lpVtbl -> get_Webcams(This,aWebcams) ) 
+
+#define IEmulatedUSB_WebcamAttach(This,aPath,aSettings)	\
+    ( (This)->lpVtbl -> WebcamAttach(This,aPath,aSettings) ) 
+
+#define IEmulatedUSB_WebcamDetach(This,aPath)	\
+    ( (This)->lpVtbl -> WebcamDetach(This,aPath) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IEmulatedUSB_INTERFACE_DEFINED__ */
 
 
 #ifndef __IVRDEServerInfo_INTERFACE_DEFINED__
@@ -11821,7 +13882,7 @@ EXTERN_C const IID IID_IConsole;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("db7ab4ca-2a3f-4183-9243-c1208da92392")
+    MIDL_INTERFACE("8ab7c520-2442-4b66-8d74-4ff1e195d2b6")
     IConsole : public IDispatch
     {
     public:
@@ -11869,6 +13930,9 @@ EXTERN_C const IID IID_IConsole;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_UseHostClipboard( 
             /* [in] */ BOOL aUseHostClipboard) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EmulatedUSB( 
+            /* [retval][out] */ IEmulatedUSB **aEmulatedUSB) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE PowerUp( 
             /* [retval][out] */ IProgress **aProgress) = 0;
@@ -12070,6 +14134,10 @@ EXTERN_C const IID IID_IConsole;
             IConsole * This,
             /* [in] */ BOOL aUseHostClipboard);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EmulatedUSB )( 
+            IConsole * This,
+            /* [retval][out] */ IEmulatedUSB **aEmulatedUSB);
+        
         HRESULT ( STDMETHODCALLTYPE *PowerUp )( 
             IConsole * This,
             /* [retval][out] */ IProgress **aProgress);
@@ -12268,6 +14336,9 @@ EXTERN_C const IID IID_IConsole;
 #define IConsole_put_UseHostClipboard(This,aUseHostClipboard)	\
     ( (This)->lpVtbl -> put_UseHostClipboard(This,aUseHostClipboard) ) 
 
+#define IConsole_get_EmulatedUSB(This,aEmulatedUSB)	\
+    ( (This)->lpVtbl -> get_EmulatedUSB(This,aEmulatedUSB) ) 
+
 #define IConsole_PowerUp(This,aProgress)	\
     ( (This)->lpVtbl -> PowerUp(This,aProgress) ) 
 
@@ -12368,12 +14439,15 @@ EXTERN_C const IID IID_IHostNetworkInterface;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("87a4153d-6889-4dd6-9654-2e9ff0ae8dec")
+    MIDL_INTERFACE("f6e556f9-d598-409b-898c-8ba99d9b05ae")
     IHostNetworkInterface : public IDispatch
     {
     public:
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
             /* [retval][out] */ BSTR *aName) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ShortName( 
+            /* [retval][out] */ BSTR *aShortName) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Id( 
             /* [retval][out] */ BSTR *aId) = 0;
@@ -12475,6 +14549,10 @@ EXTERN_C const IID IID_IHostNetworkInterface;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
             IHostNetworkInterface * This,
             /* [retval][out] */ BSTR *aName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ShortName )( 
+            IHostNetworkInterface * This,
+            /* [retval][out] */ BSTR *aShortName);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
             IHostNetworkInterface * This,
@@ -12579,6 +14657,9 @@ EXTERN_C const IID IID_IHostNetworkInterface;
 #define IHostNetworkInterface_get_Name(This,aName)	\
     ( (This)->lpVtbl -> get_Name(This,aName) ) 
 
+#define IHostNetworkInterface_get_ShortName(This,aShortName)	\
+    ( (This)->lpVtbl -> get_ShortName(This,aShortName) ) 
+
 #define IHostNetworkInterface_get_Id(This,aId)	\
     ( (This)->lpVtbl -> get_Id(This,aId) ) 
 
@@ -12638,6 +14719,147 @@ EXTERN_C const IID IID_IHostNetworkInterface;
 #endif 	/* __IHostNetworkInterface_INTERFACE_DEFINED__ */
 
 
+#ifndef __IHostVideoInputDevice_INTERFACE_DEFINED__
+#define __IHostVideoInputDevice_INTERFACE_DEFINED__
+
+/* interface IHostVideoInputDevice */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IHostVideoInputDevice;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("a1ceae44-d65e-4156-9359-d390f93ee9a0")
+    IHostVideoInputDevice : public IDispatch
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
+            /* [retval][out] */ BSTR *aName) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Path( 
+            /* [retval][out] */ BSTR *aPath) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Alias( 
+            /* [retval][out] */ BSTR *aAlias) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IHostVideoInputDeviceVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IHostVideoInputDevice * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IHostVideoInputDevice * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IHostVideoInputDevice * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IHostVideoInputDevice * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IHostVideoInputDevice * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IHostVideoInputDevice * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IHostVideoInputDevice * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
+            IHostVideoInputDevice * This,
+            /* [retval][out] */ BSTR *aName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Path )( 
+            IHostVideoInputDevice * This,
+            /* [retval][out] */ BSTR *aPath);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Alias )( 
+            IHostVideoInputDevice * This,
+            /* [retval][out] */ BSTR *aAlias);
+        
+        END_INTERFACE
+    } IHostVideoInputDeviceVtbl;
+
+    interface IHostVideoInputDevice
+    {
+        CONST_VTBL struct IHostVideoInputDeviceVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IHostVideoInputDevice_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IHostVideoInputDevice_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IHostVideoInputDevice_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IHostVideoInputDevice_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IHostVideoInputDevice_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IHostVideoInputDevice_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IHostVideoInputDevice_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IHostVideoInputDevice_get_Name(This,aName)	\
+    ( (This)->lpVtbl -> get_Name(This,aName) ) 
+
+#define IHostVideoInputDevice_get_Path(This,aPath)	\
+    ( (This)->lpVtbl -> get_Path(This,aPath) ) 
+
+#define IHostVideoInputDevice_get_Alias(This,aAlias)	\
+    ( (This)->lpVtbl -> get_Alias(This,aAlias) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IHostVideoInputDevice_INTERFACE_DEFINED__ */
+
+
 #ifndef __IHost_INTERFACE_DEFINED__
 #define __IHost_INTERFACE_DEFINED__
 
@@ -12649,7 +14871,7 @@ EXTERN_C const IID IID_IHost;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("30678943-32df-4830-b413-931b25ac86a0")
+    MIDL_INTERFACE("93269330-48ca-4096-b4a2-1189df336267")
     IHost : public IDispatch
     {
     public:
@@ -12668,6 +14890,15 @@ EXTERN_C const IID IID_IHost;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NetworkInterfaces( 
             /* [retval][out] */ SAFEARRAY * *aNetworkInterfaces) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NameServers( 
+            /* [retval][out] */ SAFEARRAY * *aNameServers) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DomainName( 
+            /* [retval][out] */ BSTR *aDomainName) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SearchStrings( 
+            /* [retval][out] */ SAFEARRAY * *aSearchStrings) = 0;
+        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProcessorCount( 
             /* [retval][out] */ ULONG *aProcessorCount) = 0;
         
@@ -12676,6 +14907,9 @@ EXTERN_C const IID IID_IHost;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProcessorCoreCount( 
             /* [retval][out] */ ULONG *aProcessorCoreCount) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProcessorOnlineCoreCount( 
+            /* [retval][out] */ ULONG *aProcessorOnlineCoreCount) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MemorySize( 
             /* [retval][out] */ ULONG *aMemorySize) = 0;
@@ -12694,6 +14928,9 @@ EXTERN_C const IID IID_IHost;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Acceleration3DAvailable( 
             /* [retval][out] */ BOOL *aAcceleration3DAvailable) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VideoInputDevices( 
+            /* [retval][out] */ SAFEARRAY * *aVideoInputDevices) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetProcessorSpeed( 
             /* [in] */ ULONG aCpuId,
@@ -12835,6 +15072,18 @@ EXTERN_C const IID IID_IHost;
             IHost * This,
             /* [retval][out] */ SAFEARRAY * *aNetworkInterfaces);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NameServers )( 
+            IHost * This,
+            /* [retval][out] */ SAFEARRAY * *aNameServers);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DomainName )( 
+            IHost * This,
+            /* [retval][out] */ BSTR *aDomainName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SearchStrings )( 
+            IHost * This,
+            /* [retval][out] */ SAFEARRAY * *aSearchStrings);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProcessorCount )( 
             IHost * This,
             /* [retval][out] */ ULONG *aProcessorCount);
@@ -12846,6 +15095,10 @@ EXTERN_C const IID IID_IHost;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProcessorCoreCount )( 
             IHost * This,
             /* [retval][out] */ ULONG *aProcessorCoreCount);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProcessorOnlineCoreCount )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aProcessorOnlineCoreCount);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MemorySize )( 
             IHost * This,
@@ -12870,6 +15123,10 @@ EXTERN_C const IID IID_IHost;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Acceleration3DAvailable )( 
             IHost * This,
             /* [retval][out] */ BOOL *aAcceleration3DAvailable);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_VideoInputDevices )( 
+            IHost * This,
+            /* [retval][out] */ SAFEARRAY * *aVideoInputDevices);
         
         HRESULT ( STDMETHODCALLTYPE *GetProcessorSpeed )( 
             IHost * This,
@@ -13010,6 +15267,15 @@ EXTERN_C const IID IID_IHost;
 #define IHost_get_NetworkInterfaces(This,aNetworkInterfaces)	\
     ( (This)->lpVtbl -> get_NetworkInterfaces(This,aNetworkInterfaces) ) 
 
+#define IHost_get_NameServers(This,aNameServers)	\
+    ( (This)->lpVtbl -> get_NameServers(This,aNameServers) ) 
+
+#define IHost_get_DomainName(This,aDomainName)	\
+    ( (This)->lpVtbl -> get_DomainName(This,aDomainName) ) 
+
+#define IHost_get_SearchStrings(This,aSearchStrings)	\
+    ( (This)->lpVtbl -> get_SearchStrings(This,aSearchStrings) ) 
+
 #define IHost_get_ProcessorCount(This,aProcessorCount)	\
     ( (This)->lpVtbl -> get_ProcessorCount(This,aProcessorCount) ) 
 
@@ -13018,6 +15284,9 @@ EXTERN_C const IID IID_IHost;
 
 #define IHost_get_ProcessorCoreCount(This,aProcessorCoreCount)	\
     ( (This)->lpVtbl -> get_ProcessorCoreCount(This,aProcessorCoreCount) ) 
+
+#define IHost_get_ProcessorOnlineCoreCount(This,aProcessorOnlineCoreCount)	\
+    ( (This)->lpVtbl -> get_ProcessorOnlineCoreCount(This,aProcessorOnlineCoreCount) ) 
 
 #define IHost_get_MemorySize(This,aMemorySize)	\
     ( (This)->lpVtbl -> get_MemorySize(This,aMemorySize) ) 
@@ -13036,6 +15305,9 @@ EXTERN_C const IID IID_IHost;
 
 #define IHost_get_Acceleration3DAvailable(This,aAcceleration3DAvailable)	\
     ( (This)->lpVtbl -> get_Acceleration3DAvailable(This,aAcceleration3DAvailable) ) 
+
+#define IHost_get_VideoInputDevices(This,aVideoInputDevices)	\
+    ( (This)->lpVtbl -> get_VideoInputDevices(This,aVideoInputDevices) ) 
 
 #define IHost_GetProcessorSpeed(This,aCpuId,aSpeed)	\
     ( (This)->lpVtbl -> GetProcessorSpeed(This,aCpuId,aSpeed) ) 
@@ -13110,7 +15382,7 @@ EXTERN_C const IID IID_ISystemProperties;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("1d7aca29-97f0-4287-9874-a60ec4f80ea6")
+    MIDL_INTERFACE("1254a96a-ae57-4484-946a-22d86c1f98af")
     ISystemProperties : public IDispatch
     {
     public:
@@ -13147,11 +15419,23 @@ EXTERN_C const IID IID_ISystemProperties;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxBootPosition( 
             /* [retval][out] */ ULONG *aMaxBootPosition) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExclusiveHwVirt( 
+            /* [retval][out] */ BOOL *aExclusiveHwVirt) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ExclusiveHwVirt( 
+            /* [in] */ BOOL aExclusiveHwVirt) = 0;
+        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DefaultMachineFolder( 
             /* [retval][out] */ BSTR *aDefaultMachineFolder) = 0;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DefaultMachineFolder( 
             /* [in] */ BSTR aDefaultMachineFolder) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LoggingLevel( 
+            /* [retval][out] */ BSTR *aLoggingLevel) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_LoggingLevel( 
+            /* [in] */ BSTR aLoggingLevel) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MediumFormats( 
             /* [retval][out] */ SAFEARRAY * *aMediumFormats) = 0;
@@ -13225,6 +15509,12 @@ EXTERN_C const IID IID_ISystemProperties;
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DefaultAdditionsISO( 
             /* [in] */ BSTR aDefaultAdditionsISO) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DefaultFrontend( 
+            /* [retval][out] */ BSTR *aDefaultFrontend) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DefaultFrontend( 
+            /* [in] */ BSTR aDefaultFrontend) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE GetMaxNetworkAdapters( 
             /* [in] */ ChipsetType aChipset,
             /* [retval][out] */ ULONG *aMaxNetworkAdapters) = 0;
@@ -13258,6 +15548,11 @@ EXTERN_C const IID IID_ISystemProperties;
         virtual HRESULT STDMETHODCALLTYPE GetDefaultIoCacheSettingForStorageController( 
             /* [in] */ StorageControllerType aControllerType,
             /* [retval][out] */ BOOL *aEnabled) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMaxInstancesOfUSBControllerType( 
+            /* [in] */ ChipsetType aChipset,
+            /* [in] */ USBControllerType aType,
+            /* [retval][out] */ ULONG *aMaxInstances) = 0;
         
     };
     
@@ -13352,6 +15647,14 @@ EXTERN_C const IID IID_ISystemProperties;
             ISystemProperties * This,
             /* [retval][out] */ ULONG *aMaxBootPosition);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExclusiveHwVirt )( 
+            ISystemProperties * This,
+            /* [retval][out] */ BOOL *aExclusiveHwVirt);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ExclusiveHwVirt )( 
+            ISystemProperties * This,
+            /* [in] */ BOOL aExclusiveHwVirt);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DefaultMachineFolder )( 
             ISystemProperties * This,
             /* [retval][out] */ BSTR *aDefaultMachineFolder);
@@ -13359,6 +15662,14 @@ EXTERN_C const IID IID_ISystemProperties;
         /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DefaultMachineFolder )( 
             ISystemProperties * This,
             /* [in] */ BSTR aDefaultMachineFolder);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_LoggingLevel )( 
+            ISystemProperties * This,
+            /* [retval][out] */ BSTR *aLoggingLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_LoggingLevel )( 
+            ISystemProperties * This,
+            /* [in] */ BSTR aLoggingLevel);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MediumFormats )( 
             ISystemProperties * This,
@@ -13456,6 +15767,14 @@ EXTERN_C const IID IID_ISystemProperties;
             ISystemProperties * This,
             /* [in] */ BSTR aDefaultAdditionsISO);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DefaultFrontend )( 
+            ISystemProperties * This,
+            /* [retval][out] */ BSTR *aDefaultFrontend);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DefaultFrontend )( 
+            ISystemProperties * This,
+            /* [in] */ BSTR aDefaultFrontend);
+        
         HRESULT ( STDMETHODCALLTYPE *GetMaxNetworkAdapters )( 
             ISystemProperties * This,
             /* [in] */ ChipsetType aChipset,
@@ -13497,6 +15816,12 @@ EXTERN_C const IID IID_ISystemProperties;
             ISystemProperties * This,
             /* [in] */ StorageControllerType aControllerType,
             /* [retval][out] */ BOOL *aEnabled);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMaxInstancesOfUSBControllerType )( 
+            ISystemProperties * This,
+            /* [in] */ ChipsetType aChipset,
+            /* [in] */ USBControllerType aType,
+            /* [retval][out] */ ULONG *aMaxInstances);
         
         END_INTERFACE
     } ISystemPropertiesVtbl;
@@ -13567,11 +15892,23 @@ EXTERN_C const IID IID_ISystemProperties;
 #define ISystemProperties_get_MaxBootPosition(This,aMaxBootPosition)	\
     ( (This)->lpVtbl -> get_MaxBootPosition(This,aMaxBootPosition) ) 
 
+#define ISystemProperties_get_ExclusiveHwVirt(This,aExclusiveHwVirt)	\
+    ( (This)->lpVtbl -> get_ExclusiveHwVirt(This,aExclusiveHwVirt) ) 
+
+#define ISystemProperties_put_ExclusiveHwVirt(This,aExclusiveHwVirt)	\
+    ( (This)->lpVtbl -> put_ExclusiveHwVirt(This,aExclusiveHwVirt) ) 
+
 #define ISystemProperties_get_DefaultMachineFolder(This,aDefaultMachineFolder)	\
     ( (This)->lpVtbl -> get_DefaultMachineFolder(This,aDefaultMachineFolder) ) 
 
 #define ISystemProperties_put_DefaultMachineFolder(This,aDefaultMachineFolder)	\
     ( (This)->lpVtbl -> put_DefaultMachineFolder(This,aDefaultMachineFolder) ) 
+
+#define ISystemProperties_get_LoggingLevel(This,aLoggingLevel)	\
+    ( (This)->lpVtbl -> get_LoggingLevel(This,aLoggingLevel) ) 
+
+#define ISystemProperties_put_LoggingLevel(This,aLoggingLevel)	\
+    ( (This)->lpVtbl -> put_LoggingLevel(This,aLoggingLevel) ) 
 
 #define ISystemProperties_get_MediumFormats(This,aMediumFormats)	\
     ( (This)->lpVtbl -> get_MediumFormats(This,aMediumFormats) ) 
@@ -13645,6 +15982,12 @@ EXTERN_C const IID IID_ISystemProperties;
 #define ISystemProperties_put_DefaultAdditionsISO(This,aDefaultAdditionsISO)	\
     ( (This)->lpVtbl -> put_DefaultAdditionsISO(This,aDefaultAdditionsISO) ) 
 
+#define ISystemProperties_get_DefaultFrontend(This,aDefaultFrontend)	\
+    ( (This)->lpVtbl -> get_DefaultFrontend(This,aDefaultFrontend) ) 
+
+#define ISystemProperties_put_DefaultFrontend(This,aDefaultFrontend)	\
+    ( (This)->lpVtbl -> put_DefaultFrontend(This,aDefaultFrontend) ) 
+
 #define ISystemProperties_GetMaxNetworkAdapters(This,aChipset,aMaxNetworkAdapters)	\
     ( (This)->lpVtbl -> GetMaxNetworkAdapters(This,aChipset,aMaxNetworkAdapters) ) 
 
@@ -13668,6 +16011,9 @@ EXTERN_C const IID IID_ISystemProperties;
 
 #define ISystemProperties_GetDefaultIoCacheSettingForStorageController(This,aControllerType,aEnabled)	\
     ( (This)->lpVtbl -> GetDefaultIoCacheSettingForStorageController(This,aControllerType,aEnabled) ) 
+
+#define ISystemProperties_GetMaxInstancesOfUSBControllerType(This,aChipset,aType,aMaxInstances)	\
+    ( (This)->lpVtbl -> GetMaxInstancesOfUSBControllerType(This,aChipset,aType,aMaxInstances) ) 
 
 #endif /* COBJMACROS */
 
@@ -14233,7 +16579,7 @@ EXTERN_C const IID IID_IGuestSession;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("57eb82a8-822b-42c1-9d1c-5c54bc3d3250")
+    MIDL_INTERFACE("5b28703c-07b6-4fcb-afba-ac199b309752")
     IGuestSession : public IDispatch
     {
     public:
@@ -14255,6 +16601,12 @@ EXTERN_C const IID IID_IGuestSession;
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Timeout( 
             /* [in] */ ULONG aTimeout) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProtocolVersion( 
+            /* [retval][out] */ ULONG *aProtocolVersion) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
+            /* [retval][out] */ GuestSessionStatus *aStatus) = 0;
+        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Environment( 
             /* [retval][out] */ SAFEARRAY * *aEnvironment) = 0;
         
@@ -14269,6 +16621,9 @@ EXTERN_C const IID IID_IGuestSession;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Files( 
             /* [retval][out] */ SAFEARRAY * *aFiles) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
+            /* [retval][out] */ IEventSource **aEventSource) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Close( void) = 0;
         
@@ -14359,6 +16714,14 @@ EXTERN_C const IID IID_IGuestSession;
             /* [in] */ BSTR aOpenMode,
             /* [in] */ BSTR aDisposition,
             /* [in] */ ULONG aCreationMode,
+            /* [retval][out] */ IGuestFile **aFile) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE FileOpenEx( 
+            /* [in] */ BSTR aPath,
+            /* [in] */ BSTR aOpenMode,
+            /* [in] */ BSTR aDisposition,
+            /* [in] */ BSTR aSharingMode,
+            /* [in] */ ULONG aCreationMode,
             /* [in] */ LONG64 aOffset,
             /* [retval][out] */ IGuestFile **aFile) = 0;
         
@@ -14420,6 +16783,16 @@ EXTERN_C const IID IID_IGuestSession;
         
         virtual HRESULT STDMETHODCALLTYPE SymlinkRemoveFile( 
             /* [in] */ BSTR aFile) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE WaitFor( 
+            /* [in] */ ULONG aWaitFor,
+            /* [in] */ ULONG aTimeoutMS,
+            /* [retval][out] */ GuestSessionWaitResult *aReason) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE WaitForArray( 
+            /* [in] */ SAFEARRAY * aWaitFor,
+            /* [in] */ ULONG aTimeoutMS,
+            /* [retval][out] */ GuestSessionWaitResult *aReason) = 0;
         
     };
     
@@ -14494,6 +16867,14 @@ EXTERN_C const IID IID_IGuestSession;
             IGuestSession * This,
             /* [in] */ ULONG aTimeout);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProtocolVersion )( 
+            IGuestSession * This,
+            /* [retval][out] */ ULONG *aProtocolVersion);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            IGuestSession * This,
+            /* [retval][out] */ GuestSessionStatus *aStatus);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Environment )( 
             IGuestSession * This,
             /* [retval][out] */ SAFEARRAY * *aEnvironment);
@@ -14513,6 +16894,10 @@ EXTERN_C const IID IID_IGuestSession;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Files )( 
             IGuestSession * This,
             /* [retval][out] */ SAFEARRAY * *aFiles);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventSource )( 
+            IGuestSession * This,
+            /* [retval][out] */ IEventSource **aEventSource);
         
         HRESULT ( STDMETHODCALLTYPE *Close )( 
             IGuestSession * This);
@@ -14623,6 +17008,15 @@ EXTERN_C const IID IID_IGuestSession;
             /* [in] */ BSTR aOpenMode,
             /* [in] */ BSTR aDisposition,
             /* [in] */ ULONG aCreationMode,
+            /* [retval][out] */ IGuestFile **aFile);
+        
+        HRESULT ( STDMETHODCALLTYPE *FileOpenEx )( 
+            IGuestSession * This,
+            /* [in] */ BSTR aPath,
+            /* [in] */ BSTR aOpenMode,
+            /* [in] */ BSTR aDisposition,
+            /* [in] */ BSTR aSharingMode,
+            /* [in] */ ULONG aCreationMode,
             /* [in] */ LONG64 aOffset,
             /* [retval][out] */ IGuestFile **aFile);
         
@@ -14697,6 +17091,18 @@ EXTERN_C const IID IID_IGuestSession;
             IGuestSession * This,
             /* [in] */ BSTR aFile);
         
+        HRESULT ( STDMETHODCALLTYPE *WaitFor )( 
+            IGuestSession * This,
+            /* [in] */ ULONG aWaitFor,
+            /* [in] */ ULONG aTimeoutMS,
+            /* [retval][out] */ GuestSessionWaitResult *aReason);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitForArray )( 
+            IGuestSession * This,
+            /* [in] */ SAFEARRAY * aWaitFor,
+            /* [in] */ ULONG aTimeoutMS,
+            /* [retval][out] */ GuestSessionWaitResult *aReason);
+        
         END_INTERFACE
     } IGuestSessionVtbl;
 
@@ -14751,6 +17157,12 @@ EXTERN_C const IID IID_IGuestSession;
 #define IGuestSession_put_Timeout(This,aTimeout)	\
     ( (This)->lpVtbl -> put_Timeout(This,aTimeout) ) 
 
+#define IGuestSession_get_ProtocolVersion(This,aProtocolVersion)	\
+    ( (This)->lpVtbl -> get_ProtocolVersion(This,aProtocolVersion) ) 
+
+#define IGuestSession_get_Status(This,aStatus)	\
+    ( (This)->lpVtbl -> get_Status(This,aStatus) ) 
+
 #define IGuestSession_get_Environment(This,aEnvironment)	\
     ( (This)->lpVtbl -> get_Environment(This,aEnvironment) ) 
 
@@ -14765,6 +17177,9 @@ EXTERN_C const IID IID_IGuestSession;
 
 #define IGuestSession_get_Files(This,aFiles)	\
     ( (This)->lpVtbl -> get_Files(This,aFiles) ) 
+
+#define IGuestSession_get_EventSource(This,aEventSource)	\
+    ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
 
 #define IGuestSession_Close(This)	\
     ( (This)->lpVtbl -> Close(This) ) 
@@ -14823,8 +17238,11 @@ EXTERN_C const IID IID_IGuestSession;
 #define IGuestSession_FileRemove(This,aPath)	\
     ( (This)->lpVtbl -> FileRemove(This,aPath) ) 
 
-#define IGuestSession_FileOpen(This,aPath,aOpenMode,aDisposition,aCreationMode,aOffset,aFile)	\
-    ( (This)->lpVtbl -> FileOpen(This,aPath,aOpenMode,aDisposition,aCreationMode,aOffset,aFile) ) 
+#define IGuestSession_FileOpen(This,aPath,aOpenMode,aDisposition,aCreationMode,aFile)	\
+    ( (This)->lpVtbl -> FileOpen(This,aPath,aOpenMode,aDisposition,aCreationMode,aFile) ) 
+
+#define IGuestSession_FileOpenEx(This,aPath,aOpenMode,aDisposition,aSharingMode,aCreationMode,aOffset,aFile)	\
+    ( (This)->lpVtbl -> FileOpenEx(This,aPath,aOpenMode,aDisposition,aSharingMode,aCreationMode,aOffset,aFile) ) 
 
 #define IGuestSession_FileQueryInfo(This,aPath,aInfo)	\
     ( (This)->lpVtbl -> FileQueryInfo(This,aPath,aInfo) ) 
@@ -14862,6 +17280,12 @@ EXTERN_C const IID IID_IGuestSession;
 #define IGuestSession_SymlinkRemoveFile(This,aFile)	\
     ( (This)->lpVtbl -> SymlinkRemoveFile(This,aFile) ) 
 
+#define IGuestSession_WaitFor(This,aWaitFor,aTimeoutMS,aReason)	\
+    ( (This)->lpVtbl -> WaitFor(This,aWaitFor,aTimeoutMS,aReason) ) 
+
+#define IGuestSession_WaitForArray(This,aWaitFor,aTimeoutMS,aReason)	\
+    ( (This)->lpVtbl -> WaitForArray(This,aWaitFor,aTimeoutMS,aReason) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -14884,30 +17308,33 @@ EXTERN_C const IID IID_IProcess;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("08864d56-96ab-418b-adbc-5a679532aeb0")
+    MIDL_INTERFACE("5a4fe06d-8cb1-40ff-ac9e-9676e32f706e")
     IProcess : public IDispatch
     {
     public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Arguments( 
+            /* [retval][out] */ SAFEARRAY * *aArguments) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Environment( 
+            /* [retval][out] */ SAFEARRAY * *aEnvironment) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
+            /* [retval][out] */ IEventSource **aEventSource) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExecutablePath( 
+            /* [retval][out] */ BSTR *aExecutablePath) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExitCode( 
+            /* [retval][out] */ LONG *aExitCode) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
+            /* [retval][out] */ BSTR *aName) = 0;
+        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PID( 
             /* [retval][out] */ ULONG *aPID) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
             /* [retval][out] */ ProcessStatus *aStatus) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExitCode( 
-            /* [retval][out] */ LONG *aExitCode) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Environment( 
-            /* [retval][out] */ SAFEARRAY * *aEnvironment) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Arguments( 
-            /* [retval][out] */ SAFEARRAY * *aArguments) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExecutablePath( 
-            /* [retval][out] */ BSTR *aExecutablePath) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
-            /* [retval][out] */ BSTR *aName) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE WaitFor( 
             /* [in] */ ULONG aWaitFor,
@@ -14990,6 +17417,30 @@ EXTERN_C const IID IID_IProcess;
             /* [out] */ EXCEPINFO *pExcepInfo,
             /* [out] */ UINT *puArgErr);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Arguments )( 
+            IProcess * This,
+            /* [retval][out] */ SAFEARRAY * *aArguments);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Environment )( 
+            IProcess * This,
+            /* [retval][out] */ SAFEARRAY * *aEnvironment);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventSource )( 
+            IProcess * This,
+            /* [retval][out] */ IEventSource **aEventSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExecutablePath )( 
+            IProcess * This,
+            /* [retval][out] */ BSTR *aExecutablePath);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExitCode )( 
+            IProcess * This,
+            /* [retval][out] */ LONG *aExitCode);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
+            IProcess * This,
+            /* [retval][out] */ BSTR *aName);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PID )( 
             IProcess * This,
             /* [retval][out] */ ULONG *aPID);
@@ -14997,26 +17448,6 @@ EXTERN_C const IID IID_IProcess;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
             IProcess * This,
             /* [retval][out] */ ProcessStatus *aStatus);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExitCode )( 
-            IProcess * This,
-            /* [retval][out] */ LONG *aExitCode);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Environment )( 
-            IProcess * This,
-            /* [retval][out] */ SAFEARRAY * *aEnvironment);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Arguments )( 
-            IProcess * This,
-            /* [retval][out] */ SAFEARRAY * *aArguments);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExecutablePath )( 
-            IProcess * This,
-            /* [retval][out] */ BSTR *aExecutablePath);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
-            IProcess * This,
-            /* [retval][out] */ BSTR *aName);
         
         HRESULT ( STDMETHODCALLTYPE *WaitFor )( 
             IProcess * This,
@@ -15092,26 +17523,29 @@ EXTERN_C const IID IID_IProcess;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
+#define IProcess_get_Arguments(This,aArguments)	\
+    ( (This)->lpVtbl -> get_Arguments(This,aArguments) ) 
+
+#define IProcess_get_Environment(This,aEnvironment)	\
+    ( (This)->lpVtbl -> get_Environment(This,aEnvironment) ) 
+
+#define IProcess_get_EventSource(This,aEventSource)	\
+    ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
+
+#define IProcess_get_ExecutablePath(This,aExecutablePath)	\
+    ( (This)->lpVtbl -> get_ExecutablePath(This,aExecutablePath) ) 
+
+#define IProcess_get_ExitCode(This,aExitCode)	\
+    ( (This)->lpVtbl -> get_ExitCode(This,aExitCode) ) 
+
+#define IProcess_get_Name(This,aName)	\
+    ( (This)->lpVtbl -> get_Name(This,aName) ) 
+
 #define IProcess_get_PID(This,aPID)	\
     ( (This)->lpVtbl -> get_PID(This,aPID) ) 
 
 #define IProcess_get_Status(This,aStatus)	\
     ( (This)->lpVtbl -> get_Status(This,aStatus) ) 
-
-#define IProcess_get_ExitCode(This,aExitCode)	\
-    ( (This)->lpVtbl -> get_ExitCode(This,aExitCode) ) 
-
-#define IProcess_get_Environment(This,aEnvironment)	\
-    ( (This)->lpVtbl -> get_Environment(This,aEnvironment) ) 
-
-#define IProcess_get_Arguments(This,aArguments)	\
-    ( (This)->lpVtbl -> get_Arguments(This,aArguments) ) 
-
-#define IProcess_get_ExecutablePath(This,aExecutablePath)	\
-    ( (This)->lpVtbl -> get_ExecutablePath(This,aExecutablePath) ) 
-
-#define IProcess_get_Name(This,aName)	\
-    ( (This)->lpVtbl -> get_Name(This,aName) ) 
 
 #define IProcess_WaitFor(This,aWaitFor,aTimeoutMS,aReason)	\
     ( (This)->lpVtbl -> WaitFor(This,aWaitFor,aTimeoutMS,aReason) ) 
@@ -15206,6 +17640,30 @@ EXTERN_C const IID IID_IGuestProcess;
             /* [out] */ EXCEPINFO *pExcepInfo,
             /* [out] */ UINT *puArgErr);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Arguments )( 
+            IGuestProcess * This,
+            /* [retval][out] */ SAFEARRAY * *aArguments);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Environment )( 
+            IGuestProcess * This,
+            /* [retval][out] */ SAFEARRAY * *aEnvironment);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventSource )( 
+            IGuestProcess * This,
+            /* [retval][out] */ IEventSource **aEventSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExecutablePath )( 
+            IGuestProcess * This,
+            /* [retval][out] */ BSTR *aExecutablePath);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExitCode )( 
+            IGuestProcess * This,
+            /* [retval][out] */ LONG *aExitCode);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
+            IGuestProcess * This,
+            /* [retval][out] */ BSTR *aName);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PID )( 
             IGuestProcess * This,
             /* [retval][out] */ ULONG *aPID);
@@ -15213,26 +17671,6 @@ EXTERN_C const IID IID_IGuestProcess;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
             IGuestProcess * This,
             /* [retval][out] */ ProcessStatus *aStatus);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExitCode )( 
-            IGuestProcess * This,
-            /* [retval][out] */ LONG *aExitCode);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Environment )( 
-            IGuestProcess * This,
-            /* [retval][out] */ SAFEARRAY * *aEnvironment);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Arguments )( 
-            IGuestProcess * This,
-            /* [retval][out] */ SAFEARRAY * *aArguments);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExecutablePath )( 
-            IGuestProcess * This,
-            /* [retval][out] */ BSTR *aExecutablePath);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
-            IGuestProcess * This,
-            /* [retval][out] */ BSTR *aName);
         
         HRESULT ( STDMETHODCALLTYPE *WaitFor )( 
             IGuestProcess * This,
@@ -15308,26 +17746,29 @@ EXTERN_C const IID IID_IGuestProcess;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
+#define IGuestProcess_get_Arguments(This,aArguments)	\
+    ( (This)->lpVtbl -> get_Arguments(This,aArguments) ) 
+
+#define IGuestProcess_get_Environment(This,aEnvironment)	\
+    ( (This)->lpVtbl -> get_Environment(This,aEnvironment) ) 
+
+#define IGuestProcess_get_EventSource(This,aEventSource)	\
+    ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
+
+#define IGuestProcess_get_ExecutablePath(This,aExecutablePath)	\
+    ( (This)->lpVtbl -> get_ExecutablePath(This,aExecutablePath) ) 
+
+#define IGuestProcess_get_ExitCode(This,aExitCode)	\
+    ( (This)->lpVtbl -> get_ExitCode(This,aExitCode) ) 
+
+#define IGuestProcess_get_Name(This,aName)	\
+    ( (This)->lpVtbl -> get_Name(This,aName) ) 
+
 #define IGuestProcess_get_PID(This,aPID)	\
     ( (This)->lpVtbl -> get_PID(This,aPID) ) 
 
 #define IGuestProcess_get_Status(This,aStatus)	\
     ( (This)->lpVtbl -> get_Status(This,aStatus) ) 
-
-#define IGuestProcess_get_ExitCode(This,aExitCode)	\
-    ( (This)->lpVtbl -> get_ExitCode(This,aExitCode) ) 
-
-#define IGuestProcess_get_Environment(This,aEnvironment)	\
-    ( (This)->lpVtbl -> get_Environment(This,aEnvironment) ) 
-
-#define IGuestProcess_get_Arguments(This,aArguments)	\
-    ( (This)->lpVtbl -> get_Arguments(This,aArguments) ) 
-
-#define IGuestProcess_get_ExecutablePath(This,aExecutablePath)	\
-    ( (This)->lpVtbl -> get_ExecutablePath(This,aExecutablePath) ) 
-
-#define IGuestProcess_get_Name(This,aName)	\
-    ( (This)->lpVtbl -> get_Name(This,aName) ) 
 
 #define IGuestProcess_WaitFor(This,aWaitFor,aTimeoutMS,aReason)	\
     ( (This)->lpVtbl -> WaitFor(This,aWaitFor,aTimeoutMS,aReason) ) 
@@ -15658,7 +18099,7 @@ EXTERN_C const IID IID_IFile;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("b702a560-6139-4a8e-a892-bbf14b97bf97")
+    MIDL_INTERFACE("5ec56ea3-b55d-4bdb-8c4f-5f9fb26b894b")
     IFile : public IDispatch
     {
     public:
@@ -15666,19 +18107,28 @@ EXTERN_C const IID IID_IFile;
             /* [retval][out] */ ULONG *aCreationMode) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Disposition( 
-            /* [retval][out] */ ULONG *aDisposition) = 0;
+            /* [retval][out] */ BSTR *aDisposition) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
+            /* [retval][out] */ IEventSource **aEventSource) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_FileName( 
             /* [retval][out] */ BSTR *aFileName) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Id( 
+            /* [retval][out] */ ULONG *aId) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InitialSize( 
             /* [retval][out] */ LONG64 *aInitialSize) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_OpenMode( 
-            /* [retval][out] */ ULONG *aOpenMode) = 0;
+            /* [retval][out] */ BSTR *aOpenMode) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Offset( 
             /* [retval][out] */ LONG64 *aOffset) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
+            /* [retval][out] */ FileStatus *aStatus) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Close( void) = 0;
         
@@ -15769,11 +18219,19 @@ EXTERN_C const IID IID_IFile;
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Disposition )( 
             IFile * This,
-            /* [retval][out] */ ULONG *aDisposition);
+            /* [retval][out] */ BSTR *aDisposition);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventSource )( 
+            IFile * This,
+            /* [retval][out] */ IEventSource **aEventSource);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_FileName )( 
             IFile * This,
             /* [retval][out] */ BSTR *aFileName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
+            IFile * This,
+            /* [retval][out] */ ULONG *aId);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InitialSize )( 
             IFile * This,
@@ -15781,11 +18239,15 @@ EXTERN_C const IID IID_IFile;
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_OpenMode )( 
             IFile * This,
-            /* [retval][out] */ ULONG *aOpenMode);
+            /* [retval][out] */ BSTR *aOpenMode);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Offset )( 
             IFile * This,
             /* [retval][out] */ LONG64 *aOffset);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            IFile * This,
+            /* [retval][out] */ FileStatus *aStatus);
         
         HRESULT ( STDMETHODCALLTYPE *Close )( 
             IFile * This);
@@ -15871,8 +18333,14 @@ EXTERN_C const IID IID_IFile;
 #define IFile_get_Disposition(This,aDisposition)	\
     ( (This)->lpVtbl -> get_Disposition(This,aDisposition) ) 
 
+#define IFile_get_EventSource(This,aEventSource)	\
+    ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
+
 #define IFile_get_FileName(This,aFileName)	\
     ( (This)->lpVtbl -> get_FileName(This,aFileName) ) 
+
+#define IFile_get_Id(This,aId)	\
+    ( (This)->lpVtbl -> get_Id(This,aId) ) 
 
 #define IFile_get_InitialSize(This,aInitialSize)	\
     ( (This)->lpVtbl -> get_InitialSize(This,aInitialSize) ) 
@@ -15882,6 +18350,9 @@ EXTERN_C const IID IID_IFile;
 
 #define IFile_get_Offset(This,aOffset)	\
     ( (This)->lpVtbl -> get_Offset(This,aOffset) ) 
+
+#define IFile_get_Status(This,aStatus)	\
+    ( (This)->lpVtbl -> get_Status(This,aStatus) ) 
 
 #define IFile_Close(This)	\
     ( (This)->lpVtbl -> Close(This) ) 
@@ -15988,11 +18459,19 @@ EXTERN_C const IID IID_IGuestFile;
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Disposition )( 
             IGuestFile * This,
-            /* [retval][out] */ ULONG *aDisposition);
+            /* [retval][out] */ BSTR *aDisposition);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventSource )( 
+            IGuestFile * This,
+            /* [retval][out] */ IEventSource **aEventSource);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_FileName )( 
             IGuestFile * This,
             /* [retval][out] */ BSTR *aFileName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
+            IGuestFile * This,
+            /* [retval][out] */ ULONG *aId);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InitialSize )( 
             IGuestFile * This,
@@ -16000,11 +18479,15 @@ EXTERN_C const IID IID_IGuestFile;
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_OpenMode )( 
             IGuestFile * This,
-            /* [retval][out] */ ULONG *aOpenMode);
+            /* [retval][out] */ BSTR *aOpenMode);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Offset )( 
             IGuestFile * This,
             /* [retval][out] */ LONG64 *aOffset);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            IGuestFile * This,
+            /* [retval][out] */ FileStatus *aStatus);
         
         HRESULT ( STDMETHODCALLTYPE *Close )( 
             IGuestFile * This);
@@ -16090,8 +18573,14 @@ EXTERN_C const IID IID_IGuestFile;
 #define IGuestFile_get_Disposition(This,aDisposition)	\
     ( (This)->lpVtbl -> get_Disposition(This,aDisposition) ) 
 
+#define IGuestFile_get_EventSource(This,aEventSource)	\
+    ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
+
 #define IGuestFile_get_FileName(This,aFileName)	\
     ( (This)->lpVtbl -> get_FileName(This,aFileName) ) 
+
+#define IGuestFile_get_Id(This,aId)	\
+    ( (This)->lpVtbl -> get_Id(This,aId) ) 
 
 #define IGuestFile_get_InitialSize(This,aInitialSize)	\
     ( (This)->lpVtbl -> get_InitialSize(This,aInitialSize) ) 
@@ -16101,6 +18590,9 @@ EXTERN_C const IID IID_IGuestFile;
 
 #define IGuestFile_get_Offset(This,aOffset)	\
     ( (This)->lpVtbl -> get_Offset(This,aOffset) ) 
+
+#define IGuestFile_get_Status(This,aStatus)	\
+    ( (This)->lpVtbl -> get_Status(This,aStatus) ) 
 
 #define IGuestFile_Close(This)	\
     ( (This)->lpVtbl -> Close(This) ) 
@@ -16695,7 +19187,7 @@ EXTERN_C const IID IID_IGuest;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("19c32350-0618-4ede-b0c3-2b4311bf0d9b")
+    MIDL_INTERFACE("8011a1b1-6adb-4ffb-a37e-20abdaee4650")
     IGuest : public IDispatch
     {
     public:
@@ -16710,6 +19202,9 @@ EXTERN_C const IID IID_IGuest;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AdditionsRevision( 
             /* [retval][out] */ ULONG *aAdditionsRevision) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
+            /* [retval][out] */ IEventSource **aEventSource) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Facilities( 
             /* [retval][out] */ SAFEARRAY * *aFacilities) = 0;
@@ -16798,7 +19293,7 @@ EXTERN_C const IID IID_IGuest;
         
         virtual HRESULT STDMETHODCALLTYPE DragGHPending( 
             /* [in] */ ULONG aScreenId,
-            /* [out] */ SAFEARRAY * *aFormat,
+            /* [out] */ SAFEARRAY * *aFormats,
             /* [out] */ SAFEARRAY * *aAllowedActions,
             /* [retval][out] */ DragAndDropAction *aDefaultAction) = 0;
         
@@ -16823,6 +19318,7 @@ EXTERN_C const IID IID_IGuest;
         
         virtual HRESULT STDMETHODCALLTYPE UpdateGuestAdditions( 
             /* [in] */ BSTR aSource,
+            /* [in] */ SAFEARRAY * aArguments,
             /* [in] */ SAFEARRAY * aFlags,
             /* [retval][out] */ IProgress **aProgress) = 0;
         
@@ -16890,6 +19386,10 @@ EXTERN_C const IID IID_IGuest;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AdditionsRevision )( 
             IGuest * This,
             /* [retval][out] */ ULONG *aAdditionsRevision);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventSource )( 
+            IGuest * This,
+            /* [retval][out] */ IEventSource **aEventSource);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Facilities )( 
             IGuest * This,
@@ -16994,7 +19494,7 @@ EXTERN_C const IID IID_IGuest;
         HRESULT ( STDMETHODCALLTYPE *DragGHPending )( 
             IGuest * This,
             /* [in] */ ULONG aScreenId,
-            /* [out] */ SAFEARRAY * *aFormat,
+            /* [out] */ SAFEARRAY * *aFormats,
             /* [out] */ SAFEARRAY * *aAllowedActions,
             /* [retval][out] */ DragAndDropAction *aDefaultAction);
         
@@ -17024,6 +19524,7 @@ EXTERN_C const IID IID_IGuest;
         HRESULT ( STDMETHODCALLTYPE *UpdateGuestAdditions )( 
             IGuest * This,
             /* [in] */ BSTR aSource,
+            /* [in] */ SAFEARRAY * aArguments,
             /* [in] */ SAFEARRAY * aFlags,
             /* [retval][out] */ IProgress **aProgress);
         
@@ -17075,6 +19576,9 @@ EXTERN_C const IID IID_IGuest;
 #define IGuest_get_AdditionsRevision(This,aAdditionsRevision)	\
     ( (This)->lpVtbl -> get_AdditionsRevision(This,aAdditionsRevision) ) 
 
+#define IGuest_get_EventSource(This,aEventSource)	\
+    ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
+
 #define IGuest_get_Facilities(This,aFacilities)	\
     ( (This)->lpVtbl -> get_Facilities(This,aFacilities) ) 
 
@@ -17120,8 +19624,8 @@ EXTERN_C const IID IID_IGuest;
 #define IGuest_DragHGPutData(This,aScreenId,aFormat,aData,aProgress)	\
     ( (This)->lpVtbl -> DragHGPutData(This,aScreenId,aFormat,aData,aProgress) ) 
 
-#define IGuest_DragGHPending(This,aScreenId,aFormat,aAllowedActions,aDefaultAction)	\
-    ( (This)->lpVtbl -> DragGHPending(This,aScreenId,aFormat,aAllowedActions,aDefaultAction) ) 
+#define IGuest_DragGHPending(This,aScreenId,aFormats,aAllowedActions,aDefaultAction)	\
+    ( (This)->lpVtbl -> DragGHPending(This,aScreenId,aFormats,aAllowedActions,aDefaultAction) ) 
 
 #define IGuest_DragGHDropped(This,aFormat,aAction,aProgress)	\
     ( (This)->lpVtbl -> DragGHDropped(This,aFormat,aAction,aProgress) ) 
@@ -17135,8 +19639,8 @@ EXTERN_C const IID IID_IGuest;
 #define IGuest_FindSession(This,aSessionName,aSessions)	\
     ( (This)->lpVtbl -> FindSession(This,aSessionName,aSessions) ) 
 
-#define IGuest_UpdateGuestAdditions(This,aSource,aFlags,aProgress)	\
-    ( (This)->lpVtbl -> UpdateGuestAdditions(This,aSource,aFlags,aProgress) ) 
+#define IGuest_UpdateGuestAdditions(This,aSource,aArguments,aFlags,aProgress)	\
+    ( (This)->lpVtbl -> UpdateGuestAdditions(This,aSource,aArguments,aFlags,aProgress) ) 
 
 #endif /* COBJMACROS */
 
@@ -17724,7 +20228,7 @@ EXTERN_C const IID IID_IMediumAttachment;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("5ee464d6-0613-4331-b154-7ce12170ef9f")
+    MIDL_INTERFACE("4b252567-5d4e-4db8-b3c8-569ec1c9236c")
     IMediumAttachment : public IDispatch
     {
     public:
@@ -17757,6 +20261,9 @@ EXTERN_C const IID IID_IMediumAttachment;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Discard( 
             /* [retval][out] */ BOOL *aDiscard) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HotPluggable( 
+            /* [retval][out] */ BOOL *aHotPluggable) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_BandwidthGroup( 
             /* [retval][out] */ IBandwidthGroup **aBandwidthGroup) = 0;
@@ -17850,6 +20357,10 @@ EXTERN_C const IID IID_IMediumAttachment;
             IMediumAttachment * This,
             /* [retval][out] */ BOOL *aDiscard);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HotPluggable )( 
+            IMediumAttachment * This,
+            /* [retval][out] */ BOOL *aHotPluggable);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_BandwidthGroup )( 
             IMediumAttachment * This,
             /* [retval][out] */ IBandwidthGroup **aBandwidthGroup);
@@ -17920,6 +20431,9 @@ EXTERN_C const IID IID_IMediumAttachment;
 #define IMediumAttachment_get_Discard(This,aDiscard)	\
     ( (This)->lpVtbl -> get_Discard(This,aDiscard) ) 
 
+#define IMediumAttachment_get_HotPluggable(This,aHotPluggable)	\
+    ( (This)->lpVtbl -> get_HotPluggable(This,aHotPluggable) ) 
+
 #define IMediumAttachment_get_BandwidthGroup(This,aBandwidthGroup)	\
     ( (This)->lpVtbl -> get_BandwidthGroup(This,aBandwidthGroup) ) 
 
@@ -17945,7 +20459,7 @@ EXTERN_C const IID IID_IMedium;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("29989373-b111-4654-8493-2e1176cba890")
+    MIDL_INTERFACE("05f2bbb6-a3a6-4fb9-9b49-6d0dda7142ac")
     IMedium : public IDispatch
     {
     public:
@@ -17962,13 +20476,10 @@ EXTERN_C const IID IID_IMedium;
             /* [retval][out] */ MediumState *aState) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Variant( 
-            /* [retval][out] */ ULONG *aVariant) = 0;
+            /* [retval][out] */ SAFEARRAY * *aVariant) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Location( 
             /* [retval][out] */ BSTR *aLocation) = 0;
-        
-        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Location( 
-            /* [in] */ BSTR aLocation) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
             /* [retval][out] */ BSTR *aName) = 0;
@@ -18038,16 +20549,10 @@ EXTERN_C const IID IID_IMedium;
             /* [retval][out] */ SAFEARRAY * *aSnapshotIds) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE LockRead( 
-            /* [retval][out] */ MediumState *aState) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE UnlockRead( 
-            /* [retval][out] */ MediumState *aState) = 0;
+            /* [retval][out] */ IToken **aToken) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE LockWrite( 
-            /* [retval][out] */ MediumState *aState) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE UnlockWrite( 
-            /* [retval][out] */ MediumState *aState) = 0;
+            /* [retval][out] */ IToken **aToken) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Close( void) = 0;
         
@@ -18070,7 +20575,7 @@ EXTERN_C const IID IID_IMedium;
         
         virtual HRESULT STDMETHODCALLTYPE CreateBaseStorage( 
             /* [in] */ LONG64 aLogicalSize,
-            /* [in] */ ULONG aVariant,
+            /* [in] */ SAFEARRAY * aVariant,
             /* [retval][out] */ IProgress **aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE DeleteStorage( 
@@ -18078,7 +20583,7 @@ EXTERN_C const IID IID_IMedium;
         
         virtual HRESULT STDMETHODCALLTYPE CreateDiffStorage( 
             /* [in] */ IMedium *aTarget,
-            /* [in] */ ULONG aVariant,
+            /* [in] */ SAFEARRAY * aVariant,
             /* [retval][out] */ IProgress **aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE MergeTo( 
@@ -18087,13 +20592,17 @@ EXTERN_C const IID IID_IMedium;
         
         virtual HRESULT STDMETHODCALLTYPE CloneTo( 
             /* [in] */ IMedium *aTarget,
-            /* [in] */ ULONG aVariant,
+            /* [in] */ SAFEARRAY * aVariant,
             /* [in] */ IMedium *aParent,
             /* [retval][out] */ IProgress **aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE CloneToBase( 
             /* [in] */ IMedium *aTarget,
-            /* [in] */ ULONG aVariant,
+            /* [in] */ SAFEARRAY * aVariant,
+            /* [retval][out] */ IProgress **aProgress) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SetLocation( 
+            /* [in] */ BSTR aLocation,
             /* [retval][out] */ IProgress **aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Compact( 
@@ -18173,15 +20682,11 @@ EXTERN_C const IID IID_IMedium;
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Variant )( 
             IMedium * This,
-            /* [retval][out] */ ULONG *aVariant);
+            /* [retval][out] */ SAFEARRAY * *aVariant);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Location )( 
             IMedium * This,
             /* [retval][out] */ BSTR *aLocation);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Location )( 
-            IMedium * This,
-            /* [in] */ BSTR aLocation);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
             IMedium * This,
@@ -18273,19 +20778,11 @@ EXTERN_C const IID IID_IMedium;
         
         HRESULT ( STDMETHODCALLTYPE *LockRead )( 
             IMedium * This,
-            /* [retval][out] */ MediumState *aState);
-        
-        HRESULT ( STDMETHODCALLTYPE *UnlockRead )( 
-            IMedium * This,
-            /* [retval][out] */ MediumState *aState);
+            /* [retval][out] */ IToken **aToken);
         
         HRESULT ( STDMETHODCALLTYPE *LockWrite )( 
             IMedium * This,
-            /* [retval][out] */ MediumState *aState);
-        
-        HRESULT ( STDMETHODCALLTYPE *UnlockWrite )( 
-            IMedium * This,
-            /* [retval][out] */ MediumState *aState);
+            /* [retval][out] */ IToken **aToken);
         
         HRESULT ( STDMETHODCALLTYPE *Close )( 
             IMedium * This);
@@ -18314,7 +20811,7 @@ EXTERN_C const IID IID_IMedium;
         HRESULT ( STDMETHODCALLTYPE *CreateBaseStorage )( 
             IMedium * This,
             /* [in] */ LONG64 aLogicalSize,
-            /* [in] */ ULONG aVariant,
+            /* [in] */ SAFEARRAY * aVariant,
             /* [retval][out] */ IProgress **aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *DeleteStorage )( 
@@ -18324,7 +20821,7 @@ EXTERN_C const IID IID_IMedium;
         HRESULT ( STDMETHODCALLTYPE *CreateDiffStorage )( 
             IMedium * This,
             /* [in] */ IMedium *aTarget,
-            /* [in] */ ULONG aVariant,
+            /* [in] */ SAFEARRAY * aVariant,
             /* [retval][out] */ IProgress **aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *MergeTo )( 
@@ -18335,14 +20832,19 @@ EXTERN_C const IID IID_IMedium;
         HRESULT ( STDMETHODCALLTYPE *CloneTo )( 
             IMedium * This,
             /* [in] */ IMedium *aTarget,
-            /* [in] */ ULONG aVariant,
+            /* [in] */ SAFEARRAY * aVariant,
             /* [in] */ IMedium *aParent,
             /* [retval][out] */ IProgress **aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *CloneToBase )( 
             IMedium * This,
             /* [in] */ IMedium *aTarget,
-            /* [in] */ ULONG aVariant,
+            /* [in] */ SAFEARRAY * aVariant,
+            /* [retval][out] */ IProgress **aProgress);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetLocation )( 
+            IMedium * This,
+            /* [in] */ BSTR aLocation,
             /* [retval][out] */ IProgress **aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *Compact )( 
@@ -18412,9 +20914,6 @@ EXTERN_C const IID IID_IMedium;
 #define IMedium_get_Location(This,aLocation)	\
     ( (This)->lpVtbl -> get_Location(This,aLocation) ) 
 
-#define IMedium_put_Location(This,aLocation)	\
-    ( (This)->lpVtbl -> put_Location(This,aLocation) ) 
-
 #define IMedium_get_Name(This,aName)	\
     ( (This)->lpVtbl -> get_Name(This,aName) ) 
 
@@ -18478,17 +20977,11 @@ EXTERN_C const IID IID_IMedium;
 #define IMedium_GetSnapshotIds(This,aMachineId,aSnapshotIds)	\
     ( (This)->lpVtbl -> GetSnapshotIds(This,aMachineId,aSnapshotIds) ) 
 
-#define IMedium_LockRead(This,aState)	\
-    ( (This)->lpVtbl -> LockRead(This,aState) ) 
+#define IMedium_LockRead(This,aToken)	\
+    ( (This)->lpVtbl -> LockRead(This,aToken) ) 
 
-#define IMedium_UnlockRead(This,aState)	\
-    ( (This)->lpVtbl -> UnlockRead(This,aState) ) 
-
-#define IMedium_LockWrite(This,aState)	\
-    ( (This)->lpVtbl -> LockWrite(This,aState) ) 
-
-#define IMedium_UnlockWrite(This,aState)	\
-    ( (This)->lpVtbl -> UnlockWrite(This,aState) ) 
+#define IMedium_LockWrite(This,aToken)	\
+    ( (This)->lpVtbl -> LockWrite(This,aToken) ) 
 
 #define IMedium_Close(This)	\
     ( (This)->lpVtbl -> Close(This) ) 
@@ -18523,6 +21016,9 @@ EXTERN_C const IID IID_IMedium;
 #define IMedium_CloneToBase(This,aTarget,aVariant,aProgress)	\
     ( (This)->lpVtbl -> CloneToBase(This,aTarget,aVariant,aProgress) ) 
 
+#define IMedium_SetLocation(This,aLocation,aProgress)	\
+    ( (This)->lpVtbl -> SetLocation(This,aLocation,aProgress) ) 
+
 #define IMedium_Compact(This,aProgress)	\
     ( (This)->lpVtbl -> Compact(This,aProgress) ) 
 
@@ -18554,7 +21050,7 @@ EXTERN_C const IID IID_IMediumFormat;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("9bd5b655-ea47-4637-99f3-aad0948be35b")
+    MIDL_INTERFACE("6238e1cf-a17d-4ec1-8172-418bfb22b93a")
     IMediumFormat : public IDispatch
     {
     public:
@@ -18565,15 +21061,15 @@ EXTERN_C const IID IID_IMediumFormat;
             /* [retval][out] */ BSTR *aName) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Capabilities( 
-            /* [retval][out] */ ULONG *aCapabilities) = 0;
+            /* [retval][out] */ SAFEARRAY * *aCapabilities) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE DescribeFileExtensions( 
             /* [out] */ SAFEARRAY * *aExtensions,
-            /* [out] */ SAFEARRAY * *aType) = 0;
+            /* [out] */ SAFEARRAY * *aTypes) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE DescribeProperties( 
             /* [out] */ SAFEARRAY * *aNames,
-            /* [out] */ SAFEARRAY * *aDescription,
+            /* [out] */ SAFEARRAY * *aDescriptions,
             /* [out] */ SAFEARRAY * *aTypes,
             /* [out] */ SAFEARRAY * *aFlags,
             /* [out] */ SAFEARRAY * *aDefaults) = 0;
@@ -18637,17 +21133,17 @@ EXTERN_C const IID IID_IMediumFormat;
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Capabilities )( 
             IMediumFormat * This,
-            /* [retval][out] */ ULONG *aCapabilities);
+            /* [retval][out] */ SAFEARRAY * *aCapabilities);
         
         HRESULT ( STDMETHODCALLTYPE *DescribeFileExtensions )( 
             IMediumFormat * This,
             /* [out] */ SAFEARRAY * *aExtensions,
-            /* [out] */ SAFEARRAY * *aType);
+            /* [out] */ SAFEARRAY * *aTypes);
         
         HRESULT ( STDMETHODCALLTYPE *DescribeProperties )( 
             IMediumFormat * This,
             /* [out] */ SAFEARRAY * *aNames,
-            /* [out] */ SAFEARRAY * *aDescription,
+            /* [out] */ SAFEARRAY * *aDescriptions,
             /* [out] */ SAFEARRAY * *aTypes,
             /* [out] */ SAFEARRAY * *aFlags,
             /* [out] */ SAFEARRAY * *aDefaults);
@@ -18697,11 +21193,11 @@ EXTERN_C const IID IID_IMediumFormat;
 #define IMediumFormat_get_Capabilities(This,aCapabilities)	\
     ( (This)->lpVtbl -> get_Capabilities(This,aCapabilities) ) 
 
-#define IMediumFormat_DescribeFileExtensions(This,aExtensions,aType)	\
-    ( (This)->lpVtbl -> DescribeFileExtensions(This,aExtensions,aType) ) 
+#define IMediumFormat_DescribeFileExtensions(This,aExtensions,aTypes)	\
+    ( (This)->lpVtbl -> DescribeFileExtensions(This,aExtensions,aTypes) ) 
 
-#define IMediumFormat_DescribeProperties(This,aNames,aDescription,aTypes,aFlags,aDefaults)	\
-    ( (This)->lpVtbl -> DescribeProperties(This,aNames,aDescription,aTypes,aFlags,aDefaults) ) 
+#define IMediumFormat_DescribeProperties(This,aNames,aDescriptions,aTypes,aFlags,aDefaults)	\
+    ( (This)->lpVtbl -> DescribeProperties(This,aNames,aDescriptions,aTypes,aFlags,aDefaults) ) 
 
 #endif /* COBJMACROS */
 
@@ -18712,6 +21208,133 @@ EXTERN_C const IID IID_IMediumFormat;
 
 
 #endif 	/* __IMediumFormat_INTERFACE_DEFINED__ */
+
+
+#ifndef __IToken_INTERFACE_DEFINED__
+#define __IToken_INTERFACE_DEFINED__
+
+/* interface IToken */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IToken;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("3b1c4797-e289-4d4c-b74c-50c9b86a36f8")
+    IToken : public IDispatch
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Abandon( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Dummy( void) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct ITokenVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IToken * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IToken * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IToken * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IToken * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IToken * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IToken * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IToken * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        HRESULT ( STDMETHODCALLTYPE *Abandon )( 
+            IToken * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Dummy )( 
+            IToken * This);
+        
+        END_INTERFACE
+    } ITokenVtbl;
+
+    interface IToken
+    {
+        CONST_VTBL struct ITokenVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IToken_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IToken_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IToken_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IToken_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IToken_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IToken_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IToken_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IToken_Abandon(This)	\
+    ( (This)->lpVtbl -> Abandon(This) ) 
+
+#define IToken_Dummy(This)	\
+    ( (This)->lpVtbl -> Dummy(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IToken_INTERFACE_DEFINED__ */
 
 
 #ifndef __IKeyboard_INTERFACE_DEFINED__
@@ -18876,7 +21499,7 @@ EXTERN_C const IID IID_IMouse;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("05044a52-7811-4f00-ae3a-0ab7ff707b10")
+    MIDL_INTERFACE("ee770393-415f-4421-b2d5-28b73cacf86a")
     IMouse : public IDispatch
     {
     public:
@@ -18885,6 +21508,9 @@ EXTERN_C const IID IID_IMouse;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RelativeSupported( 
             /* [retval][out] */ BOOL *aRelativeSupported) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MultiTouchSupported( 
+            /* [retval][out] */ BOOL *aMultiTouchSupported) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NeedsHostCursor( 
             /* [retval][out] */ BOOL *aNeedsHostCursor) = 0;
@@ -18905,6 +21531,16 @@ EXTERN_C const IID IID_IMouse;
             /* [in] */ LONG aDz,
             /* [in] */ LONG aDw,
             /* [in] */ LONG aButtonState) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE PutEventMultiTouch( 
+            /* [in] */ LONG aCount,
+            /* [in] */ SAFEARRAY * aContacts,
+            /* [in] */ ULONG aScanTime) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE PutEventMultiTouchString( 
+            /* [in] */ LONG aCount,
+            /* [in] */ BSTR aContacts,
+            /* [in] */ ULONG aScanTime) = 0;
         
     };
     
@@ -18963,6 +21599,10 @@ EXTERN_C const IID IID_IMouse;
             IMouse * This,
             /* [retval][out] */ BOOL *aRelativeSupported);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MultiTouchSupported )( 
+            IMouse * This,
+            /* [retval][out] */ BOOL *aMultiTouchSupported);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NeedsHostCursor )( 
             IMouse * This,
             /* [retval][out] */ BOOL *aNeedsHostCursor);
@@ -18986,6 +21626,18 @@ EXTERN_C const IID IID_IMouse;
             /* [in] */ LONG aDz,
             /* [in] */ LONG aDw,
             /* [in] */ LONG aButtonState);
+        
+        HRESULT ( STDMETHODCALLTYPE *PutEventMultiTouch )( 
+            IMouse * This,
+            /* [in] */ LONG aCount,
+            /* [in] */ SAFEARRAY * aContacts,
+            /* [in] */ ULONG aScanTime);
+        
+        HRESULT ( STDMETHODCALLTYPE *PutEventMultiTouchString )( 
+            IMouse * This,
+            /* [in] */ LONG aCount,
+            /* [in] */ BSTR aContacts,
+            /* [in] */ ULONG aScanTime);
         
         END_INTERFACE
     } IMouseVtbl;
@@ -19029,6 +21681,9 @@ EXTERN_C const IID IID_IMouse;
 #define IMouse_get_RelativeSupported(This,aRelativeSupported)	\
     ( (This)->lpVtbl -> get_RelativeSupported(This,aRelativeSupported) ) 
 
+#define IMouse_get_MultiTouchSupported(This,aMultiTouchSupported)	\
+    ( (This)->lpVtbl -> get_MultiTouchSupported(This,aMultiTouchSupported) ) 
+
 #define IMouse_get_NeedsHostCursor(This,aNeedsHostCursor)	\
     ( (This)->lpVtbl -> get_NeedsHostCursor(This,aNeedsHostCursor) ) 
 
@@ -19040,6 +21695,12 @@ EXTERN_C const IID IID_IMouse;
 
 #define IMouse_PutMouseEventAbsolute(This,aX,aY,aDz,aDw,aButtonState)	\
     ( (This)->lpVtbl -> PutMouseEventAbsolute(This,aX,aY,aDz,aDw,aButtonState) ) 
+
+#define IMouse_PutEventMultiTouch(This,aCount,aContacts,aScanTime)	\
+    ( (This)->lpVtbl -> PutEventMultiTouch(This,aCount,aContacts,aScanTime) ) 
+
+#define IMouse_PutEventMultiTouchString(This,aCount,aContacts,aScanTime)	\
+    ( (This)->lpVtbl -> PutEventMultiTouchString(This,aCount,aContacts,aScanTime) ) 
 
 #endif /* COBJMACROS */
 
@@ -19063,7 +21724,7 @@ EXTERN_C const IID IID_IFramebuffer;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("b7ed347a-5765-40a0-ae1c-f543eb4ddeaf")
+    MIDL_INTERFACE("e3f122c0-adab-4fc9-a8dc-da112fb48428")
     IFramebuffer : public IDispatch
     {
     public:
@@ -19134,6 +21795,10 @@ EXTERN_C const IID IID_IFramebuffer;
         
         virtual HRESULT STDMETHODCALLTYPE ProcessVHWACommand( 
             /* [in] */ BYTE *aCommand) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Notify3DEvent( 
+            /* [in] */ ULONG aType,
+            /* [in] */ BYTE *aData) = 0;
         
     };
     
@@ -19270,6 +21935,11 @@ EXTERN_C const IID IID_IFramebuffer;
             IFramebuffer * This,
             /* [in] */ BYTE *aCommand);
         
+        HRESULT ( STDMETHODCALLTYPE *Notify3DEvent )( 
+            IFramebuffer * This,
+            /* [in] */ ULONG aType,
+            /* [in] */ BYTE *aData);
+        
         END_INTERFACE
     } IFramebufferVtbl;
 
@@ -19359,6 +22029,9 @@ EXTERN_C const IID IID_IFramebuffer;
 
 #define IFramebuffer_ProcessVHWACommand(This,aCommand)	\
     ( (This)->lpVtbl -> ProcessVHWACommand(This,aCommand) ) 
+
+#define IFramebuffer_Notify3DEvent(This,aType,aData)	\
+    ( (This)->lpVtbl -> Notify3DEvent(This,aType,aData) ) 
 
 #endif /* COBJMACROS */
 
@@ -19543,6 +22216,11 @@ EXTERN_C const IID IID_IFramebufferOverlay;
             IFramebufferOverlay * This,
             /* [in] */ BYTE *aCommand);
         
+        HRESULT ( STDMETHODCALLTYPE *Notify3DEvent )( 
+            IFramebufferOverlay * This,
+            /* [in] */ ULONG aType,
+            /* [in] */ BYTE *aData);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_X )( 
             IFramebufferOverlay * This,
             /* [retval][out] */ ULONG *aX);
@@ -19662,6 +22340,9 @@ EXTERN_C const IID IID_IFramebufferOverlay;
 #define IFramebufferOverlay_ProcessVHWACommand(This,aCommand)	\
     ( (This)->lpVtbl -> ProcessVHWACommand(This,aCommand) ) 
 
+#define IFramebufferOverlay_Notify3DEvent(This,aType,aData)	\
+    ( (This)->lpVtbl -> Notify3DEvent(This,aType,aData) ) 
+
 
 #define IFramebufferOverlay_get_X(This,aX)	\
     ( (This)->lpVtbl -> get_X(This,aX) ) 
@@ -19706,7 +22387,7 @@ EXTERN_C const IID IID_IDisplay;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("b83ee395-8679-40ca-8d60-1a0cbe724930")
+    MIDL_INTERFACE("480b372c-c0b5-4c23-9bd7-dcbb85b1594c")
     IDisplay : public IDispatch
     {
     public:
@@ -19714,7 +22395,9 @@ EXTERN_C const IID IID_IDisplay;
             /* [in] */ ULONG aScreenId,
             /* [out] */ ULONG *aWidth,
             /* [out] */ ULONG *aHeight,
-            /* [out] */ ULONG *aBitsPerPixel) = 0;
+            /* [out] */ ULONG *aBitsPerPixel,
+            /* [out] */ LONG *aXOrigin,
+            /* [out] */ LONG *aYOrigin) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE SetFramebuffer( 
             /* [in] */ ULONG aScreenId,
@@ -19834,7 +22517,9 @@ EXTERN_C const IID IID_IDisplay;
             /* [in] */ ULONG aScreenId,
             /* [out] */ ULONG *aWidth,
             /* [out] */ ULONG *aHeight,
-            /* [out] */ ULONG *aBitsPerPixel);
+            /* [out] */ ULONG *aBitsPerPixel,
+            /* [out] */ LONG *aXOrigin,
+            /* [out] */ LONG *aYOrigin);
         
         HRESULT ( STDMETHODCALLTYPE *SetFramebuffer )( 
             IDisplay * This,
@@ -19948,8 +22633,8 @@ EXTERN_C const IID IID_IDisplay;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define IDisplay_GetScreenResolution(This,aScreenId,aWidth,aHeight,aBitsPerPixel)	\
-    ( (This)->lpVtbl -> GetScreenResolution(This,aScreenId,aWidth,aHeight,aBitsPerPixel) ) 
+#define IDisplay_GetScreenResolution(This,aScreenId,aWidth,aHeight,aBitsPerPixel,aXOrigin,aYOrigin)	\
+    ( (This)->lpVtbl -> GetScreenResolution(This,aScreenId,aWidth,aHeight,aBitsPerPixel,aXOrigin,aYOrigin) ) 
 
 #define IDisplay_SetFramebuffer(This,aScreenId,aFramebuffer)	\
     ( (This)->lpVtbl -> SetFramebuffer(This,aScreenId,aFramebuffer) ) 
@@ -20940,7 +23625,7 @@ EXTERN_C const IID IID_IMachineDebugger;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("a9abbb7c-d678-43b2-bed2-19ec0e32303d")
+    MIDL_INTERFACE("5e4534dc-21b8-4f6b-8a08-eef50e1a0aa1")
     IMachineDebugger : public IDispatch
     {
     public:
@@ -20961,6 +23646,12 @@ EXTERN_C const IID IID_IMachineDebugger;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_RecompileSupervisor( 
             /* [in] */ BOOL aRecompileSupervisor) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExecuteAllInIEM( 
+            /* [retval][out] */ BOOL *aExecuteAllInIEM) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ExecuteAllInIEM( 
+            /* [in] */ BOOL aExecuteAllInIEM) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PATMEnabled( 
             /* [retval][out] */ BOOL *aPATMEnabled) = 0;
@@ -21006,6 +23697,9 @@ EXTERN_C const IID IID_IMachineDebugger;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HWVirtExVPIDEnabled( 
             /* [retval][out] */ BOOL *aHWVirtExVPIDEnabled) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HWVirtExUXEnabled( 
+            /* [retval][out] */ BOOL *aHWVirtExUXEnabled) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_OSName( 
             /* [retval][out] */ BSTR *aOSName) = 0;
@@ -21107,7 +23801,7 @@ EXTERN_C const IID IID_IMachineDebugger;
         virtual HRESULT STDMETHODCALLTYPE GetStats( 
             /* [in] */ BSTR aPattern,
             /* [in] */ BOOL aWithDescriptions,
-            /* [out] */ BSTR *aStats) = 0;
+            /* [retval][out] */ BSTR *aStats) = 0;
         
     };
     
@@ -21182,6 +23876,14 @@ EXTERN_C const IID IID_IMachineDebugger;
             IMachineDebugger * This,
             /* [in] */ BOOL aRecompileSupervisor);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExecuteAllInIEM )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ BOOL *aExecuteAllInIEM);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ExecuteAllInIEM )( 
+            IMachineDebugger * This,
+            /* [in] */ BOOL aExecuteAllInIEM);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PATMEnabled )( 
             IMachineDebugger * This,
             /* [retval][out] */ BOOL *aPATMEnabled);
@@ -21241,6 +23943,10 @@ EXTERN_C const IID IID_IMachineDebugger;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HWVirtExVPIDEnabled )( 
             IMachineDebugger * This,
             /* [retval][out] */ BOOL *aHWVirtExVPIDEnabled);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HWVirtExUXEnabled )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ BOOL *aHWVirtExUXEnabled);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_OSName )( 
             IMachineDebugger * This,
@@ -21368,7 +24074,7 @@ EXTERN_C const IID IID_IMachineDebugger;
             IMachineDebugger * This,
             /* [in] */ BSTR aPattern,
             /* [in] */ BOOL aWithDescriptions,
-            /* [out] */ BSTR *aStats);
+            /* [retval][out] */ BSTR *aStats);
         
         END_INTERFACE
     } IMachineDebuggerVtbl;
@@ -21424,6 +24130,12 @@ EXTERN_C const IID IID_IMachineDebugger;
 #define IMachineDebugger_put_RecompileSupervisor(This,aRecompileSupervisor)	\
     ( (This)->lpVtbl -> put_RecompileSupervisor(This,aRecompileSupervisor) ) 
 
+#define IMachineDebugger_get_ExecuteAllInIEM(This,aExecuteAllInIEM)	\
+    ( (This)->lpVtbl -> get_ExecuteAllInIEM(This,aExecuteAllInIEM) ) 
+
+#define IMachineDebugger_put_ExecuteAllInIEM(This,aExecuteAllInIEM)	\
+    ( (This)->lpVtbl -> put_ExecuteAllInIEM(This,aExecuteAllInIEM) ) 
+
 #define IMachineDebugger_get_PATMEnabled(This,aPATMEnabled)	\
     ( (This)->lpVtbl -> get_PATMEnabled(This,aPATMEnabled) ) 
 
@@ -21468,6 +24180,9 @@ EXTERN_C const IID IID_IMachineDebugger;
 
 #define IMachineDebugger_get_HWVirtExVPIDEnabled(This,aHWVirtExVPIDEnabled)	\
     ( (This)->lpVtbl -> get_HWVirtExVPIDEnabled(This,aHWVirtExVPIDEnabled) ) 
+
+#define IMachineDebugger_get_HWVirtExUXEnabled(This,aHWVirtExUXEnabled)	\
+    ( (This)->lpVtbl -> get_HWVirtExUXEnabled(This,aHWVirtExUXEnabled) ) 
 
 #define IMachineDebugger_get_OSName(This,aOSName)	\
     ( (This)->lpVtbl -> get_OSName(This,aOSName) ) 
@@ -21558,39 +24273,21 @@ EXTERN_C const IID IID_IMachineDebugger;
 #endif 	/* __IMachineDebugger_INTERFACE_DEFINED__ */
 
 
-#ifndef __IUSBController_INTERFACE_DEFINED__
-#define __IUSBController_INTERFACE_DEFINED__
+#ifndef __IUSBDeviceFilters_INTERFACE_DEFINED__
+#define __IUSBDeviceFilters_INTERFACE_DEFINED__
 
-/* interface IUSBController */
+/* interface IUSBDeviceFilters */
 /* [oleautomation][dual][object][uuid] */ 
 
 
-EXTERN_C const IID IID_IUSBController;
+EXTERN_C const IID IID_IUSBDeviceFilters;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("01e6f13a-0580-452f-a40f-74e32a5e4921")
-    IUSBController : public IDispatch
+    MIDL_INTERFACE("2ab550b2-53cc-4c2e-ae07-0adf4114e75c")
+    IUSBDeviceFilters : public IDispatch
     {
     public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Enabled( 
-            /* [retval][out] */ BOOL *aEnabled) = 0;
-        
-        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Enabled( 
-            /* [in] */ BOOL aEnabled) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EnabledEHCI( 
-            /* [retval][out] */ BOOL *aEnabledEHCI) = 0;
-        
-        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_EnabledEHCI( 
-            /* [in] */ BOOL aEnabledEHCI) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProxyAvailable( 
-            /* [retval][out] */ BOOL *aProxyAvailable) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_USBStandard( 
-            /* [retval][out] */ USHORT *aUSBStandard) = 0;
-        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceFilters( 
             /* [retval][out] */ SAFEARRAY * *aDeviceFilters) = 0;
         
@@ -21605,6 +24302,157 @@ EXTERN_C const IID IID_IUSBController;
         virtual HRESULT STDMETHODCALLTYPE RemoveDeviceFilter( 
             /* [in] */ ULONG aPosition,
             /* [retval][out] */ IUSBDeviceFilter **aFilter) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IUSBDeviceFiltersVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IUSBDeviceFilters * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IUSBDeviceFilters * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IUSBDeviceFilters * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IUSBDeviceFilters * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IUSBDeviceFilters * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IUSBDeviceFilters * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IUSBDeviceFilters * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceFilters )( 
+            IUSBDeviceFilters * This,
+            /* [retval][out] */ SAFEARRAY * *aDeviceFilters);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateDeviceFilter )( 
+            IUSBDeviceFilters * This,
+            /* [in] */ BSTR aName,
+            /* [retval][out] */ IUSBDeviceFilter **aFilter);
+        
+        HRESULT ( STDMETHODCALLTYPE *InsertDeviceFilter )( 
+            IUSBDeviceFilters * This,
+            /* [in] */ ULONG aPosition,
+            /* [in] */ IUSBDeviceFilter *aFilter);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveDeviceFilter )( 
+            IUSBDeviceFilters * This,
+            /* [in] */ ULONG aPosition,
+            /* [retval][out] */ IUSBDeviceFilter **aFilter);
+        
+        END_INTERFACE
+    } IUSBDeviceFiltersVtbl;
+
+    interface IUSBDeviceFilters
+    {
+        CONST_VTBL struct IUSBDeviceFiltersVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IUSBDeviceFilters_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IUSBDeviceFilters_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IUSBDeviceFilters_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IUSBDeviceFilters_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IUSBDeviceFilters_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IUSBDeviceFilters_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IUSBDeviceFilters_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IUSBDeviceFilters_get_DeviceFilters(This,aDeviceFilters)	\
+    ( (This)->lpVtbl -> get_DeviceFilters(This,aDeviceFilters) ) 
+
+#define IUSBDeviceFilters_CreateDeviceFilter(This,aName,aFilter)	\
+    ( (This)->lpVtbl -> CreateDeviceFilter(This,aName,aFilter) ) 
+
+#define IUSBDeviceFilters_InsertDeviceFilter(This,aPosition,aFilter)	\
+    ( (This)->lpVtbl -> InsertDeviceFilter(This,aPosition,aFilter) ) 
+
+#define IUSBDeviceFilters_RemoveDeviceFilter(This,aPosition,aFilter)	\
+    ( (This)->lpVtbl -> RemoveDeviceFilter(This,aPosition,aFilter) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IUSBDeviceFilters_INTERFACE_DEFINED__ */
+
+
+#ifndef __IUSBController_INTERFACE_DEFINED__
+#define __IUSBController_INTERFACE_DEFINED__
+
+/* interface IUSBController */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IUSBController;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d2745291-65f7-4d75-9556-38047d802319")
+    IUSBController : public IDispatch
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
+            /* [retval][out] */ BSTR *aName) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Type( 
+            /* [retval][out] */ USBControllerType *aType) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_USBStandard( 
+            /* [retval][out] */ USHORT *aUSBStandard) = 0;
         
     };
     
@@ -21655,48 +24503,17 @@ EXTERN_C const IID IID_IUSBController;
             /* [out] */ EXCEPINFO *pExcepInfo,
             /* [out] */ UINT *puArgErr);
         
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Enabled )( 
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
             IUSBController * This,
-            /* [retval][out] */ BOOL *aEnabled);
+            /* [retval][out] */ BSTR *aName);
         
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Enabled )( 
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
             IUSBController * This,
-            /* [in] */ BOOL aEnabled);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EnabledEHCI )( 
-            IUSBController * This,
-            /* [retval][out] */ BOOL *aEnabledEHCI);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_EnabledEHCI )( 
-            IUSBController * This,
-            /* [in] */ BOOL aEnabledEHCI);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProxyAvailable )( 
-            IUSBController * This,
-            /* [retval][out] */ BOOL *aProxyAvailable);
+            /* [retval][out] */ USBControllerType *aType);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_USBStandard )( 
             IUSBController * This,
             /* [retval][out] */ USHORT *aUSBStandard);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceFilters )( 
-            IUSBController * This,
-            /* [retval][out] */ SAFEARRAY * *aDeviceFilters);
-        
-        HRESULT ( STDMETHODCALLTYPE *CreateDeviceFilter )( 
-            IUSBController * This,
-            /* [in] */ BSTR aName,
-            /* [retval][out] */ IUSBDeviceFilter **aFilter);
-        
-        HRESULT ( STDMETHODCALLTYPE *InsertDeviceFilter )( 
-            IUSBController * This,
-            /* [in] */ ULONG aPosition,
-            /* [in] */ IUSBDeviceFilter *aFilter);
-        
-        HRESULT ( STDMETHODCALLTYPE *RemoveDeviceFilter )( 
-            IUSBController * This,
-            /* [in] */ ULONG aPosition,
-            /* [retval][out] */ IUSBDeviceFilter **aFilter);
         
         END_INTERFACE
     } IUSBControllerVtbl;
@@ -21734,35 +24551,14 @@ EXTERN_C const IID IID_IUSBController;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define IUSBController_get_Enabled(This,aEnabled)	\
-    ( (This)->lpVtbl -> get_Enabled(This,aEnabled) ) 
+#define IUSBController_get_Name(This,aName)	\
+    ( (This)->lpVtbl -> get_Name(This,aName) ) 
 
-#define IUSBController_put_Enabled(This,aEnabled)	\
-    ( (This)->lpVtbl -> put_Enabled(This,aEnabled) ) 
-
-#define IUSBController_get_EnabledEHCI(This,aEnabledEHCI)	\
-    ( (This)->lpVtbl -> get_EnabledEHCI(This,aEnabledEHCI) ) 
-
-#define IUSBController_put_EnabledEHCI(This,aEnabledEHCI)	\
-    ( (This)->lpVtbl -> put_EnabledEHCI(This,aEnabledEHCI) ) 
-
-#define IUSBController_get_ProxyAvailable(This,aProxyAvailable)	\
-    ( (This)->lpVtbl -> get_ProxyAvailable(This,aProxyAvailable) ) 
+#define IUSBController_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
 
 #define IUSBController_get_USBStandard(This,aUSBStandard)	\
     ( (This)->lpVtbl -> get_USBStandard(This,aUSBStandard) ) 
-
-#define IUSBController_get_DeviceFilters(This,aDeviceFilters)	\
-    ( (This)->lpVtbl -> get_DeviceFilters(This,aDeviceFilters) ) 
-
-#define IUSBController_CreateDeviceFilter(This,aName,aFilter)	\
-    ( (This)->lpVtbl -> CreateDeviceFilter(This,aName,aFilter) ) 
-
-#define IUSBController_InsertDeviceFilter(This,aPosition,aFilter)	\
-    ( (This)->lpVtbl -> InsertDeviceFilter(This,aPosition,aFilter) ) 
-
-#define IUSBController_RemoveDeviceFilter(This,aPosition,aFilter)	\
-    ( (This)->lpVtbl -> RemoveDeviceFilter(This,aPosition,aFilter) ) 
 
 #endif /* COBJMACROS */
 
@@ -23467,7 +26263,7 @@ EXTERN_C const IID IID_IInternalSessionControl;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("3e83963a-1c3b-400d-8c5f-f2d077b0a597")
+    MIDL_INTERFACE("2d2124a7-0f62-4907-ae21-eee5a559bdde")
     IInternalSessionControl : public IDispatch
     {
     public:
@@ -23477,16 +26273,12 @@ EXTERN_C const IID IID_IInternalSessionControl;
         virtual HRESULT STDMETHODCALLTYPE GetRemoteConsole( 
             /* [retval][out] */ IConsole **aConsole) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE AssignMachine( 
-            /* [in] */ IMachine *aMachine,
-            /* [in] */ LockType aLockType) = 0;
-        
         virtual HRESULT STDMETHODCALLTYPE AssignRemoteMachine( 
             /* [in] */ IMachine *aMachine,
             /* [in] */ IConsole *aConsole) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE UpdateMachineState( 
-            /* [in] */ MachineState aAMachineState) = 0;
+            /* [in] */ MachineState aMachineState) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Uninitialize( void) = 0;
         
@@ -23508,7 +26300,8 @@ EXTERN_C const IID IID_IInternalSessionControl;
         
         virtual HRESULT STDMETHODCALLTYPE OnStorageDeviceChange( 
             /* [in] */ IMediumAttachment *aMediumAttachment,
-            /* [in] */ BOOL aRemove) = 0;
+            /* [in] */ BOOL aRemove,
+            /* [in] */ BOOL aSilent) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE OnClipboardModeChange( 
             /* [in] */ ClipboardMode aClipboardMode) = 0;
@@ -23525,6 +26318,8 @@ EXTERN_C const IID IID_IInternalSessionControl;
         
         virtual HRESULT STDMETHODCALLTYPE OnVRDEServerChange( 
             /* [in] */ BOOL aRestart) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE OnVideoCaptureChange( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE OnUSBControllerChange( void) = 0;
         
@@ -23559,24 +26354,34 @@ EXTERN_C const IID IID_IInternalSessionControl;
         
         virtual HRESULT STDMETHODCALLTYPE EnumerateGuestProperties( 
             /* [in] */ BSTR aPatterns,
-            /* [out] */ SAFEARRAY * *aKey,
-            /* [out] */ SAFEARRAY * *aValue,
-            /* [out] */ SAFEARRAY * *aTimestamp,
+            /* [out] */ SAFEARRAY * *aKeys,
+            /* [out] */ SAFEARRAY * *aValues,
+            /* [out] */ SAFEARRAY * *aTimestamps,
             /* [out] */ SAFEARRAY * *aFlags) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE OnlineMergeMedium( 
             /* [in] */ IMediumAttachment *aMediumAttachment,
             /* [in] */ ULONG aSourceIdx,
             /* [in] */ ULONG aTargetIdx,
-            /* [in] */ IMedium *aSource,
-            /* [in] */ IMedium *aTarget,
-            /* [in] */ BOOL aMergeForward,
-            /* [in] */ IMedium *aParentForTarget,
-            /* [in] */ SAFEARRAY * aChildrenToReparent,
             /* [in] */ IProgress *aProgress) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE EnableVMMStatistics( 
             /* [in] */ BOOL aEnable) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE PauseWithReason( 
+            /* [in] */ Reason aReason) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ResumeWithReason( 
+            /* [in] */ Reason aReason) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SaveStateWithReason( 
+            /* [in] */ Reason aReason,
+            /* [retval][out] */ IProgress **aProgress) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE AssignMachine( 
+            /* [in] */ IMachine *aMachine,
+            /* [in] */ LockType aLockType,
+            /* [in] */ BSTR aTokenId) = 0;
         
     };
     
@@ -23635,11 +26440,6 @@ EXTERN_C const IID IID_IInternalSessionControl;
             IInternalSessionControl * This,
             /* [retval][out] */ IConsole **aConsole);
         
-        HRESULT ( STDMETHODCALLTYPE *AssignMachine )( 
-            IInternalSessionControl * This,
-            /* [in] */ IMachine *aMachine,
-            /* [in] */ LockType aLockType);
-        
         HRESULT ( STDMETHODCALLTYPE *AssignRemoteMachine )( 
             IInternalSessionControl * This,
             /* [in] */ IMachine *aMachine,
@@ -23647,7 +26447,7 @@ EXTERN_C const IID IID_IInternalSessionControl;
         
         HRESULT ( STDMETHODCALLTYPE *UpdateMachineState )( 
             IInternalSessionControl * This,
-            /* [in] */ MachineState aAMachineState);
+            /* [in] */ MachineState aMachineState);
         
         HRESULT ( STDMETHODCALLTYPE *Uninitialize )( 
             IInternalSessionControl * This);
@@ -23676,7 +26476,8 @@ EXTERN_C const IID IID_IInternalSessionControl;
         HRESULT ( STDMETHODCALLTYPE *OnStorageDeviceChange )( 
             IInternalSessionControl * This,
             /* [in] */ IMediumAttachment *aMediumAttachment,
-            /* [in] */ BOOL aRemove);
+            /* [in] */ BOOL aRemove,
+            /* [in] */ BOOL aSilent);
         
         HRESULT ( STDMETHODCALLTYPE *OnClipboardModeChange )( 
             IInternalSessionControl * This,
@@ -23698,6 +26499,9 @@ EXTERN_C const IID IID_IInternalSessionControl;
         HRESULT ( STDMETHODCALLTYPE *OnVRDEServerChange )( 
             IInternalSessionControl * This,
             /* [in] */ BOOL aRestart);
+        
+        HRESULT ( STDMETHODCALLTYPE *OnVideoCaptureChange )( 
+            IInternalSessionControl * This);
         
         HRESULT ( STDMETHODCALLTYPE *OnUSBControllerChange )( 
             IInternalSessionControl * This);
@@ -23740,9 +26544,9 @@ EXTERN_C const IID IID_IInternalSessionControl;
         HRESULT ( STDMETHODCALLTYPE *EnumerateGuestProperties )( 
             IInternalSessionControl * This,
             /* [in] */ BSTR aPatterns,
-            /* [out] */ SAFEARRAY * *aKey,
-            /* [out] */ SAFEARRAY * *aValue,
-            /* [out] */ SAFEARRAY * *aTimestamp,
+            /* [out] */ SAFEARRAY * *aKeys,
+            /* [out] */ SAFEARRAY * *aValues,
+            /* [out] */ SAFEARRAY * *aTimestamps,
             /* [out] */ SAFEARRAY * *aFlags);
         
         HRESULT ( STDMETHODCALLTYPE *OnlineMergeMedium )( 
@@ -23750,16 +26554,30 @@ EXTERN_C const IID IID_IInternalSessionControl;
             /* [in] */ IMediumAttachment *aMediumAttachment,
             /* [in] */ ULONG aSourceIdx,
             /* [in] */ ULONG aTargetIdx,
-            /* [in] */ IMedium *aSource,
-            /* [in] */ IMedium *aTarget,
-            /* [in] */ BOOL aMergeForward,
-            /* [in] */ IMedium *aParentForTarget,
-            /* [in] */ SAFEARRAY * aChildrenToReparent,
             /* [in] */ IProgress *aProgress);
         
         HRESULT ( STDMETHODCALLTYPE *EnableVMMStatistics )( 
             IInternalSessionControl * This,
             /* [in] */ BOOL aEnable);
+        
+        HRESULT ( STDMETHODCALLTYPE *PauseWithReason )( 
+            IInternalSessionControl * This,
+            /* [in] */ Reason aReason);
+        
+        HRESULT ( STDMETHODCALLTYPE *ResumeWithReason )( 
+            IInternalSessionControl * This,
+            /* [in] */ Reason aReason);
+        
+        HRESULT ( STDMETHODCALLTYPE *SaveStateWithReason )( 
+            IInternalSessionControl * This,
+            /* [in] */ Reason aReason,
+            /* [retval][out] */ IProgress **aProgress);
+        
+        HRESULT ( STDMETHODCALLTYPE *AssignMachine )( 
+            IInternalSessionControl * This,
+            /* [in] */ IMachine *aMachine,
+            /* [in] */ LockType aLockType,
+            /* [in] */ BSTR aTokenId);
         
         END_INTERFACE
     } IInternalSessionControlVtbl;
@@ -23803,14 +26621,11 @@ EXTERN_C const IID IID_IInternalSessionControl;
 #define IInternalSessionControl_GetRemoteConsole(This,aConsole)	\
     ( (This)->lpVtbl -> GetRemoteConsole(This,aConsole) ) 
 
-#define IInternalSessionControl_AssignMachine(This,aMachine,aLockType)	\
-    ( (This)->lpVtbl -> AssignMachine(This,aMachine,aLockType) ) 
-
 #define IInternalSessionControl_AssignRemoteMachine(This,aMachine,aConsole)	\
     ( (This)->lpVtbl -> AssignRemoteMachine(This,aMachine,aConsole) ) 
 
-#define IInternalSessionControl_UpdateMachineState(This,aAMachineState)	\
-    ( (This)->lpVtbl -> UpdateMachineState(This,aAMachineState) ) 
+#define IInternalSessionControl_UpdateMachineState(This,aMachineState)	\
+    ( (This)->lpVtbl -> UpdateMachineState(This,aMachineState) ) 
 
 #define IInternalSessionControl_Uninitialize(This)	\
     ( (This)->lpVtbl -> Uninitialize(This) ) 
@@ -23830,8 +26645,8 @@ EXTERN_C const IID IID_IInternalSessionControl;
 #define IInternalSessionControl_OnMediumChange(This,aMediumAttachment,aForce)	\
     ( (This)->lpVtbl -> OnMediumChange(This,aMediumAttachment,aForce) ) 
 
-#define IInternalSessionControl_OnStorageDeviceChange(This,aMediumAttachment,aRemove)	\
-    ( (This)->lpVtbl -> OnStorageDeviceChange(This,aMediumAttachment,aRemove) ) 
+#define IInternalSessionControl_OnStorageDeviceChange(This,aMediumAttachment,aRemove,aSilent)	\
+    ( (This)->lpVtbl -> OnStorageDeviceChange(This,aMediumAttachment,aRemove,aSilent) ) 
 
 #define IInternalSessionControl_OnClipboardModeChange(This,aClipboardMode)	\
     ( (This)->lpVtbl -> OnClipboardModeChange(This,aClipboardMode) ) 
@@ -23847,6 +26662,9 @@ EXTERN_C const IID IID_IInternalSessionControl;
 
 #define IInternalSessionControl_OnVRDEServerChange(This,aRestart)	\
     ( (This)->lpVtbl -> OnVRDEServerChange(This,aRestart) ) 
+
+#define IInternalSessionControl_OnVideoCaptureChange(This)	\
+    ( (This)->lpVtbl -> OnVideoCaptureChange(This) ) 
 
 #define IInternalSessionControl_OnUSBControllerChange(This)	\
     ( (This)->lpVtbl -> OnUSBControllerChange(This) ) 
@@ -23869,14 +26687,26 @@ EXTERN_C const IID IID_IInternalSessionControl;
 #define IInternalSessionControl_AccessGuestProperty(This,aName,aValue,aFlags,aIsSetter,aRetValue,aRetTimestamp,aRetFlags)	\
     ( (This)->lpVtbl -> AccessGuestProperty(This,aName,aValue,aFlags,aIsSetter,aRetValue,aRetTimestamp,aRetFlags) ) 
 
-#define IInternalSessionControl_EnumerateGuestProperties(This,aPatterns,aKey,aValue,aTimestamp,aFlags)	\
-    ( (This)->lpVtbl -> EnumerateGuestProperties(This,aPatterns,aKey,aValue,aTimestamp,aFlags) ) 
+#define IInternalSessionControl_EnumerateGuestProperties(This,aPatterns,aKeys,aValues,aTimestamps,aFlags)	\
+    ( (This)->lpVtbl -> EnumerateGuestProperties(This,aPatterns,aKeys,aValues,aTimestamps,aFlags) ) 
 
-#define IInternalSessionControl_OnlineMergeMedium(This,aMediumAttachment,aSourceIdx,aTargetIdx,aSource,aTarget,aMergeForward,aParentForTarget,aChildrenToReparent,aProgress)	\
-    ( (This)->lpVtbl -> OnlineMergeMedium(This,aMediumAttachment,aSourceIdx,aTargetIdx,aSource,aTarget,aMergeForward,aParentForTarget,aChildrenToReparent,aProgress) ) 
+#define IInternalSessionControl_OnlineMergeMedium(This,aMediumAttachment,aSourceIdx,aTargetIdx,aProgress)	\
+    ( (This)->lpVtbl -> OnlineMergeMedium(This,aMediumAttachment,aSourceIdx,aTargetIdx,aProgress) ) 
 
 #define IInternalSessionControl_EnableVMMStatistics(This,aEnable)	\
     ( (This)->lpVtbl -> EnableVMMStatistics(This,aEnable) ) 
+
+#define IInternalSessionControl_PauseWithReason(This,aReason)	\
+    ( (This)->lpVtbl -> PauseWithReason(This,aReason) ) 
+
+#define IInternalSessionControl_ResumeWithReason(This,aReason)	\
+    ( (This)->lpVtbl -> ResumeWithReason(This,aReason) ) 
+
+#define IInternalSessionControl_SaveStateWithReason(This,aReason,aProgress)	\
+    ( (This)->lpVtbl -> SaveStateWithReason(This,aReason,aProgress) ) 
+
+#define IInternalSessionControl_AssignMachine(This,aMachine,aLockType,aTokenId)	\
+    ( (This)->lpVtbl -> AssignMachine(This,aMachine,aLockType,aTokenId) ) 
 
 #endif /* COBJMACROS */
 
@@ -26420,7 +29250,7 @@ EXTERN_C const IID IID_IVirtualBoxClient;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("5fe0bd48-1181-40d1-991f-3b02f269a823")
+    MIDL_INTERFACE("d191281f-b0cb-4d83-a8fa-0d9fd6ba234c")
     IVirtualBoxClient : public IDispatch
     {
     public:
@@ -26432,6 +29262,9 @@ EXTERN_C const IID IID_IVirtualBoxClient;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
             /* [retval][out] */ IEventSource **aEventSource) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE CheckMachineError( 
+            /* [in] */ IMachine *aMachine) = 0;
         
     };
     
@@ -26494,6 +29327,10 @@ EXTERN_C const IID IID_IVirtualBoxClient;
             IVirtualBoxClient * This,
             /* [retval][out] */ IEventSource **aEventSource);
         
+        HRESULT ( STDMETHODCALLTYPE *CheckMachineError )( 
+            IVirtualBoxClient * This,
+            /* [in] */ IMachine *aMachine);
+        
         END_INTERFACE
     } IVirtualBoxClientVtbl;
 
@@ -26538,6 +29375,9 @@ EXTERN_C const IID IID_IVirtualBoxClient;
 
 #define IVirtualBoxClient_get_EventSource(This,aEventSource)	\
     ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
+
+#define IVirtualBoxClient_CheckMachineError(This,aMachine)	\
+    ( (This)->lpVtbl -> CheckMachineError(This,aMachine) ) 
 
 #endif /* COBJMACROS */
 
@@ -29255,7 +32095,7 @@ EXTERN_C const IID IID_IMouseCapabilityChangedEvent;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("d633ad48-820c-4207-b46c-6bd3596640d5")
+    MIDL_INTERFACE("70e7779a-e64a-4908-804e-371cad23a756")
     IMouseCapabilityChangedEvent : public IEvent
     {
     public:
@@ -29264,6 +32104,9 @@ EXTERN_C const IID IID_IMouseCapabilityChangedEvent;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SupportsRelative( 
             /* [retval][out] */ BOOL *aSupportsRelative) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SupportsMultiTouch( 
+            /* [retval][out] */ BOOL *aSupportsMultiTouch) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NeedsHostCursor( 
             /* [retval][out] */ BOOL *aNeedsHostCursor) = 0;
@@ -29345,6 +32188,10 @@ EXTERN_C const IID IID_IMouseCapabilityChangedEvent;
             IMouseCapabilityChangedEvent * This,
             /* [retval][out] */ BOOL *aSupportsRelative);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SupportsMultiTouch )( 
+            IMouseCapabilityChangedEvent * This,
+            /* [retval][out] */ BOOL *aSupportsMultiTouch);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NeedsHostCursor )( 
             IMouseCapabilityChangedEvent * This,
             /* [retval][out] */ BOOL *aNeedsHostCursor);
@@ -29406,6 +32253,9 @@ EXTERN_C const IID IID_IMouseCapabilityChangedEvent;
 
 #define IMouseCapabilityChangedEvent_get_SupportsRelative(This,aSupportsRelative)	\
     ( (This)->lpVtbl -> get_SupportsRelative(This,aSupportsRelative) ) 
+
+#define IMouseCapabilityChangedEvent_get_SupportsMultiTouch(This,aSupportsMultiTouch)	\
+    ( (This)->lpVtbl -> get_SupportsMultiTouch(This,aSupportsMultiTouch) ) 
 
 #define IMouseCapabilityChangedEvent_get_NeedsHostCursor(This,aNeedsHostCursor)	\
     ( (This)->lpVtbl -> get_NeedsHostCursor(This,aNeedsHostCursor) ) 
@@ -31483,12 +34333,12 @@ EXTERN_C const IID IID_IGuestMouseEvent;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("1f85d35c-c524-40ff-8e98-307000df0992")
+    MIDL_INTERFACE("179f8647-319c-4e7e-8150-c5837bd265f6")
     IGuestMouseEvent : public IReusableEvent
     {
     public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Absolute( 
-            /* [retval][out] */ BOOL *aAbsolute) = 0;
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Mode( 
+            /* [retval][out] */ GuestMouseEventMode *aMode) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_X( 
             /* [retval][out] */ LONG *aX) = 0;
@@ -31581,9 +34431,9 @@ EXTERN_C const IID IID_IGuestMouseEvent;
         HRESULT ( STDMETHODCALLTYPE *Reuse )( 
             IGuestMouseEvent * This);
         
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Absolute )( 
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Mode )( 
             IGuestMouseEvent * This,
-            /* [retval][out] */ BOOL *aAbsolute);
+            /* [retval][out] */ GuestMouseEventMode *aMode);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_X )( 
             IGuestMouseEvent * This,
@@ -31664,8 +34514,8 @@ EXTERN_C const IID IID_IGuestMouseEvent;
     ( (This)->lpVtbl -> Reuse(This) ) 
 
 
-#define IGuestMouseEvent_get_Absolute(This,aAbsolute)	\
-    ( (This)->lpVtbl -> get_Absolute(This,aAbsolute) ) 
+#define IGuestMouseEvent_get_Mode(This,aMode)	\
+    ( (This)->lpVtbl -> get_Mode(This,aMode) ) 
 
 #define IGuestMouseEvent_get_X(This,aX)	\
     ( (This)->lpVtbl -> get_X(This,aX) ) 
@@ -31691,6 +34541,3093 @@ EXTERN_C const IID IID_IGuestMouseEvent;
 
 
 #endif 	/* __IGuestMouseEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestMultiTouchEvent_INTERFACE_DEFINED__
+#define __IGuestMultiTouchEvent_INTERFACE_DEFINED__
+
+/* interface IGuestMultiTouchEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestMultiTouchEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("be8a0eb5-f4f4-4dd0-9d30-c89b873247ec")
+    IGuestMultiTouchEvent : public IEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ContactCount( 
+            /* [retval][out] */ LONG *aContactCount) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_XPositions( 
+            /* [retval][out] */ SAFEARRAY * *aXPositions) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_YPositions( 
+            /* [retval][out] */ SAFEARRAY * *aYPositions) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ContactIds( 
+            /* [retval][out] */ SAFEARRAY * *aContactIds) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ContactFlags( 
+            /* [retval][out] */ SAFEARRAY * *aContactFlags) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ScanTime( 
+            /* [retval][out] */ ULONG *aScanTime) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestMultiTouchEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestMultiTouchEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestMultiTouchEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestMultiTouchEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestMultiTouchEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestMultiTouchEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestMultiTouchEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestMultiTouchEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestMultiTouchEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestMultiTouchEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestMultiTouchEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestMultiTouchEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestMultiTouchEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ContactCount )( 
+            IGuestMultiTouchEvent * This,
+            /* [retval][out] */ LONG *aContactCount);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_XPositions )( 
+            IGuestMultiTouchEvent * This,
+            /* [retval][out] */ SAFEARRAY * *aXPositions);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_YPositions )( 
+            IGuestMultiTouchEvent * This,
+            /* [retval][out] */ SAFEARRAY * *aYPositions);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ContactIds )( 
+            IGuestMultiTouchEvent * This,
+            /* [retval][out] */ SAFEARRAY * *aContactIds);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ContactFlags )( 
+            IGuestMultiTouchEvent * This,
+            /* [retval][out] */ SAFEARRAY * *aContactFlags);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ScanTime )( 
+            IGuestMultiTouchEvent * This,
+            /* [retval][out] */ ULONG *aScanTime);
+        
+        END_INTERFACE
+    } IGuestMultiTouchEventVtbl;
+
+    interface IGuestMultiTouchEvent
+    {
+        CONST_VTBL struct IGuestMultiTouchEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestMultiTouchEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestMultiTouchEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestMultiTouchEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestMultiTouchEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestMultiTouchEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestMultiTouchEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestMultiTouchEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestMultiTouchEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestMultiTouchEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestMultiTouchEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestMultiTouchEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestMultiTouchEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestMultiTouchEvent_get_ContactCount(This,aContactCount)	\
+    ( (This)->lpVtbl -> get_ContactCount(This,aContactCount) ) 
+
+#define IGuestMultiTouchEvent_get_XPositions(This,aXPositions)	\
+    ( (This)->lpVtbl -> get_XPositions(This,aXPositions) ) 
+
+#define IGuestMultiTouchEvent_get_YPositions(This,aYPositions)	\
+    ( (This)->lpVtbl -> get_YPositions(This,aYPositions) ) 
+
+#define IGuestMultiTouchEvent_get_ContactIds(This,aContactIds)	\
+    ( (This)->lpVtbl -> get_ContactIds(This,aContactIds) ) 
+
+#define IGuestMultiTouchEvent_get_ContactFlags(This,aContactFlags)	\
+    ( (This)->lpVtbl -> get_ContactFlags(This,aContactFlags) ) 
+
+#define IGuestMultiTouchEvent_get_ScanTime(This,aScanTime)	\
+    ( (This)->lpVtbl -> get_ScanTime(This,aScanTime) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestMultiTouchEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestSessionEvent_INTERFACE_DEFINED__
+#define __IGuestSessionEvent_INTERFACE_DEFINED__
+
+/* interface IGuestSessionEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestSessionEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("b9acd33f-647d-45ac-8fe9-f49b3183ba37")
+    IGuestSessionEvent : public IEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Session( 
+            /* [retval][out] */ IGuestSession **aSession) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestSessionEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestSessionEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestSessionEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestSessionEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestSessionEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestSessionEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestSessionEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestSessionEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestSessionEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestSessionEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestSessionEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestSessionEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestSessionEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestSessionEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        END_INTERFACE
+    } IGuestSessionEventVtbl;
+
+    interface IGuestSessionEvent
+    {
+        CONST_VTBL struct IGuestSessionEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestSessionEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestSessionEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestSessionEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestSessionEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestSessionEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestSessionEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestSessionEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestSessionEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestSessionEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestSessionEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestSessionEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestSessionEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestSessionEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestSessionEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestSessionStateChangedEvent_INTERFACE_DEFINED__
+#define __IGuestSessionStateChangedEvent_INTERFACE_DEFINED__
+
+/* interface IGuestSessionStateChangedEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestSessionStateChangedEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("327e3c00-ee61-462f-aed3-0dff6cbf9904")
+    IGuestSessionStateChangedEvent : public IGuestSessionEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Id( 
+            /* [retval][out] */ ULONG *aId) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
+            /* [retval][out] */ GuestSessionStatus *aStatus) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Error( 
+            /* [retval][out] */ IVirtualBoxErrorInfo **aError) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestSessionStateChangedEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestSessionStateChangedEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestSessionStateChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestSessionStateChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [retval][out] */ ULONG *aId);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [retval][out] */ GuestSessionStatus *aStatus);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Error )( 
+            IGuestSessionStateChangedEvent * This,
+            /* [retval][out] */ IVirtualBoxErrorInfo **aError);
+        
+        END_INTERFACE
+    } IGuestSessionStateChangedEventVtbl;
+
+    interface IGuestSessionStateChangedEvent
+    {
+        CONST_VTBL struct IGuestSessionStateChangedEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestSessionStateChangedEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestSessionStateChangedEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestSessionStateChangedEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestSessionStateChangedEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestSessionStateChangedEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestSessionStateChangedEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestSessionStateChangedEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestSessionStateChangedEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestSessionStateChangedEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestSessionStateChangedEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestSessionStateChangedEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestSessionStateChangedEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestSessionStateChangedEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestSessionStateChangedEvent_get_Id(This,aId)	\
+    ( (This)->lpVtbl -> get_Id(This,aId) ) 
+
+#define IGuestSessionStateChangedEvent_get_Status(This,aStatus)	\
+    ( (This)->lpVtbl -> get_Status(This,aStatus) ) 
+
+#define IGuestSessionStateChangedEvent_get_Error(This,aError)	\
+    ( (This)->lpVtbl -> get_Error(This,aError) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestSessionStateChangedEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestSessionRegisteredEvent_INTERFACE_DEFINED__
+#define __IGuestSessionRegisteredEvent_INTERFACE_DEFINED__
+
+/* interface IGuestSessionRegisteredEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestSessionRegisteredEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("b79de686-eabd-4fa6-960a-f1756c99ea1c")
+    IGuestSessionRegisteredEvent : public IGuestSessionEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Registered( 
+            /* [retval][out] */ BOOL *aRegistered) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestSessionRegisteredEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestSessionRegisteredEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestSessionRegisteredEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestSessionRegisteredEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestSessionRegisteredEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestSessionRegisteredEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestSessionRegisteredEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestSessionRegisteredEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestSessionRegisteredEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestSessionRegisteredEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestSessionRegisteredEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestSessionRegisteredEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestSessionRegisteredEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestSessionRegisteredEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Registered )( 
+            IGuestSessionRegisteredEvent * This,
+            /* [retval][out] */ BOOL *aRegistered);
+        
+        END_INTERFACE
+    } IGuestSessionRegisteredEventVtbl;
+
+    interface IGuestSessionRegisteredEvent
+    {
+        CONST_VTBL struct IGuestSessionRegisteredEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestSessionRegisteredEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestSessionRegisteredEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestSessionRegisteredEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestSessionRegisteredEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestSessionRegisteredEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestSessionRegisteredEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestSessionRegisteredEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestSessionRegisteredEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestSessionRegisteredEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestSessionRegisteredEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestSessionRegisteredEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestSessionRegisteredEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestSessionRegisteredEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestSessionRegisteredEvent_get_Registered(This,aRegistered)	\
+    ( (This)->lpVtbl -> get_Registered(This,aRegistered) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestSessionRegisteredEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestProcessEvent_INTERFACE_DEFINED__
+#define __IGuestProcessEvent_INTERFACE_DEFINED__
+
+/* interface IGuestProcessEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestProcessEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("2405f0e5-6588-40a3-9b0a-68c05ba52c4b")
+    IGuestProcessEvent : public IGuestSessionEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Process( 
+            /* [retval][out] */ IGuestProcess **aProcess) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Pid( 
+            /* [retval][out] */ ULONG *aPid) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestProcessEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestProcessEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestProcessEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestProcessEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestProcessEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestProcessEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestProcessEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestProcessEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestProcessEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestProcessEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestProcessEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestProcessEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestProcessEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestProcessEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Process )( 
+            IGuestProcessEvent * This,
+            /* [retval][out] */ IGuestProcess **aProcess);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Pid )( 
+            IGuestProcessEvent * This,
+            /* [retval][out] */ ULONG *aPid);
+        
+        END_INTERFACE
+    } IGuestProcessEventVtbl;
+
+    interface IGuestProcessEvent
+    {
+        CONST_VTBL struct IGuestProcessEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestProcessEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestProcessEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestProcessEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestProcessEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestProcessEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestProcessEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestProcessEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestProcessEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestProcessEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestProcessEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestProcessEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestProcessEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestProcessEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestProcessEvent_get_Process(This,aProcess)	\
+    ( (This)->lpVtbl -> get_Process(This,aProcess) ) 
+
+#define IGuestProcessEvent_get_Pid(This,aPid)	\
+    ( (This)->lpVtbl -> get_Pid(This,aPid) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestProcessEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestProcessRegisteredEvent_INTERFACE_DEFINED__
+#define __IGuestProcessRegisteredEvent_INTERFACE_DEFINED__
+
+/* interface IGuestProcessRegisteredEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestProcessRegisteredEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("1d89e2b3-c6ea-45b6-9d43-dc6f70cc9f02")
+    IGuestProcessRegisteredEvent : public IGuestProcessEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Registered( 
+            /* [retval][out] */ BOOL *aRegistered) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestProcessRegisteredEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestProcessRegisteredEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestProcessRegisteredEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestProcessRegisteredEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Process )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [retval][out] */ IGuestProcess **aProcess);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Pid )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [retval][out] */ ULONG *aPid);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Registered )( 
+            IGuestProcessRegisteredEvent * This,
+            /* [retval][out] */ BOOL *aRegistered);
+        
+        END_INTERFACE
+    } IGuestProcessRegisteredEventVtbl;
+
+    interface IGuestProcessRegisteredEvent
+    {
+        CONST_VTBL struct IGuestProcessRegisteredEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestProcessRegisteredEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestProcessRegisteredEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestProcessRegisteredEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestProcessRegisteredEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestProcessRegisteredEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestProcessRegisteredEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestProcessRegisteredEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestProcessRegisteredEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestProcessRegisteredEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestProcessRegisteredEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestProcessRegisteredEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestProcessRegisteredEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestProcessRegisteredEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestProcessRegisteredEvent_get_Process(This,aProcess)	\
+    ( (This)->lpVtbl -> get_Process(This,aProcess) ) 
+
+#define IGuestProcessRegisteredEvent_get_Pid(This,aPid)	\
+    ( (This)->lpVtbl -> get_Pid(This,aPid) ) 
+
+
+#define IGuestProcessRegisteredEvent_get_Registered(This,aRegistered)	\
+    ( (This)->lpVtbl -> get_Registered(This,aRegistered) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestProcessRegisteredEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestProcessStateChangedEvent_INTERFACE_DEFINED__
+#define __IGuestProcessStateChangedEvent_INTERFACE_DEFINED__
+
+/* interface IGuestProcessStateChangedEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestProcessStateChangedEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("c365fb7b-4430-499f-92c8-8bed814a567a")
+    IGuestProcessStateChangedEvent : public IGuestProcessEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
+            /* [retval][out] */ ProcessStatus *aStatus) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Error( 
+            /* [retval][out] */ IVirtualBoxErrorInfo **aError) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestProcessStateChangedEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestProcessStateChangedEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestProcessStateChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestProcessStateChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Process )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [retval][out] */ IGuestProcess **aProcess);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Pid )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [retval][out] */ ULONG *aPid);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [retval][out] */ ProcessStatus *aStatus);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Error )( 
+            IGuestProcessStateChangedEvent * This,
+            /* [retval][out] */ IVirtualBoxErrorInfo **aError);
+        
+        END_INTERFACE
+    } IGuestProcessStateChangedEventVtbl;
+
+    interface IGuestProcessStateChangedEvent
+    {
+        CONST_VTBL struct IGuestProcessStateChangedEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestProcessStateChangedEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestProcessStateChangedEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestProcessStateChangedEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestProcessStateChangedEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestProcessStateChangedEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestProcessStateChangedEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestProcessStateChangedEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestProcessStateChangedEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestProcessStateChangedEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestProcessStateChangedEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestProcessStateChangedEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestProcessStateChangedEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestProcessStateChangedEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestProcessStateChangedEvent_get_Process(This,aProcess)	\
+    ( (This)->lpVtbl -> get_Process(This,aProcess) ) 
+
+#define IGuestProcessStateChangedEvent_get_Pid(This,aPid)	\
+    ( (This)->lpVtbl -> get_Pid(This,aPid) ) 
+
+
+#define IGuestProcessStateChangedEvent_get_Status(This,aStatus)	\
+    ( (This)->lpVtbl -> get_Status(This,aStatus) ) 
+
+#define IGuestProcessStateChangedEvent_get_Error(This,aError)	\
+    ( (This)->lpVtbl -> get_Error(This,aError) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestProcessStateChangedEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestProcessIOEvent_INTERFACE_DEFINED__
+#define __IGuestProcessIOEvent_INTERFACE_DEFINED__
+
+/* interface IGuestProcessIOEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestProcessIOEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("9ea9227c-e9bb-49b3-bfc7-c5171e93ef38")
+    IGuestProcessIOEvent : public IGuestProcessEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Handle( 
+            /* [retval][out] */ ULONG *aHandle) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Processed( 
+            /* [retval][out] */ ULONG *aProcessed) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestProcessIOEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestProcessIOEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestProcessIOEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestProcessIOEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestProcessIOEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestProcessIOEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestProcessIOEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestProcessIOEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestProcessIOEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestProcessIOEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestProcessIOEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestProcessIOEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestProcessIOEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestProcessIOEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Process )( 
+            IGuestProcessIOEvent * This,
+            /* [retval][out] */ IGuestProcess **aProcess);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Pid )( 
+            IGuestProcessIOEvent * This,
+            /* [retval][out] */ ULONG *aPid);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Handle )( 
+            IGuestProcessIOEvent * This,
+            /* [retval][out] */ ULONG *aHandle);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Processed )( 
+            IGuestProcessIOEvent * This,
+            /* [retval][out] */ ULONG *aProcessed);
+        
+        END_INTERFACE
+    } IGuestProcessIOEventVtbl;
+
+    interface IGuestProcessIOEvent
+    {
+        CONST_VTBL struct IGuestProcessIOEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestProcessIOEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestProcessIOEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestProcessIOEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestProcessIOEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestProcessIOEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestProcessIOEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestProcessIOEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestProcessIOEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestProcessIOEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestProcessIOEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestProcessIOEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestProcessIOEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestProcessIOEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestProcessIOEvent_get_Process(This,aProcess)	\
+    ( (This)->lpVtbl -> get_Process(This,aProcess) ) 
+
+#define IGuestProcessIOEvent_get_Pid(This,aPid)	\
+    ( (This)->lpVtbl -> get_Pid(This,aPid) ) 
+
+
+#define IGuestProcessIOEvent_get_Handle(This,aHandle)	\
+    ( (This)->lpVtbl -> get_Handle(This,aHandle) ) 
+
+#define IGuestProcessIOEvent_get_Processed(This,aProcessed)	\
+    ( (This)->lpVtbl -> get_Processed(This,aProcessed) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestProcessIOEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestProcessInputNotifyEvent_INTERFACE_DEFINED__
+#define __IGuestProcessInputNotifyEvent_INTERFACE_DEFINED__
+
+/* interface IGuestProcessInputNotifyEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestProcessInputNotifyEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("0de887f2-b7db-4616-aac6-cfb94d89ba78")
+    IGuestProcessInputNotifyEvent : public IGuestProcessIOEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
+            /* [retval][out] */ ProcessInputStatus *aStatus) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestProcessInputNotifyEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestProcessInputNotifyEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestProcessInputNotifyEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestProcessInputNotifyEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Process )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [retval][out] */ IGuestProcess **aProcess);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Pid )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [retval][out] */ ULONG *aPid);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Handle )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [retval][out] */ ULONG *aHandle);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Processed )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [retval][out] */ ULONG *aProcessed);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            IGuestProcessInputNotifyEvent * This,
+            /* [retval][out] */ ProcessInputStatus *aStatus);
+        
+        END_INTERFACE
+    } IGuestProcessInputNotifyEventVtbl;
+
+    interface IGuestProcessInputNotifyEvent
+    {
+        CONST_VTBL struct IGuestProcessInputNotifyEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestProcessInputNotifyEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestProcessInputNotifyEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestProcessInputNotifyEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestProcessInputNotifyEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestProcessInputNotifyEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestProcessInputNotifyEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestProcessInputNotifyEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestProcessInputNotifyEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestProcessInputNotifyEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestProcessInputNotifyEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestProcessInputNotifyEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestProcessInputNotifyEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestProcessInputNotifyEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestProcessInputNotifyEvent_get_Process(This,aProcess)	\
+    ( (This)->lpVtbl -> get_Process(This,aProcess) ) 
+
+#define IGuestProcessInputNotifyEvent_get_Pid(This,aPid)	\
+    ( (This)->lpVtbl -> get_Pid(This,aPid) ) 
+
+
+#define IGuestProcessInputNotifyEvent_get_Handle(This,aHandle)	\
+    ( (This)->lpVtbl -> get_Handle(This,aHandle) ) 
+
+#define IGuestProcessInputNotifyEvent_get_Processed(This,aProcessed)	\
+    ( (This)->lpVtbl -> get_Processed(This,aProcessed) ) 
+
+
+#define IGuestProcessInputNotifyEvent_get_Status(This,aStatus)	\
+    ( (This)->lpVtbl -> get_Status(This,aStatus) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestProcessInputNotifyEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestProcessOutputEvent_INTERFACE_DEFINED__
+#define __IGuestProcessOutputEvent_INTERFACE_DEFINED__
+
+/* interface IGuestProcessOutputEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestProcessOutputEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d3d5f1ee-bcb2-4905-a7ab-cc85448a742b")
+    IGuestProcessOutputEvent : public IGuestProcessIOEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Data( 
+            /* [retval][out] */ SAFEARRAY * *aData) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestProcessOutputEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestProcessOutputEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestProcessOutputEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestProcessOutputEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestProcessOutputEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestProcessOutputEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestProcessOutputEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestProcessOutputEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestProcessOutputEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestProcessOutputEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestProcessOutputEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestProcessOutputEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestProcessOutputEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestProcessOutputEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Process )( 
+            IGuestProcessOutputEvent * This,
+            /* [retval][out] */ IGuestProcess **aProcess);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Pid )( 
+            IGuestProcessOutputEvent * This,
+            /* [retval][out] */ ULONG *aPid);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Handle )( 
+            IGuestProcessOutputEvent * This,
+            /* [retval][out] */ ULONG *aHandle);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Processed )( 
+            IGuestProcessOutputEvent * This,
+            /* [retval][out] */ ULONG *aProcessed);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Data )( 
+            IGuestProcessOutputEvent * This,
+            /* [retval][out] */ SAFEARRAY * *aData);
+        
+        END_INTERFACE
+    } IGuestProcessOutputEventVtbl;
+
+    interface IGuestProcessOutputEvent
+    {
+        CONST_VTBL struct IGuestProcessOutputEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestProcessOutputEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestProcessOutputEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestProcessOutputEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestProcessOutputEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestProcessOutputEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestProcessOutputEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestProcessOutputEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestProcessOutputEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestProcessOutputEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestProcessOutputEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestProcessOutputEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestProcessOutputEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestProcessOutputEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestProcessOutputEvent_get_Process(This,aProcess)	\
+    ( (This)->lpVtbl -> get_Process(This,aProcess) ) 
+
+#define IGuestProcessOutputEvent_get_Pid(This,aPid)	\
+    ( (This)->lpVtbl -> get_Pid(This,aPid) ) 
+
+
+#define IGuestProcessOutputEvent_get_Handle(This,aHandle)	\
+    ( (This)->lpVtbl -> get_Handle(This,aHandle) ) 
+
+#define IGuestProcessOutputEvent_get_Processed(This,aProcessed)	\
+    ( (This)->lpVtbl -> get_Processed(This,aProcessed) ) 
+
+
+#define IGuestProcessOutputEvent_get_Data(This,aData)	\
+    ( (This)->lpVtbl -> get_Data(This,aData) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestProcessOutputEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestFileEvent_INTERFACE_DEFINED__
+#define __IGuestFileEvent_INTERFACE_DEFINED__
+
+/* interface IGuestFileEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestFileEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("c8adb7b0-057d-4391-b928-f14b06b710c5")
+    IGuestFileEvent : public IGuestSessionEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_File( 
+            /* [retval][out] */ IGuestFile **aFile) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestFileEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestFileEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestFileEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestFileEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestFileEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestFileEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestFileEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestFileEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestFileEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestFileEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestFileEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestFileEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestFileEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestFileEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_File )( 
+            IGuestFileEvent * This,
+            /* [retval][out] */ IGuestFile **aFile);
+        
+        END_INTERFACE
+    } IGuestFileEventVtbl;
+
+    interface IGuestFileEvent
+    {
+        CONST_VTBL struct IGuestFileEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestFileEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestFileEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestFileEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestFileEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestFileEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestFileEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestFileEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestFileEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestFileEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestFileEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestFileEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestFileEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestFileEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestFileEvent_get_File(This,aFile)	\
+    ( (This)->lpVtbl -> get_File(This,aFile) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestFileEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestFileRegisteredEvent_INTERFACE_DEFINED__
+#define __IGuestFileRegisteredEvent_INTERFACE_DEFINED__
+
+/* interface IGuestFileRegisteredEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestFileRegisteredEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d0d93830-70a2-487e-895e-d3fc9679f7b3")
+    IGuestFileRegisteredEvent : public IGuestFileEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Registered( 
+            /* [retval][out] */ BOOL *aRegistered) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestFileRegisteredEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestFileRegisteredEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestFileRegisteredEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestFileRegisteredEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestFileRegisteredEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestFileRegisteredEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestFileRegisteredEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestFileRegisteredEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestFileRegisteredEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestFileRegisteredEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestFileRegisteredEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestFileRegisteredEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestFileRegisteredEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestFileRegisteredEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_File )( 
+            IGuestFileRegisteredEvent * This,
+            /* [retval][out] */ IGuestFile **aFile);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Registered )( 
+            IGuestFileRegisteredEvent * This,
+            /* [retval][out] */ BOOL *aRegistered);
+        
+        END_INTERFACE
+    } IGuestFileRegisteredEventVtbl;
+
+    interface IGuestFileRegisteredEvent
+    {
+        CONST_VTBL struct IGuestFileRegisteredEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestFileRegisteredEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestFileRegisteredEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestFileRegisteredEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestFileRegisteredEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestFileRegisteredEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestFileRegisteredEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestFileRegisteredEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestFileRegisteredEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestFileRegisteredEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestFileRegisteredEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestFileRegisteredEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestFileRegisteredEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestFileRegisteredEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestFileRegisteredEvent_get_File(This,aFile)	\
+    ( (This)->lpVtbl -> get_File(This,aFile) ) 
+
+
+#define IGuestFileRegisteredEvent_get_Registered(This,aRegistered)	\
+    ( (This)->lpVtbl -> get_Registered(This,aRegistered) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestFileRegisteredEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestFileStateChangedEvent_INTERFACE_DEFINED__
+#define __IGuestFileStateChangedEvent_INTERFACE_DEFINED__
+
+/* interface IGuestFileStateChangedEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestFileStateChangedEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d37fe88f-0979-486c-baa1-3abb144dc82d")
+    IGuestFileStateChangedEvent : public IGuestFileEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
+            /* [retval][out] */ FileStatus *aStatus) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Error( 
+            /* [retval][out] */ IVirtualBoxErrorInfo **aError) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestFileStateChangedEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestFileStateChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestFileStateChangedEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestFileStateChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestFileStateChangedEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestFileStateChangedEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestFileStateChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestFileStateChangedEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestFileStateChangedEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestFileStateChangedEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestFileStateChangedEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestFileStateChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestFileStateChangedEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestFileStateChangedEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_File )( 
+            IGuestFileStateChangedEvent * This,
+            /* [retval][out] */ IGuestFile **aFile);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            IGuestFileStateChangedEvent * This,
+            /* [retval][out] */ FileStatus *aStatus);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Error )( 
+            IGuestFileStateChangedEvent * This,
+            /* [retval][out] */ IVirtualBoxErrorInfo **aError);
+        
+        END_INTERFACE
+    } IGuestFileStateChangedEventVtbl;
+
+    interface IGuestFileStateChangedEvent
+    {
+        CONST_VTBL struct IGuestFileStateChangedEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestFileStateChangedEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestFileStateChangedEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestFileStateChangedEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestFileStateChangedEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestFileStateChangedEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestFileStateChangedEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestFileStateChangedEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestFileStateChangedEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestFileStateChangedEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestFileStateChangedEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestFileStateChangedEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestFileStateChangedEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestFileStateChangedEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestFileStateChangedEvent_get_File(This,aFile)	\
+    ( (This)->lpVtbl -> get_File(This,aFile) ) 
+
+
+#define IGuestFileStateChangedEvent_get_Status(This,aStatus)	\
+    ( (This)->lpVtbl -> get_Status(This,aStatus) ) 
+
+#define IGuestFileStateChangedEvent_get_Error(This,aError)	\
+    ( (This)->lpVtbl -> get_Error(This,aError) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestFileStateChangedEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestFileIOEvent_INTERFACE_DEFINED__
+#define __IGuestFileIOEvent_INTERFACE_DEFINED__
+
+/* interface IGuestFileIOEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestFileIOEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("b5191a7c-9536-4ef8-820e-3b0e17e5bbc8")
+    IGuestFileIOEvent : public IGuestFileEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Offset( 
+            /* [retval][out] */ LONG64 *aOffset) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Processed( 
+            /* [retval][out] */ ULONG *aProcessed) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestFileIOEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestFileIOEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestFileIOEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestFileIOEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestFileIOEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestFileIOEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestFileIOEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestFileIOEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestFileIOEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestFileIOEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestFileIOEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestFileIOEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestFileIOEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestFileIOEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_File )( 
+            IGuestFileIOEvent * This,
+            /* [retval][out] */ IGuestFile **aFile);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Offset )( 
+            IGuestFileIOEvent * This,
+            /* [retval][out] */ LONG64 *aOffset);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Processed )( 
+            IGuestFileIOEvent * This,
+            /* [retval][out] */ ULONG *aProcessed);
+        
+        END_INTERFACE
+    } IGuestFileIOEventVtbl;
+
+    interface IGuestFileIOEvent
+    {
+        CONST_VTBL struct IGuestFileIOEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestFileIOEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestFileIOEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestFileIOEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestFileIOEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestFileIOEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestFileIOEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestFileIOEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestFileIOEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestFileIOEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestFileIOEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestFileIOEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestFileIOEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestFileIOEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestFileIOEvent_get_File(This,aFile)	\
+    ( (This)->lpVtbl -> get_File(This,aFile) ) 
+
+
+#define IGuestFileIOEvent_get_Offset(This,aOffset)	\
+    ( (This)->lpVtbl -> get_Offset(This,aOffset) ) 
+
+#define IGuestFileIOEvent_get_Processed(This,aProcessed)	\
+    ( (This)->lpVtbl -> get_Processed(This,aProcessed) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestFileIOEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestFileOffsetChangedEvent_INTERFACE_DEFINED__
+#define __IGuestFileOffsetChangedEvent_INTERFACE_DEFINED__
+
+/* interface IGuestFileOffsetChangedEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestFileOffsetChangedEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("e8f79a21-1207-4179-94cf-ca250036308f")
+    IGuestFileOffsetChangedEvent : public IGuestFileIOEvent
+    {
+    public:
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestFileOffsetChangedEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestFileOffsetChangedEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestFileOffsetChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestFileOffsetChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_File )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [retval][out] */ IGuestFile **aFile);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Offset )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [retval][out] */ LONG64 *aOffset);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Processed )( 
+            IGuestFileOffsetChangedEvent * This,
+            /* [retval][out] */ ULONG *aProcessed);
+        
+        END_INTERFACE
+    } IGuestFileOffsetChangedEventVtbl;
+
+    interface IGuestFileOffsetChangedEvent
+    {
+        CONST_VTBL struct IGuestFileOffsetChangedEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestFileOffsetChangedEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestFileOffsetChangedEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestFileOffsetChangedEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestFileOffsetChangedEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestFileOffsetChangedEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestFileOffsetChangedEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestFileOffsetChangedEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestFileOffsetChangedEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestFileOffsetChangedEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestFileOffsetChangedEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestFileOffsetChangedEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestFileOffsetChangedEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestFileOffsetChangedEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestFileOffsetChangedEvent_get_File(This,aFile)	\
+    ( (This)->lpVtbl -> get_File(This,aFile) ) 
+
+
+#define IGuestFileOffsetChangedEvent_get_Offset(This,aOffset)	\
+    ( (This)->lpVtbl -> get_Offset(This,aOffset) ) 
+
+#define IGuestFileOffsetChangedEvent_get_Processed(This,aProcessed)	\
+    ( (This)->lpVtbl -> get_Processed(This,aProcessed) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestFileOffsetChangedEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestFileReadEvent_INTERFACE_DEFINED__
+#define __IGuestFileReadEvent_INTERFACE_DEFINED__
+
+/* interface IGuestFileReadEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestFileReadEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("4ee3cbcb-486f-40db-9150-deee3fd24189")
+    IGuestFileReadEvent : public IGuestFileIOEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Data( 
+            /* [retval][out] */ SAFEARRAY * *aData) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestFileReadEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestFileReadEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestFileReadEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestFileReadEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestFileReadEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestFileReadEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestFileReadEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestFileReadEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestFileReadEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestFileReadEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestFileReadEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestFileReadEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestFileReadEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestFileReadEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_File )( 
+            IGuestFileReadEvent * This,
+            /* [retval][out] */ IGuestFile **aFile);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Offset )( 
+            IGuestFileReadEvent * This,
+            /* [retval][out] */ LONG64 *aOffset);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Processed )( 
+            IGuestFileReadEvent * This,
+            /* [retval][out] */ ULONG *aProcessed);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Data )( 
+            IGuestFileReadEvent * This,
+            /* [retval][out] */ SAFEARRAY * *aData);
+        
+        END_INTERFACE
+    } IGuestFileReadEventVtbl;
+
+    interface IGuestFileReadEvent
+    {
+        CONST_VTBL struct IGuestFileReadEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestFileReadEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestFileReadEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestFileReadEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestFileReadEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestFileReadEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestFileReadEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestFileReadEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestFileReadEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestFileReadEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestFileReadEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestFileReadEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestFileReadEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestFileReadEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestFileReadEvent_get_File(This,aFile)	\
+    ( (This)->lpVtbl -> get_File(This,aFile) ) 
+
+
+#define IGuestFileReadEvent_get_Offset(This,aOffset)	\
+    ( (This)->lpVtbl -> get_Offset(This,aOffset) ) 
+
+#define IGuestFileReadEvent_get_Processed(This,aProcessed)	\
+    ( (This)->lpVtbl -> get_Processed(This,aProcessed) ) 
+
+
+#define IGuestFileReadEvent_get_Data(This,aData)	\
+    ( (This)->lpVtbl -> get_Data(This,aData) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestFileReadEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGuestFileWriteEvent_INTERFACE_DEFINED__
+#define __IGuestFileWriteEvent_INTERFACE_DEFINED__
+
+/* interface IGuestFileWriteEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestFileWriteEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("e062a915-3cf5-4c0a-bc90-9b8d4cc94d89")
+    IGuestFileWriteEvent : public IGuestFileIOEvent
+    {
+    public:
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestFileWriteEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestFileWriteEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestFileWriteEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestFileWriteEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestFileWriteEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestFileWriteEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestFileWriteEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestFileWriteEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestFileWriteEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestFileWriteEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestFileWriteEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestFileWriteEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestFileWriteEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Session )( 
+            IGuestFileWriteEvent * This,
+            /* [retval][out] */ IGuestSession **aSession);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_File )( 
+            IGuestFileWriteEvent * This,
+            /* [retval][out] */ IGuestFile **aFile);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Offset )( 
+            IGuestFileWriteEvent * This,
+            /* [retval][out] */ LONG64 *aOffset);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Processed )( 
+            IGuestFileWriteEvent * This,
+            /* [retval][out] */ ULONG *aProcessed);
+        
+        END_INTERFACE
+    } IGuestFileWriteEventVtbl;
+
+    interface IGuestFileWriteEvent
+    {
+        CONST_VTBL struct IGuestFileWriteEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestFileWriteEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestFileWriteEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestFileWriteEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestFileWriteEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestFileWriteEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestFileWriteEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestFileWriteEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestFileWriteEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestFileWriteEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestFileWriteEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestFileWriteEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestFileWriteEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestFileWriteEvent_get_Session(This,aSession)	\
+    ( (This)->lpVtbl -> get_Session(This,aSession) ) 
+
+
+#define IGuestFileWriteEvent_get_File(This,aFile)	\
+    ( (This)->lpVtbl -> get_File(This,aFile) ) 
+
+
+#define IGuestFileWriteEvent_get_Offset(This,aOffset)	\
+    ( (This)->lpVtbl -> get_Offset(This,aOffset) ) 
+
+#define IGuestFileWriteEvent_get_Processed(This,aProcessed)	\
+    ( (This)->lpVtbl -> get_Processed(This,aProcessed) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestFileWriteEvent_INTERFACE_DEFINED__ */
 
 
 #ifndef __IVRDEServerChangedEvent_INTERFACE_DEFINED__
@@ -31985,6 +37922,153 @@ EXTERN_C const IID IID_IVRDEServerInfoChangedEvent;
 
 
 #endif 	/* __IVRDEServerInfoChangedEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IVideoCaptureChangedEvent_INTERFACE_DEFINED__
+#define __IVideoCaptureChangedEvent_INTERFACE_DEFINED__
+
+/* interface IVideoCaptureChangedEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IVideoCaptureChangedEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("6215d169-25dd-4719-ab34-c908701efb58")
+    IVideoCaptureChangedEvent : public IEvent
+    {
+    public:
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IVideoCaptureChangedEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVideoCaptureChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVideoCaptureChangedEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVideoCaptureChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVideoCaptureChangedEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVideoCaptureChangedEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVideoCaptureChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVideoCaptureChangedEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IVideoCaptureChangedEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IVideoCaptureChangedEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IVideoCaptureChangedEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IVideoCaptureChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IVideoCaptureChangedEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        END_INTERFACE
+    } IVideoCaptureChangedEventVtbl;
+
+    interface IVideoCaptureChangedEvent
+    {
+        CONST_VTBL struct IVideoCaptureChangedEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IVideoCaptureChangedEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IVideoCaptureChangedEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IVideoCaptureChangedEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IVideoCaptureChangedEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IVideoCaptureChangedEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IVideoCaptureChangedEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IVideoCaptureChangedEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IVideoCaptureChangedEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IVideoCaptureChangedEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IVideoCaptureChangedEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IVideoCaptureChangedEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IVideoCaptureChangedEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IVideoCaptureChangedEvent_INTERFACE_DEFINED__ */
 
 
 #ifndef __IUSBControllerChangedEvent_INTERFACE_DEFINED__
@@ -34652,6 +40736,193 @@ EXTERN_C const IID IID_IGuestMonitorChangedEvent;
 #endif 	/* __IGuestMonitorChangedEvent_INTERFACE_DEFINED__ */
 
 
+#ifndef __IGuestUserStateChangedEvent_INTERFACE_DEFINED__
+#define __IGuestUserStateChangedEvent_INTERFACE_DEFINED__
+
+/* interface IGuestUserStateChangedEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IGuestUserStateChangedEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("39b4e759-1ec0-4c0f-857f-fbe2a737a256")
+    IGuestUserStateChangedEvent : public IEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
+            /* [retval][out] */ BSTR *aName) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Domain( 
+            /* [retval][out] */ BSTR *aDomain) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_State( 
+            /* [retval][out] */ GuestUserState *aState) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_StateDetails( 
+            /* [retval][out] */ BSTR *aStateDetails) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IGuestUserStateChangedEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGuestUserStateChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGuestUserStateChangedEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGuestUserStateChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IGuestUserStateChangedEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IGuestUserStateChangedEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IGuestUserStateChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IGuestUserStateChangedEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IGuestUserStateChangedEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IGuestUserStateChangedEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IGuestUserStateChangedEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IGuestUserStateChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IGuestUserStateChangedEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
+            IGuestUserStateChangedEvent * This,
+            /* [retval][out] */ BSTR *aName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Domain )( 
+            IGuestUserStateChangedEvent * This,
+            /* [retval][out] */ BSTR *aDomain);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_State )( 
+            IGuestUserStateChangedEvent * This,
+            /* [retval][out] */ GuestUserState *aState);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_StateDetails )( 
+            IGuestUserStateChangedEvent * This,
+            /* [retval][out] */ BSTR *aStateDetails);
+        
+        END_INTERFACE
+    } IGuestUserStateChangedEventVtbl;
+
+    interface IGuestUserStateChangedEvent
+    {
+        CONST_VTBL struct IGuestUserStateChangedEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGuestUserStateChangedEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGuestUserStateChangedEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGuestUserStateChangedEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGuestUserStateChangedEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IGuestUserStateChangedEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IGuestUserStateChangedEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IGuestUserStateChangedEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IGuestUserStateChangedEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IGuestUserStateChangedEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IGuestUserStateChangedEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IGuestUserStateChangedEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IGuestUserStateChangedEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IGuestUserStateChangedEvent_get_Name(This,aName)	\
+    ( (This)->lpVtbl -> get_Name(This,aName) ) 
+
+#define IGuestUserStateChangedEvent_get_Domain(This,aDomain)	\
+    ( (This)->lpVtbl -> get_Domain(This,aDomain) ) 
+
+#define IGuestUserStateChangedEvent_get_State(This,aState)	\
+    ( (This)->lpVtbl -> get_State(This,aState) ) 
+
+#define IGuestUserStateChangedEvent_get_StateDetails(This,aStateDetails)	\
+    ( (This)->lpVtbl -> get_StateDetails(This,aStateDetails) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGuestUserStateChangedEvent_INTERFACE_DEFINED__ */
+
+
 #ifndef __IStorageDeviceChangedEvent_INTERFACE_DEFINED__
 #define __IStorageDeviceChangedEvent_INTERFACE_DEFINED__
 
@@ -34663,7 +40934,7 @@ EXTERN_C const IID IID_IStorageDeviceChangedEvent;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("8a5c2dce-e341-49d4-afce-c95979f7d70c")
+    MIDL_INTERFACE("232e9151-ae84-4b8e-b0f3-5c20c35caac9")
     IStorageDeviceChangedEvent : public IEvent
     {
     public:
@@ -34672,6 +40943,9 @@ EXTERN_C const IID IID_IStorageDeviceChangedEvent;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Removed( 
             /* [retval][out] */ BOOL *aRemoved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Silent( 
+            /* [retval][out] */ BOOL *aSilent) = 0;
         
     };
     
@@ -34750,6 +41024,10 @@ EXTERN_C const IID IID_IStorageDeviceChangedEvent;
             IStorageDeviceChangedEvent * This,
             /* [retval][out] */ BOOL *aRemoved);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Silent )( 
+            IStorageDeviceChangedEvent * This,
+            /* [retval][out] */ BOOL *aSilent);
+        
         END_INTERFACE
     } IStorageDeviceChangedEventVtbl;
 
@@ -34808,6 +41086,9 @@ EXTERN_C const IID IID_IStorageDeviceChangedEvent;
 #define IStorageDeviceChangedEvent_get_Removed(This,aRemoved)	\
     ( (This)->lpVtbl -> get_Removed(This,aRemoved) ) 
 
+#define IStorageDeviceChangedEvent_get_Silent(This,aSilent)	\
+    ( (This)->lpVtbl -> get_Silent(This,aSilent) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -34817,6 +41098,1238 @@ EXTERN_C const IID IID_IStorageDeviceChangedEvent;
 
 
 #endif 	/* __IStorageDeviceChangedEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __INATNetworkChangedEvent_INTERFACE_DEFINED__
+#define __INATNetworkChangedEvent_INTERFACE_DEFINED__
+
+/* interface INATNetworkChangedEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_INATNetworkChangedEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("101ae042-1a29-4a19-92cf-02285773f3b5")
+    INATNetworkChangedEvent : public IEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NetworkName( 
+            /* [retval][out] */ BSTR *aNetworkName) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct INATNetworkChangedEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            INATNetworkChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            INATNetworkChangedEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            INATNetworkChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            INATNetworkChangedEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            INATNetworkChangedEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            INATNetworkChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            INATNetworkChangedEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            INATNetworkChangedEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            INATNetworkChangedEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            INATNetworkChangedEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            INATNetworkChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            INATNetworkChangedEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NetworkName )( 
+            INATNetworkChangedEvent * This,
+            /* [retval][out] */ BSTR *aNetworkName);
+        
+        END_INTERFACE
+    } INATNetworkChangedEventVtbl;
+
+    interface INATNetworkChangedEvent
+    {
+        CONST_VTBL struct INATNetworkChangedEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define INATNetworkChangedEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define INATNetworkChangedEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define INATNetworkChangedEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define INATNetworkChangedEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define INATNetworkChangedEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define INATNetworkChangedEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define INATNetworkChangedEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define INATNetworkChangedEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define INATNetworkChangedEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define INATNetworkChangedEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define INATNetworkChangedEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define INATNetworkChangedEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define INATNetworkChangedEvent_get_NetworkName(This,aNetworkName)	\
+    ( (This)->lpVtbl -> get_NetworkName(This,aNetworkName) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __INATNetworkChangedEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __INATNetworkStartStopEvent_INTERFACE_DEFINED__
+#define __INATNetworkStartStopEvent_INTERFACE_DEFINED__
+
+/* interface INATNetworkStartStopEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_INATNetworkStartStopEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("269d8f6b-fa1e-4cee-91c7-6d8496bea3c1")
+    INATNetworkStartStopEvent : public INATNetworkChangedEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_StartEvent( 
+            /* [retval][out] */ BOOL *aStartEvent) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct INATNetworkStartStopEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            INATNetworkStartStopEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            INATNetworkStartStopEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            INATNetworkStartStopEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            INATNetworkStartStopEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            INATNetworkStartStopEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            INATNetworkStartStopEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            INATNetworkStartStopEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            INATNetworkStartStopEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            INATNetworkStartStopEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            INATNetworkStartStopEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            INATNetworkStartStopEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            INATNetworkStartStopEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NetworkName )( 
+            INATNetworkStartStopEvent * This,
+            /* [retval][out] */ BSTR *aNetworkName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_StartEvent )( 
+            INATNetworkStartStopEvent * This,
+            /* [retval][out] */ BOOL *aStartEvent);
+        
+        END_INTERFACE
+    } INATNetworkStartStopEventVtbl;
+
+    interface INATNetworkStartStopEvent
+    {
+        CONST_VTBL struct INATNetworkStartStopEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define INATNetworkStartStopEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define INATNetworkStartStopEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define INATNetworkStartStopEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define INATNetworkStartStopEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define INATNetworkStartStopEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define INATNetworkStartStopEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define INATNetworkStartStopEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define INATNetworkStartStopEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define INATNetworkStartStopEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define INATNetworkStartStopEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define INATNetworkStartStopEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define INATNetworkStartStopEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define INATNetworkStartStopEvent_get_NetworkName(This,aNetworkName)	\
+    ( (This)->lpVtbl -> get_NetworkName(This,aNetworkName) ) 
+
+
+#define INATNetworkStartStopEvent_get_StartEvent(This,aStartEvent)	\
+    ( (This)->lpVtbl -> get_StartEvent(This,aStartEvent) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __INATNetworkStartStopEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __INATNetworkAlterEvent_INTERFACE_DEFINED__
+#define __INATNetworkAlterEvent_INTERFACE_DEFINED__
+
+/* interface INATNetworkAlterEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_INATNetworkAlterEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("3f5a0822-163a-43b1-ad16-8d58b0ef6e75")
+    INATNetworkAlterEvent : public INATNetworkChangedEvent
+    {
+    public:
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct INATNetworkAlterEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            INATNetworkAlterEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            INATNetworkAlterEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            INATNetworkAlterEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            INATNetworkAlterEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            INATNetworkAlterEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            INATNetworkAlterEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            INATNetworkAlterEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            INATNetworkAlterEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            INATNetworkAlterEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            INATNetworkAlterEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            INATNetworkAlterEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            INATNetworkAlterEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NetworkName )( 
+            INATNetworkAlterEvent * This,
+            /* [retval][out] */ BSTR *aNetworkName);
+        
+        END_INTERFACE
+    } INATNetworkAlterEventVtbl;
+
+    interface INATNetworkAlterEvent
+    {
+        CONST_VTBL struct INATNetworkAlterEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define INATNetworkAlterEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define INATNetworkAlterEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define INATNetworkAlterEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define INATNetworkAlterEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define INATNetworkAlterEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define INATNetworkAlterEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define INATNetworkAlterEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define INATNetworkAlterEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define INATNetworkAlterEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define INATNetworkAlterEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define INATNetworkAlterEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define INATNetworkAlterEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define INATNetworkAlterEvent_get_NetworkName(This,aNetworkName)	\
+    ( (This)->lpVtbl -> get_NetworkName(This,aNetworkName) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __INATNetworkAlterEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __INATNetworkCreationDeletionEvent_INTERFACE_DEFINED__
+#define __INATNetworkCreationDeletionEvent_INTERFACE_DEFINED__
+
+/* interface INATNetworkCreationDeletionEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_INATNetworkCreationDeletionEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("8d984a7e-b855-40b8-ab0c-44d3515b4528")
+    INATNetworkCreationDeletionEvent : public INATNetworkAlterEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CreationEvent( 
+            /* [retval][out] */ BOOL *aCreationEvent) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct INATNetworkCreationDeletionEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            INATNetworkCreationDeletionEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            INATNetworkCreationDeletionEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            INATNetworkCreationDeletionEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            INATNetworkCreationDeletionEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            INATNetworkCreationDeletionEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            INATNetworkCreationDeletionEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            INATNetworkCreationDeletionEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            INATNetworkCreationDeletionEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            INATNetworkCreationDeletionEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            INATNetworkCreationDeletionEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            INATNetworkCreationDeletionEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            INATNetworkCreationDeletionEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NetworkName )( 
+            INATNetworkCreationDeletionEvent * This,
+            /* [retval][out] */ BSTR *aNetworkName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CreationEvent )( 
+            INATNetworkCreationDeletionEvent * This,
+            /* [retval][out] */ BOOL *aCreationEvent);
+        
+        END_INTERFACE
+    } INATNetworkCreationDeletionEventVtbl;
+
+    interface INATNetworkCreationDeletionEvent
+    {
+        CONST_VTBL struct INATNetworkCreationDeletionEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define INATNetworkCreationDeletionEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define INATNetworkCreationDeletionEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define INATNetworkCreationDeletionEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define INATNetworkCreationDeletionEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define INATNetworkCreationDeletionEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define INATNetworkCreationDeletionEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define INATNetworkCreationDeletionEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define INATNetworkCreationDeletionEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define INATNetworkCreationDeletionEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define INATNetworkCreationDeletionEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define INATNetworkCreationDeletionEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define INATNetworkCreationDeletionEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define INATNetworkCreationDeletionEvent_get_NetworkName(This,aNetworkName)	\
+    ( (This)->lpVtbl -> get_NetworkName(This,aNetworkName) ) 
+
+
+
+#define INATNetworkCreationDeletionEvent_get_CreationEvent(This,aCreationEvent)	\
+    ( (This)->lpVtbl -> get_CreationEvent(This,aCreationEvent) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __INATNetworkCreationDeletionEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __INATNetworkSettingEvent_INTERFACE_DEFINED__
+#define __INATNetworkSettingEvent_INTERFACE_DEFINED__
+
+/* interface INATNetworkSettingEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_INATNetworkSettingEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("9db3a9e6-7f29-4aae-a627-5a282c83092c")
+    INATNetworkSettingEvent : public INATNetworkAlterEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Enabled( 
+            /* [retval][out] */ BOOL *aEnabled) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Network( 
+            /* [retval][out] */ BSTR *aNetwork) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Gateway( 
+            /* [retval][out] */ BSTR *aGateway) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AdvertiseDefaultIPv6RouteEnabled( 
+            /* [retval][out] */ BOOL *aAdvertiseDefaultIPv6RouteEnabled) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NeedDhcpServer( 
+            /* [retval][out] */ BOOL *aNeedDhcpServer) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct INATNetworkSettingEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            INATNetworkSettingEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            INATNetworkSettingEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            INATNetworkSettingEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            INATNetworkSettingEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            INATNetworkSettingEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            INATNetworkSettingEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            INATNetworkSettingEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            INATNetworkSettingEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            INATNetworkSettingEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            INATNetworkSettingEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            INATNetworkSettingEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            INATNetworkSettingEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NetworkName )( 
+            INATNetworkSettingEvent * This,
+            /* [retval][out] */ BSTR *aNetworkName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Enabled )( 
+            INATNetworkSettingEvent * This,
+            /* [retval][out] */ BOOL *aEnabled);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Network )( 
+            INATNetworkSettingEvent * This,
+            /* [retval][out] */ BSTR *aNetwork);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Gateway )( 
+            INATNetworkSettingEvent * This,
+            /* [retval][out] */ BSTR *aGateway);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AdvertiseDefaultIPv6RouteEnabled )( 
+            INATNetworkSettingEvent * This,
+            /* [retval][out] */ BOOL *aAdvertiseDefaultIPv6RouteEnabled);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NeedDhcpServer )( 
+            INATNetworkSettingEvent * This,
+            /* [retval][out] */ BOOL *aNeedDhcpServer);
+        
+        END_INTERFACE
+    } INATNetworkSettingEventVtbl;
+
+    interface INATNetworkSettingEvent
+    {
+        CONST_VTBL struct INATNetworkSettingEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define INATNetworkSettingEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define INATNetworkSettingEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define INATNetworkSettingEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define INATNetworkSettingEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define INATNetworkSettingEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define INATNetworkSettingEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define INATNetworkSettingEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define INATNetworkSettingEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define INATNetworkSettingEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define INATNetworkSettingEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define INATNetworkSettingEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define INATNetworkSettingEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define INATNetworkSettingEvent_get_NetworkName(This,aNetworkName)	\
+    ( (This)->lpVtbl -> get_NetworkName(This,aNetworkName) ) 
+
+
+
+#define INATNetworkSettingEvent_get_Enabled(This,aEnabled)	\
+    ( (This)->lpVtbl -> get_Enabled(This,aEnabled) ) 
+
+#define INATNetworkSettingEvent_get_Network(This,aNetwork)	\
+    ( (This)->lpVtbl -> get_Network(This,aNetwork) ) 
+
+#define INATNetworkSettingEvent_get_Gateway(This,aGateway)	\
+    ( (This)->lpVtbl -> get_Gateway(This,aGateway) ) 
+
+#define INATNetworkSettingEvent_get_AdvertiseDefaultIPv6RouteEnabled(This,aAdvertiseDefaultIPv6RouteEnabled)	\
+    ( (This)->lpVtbl -> get_AdvertiseDefaultIPv6RouteEnabled(This,aAdvertiseDefaultIPv6RouteEnabled) ) 
+
+#define INATNetworkSettingEvent_get_NeedDhcpServer(This,aNeedDhcpServer)	\
+    ( (This)->lpVtbl -> get_NeedDhcpServer(This,aNeedDhcpServer) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __INATNetworkSettingEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __INATNetworkPortForwardEvent_INTERFACE_DEFINED__
+#define __INATNetworkPortForwardEvent_INTERFACE_DEFINED__
+
+/* interface INATNetworkPortForwardEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_INATNetworkPortForwardEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("2514881b-23d0-430a-a7ff-7ed7f05534bc")
+    INATNetworkPortForwardEvent : public INATNetworkAlterEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Create( 
+            /* [retval][out] */ BOOL *aCreate) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Ipv6( 
+            /* [retval][out] */ BOOL *aIpv6) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
+            /* [retval][out] */ BSTR *aName) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Proto( 
+            /* [retval][out] */ NATProtocol *aProto) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HostIp( 
+            /* [retval][out] */ BSTR *aHostIp) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HostPort( 
+            /* [retval][out] */ LONG *aHostPort) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_GuestIp( 
+            /* [retval][out] */ BSTR *aGuestIp) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_GuestPort( 
+            /* [retval][out] */ LONG *aGuestPort) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct INATNetworkPortForwardEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            INATNetworkPortForwardEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            INATNetworkPortForwardEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            INATNetworkPortForwardEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            INATNetworkPortForwardEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            INATNetworkPortForwardEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            INATNetworkPortForwardEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            INATNetworkPortForwardEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            INATNetworkPortForwardEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            INATNetworkPortForwardEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NetworkName )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ BSTR *aNetworkName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Create )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ BOOL *aCreate);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Ipv6 )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ BOOL *aIpv6);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ BSTR *aName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Proto )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ NATProtocol *aProto);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HostIp )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ BSTR *aHostIp);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HostPort )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ LONG *aHostPort);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_GuestIp )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ BSTR *aGuestIp);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_GuestPort )( 
+            INATNetworkPortForwardEvent * This,
+            /* [retval][out] */ LONG *aGuestPort);
+        
+        END_INTERFACE
+    } INATNetworkPortForwardEventVtbl;
+
+    interface INATNetworkPortForwardEvent
+    {
+        CONST_VTBL struct INATNetworkPortForwardEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define INATNetworkPortForwardEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define INATNetworkPortForwardEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define INATNetworkPortForwardEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define INATNetworkPortForwardEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define INATNetworkPortForwardEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define INATNetworkPortForwardEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define INATNetworkPortForwardEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define INATNetworkPortForwardEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define INATNetworkPortForwardEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define INATNetworkPortForwardEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define INATNetworkPortForwardEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define INATNetworkPortForwardEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define INATNetworkPortForwardEvent_get_NetworkName(This,aNetworkName)	\
+    ( (This)->lpVtbl -> get_NetworkName(This,aNetworkName) ) 
+
+
+
+#define INATNetworkPortForwardEvent_get_Create(This,aCreate)	\
+    ( (This)->lpVtbl -> get_Create(This,aCreate) ) 
+
+#define INATNetworkPortForwardEvent_get_Ipv6(This,aIpv6)	\
+    ( (This)->lpVtbl -> get_Ipv6(This,aIpv6) ) 
+
+#define INATNetworkPortForwardEvent_get_Name(This,aName)	\
+    ( (This)->lpVtbl -> get_Name(This,aName) ) 
+
+#define INATNetworkPortForwardEvent_get_Proto(This,aProto)	\
+    ( (This)->lpVtbl -> get_Proto(This,aProto) ) 
+
+#define INATNetworkPortForwardEvent_get_HostIp(This,aHostIp)	\
+    ( (This)->lpVtbl -> get_HostIp(This,aHostIp) ) 
+
+#define INATNetworkPortForwardEvent_get_HostPort(This,aHostPort)	\
+    ( (This)->lpVtbl -> get_HostPort(This,aHostPort) ) 
+
+#define INATNetworkPortForwardEvent_get_GuestIp(This,aGuestIp)	\
+    ( (This)->lpVtbl -> get_GuestIp(This,aGuestIp) ) 
+
+#define INATNetworkPortForwardEvent_get_GuestPort(This,aGuestPort)	\
+    ( (This)->lpVtbl -> get_GuestPort(This,aGuestPort) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __INATNetworkPortForwardEvent_INTERFACE_DEFINED__ */
+
+
+#ifndef __IHostNameResolutionConfigurationChangeEvent_INTERFACE_DEFINED__
+#define __IHostNameResolutionConfigurationChangeEvent_INTERFACE_DEFINED__
+
+/* interface IHostNameResolutionConfigurationChangeEvent */
+/* [oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IHostNameResolutionConfigurationChangeEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("f9b9e1cf-cb63-47a1-84fb-02c4894b89a9")
+    IHostNameResolutionConfigurationChangeEvent : public IEvent
+    {
+    public:
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IHostNameResolutionConfigurationChangeEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IHostNameResolutionConfigurationChangeEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IHostNameResolutionConfigurationChangeEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IHostNameResolutionConfigurationChangeEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IHostNameResolutionConfigurationChangeEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IHostNameResolutionConfigurationChangeEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IHostNameResolutionConfigurationChangeEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IHostNameResolutionConfigurationChangeEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IHostNameResolutionConfigurationChangeEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IHostNameResolutionConfigurationChangeEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IHostNameResolutionConfigurationChangeEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IHostNameResolutionConfigurationChangeEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IHostNameResolutionConfigurationChangeEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        END_INTERFACE
+    } IHostNameResolutionConfigurationChangeEventVtbl;
+
+    interface IHostNameResolutionConfigurationChangeEvent
+    {
+        CONST_VTBL struct IHostNameResolutionConfigurationChangeEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IHostNameResolutionConfigurationChangeEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IHostNameResolutionConfigurationChangeEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IHostNameResolutionConfigurationChangeEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IHostNameResolutionConfigurationChangeEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IHostNameResolutionConfigurationChangeEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IHostNameResolutionConfigurationChangeEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IHostNameResolutionConfigurationChangeEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IHostNameResolutionConfigurationChangeEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IHostNameResolutionConfigurationChangeEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IHostNameResolutionConfigurationChangeEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IHostNameResolutionConfigurationChangeEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IHostNameResolutionConfigurationChangeEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IHostNameResolutionConfigurationChangeEvent_INTERFACE_DEFINED__ */
 
 
 EXTERN_C const CLSID CLSID_VirtualBox;

@@ -28,6 +28,10 @@
 
 0. Change log
 
+2014-XX-XX Release TBD
+* During installation, will try to guess out correct VBOX_USER_HOME when HOME environment variable is set.
+* Project is now built with Visual Studio 2013 Express.
+
 2013-10-16 Release 4.1 "Ginger"
 
 * Updated COM API to make it work with VirtualBox 4.3. Note this is not compatible with old versions of VirtualBox. If you need to use VirtualBox 4.2.X, please stay with 4.0 "Bayberry".

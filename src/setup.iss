@@ -65,10 +65,16 @@ Filename: "{app}\VmServiceTray.exe"; Description: "{cm:LaunchProgram,VmServiceTr
 procedure UpdateUserHome();
 var
   vbox_user_home: String;
+  vbox_home: String;
 begin
   vbox_user_home := GetEnv('VBOX_USER_HOME');
-  if not DirExists(vbox_user_home) then
-    vbox_user_home := GetEnv('UserProfile') + '\.VirtualBox';
+  if not DirExists(vbox_user_home) then begin
+    vbox_home := GetEnv('HOME');
+    if DirExists(vbox_home) then
+      vbox_user_home := vbox_home + '\.VirtualBox'
+    else
+      vbox_user_home := GetEnv('UserProfile') + '\.VirtualBox';
+  end
   SetIniString('Settings', 'VBOX_USER_HOME', vbox_user_home, ExpandConstant('{app}') + '\VBoxVmService.INI');
 end;
 

@@ -29,6 +29,7 @@
 0. Change log
 
 2014-XX-XX Release TBD
+* Changed VBOX_INSTALL_PATH to VBOX_MSI_INSTALL_PATH (as in Virtualbox 4.3.12). 
 * During installation, will try to guess out correct VBOX_USER_HOME when HOME environment variable is set.
 * Project is now built with Visual Studio 2013 Express.
 

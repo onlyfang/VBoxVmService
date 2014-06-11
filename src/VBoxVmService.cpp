@@ -751,9 +751,9 @@ unsigned __stdcall WorkerProc(void* pParam)
 
         // get full path to VBoxWebSrv.exe
         char pVBoxWebSrvPath[nBufferSize+1];
-        if (GetEnvironmentVariable("VBOX_INSTALL_PATH", pVBoxWebSrvPath, nBufferSize) == 0)
+        if (GetEnvironmentVariable("VBOX_MSI_INSTALL_PATH", pVBoxWebSrvPath, nBufferSize) == 0)
         {
-            WriteLog("VBOX_INSTALL_PATH not found.");        
+            WriteLog("VBOX_MSI_INSTALL_PATH not found.");
         }
         else
         {

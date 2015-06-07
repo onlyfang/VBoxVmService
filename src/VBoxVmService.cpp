@@ -410,13 +410,24 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
             session->get_Console(&console);
 
             if (strcmp(method, "savestate") == 0)
-                rc = console->SaveState(&progress);
-            else
-                rc = console->PowerButton();
-            if (!SUCCEEDED(rc))
             {
-                WriteLogPipe(pipe, ErrorInfo("Could not stop machine!", rc));
-                break;
+                rc = machine->SaveState(&progress);
+                if (!SUCCEEDED(rc))
+                {
+                    WriteLogPipe(pipe, ErrorInfo("Could not stop machine!", rc));
+                    break;
+                }
+                rc = progress->WaitForCompletion(-1);
+
+            }
+            else
+            {
+                rc = console->PowerButton();
+                if (!SUCCEEDED(rc))
+                {
+                    WriteLogPipe(pipe, ErrorInfo("Could not stop machine!", rc));
+                    break;
+                }
             }
 
             result = 1;

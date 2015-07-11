@@ -449,7 +449,7 @@ void StopVM(int vm)
 
     if (chBuf[0] != 0)
     {
-        sprintf_s(temp, nBufferSize, "Failed to start up virtual machine.\n%s\n", chBuf + 1);
+        sprintf_s(temp, nBufferSize, "Failed to stop virtual machine.\n%s\n", chBuf + 1);
         ReportError(temp);
         return;
     }

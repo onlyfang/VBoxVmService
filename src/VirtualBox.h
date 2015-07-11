@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Mon Jun  1 21:20:59 2015
+/* at Thu Jul  9 12:05:20 2015
  */
 /* Compiler settings for Z:\home\vbox\tinderbox\sdk\out\linux.amd64\release\bin\sdk\bindings\mscom\idl\VirtualBox.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -2211,8 +2211,18 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0092
     } 	AudioControllerType;
 
 #define AudioControllerType_T AudioControllerType
-typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("7eef6ef6-98c2-4dc2-ab35-10d2b292028d") 
+typedef /* [public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("7b406301-f520-420c-9805-8ce11c086370") 
 enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0093
+    {	AudioCodecType_Null	= 0,
+	AudioCodecType_SB16	= 1,
+	AudioCodecType_STAC9700	= 2,
+	AudioCodecType_AD1980	= 3,
+	AudioCodecType_STAC9221	= 4
+    } 	AudioCodecType;
+
+#define AudioCodecType_T AudioCodecType
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("7eef6ef6-98c2-4dc2-ab35-10d2b292028d") 
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0094
     {	AuthType_Null	= 0,
 	AuthType_External	= 1,
 	AuthType_Guest	= 2
@@ -2220,7 +2230,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0093
 
 #define AuthType_T AuthType
 typedef /* [public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("e7e8e097-299d-4e98-8bbc-c31c2d47d0cc") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0094
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0095
     {	Reason_Unspecified	= 0,
 	Reason_HostSuspend	= 1,
 	Reason_HostResume	= 2,
@@ -2230,7 +2240,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0094
 
 #define Reason_T Reason
 typedef /* [public][public][public][public][public][public][public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("2dab9df1-9683-48fd-8c11-caada236fcb0") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0095
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0096
     {	StorageBus_Null	= 0,
 	StorageBus_IDE	= 1,
 	StorageBus_SATA	= 2,
@@ -2242,7 +2252,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0095
 
 #define StorageBus_T StorageBus
 typedef /* [public][public][public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("02e190af-b546-4109-b036-6deaa4ef6e69") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0096
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0097
     {	StorageControllerType_Null	= 0,
 	StorageControllerType_LsiLogic	= 1,
 	StorageControllerType_BusLogic	= 2,
@@ -2257,7 +2267,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0096
 
 #define StorageControllerType_T StorageControllerType
 typedef /* [public][public][public][public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("8b4096a8-a7c3-4d3b-bbb1-05a0a51ec394") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0097
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0098
     {	ChipsetType_Null	= 0,
 	ChipsetType_PIIX3	= 1,
 	ChipsetType_ICH9	= 2
@@ -2265,7 +2275,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0097
 
 #define ChipsetType_T ChipsetType
 typedef /* [public][v1_enum][uuid] */  DECLSPEC_UUID("67772168-50d9-11df-9669-7fb714ee4fa1") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0098
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0099
     {	NATAliasMode_AliasLog	= 0x1,
 	NATAliasMode_AliasProxyOnly	= 0x2,
 	NATAliasMode_AliasUseSamePorts	= 0x4
@@ -2273,14 +2283,14 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0098
 
 #define NATAliasMode_T NATAliasMode
 typedef /* [public][public][public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("e90164be-eb03-11de-94af-fff9b1c1b19f") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0099
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0100
     {	NATProtocol_UDP	= 0,
 	NATProtocol_TCP	= 1
     } 	NATProtocol;
 
 #define NATProtocol_T NATProtocol
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("1d92b67d-dc69-4be9-ad4c-93a01e1e0c8e") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0100
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0101
     {	BandwidthGroupType_Null	= 0,
 	BandwidthGroupType_Disk	= 1,
 	BandwidthGroupType_Network	= 2
@@ -2288,7 +2298,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0100
 
 #define BandwidthGroupType_T BandwidthGroupType
 typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("b2ddb312-2f9e-4e69-98df-7235e43b2149") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0101
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0102
     {	VBoxEventType_Invalid	= 0,
 	VBoxEventType_Any	= 1,
 	VBoxEventType_Vetoable	= 2,
@@ -2366,14 +2376,14 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0101
 
 #define VBoxEventType_T VBoxEventType
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("4b500146-ebba-4b7c-bc29-69c2d57a5caf") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0102
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
     {	GuestMouseEventMode_Relative	= 0,
 	GuestMouseEventMode_Absolute	= 1
     } 	GuestMouseEventMode;
 
 #define GuestMouseEventMode_T GuestMouseEventMode
 typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("ef172985-7e36-4297-95be-e46396968d66") 
-enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
+enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0104
     {	GuestMonitorChangedEventType_Enabled	= 0,
 	GuestMonitorChangedEventType_Disabled	= 1,
 	GuestMonitorChangedEventType_NewOrigin	= 2
@@ -2554,6 +2564,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
 #define COM_FORWARD_IVirtualBox_GETTER_APIVersion_TO(smth) HRESULT STDMETHODCALLTYPE get_APIVersion (BSTR * aAPIVersion) { return smth get_APIVersion (aAPIVersion); }
 #define COM_FORWARD_IVirtualBox_GETTER_APIVersion_TO_OBJ(obj) COM_FORWARD_IVirtualBox_GETTER_APIVersion_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_GETTER_APIVersion_TO_BASE(base) COM_FORWARD_IVirtualBox_GETTER_APIVersion_TO (base::)
+#define COM_FORWARD_IVirtualBox_GETTER_APIRevision_TO(smth) HRESULT STDMETHODCALLTYPE get_APIRevision (LONG64 * aAPIRevision) { return smth get_APIRevision (aAPIRevision); }
+#define COM_FORWARD_IVirtualBox_GETTER_APIRevision_TO_OBJ(obj) COM_FORWARD_IVirtualBox_GETTER_APIRevision_TO ((obj)->)
+#define COM_FORWARD_IVirtualBox_GETTER_APIRevision_TO_BASE(base) COM_FORWARD_IVirtualBox_GETTER_APIRevision_TO (base::)
 #define COM_FORWARD_IVirtualBox_GETTER_HomeFolder_TO(smth) HRESULT STDMETHODCALLTYPE get_HomeFolder (BSTR * aHomeFolder) { return smth get_HomeFolder (aHomeFolder); }
 #define COM_FORWARD_IVirtualBox_GETTER_HomeFolder_TO_OBJ(obj) COM_FORWARD_IVirtualBox_GETTER_HomeFolder_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_GETTER_HomeFolder_TO_BASE(base) COM_FORWARD_IVirtualBox_GETTER_HomeFolder_TO (base::)
@@ -2683,7 +2696,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
 #define COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO(smth) HRESULT STDMETHODCALLTYPE CheckFirmwarePresent (FirmwareType aFirmwareType, BSTR aVersion, BSTR * aUrl, BSTR * aFile, BOOL * aResult) { return smth CheckFirmwarePresent (aFirmwareType, aVersion, aUrl, aFile, aResult); }
 #define COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO_OBJ(obj) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO_BASE(base) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO (base::)
-#define COM_FORWARD_IVirtualBox_TO(smth) COM_FORWARD_IVirtualBox_GETTER_Version_TO (smth) COM_FORWARD_IVirtualBox_GETTER_VersionNormalized_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Revision_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PackageType_TO (smth) COM_FORWARD_IVirtualBox_GETTER_APIVersion_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HomeFolder_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Host_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SystemProperties_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Machines_TO (smth) COM_FORWARD_IVirtualBox_GETTER_MachineGroups_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HardDisks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DVDImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_FloppyImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ProgressOperations_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GuestOSTypes_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SharedFolders_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PerformanceCollector_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DHCPServers_TO (smth) COM_FORWARD_IVirtualBox_GETTER_NATNetworks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_EventSource_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ExtensionPackManager_TO (smth) COM_FORWARD_IVirtualBox_GETTER_InternalNetworks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GenericNetworkDrivers_TO (smth) COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO (smth) COM_FORWARD_IVirtualBox_CreateMachine_TO (smth) COM_FORWARD_IVirtualBox_OpenMachine_TO (smth) COM_FORWARD_IVirtualBox_RegisterMachine_TO (smth) COM_FORWARD_IVirtualBox_FindMachine_TO (smth) COM_FORWARD_IVirtualBox_GetMachinesByGroups_TO (smth) COM_FORWARD_IVirtualBox_GetMachineStates_TO (smth) COM_FORWARD_IVirtualBox_CreateAppliance_TO (smth) COM_FORWARD_IVirtualBox_CreateMedium_TO (smth) COM_FORWARD_IVirtualBox_OpenMedium_TO (smth) COM_FORWARD_IVirtualBox_GetGuestOSType_TO (smth) COM_FORWARD_IVirtualBox_CreateSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_RemoveSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO (smth) COM_FORWARD_IVirtualBox_GetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetSettingsSecret_TO (smth) COM_FORWARD_IVirtualBox_CreateDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_FindDHCPServerByNetworkName_TO (smth) COM_FORWARD_IVirtualBox_RemoveDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_CreateNATNetwork_TO (smth) COM_FORWARD_IVirtualBox_FindNATNetworkByName_TO (smth) COM_FORWARD_IVirtualBox_RemoveNATNetwork_TO (smth) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO (smth) 
+#define COM_FORWARD_IVirtualBox_TO(smth) COM_FORWARD_IVirtualBox_GETTER_Version_TO (smth) COM_FORWARD_IVirtualBox_GETTER_VersionNormalized_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Revision_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PackageType_TO (smth) COM_FORWARD_IVirtualBox_GETTER_APIVersion_TO (smth) COM_FORWARD_IVirtualBox_GETTER_APIRevision_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HomeFolder_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Host_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SystemProperties_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Machines_TO (smth) COM_FORWARD_IVirtualBox_GETTER_MachineGroups_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HardDisks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DVDImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_FloppyImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ProgressOperations_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GuestOSTypes_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SharedFolders_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PerformanceCollector_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DHCPServers_TO (smth) COM_FORWARD_IVirtualBox_GETTER_NATNetworks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_EventSource_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ExtensionPackManager_TO (smth) COM_FORWARD_IVirtualBox_GETTER_InternalNetworks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GenericNetworkDrivers_TO (smth) COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO (smth) COM_FORWARD_IVirtualBox_CreateMachine_TO (smth) COM_FORWARD_IVirtualBox_OpenMachine_TO (smth) COM_FORWARD_IVirtualBox_RegisterMachine_TO (smth) COM_FORWARD_IVirtualBox_FindMachine_TO (smth) COM_FORWARD_IVirtualBox_GetMachinesByGroups_TO (smth) COM_FORWARD_IVirtualBox_GetMachineStates_TO (smth) COM_FORWARD_IVirtualBox_CreateAppliance_TO (smth) COM_FORWARD_IVirtualBox_CreateMedium_TO (smth) COM_FORWARD_IVirtualBox_OpenMedium_TO (smth) COM_FORWARD_IVirtualBox_GetGuestOSType_TO (smth) COM_FORWARD_IVirtualBox_CreateSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_RemoveSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO (smth) COM_FORWARD_IVirtualBox_GetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetSettingsSecret_TO (smth) COM_FORWARD_IVirtualBox_CreateDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_FindDHCPServerByNetworkName_TO (smth) COM_FORWARD_IVirtualBox_RemoveDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_CreateNATNetwork_TO (smth) COM_FORWARD_IVirtualBox_FindNATNetworkByName_TO (smth) COM_FORWARD_IVirtualBox_RemoveNATNetwork_TO (smth) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO (smth) 
 #define COM_FORWARD_IVirtualBox_TO_OBJ(obj) COM_FORWARD_IVirtualBox_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_TO_BASE(base) COM_FORWARD_IVirtualBox_TO (base::)
 #define COM_FORWARD_IVFSExplorer_GETTER_Path_TO(smth) HRESULT STDMETHODCALLTYPE get_Path (BSTR * aPath) { return smth get_Path (aPath); }
@@ -3364,6 +3377,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
 #define COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO(smth) HRESULT STDMETHODCALLTYPE get_USBProxyAvailable (BOOL * aUSBProxyAvailable) { return smth get_USBProxyAvailable (aUSBProxyAvailable); }
 #define COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO ((obj)->)
 #define COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO_BASE(base) COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO (base::)
+#define COM_FORWARD_IMachine_GETTER_VMProcessPriority_TO(smth) HRESULT STDMETHODCALLTYPE get_VMProcessPriority (BSTR * aVMProcessPriority) { return smth get_VMProcessPriority (aVMProcessPriority); }
+#define COM_FORWARD_IMachine_GETTER_VMProcessPriority_TO_OBJ(obj) COM_FORWARD_IMachine_GETTER_VMProcessPriority_TO ((obj)->)
+#define COM_FORWARD_IMachine_GETTER_VMProcessPriority_TO_BASE(base) COM_FORWARD_IMachine_GETTER_VMProcessPriority_TO (base::)
+#define COM_FORWARD_IMachine_SETTER_VMProcessPriority_TO(smth) HRESULT STDMETHODCALLTYPE put_VMProcessPriority (BSTR aVMProcessPriority) { return smth put_VMProcessPriority (aVMProcessPriority); }
+#define COM_FORWARD_IMachine_SETTER_VMProcessPriority_TO_OBJ(obj) COM_FORWARD_IMachine_SETTER_VMProcessPriority_TO ((obj)->)
+#define COM_FORWARD_IMachine_SETTER_VMProcessPriority_TO_BASE(base) COM_FORWARD_IMachine_SETTER_VMProcessPriority_TO (base::)
 #define COM_FORWARD_IMachine_LockMachine_TO(smth) HRESULT STDMETHODCALLTYPE LockMachine (ISession * aSession, LockType aLockType) { return smth LockMachine (aSession, aLockType); }
 #define COM_FORWARD_IMachine_LockMachine_TO_OBJ(obj) COM_FORWARD_IMachine_LockMachine_TO ((obj)->)
 #define COM_FORWARD_IMachine_LockMachine_TO_BASE(base) COM_FORWARD_IMachine_LockMachine_TO (base::)
@@ -3607,7 +3626,10 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
 #define COM_FORWARD_IMachine_RestoreSnapshot_TO(smth) HRESULT STDMETHODCALLTYPE RestoreSnapshot (ISnapshot * aSnapshot, IProgress * * aProgress) { return smth RestoreSnapshot (aSnapshot, aProgress); }
 #define COM_FORWARD_IMachine_RestoreSnapshot_TO_OBJ(obj) COM_FORWARD_IMachine_RestoreSnapshot_TO ((obj)->)
 #define COM_FORWARD_IMachine_RestoreSnapshot_TO_BASE(base) COM_FORWARD_IMachine_RestoreSnapshot_TO (base::)
-#define COM_FORWARD_IMachine_TO(smth) COM_FORWARD_IMachine_GETTER_Parent_TO (smth) COM_FORWARD_IMachine_GETTER_Icon_TO (smth) COM_FORWARD_IMachine_SETTER_Icon_TO (smth) COM_FORWARD_IMachine_GETTER_Accessible_TO (smth) COM_FORWARD_IMachine_GETTER_AccessError_TO (smth) COM_FORWARD_IMachine_GETTER_Name_TO (smth) COM_FORWARD_IMachine_SETTER_Name_TO (smth) COM_FORWARD_IMachine_GETTER_Description_TO (smth) COM_FORWARD_IMachine_SETTER_Description_TO (smth) COM_FORWARD_IMachine_GETTER_Id_TO (smth) COM_FORWARD_IMachine_GETTER_Groups_TO (smth) COM_FORWARD_IMachine_SETTER_Groups_TO (smth) COM_FORWARD_IMachine_GETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_SETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_GETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_SETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_GETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_SETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_GETTER_CPUIDPortabilityLevel_TO (smth) COM_FORWARD_IMachine_SETTER_CPUIDPortabilityLevel_TO (smth) COM_FORWARD_IMachine_GETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_SETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_GETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_SETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_GETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_GraphicsControllerType_TO (smth) COM_FORWARD_IMachine_SETTER_GraphicsControllerType_TO (smth) COM_FORWARD_IMachine_GETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_SETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_SETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureScreens_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureScreens_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureRate_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureRate_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureFPS_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureFPS_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureMaxTime_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureMaxTime_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureMaxFileSize_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureMaxFileSize_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureOptions_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureOptions_TO (smth) COM_FORWARD_IMachine_GETTER_BIOSSettings_TO (smth) COM_FORWARD_IMachine_GETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_SETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_GETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_SETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_SETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_GETTER_VRDEServer_TO (smth) COM_FORWARD_IMachine_GETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MediumAttachments_TO (smth) COM_FORWARD_IMachine_GETTER_USBControllers_TO (smth) COM_FORWARD_IMachine_GETTER_USBDeviceFilters_TO (smth) COM_FORWARD_IMachine_GETTER_AudioAdapter_TO (smth) COM_FORWARD_IMachine_GETTER_StorageControllers_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsModified_TO (smth) COM_FORWARD_IMachine_GETTER_SessionState_TO (smth) COM_FORWARD_IMachine_GETTER_SessionName_TO (smth) COM_FORWARD_IMachine_GETTER_SessionPID_TO (smth) COM_FORWARD_IMachine_GETTER_State_TO (smth) COM_FORWARD_IMachine_GETTER_LastStateChange_TO (smth) COM_FORWARD_IMachine_GETTER_StateFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_LogFolder_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentSnapshot_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotCount_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentStateModified_TO (smth) COM_FORWARD_IMachine_GETTER_SharedFolders_TO (smth) COM_FORWARD_IMachine_GETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_SETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_GETTER_DnDMode_TO (smth) COM_FORWARD_IMachine_SETTER_DnDMode_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_GETTER_ParavirtProvider_TO (smth) COM_FORWARD_IMachine_SETTER_ParavirtProvider_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_GETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_SETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_GETTER_PCIDeviceAssignments_TO (smth) COM_FORWARD_IMachine_GETTER_BandwidthControl_TO (smth) COM_FORWARD_IMachine_GETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_SETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_GETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_SETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_GETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_SETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_GETTER_DefaultFrontend_TO (smth) COM_FORWARD_IMachine_SETTER_DefaultFrontend_TO (smth) COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO (smth) COM_FORWARD_IMachine_LockMachine_TO (smth) COM_FORWARD_IMachine_LaunchVMProcess_TO (smth) COM_FORWARD_IMachine_SetBootOrder_TO (smth) COM_FORWARD_IMachine_GetBootOrder_TO (smth) COM_FORWARD_IMachine_AttachDevice_TO (smth) COM_FORWARD_IMachine_AttachDeviceWithoutMedium_TO (smth) COM_FORWARD_IMachine_DetachDevice_TO (smth) COM_FORWARD_IMachine_PassthroughDevice_TO (smth) COM_FORWARD_IMachine_TemporaryEjectDevice_TO (smth) COM_FORWARD_IMachine_NonRotationalDevice_TO (smth) COM_FORWARD_IMachine_SetAutoDiscardForDevice_TO (smth) COM_FORWARD_IMachine_SetHotPluggableForDevice_TO (smth) COM_FORWARD_IMachine_SetBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_SetNoBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_UnmountMedium_TO (smth) COM_FORWARD_IMachine_MountMedium_TO (smth) COM_FORWARD_IMachine_GetMedium_TO (smth) COM_FORWARD_IMachine_GetMediumAttachmentsOfController_TO (smth) COM_FORWARD_IMachine_GetMediumAttachment_TO (smth) COM_FORWARD_IMachine_AttachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_DetachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_GetNetworkAdapter_TO (smth) COM_FORWARD_IMachine_AddStorageController_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByName_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByInstance_TO (smth) COM_FORWARD_IMachine_RemoveStorageController_TO (smth) COM_FORWARD_IMachine_SetStorageControllerBootable_TO (smth) COM_FORWARD_IMachine_AddUSBController_TO (smth) COM_FORWARD_IMachine_RemoveUSBController_TO (smth) COM_FORWARD_IMachine_GetUSBControllerByName_TO (smth) COM_FORWARD_IMachine_GetUSBControllerCountByType_TO (smth) COM_FORWARD_IMachine_GetSerialPort_TO (smth) COM_FORWARD_IMachine_GetParallelPort_TO (smth) COM_FORWARD_IMachine_GetExtraDataKeys_TO (smth) COM_FORWARD_IMachine_GetExtraData_TO (smth) COM_FORWARD_IMachine_SetExtraData_TO (smth) COM_FORWARD_IMachine_GetCPUProperty_TO (smth) COM_FORWARD_IMachine_SetCPUProperty_TO (smth) COM_FORWARD_IMachine_GetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_SetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveAllCPUIDLeaves_TO (smth) COM_FORWARD_IMachine_GetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SetSettingsFilePath_TO (smth) COM_FORWARD_IMachine_SaveSettings_TO (smth) COM_FORWARD_IMachine_DiscardSettings_TO (smth) COM_FORWARD_IMachine_Unregister_TO (smth) COM_FORWARD_IMachine_DeleteConfig_TO (smth) COM_FORWARD_IMachine_ExportTo_TO (smth) COM_FORWARD_IMachine_FindSnapshot_TO (smth) COM_FORWARD_IMachine_CreateSharedFolder_TO (smth) COM_FORWARD_IMachine_RemoveSharedFolder_TO (smth) COM_FORWARD_IMachine_CanShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_ShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_GetGuestProperty_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyTimestamp_TO (smth) COM_FORWARD_IMachine_SetGuestProperty_TO (smth) COM_FORWARD_IMachine_SetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_DeleteGuestProperty_TO (smth) COM_FORWARD_IMachine_EnumerateGuestProperties_TO (smth) COM_FORWARD_IMachine_QuerySavedGuestScreenInfo_TO (smth) COM_FORWARD_IMachine_ReadSavedThumbnailToArray_TO (smth) COM_FORWARD_IMachine_QuerySavedScreenshotInfo_TO (smth) COM_FORWARD_IMachine_ReadSavedScreenshotToArray_TO (smth) COM_FORWARD_IMachine_HotPlugCPU_TO (smth) COM_FORWARD_IMachine_HotUnplugCPU_TO (smth) COM_FORWARD_IMachine_GetCPUStatus_TO (smth) COM_FORWARD_IMachine_GetEffectiveParavirtProvider_TO (smth) COM_FORWARD_IMachine_QueryLogFilename_TO (smth) COM_FORWARD_IMachine_ReadLog_TO (smth) COM_FORWARD_IMachine_CloneTo_TO (smth) COM_FORWARD_IMachine_SaveState_TO (smth) COM_FORWARD_IMachine_AdoptSavedState_TO (smth) COM_FORWARD_IMachine_DiscardSavedState_TO (smth) COM_FORWARD_IMachine_TakeSnapshot_TO (smth) COM_FORWARD_IMachine_DeleteSnapshot_TO (smth) COM_FORWARD_IMachine_DeleteSnapshotAndAllChildren_TO (smth) COM_FORWARD_IMachine_DeleteSnapshotRange_TO (smth) COM_FORWARD_IMachine_RestoreSnapshot_TO (smth) 
+#define COM_FORWARD_IMachine_ApplyDefaults_TO(smth) HRESULT STDMETHODCALLTYPE ApplyDefaults (BSTR aFlags) { return smth ApplyDefaults (aFlags); }
+#define COM_FORWARD_IMachine_ApplyDefaults_TO_OBJ(obj) COM_FORWARD_IMachine_ApplyDefaults_TO ((obj)->)
+#define COM_FORWARD_IMachine_ApplyDefaults_TO_BASE(base) COM_FORWARD_IMachine_ApplyDefaults_TO (base::)
+#define COM_FORWARD_IMachine_TO(smth) COM_FORWARD_IMachine_GETTER_Parent_TO (smth) COM_FORWARD_IMachine_GETTER_Icon_TO (smth) COM_FORWARD_IMachine_SETTER_Icon_TO (smth) COM_FORWARD_IMachine_GETTER_Accessible_TO (smth) COM_FORWARD_IMachine_GETTER_AccessError_TO (smth) COM_FORWARD_IMachine_GETTER_Name_TO (smth) COM_FORWARD_IMachine_SETTER_Name_TO (smth) COM_FORWARD_IMachine_GETTER_Description_TO (smth) COM_FORWARD_IMachine_SETTER_Description_TO (smth) COM_FORWARD_IMachine_GETTER_Id_TO (smth) COM_FORWARD_IMachine_GETTER_Groups_TO (smth) COM_FORWARD_IMachine_SETTER_Groups_TO (smth) COM_FORWARD_IMachine_GETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_SETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_GETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_SETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_GETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_SETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_GETTER_CPUIDPortabilityLevel_TO (smth) COM_FORWARD_IMachine_SETTER_CPUIDPortabilityLevel_TO (smth) COM_FORWARD_IMachine_GETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_SETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_GETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_SETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_GETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_GraphicsControllerType_TO (smth) COM_FORWARD_IMachine_SETTER_GraphicsControllerType_TO (smth) COM_FORWARD_IMachine_GETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_SETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_SETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureScreens_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureScreens_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureRate_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureRate_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureFPS_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureFPS_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureMaxTime_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureMaxTime_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureMaxFileSize_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureMaxFileSize_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureOptions_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureOptions_TO (smth) COM_FORWARD_IMachine_GETTER_BIOSSettings_TO (smth) COM_FORWARD_IMachine_GETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_SETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_GETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_SETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_SETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_GETTER_VRDEServer_TO (smth) COM_FORWARD_IMachine_GETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MediumAttachments_TO (smth) COM_FORWARD_IMachine_GETTER_USBControllers_TO (smth) COM_FORWARD_IMachine_GETTER_USBDeviceFilters_TO (smth) COM_FORWARD_IMachine_GETTER_AudioAdapter_TO (smth) COM_FORWARD_IMachine_GETTER_StorageControllers_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsModified_TO (smth) COM_FORWARD_IMachine_GETTER_SessionState_TO (smth) COM_FORWARD_IMachine_GETTER_SessionName_TO (smth) COM_FORWARD_IMachine_GETTER_SessionPID_TO (smth) COM_FORWARD_IMachine_GETTER_State_TO (smth) COM_FORWARD_IMachine_GETTER_LastStateChange_TO (smth) COM_FORWARD_IMachine_GETTER_StateFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_LogFolder_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentSnapshot_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotCount_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentStateModified_TO (smth) COM_FORWARD_IMachine_GETTER_SharedFolders_TO (smth) COM_FORWARD_IMachine_GETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_SETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_GETTER_DnDMode_TO (smth) COM_FORWARD_IMachine_SETTER_DnDMode_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_GETTER_ParavirtProvider_TO (smth) COM_FORWARD_IMachine_SETTER_ParavirtProvider_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_GETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_SETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_GETTER_PCIDeviceAssignments_TO (smth) COM_FORWARD_IMachine_GETTER_BandwidthControl_TO (smth) COM_FORWARD_IMachine_GETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_SETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_GETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_SETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_GETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_SETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_GETTER_DefaultFrontend_TO (smth) COM_FORWARD_IMachine_SETTER_DefaultFrontend_TO (smth) COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO (smth) COM_FORWARD_IMachine_GETTER_VMProcessPriority_TO (smth) COM_FORWARD_IMachine_SETTER_VMProcessPriority_TO (smth) COM_FORWARD_IMachine_LockMachine_TO (smth) COM_FORWARD_IMachine_LaunchVMProcess_TO (smth) COM_FORWARD_IMachine_SetBootOrder_TO (smth) COM_FORWARD_IMachine_GetBootOrder_TO (smth) COM_FORWARD_IMachine_AttachDevice_TO (smth) COM_FORWARD_IMachine_AttachDeviceWithoutMedium_TO (smth) COM_FORWARD_IMachine_DetachDevice_TO (smth) COM_FORWARD_IMachine_PassthroughDevice_TO (smth) COM_FORWARD_IMachine_TemporaryEjectDevice_TO (smth) COM_FORWARD_IMachine_NonRotationalDevice_TO (smth) COM_FORWARD_IMachine_SetAutoDiscardForDevice_TO (smth) COM_FORWARD_IMachine_SetHotPluggableForDevice_TO (smth) COM_FORWARD_IMachine_SetBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_SetNoBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_UnmountMedium_TO (smth) COM_FORWARD_IMachine_MountMedium_TO (smth) COM_FORWARD_IMachine_GetMedium_TO (smth) COM_FORWARD_IMachine_GetMediumAttachmentsOfController_TO (smth) COM_FORWARD_IMachine_GetMediumAttachment_TO (smth) COM_FORWARD_IMachine_AttachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_DetachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_GetNetworkAdapter_TO (smth) COM_FORWARD_IMachine_AddStorageController_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByName_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByInstance_TO (smth) COM_FORWARD_IMachine_RemoveStorageController_TO (smth) COM_FORWARD_IMachine_SetStorageControllerBootable_TO (smth) COM_FORWARD_IMachine_AddUSBController_TO (smth) COM_FORWARD_IMachine_RemoveUSBController_TO (smth) COM_FORWARD_IMachine_GetUSBControllerByName_TO (smth) COM_FORWARD_IMachine_GetUSBControllerCountByType_TO (smth) COM_FORWARD_IMachine_GetSerialPort_TO (smth) COM_FORWARD_IMachine_GetParallelPort_TO (smth) COM_FORWARD_IMachine_GetExtraDataKeys_TO (smth) COM_FORWARD_IMachine_GetExtraData_TO (smth) COM_FORWARD_IMachine_SetExtraData_TO (smth) COM_FORWARD_IMachine_GetCPUProperty_TO (smth) COM_FORWARD_IMachine_SetCPUProperty_TO (smth) COM_FORWARD_IMachine_GetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_SetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveAllCPUIDLeaves_TO (smth) COM_FORWARD_IMachine_GetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SetSettingsFilePath_TO (smth) COM_FORWARD_IMachine_SaveSettings_TO (smth) COM_FORWARD_IMachine_DiscardSettings_TO (smth) COM_FORWARD_IMachine_Unregister_TO (smth) COM_FORWARD_IMachine_DeleteConfig_TO (smth) COM_FORWARD_IMachine_ExportTo_TO (smth) COM_FORWARD_IMachine_FindSnapshot_TO (smth) COM_FORWARD_IMachine_CreateSharedFolder_TO (smth) COM_FORWARD_IMachine_RemoveSharedFolder_TO (smth) COM_FORWARD_IMachine_CanShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_ShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_GetGuestProperty_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyTimestamp_TO (smth) COM_FORWARD_IMachine_SetGuestProperty_TO (smth) COM_FORWARD_IMachine_SetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_DeleteGuestProperty_TO (smth) COM_FORWARD_IMachine_EnumerateGuestProperties_TO (smth) COM_FORWARD_IMachine_QuerySavedGuestScreenInfo_TO (smth) COM_FORWARD_IMachine_ReadSavedThumbnailToArray_TO (smth) COM_FORWARD_IMachine_QuerySavedScreenshotInfo_TO (smth) COM_FORWARD_IMachine_ReadSavedScreenshotToArray_TO (smth) COM_FORWARD_IMachine_HotPlugCPU_TO (smth) COM_FORWARD_IMachine_HotUnplugCPU_TO (smth) COM_FORWARD_IMachine_GetCPUStatus_TO (smth) COM_FORWARD_IMachine_GetEffectiveParavirtProvider_TO (smth) COM_FORWARD_IMachine_QueryLogFilename_TO (smth) COM_FORWARD_IMachine_ReadLog_TO (smth) COM_FORWARD_IMachine_CloneTo_TO (smth) COM_FORWARD_IMachine_SaveState_TO (smth) COM_FORWARD_IMachine_AdoptSavedState_TO (smth) COM_FORWARD_IMachine_DiscardSavedState_TO (smth) COM_FORWARD_IMachine_TakeSnapshot_TO (smth) COM_FORWARD_IMachine_DeleteSnapshot_TO (smth) COM_FORWARD_IMachine_DeleteSnapshotAndAllChildren_TO (smth) COM_FORWARD_IMachine_DeleteSnapshotRange_TO (smth) COM_FORWARD_IMachine_RestoreSnapshot_TO (smth) COM_FORWARD_IMachine_ApplyDefaults_TO (smth) 
 #define COM_FORWARD_IMachine_TO_OBJ(obj) COM_FORWARD_IMachine_TO ((obj)->)
 #define COM_FORWARD_IMachine_TO_BASE(base) COM_FORWARD_IMachine_TO (base::)
 #define COM_FORWARD_IEmulatedUSB_GETTER_Webcams_TO(smth) HRESULT STDMETHODCALLTYPE get_Webcams (SAFEARRAY * * aWebcams) { return smth get_Webcams (aWebcams); }
@@ -4000,6 +4022,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
 #define COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO(smth) HRESULT STDMETHODCALLTYPE get_MaxBootPosition (ULONG * aMaxBootPosition) { return smth get_MaxBootPosition (aMaxBootPosition); }
 #define COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO_BASE(base) COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO (base::)
+#define COM_FORWARD_ISystemProperties_GETTER_RawModeSupported_TO(smth) HRESULT STDMETHODCALLTYPE get_RawModeSupported (BOOL * aRawModeSupported) { return smth get_RawModeSupported (aRawModeSupported); }
+#define COM_FORWARD_ISystemProperties_GETTER_RawModeSupported_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GETTER_RawModeSupported_TO ((obj)->)
+#define COM_FORWARD_ISystemProperties_GETTER_RawModeSupported_TO_BASE(base) COM_FORWARD_ISystemProperties_GETTER_RawModeSupported_TO (base::)
 #define COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO(smth) HRESULT STDMETHODCALLTYPE get_ExclusiveHwVirt (BOOL * aExclusiveHwVirt) { return smth get_ExclusiveHwVirt (aExclusiveHwVirt); }
 #define COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO_BASE(base) COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO (base::)
@@ -4129,7 +4154,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
 #define COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO(smth) HRESULT STDMETHODCALLTYPE GetMaxInstancesOfUSBControllerType (ChipsetType aChipset, USBControllerType aType, ULONG * aMaxInstances) { return smth GetMaxInstancesOfUSBControllerType (aChipset, aType, aMaxInstances); }
 #define COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO_OBJ(obj) COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO_BASE(base) COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO (base::)
-#define COM_FORWARD_ISystemProperties_TO(smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestVRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestVRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestCPUCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestCPUCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestMonitors_TO (smth) COM_FORWARD_ISystemProperties_GETTER_InfoVDSize_TO (smth) COM_FORWARD_ISystemProperties_GETTER_SerialPortCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_ParallelPortCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO (smth) COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO (smth) COM_FORWARD_ISystemProperties_SETTER_ExclusiveHwVirt_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultMachineFolder_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultMachineFolder_TO (smth) COM_FORWARD_ISystemProperties_GETTER_LoggingLevel_TO (smth) COM_FORWARD_ISystemProperties_SETTER_LoggingLevel_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MediumFormats_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultHardDiskFormat_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultHardDiskFormat_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpaceWarning_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpaceWarning_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpacePercentWarning_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpacePercentWarning_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpaceError_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpaceError_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpacePercentError_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpacePercentError_TO (smth) COM_FORWARD_ISystemProperties_GETTER_VRDEAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_SETTER_VRDEAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_GETTER_WebServiceAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_SETTER_WebServiceAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultVRDEExtPack_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultVRDEExtPack_TO (smth) COM_FORWARD_ISystemProperties_GETTER_LogHistoryCount_TO (smth) COM_FORWARD_ISystemProperties_SETTER_LogHistoryCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultAudioDriver_TO (smth) COM_FORWARD_ISystemProperties_GETTER_AutostartDatabasePath_TO (smth) COM_FORWARD_ISystemProperties_SETTER_AutostartDatabasePath_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultAdditionsISO_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultAdditionsISO_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultFrontend_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultFrontend_TO (smth) COM_FORWARD_ISystemProperties_GETTER_ScreenShotFormats_TO (smth) COM_FORWARD_ISystemProperties_GetMaxNetworkAdapters_TO (smth) COM_FORWARD_ISystemProperties_GetMaxNetworkAdaptersOfType_TO (smth) COM_FORWARD_ISystemProperties_GetMaxDevicesPerPortForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMinPortCountForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMaxPortCountForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMaxInstancesOfStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetDeviceTypesForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetDefaultIoCacheSettingForStorageController_TO (smth) COM_FORWARD_ISystemProperties_GetStorageControllerHotplugCapable_TO (smth) COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO (smth) 
+#define COM_FORWARD_ISystemProperties_TO(smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestVRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestVRAM_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MinGuestCPUCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestCPUCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxGuestMonitors_TO (smth) COM_FORWARD_ISystemProperties_GETTER_InfoVDSize_TO (smth) COM_FORWARD_ISystemProperties_GETTER_SerialPortCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_ParallelPortCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MaxBootPosition_TO (smth) COM_FORWARD_ISystemProperties_GETTER_RawModeSupported_TO (smth) COM_FORWARD_ISystemProperties_GETTER_ExclusiveHwVirt_TO (smth) COM_FORWARD_ISystemProperties_SETTER_ExclusiveHwVirt_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultMachineFolder_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultMachineFolder_TO (smth) COM_FORWARD_ISystemProperties_GETTER_LoggingLevel_TO (smth) COM_FORWARD_ISystemProperties_SETTER_LoggingLevel_TO (smth) COM_FORWARD_ISystemProperties_GETTER_MediumFormats_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultHardDiskFormat_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultHardDiskFormat_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpaceWarning_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpaceWarning_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpacePercentWarning_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpacePercentWarning_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpaceError_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpaceError_TO (smth) COM_FORWARD_ISystemProperties_GETTER_FreeDiskSpacePercentError_TO (smth) COM_FORWARD_ISystemProperties_SETTER_FreeDiskSpacePercentError_TO (smth) COM_FORWARD_ISystemProperties_GETTER_VRDEAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_SETTER_VRDEAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_GETTER_WebServiceAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_SETTER_WebServiceAuthLibrary_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultVRDEExtPack_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultVRDEExtPack_TO (smth) COM_FORWARD_ISystemProperties_GETTER_LogHistoryCount_TO (smth) COM_FORWARD_ISystemProperties_SETTER_LogHistoryCount_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultAudioDriver_TO (smth) COM_FORWARD_ISystemProperties_GETTER_AutostartDatabasePath_TO (smth) COM_FORWARD_ISystemProperties_SETTER_AutostartDatabasePath_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultAdditionsISO_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultAdditionsISO_TO (smth) COM_FORWARD_ISystemProperties_GETTER_DefaultFrontend_TO (smth) COM_FORWARD_ISystemProperties_SETTER_DefaultFrontend_TO (smth) COM_FORWARD_ISystemProperties_GETTER_ScreenShotFormats_TO (smth) COM_FORWARD_ISystemProperties_GetMaxNetworkAdapters_TO (smth) COM_FORWARD_ISystemProperties_GetMaxNetworkAdaptersOfType_TO (smth) COM_FORWARD_ISystemProperties_GetMaxDevicesPerPortForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMinPortCountForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMaxPortCountForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetMaxInstancesOfStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetDeviceTypesForStorageBus_TO (smth) COM_FORWARD_ISystemProperties_GetDefaultIoCacheSettingForStorageController_TO (smth) COM_FORWARD_ISystemProperties_GetStorageControllerHotplugCapable_TO (smth) COM_FORWARD_ISystemProperties_GetMaxInstancesOfUSBControllerType_TO (smth) 
 #define COM_FORWARD_ISystemProperties_TO_OBJ(obj) COM_FORWARD_ISystemProperties_TO ((obj)->)
 #define COM_FORWARD_ISystemProperties_TO_BASE(base) COM_FORWARD_ISystemProperties_TO (base::)
 #define COM_FORWARD_IGuestOSType_GETTER_FamilyId_TO(smth) HRESULT STDMETHODCALLTYPE get_FamilyId (BSTR * aFamilyId) { return smth get_FamilyId (aFamilyId); }
@@ -4207,6 +4232,9 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
 #define COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioController_TO(smth) HRESULT STDMETHODCALLTYPE get_RecommendedAudioController (AudioControllerType * aRecommendedAudioController) { return smth get_RecommendedAudioController (aRecommendedAudioController); }
 #define COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioController_TO_OBJ(obj) COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioController_TO ((obj)->)
 #define COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioController_TO_BASE(base) COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioController_TO (base::)
+#define COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioCodec_TO(smth) HRESULT STDMETHODCALLTYPE get_RecommendedAudioCodec (AudioCodecType * aRecommendedAudioCodec) { return smth get_RecommendedAudioCodec (aRecommendedAudioCodec); }
+#define COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioCodec_TO_OBJ(obj) COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioCodec_TO ((obj)->)
+#define COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioCodec_TO_BASE(base) COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioCodec_TO (base::)
 #define COM_FORWARD_IGuestOSType_GETTER_RecommendedFloppy_TO(smth) HRESULT STDMETHODCALLTYPE get_RecommendedFloppy (BOOL * aRecommendedFloppy) { return smth get_RecommendedFloppy (aRecommendedFloppy); }
 #define COM_FORWARD_IGuestOSType_GETTER_RecommendedFloppy_TO_OBJ(obj) COM_FORWARD_IGuestOSType_GETTER_RecommendedFloppy_TO ((obj)->)
 #define COM_FORWARD_IGuestOSType_GETTER_RecommendedFloppy_TO_BASE(base) COM_FORWARD_IGuestOSType_GETTER_RecommendedFloppy_TO (base::)
@@ -4216,7 +4244,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
 #define COM_FORWARD_IGuestOSType_GETTER_RecommendedTFReset_TO(smth) HRESULT STDMETHODCALLTYPE get_RecommendedTFReset (BOOL * aRecommendedTFReset) { return smth get_RecommendedTFReset (aRecommendedTFReset); }
 #define COM_FORWARD_IGuestOSType_GETTER_RecommendedTFReset_TO_OBJ(obj) COM_FORWARD_IGuestOSType_GETTER_RecommendedTFReset_TO ((obj)->)
 #define COM_FORWARD_IGuestOSType_GETTER_RecommendedTFReset_TO_BASE(base) COM_FORWARD_IGuestOSType_GETTER_RecommendedTFReset_TO (base::)
-#define COM_FORWARD_IGuestOSType_TO(smth) COM_FORWARD_IGuestOSType_GETTER_FamilyId_TO (smth) COM_FORWARD_IGuestOSType_GETTER_FamilyDescription_TO (smth) COM_FORWARD_IGuestOSType_GETTER_Id_TO (smth) COM_FORWARD_IGuestOSType_GETTER_Description_TO (smth) COM_FORWARD_IGuestOSType_GETTER_Is64Bit_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedIOAPIC_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedVirtEx_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedRAM_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedVRAM_TO (smth) COM_FORWARD_IGuestOSType_GETTER_Recommended2DVideoAcceleration_TO (smth) COM_FORWARD_IGuestOSType_GETTER_Recommended3DAcceleration_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedHDD_TO (smth) COM_FORWARD_IGuestOSType_GETTER_AdapterType_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedPAE_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedDVDStorageController_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedDVDStorageBus_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedHDStorageController_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedHDStorageBus_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedFirmware_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedUSBHID_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedHPET_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedUSBTablet_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedRTCUseUTC_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedChipset_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioController_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedFloppy_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedUSB_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedTFReset_TO (smth) 
+#define COM_FORWARD_IGuestOSType_TO(smth) COM_FORWARD_IGuestOSType_GETTER_FamilyId_TO (smth) COM_FORWARD_IGuestOSType_GETTER_FamilyDescription_TO (smth) COM_FORWARD_IGuestOSType_GETTER_Id_TO (smth) COM_FORWARD_IGuestOSType_GETTER_Description_TO (smth) COM_FORWARD_IGuestOSType_GETTER_Is64Bit_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedIOAPIC_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedVirtEx_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedRAM_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedVRAM_TO (smth) COM_FORWARD_IGuestOSType_GETTER_Recommended2DVideoAcceleration_TO (smth) COM_FORWARD_IGuestOSType_GETTER_Recommended3DAcceleration_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedHDD_TO (smth) COM_FORWARD_IGuestOSType_GETTER_AdapterType_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedPAE_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedDVDStorageController_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedDVDStorageBus_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedHDStorageController_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedHDStorageBus_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedFirmware_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedUSBHID_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedHPET_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedUSBTablet_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedRTCUseUTC_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedChipset_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioController_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedAudioCodec_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedFloppy_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedUSB_TO (smth) COM_FORWARD_IGuestOSType_GETTER_RecommendedTFReset_TO (smth) 
 #define COM_FORWARD_IGuestOSType_TO_OBJ(obj) COM_FORWARD_IGuestOSType_TO ((obj)->)
 #define COM_FORWARD_IGuestOSType_TO_BASE(base) COM_FORWARD_IGuestOSType_TO (base::)
 #define COM_FORWARD_IAdditionsFacility_GETTER_ClassType_TO(smth) HRESULT STDMETHODCALLTYPE get_ClassType (AdditionsFacilityClass * aClassType) { return smth get_ClassType (aClassType); }
@@ -5797,6 +5825,12 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
 #define COM_FORWARD_IAudioAdapter_SETTER_AudioController_TO(smth) HRESULT STDMETHODCALLTYPE put_AudioController (AudioControllerType aAudioController) { return smth put_AudioController (aAudioController); }
 #define COM_FORWARD_IAudioAdapter_SETTER_AudioController_TO_OBJ(obj) COM_FORWARD_IAudioAdapter_SETTER_AudioController_TO ((obj)->)
 #define COM_FORWARD_IAudioAdapter_SETTER_AudioController_TO_BASE(base) COM_FORWARD_IAudioAdapter_SETTER_AudioController_TO (base::)
+#define COM_FORWARD_IAudioAdapter_GETTER_AudioCodec_TO(smth) HRESULT STDMETHODCALLTYPE get_AudioCodec (AudioCodecType * aAudioCodec) { return smth get_AudioCodec (aAudioCodec); }
+#define COM_FORWARD_IAudioAdapter_GETTER_AudioCodec_TO_OBJ(obj) COM_FORWARD_IAudioAdapter_GETTER_AudioCodec_TO ((obj)->)
+#define COM_FORWARD_IAudioAdapter_GETTER_AudioCodec_TO_BASE(base) COM_FORWARD_IAudioAdapter_GETTER_AudioCodec_TO (base::)
+#define COM_FORWARD_IAudioAdapter_SETTER_AudioCodec_TO(smth) HRESULT STDMETHODCALLTYPE put_AudioCodec (AudioCodecType aAudioCodec) { return smth put_AudioCodec (aAudioCodec); }
+#define COM_FORWARD_IAudioAdapter_SETTER_AudioCodec_TO_OBJ(obj) COM_FORWARD_IAudioAdapter_SETTER_AudioCodec_TO ((obj)->)
+#define COM_FORWARD_IAudioAdapter_SETTER_AudioCodec_TO_BASE(base) COM_FORWARD_IAudioAdapter_SETTER_AudioCodec_TO (base::)
 #define COM_FORWARD_IAudioAdapter_GETTER_AudioDriver_TO(smth) HRESULT STDMETHODCALLTYPE get_AudioDriver (AudioDriverType * aAudioDriver) { return smth get_AudioDriver (aAudioDriver); }
 #define COM_FORWARD_IAudioAdapter_GETTER_AudioDriver_TO_OBJ(obj) COM_FORWARD_IAudioAdapter_GETTER_AudioDriver_TO ((obj)->)
 #define COM_FORWARD_IAudioAdapter_GETTER_AudioDriver_TO_BASE(base) COM_FORWARD_IAudioAdapter_GETTER_AudioDriver_TO (base::)
@@ -5812,7 +5846,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0103
 #define COM_FORWARD_IAudioAdapter_GetProperty_TO(smth) HRESULT STDMETHODCALLTYPE GetProperty (BSTR aKey, BSTR * aValue) { return smth GetProperty (aKey, aValue); }
 #define COM_FORWARD_IAudioAdapter_GetProperty_TO_OBJ(obj) COM_FORWARD_IAudioAdapter_GetProperty_TO ((obj)->)
 #define COM_FORWARD_IAudioAdapter_GetProperty_TO_BASE(base) COM_FORWARD_IAudioAdapter_GetProperty_TO (base::)
-#define COM_FORWARD_IAudioAdapter_TO(smth) COM_FORWARD_IAudioAdapter_GETTER_Enabled_TO (smth) COM_FORWARD_IAudioAdapter_SETTER_Enabled_TO (smth) COM_FORWARD_IAudioAdapter_GETTER_EnabledIn_TO (smth) COM_FORWARD_IAudioAdapter_SETTER_EnabledIn_TO (smth) COM_FORWARD_IAudioAdapter_GETTER_EnabledOut_TO (smth) COM_FORWARD_IAudioAdapter_SETTER_EnabledOut_TO (smth) COM_FORWARD_IAudioAdapter_GETTER_AudioController_TO (smth) COM_FORWARD_IAudioAdapter_SETTER_AudioController_TO (smth) COM_FORWARD_IAudioAdapter_GETTER_AudioDriver_TO (smth) COM_FORWARD_IAudioAdapter_SETTER_AudioDriver_TO (smth) COM_FORWARD_IAudioAdapter_GETTER_PropertiesList_TO (smth) COM_FORWARD_IAudioAdapter_SetProperty_TO (smth) COM_FORWARD_IAudioAdapter_GetProperty_TO (smth) 
+#define COM_FORWARD_IAudioAdapter_TO(smth) COM_FORWARD_IAudioAdapter_GETTER_Enabled_TO (smth) COM_FORWARD_IAudioAdapter_SETTER_Enabled_TO (smth) COM_FORWARD_IAudioAdapter_GETTER_EnabledIn_TO (smth) COM_FORWARD_IAudioAdapter_SETTER_EnabledIn_TO (smth) COM_FORWARD_IAudioAdapter_GETTER_EnabledOut_TO (smth) COM_FORWARD_IAudioAdapter_SETTER_EnabledOut_TO (smth) COM_FORWARD_IAudioAdapter_GETTER_AudioController_TO (smth) COM_FORWARD_IAudioAdapter_SETTER_AudioController_TO (smth) COM_FORWARD_IAudioAdapter_GETTER_AudioCodec_TO (smth) COM_FORWARD_IAudioAdapter_SETTER_AudioCodec_TO (smth) COM_FORWARD_IAudioAdapter_GETTER_AudioDriver_TO (smth) COM_FORWARD_IAudioAdapter_SETTER_AudioDriver_TO (smth) COM_FORWARD_IAudioAdapter_GETTER_PropertiesList_TO (smth) COM_FORWARD_IAudioAdapter_SetProperty_TO (smth) COM_FORWARD_IAudioAdapter_GetProperty_TO (smth) 
 #define COM_FORWARD_IAudioAdapter_TO_OBJ(obj) COM_FORWARD_IAudioAdapter_TO ((obj)->)
 #define COM_FORWARD_IAudioAdapter_TO_BASE(base) COM_FORWARD_IAudioAdapter_TO (base::)
 #define COM_FORWARD_IVRDEServer_GETTER_Enabled_TO(smth) HRESULT STDMETHODCALLTYPE get_Enabled (BOOL * aEnabled) { return smth get_Enabled (aEnabled); }
@@ -7242,7 +7276,7 @@ EXTERN_C const IID IID_INATNetwork;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("a63c75da-4c99-4e9d-8351-eb73651c18cc")
+    MIDL_INTERFACE("4bbc405d-f268-4483-9a52-f43ffdbf67f8")
     INATNetwork : public IDispatch
     {
     public:
@@ -7309,6 +7343,30 @@ EXTERN_C const IID IID_INATNetwork;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PortForwardRules6( 
             /* [retval][out] */ SAFEARRAY * *aPortForwardRules6) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1INATNetwork( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2INATNetwork( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3INATNetwork( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4INATNetwork( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5INATNetwork( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6INATNetwork( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7INATNetwork( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8INATNetwork( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE AddLocalMapping( 
             /* [in] */ BSTR aHostid,
             /* [in] */ LONG aOffset) = 0;
@@ -7330,6 +7388,10 @@ EXTERN_C const IID IID_INATNetwork;
             /* [in] */ BSTR aTrunkType) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Stop( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1INATNetwork( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2INATNetwork( void) = 0;
         
     };
     
@@ -7464,6 +7526,38 @@ EXTERN_C const IID IID_INATNetwork;
             INATNetwork * This,
             /* [retval][out] */ SAFEARRAY * *aPortForwardRules6);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1INATNetwork )( 
+            INATNetwork * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2INATNetwork )( 
+            INATNetwork * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3INATNetwork )( 
+            INATNetwork * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4INATNetwork )( 
+            INATNetwork * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5INATNetwork )( 
+            INATNetwork * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6INATNetwork )( 
+            INATNetwork * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7INATNetwork )( 
+            INATNetwork * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8INATNetwork )( 
+            INATNetwork * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *AddLocalMapping )( 
             INATNetwork * This,
             /* [in] */ BSTR aHostid,
@@ -7489,6 +7583,12 @@ EXTERN_C const IID IID_INATNetwork;
             /* [in] */ BSTR aTrunkType);
         
         HRESULT ( STDMETHODCALLTYPE *Stop )( 
+            INATNetwork * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1INATNetwork )( 
+            INATNetwork * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2INATNetwork )( 
             INATNetwork * This);
         
         END_INTERFACE
@@ -7590,6 +7690,30 @@ EXTERN_C const IID IID_INATNetwork;
 #define INATNetwork_get_PortForwardRules6(This,aPortForwardRules6)	\
     ( (This)->lpVtbl -> get_PortForwardRules6(This,aPortForwardRules6) ) 
 
+#define INATNetwork_get_InternalAndReservedAttribute1INATNetwork(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1INATNetwork(This,aReserved) ) 
+
+#define INATNetwork_get_InternalAndReservedAttribute2INATNetwork(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2INATNetwork(This,aReserved) ) 
+
+#define INATNetwork_get_InternalAndReservedAttribute3INATNetwork(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3INATNetwork(This,aReserved) ) 
+
+#define INATNetwork_get_InternalAndReservedAttribute4INATNetwork(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4INATNetwork(This,aReserved) ) 
+
+#define INATNetwork_get_InternalAndReservedAttribute5INATNetwork(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5INATNetwork(This,aReserved) ) 
+
+#define INATNetwork_get_InternalAndReservedAttribute6INATNetwork(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6INATNetwork(This,aReserved) ) 
+
+#define INATNetwork_get_InternalAndReservedAttribute7INATNetwork(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7INATNetwork(This,aReserved) ) 
+
+#define INATNetwork_get_InternalAndReservedAttribute8INATNetwork(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8INATNetwork(This,aReserved) ) 
+
 #define INATNetwork_AddLocalMapping(This,aHostid,aOffset)	\
     ( (This)->lpVtbl -> AddLocalMapping(This,aHostid,aOffset) ) 
 
@@ -7604,6 +7728,12 @@ EXTERN_C const IID IID_INATNetwork;
 
 #define INATNetwork_Stop(This)	\
     ( (This)->lpVtbl -> Stop(This) ) 
+
+#define INATNetwork_InternalAndReservedMethod1INATNetwork(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1INATNetwork(This) ) 
+
+#define INATNetwork_InternalAndReservedMethod2INATNetwork(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2INATNetwork(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -7627,7 +7757,7 @@ EXTERN_C const IID IID_IDHCPServer;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("ff0774c5-1f62-4bc3-919c-7fc942bf1d25")
+    MIDL_INTERFACE("00c8f974-92c5-44a1-8f3f-702469fdd04b")
     IDHCPServer : public IDispatch
     {
     public:
@@ -7660,6 +7790,24 @@ EXTERN_C const IID IID_IDHCPServer;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VmConfigs( 
             /* [retval][out] */ SAFEARRAY * *aVmConfigs) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IDHCPServer( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IDHCPServer( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IDHCPServer( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IDHCPServer( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IDHCPServer( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IDHCPServer( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE AddGlobalOption( 
             /* [in] */ DhcpOpt aOption,
@@ -7696,6 +7844,10 @@ EXTERN_C const IID IID_IDHCPServer;
             /* [in] */ BSTR aTrunkType) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Stop( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IDHCPServer( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IDHCPServer( void) = 0;
         
     };
     
@@ -7786,6 +7938,30 @@ EXTERN_C const IID IID_IDHCPServer;
             IDHCPServer * This,
             /* [retval][out] */ SAFEARRAY * *aVmConfigs);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDHCPServer )( 
+            IDHCPServer * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDHCPServer )( 
+            IDHCPServer * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IDHCPServer )( 
+            IDHCPServer * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IDHCPServer )( 
+            IDHCPServer * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IDHCPServer )( 
+            IDHCPServer * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IDHCPServer )( 
+            IDHCPServer * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *AddGlobalOption )( 
             IDHCPServer * This,
             /* [in] */ DhcpOpt aOption,
@@ -7828,6 +8004,12 @@ EXTERN_C const IID IID_IDHCPServer;
             /* [in] */ BSTR aTrunkType);
         
         HRESULT ( STDMETHODCALLTYPE *Stop )( 
+            IDHCPServer * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDHCPServer )( 
+            IDHCPServer * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IDHCPServer )( 
             IDHCPServer * This);
         
         END_INTERFACE
@@ -7896,6 +8078,24 @@ EXTERN_C const IID IID_IDHCPServer;
 #define IDHCPServer_get_VmConfigs(This,aVmConfigs)	\
     ( (This)->lpVtbl -> get_VmConfigs(This,aVmConfigs) ) 
 
+#define IDHCPServer_get_InternalAndReservedAttribute1IDHCPServer(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDHCPServer(This,aReserved) ) 
+
+#define IDHCPServer_get_InternalAndReservedAttribute2IDHCPServer(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDHCPServer(This,aReserved) ) 
+
+#define IDHCPServer_get_InternalAndReservedAttribute3IDHCPServer(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IDHCPServer(This,aReserved) ) 
+
+#define IDHCPServer_get_InternalAndReservedAttribute4IDHCPServer(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IDHCPServer(This,aReserved) ) 
+
+#define IDHCPServer_get_InternalAndReservedAttribute5IDHCPServer(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IDHCPServer(This,aReserved) ) 
+
+#define IDHCPServer_get_InternalAndReservedAttribute6IDHCPServer(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IDHCPServer(This,aReserved) ) 
+
 #define IDHCPServer_AddGlobalOption(This,aOption,aValue)	\
     ( (This)->lpVtbl -> AddGlobalOption(This,aOption,aValue) ) 
 
@@ -7920,6 +8120,12 @@ EXTERN_C const IID IID_IDHCPServer;
 #define IDHCPServer_Stop(This)	\
     ( (This)->lpVtbl -> Stop(This) ) 
 
+#define IDHCPServer_InternalAndReservedMethod1IDHCPServer(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDHCPServer(This) ) 
+
+#define IDHCPServer_InternalAndReservedMethod2IDHCPServer(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IDHCPServer(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -7942,7 +8148,7 @@ EXTERN_C const IID IID_IVirtualBox;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("3afa096e-2cad-4cb0-aba2-47fe3fc62bd8")
+    MIDL_INTERFACE("0169423f-46b4-cde9-91af-1e9d5b6cd945")
     IVirtualBox : public IDispatch
     {
     public:
@@ -7960,6 +8166,9 @@ EXTERN_C const IID IID_IVirtualBox;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_APIVersion( 
             /* [retval][out] */ BSTR *aAPIVersion) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_APIRevision( 
+            /* [retval][out] */ LONG64 *aAPIRevision) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HomeFolder( 
             /* [retval][out] */ BSTR *aHomeFolder) = 0;
@@ -8017,6 +8226,42 @@ EXTERN_C const IID IID_IVirtualBox;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_GenericNetworkDrivers( 
             /* [retval][out] */ SAFEARRAY * *aGenericNetworkDrivers) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute9IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute10IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute11IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute12IVirtualBox( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE ComposeMachineFilename( 
             /* [in] */ BSTR aName,
@@ -8125,6 +8370,22 @@ EXTERN_C const IID IID_IVirtualBox;
             /* [out] */ BSTR *aFile,
             /* [retval][out] */ BOOL *aResult) = 0;
         
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IVirtualBox( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IVirtualBox( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IVirtualBox( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IVirtualBox( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod5IVirtualBox( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod6IVirtualBox( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod7IVirtualBox( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod8IVirtualBox( void) = 0;
+        
     };
     
 #else 	/* C style interface */
@@ -8193,6 +8454,10 @@ EXTERN_C const IID IID_IVirtualBox;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_APIVersion )( 
             IVirtualBox * This,
             /* [retval][out] */ BSTR *aAPIVersion);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_APIRevision )( 
+            IVirtualBox * This,
+            /* [retval][out] */ LONG64 *aAPIRevision);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HomeFolder )( 
             IVirtualBox * This,
@@ -8269,6 +8534,54 @@ EXTERN_C const IID IID_IVirtualBox;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_GenericNetworkDrivers )( 
             IVirtualBox * This,
             /* [retval][out] */ SAFEARRAY * *aGenericNetworkDrivers);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute9IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute10IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute11IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute12IVirtualBox )( 
+            IVirtualBox * This,
+            /* [retval][out] */ ULONG *aReserved);
         
         HRESULT ( STDMETHODCALLTYPE *ComposeMachineFilename )( 
             IVirtualBox * This,
@@ -8401,6 +8714,30 @@ EXTERN_C const IID IID_IVirtualBox;
             /* [out] */ BSTR *aFile,
             /* [retval][out] */ BOOL *aResult);
         
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IVirtualBox )( 
+            IVirtualBox * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IVirtualBox )( 
+            IVirtualBox * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IVirtualBox )( 
+            IVirtualBox * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IVirtualBox )( 
+            IVirtualBox * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod5IVirtualBox )( 
+            IVirtualBox * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod6IVirtualBox )( 
+            IVirtualBox * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod7IVirtualBox )( 
+            IVirtualBox * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod8IVirtualBox )( 
+            IVirtualBox * This);
+        
         END_INTERFACE
     } IVirtualBoxVtbl;
 
@@ -8451,6 +8788,9 @@ EXTERN_C const IID IID_IVirtualBox;
 
 #define IVirtualBox_get_APIVersion(This,aAPIVersion)	\
     ( (This)->lpVtbl -> get_APIVersion(This,aAPIVersion) ) 
+
+#define IVirtualBox_get_APIRevision(This,aAPIRevision)	\
+    ( (This)->lpVtbl -> get_APIRevision(This,aAPIRevision) ) 
 
 #define IVirtualBox_get_HomeFolder(This,aHomeFolder)	\
     ( (This)->lpVtbl -> get_HomeFolder(This,aHomeFolder) ) 
@@ -8508,6 +8848,42 @@ EXTERN_C const IID IID_IVirtualBox;
 
 #define IVirtualBox_get_GenericNetworkDrivers(This,aGenericNetworkDrivers)	\
     ( (This)->lpVtbl -> get_GenericNetworkDrivers(This,aGenericNetworkDrivers) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute1IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IVirtualBox(This,aReserved) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute2IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IVirtualBox(This,aReserved) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute3IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IVirtualBox(This,aReserved) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute4IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IVirtualBox(This,aReserved) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute5IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IVirtualBox(This,aReserved) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute6IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IVirtualBox(This,aReserved) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute7IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IVirtualBox(This,aReserved) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute8IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IVirtualBox(This,aReserved) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute9IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute9IVirtualBox(This,aReserved) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute10IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute10IVirtualBox(This,aReserved) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute11IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute11IVirtualBox(This,aReserved) ) 
+
+#define IVirtualBox_get_InternalAndReservedAttribute12IVirtualBox(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute12IVirtualBox(This,aReserved) ) 
 
 #define IVirtualBox_ComposeMachineFilename(This,aName,aGroup,aCreateFlags,aBaseFolder,aFile)	\
     ( (This)->lpVtbl -> ComposeMachineFilename(This,aName,aGroup,aCreateFlags,aBaseFolder,aFile) ) 
@@ -8580,6 +8956,30 @@ EXTERN_C const IID IID_IVirtualBox;
 
 #define IVirtualBox_CheckFirmwarePresent(This,aFirmwareType,aVersion,aUrl,aFile,aResult)	\
     ( (This)->lpVtbl -> CheckFirmwarePresent(This,aFirmwareType,aVersion,aUrl,aFile,aResult) ) 
+
+#define IVirtualBox_InternalAndReservedMethod1IVirtualBox(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IVirtualBox(This) ) 
+
+#define IVirtualBox_InternalAndReservedMethod2IVirtualBox(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IVirtualBox(This) ) 
+
+#define IVirtualBox_InternalAndReservedMethod3IVirtualBox(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IVirtualBox(This) ) 
+
+#define IVirtualBox_InternalAndReservedMethod4IVirtualBox(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IVirtualBox(This) ) 
+
+#define IVirtualBox_InternalAndReservedMethod5IVirtualBox(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod5IVirtualBox(This) ) 
+
+#define IVirtualBox_InternalAndReservedMethod6IVirtualBox(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod6IVirtualBox(This) ) 
+
+#define IVirtualBox_InternalAndReservedMethod7IVirtualBox(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod7IVirtualBox(This) ) 
+
+#define IVirtualBox_InternalAndReservedMethod8IVirtualBox(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod8IVirtualBox(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -8806,7 +9206,7 @@ EXTERN_C const IID IID_IAppliance;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("a529d52c-cf23-4936-9150-e8a6ce77fdad")
+    MIDL_INTERFACE("8398f026-4add-4474-5bc3-2f9f2140b23e")
     IAppliance : public IDispatch
     {
     public:
@@ -8821,6 +9221,30 @@ EXTERN_C const IID IID_IAppliance;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Machines( 
             /* [retval][out] */ SAFEARRAY * *aMachines) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IAppliance( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IAppliance( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IAppliance( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IAppliance( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IAppliance( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IAppliance( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IAppliance( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IAppliance( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Read( 
             /* [in] */ BSTR aFile,
@@ -8855,6 +9279,22 @@ EXTERN_C const IID IID_IAppliance;
         virtual HRESULT STDMETHODCALLTYPE AddPasswords( 
             /* [in] */ SAFEARRAY * aIdentifiers,
             /* [in] */ SAFEARRAY * aPasswords) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IAppliance( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IAppliance( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IAppliance( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IAppliance( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod5IAppliance( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod6IAppliance( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod7IAppliance( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod8IAppliance( void) = 0;
         
     };
     
@@ -8921,6 +9361,38 @@ EXTERN_C const IID IID_IAppliance;
             IAppliance * This,
             /* [retval][out] */ SAFEARRAY * *aMachines);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IAppliance )( 
+            IAppliance * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IAppliance )( 
+            IAppliance * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IAppliance )( 
+            IAppliance * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IAppliance )( 
+            IAppliance * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IAppliance )( 
+            IAppliance * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IAppliance )( 
+            IAppliance * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IAppliance )( 
+            IAppliance * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IAppliance )( 
+            IAppliance * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *Read )( 
             IAppliance * This,
             /* [in] */ BSTR aFile,
@@ -8963,6 +9435,30 @@ EXTERN_C const IID IID_IAppliance;
             IAppliance * This,
             /* [in] */ SAFEARRAY * aIdentifiers,
             /* [in] */ SAFEARRAY * aPasswords);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IAppliance )( 
+            IAppliance * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IAppliance )( 
+            IAppliance * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IAppliance )( 
+            IAppliance * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IAppliance )( 
+            IAppliance * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod5IAppliance )( 
+            IAppliance * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod6IAppliance )( 
+            IAppliance * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod7IAppliance )( 
+            IAppliance * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod8IAppliance )( 
+            IAppliance * This);
         
         END_INTERFACE
     } IApplianceVtbl;
@@ -9012,6 +9508,30 @@ EXTERN_C const IID IID_IAppliance;
 #define IAppliance_get_Machines(This,aMachines)	\
     ( (This)->lpVtbl -> get_Machines(This,aMachines) ) 
 
+#define IAppliance_get_InternalAndReservedAttribute1IAppliance(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IAppliance(This,aReserved) ) 
+
+#define IAppliance_get_InternalAndReservedAttribute2IAppliance(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IAppliance(This,aReserved) ) 
+
+#define IAppliance_get_InternalAndReservedAttribute3IAppliance(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IAppliance(This,aReserved) ) 
+
+#define IAppliance_get_InternalAndReservedAttribute4IAppliance(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IAppliance(This,aReserved) ) 
+
+#define IAppliance_get_InternalAndReservedAttribute5IAppliance(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IAppliance(This,aReserved) ) 
+
+#define IAppliance_get_InternalAndReservedAttribute6IAppliance(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IAppliance(This,aReserved) ) 
+
+#define IAppliance_get_InternalAndReservedAttribute7IAppliance(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IAppliance(This,aReserved) ) 
+
+#define IAppliance_get_InternalAndReservedAttribute8IAppliance(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IAppliance(This,aReserved) ) 
+
 #define IAppliance_Read(This,aFile,aProgress)	\
     ( (This)->lpVtbl -> Read(This,aFile,aProgress) ) 
 
@@ -9039,6 +9559,30 @@ EXTERN_C const IID IID_IAppliance;
 #define IAppliance_AddPasswords(This,aIdentifiers,aPasswords)	\
     ( (This)->lpVtbl -> AddPasswords(This,aIdentifiers,aPasswords) ) 
 
+#define IAppliance_InternalAndReservedMethod1IAppliance(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IAppliance(This) ) 
+
+#define IAppliance_InternalAndReservedMethod2IAppliance(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IAppliance(This) ) 
+
+#define IAppliance_InternalAndReservedMethod3IAppliance(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IAppliance(This) ) 
+
+#define IAppliance_InternalAndReservedMethod4IAppliance(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IAppliance(This) ) 
+
+#define IAppliance_InternalAndReservedMethod5IAppliance(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod5IAppliance(This) ) 
+
+#define IAppliance_InternalAndReservedMethod6IAppliance(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod6IAppliance(This) ) 
+
+#define IAppliance_InternalAndReservedMethod7IAppliance(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod7IAppliance(This) ) 
+
+#define IAppliance_InternalAndReservedMethod8IAppliance(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod8IAppliance(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -9061,12 +9605,24 @@ EXTERN_C const IID IID_IVirtualSystemDescription;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("d7525e6c-531a-4c51-8e04-41235083a3d8")
+    MIDL_INTERFACE("316c99a2-405d-41af-8508-46889144d067")
     IVirtualSystemDescription : public IDispatch
     {
     public:
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
             /* [retval][out] */ ULONG *aCount) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IVirtualSystemDescription( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IVirtualSystemDescription( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IVirtualSystemDescription( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IVirtualSystemDescription( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetDescription( 
             /* [out] */ SAFEARRAY * *aTypes,
@@ -9097,6 +9653,14 @@ EXTERN_C const IID IID_IVirtualSystemDescription;
             /* [in] */ VirtualSystemDescriptionType aType,
             /* [in] */ BSTR aVBoxValue,
             /* [in] */ BSTR aExtraConfigValue) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IVirtualSystemDescription( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IVirtualSystemDescription( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IVirtualSystemDescription( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IVirtualSystemDescription( void) = 0;
         
     };
     
@@ -9151,6 +9715,22 @@ EXTERN_C const IID IID_IVirtualSystemDescription;
             IVirtualSystemDescription * This,
             /* [retval][out] */ ULONG *aCount);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IVirtualSystemDescription )( 
+            IVirtualSystemDescription * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IVirtualSystemDescription )( 
+            IVirtualSystemDescription * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IVirtualSystemDescription )( 
+            IVirtualSystemDescription * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IVirtualSystemDescription )( 
+            IVirtualSystemDescription * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *GetDescription )( 
             IVirtualSystemDescription * This,
             /* [out] */ SAFEARRAY * *aTypes,
@@ -9185,6 +9765,18 @@ EXTERN_C const IID IID_IVirtualSystemDescription;
             /* [in] */ VirtualSystemDescriptionType aType,
             /* [in] */ BSTR aVBoxValue,
             /* [in] */ BSTR aExtraConfigValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IVirtualSystemDescription )( 
+            IVirtualSystemDescription * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IVirtualSystemDescription )( 
+            IVirtualSystemDescription * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IVirtualSystemDescription )( 
+            IVirtualSystemDescription * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IVirtualSystemDescription )( 
+            IVirtualSystemDescription * This);
         
         END_INTERFACE
     } IVirtualSystemDescriptionVtbl;
@@ -9225,6 +9817,18 @@ EXTERN_C const IID IID_IVirtualSystemDescription;
 #define IVirtualSystemDescription_get_Count(This,aCount)	\
     ( (This)->lpVtbl -> get_Count(This,aCount) ) 
 
+#define IVirtualSystemDescription_get_InternalAndReservedAttribute1IVirtualSystemDescription(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IVirtualSystemDescription(This,aReserved) ) 
+
+#define IVirtualSystemDescription_get_InternalAndReservedAttribute2IVirtualSystemDescription(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IVirtualSystemDescription(This,aReserved) ) 
+
+#define IVirtualSystemDescription_get_InternalAndReservedAttribute3IVirtualSystemDescription(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IVirtualSystemDescription(This,aReserved) ) 
+
+#define IVirtualSystemDescription_get_InternalAndReservedAttribute4IVirtualSystemDescription(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IVirtualSystemDescription(This,aReserved) ) 
+
 #define IVirtualSystemDescription_GetDescription(This,aTypes,aRefs,aOVFValues,aVBoxValues,aExtraConfigValues)	\
     ( (This)->lpVtbl -> GetDescription(This,aTypes,aRefs,aOVFValues,aVBoxValues,aExtraConfigValues) ) 
 
@@ -9239,6 +9843,18 @@ EXTERN_C const IID IID_IVirtualSystemDescription;
 
 #define IVirtualSystemDescription_AddDescription(This,aType,aVBoxValue,aExtraConfigValue)	\
     ( (This)->lpVtbl -> AddDescription(This,aType,aVBoxValue,aExtraConfigValue) ) 
+
+#define IVirtualSystemDescription_InternalAndReservedMethod1IVirtualSystemDescription(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IVirtualSystemDescription(This) ) 
+
+#define IVirtualSystemDescription_InternalAndReservedMethod2IVirtualSystemDescription(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IVirtualSystemDescription(This) ) 
+
+#define IVirtualSystemDescription_InternalAndReservedMethod3IVirtualSystemDescription(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IVirtualSystemDescription(This) ) 
+
+#define IVirtualSystemDescription_InternalAndReservedMethod4IVirtualSystemDescription(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IVirtualSystemDescription(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -9601,7 +10217,7 @@ EXTERN_C const IID IID_IBIOSSettings;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("38b54279-dc35-4f5e-a431-835b867c6b5e")
+    MIDL_INTERFACE("c5b5afe3-4a6f-05eb-c9b6-4dbf98538b67")
     IBIOSSettings : public IDispatch
     {
     public:
@@ -9661,6 +10277,32 @@ EXTERN_C const IID IID_IBIOSSettings;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NonVolatileStorageFile( 
             /* [retval][out] */ BSTR *aNonVolatileStorageFile) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IBIOSSettings( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IBIOSSettings( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IBIOSSettings( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IBIOSSettings( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IBIOSSettings( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IBIOSSettings( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IBIOSSettings( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IBIOSSettings( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IBIOSSettings( void) = 0;
         
     };
     
@@ -9787,6 +10429,41 @@ EXTERN_C const IID IID_IBIOSSettings;
             IBIOSSettings * This,
             /* [retval][out] */ BSTR *aNonVolatileStorageFile);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IBIOSSettings )( 
+            IBIOSSettings * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IBIOSSettings )( 
+            IBIOSSettings * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IBIOSSettings )( 
+            IBIOSSettings * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IBIOSSettings )( 
+            IBIOSSettings * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IBIOSSettings )( 
+            IBIOSSettings * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IBIOSSettings )( 
+            IBIOSSettings * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IBIOSSettings )( 
+            IBIOSSettings * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IBIOSSettings )( 
+            IBIOSSettings * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IBIOSSettings )( 
+            IBIOSSettings * This);
+        
         END_INTERFACE
     } IBIOSSettingsVtbl;
 
@@ -9879,6 +10556,33 @@ EXTERN_C const IID IID_IBIOSSettings;
 
 #define IBIOSSettings_get_NonVolatileStorageFile(This,aNonVolatileStorageFile)	\
     ( (This)->lpVtbl -> get_NonVolatileStorageFile(This,aNonVolatileStorageFile) ) 
+
+#define IBIOSSettings_get_InternalAndReservedAttribute1IBIOSSettings(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IBIOSSettings(This,aReserved) ) 
+
+#define IBIOSSettings_get_InternalAndReservedAttribute2IBIOSSettings(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IBIOSSettings(This,aReserved) ) 
+
+#define IBIOSSettings_get_InternalAndReservedAttribute3IBIOSSettings(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IBIOSSettings(This,aReserved) ) 
+
+#define IBIOSSettings_get_InternalAndReservedAttribute4IBIOSSettings(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IBIOSSettings(This,aReserved) ) 
+
+#define IBIOSSettings_get_InternalAndReservedAttribute5IBIOSSettings(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IBIOSSettings(This,aReserved) ) 
+
+#define IBIOSSettings_get_InternalAndReservedAttribute6IBIOSSettings(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IBIOSSettings(This,aReserved) ) 
+
+#define IBIOSSettings_get_InternalAndReservedAttribute7IBIOSSettings(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IBIOSSettings(This,aReserved) ) 
+
+#define IBIOSSettings_get_InternalAndReservedAttribute8IBIOSSettings(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IBIOSSettings(This,aReserved) ) 
+
+#define IBIOSSettings_InternalAndReservedMethod1IBIOSSettings(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IBIOSSettings(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -10244,7 +10948,7 @@ EXTERN_C const IID IID_IMachine;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("6bf820b3-a08f-49a7-ac08-b88efbd3a313")
+    MIDL_INTERFACE("f30138d4-e5ea-4b3a-8858-a059de4c93fd")
     IMachine : public IDispatch
     {
     public:
@@ -10677,6 +11381,60 @@ EXTERN_C const IID IID_IMachine;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_USBProxyAvailable( 
             /* [retval][out] */ BOOL *aUSBProxyAvailable) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VMProcessPriority( 
+            /* [retval][out] */ BSTR *aVMProcessPriority) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_VMProcessPriority( 
+            /* [in] */ BSTR aVMProcessPriority) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute9IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute10IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute11IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute12IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute13IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute14IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute15IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute16IMachine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE LockMachine( 
             /* [in] */ ISession *aSession,
             /* [in] */ LockType aLockType) = 0;
@@ -11048,6 +11806,25 @@ EXTERN_C const IID IID_IMachine;
         virtual HRESULT STDMETHODCALLTYPE RestoreSnapshot( 
             /* [in] */ ISnapshot *aSnapshot,
             /* [retval][out] */ IProgress **aProgress) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ApplyDefaults( 
+            /* [in] */ BSTR aFlags) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IMachine( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IMachine( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IMachine( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IMachine( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod5IMachine( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod6IMachine( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod7IMachine( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod8IMachine( void) = 0;
         
     };
     
@@ -11670,6 +12447,78 @@ EXTERN_C const IID IID_IMachine;
             IMachine * This,
             /* [retval][out] */ BOOL *aUSBProxyAvailable);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_VMProcessPriority )( 
+            IMachine * This,
+            /* [retval][out] */ BSTR *aVMProcessPriority);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_VMProcessPriority )( 
+            IMachine * This,
+            /* [in] */ BSTR aVMProcessPriority);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute9IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute10IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute11IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute12IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute13IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute14IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute15IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute16IMachine )( 
+            IMachine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *LockMachine )( 
             IMachine * This,
             /* [in] */ ISession *aSession,
@@ -12122,6 +12971,34 @@ EXTERN_C const IID IID_IMachine;
             IMachine * This,
             /* [in] */ ISnapshot *aSnapshot,
             /* [retval][out] */ IProgress **aProgress);
+        
+        HRESULT ( STDMETHODCALLTYPE *ApplyDefaults )( 
+            IMachine * This,
+            /* [in] */ BSTR aFlags);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IMachine )( 
+            IMachine * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IMachine )( 
+            IMachine * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IMachine )( 
+            IMachine * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IMachine )( 
+            IMachine * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod5IMachine )( 
+            IMachine * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod6IMachine )( 
+            IMachine * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod7IMachine )( 
+            IMachine * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod8IMachine )( 
+            IMachine * This);
         
         END_INTERFACE
     } IMachineVtbl;
@@ -12588,6 +13465,60 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_get_USBProxyAvailable(This,aUSBProxyAvailable)	\
     ( (This)->lpVtbl -> get_USBProxyAvailable(This,aUSBProxyAvailable) ) 
 
+#define IMachine_get_VMProcessPriority(This,aVMProcessPriority)	\
+    ( (This)->lpVtbl -> get_VMProcessPriority(This,aVMProcessPriority) ) 
+
+#define IMachine_put_VMProcessPriority(This,aVMProcessPriority)	\
+    ( (This)->lpVtbl -> put_VMProcessPriority(This,aVMProcessPriority) ) 
+
+#define IMachine_get_InternalAndReservedAttribute1IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute2IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute3IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute4IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute5IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute6IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute7IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute8IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute9IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute9IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute10IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute10IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute11IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute11IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute12IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute12IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute13IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute13IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute14IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute14IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute15IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute15IMachine(This,aReserved) ) 
+
+#define IMachine_get_InternalAndReservedAttribute16IMachine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute16IMachine(This,aReserved) ) 
+
 #define IMachine_LockMachine(This,aSession,aLockType)	\
     ( (This)->lpVtbl -> LockMachine(This,aSession,aLockType) ) 
 
@@ -12830,6 +13761,33 @@ EXTERN_C const IID IID_IMachine;
 
 #define IMachine_RestoreSnapshot(This,aSnapshot,aProgress)	\
     ( (This)->lpVtbl -> RestoreSnapshot(This,aSnapshot,aProgress) ) 
+
+#define IMachine_ApplyDefaults(This,aFlags)	\
+    ( (This)->lpVtbl -> ApplyDefaults(This,aFlags) ) 
+
+#define IMachine_InternalAndReservedMethod1IMachine(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IMachine(This) ) 
+
+#define IMachine_InternalAndReservedMethod2IMachine(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IMachine(This) ) 
+
+#define IMachine_InternalAndReservedMethod3IMachine(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IMachine(This) ) 
+
+#define IMachine_InternalAndReservedMethod4IMachine(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IMachine(This) ) 
+
+#define IMachine_InternalAndReservedMethod5IMachine(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod5IMachine(This) ) 
+
+#define IMachine_InternalAndReservedMethod6IMachine(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod6IMachine(This) ) 
+
+#define IMachine_InternalAndReservedMethod7IMachine(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod7IMachine(This) ) 
+
+#define IMachine_InternalAndReservedMethod8IMachine(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod8IMachine(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -13096,6 +14054,222 @@ void __RPC_STUB IMachine_put_DefaultFrontend_Stub(
 
 
 void __RPC_STUB IMachine_get_USBProxyAvailable_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_VMProcessPriority_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ BSTR *aVMProcessPriority);
+
+
+void __RPC_STUB IMachine_get_VMProcessPriority_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propput] */ HRESULT STDMETHODCALLTYPE IMachine_put_VMProcessPriority_Proxy( 
+    IMachine * This,
+    /* [in] */ BSTR aVMProcessPriority);
+
+
+void __RPC_STUB IMachine_put_VMProcessPriority_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute1IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute1IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute2IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute2IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute3IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute3IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute4IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute4IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute5IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute5IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute6IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute6IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute7IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute7IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute8IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute8IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute9IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute9IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute10IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute10IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute11IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute11IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute12IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute12IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute13IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute13IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute14IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute14IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute15IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute15IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [propget] */ HRESULT STDMETHODCALLTYPE IMachine_get_InternalAndReservedAttribute16IMachine_Proxy( 
+    IMachine * This,
+    /* [retval][out] */ ULONG *aReserved);
+
+
+void __RPC_STUB IMachine_get_InternalAndReservedAttribute16IMachine_Stub(
     IRpcStubBuffer *This,
     IRpcChannelBuffer *_pRpcChannelBuffer,
     PRPC_MESSAGE _pRpcMessage,
@@ -14203,6 +15377,106 @@ void __RPC_STUB IMachine_RestoreSnapshot_Stub(
     DWORD *_pdwStubPhase);
 
 
+HRESULT STDMETHODCALLTYPE IMachine_ApplyDefaults_Proxy( 
+    IMachine * This,
+    /* [in] */ BSTR aFlags);
+
+
+void __RPC_STUB IMachine_ApplyDefaults_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_InternalAndReservedMethod1IMachine_Proxy( 
+    IMachine * This);
+
+
+void __RPC_STUB IMachine_InternalAndReservedMethod1IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_InternalAndReservedMethod2IMachine_Proxy( 
+    IMachine * This);
+
+
+void __RPC_STUB IMachine_InternalAndReservedMethod2IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_InternalAndReservedMethod3IMachine_Proxy( 
+    IMachine * This);
+
+
+void __RPC_STUB IMachine_InternalAndReservedMethod3IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_InternalAndReservedMethod4IMachine_Proxy( 
+    IMachine * This);
+
+
+void __RPC_STUB IMachine_InternalAndReservedMethod4IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_InternalAndReservedMethod5IMachine_Proxy( 
+    IMachine * This);
+
+
+void __RPC_STUB IMachine_InternalAndReservedMethod5IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_InternalAndReservedMethod6IMachine_Proxy( 
+    IMachine * This);
+
+
+void __RPC_STUB IMachine_InternalAndReservedMethod6IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_InternalAndReservedMethod7IMachine_Proxy( 
+    IMachine * This);
+
+
+void __RPC_STUB IMachine_InternalAndReservedMethod7IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+HRESULT STDMETHODCALLTYPE IMachine_InternalAndReservedMethod8IMachine_Proxy( 
+    IMachine * This);
+
+
+void __RPC_STUB IMachine_InternalAndReservedMethod8IMachine_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
 
 #endif 	/* __IMachine_INTERFACE_DEFINED__ */
 
@@ -14218,12 +15492,24 @@ EXTERN_C const IID IID_IEmulatedUSB;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("38cc4dfd-8bb2-4d40-aebe-699eead8c2dd")
+    MIDL_INTERFACE("6e253ee8-477a-2497-6759-88b8292a5af0")
     IEmulatedUSB : public IDispatch
     {
     public:
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Webcams( 
             /* [retval][out] */ SAFEARRAY * *aWebcams) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IEmulatedUSB( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IEmulatedUSB( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IEmulatedUSB( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IEmulatedUSB( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE WebcamAttach( 
             /* [in] */ BSTR aPath,
@@ -14231,6 +15517,14 @@ EXTERN_C const IID IID_IEmulatedUSB;
         
         virtual HRESULT STDMETHODCALLTYPE WebcamDetach( 
             /* [in] */ BSTR aPath) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IEmulatedUSB( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IEmulatedUSB( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IEmulatedUSB( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IEmulatedUSB( void) = 0;
         
     };
     
@@ -14285,6 +15579,22 @@ EXTERN_C const IID IID_IEmulatedUSB;
             IEmulatedUSB * This,
             /* [retval][out] */ SAFEARRAY * *aWebcams);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IEmulatedUSB )( 
+            IEmulatedUSB * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IEmulatedUSB )( 
+            IEmulatedUSB * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IEmulatedUSB )( 
+            IEmulatedUSB * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IEmulatedUSB )( 
+            IEmulatedUSB * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *WebcamAttach )( 
             IEmulatedUSB * This,
             /* [in] */ BSTR aPath,
@@ -14293,6 +15603,18 @@ EXTERN_C const IID IID_IEmulatedUSB;
         HRESULT ( STDMETHODCALLTYPE *WebcamDetach )( 
             IEmulatedUSB * This,
             /* [in] */ BSTR aPath);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IEmulatedUSB )( 
+            IEmulatedUSB * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IEmulatedUSB )( 
+            IEmulatedUSB * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IEmulatedUSB )( 
+            IEmulatedUSB * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IEmulatedUSB )( 
+            IEmulatedUSB * This);
         
         END_INTERFACE
     } IEmulatedUSBVtbl;
@@ -14333,11 +15655,35 @@ EXTERN_C const IID IID_IEmulatedUSB;
 #define IEmulatedUSB_get_Webcams(This,aWebcams)	\
     ( (This)->lpVtbl -> get_Webcams(This,aWebcams) ) 
 
+#define IEmulatedUSB_get_InternalAndReservedAttribute1IEmulatedUSB(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IEmulatedUSB(This,aReserved) ) 
+
+#define IEmulatedUSB_get_InternalAndReservedAttribute2IEmulatedUSB(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IEmulatedUSB(This,aReserved) ) 
+
+#define IEmulatedUSB_get_InternalAndReservedAttribute3IEmulatedUSB(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IEmulatedUSB(This,aReserved) ) 
+
+#define IEmulatedUSB_get_InternalAndReservedAttribute4IEmulatedUSB(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IEmulatedUSB(This,aReserved) ) 
+
 #define IEmulatedUSB_WebcamAttach(This,aPath,aSettings)	\
     ( (This)->lpVtbl -> WebcamAttach(This,aPath,aSettings) ) 
 
 #define IEmulatedUSB_WebcamDetach(This,aPath)	\
     ( (This)->lpVtbl -> WebcamDetach(This,aPath) ) 
+
+#define IEmulatedUSB_InternalAndReservedMethod1IEmulatedUSB(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IEmulatedUSB(This) ) 
+
+#define IEmulatedUSB_InternalAndReservedMethod2IEmulatedUSB(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IEmulatedUSB(This) ) 
+
+#define IEmulatedUSB_InternalAndReservedMethod3IEmulatedUSB(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IEmulatedUSB(This) ) 
+
+#define IEmulatedUSB_InternalAndReservedMethod4IEmulatedUSB(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IEmulatedUSB(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -14361,7 +15707,7 @@ EXTERN_C const IID IID_IVRDEServerInfo;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("714434a1-58c3-4aab-9049-7652c5df113b")
+    MIDL_INTERFACE("c39ef4d6-7532-45e8-96da-eb5986ae76e4")
     IVRDEServerInfo : public IDispatch
     {
     public:
@@ -14409,6 +15755,30 @@ EXTERN_C const IID IID_IVRDEServerInfo;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EncryptionStyle( 
             /* [retval][out] */ ULONG *aEncryptionStyle) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IVRDEServerInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IVRDEServerInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IVRDEServerInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IVRDEServerInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IVRDEServerInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IVRDEServerInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IVRDEServerInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IVRDEServerInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -14519,6 +15889,38 @@ EXTERN_C const IID IID_IVRDEServerInfo;
             IVRDEServerInfo * This,
             /* [retval][out] */ ULONG *aEncryptionStyle);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IVRDEServerInfo )( 
+            IVRDEServerInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IVRDEServerInfo )( 
+            IVRDEServerInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IVRDEServerInfo )( 
+            IVRDEServerInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IVRDEServerInfo )( 
+            IVRDEServerInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IVRDEServerInfo )( 
+            IVRDEServerInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IVRDEServerInfo )( 
+            IVRDEServerInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IVRDEServerInfo )( 
+            IVRDEServerInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IVRDEServerInfo )( 
+            IVRDEServerInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IVRDEServerInfoVtbl;
 
@@ -14600,6 +16002,30 @@ EXTERN_C const IID IID_IVRDEServerInfo;
 #define IVRDEServerInfo_get_EncryptionStyle(This,aEncryptionStyle)	\
     ( (This)->lpVtbl -> get_EncryptionStyle(This,aEncryptionStyle) ) 
 
+#define IVRDEServerInfo_get_InternalAndReservedAttribute1IVRDEServerInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IVRDEServerInfo(This,aReserved) ) 
+
+#define IVRDEServerInfo_get_InternalAndReservedAttribute2IVRDEServerInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IVRDEServerInfo(This,aReserved) ) 
+
+#define IVRDEServerInfo_get_InternalAndReservedAttribute3IVRDEServerInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IVRDEServerInfo(This,aReserved) ) 
+
+#define IVRDEServerInfo_get_InternalAndReservedAttribute4IVRDEServerInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IVRDEServerInfo(This,aReserved) ) 
+
+#define IVRDEServerInfo_get_InternalAndReservedAttribute5IVRDEServerInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IVRDEServerInfo(This,aReserved) ) 
+
+#define IVRDEServerInfo_get_InternalAndReservedAttribute6IVRDEServerInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IVRDEServerInfo(This,aReserved) ) 
+
+#define IVRDEServerInfo_get_InternalAndReservedAttribute7IVRDEServerInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IVRDEServerInfo(This,aReserved) ) 
+
+#define IVRDEServerInfo_get_InternalAndReservedAttribute8IVRDEServerInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IVRDEServerInfo(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -14622,7 +16048,7 @@ EXTERN_C const IID IID_IConsole;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("650b5f05-8258-4ee9-b518-89c515ca5dd9")
+    MIDL_INTERFACE("872da645-4a9b-1727-bee2-5585105b9eed")
     IConsole : public IDispatch
     {
     public:
@@ -14673,6 +16099,30 @@ EXTERN_C const IID IID_IConsole;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EmulatedUSB( 
             /* [retval][out] */ IEmulatedUSB **aEmulatedUSB) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IConsole( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IConsole( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IConsole( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IConsole( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IConsole( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IConsole( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IConsole( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IConsole( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE PowerUp( 
             /* [retval][out] */ IProgress **aProgress) = 0;
@@ -14749,6 +16199,22 @@ EXTERN_C const IID IID_IConsole;
             /* [in] */ BSTR aId) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE ClearAllDiskEncryptionPasswords( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IConsole( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IConsole( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IConsole( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IConsole( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod5IConsole( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod6IConsole( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod7IConsole( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod8IConsole( void) = 0;
         
     };
     
@@ -14863,6 +16329,38 @@ EXTERN_C const IID IID_IConsole;
             IConsole * This,
             /* [retval][out] */ IEmulatedUSB **aEmulatedUSB);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IConsole )( 
+            IConsole * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IConsole )( 
+            IConsole * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IConsole )( 
+            IConsole * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IConsole )( 
+            IConsole * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IConsole )( 
+            IConsole * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IConsole )( 
+            IConsole * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IConsole )( 
+            IConsole * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IConsole )( 
+            IConsole * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *PowerUp )( 
             IConsole * This,
             /* [retval][out] */ IProgress **aProgress);
@@ -14961,6 +16459,30 @@ EXTERN_C const IID IID_IConsole;
         HRESULT ( STDMETHODCALLTYPE *ClearAllDiskEncryptionPasswords )( 
             IConsole * This);
         
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IConsole )( 
+            IConsole * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IConsole )( 
+            IConsole * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IConsole )( 
+            IConsole * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IConsole )( 
+            IConsole * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod5IConsole )( 
+            IConsole * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod6IConsole )( 
+            IConsole * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod7IConsole )( 
+            IConsole * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod8IConsole )( 
+            IConsole * This);
+        
         END_INTERFACE
     } IConsoleVtbl;
 
@@ -15045,6 +16567,30 @@ EXTERN_C const IID IID_IConsole;
 #define IConsole_get_EmulatedUSB(This,aEmulatedUSB)	\
     ( (This)->lpVtbl -> get_EmulatedUSB(This,aEmulatedUSB) ) 
 
+#define IConsole_get_InternalAndReservedAttribute1IConsole(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IConsole(This,aReserved) ) 
+
+#define IConsole_get_InternalAndReservedAttribute2IConsole(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IConsole(This,aReserved) ) 
+
+#define IConsole_get_InternalAndReservedAttribute3IConsole(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IConsole(This,aReserved) ) 
+
+#define IConsole_get_InternalAndReservedAttribute4IConsole(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IConsole(This,aReserved) ) 
+
+#define IConsole_get_InternalAndReservedAttribute5IConsole(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IConsole(This,aReserved) ) 
+
+#define IConsole_get_InternalAndReservedAttribute6IConsole(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IConsole(This,aReserved) ) 
+
+#define IConsole_get_InternalAndReservedAttribute7IConsole(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IConsole(This,aReserved) ) 
+
+#define IConsole_get_InternalAndReservedAttribute8IConsole(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IConsole(This,aReserved) ) 
+
 #define IConsole_PowerUp(This,aProgress)	\
     ( (This)->lpVtbl -> PowerUp(This,aProgress) ) 
 
@@ -15111,6 +16657,30 @@ EXTERN_C const IID IID_IConsole;
 #define IConsole_ClearAllDiskEncryptionPasswords(This)	\
     ( (This)->lpVtbl -> ClearAllDiskEncryptionPasswords(This) ) 
 
+#define IConsole_InternalAndReservedMethod1IConsole(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IConsole(This) ) 
+
+#define IConsole_InternalAndReservedMethod2IConsole(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IConsole(This) ) 
+
+#define IConsole_InternalAndReservedMethod3IConsole(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IConsole(This) ) 
+
+#define IConsole_InternalAndReservedMethod4IConsole(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IConsole(This) ) 
+
+#define IConsole_InternalAndReservedMethod5IConsole(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod5IConsole(This) ) 
+
+#define IConsole_InternalAndReservedMethod6IConsole(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod6IConsole(This) ) 
+
+#define IConsole_InternalAndReservedMethod7IConsole(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod7IConsole(This) ) 
+
+#define IConsole_InternalAndReservedMethod8IConsole(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod8IConsole(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -15133,7 +16703,7 @@ EXTERN_C const IID IID_IHostNetworkInterface;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("f6e556f9-d598-409b-898c-8ba99d9b05ae")
+    MIDL_INTERFACE("455f8c45-44a0-a470-ba20-27890b96dba9")
     IHostNetworkInterface : public IDispatch
     {
     public:
@@ -15179,6 +16749,18 @@ EXTERN_C const IID IID_IHostNetworkInterface;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InterfaceType( 
             /* [retval][out] */ HostNetworkInterfaceType *aInterfaceType) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IHostNetworkInterface( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IHostNetworkInterface( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IHostNetworkInterface( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IHostNetworkInterface( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE EnableStaticIPConfig( 
             /* [in] */ BSTR aIPAddress,
             /* [in] */ BSTR aNetworkMask) = 0;
@@ -15190,6 +16772,10 @@ EXTERN_C const IID IID_IHostNetworkInterface;
         virtual HRESULT STDMETHODCALLTYPE EnableDynamicIPConfig( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE DHCPRediscover( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IHostNetworkInterface( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IHostNetworkInterface( void) = 0;
         
     };
     
@@ -15296,6 +16882,22 @@ EXTERN_C const IID IID_IHostNetworkInterface;
             IHostNetworkInterface * This,
             /* [retval][out] */ HostNetworkInterfaceType *aInterfaceType);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IHostNetworkInterface )( 
+            IHostNetworkInterface * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IHostNetworkInterface )( 
+            IHostNetworkInterface * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IHostNetworkInterface )( 
+            IHostNetworkInterface * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IHostNetworkInterface )( 
+            IHostNetworkInterface * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *EnableStaticIPConfig )( 
             IHostNetworkInterface * This,
             /* [in] */ BSTR aIPAddress,
@@ -15310,6 +16912,12 @@ EXTERN_C const IID IID_IHostNetworkInterface;
             IHostNetworkInterface * This);
         
         HRESULT ( STDMETHODCALLTYPE *DHCPRediscover )( 
+            IHostNetworkInterface * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IHostNetworkInterface )( 
+            IHostNetworkInterface * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IHostNetworkInterface )( 
             IHostNetworkInterface * This);
         
         END_INTERFACE
@@ -15390,6 +16998,18 @@ EXTERN_C const IID IID_IHostNetworkInterface;
 #define IHostNetworkInterface_get_InterfaceType(This,aInterfaceType)	\
     ( (This)->lpVtbl -> get_InterfaceType(This,aInterfaceType) ) 
 
+#define IHostNetworkInterface_get_InternalAndReservedAttribute1IHostNetworkInterface(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IHostNetworkInterface(This,aReserved) ) 
+
+#define IHostNetworkInterface_get_InternalAndReservedAttribute2IHostNetworkInterface(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IHostNetworkInterface(This,aReserved) ) 
+
+#define IHostNetworkInterface_get_InternalAndReservedAttribute3IHostNetworkInterface(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IHostNetworkInterface(This,aReserved) ) 
+
+#define IHostNetworkInterface_get_InternalAndReservedAttribute4IHostNetworkInterface(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IHostNetworkInterface(This,aReserved) ) 
+
 #define IHostNetworkInterface_EnableStaticIPConfig(This,aIPAddress,aNetworkMask)	\
     ( (This)->lpVtbl -> EnableStaticIPConfig(This,aIPAddress,aNetworkMask) ) 
 
@@ -15401,6 +17021,12 @@ EXTERN_C const IID IID_IHostNetworkInterface;
 
 #define IHostNetworkInterface_DHCPRediscover(This)	\
     ( (This)->lpVtbl -> DHCPRediscover(This) ) 
+
+#define IHostNetworkInterface_InternalAndReservedMethod1IHostNetworkInterface(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IHostNetworkInterface(This) ) 
+
+#define IHostNetworkInterface_InternalAndReservedMethod2IHostNetworkInterface(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IHostNetworkInterface(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -15424,7 +17050,7 @@ EXTERN_C const IID IID_IHostVideoInputDevice;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("a1ceae44-d65e-4156-9359-d390f93ee9a0")
+    MIDL_INTERFACE("e8c25d4d-ac97-4c16-b3e2-81bd8a57cc27")
     IHostVideoInputDevice : public IDispatch
     {
     public:
@@ -15436,6 +17062,18 @@ EXTERN_C const IID IID_IHostVideoInputDevice;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Alias( 
             /* [retval][out] */ BSTR *aAlias) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IHostVideoInputDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IHostVideoInputDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IHostVideoInputDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IHostVideoInputDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -15498,6 +17136,22 @@ EXTERN_C const IID IID_IHostVideoInputDevice;
             IHostVideoInputDevice * This,
             /* [retval][out] */ BSTR *aAlias);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IHostVideoInputDevice )( 
+            IHostVideoInputDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IHostVideoInputDevice )( 
+            IHostVideoInputDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IHostVideoInputDevice )( 
+            IHostVideoInputDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IHostVideoInputDevice )( 
+            IHostVideoInputDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IHostVideoInputDeviceVtbl;
 
@@ -15543,6 +17197,18 @@ EXTERN_C const IID IID_IHostVideoInputDevice;
 #define IHostVideoInputDevice_get_Alias(This,aAlias)	\
     ( (This)->lpVtbl -> get_Alias(This,aAlias) ) 
 
+#define IHostVideoInputDevice_get_InternalAndReservedAttribute1IHostVideoInputDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IHostVideoInputDevice(This,aReserved) ) 
+
+#define IHostVideoInputDevice_get_InternalAndReservedAttribute2IHostVideoInputDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IHostVideoInputDevice(This,aReserved) ) 
+
+#define IHostVideoInputDevice_get_InternalAndReservedAttribute3IHostVideoInputDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IHostVideoInputDevice(This,aReserved) ) 
+
+#define IHostVideoInputDevice_get_InternalAndReservedAttribute4IHostVideoInputDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IHostVideoInputDevice(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -15565,7 +17231,7 @@ EXTERN_C const IID IID_IHost;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("93269330-48ca-4096-b4a2-1189df336267")
+    MIDL_INTERFACE("afca788c-4477-787d-60b2-3fa70e56fbbc")
     IHost : public IDispatch
     {
     public:
@@ -15625,6 +17291,42 @@ EXTERN_C const IID IID_IHost;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VideoInputDevices( 
             /* [retval][out] */ SAFEARRAY * *aVideoInputDevices) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute9IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute10IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute11IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute12IHost( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetProcessorSpeed( 
             /* [in] */ ULONG aCpuId,
@@ -15696,6 +17398,10 @@ EXTERN_C const IID IID_IHost;
         
         virtual HRESULT STDMETHODCALLTYPE GenerateMACAddress( 
             /* [retval][out] */ BSTR *aAddress) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IHost( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IHost( void) = 0;
         
     };
     
@@ -15822,6 +17528,54 @@ EXTERN_C const IID IID_IHost;
             IHost * This,
             /* [retval][out] */ SAFEARRAY * *aVideoInputDevices);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute9IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute10IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute11IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute12IHost )( 
+            IHost * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *GetProcessorSpeed )( 
             IHost * This,
             /* [in] */ ULONG aCpuId,
@@ -15909,6 +17663,12 @@ EXTERN_C const IID IID_IHost;
         HRESULT ( STDMETHODCALLTYPE *GenerateMACAddress )( 
             IHost * This,
             /* [retval][out] */ BSTR *aAddress);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IHost )( 
+            IHost * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IHost )( 
+            IHost * This);
         
         END_INTERFACE
     } IHostVtbl;
@@ -16003,6 +17763,42 @@ EXTERN_C const IID IID_IHost;
 #define IHost_get_VideoInputDevices(This,aVideoInputDevices)	\
     ( (This)->lpVtbl -> get_VideoInputDevices(This,aVideoInputDevices) ) 
 
+#define IHost_get_InternalAndReservedAttribute1IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IHost(This,aReserved) ) 
+
+#define IHost_get_InternalAndReservedAttribute2IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IHost(This,aReserved) ) 
+
+#define IHost_get_InternalAndReservedAttribute3IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IHost(This,aReserved) ) 
+
+#define IHost_get_InternalAndReservedAttribute4IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IHost(This,aReserved) ) 
+
+#define IHost_get_InternalAndReservedAttribute5IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IHost(This,aReserved) ) 
+
+#define IHost_get_InternalAndReservedAttribute6IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IHost(This,aReserved) ) 
+
+#define IHost_get_InternalAndReservedAttribute7IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IHost(This,aReserved) ) 
+
+#define IHost_get_InternalAndReservedAttribute8IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IHost(This,aReserved) ) 
+
+#define IHost_get_InternalAndReservedAttribute9IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute9IHost(This,aReserved) ) 
+
+#define IHost_get_InternalAndReservedAttribute10IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute10IHost(This,aReserved) ) 
+
+#define IHost_get_InternalAndReservedAttribute11IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute11IHost(This,aReserved) ) 
+
+#define IHost_get_InternalAndReservedAttribute12IHost(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute12IHost(This,aReserved) ) 
+
 #define IHost_GetProcessorSpeed(This,aCpuId,aSpeed)	\
     ( (This)->lpVtbl -> GetProcessorSpeed(This,aCpuId,aSpeed) ) 
 
@@ -16054,6 +17850,12 @@ EXTERN_C const IID IID_IHost;
 #define IHost_GenerateMACAddress(This,aAddress)	\
     ( (This)->lpVtbl -> GenerateMACAddress(This,aAddress) ) 
 
+#define IHost_InternalAndReservedMethod1IHost(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IHost(This) ) 
+
+#define IHost_InternalAndReservedMethod2IHost(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IHost(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -16076,7 +17878,7 @@ EXTERN_C const IID IID_ISystemProperties;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("2dc77d62-27e7-4e6e-87eb-b41ae0d555da")
+    MIDL_INTERFACE("0eb668d2-495e-5a36-8890-29999b5f030c")
     ISystemProperties : public IDispatch
     {
     public:
@@ -16112,6 +17914,9 @@ EXTERN_C const IID IID_ISystemProperties;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxBootPosition( 
             /* [retval][out] */ ULONG *aMaxBootPosition) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RawModeSupported( 
+            /* [retval][out] */ BOOL *aRawModeSupported) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExclusiveHwVirt( 
             /* [retval][out] */ BOOL *aExclusiveHwVirt) = 0;
@@ -16212,6 +18017,54 @@ EXTERN_C const IID IID_ISystemProperties;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ScreenShotFormats( 
             /* [retval][out] */ SAFEARRAY * *aScreenShotFormats) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute9ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute10ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute11ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute12ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute13ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute14ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute15ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute16ISystemProperties( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE GetMaxNetworkAdapters( 
             /* [in] */ ChipsetType aChipset,
             /* [retval][out] */ ULONG *aMaxNetworkAdapters) = 0;
@@ -16254,6 +18107,14 @@ EXTERN_C const IID IID_ISystemProperties;
             /* [in] */ ChipsetType aChipset,
             /* [in] */ USBControllerType aType,
             /* [retval][out] */ ULONG *aMaxInstances) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1ISystemProperties( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2ISystemProperties( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3ISystemProperties( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4ISystemProperties( void) = 0;
         
     };
     
@@ -16347,6 +18208,10 @@ EXTERN_C const IID IID_ISystemProperties;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxBootPosition )( 
             ISystemProperties * This,
             /* [retval][out] */ ULONG *aMaxBootPosition);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RawModeSupported )( 
+            ISystemProperties * This,
+            /* [retval][out] */ BOOL *aRawModeSupported);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExclusiveHwVirt )( 
             ISystemProperties * This,
@@ -16480,6 +18345,70 @@ EXTERN_C const IID IID_ISystemProperties;
             ISystemProperties * This,
             /* [retval][out] */ SAFEARRAY * *aScreenShotFormats);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute9ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute10ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute11ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute12ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute13ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute14ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute15ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute16ISystemProperties )( 
+            ISystemProperties * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *GetMaxNetworkAdapters )( 
             ISystemProperties * This,
             /* [in] */ ChipsetType aChipset,
@@ -16532,6 +18461,18 @@ EXTERN_C const IID IID_ISystemProperties;
             /* [in] */ ChipsetType aChipset,
             /* [in] */ USBControllerType aType,
             /* [retval][out] */ ULONG *aMaxInstances);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1ISystemProperties )( 
+            ISystemProperties * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2ISystemProperties )( 
+            ISystemProperties * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3ISystemProperties )( 
+            ISystemProperties * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4ISystemProperties )( 
+            ISystemProperties * This);
         
         END_INTERFACE
     } ISystemPropertiesVtbl;
@@ -16601,6 +18542,9 @@ EXTERN_C const IID IID_ISystemProperties;
 
 #define ISystemProperties_get_MaxBootPosition(This,aMaxBootPosition)	\
     ( (This)->lpVtbl -> get_MaxBootPosition(This,aMaxBootPosition) ) 
+
+#define ISystemProperties_get_RawModeSupported(This,aRawModeSupported)	\
+    ( (This)->lpVtbl -> get_RawModeSupported(This,aRawModeSupported) ) 
 
 #define ISystemProperties_get_ExclusiveHwVirt(This,aExclusiveHwVirt)	\
     ( (This)->lpVtbl -> get_ExclusiveHwVirt(This,aExclusiveHwVirt) ) 
@@ -16701,6 +18645,54 @@ EXTERN_C const IID IID_ISystemProperties;
 #define ISystemProperties_get_ScreenShotFormats(This,aScreenShotFormats)	\
     ( (This)->lpVtbl -> get_ScreenShotFormats(This,aScreenShotFormats) ) 
 
+#define ISystemProperties_get_InternalAndReservedAttribute1ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute2ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute3ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute4ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute5ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute6ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute7ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute8ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute9ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute9ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute10ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute10ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute11ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute11ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute12ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute12ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute13ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute13ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute14ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute14ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute15ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute15ISystemProperties(This,aReserved) ) 
+
+#define ISystemProperties_get_InternalAndReservedAttribute16ISystemProperties(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute16ISystemProperties(This,aReserved) ) 
+
 #define ISystemProperties_GetMaxNetworkAdapters(This,aChipset,aMaxNetworkAdapters)	\
     ( (This)->lpVtbl -> GetMaxNetworkAdapters(This,aChipset,aMaxNetworkAdapters) ) 
 
@@ -16731,6 +18723,18 @@ EXTERN_C const IID IID_ISystemProperties;
 #define ISystemProperties_GetMaxInstancesOfUSBControllerType(This,aChipset,aType,aMaxInstances)	\
     ( (This)->lpVtbl -> GetMaxInstancesOfUSBControllerType(This,aChipset,aType,aMaxInstances) ) 
 
+#define ISystemProperties_InternalAndReservedMethod1ISystemProperties(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1ISystemProperties(This) ) 
+
+#define ISystemProperties_InternalAndReservedMethod2ISystemProperties(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2ISystemProperties(This) ) 
+
+#define ISystemProperties_InternalAndReservedMethod3ISystemProperties(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3ISystemProperties(This) ) 
+
+#define ISystemProperties_InternalAndReservedMethod4ISystemProperties(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4ISystemProperties(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -16753,7 +18757,7 @@ EXTERN_C const IID IID_IGuestOSType;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("ced74f7e-4c08-4d19-883a-017496ada2e1")
+    MIDL_INTERFACE("03cd409d-20f5-43f9-8de1-4a129620990b")
     IGuestOSType : public IDispatch
     {
     public:
@@ -16832,6 +18836,9 @@ EXTERN_C const IID IID_IGuestOSType;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RecommendedAudioController( 
             /* [retval][out] */ AudioControllerType *aRecommendedAudioController) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RecommendedAudioCodec( 
+            /* [retval][out] */ AudioCodecType *aRecommendedAudioCodec) = 0;
+        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RecommendedFloppy( 
             /* [retval][out] */ BOOL *aRecommendedFloppy) = 0;
         
@@ -16840,6 +18847,54 @@ EXTERN_C const IID IID_IGuestOSType;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RecommendedTFReset( 
             /* [retval][out] */ BOOL *aRecommendedTFReset) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute9IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute10IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute11IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute12IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute13IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute14IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute15IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute16IGuestOSType( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -16990,6 +19045,10 @@ EXTERN_C const IID IID_IGuestOSType;
             IGuestOSType * This,
             /* [retval][out] */ AudioControllerType *aRecommendedAudioController);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RecommendedAudioCodec )( 
+            IGuestOSType * This,
+            /* [retval][out] */ AudioCodecType *aRecommendedAudioCodec);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RecommendedFloppy )( 
             IGuestOSType * This,
             /* [retval][out] */ BOOL *aRecommendedFloppy);
@@ -17001,6 +19060,70 @@ EXTERN_C const IID IID_IGuestOSType;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RecommendedTFReset )( 
             IGuestOSType * This,
             /* [retval][out] */ BOOL *aRecommendedTFReset);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute9IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute10IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute11IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute12IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute13IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute14IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute15IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute16IGuestOSType )( 
+            IGuestOSType * This,
+            /* [retval][out] */ ULONG *aReserved);
         
         END_INTERFACE
     } IGuestOSTypeVtbl;
@@ -17113,6 +19236,9 @@ EXTERN_C const IID IID_IGuestOSType;
 #define IGuestOSType_get_RecommendedAudioController(This,aRecommendedAudioController)	\
     ( (This)->lpVtbl -> get_RecommendedAudioController(This,aRecommendedAudioController) ) 
 
+#define IGuestOSType_get_RecommendedAudioCodec(This,aRecommendedAudioCodec)	\
+    ( (This)->lpVtbl -> get_RecommendedAudioCodec(This,aRecommendedAudioCodec) ) 
+
 #define IGuestOSType_get_RecommendedFloppy(This,aRecommendedFloppy)	\
     ( (This)->lpVtbl -> get_RecommendedFloppy(This,aRecommendedFloppy) ) 
 
@@ -17121,6 +19247,54 @@ EXTERN_C const IID IID_IGuestOSType;
 
 #define IGuestOSType_get_RecommendedTFReset(This,aRecommendedTFReset)	\
     ( (This)->lpVtbl -> get_RecommendedTFReset(This,aRecommendedTFReset) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute1IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute2IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute3IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute4IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute5IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute6IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute7IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute8IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute9IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute9IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute10IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute10IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute11IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute11IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute12IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute12IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute13IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute13IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute14IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute14IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute15IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute15IGuestOSType(This,aReserved) ) 
+
+#define IGuestOSType_get_InternalAndReservedAttribute16IGuestOSType(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute16IGuestOSType(This,aReserved) ) 
 
 #endif /* COBJMACROS */
 
@@ -17144,7 +19318,7 @@ EXTERN_C const IID IID_IAdditionsFacility;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("54992946-6af1-4e49-98ec-58b558b7291e")
+    MIDL_INTERFACE("f2f7fae4-4a06-81fc-a916-78b2da1fa0e5")
     IAdditionsFacility : public IDispatch
     {
     public:
@@ -17162,6 +19336,12 @@ EXTERN_C const IID IID_IAdditionsFacility;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Type( 
             /* [retval][out] */ AdditionsFacilityType *aType) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IAdditionsFacility( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IAdditionsFacility( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -17232,6 +19412,14 @@ EXTERN_C const IID IID_IAdditionsFacility;
             IAdditionsFacility * This,
             /* [retval][out] */ AdditionsFacilityType *aType);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IAdditionsFacility )( 
+            IAdditionsFacility * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IAdditionsFacility )( 
+            IAdditionsFacility * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IAdditionsFacilityVtbl;
 
@@ -17283,6 +19471,12 @@ EXTERN_C const IID IID_IAdditionsFacility;
 #define IAdditionsFacility_get_Type(This,aType)	\
     ( (This)->lpVtbl -> get_Type(This,aType) ) 
 
+#define IAdditionsFacility_get_InternalAndReservedAttribute1IAdditionsFacility(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IAdditionsFacility(This,aReserved) ) 
+
+#define IAdditionsFacility_get_InternalAndReservedAttribute2IAdditionsFacility(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IAdditionsFacility(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -17305,7 +19499,7 @@ EXTERN_C const IID IID_IDnDBase;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("a9630a67-7238-4b0e-9a58-364b1dd3d032")
+    MIDL_INTERFACE("4132147b-42f8-cd96-7570-6a8800e3342c")
     IDnDBase : public IDispatch
     {
     public:
@@ -17314,6 +19508,12 @@ EXTERN_C const IID IID_IDnDBase;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProtocolVersion( 
             /* [retval][out] */ ULONG *aProtocolVersion) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IDnDBase( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IDnDBase( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE IsFormatSupported( 
             /* [in] */ BSTR aFormat,
@@ -17324,6 +19524,8 @@ EXTERN_C const IID IID_IDnDBase;
         
         virtual HRESULT STDMETHODCALLTYPE RemoveFormats( 
             /* [in] */ SAFEARRAY * aFormats) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IDnDBase( void) = 0;
         
     };
     
@@ -17382,6 +19584,14 @@ EXTERN_C const IID IID_IDnDBase;
             IDnDBase * This,
             /* [retval][out] */ ULONG *aProtocolVersion);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDnDBase )( 
+            IDnDBase * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDnDBase )( 
+            IDnDBase * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *IsFormatSupported )( 
             IDnDBase * This,
             /* [in] */ BSTR aFormat,
@@ -17394,6 +19604,9 @@ EXTERN_C const IID IID_IDnDBase;
         HRESULT ( STDMETHODCALLTYPE *RemoveFormats )( 
             IDnDBase * This,
             /* [in] */ SAFEARRAY * aFormats);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDnDBase )( 
+            IDnDBase * This);
         
         END_INTERFACE
     } IDnDBaseVtbl;
@@ -17437,6 +19650,12 @@ EXTERN_C const IID IID_IDnDBase;
 #define IDnDBase_get_ProtocolVersion(This,aProtocolVersion)	\
     ( (This)->lpVtbl -> get_ProtocolVersion(This,aProtocolVersion) ) 
 
+#define IDnDBase_get_InternalAndReservedAttribute1IDnDBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDnDBase(This,aReserved) ) 
+
+#define IDnDBase_get_InternalAndReservedAttribute2IDnDBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDnDBase(This,aReserved) ) 
+
 #define IDnDBase_IsFormatSupported(This,aFormat,aSupported)	\
     ( (This)->lpVtbl -> IsFormatSupported(This,aFormat,aSupported) ) 
 
@@ -17445,6 +19664,9 @@ EXTERN_C const IID IID_IDnDBase;
 
 #define IDnDBase_RemoveFormats(This,aFormats)	\
     ( (This)->lpVtbl -> RemoveFormats(This,aFormats) ) 
+
+#define IDnDBase_InternalAndReservedMethod1IDnDBase(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDnDBase(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -17468,10 +19690,16 @@ EXTERN_C const IID IID_IDnDSource;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("b69c400d-be63-4255-898a-e706d66b1637")
+    MIDL_INTERFACE("d23a9ca3-42da-c94b-8aec-21968e08355d")
     IDnDSource : public IDnDBase
     {
     public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IDnDSource( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IDnDSource( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE DragIsPending( 
             /* [in] */ ULONG aScreenId,
             /* [out] */ SAFEARRAY * *aFormats,
@@ -17485,6 +19713,8 @@ EXTERN_C const IID IID_IDnDSource;
         
         virtual HRESULT STDMETHODCALLTYPE ReceiveData( 
             /* [retval][out] */ SAFEARRAY * *aData) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IDnDSource( void) = 0;
         
     };
     
@@ -17543,6 +19773,14 @@ EXTERN_C const IID IID_IDnDSource;
             IDnDSource * This,
             /* [retval][out] */ ULONG *aProtocolVersion);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDnDBase )( 
+            IDnDSource * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDnDBase )( 
+            IDnDSource * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *IsFormatSupported )( 
             IDnDSource * This,
             /* [in] */ BSTR aFormat,
@@ -17555,6 +19793,17 @@ EXTERN_C const IID IID_IDnDSource;
         HRESULT ( STDMETHODCALLTYPE *RemoveFormats )( 
             IDnDSource * This,
             /* [in] */ SAFEARRAY * aFormats);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDnDBase )( 
+            IDnDSource * This);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDnDSource )( 
+            IDnDSource * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDnDSource )( 
+            IDnDSource * This,
+            /* [retval][out] */ ULONG *aReserved);
         
         HRESULT ( STDMETHODCALLTYPE *DragIsPending )( 
             IDnDSource * This,
@@ -17572,6 +19821,9 @@ EXTERN_C const IID IID_IDnDSource;
         HRESULT ( STDMETHODCALLTYPE *ReceiveData )( 
             IDnDSource * This,
             /* [retval][out] */ SAFEARRAY * *aData);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDnDSource )( 
+            IDnDSource * This);
         
         END_INTERFACE
     } IDnDSourceVtbl;
@@ -17615,6 +19867,12 @@ EXTERN_C const IID IID_IDnDSource;
 #define IDnDSource_get_ProtocolVersion(This,aProtocolVersion)	\
     ( (This)->lpVtbl -> get_ProtocolVersion(This,aProtocolVersion) ) 
 
+#define IDnDSource_get_InternalAndReservedAttribute1IDnDBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDnDBase(This,aReserved) ) 
+
+#define IDnDSource_get_InternalAndReservedAttribute2IDnDBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDnDBase(This,aReserved) ) 
+
 #define IDnDSource_IsFormatSupported(This,aFormat,aSupported)	\
     ( (This)->lpVtbl -> IsFormatSupported(This,aFormat,aSupported) ) 
 
@@ -17624,6 +19882,15 @@ EXTERN_C const IID IID_IDnDSource;
 #define IDnDSource_RemoveFormats(This,aFormats)	\
     ( (This)->lpVtbl -> RemoveFormats(This,aFormats) ) 
 
+#define IDnDSource_InternalAndReservedMethod1IDnDBase(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDnDBase(This) ) 
+
+
+#define IDnDSource_get_InternalAndReservedAttribute1IDnDSource(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDnDSource(This,aReserved) ) 
+
+#define IDnDSource_get_InternalAndReservedAttribute2IDnDSource(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDnDSource(This,aReserved) ) 
 
 #define IDnDSource_DragIsPending(This,aScreenId,aFormats,aAllowedActions,aDefaultAction)	\
     ( (This)->lpVtbl -> DragIsPending(This,aScreenId,aFormats,aAllowedActions,aDefaultAction) ) 
@@ -17633,6 +19900,9 @@ EXTERN_C const IID IID_IDnDSource;
 
 #define IDnDSource_ReceiveData(This,aData)	\
     ( (This)->lpVtbl -> ReceiveData(This,aData) ) 
+
+#define IDnDSource_InternalAndReservedMethod1IDnDSource(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDnDSource(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -17720,6 +19990,14 @@ EXTERN_C const IID IID_IGuestDnDSource;
             IGuestDnDSource * This,
             /* [retval][out] */ ULONG *aProtocolVersion);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDnDBase )( 
+            IGuestDnDSource * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDnDBase )( 
+            IGuestDnDSource * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *IsFormatSupported )( 
             IGuestDnDSource * This,
             /* [in] */ BSTR aFormat,
@@ -17732,6 +20010,17 @@ EXTERN_C const IID IID_IGuestDnDSource;
         HRESULT ( STDMETHODCALLTYPE *RemoveFormats )( 
             IGuestDnDSource * This,
             /* [in] */ SAFEARRAY * aFormats);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDnDBase )( 
+            IGuestDnDSource * This);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDnDSource )( 
+            IGuestDnDSource * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDnDSource )( 
+            IGuestDnDSource * This,
+            /* [retval][out] */ ULONG *aReserved);
         
         HRESULT ( STDMETHODCALLTYPE *DragIsPending )( 
             IGuestDnDSource * This,
@@ -17749,6 +20038,9 @@ EXTERN_C const IID IID_IGuestDnDSource;
         HRESULT ( STDMETHODCALLTYPE *ReceiveData )( 
             IGuestDnDSource * This,
             /* [retval][out] */ SAFEARRAY * *aData);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDnDSource )( 
+            IGuestDnDSource * This);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MidlDoesNotLikeEmptyInterfaces )( 
             IGuestDnDSource * This,
@@ -17796,6 +20088,12 @@ EXTERN_C const IID IID_IGuestDnDSource;
 #define IGuestDnDSource_get_ProtocolVersion(This,aProtocolVersion)	\
     ( (This)->lpVtbl -> get_ProtocolVersion(This,aProtocolVersion) ) 
 
+#define IGuestDnDSource_get_InternalAndReservedAttribute1IDnDBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDnDBase(This,aReserved) ) 
+
+#define IGuestDnDSource_get_InternalAndReservedAttribute2IDnDBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDnDBase(This,aReserved) ) 
+
 #define IGuestDnDSource_IsFormatSupported(This,aFormat,aSupported)	\
     ( (This)->lpVtbl -> IsFormatSupported(This,aFormat,aSupported) ) 
 
@@ -17805,6 +20103,15 @@ EXTERN_C const IID IID_IGuestDnDSource;
 #define IGuestDnDSource_RemoveFormats(This,aFormats)	\
     ( (This)->lpVtbl -> RemoveFormats(This,aFormats) ) 
 
+#define IGuestDnDSource_InternalAndReservedMethod1IDnDBase(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDnDBase(This) ) 
+
+
+#define IGuestDnDSource_get_InternalAndReservedAttribute1IDnDSource(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDnDSource(This,aReserved) ) 
+
+#define IGuestDnDSource_get_InternalAndReservedAttribute2IDnDSource(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDnDSource(This,aReserved) ) 
 
 #define IGuestDnDSource_DragIsPending(This,aScreenId,aFormats,aAllowedActions,aDefaultAction)	\
     ( (This)->lpVtbl -> DragIsPending(This,aScreenId,aFormats,aAllowedActions,aDefaultAction) ) 
@@ -17814,6 +20121,9 @@ EXTERN_C const IID IID_IGuestDnDSource;
 
 #define IGuestDnDSource_ReceiveData(This,aData)	\
     ( (This)->lpVtbl -> ReceiveData(This,aData) ) 
+
+#define IGuestDnDSource_InternalAndReservedMethod1IDnDSource(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDnDSource(This) ) 
 
 
 #define IGuestDnDSource_get_MidlDoesNotLikeEmptyInterfaces(This,aMidlDoesNotLikeEmptyInterfaces)	\
@@ -17841,10 +20151,16 @@ EXTERN_C const IID IID_IDnDTarget;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("25ac16fa-316d-4934-9a7f-fe02f6739bef")
+    MIDL_INTERFACE("ff5befc3-4ba3-7903-2aa4-43988ba11554")
     IDnDTarget : public IDnDBase
     {
     public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IDnDTarget( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IDnDTarget( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE Enter( 
             /* [in] */ ULONG aScreenId,
             /* [in] */ ULONG aY,
@@ -17884,6 +20200,8 @@ EXTERN_C const IID IID_IDnDTarget;
         
         virtual HRESULT STDMETHODCALLTYPE Cancel( 
             /* [retval][out] */ BOOL *aVeto) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IDnDTarget( void) = 0;
         
     };
     
@@ -17942,6 +20260,14 @@ EXTERN_C const IID IID_IDnDTarget;
             IDnDTarget * This,
             /* [retval][out] */ ULONG *aProtocolVersion);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDnDBase )( 
+            IDnDTarget * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDnDBase )( 
+            IDnDTarget * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *IsFormatSupported )( 
             IDnDTarget * This,
             /* [in] */ BSTR aFormat,
@@ -17954,6 +20280,17 @@ EXTERN_C const IID IID_IDnDTarget;
         HRESULT ( STDMETHODCALLTYPE *RemoveFormats )( 
             IDnDTarget * This,
             /* [in] */ SAFEARRAY * aFormats);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDnDBase )( 
+            IDnDTarget * This);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDnDTarget )( 
+            IDnDTarget * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDnDTarget )( 
+            IDnDTarget * This,
+            /* [retval][out] */ ULONG *aReserved);
         
         HRESULT ( STDMETHODCALLTYPE *Enter )( 
             IDnDTarget * This,
@@ -18001,6 +20338,9 @@ EXTERN_C const IID IID_IDnDTarget;
             IDnDTarget * This,
             /* [retval][out] */ BOOL *aVeto);
         
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDnDTarget )( 
+            IDnDTarget * This);
+        
         END_INTERFACE
     } IDnDTargetVtbl;
 
@@ -18043,6 +20383,12 @@ EXTERN_C const IID IID_IDnDTarget;
 #define IDnDTarget_get_ProtocolVersion(This,aProtocolVersion)	\
     ( (This)->lpVtbl -> get_ProtocolVersion(This,aProtocolVersion) ) 
 
+#define IDnDTarget_get_InternalAndReservedAttribute1IDnDBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDnDBase(This,aReserved) ) 
+
+#define IDnDTarget_get_InternalAndReservedAttribute2IDnDBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDnDBase(This,aReserved) ) 
+
 #define IDnDTarget_IsFormatSupported(This,aFormat,aSupported)	\
     ( (This)->lpVtbl -> IsFormatSupported(This,aFormat,aSupported) ) 
 
@@ -18052,6 +20398,15 @@ EXTERN_C const IID IID_IDnDTarget;
 #define IDnDTarget_RemoveFormats(This,aFormats)	\
     ( (This)->lpVtbl -> RemoveFormats(This,aFormats) ) 
 
+#define IDnDTarget_InternalAndReservedMethod1IDnDBase(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDnDBase(This) ) 
+
+
+#define IDnDTarget_get_InternalAndReservedAttribute1IDnDTarget(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDnDTarget(This,aReserved) ) 
+
+#define IDnDTarget_get_InternalAndReservedAttribute2IDnDTarget(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDnDTarget(This,aReserved) ) 
 
 #define IDnDTarget_Enter(This,aScreenId,aY,aX,aDefaultAction,aAllowedActions,aFormats,aResultAction)	\
     ( (This)->lpVtbl -> Enter(This,aScreenId,aY,aX,aDefaultAction,aAllowedActions,aFormats,aResultAction) ) 
@@ -18070,6 +20425,9 @@ EXTERN_C const IID IID_IDnDTarget;
 
 #define IDnDTarget_Cancel(This,aVeto)	\
     ( (This)->lpVtbl -> Cancel(This,aVeto) ) 
+
+#define IDnDTarget_InternalAndReservedMethod1IDnDTarget(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDnDTarget(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -18157,6 +20515,14 @@ EXTERN_C const IID IID_IGuestDnDTarget;
             IGuestDnDTarget * This,
             /* [retval][out] */ ULONG *aProtocolVersion);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDnDBase )( 
+            IGuestDnDTarget * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDnDBase )( 
+            IGuestDnDTarget * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *IsFormatSupported )( 
             IGuestDnDTarget * This,
             /* [in] */ BSTR aFormat,
@@ -18169,6 +20535,17 @@ EXTERN_C const IID IID_IGuestDnDTarget;
         HRESULT ( STDMETHODCALLTYPE *RemoveFormats )( 
             IGuestDnDTarget * This,
             /* [in] */ SAFEARRAY * aFormats);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDnDBase )( 
+            IGuestDnDTarget * This);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDnDTarget )( 
+            IGuestDnDTarget * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDnDTarget )( 
+            IGuestDnDTarget * This,
+            /* [retval][out] */ ULONG *aReserved);
         
         HRESULT ( STDMETHODCALLTYPE *Enter )( 
             IGuestDnDTarget * This,
@@ -18216,6 +20593,9 @@ EXTERN_C const IID IID_IGuestDnDTarget;
             IGuestDnDTarget * This,
             /* [retval][out] */ BOOL *aVeto);
         
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDnDTarget )( 
+            IGuestDnDTarget * This);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MidlDoesNotLikeEmptyInterfaces )( 
             IGuestDnDTarget * This,
             /* [retval][out] */ BOOL *aMidlDoesNotLikeEmptyInterfaces);
@@ -18262,6 +20642,12 @@ EXTERN_C const IID IID_IGuestDnDTarget;
 #define IGuestDnDTarget_get_ProtocolVersion(This,aProtocolVersion)	\
     ( (This)->lpVtbl -> get_ProtocolVersion(This,aProtocolVersion) ) 
 
+#define IGuestDnDTarget_get_InternalAndReservedAttribute1IDnDBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDnDBase(This,aReserved) ) 
+
+#define IGuestDnDTarget_get_InternalAndReservedAttribute2IDnDBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDnDBase(This,aReserved) ) 
+
 #define IGuestDnDTarget_IsFormatSupported(This,aFormat,aSupported)	\
     ( (This)->lpVtbl -> IsFormatSupported(This,aFormat,aSupported) ) 
 
@@ -18271,6 +20657,15 @@ EXTERN_C const IID IID_IGuestDnDTarget;
 #define IGuestDnDTarget_RemoveFormats(This,aFormats)	\
     ( (This)->lpVtbl -> RemoveFormats(This,aFormats) ) 
 
+#define IGuestDnDTarget_InternalAndReservedMethod1IDnDBase(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDnDBase(This) ) 
+
+
+#define IGuestDnDTarget_get_InternalAndReservedAttribute1IDnDTarget(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDnDTarget(This,aReserved) ) 
+
+#define IGuestDnDTarget_get_InternalAndReservedAttribute2IDnDTarget(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDnDTarget(This,aReserved) ) 
 
 #define IGuestDnDTarget_Enter(This,aScreenId,aY,aX,aDefaultAction,aAllowedActions,aFormats,aResultAction)	\
     ( (This)->lpVtbl -> Enter(This,aScreenId,aY,aX,aDefaultAction,aAllowedActions,aFormats,aResultAction) ) 
@@ -18289,6 +20684,9 @@ EXTERN_C const IID IID_IGuestDnDTarget;
 
 #define IGuestDnDTarget_Cancel(This,aVeto)	\
     ( (This)->lpVtbl -> Cancel(This,aVeto) ) 
+
+#define IGuestDnDTarget_InternalAndReservedMethod1IDnDTarget(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDnDTarget(This) ) 
 
 
 #define IGuestDnDTarget_get_MidlDoesNotLikeEmptyInterfaces(This,aMidlDoesNotLikeEmptyInterfaces)	\
@@ -18316,7 +20714,7 @@ EXTERN_C const IID IID_IGuestSession;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("3cbf62cf-c9cd-48c6-9623-d1dbe54ca557")
+    MIDL_INTERFACE("486fd828-4c6b-239b-a846-c4bb69e41038")
     IGuestSession : public IDispatch
     {
     public:
@@ -18373,6 +20771,30 @@ EXTERN_C const IID IID_IGuestSession;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
             /* [retval][out] */ IEventSource **aEventSource) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IGuestSession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IGuestSession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IGuestSession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IGuestSession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IGuestSession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IGuestSession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IGuestSession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IGuestSession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Close( void) = 0;
         
@@ -18567,6 +20989,22 @@ EXTERN_C const IID IID_IGuestSession;
             /* [in] */ ULONG aTimeoutMS,
             /* [retval][out] */ GuestSessionWaitResult *aReason) = 0;
         
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IGuestSession( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IGuestSession( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IGuestSession( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IGuestSession( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod5IGuestSession( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod6IGuestSession( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod7IGuestSession( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod8IGuestSession( void) = 0;
+        
     };
     
 #else 	/* C style interface */
@@ -18687,6 +21125,38 @@ EXTERN_C const IID IID_IGuestSession;
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventSource )( 
             IGuestSession * This,
             /* [retval][out] */ IEventSource **aEventSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IGuestSession )( 
+            IGuestSession * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IGuestSession )( 
+            IGuestSession * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IGuestSession )( 
+            IGuestSession * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IGuestSession )( 
+            IGuestSession * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IGuestSession )( 
+            IGuestSession * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IGuestSession )( 
+            IGuestSession * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IGuestSession )( 
+            IGuestSession * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IGuestSession )( 
+            IGuestSession * This,
+            /* [retval][out] */ ULONG *aReserved);
         
         HRESULT ( STDMETHODCALLTYPE *Close )( 
             IGuestSession * This);
@@ -18917,6 +21387,30 @@ EXTERN_C const IID IID_IGuestSession;
             /* [in] */ ULONG aTimeoutMS,
             /* [retval][out] */ GuestSessionWaitResult *aReason);
         
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IGuestSession )( 
+            IGuestSession * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IGuestSession )( 
+            IGuestSession * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IGuestSession )( 
+            IGuestSession * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IGuestSession )( 
+            IGuestSession * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod5IGuestSession )( 
+            IGuestSession * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod6IGuestSession )( 
+            IGuestSession * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod7IGuestSession )( 
+            IGuestSession * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod8IGuestSession )( 
+            IGuestSession * This);
+        
         END_INTERFACE
     } IGuestSessionVtbl;
 
@@ -19006,6 +21500,30 @@ EXTERN_C const IID IID_IGuestSession;
 
 #define IGuestSession_get_EventSource(This,aEventSource)	\
     ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
+
+#define IGuestSession_get_InternalAndReservedAttribute1IGuestSession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IGuestSession(This,aReserved) ) 
+
+#define IGuestSession_get_InternalAndReservedAttribute2IGuestSession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IGuestSession(This,aReserved) ) 
+
+#define IGuestSession_get_InternalAndReservedAttribute3IGuestSession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IGuestSession(This,aReserved) ) 
+
+#define IGuestSession_get_InternalAndReservedAttribute4IGuestSession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IGuestSession(This,aReserved) ) 
+
+#define IGuestSession_get_InternalAndReservedAttribute5IGuestSession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IGuestSession(This,aReserved) ) 
+
+#define IGuestSession_get_InternalAndReservedAttribute6IGuestSession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IGuestSession(This,aReserved) ) 
+
+#define IGuestSession_get_InternalAndReservedAttribute7IGuestSession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IGuestSession(This,aReserved) ) 
+
+#define IGuestSession_get_InternalAndReservedAttribute8IGuestSession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IGuestSession(This,aReserved) ) 
 
 #define IGuestSession_Close(This)	\
     ( (This)->lpVtbl -> Close(This) ) 
@@ -19115,6 +21633,30 @@ EXTERN_C const IID IID_IGuestSession;
 #define IGuestSession_WaitForArray(This,aWaitFor,aTimeoutMS,aReason)	\
     ( (This)->lpVtbl -> WaitForArray(This,aWaitFor,aTimeoutMS,aReason) ) 
 
+#define IGuestSession_InternalAndReservedMethod1IGuestSession(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IGuestSession(This) ) 
+
+#define IGuestSession_InternalAndReservedMethod2IGuestSession(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IGuestSession(This) ) 
+
+#define IGuestSession_InternalAndReservedMethod3IGuestSession(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IGuestSession(This) ) 
+
+#define IGuestSession_InternalAndReservedMethod4IGuestSession(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IGuestSession(This) ) 
+
+#define IGuestSession_InternalAndReservedMethod5IGuestSession(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod5IGuestSession(This) ) 
+
+#define IGuestSession_InternalAndReservedMethod6IGuestSession(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod6IGuestSession(This) ) 
+
+#define IGuestSession_InternalAndReservedMethod7IGuestSession(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod7IGuestSession(This) ) 
+
+#define IGuestSession_InternalAndReservedMethod8IGuestSession(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod8IGuestSession(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -19137,7 +21679,7 @@ EXTERN_C const IID IID_IProcess;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("064cf1ca-4c0f-50b5-8f8e-e8b4bfa76c33")
+    MIDL_INTERFACE("2e20707d-4325-9a83-83cf-3faf5b97457c")
     IProcess : public IDispatch
     {
     public:
@@ -19164,6 +21706,18 @@ EXTERN_C const IID IID_IProcess;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
             /* [retval][out] */ ProcessStatus *aStatus) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IProcess( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IProcess( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IProcess( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IProcess( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE WaitFor( 
             /* [in] */ ULONG aWaitFor,
@@ -19196,6 +21750,8 @@ EXTERN_C const IID IID_IProcess;
             /* [retval][out] */ ULONG *aWritten) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Terminate( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IProcess( void) = 0;
         
     };
     
@@ -19278,6 +21834,22 @@ EXTERN_C const IID IID_IProcess;
             IProcess * This,
             /* [retval][out] */ ProcessStatus *aStatus);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IProcess )( 
+            IProcess * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IProcess )( 
+            IProcess * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IProcess )( 
+            IProcess * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IProcess )( 
+            IProcess * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *WaitFor )( 
             IProcess * This,
             /* [in] */ ULONG aWaitFor,
@@ -19314,6 +21886,9 @@ EXTERN_C const IID IID_IProcess;
             /* [retval][out] */ ULONG *aWritten);
         
         HRESULT ( STDMETHODCALLTYPE *Terminate )( 
+            IProcess * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IProcess )( 
             IProcess * This);
         
         END_INTERFACE
@@ -19376,6 +21951,18 @@ EXTERN_C const IID IID_IProcess;
 #define IProcess_get_Status(This,aStatus)	\
     ( (This)->lpVtbl -> get_Status(This,aStatus) ) 
 
+#define IProcess_get_InternalAndReservedAttribute1IProcess(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IProcess(This,aReserved) ) 
+
+#define IProcess_get_InternalAndReservedAttribute2IProcess(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IProcess(This,aReserved) ) 
+
+#define IProcess_get_InternalAndReservedAttribute3IProcess(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IProcess(This,aReserved) ) 
+
+#define IProcess_get_InternalAndReservedAttribute4IProcess(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IProcess(This,aReserved) ) 
+
 #define IProcess_WaitFor(This,aWaitFor,aTimeoutMS,aReason)	\
     ( (This)->lpVtbl -> WaitFor(This,aWaitFor,aTimeoutMS,aReason) ) 
 
@@ -19393,6 +21980,9 @@ EXTERN_C const IID IID_IProcess;
 
 #define IProcess_Terminate(This)	\
     ( (This)->lpVtbl -> Terminate(This) ) 
+
+#define IProcess_InternalAndReservedMethod1IProcess(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IProcess(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -19504,6 +22094,22 @@ EXTERN_C const IID IID_IGuestProcess;
             IGuestProcess * This,
             /* [retval][out] */ ProcessStatus *aStatus);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IProcess )( 
+            IGuestProcess * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IProcess )( 
+            IGuestProcess * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IProcess )( 
+            IGuestProcess * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IProcess )( 
+            IGuestProcess * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *WaitFor )( 
             IGuestProcess * This,
             /* [in] */ ULONG aWaitFor,
@@ -19540,6 +22146,9 @@ EXTERN_C const IID IID_IGuestProcess;
             /* [retval][out] */ ULONG *aWritten);
         
         HRESULT ( STDMETHODCALLTYPE *Terminate )( 
+            IGuestProcess * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IProcess )( 
             IGuestProcess * This);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MidlDoesNotLikeEmptyInterfaces )( 
@@ -19606,6 +22215,18 @@ EXTERN_C const IID IID_IGuestProcess;
 #define IGuestProcess_get_Status(This,aStatus)	\
     ( (This)->lpVtbl -> get_Status(This,aStatus) ) 
 
+#define IGuestProcess_get_InternalAndReservedAttribute1IProcess(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IProcess(This,aReserved) ) 
+
+#define IGuestProcess_get_InternalAndReservedAttribute2IProcess(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IProcess(This,aReserved) ) 
+
+#define IGuestProcess_get_InternalAndReservedAttribute3IProcess(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IProcess(This,aReserved) ) 
+
+#define IGuestProcess_get_InternalAndReservedAttribute4IProcess(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IProcess(This,aReserved) ) 
+
 #define IGuestProcess_WaitFor(This,aWaitFor,aTimeoutMS,aReason)	\
     ( (This)->lpVtbl -> WaitFor(This,aWaitFor,aTimeoutMS,aReason) ) 
 
@@ -19623,6 +22244,9 @@ EXTERN_C const IID IID_IGuestProcess;
 
 #define IGuestProcess_Terminate(This)	\
     ( (This)->lpVtbl -> Terminate(This) ) 
+
+#define IGuestProcess_InternalAndReservedMethod1IProcess(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IProcess(This) ) 
 
 
 #define IGuestProcess_get_MidlDoesNotLikeEmptyInterfaces(This,aMidlDoesNotLikeEmptyInterfaces)	\
@@ -19650,7 +22274,7 @@ EXTERN_C const IID IID_IDirectory;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("1b70dd03-26d7-483a-8877-89bbb0f87b70")
+    MIDL_INTERFACE("f73650f4-4506-50ca-045a-23a0e32ea508")
     IDirectory : public IDispatch
     {
     public:
@@ -19660,10 +22284,26 @@ EXTERN_C const IID IID_IDirectory;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Filter( 
             /* [retval][out] */ BSTR *aFilter) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IDirectory( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IDirectory( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IDirectory( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IDirectory( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE Close( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Read( 
             /* [retval][out] */ IFsObjInfo **aObjInfo) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IDirectory( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IDirectory( void) = 0;
         
     };
     
@@ -19722,12 +22362,34 @@ EXTERN_C const IID IID_IDirectory;
             IDirectory * This,
             /* [retval][out] */ BSTR *aFilter);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDirectory )( 
+            IDirectory * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDirectory )( 
+            IDirectory * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IDirectory )( 
+            IDirectory * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IDirectory )( 
+            IDirectory * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *Close )( 
             IDirectory * This);
         
         HRESULT ( STDMETHODCALLTYPE *Read )( 
             IDirectory * This,
             /* [retval][out] */ IFsObjInfo **aObjInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDirectory )( 
+            IDirectory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IDirectory )( 
+            IDirectory * This);
         
         END_INTERFACE
     } IDirectoryVtbl;
@@ -19771,11 +22433,29 @@ EXTERN_C const IID IID_IDirectory;
 #define IDirectory_get_Filter(This,aFilter)	\
     ( (This)->lpVtbl -> get_Filter(This,aFilter) ) 
 
+#define IDirectory_get_InternalAndReservedAttribute1IDirectory(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDirectory(This,aReserved) ) 
+
+#define IDirectory_get_InternalAndReservedAttribute2IDirectory(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDirectory(This,aReserved) ) 
+
+#define IDirectory_get_InternalAndReservedAttribute3IDirectory(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IDirectory(This,aReserved) ) 
+
+#define IDirectory_get_InternalAndReservedAttribute4IDirectory(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IDirectory(This,aReserved) ) 
+
 #define IDirectory_Close(This)	\
     ( (This)->lpVtbl -> Close(This) ) 
 
 #define IDirectory_Read(This,aObjInfo)	\
     ( (This)->lpVtbl -> Read(This,aObjInfo) ) 
+
+#define IDirectory_InternalAndReservedMethod1IDirectory(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDirectory(This) ) 
+
+#define IDirectory_InternalAndReservedMethod2IDirectory(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IDirectory(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -19863,12 +22543,34 @@ EXTERN_C const IID IID_IGuestDirectory;
             IGuestDirectory * This,
             /* [retval][out] */ BSTR *aFilter);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDirectory )( 
+            IGuestDirectory * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDirectory )( 
+            IGuestDirectory * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IDirectory )( 
+            IGuestDirectory * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IDirectory )( 
+            IGuestDirectory * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *Close )( 
             IGuestDirectory * This);
         
         HRESULT ( STDMETHODCALLTYPE *Read )( 
             IGuestDirectory * This,
             /* [retval][out] */ IFsObjInfo **aObjInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDirectory )( 
+            IGuestDirectory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IDirectory )( 
+            IGuestDirectory * This);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MidlDoesNotLikeEmptyInterfaces )( 
             IGuestDirectory * This,
@@ -19916,11 +22618,29 @@ EXTERN_C const IID IID_IGuestDirectory;
 #define IGuestDirectory_get_Filter(This,aFilter)	\
     ( (This)->lpVtbl -> get_Filter(This,aFilter) ) 
 
+#define IGuestDirectory_get_InternalAndReservedAttribute1IDirectory(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDirectory(This,aReserved) ) 
+
+#define IGuestDirectory_get_InternalAndReservedAttribute2IDirectory(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDirectory(This,aReserved) ) 
+
+#define IGuestDirectory_get_InternalAndReservedAttribute3IDirectory(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IDirectory(This,aReserved) ) 
+
+#define IGuestDirectory_get_InternalAndReservedAttribute4IDirectory(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IDirectory(This,aReserved) ) 
+
 #define IGuestDirectory_Close(This)	\
     ( (This)->lpVtbl -> Close(This) ) 
 
 #define IGuestDirectory_Read(This,aObjInfo)	\
     ( (This)->lpVtbl -> Read(This,aObjInfo) ) 
+
+#define IGuestDirectory_InternalAndReservedMethod1IDirectory(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDirectory(This) ) 
+
+#define IGuestDirectory_InternalAndReservedMethod2IDirectory(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IDirectory(This) ) 
 
 
 #define IGuestDirectory_get_MidlDoesNotLikeEmptyInterfaces(This,aMidlDoesNotLikeEmptyInterfaces)	\
@@ -19948,7 +22668,7 @@ EXTERN_C const IID IID_IFile;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("540804bf-4ca6-dd43-800c-bfb9765f96fe")
+    MIDL_INTERFACE("14c66b23-404c-f24a-3cc1-ee9501d44f2a")
     IFile : public IDispatch
     {
     public:
@@ -19978,6 +22698,18 @@ EXTERN_C const IID IID_IFile;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AccessMode( 
             /* [retval][out] */ FileAccessMode *aAccessMode) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IFile( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IFile( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IFile( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IFile( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Close( void) = 0;
         
@@ -20020,6 +22752,14 @@ EXTERN_C const IID IID_IFile;
             /* [in] */ SAFEARRAY * aData,
             /* [in] */ ULONG aTimeoutMS,
             /* [retval][out] */ ULONG *aWritten) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IFile( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IFile( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IFile( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IFile( void) = 0;
         
     };
     
@@ -20106,6 +22846,22 @@ EXTERN_C const IID IID_IFile;
             IFile * This,
             /* [retval][out] */ FileAccessMode *aAccessMode);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IFile )( 
+            IFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IFile )( 
+            IFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IFile )( 
+            IFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IFile )( 
+            IFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *Close )( 
             IFile * This);
         
@@ -20157,6 +22913,18 @@ EXTERN_C const IID IID_IFile;
             /* [in] */ SAFEARRAY * aData,
             /* [in] */ ULONG aTimeoutMS,
             /* [retval][out] */ ULONG *aWritten);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IFile )( 
+            IFile * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IFile )( 
+            IFile * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IFile )( 
+            IFile * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IFile )( 
+            IFile * This);
         
         END_INTERFACE
     } IFileVtbl;
@@ -20221,6 +22989,18 @@ EXTERN_C const IID IID_IFile;
 #define IFile_get_AccessMode(This,aAccessMode)	\
     ( (This)->lpVtbl -> get_AccessMode(This,aAccessMode) ) 
 
+#define IFile_get_InternalAndReservedAttribute1IFile(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IFile(This,aReserved) ) 
+
+#define IFile_get_InternalAndReservedAttribute2IFile(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IFile(This,aReserved) ) 
+
+#define IFile_get_InternalAndReservedAttribute3IFile(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IFile(This,aReserved) ) 
+
+#define IFile_get_InternalAndReservedAttribute4IFile(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IFile(This,aReserved) ) 
+
 #define IFile_Close(This)	\
     ( (This)->lpVtbl -> Close(This) ) 
 
@@ -20250,6 +23030,18 @@ EXTERN_C const IID IID_IFile;
 
 #define IFile_WriteAt(This,aOffset,aData,aTimeoutMS,aWritten)	\
     ( (This)->lpVtbl -> WriteAt(This,aOffset,aData,aTimeoutMS,aWritten) ) 
+
+#define IFile_InternalAndReservedMethod1IFile(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IFile(This) ) 
+
+#define IFile_InternalAndReservedMethod2IFile(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IFile(This) ) 
+
+#define IFile_InternalAndReservedMethod3IFile(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IFile(This) ) 
+
+#define IFile_InternalAndReservedMethod4IFile(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IFile(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -20365,6 +23157,22 @@ EXTERN_C const IID IID_IGuestFile;
             IGuestFile * This,
             /* [retval][out] */ FileAccessMode *aAccessMode);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IFile )( 
+            IGuestFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IFile )( 
+            IGuestFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IFile )( 
+            IGuestFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IFile )( 
+            IGuestFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *Close )( 
             IGuestFile * This);
         
@@ -20416,6 +23224,18 @@ EXTERN_C const IID IID_IGuestFile;
             /* [in] */ SAFEARRAY * aData,
             /* [in] */ ULONG aTimeoutMS,
             /* [retval][out] */ ULONG *aWritten);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IFile )( 
+            IGuestFile * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IFile )( 
+            IGuestFile * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IFile )( 
+            IGuestFile * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IFile )( 
+            IGuestFile * This);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MidlDoesNotLikeEmptyInterfaces )( 
             IGuestFile * This,
@@ -20484,6 +23304,18 @@ EXTERN_C const IID IID_IGuestFile;
 #define IGuestFile_get_AccessMode(This,aAccessMode)	\
     ( (This)->lpVtbl -> get_AccessMode(This,aAccessMode) ) 
 
+#define IGuestFile_get_InternalAndReservedAttribute1IFile(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IFile(This,aReserved) ) 
+
+#define IGuestFile_get_InternalAndReservedAttribute2IFile(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IFile(This,aReserved) ) 
+
+#define IGuestFile_get_InternalAndReservedAttribute3IFile(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IFile(This,aReserved) ) 
+
+#define IGuestFile_get_InternalAndReservedAttribute4IFile(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IFile(This,aReserved) ) 
+
 #define IGuestFile_Close(This)	\
     ( (This)->lpVtbl -> Close(This) ) 
 
@@ -20514,6 +23346,18 @@ EXTERN_C const IID IID_IGuestFile;
 #define IGuestFile_WriteAt(This,aOffset,aData,aTimeoutMS,aWritten)	\
     ( (This)->lpVtbl -> WriteAt(This,aOffset,aData,aTimeoutMS,aWritten) ) 
 
+#define IGuestFile_InternalAndReservedMethod1IFile(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IFile(This) ) 
+
+#define IGuestFile_InternalAndReservedMethod2IFile(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IFile(This) ) 
+
+#define IGuestFile_InternalAndReservedMethod3IFile(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IFile(This) ) 
+
+#define IGuestFile_InternalAndReservedMethod4IFile(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IFile(This) ) 
+
 
 #define IGuestFile_get_MidlDoesNotLikeEmptyInterfaces(This,aMidlDoesNotLikeEmptyInterfaces)	\
     ( (This)->lpVtbl -> get_MidlDoesNotLikeEmptyInterfaces(This,aMidlDoesNotLikeEmptyInterfaces) ) 
@@ -20540,7 +23384,7 @@ EXTERN_C const IID IID_IFsObjInfo;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("37b30bc6-4506-58e4-bc43-fbbca92b4548")
+    MIDL_INTERFACE("d344626e-4b0a-10bc-9c2b-68973052de16")
     IFsObjInfo : public IDispatch
     {
     public:
@@ -20600,6 +23444,18 @@ EXTERN_C const IID IID_IFsObjInfo;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_UserName( 
             /* [retval][out] */ BSTR *aUserName) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IFsObjInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IFsObjInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IFsObjInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IFsObjInfo( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -20726,6 +23582,22 @@ EXTERN_C const IID IID_IFsObjInfo;
             IFsObjInfo * This,
             /* [retval][out] */ BSTR *aUserName);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IFsObjInfo )( 
+            IFsObjInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IFsObjInfo )( 
+            IFsObjInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IFsObjInfo )( 
+            IFsObjInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IFsObjInfo )( 
+            IFsObjInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IFsObjInfoVtbl;
 
@@ -20818,6 +23690,18 @@ EXTERN_C const IID IID_IFsObjInfo;
 
 #define IFsObjInfo_get_UserName(This,aUserName)	\
     ( (This)->lpVtbl -> get_UserName(This,aUserName) ) 
+
+#define IFsObjInfo_get_InternalAndReservedAttribute1IFsObjInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IFsObjInfo(This,aReserved) ) 
+
+#define IFsObjInfo_get_InternalAndReservedAttribute2IFsObjInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IFsObjInfo(This,aReserved) ) 
+
+#define IFsObjInfo_get_InternalAndReservedAttribute3IFsObjInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IFsObjInfo(This,aReserved) ) 
+
+#define IFsObjInfo_get_InternalAndReservedAttribute4IFsObjInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IFsObjInfo(This,aReserved) ) 
 
 #endif /* COBJMACROS */
 
@@ -20973,6 +23857,22 @@ EXTERN_C const IID IID_IGuestFsObjInfo;
             IGuestFsObjInfo * This,
             /* [retval][out] */ BSTR *aUserName);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IFsObjInfo )( 
+            IGuestFsObjInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IFsObjInfo )( 
+            IGuestFsObjInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IFsObjInfo )( 
+            IGuestFsObjInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IFsObjInfo )( 
+            IGuestFsObjInfo * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MidlDoesNotLikeEmptyInterfaces )( 
             IGuestFsObjInfo * This,
             /* [retval][out] */ BOOL *aMidlDoesNotLikeEmptyInterfaces);
@@ -21070,6 +23970,18 @@ EXTERN_C const IID IID_IGuestFsObjInfo;
 #define IGuestFsObjInfo_get_UserName(This,aUserName)	\
     ( (This)->lpVtbl -> get_UserName(This,aUserName) ) 
 
+#define IGuestFsObjInfo_get_InternalAndReservedAttribute1IFsObjInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IFsObjInfo(This,aReserved) ) 
+
+#define IGuestFsObjInfo_get_InternalAndReservedAttribute2IFsObjInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IFsObjInfo(This,aReserved) ) 
+
+#define IGuestFsObjInfo_get_InternalAndReservedAttribute3IFsObjInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IFsObjInfo(This,aReserved) ) 
+
+#define IGuestFsObjInfo_get_InternalAndReservedAttribute4IFsObjInfo(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IFsObjInfo(This,aReserved) ) 
+
 
 #define IGuestFsObjInfo_get_MidlDoesNotLikeEmptyInterfaces(This,aMidlDoesNotLikeEmptyInterfaces)	\
     ( (This)->lpVtbl -> get_MidlDoesNotLikeEmptyInterfaces(This,aMidlDoesNotLikeEmptyInterfaces) ) 
@@ -21096,7 +24008,7 @@ EXTERN_C const IID IID_IGuest;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("97927199-7e1f-4094-97ab-92333e727843")
+    MIDL_INTERFACE("13a11514-402e-022e-6180-c3944de3f9c8")
     IGuest : public IDispatch
     {
     public:
@@ -21138,6 +24050,54 @@ EXTERN_C const IID IID_IGuest;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_StatisticsUpdateInterval( 
             /* [in] */ ULONG aStatisticsUpdateInterval) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute9IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute10IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute11IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute12IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute13IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute14IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute15IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute16IGuest( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE InternalGetStatistics( 
             /* [out] */ ULONG *aCpuUser,
@@ -21185,6 +24145,22 @@ EXTERN_C const IID IID_IGuest;
             /* [in] */ SAFEARRAY * aArguments,
             /* [in] */ SAFEARRAY * aFlags,
             /* [retval][out] */ IProgress **aProgress) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IGuest( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IGuest( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IGuest( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IGuest( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod5IGuest( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod6IGuest( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod7IGuest( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod8IGuest( void) = 0;
         
     };
     
@@ -21287,6 +24263,70 @@ EXTERN_C const IID IID_IGuest;
             IGuest * This,
             /* [in] */ ULONG aStatisticsUpdateInterval);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute9IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute10IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute11IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute12IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute13IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute14IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute15IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute16IGuest )( 
+            IGuest * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *InternalGetStatistics )( 
             IGuest * This,
             /* [out] */ ULONG *aCpuUser,
@@ -21340,6 +24380,30 @@ EXTERN_C const IID IID_IGuest;
             /* [in] */ SAFEARRAY * aArguments,
             /* [in] */ SAFEARRAY * aFlags,
             /* [retval][out] */ IProgress **aProgress);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IGuest )( 
+            IGuest * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IGuest )( 
+            IGuest * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IGuest )( 
+            IGuest * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IGuest )( 
+            IGuest * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod5IGuest )( 
+            IGuest * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod6IGuest )( 
+            IGuest * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod7IGuest )( 
+            IGuest * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod8IGuest )( 
+            IGuest * This);
         
         END_INTERFACE
     } IGuestVtbl;
@@ -21416,6 +24480,54 @@ EXTERN_C const IID IID_IGuest;
 #define IGuest_put_StatisticsUpdateInterval(This,aStatisticsUpdateInterval)	\
     ( (This)->lpVtbl -> put_StatisticsUpdateInterval(This,aStatisticsUpdateInterval) ) 
 
+#define IGuest_get_InternalAndReservedAttribute1IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute2IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute3IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute4IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute5IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute6IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute7IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute8IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute9IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute9IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute10IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute10IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute11IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute11IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute12IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute12IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute13IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute13IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute14IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute14IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute15IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute15IGuest(This,aReserved) ) 
+
+#define IGuest_get_InternalAndReservedAttribute16IGuest(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute16IGuest(This,aReserved) ) 
+
 #define IGuest_InternalGetStatistics(This,aCpuUser,aCpuKernel,aCpuIdle,aMemTotal,aMemFree,aMemBalloon,aMemShared,aMemCache,aPagedTotal,aMemAllocTotal,aMemFreeTotal,aMemBalloonTotal,aMemSharedTotal)	\
     ( (This)->lpVtbl -> InternalGetStatistics(This,aCpuUser,aCpuKernel,aCpuIdle,aMemTotal,aMemFree,aMemBalloon,aMemShared,aMemCache,aPagedTotal,aMemAllocTotal,aMemFreeTotal,aMemBalloonTotal,aMemSharedTotal) ) 
 
@@ -21436,6 +24548,30 @@ EXTERN_C const IID IID_IGuest;
 
 #define IGuest_UpdateGuestAdditions(This,aSource,aArguments,aFlags,aProgress)	\
     ( (This)->lpVtbl -> UpdateGuestAdditions(This,aSource,aArguments,aFlags,aProgress) ) 
+
+#define IGuest_InternalAndReservedMethod1IGuest(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IGuest(This) ) 
+
+#define IGuest_InternalAndReservedMethod2IGuest(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IGuest(This) ) 
+
+#define IGuest_InternalAndReservedMethod3IGuest(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IGuest(This) ) 
+
+#define IGuest_InternalAndReservedMethod4IGuest(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IGuest(This) ) 
+
+#define IGuest_InternalAndReservedMethod5IGuest(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod5IGuest(This) ) 
+
+#define IGuest_InternalAndReservedMethod6IGuest(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod6IGuest(This) ) 
+
+#define IGuest_InternalAndReservedMethod7IGuest(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod7IGuest(This) ) 
+
+#define IGuest_InternalAndReservedMethod8IGuest(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod8IGuest(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -21459,7 +24595,7 @@ EXTERN_C const IID IID_IProgress;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("c20238e4-3221-4d3f-8891-81ce92d9f913")
+    MIDL_INTERFACE("77faf1c0-489d-b123-274c-5a95e77ab286")
     IProgress : public IDispatch
     {
     public:
@@ -21514,6 +24650,12 @@ EXTERN_C const IID IID_IProgress;
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Timeout( 
             /* [in] */ ULONG aTimeout) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IProgress( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IProgress( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE SetCurrentOperationProgress( 
             /* [in] */ ULONG aPercent) = 0;
         
@@ -21532,6 +24674,8 @@ EXTERN_C const IID IID_IProgress;
             /* [in] */ IProgress *aPProgressAsync) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Cancel( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IProgress( void) = 0;
         
     };
     
@@ -21650,6 +24794,14 @@ EXTERN_C const IID IID_IProgress;
             IProgress * This,
             /* [in] */ ULONG aTimeout);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IProgress )( 
+            IProgress * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IProgress )( 
+            IProgress * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *SetCurrentOperationProgress )( 
             IProgress * This,
             /* [in] */ ULONG aPercent);
@@ -21673,6 +24825,9 @@ EXTERN_C const IID IID_IProgress;
             /* [in] */ IProgress *aPProgressAsync);
         
         HRESULT ( STDMETHODCALLTYPE *Cancel )( 
+            IProgress * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IProgress )( 
             IProgress * This);
         
         END_INTERFACE
@@ -21762,6 +24917,12 @@ EXTERN_C const IID IID_IProgress;
 #define IProgress_put_Timeout(This,aTimeout)	\
     ( (This)->lpVtbl -> put_Timeout(This,aTimeout) ) 
 
+#define IProgress_get_InternalAndReservedAttribute1IProgress(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IProgress(This,aReserved) ) 
+
+#define IProgress_get_InternalAndReservedAttribute2IProgress(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IProgress(This,aReserved) ) 
+
 #define IProgress_SetCurrentOperationProgress(This,aPercent)	\
     ( (This)->lpVtbl -> SetCurrentOperationProgress(This,aPercent) ) 
 
@@ -21779,6 +24940,9 @@ EXTERN_C const IID IID_IProgress;
 
 #define IProgress_Cancel(This)	\
     ( (This)->lpVtbl -> Cancel(This) ) 
+
+#define IProgress_InternalAndReservedMethod1IProgress(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IProgress(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -21802,7 +24966,7 @@ EXTERN_C const IID IID_ISnapshot;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("0472823b-c6e7-472a-8e9f-d732e86b8463")
+    MIDL_INTERFACE("5732f030-4194-ec8b-c761-e1a99327e9f0")
     ISnapshot : public IDispatch
     {
     public:
@@ -21836,8 +25000,16 @@ EXTERN_C const IID IID_ISnapshot;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Children( 
             /* [retval][out] */ SAFEARRAY * *aChildren) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1ISnapshot( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2ISnapshot( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE GetChildrenCount( 
             /* [retval][out] */ ULONG *aChildrenCount) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1ISnapshot( void) = 0;
         
     };
     
@@ -21928,9 +25100,20 @@ EXTERN_C const IID IID_ISnapshot;
             ISnapshot * This,
             /* [retval][out] */ SAFEARRAY * *aChildren);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1ISnapshot )( 
+            ISnapshot * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2ISnapshot )( 
+            ISnapshot * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *GetChildrenCount )( 
             ISnapshot * This,
             /* [retval][out] */ ULONG *aChildrenCount);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1ISnapshot )( 
+            ISnapshot * This);
         
         END_INTERFACE
     } ISnapshotVtbl;
@@ -21998,8 +25181,17 @@ EXTERN_C const IID IID_ISnapshot;
 #define ISnapshot_get_Children(This,aChildren)	\
     ( (This)->lpVtbl -> get_Children(This,aChildren) ) 
 
+#define ISnapshot_get_InternalAndReservedAttribute1ISnapshot(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1ISnapshot(This,aReserved) ) 
+
+#define ISnapshot_get_InternalAndReservedAttribute2ISnapshot(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2ISnapshot(This,aReserved) ) 
+
 #define ISnapshot_GetChildrenCount(This,aChildrenCount)	\
     ( (This)->lpVtbl -> GetChildrenCount(This,aChildrenCount) ) 
+
+#define ISnapshot_InternalAndReservedMethod1ISnapshot(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1ISnapshot(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -22023,7 +25215,7 @@ EXTERN_C const IID IID_IMediumAttachment;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("4b252567-5d4e-4db8-b3c8-569ec1c9236c")
+    MIDL_INTERFACE("3785b3f7-7b5f-4000-8842-ad0cc6ab30b7")
     IMediumAttachment : public IDispatch
     {
     public:
@@ -22062,6 +25254,18 @@ EXTERN_C const IID IID_IMediumAttachment;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_BandwidthGroup( 
             /* [retval][out] */ IBandwidthGroup **aBandwidthGroup) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IMediumAttachment( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IMediumAttachment( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IMediumAttachment( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IMediumAttachment( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -22160,6 +25364,22 @@ EXTERN_C const IID IID_IMediumAttachment;
             IMediumAttachment * This,
             /* [retval][out] */ IBandwidthGroup **aBandwidthGroup);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IMediumAttachment )( 
+            IMediumAttachment * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IMediumAttachment )( 
+            IMediumAttachment * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IMediumAttachment )( 
+            IMediumAttachment * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IMediumAttachment )( 
+            IMediumAttachment * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IMediumAttachmentVtbl;
 
@@ -22232,6 +25452,18 @@ EXTERN_C const IID IID_IMediumAttachment;
 #define IMediumAttachment_get_BandwidthGroup(This,aBandwidthGroup)	\
     ( (This)->lpVtbl -> get_BandwidthGroup(This,aBandwidthGroup) ) 
 
+#define IMediumAttachment_get_InternalAndReservedAttribute1IMediumAttachment(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IMediumAttachment(This,aReserved) ) 
+
+#define IMediumAttachment_get_InternalAndReservedAttribute2IMediumAttachment(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IMediumAttachment(This,aReserved) ) 
+
+#define IMediumAttachment_get_InternalAndReservedAttribute3IMediumAttachment(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IMediumAttachment(This,aReserved) ) 
+
+#define IMediumAttachment_get_InternalAndReservedAttribute4IMediumAttachment(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IMediumAttachment(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -22254,7 +25486,7 @@ EXTERN_C const IID IID_IMedium;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("9680d99b-3550-4e14-8fc4-82ad1426cbde")
+    MIDL_INTERFACE("4afe423b-43e0-e9d0-82e8-ceb307940dda")
     IMedium : public IDispatch
     {
     public:
@@ -22329,6 +25561,30 @@ EXTERN_C const IID IID_IMedium;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MachineIds( 
             /* [retval][out] */ SAFEARRAY * *aMachineIds) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IMedium( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IMedium( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IMedium( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IMedium( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IMedium( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IMedium( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IMedium( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IMedium( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE SetIds( 
             /* [in] */ BOOL aSetImageId,
@@ -22423,6 +25679,14 @@ EXTERN_C const IID IID_IMedium;
         
         virtual HRESULT STDMETHODCALLTYPE CheckEncryptionPassword( 
             /* [in] */ BSTR aPassword) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IMedium( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IMedium( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IMedium( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IMedium( void) = 0;
         
     };
     
@@ -22569,6 +25833,38 @@ EXTERN_C const IID IID_IMedium;
             IMedium * This,
             /* [retval][out] */ SAFEARRAY * *aMachineIds);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IMedium )( 
+            IMedium * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IMedium )( 
+            IMedium * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IMedium )( 
+            IMedium * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IMedium )( 
+            IMedium * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IMedium )( 
+            IMedium * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IMedium )( 
+            IMedium * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IMedium )( 
+            IMedium * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IMedium )( 
+            IMedium * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *SetIds )( 
             IMedium * This,
             /* [in] */ BOOL aSetImageId,
@@ -22686,6 +25982,18 @@ EXTERN_C const IID IID_IMedium;
             IMedium * This,
             /* [in] */ BSTR aPassword);
         
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IMedium )( 
+            IMedium * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IMedium )( 
+            IMedium * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IMedium )( 
+            IMedium * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IMedium )( 
+            IMedium * This);
+        
         END_INTERFACE
     } IMediumVtbl;
 
@@ -22794,6 +26102,30 @@ EXTERN_C const IID IID_IMedium;
 #define IMedium_get_MachineIds(This,aMachineIds)	\
     ( (This)->lpVtbl -> get_MachineIds(This,aMachineIds) ) 
 
+#define IMedium_get_InternalAndReservedAttribute1IMedium(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IMedium(This,aReserved) ) 
+
+#define IMedium_get_InternalAndReservedAttribute2IMedium(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IMedium(This,aReserved) ) 
+
+#define IMedium_get_InternalAndReservedAttribute3IMedium(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IMedium(This,aReserved) ) 
+
+#define IMedium_get_InternalAndReservedAttribute4IMedium(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IMedium(This,aReserved) ) 
+
+#define IMedium_get_InternalAndReservedAttribute5IMedium(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IMedium(This,aReserved) ) 
+
+#define IMedium_get_InternalAndReservedAttribute6IMedium(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IMedium(This,aReserved) ) 
+
+#define IMedium_get_InternalAndReservedAttribute7IMedium(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IMedium(This,aReserved) ) 
+
+#define IMedium_get_InternalAndReservedAttribute8IMedium(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IMedium(This,aReserved) ) 
+
 #define IMedium_SetIds(This,aSetImageId,aImageId,aSetParentId,aParentId)	\
     ( (This)->lpVtbl -> SetIds(This,aSetImageId,aImageId,aSetParentId,aParentId) ) 
 
@@ -22863,6 +26195,18 @@ EXTERN_C const IID IID_IMedium;
 #define IMedium_CheckEncryptionPassword(This,aPassword)	\
     ( (This)->lpVtbl -> CheckEncryptionPassword(This,aPassword) ) 
 
+#define IMedium_InternalAndReservedMethod1IMedium(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IMedium(This) ) 
+
+#define IMedium_InternalAndReservedMethod2IMedium(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IMedium(This) ) 
+
+#define IMedium_InternalAndReservedMethod3IMedium(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IMedium(This) ) 
+
+#define IMedium_InternalAndReservedMethod4IMedium(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IMedium(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -22885,7 +26229,7 @@ EXTERN_C const IID IID_IMediumFormat;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("6238e1cf-a17d-4ec1-8172-418bfb22b93a")
+    MIDL_INTERFACE("10f337fb-422e-e57e-661b-0998ac309175")
     IMediumFormat : public IDispatch
     {
     public:
@@ -22898,6 +26242,12 @@ EXTERN_C const IID IID_IMediumFormat;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Capabilities( 
             /* [retval][out] */ SAFEARRAY * *aCapabilities) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IMediumFormat( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IMediumFormat( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE DescribeFileExtensions( 
             /* [out] */ SAFEARRAY * *aExtensions,
             /* [out] */ SAFEARRAY * *aTypes) = 0;
@@ -22908,6 +26258,8 @@ EXTERN_C const IID IID_IMediumFormat;
             /* [out] */ SAFEARRAY * *aTypes,
             /* [out] */ SAFEARRAY * *aFlags,
             /* [out] */ SAFEARRAY * *aDefaults) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IMediumFormat( void) = 0;
         
     };
     
@@ -22970,6 +26322,14 @@ EXTERN_C const IID IID_IMediumFormat;
             IMediumFormat * This,
             /* [retval][out] */ SAFEARRAY * *aCapabilities);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IMediumFormat )( 
+            IMediumFormat * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IMediumFormat )( 
+            IMediumFormat * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *DescribeFileExtensions )( 
             IMediumFormat * This,
             /* [out] */ SAFEARRAY * *aExtensions,
@@ -22982,6 +26342,9 @@ EXTERN_C const IID IID_IMediumFormat;
             /* [out] */ SAFEARRAY * *aTypes,
             /* [out] */ SAFEARRAY * *aFlags,
             /* [out] */ SAFEARRAY * *aDefaults);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IMediumFormat )( 
+            IMediumFormat * This);
         
         END_INTERFACE
     } IMediumFormatVtbl;
@@ -23028,11 +26391,20 @@ EXTERN_C const IID IID_IMediumFormat;
 #define IMediumFormat_get_Capabilities(This,aCapabilities)	\
     ( (This)->lpVtbl -> get_Capabilities(This,aCapabilities) ) 
 
+#define IMediumFormat_get_InternalAndReservedAttribute1IMediumFormat(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IMediumFormat(This,aReserved) ) 
+
+#define IMediumFormat_get_InternalAndReservedAttribute2IMediumFormat(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IMediumFormat(This,aReserved) ) 
+
 #define IMediumFormat_DescribeFileExtensions(This,aExtensions,aTypes)	\
     ( (This)->lpVtbl -> DescribeFileExtensions(This,aExtensions,aTypes) ) 
 
 #define IMediumFormat_DescribeProperties(This,aNames,aDescriptions,aTypes,aFlags,aDefaults)	\
     ( (This)->lpVtbl -> DescribeProperties(This,aNames,aDescriptions,aTypes,aFlags,aDefaults) ) 
+
+#define IMediumFormat_InternalAndReservedMethod1IMediumFormat(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IMediumFormat(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -23056,13 +26428,21 @@ EXTERN_C const IID IID_IToken;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("3b1c4797-e289-4d4c-b74c-50c9b86a36f8")
+    MIDL_INTERFACE("20479eaf-d8ed-44cf-85ac-c83a26c95a4d")
     IToken : public IDispatch
     {
     public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IToken( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IToken( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE Abandon( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Dummy( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IToken( void) = 0;
         
     };
     
@@ -23113,10 +26493,21 @@ EXTERN_C const IID IID_IToken;
             /* [out] */ EXCEPINFO *pExcepInfo,
             /* [out] */ UINT *puArgErr);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IToken )( 
+            IToken * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IToken )( 
+            IToken * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *Abandon )( 
             IToken * This);
         
         HRESULT ( STDMETHODCALLTYPE *Dummy )( 
+            IToken * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IToken )( 
             IToken * This);
         
         END_INTERFACE
@@ -23155,11 +26546,20 @@ EXTERN_C const IID IID_IToken;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
+#define IToken_get_InternalAndReservedAttribute1IToken(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IToken(This,aReserved) ) 
+
+#define IToken_get_InternalAndReservedAttribute2IToken(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IToken(This,aReserved) ) 
+
 #define IToken_Abandon(This)	\
     ( (This)->lpVtbl -> Abandon(This) ) 
 
 #define IToken_Dummy(This)	\
     ( (This)->lpVtbl -> Dummy(This) ) 
+
+#define IToken_InternalAndReservedMethod1IToken(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IToken(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -23183,7 +26583,7 @@ EXTERN_C const IID IID_IKeyboard;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("585cc5e8-349c-41c6-899d-d9a38e3f4126")
+    MIDL_INTERFACE("da91d4c9-4c02-fdb1-c5ac-d89e22e81302")
     IKeyboard : public IDispatch
     {
     public:
@@ -23192,6 +26592,12 @@ EXTERN_C const IID IID_IKeyboard;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
             /* [retval][out] */ IEventSource **aEventSource) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IKeyboard( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IKeyboard( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE PutScancode( 
             /* [in] */ LONG aScancode) = 0;
@@ -23203,6 +26609,8 @@ EXTERN_C const IID IID_IKeyboard;
         virtual HRESULT STDMETHODCALLTYPE PutCAD( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE ReleaseKeys( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IKeyboard( void) = 0;
         
     };
     
@@ -23261,6 +26669,14 @@ EXTERN_C const IID IID_IKeyboard;
             IKeyboard * This,
             /* [retval][out] */ IEventSource **aEventSource);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IKeyboard )( 
+            IKeyboard * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IKeyboard )( 
+            IKeyboard * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *PutScancode )( 
             IKeyboard * This,
             /* [in] */ LONG aScancode);
@@ -23274,6 +26690,9 @@ EXTERN_C const IID IID_IKeyboard;
             IKeyboard * This);
         
         HRESULT ( STDMETHODCALLTYPE *ReleaseKeys )( 
+            IKeyboard * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IKeyboard )( 
             IKeyboard * This);
         
         END_INTERFACE
@@ -23318,6 +26737,12 @@ EXTERN_C const IID IID_IKeyboard;
 #define IKeyboard_get_EventSource(This,aEventSource)	\
     ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
 
+#define IKeyboard_get_InternalAndReservedAttribute1IKeyboard(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IKeyboard(This,aReserved) ) 
+
+#define IKeyboard_get_InternalAndReservedAttribute2IKeyboard(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IKeyboard(This,aReserved) ) 
+
 #define IKeyboard_PutScancode(This,aScancode)	\
     ( (This)->lpVtbl -> PutScancode(This,aScancode) ) 
 
@@ -23329,6 +26754,9 @@ EXTERN_C const IID IID_IKeyboard;
 
 #define IKeyboard_ReleaseKeys(This)	\
     ( (This)->lpVtbl -> ReleaseKeys(This) ) 
+
+#define IKeyboard_InternalAndReservedMethod1IKeyboard(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IKeyboard(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -23352,7 +26780,7 @@ EXTERN_C const IID IID_IMousePointerShape;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("4609f3e1-839a-4edd-b57f-cc4584b39173")
+    MIDL_INTERFACE("e04e5545-4a0f-f9d2-5bef-f9b25b6557ed")
     IMousePointerShape : public IDispatch
     {
     public:
@@ -23376,6 +26804,12 @@ EXTERN_C const IID IID_IMousePointerShape;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Shape( 
             /* [retval][out] */ SAFEARRAY * *aShape) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IMousePointerShape( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IMousePointerShape( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -23454,6 +26888,14 @@ EXTERN_C const IID IID_IMousePointerShape;
             IMousePointerShape * This,
             /* [retval][out] */ SAFEARRAY * *aShape);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IMousePointerShape )( 
+            IMousePointerShape * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IMousePointerShape )( 
+            IMousePointerShape * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IMousePointerShapeVtbl;
 
@@ -23511,6 +26953,12 @@ EXTERN_C const IID IID_IMousePointerShape;
 #define IMousePointerShape_get_Shape(This,aShape)	\
     ( (This)->lpVtbl -> get_Shape(This,aShape) ) 
 
+#define IMousePointerShape_get_InternalAndReservedAttribute1IMousePointerShape(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IMousePointerShape(This,aReserved) ) 
+
+#define IMousePointerShape_get_InternalAndReservedAttribute2IMousePointerShape(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IMousePointerShape(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -23533,7 +26981,7 @@ EXTERN_C const IID IID_IMouse;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("4c3fa51c-7b9a-4ecf-97f0-d75a945bd26c")
+    MIDL_INTERFACE("ee35adb0-4748-3e12-e7fd-5aad957bba0f")
     IMouse : public IDispatch
     {
     public:
@@ -23554,6 +27002,12 @@ EXTERN_C const IID IID_IMouse;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
             /* [retval][out] */ IEventSource **aEventSource) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IMouse( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IMouse( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE PutMouseEvent( 
             /* [in] */ LONG aDx,
@@ -23578,6 +27032,8 @@ EXTERN_C const IID IID_IMouse;
             /* [in] */ LONG aCount,
             /* [in] */ BSTR aContacts,
             /* [in] */ ULONG aScanTime) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IMouse( void) = 0;
         
     };
     
@@ -23652,6 +27108,14 @@ EXTERN_C const IID IID_IMouse;
             IMouse * This,
             /* [retval][out] */ IEventSource **aEventSource);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IMouse )( 
+            IMouse * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IMouse )( 
+            IMouse * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *PutMouseEvent )( 
             IMouse * This,
             /* [in] */ LONG aDx,
@@ -23679,6 +27143,9 @@ EXTERN_C const IID IID_IMouse;
             /* [in] */ LONG aCount,
             /* [in] */ BSTR aContacts,
             /* [in] */ ULONG aScanTime);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IMouse )( 
+            IMouse * This);
         
         END_INTERFACE
     } IMouseVtbl;
@@ -23734,6 +27201,12 @@ EXTERN_C const IID IID_IMouse;
 #define IMouse_get_EventSource(This,aEventSource)	\
     ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
 
+#define IMouse_get_InternalAndReservedAttribute1IMouse(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IMouse(This,aReserved) ) 
+
+#define IMouse_get_InternalAndReservedAttribute2IMouse(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IMouse(This,aReserved) ) 
+
 #define IMouse_PutMouseEvent(This,aDx,aDy,aDz,aDw,aButtonState)	\
     ( (This)->lpVtbl -> PutMouseEvent(This,aDx,aDy,aDz,aDw,aButtonState) ) 
 
@@ -23745,6 +27218,9 @@ EXTERN_C const IID IID_IMouse;
 
 #define IMouse_PutEventMultiTouchString(This,aCount,aContacts,aScanTime)	\
     ( (This)->lpVtbl -> PutEventMultiTouchString(This,aCount,aContacts,aScanTime) ) 
+
+#define IMouse_InternalAndReservedMethod1IMouse(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IMouse(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -23909,7 +27385,7 @@ EXTERN_C const IID IID_IFramebuffer;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("dd07f843-be2e-4cae-83fe-8bf5d33c80e9")
+    MIDL_INTERFACE("8b82295f-415f-1aa1-17fd-9fbbac8edf44")
     IFramebuffer : public IDispatch
     {
     public:
@@ -24226,7 +27702,7 @@ EXTERN_C const IID IID_IFramebufferOverlay;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("0bcc1c7e-e415-47d2-bfdb-e4c705fb0f47")
+    MIDL_INTERFACE("af398a9a-6b76-4805-8fab-00a9dcf4732b")
     IFramebufferOverlay : public IFramebuffer
     {
     public:
@@ -24547,10 +28023,16 @@ EXTERN_C const IID IID_IDisplay;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("94a7faa2-7792-42a3-8535-00770eca1f53")
+    MIDL_INTERFACE("7303a66d-433b-25a4-f9a8-fcadf87e0c2a")
     IDisplay : public IDispatch
     {
     public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IDisplay( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IDisplay( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE GetScreenResolution( 
             /* [in] */ ULONG aScreenId,
             /* [out] */ ULONG *aWidth,
@@ -24635,6 +28117,14 @@ EXTERN_C const IID IID_IDisplay;
         virtual HRESULT STDMETHODCALLTYPE NotifyHiDPIOutputPolicyChange( 
             /* [in] */ BOOL aFUnscaledHiDPI) = 0;
         
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IDisplay( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IDisplay( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IDisplay( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IDisplay( void) = 0;
+        
     };
     
 #else 	/* C style interface */
@@ -24683,6 +28173,14 @@ EXTERN_C const IID IID_IDisplay;
             /* [out] */ VARIANT *pVarResult,
             /* [out] */ EXCEPINFO *pExcepInfo,
             /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IDisplay )( 
+            IDisplay * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IDisplay )( 
+            IDisplay * This,
+            /* [retval][out] */ ULONG *aReserved);
         
         HRESULT ( STDMETHODCALLTYPE *GetScreenResolution )( 
             IDisplay * This,
@@ -24784,6 +28282,18 @@ EXTERN_C const IID IID_IDisplay;
             IDisplay * This,
             /* [in] */ BOOL aFUnscaledHiDPI);
         
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDisplay )( 
+            IDisplay * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IDisplay )( 
+            IDisplay * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IDisplay )( 
+            IDisplay * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IDisplay )( 
+            IDisplay * This);
+        
         END_INTERFACE
     } IDisplayVtbl;
 
@@ -24819,6 +28329,12 @@ EXTERN_C const IID IID_IDisplay;
 #define IDisplay_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
+
+#define IDisplay_get_InternalAndReservedAttribute1IDisplay(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IDisplay(This,aReserved) ) 
+
+#define IDisplay_get_InternalAndReservedAttribute2IDisplay(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IDisplay(This,aReserved) ) 
 
 #define IDisplay_GetScreenResolution(This,aScreenId,aWidth,aHeight,aBitsPerPixel,aXOrigin,aYOrigin,aGuestMonitorStatus)	\
     ( (This)->lpVtbl -> GetScreenResolution(This,aScreenId,aWidth,aHeight,aBitsPerPixel,aXOrigin,aYOrigin,aGuestMonitorStatus) ) 
@@ -24868,6 +28384,18 @@ EXTERN_C const IID IID_IDisplay;
 #define IDisplay_NotifyHiDPIOutputPolicyChange(This,aFUnscaledHiDPI)	\
     ( (This)->lpVtbl -> NotifyHiDPIOutputPolicyChange(This,aFUnscaledHiDPI) ) 
 
+#define IDisplay_InternalAndReservedMethod1IDisplay(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IDisplay(This) ) 
+
+#define IDisplay_InternalAndReservedMethod2IDisplay(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IDisplay(This) ) 
+
+#define IDisplay_InternalAndReservedMethod3IDisplay(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IDisplay(This) ) 
+
+#define IDisplay_InternalAndReservedMethod4IDisplay(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IDisplay(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -24890,7 +28418,7 @@ EXTERN_C const IID IID_INetworkAdapter;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("efa0f965-63c7-4c60-afdf-b1cc9943b9c0")
+    MIDL_INTERFACE("e925c2aa-4fe4-aaf6-91c5-e9b8ea4151ee")
     INetworkAdapter : public IDispatch
     {
     public:
@@ -24996,6 +28524,18 @@ EXTERN_C const IID IID_INetworkAdapter;
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_BandwidthGroup( 
             /* [in] */ IBandwidthGroup *aBandwidthGroup) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1INetworkAdapter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2INetworkAdapter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3INetworkAdapter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4INetworkAdapter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE GetProperty( 
             /* [in] */ BSTR aKey,
             /* [retval][out] */ BSTR *aValue) = 0;
@@ -25008,6 +28548,8 @@ EXTERN_C const IID IID_INetworkAdapter;
             /* [in] */ BSTR aNames,
             /* [out] */ SAFEARRAY * *aReturnNames,
             /* [retval][out] */ SAFEARRAY * *aReturnValues) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1INetworkAdapter( void) = 0;
         
     };
     
@@ -25194,6 +28736,22 @@ EXTERN_C const IID IID_INetworkAdapter;
             INetworkAdapter * This,
             /* [in] */ IBandwidthGroup *aBandwidthGroup);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1INetworkAdapter )( 
+            INetworkAdapter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2INetworkAdapter )( 
+            INetworkAdapter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3INetworkAdapter )( 
+            INetworkAdapter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4INetworkAdapter )( 
+            INetworkAdapter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *GetProperty )( 
             INetworkAdapter * This,
             /* [in] */ BSTR aKey,
@@ -25209,6 +28767,9 @@ EXTERN_C const IID IID_INetworkAdapter;
             /* [in] */ BSTR aNames,
             /* [out] */ SAFEARRAY * *aReturnNames,
             /* [retval][out] */ SAFEARRAY * *aReturnValues);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1INetworkAdapter )( 
+            INetworkAdapter * This);
         
         END_INTERFACE
     } INetworkAdapterVtbl;
@@ -25348,6 +28909,18 @@ EXTERN_C const IID IID_INetworkAdapter;
 #define INetworkAdapter_put_BandwidthGroup(This,aBandwidthGroup)	\
     ( (This)->lpVtbl -> put_BandwidthGroup(This,aBandwidthGroup) ) 
 
+#define INetworkAdapter_get_InternalAndReservedAttribute1INetworkAdapter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1INetworkAdapter(This,aReserved) ) 
+
+#define INetworkAdapter_get_InternalAndReservedAttribute2INetworkAdapter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2INetworkAdapter(This,aReserved) ) 
+
+#define INetworkAdapter_get_InternalAndReservedAttribute3INetworkAdapter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3INetworkAdapter(This,aReserved) ) 
+
+#define INetworkAdapter_get_InternalAndReservedAttribute4INetworkAdapter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4INetworkAdapter(This,aReserved) ) 
+
 #define INetworkAdapter_GetProperty(This,aKey,aValue)	\
     ( (This)->lpVtbl -> GetProperty(This,aKey,aValue) ) 
 
@@ -25356,6 +28929,9 @@ EXTERN_C const IID IID_INetworkAdapter;
 
 #define INetworkAdapter_GetProperties(This,aNames,aReturnNames,aReturnValues)	\
     ( (This)->lpVtbl -> GetProperties(This,aNames,aReturnNames,aReturnValues) ) 
+
+#define INetworkAdapter_InternalAndReservedMethod1INetworkAdapter(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1INetworkAdapter(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -25379,7 +28955,7 @@ EXTERN_C const IID IID_ISerialPort;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("937f6970-5103-4745-b78e-d28dcf1479a8")
+    MIDL_INTERFACE("cb0a4a29-43a3-9040-0c25-34845db7b042")
     ISerialPort : public IDispatch
     {
     public:
@@ -25421,6 +28997,12 @@ EXTERN_C const IID IID_ISerialPort;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Path( 
             /* [in] */ BSTR aPath) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1ISerialPort( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2ISerialPort( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -25523,6 +29105,14 @@ EXTERN_C const IID IID_ISerialPort;
             ISerialPort * This,
             /* [in] */ BSTR aPath);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1ISerialPort )( 
+            ISerialPort * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2ISerialPort )( 
+            ISerialPort * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } ISerialPortVtbl;
 
@@ -25598,6 +29188,12 @@ EXTERN_C const IID IID_ISerialPort;
 #define ISerialPort_put_Path(This,aPath)	\
     ( (This)->lpVtbl -> put_Path(This,aPath) ) 
 
+#define ISerialPort_get_InternalAndReservedAttribute1ISerialPort(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1ISerialPort(This,aReserved) ) 
+
+#define ISerialPort_get_InternalAndReservedAttribute2ISerialPort(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2ISerialPort(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -25620,7 +29216,7 @@ EXTERN_C const IID IID_IParallelPort;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("0c925f06-dd10-4b77-8de8-294d738c3214")
+    MIDL_INTERFACE("788b87df-7708-444b-9eef-c116ce423d39")
     IParallelPort : public IDispatch
     {
     public:
@@ -25650,6 +29246,18 @@ EXTERN_C const IID IID_IParallelPort;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Path( 
             /* [in] */ BSTR aPath) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IParallelPort( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IParallelPort( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IParallelPort( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IParallelPort( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -25736,6 +29344,22 @@ EXTERN_C const IID IID_IParallelPort;
             IParallelPort * This,
             /* [in] */ BSTR aPath);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IParallelPort )( 
+            IParallelPort * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IParallelPort )( 
+            IParallelPort * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IParallelPort )( 
+            IParallelPort * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IParallelPort )( 
+            IParallelPort * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IParallelPortVtbl;
 
@@ -25799,6 +29423,18 @@ EXTERN_C const IID IID_IParallelPort;
 #define IParallelPort_put_Path(This,aPath)	\
     ( (This)->lpVtbl -> put_Path(This,aPath) ) 
 
+#define IParallelPort_get_InternalAndReservedAttribute1IParallelPort(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IParallelPort(This,aReserved) ) 
+
+#define IParallelPort_get_InternalAndReservedAttribute2IParallelPort(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IParallelPort(This,aReserved) ) 
+
+#define IParallelPort_get_InternalAndReservedAttribute3IParallelPort(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IParallelPort(This,aReserved) ) 
+
+#define IParallelPort_get_InternalAndReservedAttribute4IParallelPort(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IParallelPort(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -25821,7 +29457,7 @@ EXTERN_C const IID IID_IMachineDebugger;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("ae7afb78-4265-8c03-ccb9-33a7970057e3")
+    MIDL_INTERFACE("9c0f5269-47ae-ee34-c2fe-53a16e388925")
     IMachineDebugger : public IDispatch
     {
     public:
@@ -25914,6 +29550,54 @@ EXTERN_C const IID IID_IMachineDebugger;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VM( 
             /* [retval][out] */ LONG64 *aVM) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute9IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute10IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute11IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute12IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute13IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute14IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute15IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute16IMachineDebugger( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE DumpGuestCore( 
             /* [in] */ BSTR aFilename,
@@ -26009,6 +29693,38 @@ EXTERN_C const IID IID_IMachineDebugger;
             /* [in] */ BSTR aPattern,
             /* [in] */ BOOL aWithDescriptions,
             /* [retval][out] */ BSTR *aStats) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod5IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod6IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod7IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod8IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod9IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod10IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod11IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod12IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod13IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod14IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod15IMachineDebugger( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod16IMachineDebugger( void) = 0;
         
     };
     
@@ -26179,6 +29895,70 @@ EXTERN_C const IID IID_IMachineDebugger;
             IMachineDebugger * This,
             /* [retval][out] */ LONG64 *aVM);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute9IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute10IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute11IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute12IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute13IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute14IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute15IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute16IMachineDebugger )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *DumpGuestCore )( 
             IMachineDebugger * This,
             /* [in] */ BSTR aFilename,
@@ -26296,6 +30076,54 @@ EXTERN_C const IID IID_IMachineDebugger;
             /* [in] */ BSTR aPattern,
             /* [in] */ BOOL aWithDescriptions,
             /* [retval][out] */ BSTR *aStats);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod5IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod6IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod7IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod8IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod9IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod10IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod11IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod12IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod13IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod14IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod15IMachineDebugger )( 
+            IMachineDebugger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod16IMachineDebugger )( 
+            IMachineDebugger * This);
         
         END_INTERFACE
     } IMachineDebuggerVtbl;
@@ -26423,6 +30251,54 @@ EXTERN_C const IID IID_IMachineDebugger;
 #define IMachineDebugger_get_VM(This,aVM)	\
     ( (This)->lpVtbl -> get_VM(This,aVM) ) 
 
+#define IMachineDebugger_get_InternalAndReservedAttribute1IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute2IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute3IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute4IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute5IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute6IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute7IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute8IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute9IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute9IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute10IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute10IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute11IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute11IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute12IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute12IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute13IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute13IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute14IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute14IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute15IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute15IMachineDebugger(This,aReserved) ) 
+
+#define IMachineDebugger_get_InternalAndReservedAttribute16IMachineDebugger(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute16IMachineDebugger(This,aReserved) ) 
+
 #define IMachineDebugger_DumpGuestCore(This,aFilename,aCompression)	\
     ( (This)->lpVtbl -> DumpGuestCore(This,aFilename,aCompression) ) 
 
@@ -26492,6 +30368,54 @@ EXTERN_C const IID IID_IMachineDebugger;
 #define IMachineDebugger_GetStats(This,aPattern,aWithDescriptions,aStats)	\
     ( (This)->lpVtbl -> GetStats(This,aPattern,aWithDescriptions,aStats) ) 
 
+#define IMachineDebugger_InternalAndReservedMethod1IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod2IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod3IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod4IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod5IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod5IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod6IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod6IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod7IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod7IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod8IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod8IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod9IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod9IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod10IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod10IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod11IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod11IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod12IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod12IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod13IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod13IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod14IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod14IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod15IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod15IMachineDebugger(This) ) 
+
+#define IMachineDebugger_InternalAndReservedMethod16IMachineDebugger(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod16IMachineDebugger(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -26514,12 +30438,18 @@ EXTERN_C const IID IID_IUSBDeviceFilters;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("2ab550b2-53cc-4c2e-ae07-0adf4114e75c")
+    MIDL_INTERFACE("9709db9b-3346-49d6-8f1c-41b0c4784ff2")
     IUSBDeviceFilters : public IDispatch
     {
     public:
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceFilters( 
             /* [retval][out] */ SAFEARRAY * *aDeviceFilters) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IUSBDeviceFilters( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IUSBDeviceFilters( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE CreateDeviceFilter( 
             /* [in] */ BSTR aName,
@@ -26532,6 +30462,10 @@ EXTERN_C const IID IID_IUSBDeviceFilters;
         virtual HRESULT STDMETHODCALLTYPE RemoveDeviceFilter( 
             /* [in] */ ULONG aPosition,
             /* [retval][out] */ IUSBDeviceFilter **aFilter) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IUSBDeviceFilters( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IUSBDeviceFilters( void) = 0;
         
     };
     
@@ -26586,6 +30520,14 @@ EXTERN_C const IID IID_IUSBDeviceFilters;
             IUSBDeviceFilters * This,
             /* [retval][out] */ SAFEARRAY * *aDeviceFilters);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IUSBDeviceFilters )( 
+            IUSBDeviceFilters * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IUSBDeviceFilters )( 
+            IUSBDeviceFilters * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *CreateDeviceFilter )( 
             IUSBDeviceFilters * This,
             /* [in] */ BSTR aName,
@@ -26600,6 +30542,12 @@ EXTERN_C const IID IID_IUSBDeviceFilters;
             IUSBDeviceFilters * This,
             /* [in] */ ULONG aPosition,
             /* [retval][out] */ IUSBDeviceFilter **aFilter);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IUSBDeviceFilters )( 
+            IUSBDeviceFilters * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IUSBDeviceFilters )( 
+            IUSBDeviceFilters * This);
         
         END_INTERFACE
     } IUSBDeviceFiltersVtbl;
@@ -26640,6 +30588,12 @@ EXTERN_C const IID IID_IUSBDeviceFilters;
 #define IUSBDeviceFilters_get_DeviceFilters(This,aDeviceFilters)	\
     ( (This)->lpVtbl -> get_DeviceFilters(This,aDeviceFilters) ) 
 
+#define IUSBDeviceFilters_get_InternalAndReservedAttribute1IUSBDeviceFilters(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IUSBDeviceFilters(This,aReserved) ) 
+
+#define IUSBDeviceFilters_get_InternalAndReservedAttribute2IUSBDeviceFilters(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IUSBDeviceFilters(This,aReserved) ) 
+
 #define IUSBDeviceFilters_CreateDeviceFilter(This,aName,aFilter)	\
     ( (This)->lpVtbl -> CreateDeviceFilter(This,aName,aFilter) ) 
 
@@ -26648,6 +30602,12 @@ EXTERN_C const IID IID_IUSBDeviceFilters;
 
 #define IUSBDeviceFilters_RemoveDeviceFilter(This,aPosition,aFilter)	\
     ( (This)->lpVtbl -> RemoveDeviceFilter(This,aPosition,aFilter) ) 
+
+#define IUSBDeviceFilters_InternalAndReservedMethod1IUSBDeviceFilters(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IUSBDeviceFilters(This) ) 
+
+#define IUSBDeviceFilters_InternalAndReservedMethod2IUSBDeviceFilters(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IUSBDeviceFilters(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -26671,7 +30631,7 @@ EXTERN_C const IID IID_IUSBController;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("2598fa52-3044-4ff5-8a61-2b09088a9e3c")
+    MIDL_INTERFACE("0c293c51-4810-e174-4f78-199376c63bbe")
     IUSBController : public IDispatch
     {
     public:
@@ -26689,6 +30649,12 @@ EXTERN_C const IID IID_IUSBController;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_USBStandard( 
             /* [retval][out] */ USHORT *aUSBStandard) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IUSBController( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IUSBController( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -26759,6 +30725,14 @@ EXTERN_C const IID IID_IUSBController;
             IUSBController * This,
             /* [retval][out] */ USHORT *aUSBStandard);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IUSBController )( 
+            IUSBController * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IUSBController )( 
+            IUSBController * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IUSBControllerVtbl;
 
@@ -26810,6 +30784,12 @@ EXTERN_C const IID IID_IUSBController;
 #define IUSBController_get_USBStandard(This,aUSBStandard)	\
     ( (This)->lpVtbl -> get_USBStandard(This,aUSBStandard) ) 
 
+#define IUSBController_get_InternalAndReservedAttribute1IUSBController(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IUSBController(This,aReserved) ) 
+
+#define IUSBController_get_InternalAndReservedAttribute2IUSBController(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IUSBController(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -26832,7 +30812,7 @@ EXTERN_C const IID IID_IUSBDevice;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("8d826296-e04f-4e86-9310-cb85b19becde")
+    MIDL_INTERFACE("5915d179-83c7-4f2b-a323-9a97f46f4e29")
     IUSBDevice : public IDispatch
     {
     public:
@@ -26874,6 +30854,18 @@ EXTERN_C const IID IID_IUSBDevice;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Remote( 
             /* [retval][out] */ BOOL *aRemote) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IUSBDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IUSBDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IUSBDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IUSBDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -26976,6 +30968,22 @@ EXTERN_C const IID IID_IUSBDevice;
             IUSBDevice * This,
             /* [retval][out] */ BOOL *aRemote);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IUSBDevice )( 
+            IUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IUSBDevice )( 
+            IUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IUSBDevice )( 
+            IUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IUSBDevice )( 
+            IUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IUSBDeviceVtbl;
 
@@ -27051,6 +31059,18 @@ EXTERN_C const IID IID_IUSBDevice;
 #define IUSBDevice_get_Remote(This,aRemote)	\
     ( (This)->lpVtbl -> get_Remote(This,aRemote) ) 
 
+#define IUSBDevice_get_InternalAndReservedAttribute1IUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IUSBDevice(This,aReserved) ) 
+
+#define IUSBDevice_get_InternalAndReservedAttribute2IUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IUSBDevice(This,aReserved) ) 
+
+#define IUSBDevice_get_InternalAndReservedAttribute3IUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IUSBDevice(This,aReserved) ) 
+
+#define IUSBDevice_get_InternalAndReservedAttribute4IUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IUSBDevice(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -27073,7 +31093,7 @@ EXTERN_C const IID IID_IUSBDeviceFilter;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("d6831fb4-1a94-4c2c-96ef-8d0d6192066d")
+    MIDL_INTERFACE("45587218-4289-ef4e-8e6a-e5b07816b631")
     IUSBDeviceFilter : public IDispatch
     {
     public:
@@ -27142,6 +31162,30 @@ EXTERN_C const IID IID_IUSBDeviceFilter;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_MaskedInterfaces( 
             /* [in] */ ULONG aMaskedInterfaces) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -27280,6 +31324,38 @@ EXTERN_C const IID IID_IUSBDeviceFilter;
             IUSBDeviceFilter * This,
             /* [in] */ ULONG aMaskedInterfaces);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IUSBDeviceFilter )( 
+            IUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IUSBDeviceFilter )( 
+            IUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IUSBDeviceFilter )( 
+            IUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IUSBDeviceFilter )( 
+            IUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IUSBDeviceFilter )( 
+            IUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IUSBDeviceFilter )( 
+            IUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IUSBDeviceFilter )( 
+            IUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IUSBDeviceFilter )( 
+            IUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IUSBDeviceFilterVtbl;
 
@@ -27382,6 +31458,30 @@ EXTERN_C const IID IID_IUSBDeviceFilter;
 #define IUSBDeviceFilter_put_MaskedInterfaces(This,aMaskedInterfaces)	\
     ( (This)->lpVtbl -> put_MaskedInterfaces(This,aMaskedInterfaces) ) 
 
+#define IUSBDeviceFilter_get_InternalAndReservedAttribute1IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IUSBDeviceFilter(This,aReserved) ) 
+
+#define IUSBDeviceFilter_get_InternalAndReservedAttribute2IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IUSBDeviceFilter(This,aReserved) ) 
+
+#define IUSBDeviceFilter_get_InternalAndReservedAttribute3IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IUSBDeviceFilter(This,aReserved) ) 
+
+#define IUSBDeviceFilter_get_InternalAndReservedAttribute4IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IUSBDeviceFilter(This,aReserved) ) 
+
+#define IUSBDeviceFilter_get_InternalAndReservedAttribute5IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IUSBDeviceFilter(This,aReserved) ) 
+
+#define IUSBDeviceFilter_get_InternalAndReservedAttribute6IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IUSBDeviceFilter(This,aReserved) ) 
+
+#define IUSBDeviceFilter_get_InternalAndReservedAttribute7IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IUSBDeviceFilter(This,aReserved) ) 
+
+#define IUSBDeviceFilter_get_InternalAndReservedAttribute8IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IUSBDeviceFilter(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -27404,12 +31504,24 @@ EXTERN_C const IID IID_IHostUSBDevice;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("173b4b44-d268-4334-a00d-b6521c9a740a")
+    MIDL_INTERFACE("c19073dd-cc7b-431b-98b2-951fda8eab89")
     IHostUSBDevice : public IUSBDevice
     {
     public:
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_State( 
             /* [retval][out] */ USBDeviceState *aState) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IHostUSBDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IHostUSBDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IHostUSBDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IHostUSBDevice( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -27512,9 +31624,41 @@ EXTERN_C const IID IID_IHostUSBDevice;
             IHostUSBDevice * This,
             /* [retval][out] */ BOOL *aRemote);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IUSBDevice )( 
+            IHostUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IUSBDevice )( 
+            IHostUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IUSBDevice )( 
+            IHostUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IUSBDevice )( 
+            IHostUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_State )( 
             IHostUSBDevice * This,
             /* [retval][out] */ USBDeviceState *aState);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IHostUSBDevice )( 
+            IHostUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IHostUSBDevice )( 
+            IHostUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IHostUSBDevice )( 
+            IHostUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IHostUSBDevice )( 
+            IHostUSBDevice * This,
+            /* [retval][out] */ ULONG *aReserved);
         
         END_INTERFACE
     } IHostUSBDeviceVtbl;
@@ -27591,9 +31735,33 @@ EXTERN_C const IID IID_IHostUSBDevice;
 #define IHostUSBDevice_get_Remote(This,aRemote)	\
     ( (This)->lpVtbl -> get_Remote(This,aRemote) ) 
 
+#define IHostUSBDevice_get_InternalAndReservedAttribute1IUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IUSBDevice(This,aReserved) ) 
+
+#define IHostUSBDevice_get_InternalAndReservedAttribute2IUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IUSBDevice(This,aReserved) ) 
+
+#define IHostUSBDevice_get_InternalAndReservedAttribute3IUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IUSBDevice(This,aReserved) ) 
+
+#define IHostUSBDevice_get_InternalAndReservedAttribute4IUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IUSBDevice(This,aReserved) ) 
+
 
 #define IHostUSBDevice_get_State(This,aState)	\
     ( (This)->lpVtbl -> get_State(This,aState) ) 
+
+#define IHostUSBDevice_get_InternalAndReservedAttribute1IHostUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IHostUSBDevice(This,aReserved) ) 
+
+#define IHostUSBDevice_get_InternalAndReservedAttribute2IHostUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IHostUSBDevice(This,aReserved) ) 
+
+#define IHostUSBDevice_get_InternalAndReservedAttribute3IHostUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IHostUSBDevice(This,aReserved) ) 
+
+#define IHostUSBDevice_get_InternalAndReservedAttribute4IHostUSBDevice(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IHostUSBDevice(This,aReserved) ) 
 
 #endif /* COBJMACROS */
 
@@ -27617,7 +31785,7 @@ EXTERN_C const IID IID_IHostUSBDeviceFilter;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("4cc70246-d74a-400f-8222-3900489c0374")
+    MIDL_INTERFACE("01adb2d6-aedf-461c-be2c-99e91bdad8a1")
     IHostUSBDeviceFilter : public IUSBDeviceFilter
     {
     public:
@@ -27626,6 +31794,30 @@ EXTERN_C const IID IID_IHostUSBDeviceFilter;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Action( 
             /* [in] */ USBDeviceFilterAction aAction) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IHostUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IHostUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IHostUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IHostUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IHostUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IHostUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IHostUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IHostUSBDeviceFilter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -27764,6 +31956,38 @@ EXTERN_C const IID IID_IHostUSBDeviceFilter;
             IHostUSBDeviceFilter * This,
             /* [in] */ ULONG aMaskedInterfaces);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Action )( 
             IHostUSBDeviceFilter * This,
             /* [retval][out] */ USBDeviceFilterAction *aAction);
@@ -27771,6 +31995,38 @@ EXTERN_C const IID IID_IHostUSBDeviceFilter;
         /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Action )( 
             IHostUSBDeviceFilter * This,
             /* [in] */ USBDeviceFilterAction aAction);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IHostUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IHostUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IHostUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IHostUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IHostUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IHostUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IHostUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IHostUSBDeviceFilter )( 
+            IHostUSBDeviceFilter * This,
+            /* [retval][out] */ ULONG *aReserved);
         
         END_INTERFACE
     } IHostUSBDeviceFilterVtbl;
@@ -27874,12 +32130,60 @@ EXTERN_C const IID IID_IHostUSBDeviceFilter;
 #define IHostUSBDeviceFilter_put_MaskedInterfaces(This,aMaskedInterfaces)	\
     ( (This)->lpVtbl -> put_MaskedInterfaces(This,aMaskedInterfaces) ) 
 
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute1IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute2IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute3IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute4IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute5IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute6IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute7IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute8IUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IUSBDeviceFilter(This,aReserved) ) 
+
 
 #define IHostUSBDeviceFilter_get_Action(This,aAction)	\
     ( (This)->lpVtbl -> get_Action(This,aAction) ) 
 
 #define IHostUSBDeviceFilter_put_Action(This,aAction)	\
     ( (This)->lpVtbl -> put_Action(This,aAction) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute1IHostUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IHostUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute2IHostUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IHostUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute3IHostUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IHostUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute4IHostUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IHostUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute5IHostUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IHostUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute6IHostUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IHostUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute7IHostUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IHostUSBDeviceFilter(This,aReserved) ) 
+
+#define IHostUSBDeviceFilter_get_InternalAndReservedAttribute8IHostUSBDeviceFilter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IHostUSBDeviceFilter(This,aReserved) ) 
 
 #endif /* COBJMACROS */
 
@@ -27903,7 +32207,7 @@ EXTERN_C const IID IID_IAudioAdapter;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("280cc7f7-eddc-48b6-9bbb-5b1e8d761c0e")
+    MIDL_INTERFACE("aeccc0a8-e0a0-427f-b946-c42063f54d81")
     IAudioAdapter : public IDispatch
     {
     public:
@@ -27931,6 +32235,12 @@ EXTERN_C const IID IID_IAudioAdapter;
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AudioController( 
             /* [in] */ AudioControllerType aAudioController) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AudioCodec( 
+            /* [retval][out] */ AudioCodecType *aAudioCodec) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AudioCodec( 
+            /* [in] */ AudioCodecType aAudioCodec) = 0;
+        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AudioDriver( 
             /* [retval][out] */ AudioDriverType *aAudioDriver) = 0;
         
@@ -27940,6 +32250,12 @@ EXTERN_C const IID IID_IAudioAdapter;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PropertiesList( 
             /* [retval][out] */ SAFEARRAY * *aPropertiesList) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IAudioAdapter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IAudioAdapter( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE SetProperty( 
             /* [in] */ BSTR aKey,
             /* [in] */ BSTR aValue) = 0;
@@ -27947,6 +32263,8 @@ EXTERN_C const IID IID_IAudioAdapter;
         virtual HRESULT STDMETHODCALLTYPE GetProperty( 
             /* [in] */ BSTR aKey,
             /* [retval][out] */ BSTR *aValue) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IAudioAdapter( void) = 0;
         
     };
     
@@ -28029,6 +32347,14 @@ EXTERN_C const IID IID_IAudioAdapter;
             IAudioAdapter * This,
             /* [in] */ AudioControllerType aAudioController);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AudioCodec )( 
+            IAudioAdapter * This,
+            /* [retval][out] */ AudioCodecType *aAudioCodec);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AudioCodec )( 
+            IAudioAdapter * This,
+            /* [in] */ AudioCodecType aAudioCodec);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AudioDriver )( 
             IAudioAdapter * This,
             /* [retval][out] */ AudioDriverType *aAudioDriver);
@@ -28041,6 +32367,14 @@ EXTERN_C const IID IID_IAudioAdapter;
             IAudioAdapter * This,
             /* [retval][out] */ SAFEARRAY * *aPropertiesList);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IAudioAdapter )( 
+            IAudioAdapter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IAudioAdapter )( 
+            IAudioAdapter * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *SetProperty )( 
             IAudioAdapter * This,
             /* [in] */ BSTR aKey,
@@ -28050,6 +32384,9 @@ EXTERN_C const IID IID_IAudioAdapter;
             IAudioAdapter * This,
             /* [in] */ BSTR aKey,
             /* [retval][out] */ BSTR *aValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IAudioAdapter )( 
+            IAudioAdapter * This);
         
         END_INTERFACE
     } IAudioAdapterVtbl;
@@ -28111,6 +32448,12 @@ EXTERN_C const IID IID_IAudioAdapter;
 #define IAudioAdapter_put_AudioController(This,aAudioController)	\
     ( (This)->lpVtbl -> put_AudioController(This,aAudioController) ) 
 
+#define IAudioAdapter_get_AudioCodec(This,aAudioCodec)	\
+    ( (This)->lpVtbl -> get_AudioCodec(This,aAudioCodec) ) 
+
+#define IAudioAdapter_put_AudioCodec(This,aAudioCodec)	\
+    ( (This)->lpVtbl -> put_AudioCodec(This,aAudioCodec) ) 
+
 #define IAudioAdapter_get_AudioDriver(This,aAudioDriver)	\
     ( (This)->lpVtbl -> get_AudioDriver(This,aAudioDriver) ) 
 
@@ -28120,11 +32463,20 @@ EXTERN_C const IID IID_IAudioAdapter;
 #define IAudioAdapter_get_PropertiesList(This,aPropertiesList)	\
     ( (This)->lpVtbl -> get_PropertiesList(This,aPropertiesList) ) 
 
+#define IAudioAdapter_get_InternalAndReservedAttribute1IAudioAdapter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IAudioAdapter(This,aReserved) ) 
+
+#define IAudioAdapter_get_InternalAndReservedAttribute2IAudioAdapter(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IAudioAdapter(This,aReserved) ) 
+
 #define IAudioAdapter_SetProperty(This,aKey,aValue)	\
     ( (This)->lpVtbl -> SetProperty(This,aKey,aValue) ) 
 
 #define IAudioAdapter_GetProperty(This,aKey,aValue)	\
     ( (This)->lpVtbl -> GetProperty(This,aKey,aValue) ) 
+
+#define IAudioAdapter_InternalAndReservedMethod1IAudioAdapter(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IAudioAdapter(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -28148,7 +32500,7 @@ EXTERN_C const IID IID_IVRDEServer;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("d38de40a-c2c1-4e95-b5a4-167b05f5694c")
+    MIDL_INTERFACE("6e758489-453a-6f98-9cb9-2da2cb8eabb5")
     IVRDEServer : public IDispatch
     {
     public:
@@ -28197,6 +32549,12 @@ EXTERN_C const IID IID_IVRDEServer;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VRDEProperties( 
             /* [retval][out] */ SAFEARRAY * *aVRDEProperties) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IVRDEServer( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IVRDEServer( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE SetVRDEProperty( 
             /* [in] */ BSTR aKey,
             /* [in] */ BSTR aValue) = 0;
@@ -28204,6 +32562,8 @@ EXTERN_C const IID IID_IVRDEServer;
         virtual HRESULT STDMETHODCALLTYPE GetVRDEProperty( 
             /* [in] */ BSTR aKey,
             /* [retval][out] */ BSTR *aValue) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IVRDEServer( void) = 0;
         
     };
     
@@ -28314,6 +32674,14 @@ EXTERN_C const IID IID_IVRDEServer;
             IVRDEServer * This,
             /* [retval][out] */ SAFEARRAY * *aVRDEProperties);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IVRDEServer )( 
+            IVRDEServer * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IVRDEServer )( 
+            IVRDEServer * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *SetVRDEProperty )( 
             IVRDEServer * This,
             /* [in] */ BSTR aKey,
@@ -28323,6 +32691,9 @@ EXTERN_C const IID IID_IVRDEServer;
             IVRDEServer * This,
             /* [in] */ BSTR aKey,
             /* [retval][out] */ BSTR *aValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IVRDEServer )( 
+            IVRDEServer * This);
         
         END_INTERFACE
     } IVRDEServerVtbl;
@@ -28405,11 +32776,20 @@ EXTERN_C const IID IID_IVRDEServer;
 #define IVRDEServer_get_VRDEProperties(This,aVRDEProperties)	\
     ( (This)->lpVtbl -> get_VRDEProperties(This,aVRDEProperties) ) 
 
+#define IVRDEServer_get_InternalAndReservedAttribute1IVRDEServer(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IVRDEServer(This,aReserved) ) 
+
+#define IVRDEServer_get_InternalAndReservedAttribute2IVRDEServer(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IVRDEServer(This,aReserved) ) 
+
 #define IVRDEServer_SetVRDEProperty(This,aKey,aValue)	\
     ( (This)->lpVtbl -> SetVRDEProperty(This,aKey,aValue) ) 
 
 #define IVRDEServer_GetVRDEProperty(This,aKey,aValue)	\
     ( (This)->lpVtbl -> GetVRDEProperty(This,aKey,aValue) ) 
+
+#define IVRDEServer_InternalAndReservedMethod1IVRDEServer(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IVRDEServer(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -28433,7 +32813,7 @@ EXTERN_C const IID IID_ISharedFolder;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("8388da11-b559-4574-a5b7-2bd7acd5cef8")
+    MIDL_INTERFACE("15aabe95-e594-4e18-9222-b5e83a23f1da")
     ISharedFolder : public IDispatch
     {
     public:
@@ -28454,6 +32834,18 @@ EXTERN_C const IID IID_ISharedFolder;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LastAccessError( 
             /* [retval][out] */ BSTR *aLastAccessError) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1ISharedFolder( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2ISharedFolder( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3ISharedFolder( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4ISharedFolder( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -28528,6 +32920,22 @@ EXTERN_C const IID IID_ISharedFolder;
             ISharedFolder * This,
             /* [retval][out] */ BSTR *aLastAccessError);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1ISharedFolder )( 
+            ISharedFolder * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2ISharedFolder )( 
+            ISharedFolder * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3ISharedFolder )( 
+            ISharedFolder * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4ISharedFolder )( 
+            ISharedFolder * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } ISharedFolderVtbl;
 
@@ -28581,6 +32989,18 @@ EXTERN_C const IID IID_ISharedFolder;
 
 #define ISharedFolder_get_LastAccessError(This,aLastAccessError)	\
     ( (This)->lpVtbl -> get_LastAccessError(This,aLastAccessError) ) 
+
+#define ISharedFolder_get_InternalAndReservedAttribute1ISharedFolder(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1ISharedFolder(This,aReserved) ) 
+
+#define ISharedFolder_get_InternalAndReservedAttribute2ISharedFolder(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2ISharedFolder(This,aReserved) ) 
+
+#define ISharedFolder_get_InternalAndReservedAttribute3ISharedFolder(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3ISharedFolder(This,aReserved) ) 
+
+#define ISharedFolder_get_InternalAndReservedAttribute4ISharedFolder(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4ISharedFolder(This,aReserved) ) 
 
 #endif /* COBJMACROS */
 
@@ -29107,7 +33527,7 @@ EXTERN_C const IID IID_ISession;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("3d4f472c-aac8-4387-94be-54042bcd8901")
+    MIDL_INTERFACE("7844aa05-b02e-4cdd-a04f-ade4a762e6b7")
     ISession : public IDispatch
     {
     public:
@@ -29129,7 +33549,25 @@ EXTERN_C const IID IID_ISession;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Console( 
             /* [retval][out] */ IConsole **aConsole) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1ISession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2ISession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3ISession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4ISession( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE UnlockMachine( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1ISession( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2ISession( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3ISession( void) = 0;
         
     };
     
@@ -29204,7 +33642,32 @@ EXTERN_C const IID IID_ISession;
             ISession * This,
             /* [retval][out] */ IConsole **aConsole);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1ISession )( 
+            ISession * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2ISession )( 
+            ISession * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3ISession )( 
+            ISession * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4ISession )( 
+            ISession * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *UnlockMachine )( 
+            ISession * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1ISession )( 
+            ISession * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2ISession )( 
+            ISession * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3ISession )( 
             ISession * This);
         
         END_INTERFACE
@@ -29261,8 +33724,29 @@ EXTERN_C const IID IID_ISession;
 #define ISession_get_Console(This,aConsole)	\
     ( (This)->lpVtbl -> get_Console(This,aConsole) ) 
 
+#define ISession_get_InternalAndReservedAttribute1ISession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1ISession(This,aReserved) ) 
+
+#define ISession_get_InternalAndReservedAttribute2ISession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2ISession(This,aReserved) ) 
+
+#define ISession_get_InternalAndReservedAttribute3ISession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3ISession(This,aReserved) ) 
+
+#define ISession_get_InternalAndReservedAttribute4ISession(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4ISession(This,aReserved) ) 
+
 #define ISession_UnlockMachine(This)	\
     ( (This)->lpVtbl -> UnlockMachine(This) ) 
+
+#define ISession_InternalAndReservedMethod1ISession(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1ISession(This) ) 
+
+#define ISession_InternalAndReservedMethod2ISession(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2ISession(This) ) 
+
+#define ISession_InternalAndReservedMethod3ISession(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3ISession(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -29286,7 +33770,7 @@ EXTERN_C const IID IID_IStorageController;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("802bb9c0-fe71-43ab-b55a-322fdf77358f")
+    MIDL_INTERFACE("49b19d41-4a75-7bd5-c124-259acba3c41d")
     IStorageController : public IDispatch
     {
     public:
@@ -29334,6 +33818,14 @@ EXTERN_C const IID IID_IStorageController;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Bootable( 
             /* [retval][out] */ BOOL *aBootable) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IStorageController( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IStorageController( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IStorageController( void) = 0;
         
     };
     
@@ -29444,6 +33936,17 @@ EXTERN_C const IID IID_IStorageController;
             IStorageController * This,
             /* [retval][out] */ BOOL *aBootable);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IStorageController )( 
+            IStorageController * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IStorageController )( 
+            IStorageController * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IStorageController )( 
+            IStorageController * This);
+        
         END_INTERFACE
     } IStorageControllerVtbl;
 
@@ -29525,6 +34028,15 @@ EXTERN_C const IID IID_IStorageController;
 #define IStorageController_get_Bootable(This,aBootable)	\
     ( (This)->lpVtbl -> get_Bootable(This,aBootable) ) 
 
+#define IStorageController_get_InternalAndReservedAttribute1IStorageController(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IStorageController(This,aReserved) ) 
+
+#define IStorageController_get_InternalAndReservedAttribute2IStorageController(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IStorageController(This,aReserved) ) 
+
+#define IStorageController_InternalAndReservedMethod1IStorageController(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IStorageController(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -29547,7 +34059,7 @@ EXTERN_C const IID IID_IPerformanceMetric;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("2a1a60ae-9345-4019-ad53-d34ba41cbfe9")
+    MIDL_INTERFACE("81314d14-fd1c-411a-95c5-e9bb1414e632")
     IPerformanceMetric : public IDispatch
     {
     public:
@@ -29574,6 +34086,30 @@ EXTERN_C const IID IID_IPerformanceMetric;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaximumValue( 
             /* [retval][out] */ LONG *aMaximumValue) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IPerformanceMetric( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IPerformanceMetric( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IPerformanceMetric( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IPerformanceMetric( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IPerformanceMetric( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IPerformanceMetric( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IPerformanceMetric( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IPerformanceMetric( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -29656,6 +34192,38 @@ EXTERN_C const IID IID_IPerformanceMetric;
             IPerformanceMetric * This,
             /* [retval][out] */ LONG *aMaximumValue);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IPerformanceMetric )( 
+            IPerformanceMetric * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IPerformanceMetric )( 
+            IPerformanceMetric * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IPerformanceMetric )( 
+            IPerformanceMetric * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IPerformanceMetric )( 
+            IPerformanceMetric * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IPerformanceMetric )( 
+            IPerformanceMetric * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IPerformanceMetric )( 
+            IPerformanceMetric * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IPerformanceMetric )( 
+            IPerformanceMetric * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IPerformanceMetric )( 
+            IPerformanceMetric * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IPerformanceMetricVtbl;
 
@@ -29716,6 +34284,30 @@ EXTERN_C const IID IID_IPerformanceMetric;
 #define IPerformanceMetric_get_MaximumValue(This,aMaximumValue)	\
     ( (This)->lpVtbl -> get_MaximumValue(This,aMaximumValue) ) 
 
+#define IPerformanceMetric_get_InternalAndReservedAttribute1IPerformanceMetric(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IPerformanceMetric(This,aReserved) ) 
+
+#define IPerformanceMetric_get_InternalAndReservedAttribute2IPerformanceMetric(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IPerformanceMetric(This,aReserved) ) 
+
+#define IPerformanceMetric_get_InternalAndReservedAttribute3IPerformanceMetric(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IPerformanceMetric(This,aReserved) ) 
+
+#define IPerformanceMetric_get_InternalAndReservedAttribute4IPerformanceMetric(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IPerformanceMetric(This,aReserved) ) 
+
+#define IPerformanceMetric_get_InternalAndReservedAttribute5IPerformanceMetric(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IPerformanceMetric(This,aReserved) ) 
+
+#define IPerformanceMetric_get_InternalAndReservedAttribute6IPerformanceMetric(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IPerformanceMetric(This,aReserved) ) 
+
+#define IPerformanceMetric_get_InternalAndReservedAttribute7IPerformanceMetric(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IPerformanceMetric(This,aReserved) ) 
+
+#define IPerformanceMetric_get_InternalAndReservedAttribute8IPerformanceMetric(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IPerformanceMetric(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -29738,12 +34330,36 @@ EXTERN_C const IID IID_IPerformanceCollector;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("e22e1acb-ac4a-43bb-a31c-17321659b0c6")
+    MIDL_INTERFACE("b14290ad-cd54-400c-b858-797bcb82570e")
     IPerformanceCollector : public IDispatch
     {
     public:
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MetricNames( 
             /* [retval][out] */ SAFEARRAY * *aMetricNames) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IPerformanceCollector( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IPerformanceCollector( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IPerformanceCollector( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IPerformanceCollector( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IPerformanceCollector( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IPerformanceCollector( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IPerformanceCollector( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IPerformanceCollector( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetMetrics( 
             /* [in] */ SAFEARRAY * aMetricNames,
@@ -29778,6 +34394,14 @@ EXTERN_C const IID IID_IPerformanceCollector;
             /* [out] */ SAFEARRAY * *aReturnDataIndices,
             /* [out] */ SAFEARRAY * *aReturnDataLengths,
             /* [retval][out] */ SAFEARRAY * *aReturnData) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IPerformanceCollector( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IPerformanceCollector( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IPerformanceCollector( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IPerformanceCollector( void) = 0;
         
     };
     
@@ -29832,6 +34456,38 @@ EXTERN_C const IID IID_IPerformanceCollector;
             IPerformanceCollector * This,
             /* [retval][out] */ SAFEARRAY * *aMetricNames);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IPerformanceCollector )( 
+            IPerformanceCollector * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IPerformanceCollector )( 
+            IPerformanceCollector * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IPerformanceCollector )( 
+            IPerformanceCollector * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IPerformanceCollector )( 
+            IPerformanceCollector * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IPerformanceCollector )( 
+            IPerformanceCollector * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IPerformanceCollector )( 
+            IPerformanceCollector * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IPerformanceCollector )( 
+            IPerformanceCollector * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IPerformanceCollector )( 
+            IPerformanceCollector * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *GetMetrics )( 
             IPerformanceCollector * This,
             /* [in] */ SAFEARRAY * aMetricNames,
@@ -29870,6 +34526,18 @@ EXTERN_C const IID IID_IPerformanceCollector;
             /* [out] */ SAFEARRAY * *aReturnDataIndices,
             /* [out] */ SAFEARRAY * *aReturnDataLengths,
             /* [retval][out] */ SAFEARRAY * *aReturnData);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IPerformanceCollector )( 
+            IPerformanceCollector * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IPerformanceCollector )( 
+            IPerformanceCollector * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IPerformanceCollector )( 
+            IPerformanceCollector * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IPerformanceCollector )( 
+            IPerformanceCollector * This);
         
         END_INTERFACE
     } IPerformanceCollectorVtbl;
@@ -29910,6 +34578,30 @@ EXTERN_C const IID IID_IPerformanceCollector;
 #define IPerformanceCollector_get_MetricNames(This,aMetricNames)	\
     ( (This)->lpVtbl -> get_MetricNames(This,aMetricNames) ) 
 
+#define IPerformanceCollector_get_InternalAndReservedAttribute1IPerformanceCollector(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IPerformanceCollector(This,aReserved) ) 
+
+#define IPerformanceCollector_get_InternalAndReservedAttribute2IPerformanceCollector(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IPerformanceCollector(This,aReserved) ) 
+
+#define IPerformanceCollector_get_InternalAndReservedAttribute3IPerformanceCollector(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IPerformanceCollector(This,aReserved) ) 
+
+#define IPerformanceCollector_get_InternalAndReservedAttribute4IPerformanceCollector(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IPerformanceCollector(This,aReserved) ) 
+
+#define IPerformanceCollector_get_InternalAndReservedAttribute5IPerformanceCollector(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IPerformanceCollector(This,aReserved) ) 
+
+#define IPerformanceCollector_get_InternalAndReservedAttribute6IPerformanceCollector(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IPerformanceCollector(This,aReserved) ) 
+
+#define IPerformanceCollector_get_InternalAndReservedAttribute7IPerformanceCollector(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IPerformanceCollector(This,aReserved) ) 
+
+#define IPerformanceCollector_get_InternalAndReservedAttribute8IPerformanceCollector(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IPerformanceCollector(This,aReserved) ) 
+
 #define IPerformanceCollector_GetMetrics(This,aMetricNames,aObjects,aMetrics)	\
     ( (This)->lpVtbl -> GetMetrics(This,aMetricNames,aObjects,aMetrics) ) 
 
@@ -29924,6 +34616,18 @@ EXTERN_C const IID IID_IPerformanceCollector;
 
 #define IPerformanceCollector_QueryMetricsData(This,aMetricNames,aObjects,aReturnMetricNames,aReturnObjects,aReturnUnits,aReturnScales,aReturnSequenceNumbers,aReturnDataIndices,aReturnDataLengths,aReturnData)	\
     ( (This)->lpVtbl -> QueryMetricsData(This,aMetricNames,aObjects,aReturnMetricNames,aReturnObjects,aReturnUnits,aReturnScales,aReturnSequenceNumbers,aReturnDataIndices,aReturnDataLengths,aReturnData) ) 
+
+#define IPerformanceCollector_InternalAndReservedMethod1IPerformanceCollector(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IPerformanceCollector(This) ) 
+
+#define IPerformanceCollector_InternalAndReservedMethod2IPerformanceCollector(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IPerformanceCollector(This) ) 
+
+#define IPerformanceCollector_InternalAndReservedMethod3IPerformanceCollector(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IPerformanceCollector(This) ) 
+
+#define IPerformanceCollector_InternalAndReservedMethod4IPerformanceCollector(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IPerformanceCollector(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -29947,7 +34651,7 @@ EXTERN_C const IID IID_INATEngine;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("26451b99-3b2d-4dcb-8e4b-d63654218175")
+    MIDL_INTERFACE("c1cdb6bf-44cb-e334-66fa-469a17fd09df")
     INATEngine : public IDispatch
     {
     public:
@@ -30008,6 +34712,18 @@ EXTERN_C const IID IID_INATEngine;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Redirects( 
             /* [retval][out] */ SAFEARRAY * *aRedirects) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1INATEngine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2INATEngine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3INATEngine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4INATEngine( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE SetNetworkSettings( 
             /* [in] */ ULONG aMtu,
             /* [in] */ ULONG aSockSnd,
@@ -30032,6 +34748,10 @@ EXTERN_C const IID IID_INATEngine;
         
         virtual HRESULT STDMETHODCALLTYPE RemoveRedirect( 
             /* [in] */ BSTR aName) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1INATEngine( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2INATEngine( void) = 0;
         
     };
     
@@ -30158,6 +34878,22 @@ EXTERN_C const IID IID_INATEngine;
             INATEngine * This,
             /* [retval][out] */ SAFEARRAY * *aRedirects);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1INATEngine )( 
+            INATEngine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2INATEngine )( 
+            INATEngine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3INATEngine )( 
+            INATEngine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4INATEngine )( 
+            INATEngine * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *SetNetworkSettings )( 
             INATEngine * This,
             /* [in] */ ULONG aMtu,
@@ -30186,6 +34922,12 @@ EXTERN_C const IID IID_INATEngine;
         HRESULT ( STDMETHODCALLTYPE *RemoveRedirect )( 
             INATEngine * This,
             /* [in] */ BSTR aName);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1INATEngine )( 
+            INATEngine * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2INATEngine )( 
+            INATEngine * This);
         
         END_INTERFACE
     } INATEngineVtbl;
@@ -30280,6 +35022,18 @@ EXTERN_C const IID IID_INATEngine;
 #define INATEngine_get_Redirects(This,aRedirects)	\
     ( (This)->lpVtbl -> get_Redirects(This,aRedirects) ) 
 
+#define INATEngine_get_InternalAndReservedAttribute1INATEngine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1INATEngine(This,aReserved) ) 
+
+#define INATEngine_get_InternalAndReservedAttribute2INATEngine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2INATEngine(This,aReserved) ) 
+
+#define INATEngine_get_InternalAndReservedAttribute3INATEngine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3INATEngine(This,aReserved) ) 
+
+#define INATEngine_get_InternalAndReservedAttribute4INATEngine(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4INATEngine(This,aReserved) ) 
+
 #define INATEngine_SetNetworkSettings(This,aMtu,aSockSnd,aSockRcv,aTcpWndSnd,aTcpWndRcv)	\
     ( (This)->lpVtbl -> SetNetworkSettings(This,aMtu,aSockSnd,aSockRcv,aTcpWndSnd,aTcpWndRcv) ) 
 
@@ -30291,6 +35045,12 @@ EXTERN_C const IID IID_INATEngine;
 
 #define INATEngine_RemoveRedirect(This,aName)	\
     ( (This)->lpVtbl -> RemoveRedirect(This,aName) ) 
+
+#define INATEngine_InternalAndReservedMethod1INATEngine(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1INATEngine(This) ) 
+
+#define INATEngine_InternalAndReservedMethod2INATEngine(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2INATEngine(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -30314,7 +35074,7 @@ EXTERN_C const IID IID_IExtPackPlugIn;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("58000040-e718-4746-bbce-4b86d96da461")
+    MIDL_INTERFACE("c8e667b2-4234-1f9c-6508-afa9cea4efa1")
     IExtPackPlugIn : public IDispatch
     {
     public:
@@ -30329,6 +35089,12 @@ EXTERN_C const IID IID_IExtPackPlugIn;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ModulePath( 
             /* [retval][out] */ BSTR *aModulePath) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IExtPackPlugIn( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IExtPackPlugIn( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -30395,6 +35161,14 @@ EXTERN_C const IID IID_IExtPackPlugIn;
             IExtPackPlugIn * This,
             /* [retval][out] */ BSTR *aModulePath);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IExtPackPlugIn )( 
+            IExtPackPlugIn * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IExtPackPlugIn )( 
+            IExtPackPlugIn * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IExtPackPlugInVtbl;
 
@@ -30443,6 +35217,12 @@ EXTERN_C const IID IID_IExtPackPlugIn;
 #define IExtPackPlugIn_get_ModulePath(This,aModulePath)	\
     ( (This)->lpVtbl -> get_ModulePath(This,aModulePath) ) 
 
+#define IExtPackPlugIn_get_InternalAndReservedAttribute1IExtPackPlugIn(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IExtPackPlugIn(This,aReserved) ) 
+
+#define IExtPackPlugIn_get_InternalAndReservedAttribute2IExtPackPlugIn(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IExtPackPlugIn(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -30465,7 +35245,7 @@ EXTERN_C const IID IID_IExtPackBase;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("f79b75d8-2890-4f34-ffff-ffffa144e82c")
+    MIDL_INTERFACE("4bd17415-4438-8657-e78e-80a40713a23c")
     IExtPackBase : public IDispatch
     {
     public:
@@ -30502,11 +35282,25 @@ EXTERN_C const IID IID_IExtPackBase;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_License( 
             /* [retval][out] */ BSTR *aLicense) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IExtPackBase( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IExtPackBase( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IExtPackBase( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IExtPackBase( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE QueryLicense( 
             /* [in] */ BSTR aPreferredLocale,
             /* [in] */ BSTR aPreferredLanguage,
             /* [in] */ BSTR aFormat,
             /* [retval][out] */ BSTR *aLicenseText) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IExtPackBase( void) = 0;
         
     };
     
@@ -30601,12 +35395,31 @@ EXTERN_C const IID IID_IExtPackBase;
             IExtPackBase * This,
             /* [retval][out] */ BSTR *aLicense);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IExtPackBase )( 
+            IExtPackBase * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IExtPackBase )( 
+            IExtPackBase * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IExtPackBase )( 
+            IExtPackBase * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IExtPackBase )( 
+            IExtPackBase * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *QueryLicense )( 
             IExtPackBase * This,
             /* [in] */ BSTR aPreferredLocale,
             /* [in] */ BSTR aPreferredLanguage,
             /* [in] */ BSTR aFormat,
             /* [retval][out] */ BSTR *aLicenseText);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IExtPackBase )( 
+            IExtPackBase * This);
         
         END_INTERFACE
     } IExtPackBaseVtbl;
@@ -30677,8 +35490,23 @@ EXTERN_C const IID IID_IExtPackBase;
 #define IExtPackBase_get_License(This,aLicense)	\
     ( (This)->lpVtbl -> get_License(This,aLicense) ) 
 
+#define IExtPackBase_get_InternalAndReservedAttribute1IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IExtPackBase(This,aReserved) ) 
+
+#define IExtPackBase_get_InternalAndReservedAttribute2IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IExtPackBase(This,aReserved) ) 
+
+#define IExtPackBase_get_InternalAndReservedAttribute3IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IExtPackBase(This,aReserved) ) 
+
+#define IExtPackBase_get_InternalAndReservedAttribute4IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IExtPackBase(This,aReserved) ) 
+
 #define IExtPackBase_QueryLicense(This,aPreferredLocale,aPreferredLanguage,aFormat,aLicenseText)	\
     ( (This)->lpVtbl -> QueryLicense(This,aPreferredLocale,aPreferredLanguage,aFormat,aLicenseText) ) 
+
+#define IExtPackBase_InternalAndReservedMethod1IExtPackBase(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IExtPackBase(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -30803,12 +35631,31 @@ EXTERN_C const IID IID_IExtPack;
             IExtPack * This,
             /* [retval][out] */ BSTR *aLicense);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IExtPackBase )( 
+            IExtPack * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IExtPackBase )( 
+            IExtPack * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IExtPackBase )( 
+            IExtPack * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IExtPackBase )( 
+            IExtPack * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *QueryLicense )( 
             IExtPack * This,
             /* [in] */ BSTR aPreferredLocale,
             /* [in] */ BSTR aPreferredLanguage,
             /* [in] */ BSTR aFormat,
             /* [retval][out] */ BSTR *aLicenseText);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IExtPackBase )( 
+            IExtPack * This);
         
         HRESULT ( STDMETHODCALLTYPE *QueryObject )( 
             IExtPack * This,
@@ -30884,8 +35731,23 @@ EXTERN_C const IID IID_IExtPack;
 #define IExtPack_get_License(This,aLicense)	\
     ( (This)->lpVtbl -> get_License(This,aLicense) ) 
 
+#define IExtPack_get_InternalAndReservedAttribute1IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IExtPackBase(This,aReserved) ) 
+
+#define IExtPack_get_InternalAndReservedAttribute2IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IExtPackBase(This,aReserved) ) 
+
+#define IExtPack_get_InternalAndReservedAttribute3IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IExtPackBase(This,aReserved) ) 
+
+#define IExtPack_get_InternalAndReservedAttribute4IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IExtPackBase(This,aReserved) ) 
+
 #define IExtPack_QueryLicense(This,aPreferredLocale,aPreferredLanguage,aFormat,aLicenseText)	\
     ( (This)->lpVtbl -> QueryLicense(This,aPreferredLocale,aPreferredLanguage,aFormat,aLicenseText) ) 
+
+#define IExtPack_InternalAndReservedMethod1IExtPackBase(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IExtPackBase(This) ) 
 
 
 #define IExtPack_QueryObject(This,aObjUuid,aReturnInterface)	\
@@ -30913,17 +35775,25 @@ EXTERN_C const IID IID_IExtPackFile;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("b6b49f55-efcc-4f08-b486-56e8d8afb10b")
+    MIDL_INTERFACE("4c7f4bf6-4671-2f75-0fbb-a99f6218cdfc")
     IExtPackFile : public IExtPackBase
     {
     public:
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_FilePath( 
             /* [retval][out] */ BSTR *aFilePath) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IExtPackFile( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IExtPackFile( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE Install( 
             /* [in] */ BOOL aReplace,
             /* [in] */ BSTR aDisplayInfo,
             /* [retval][out] */ IProgress **aProgess) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IExtPackFile( void) = 0;
         
     };
     
@@ -31018,6 +35888,22 @@ EXTERN_C const IID IID_IExtPackFile;
             IExtPackFile * This,
             /* [retval][out] */ BSTR *aLicense);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IExtPackBase )( 
+            IExtPackFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IExtPackBase )( 
+            IExtPackFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IExtPackBase )( 
+            IExtPackFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IExtPackBase )( 
+            IExtPackFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *QueryLicense )( 
             IExtPackFile * This,
             /* [in] */ BSTR aPreferredLocale,
@@ -31025,15 +35911,29 @@ EXTERN_C const IID IID_IExtPackFile;
             /* [in] */ BSTR aFormat,
             /* [retval][out] */ BSTR *aLicenseText);
         
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IExtPackBase )( 
+            IExtPackFile * This);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_FilePath )( 
             IExtPackFile * This,
             /* [retval][out] */ BSTR *aFilePath);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IExtPackFile )( 
+            IExtPackFile * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IExtPackFile )( 
+            IExtPackFile * This,
+            /* [retval][out] */ ULONG *aReserved);
         
         HRESULT ( STDMETHODCALLTYPE *Install )( 
             IExtPackFile * This,
             /* [in] */ BOOL aReplace,
             /* [in] */ BSTR aDisplayInfo,
             /* [retval][out] */ IProgress **aProgess);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IExtPackFile )( 
+            IExtPackFile * This);
         
         END_INTERFACE
     } IExtPackFileVtbl;
@@ -31104,15 +36004,39 @@ EXTERN_C const IID IID_IExtPackFile;
 #define IExtPackFile_get_License(This,aLicense)	\
     ( (This)->lpVtbl -> get_License(This,aLicense) ) 
 
+#define IExtPackFile_get_InternalAndReservedAttribute1IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IExtPackBase(This,aReserved) ) 
+
+#define IExtPackFile_get_InternalAndReservedAttribute2IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IExtPackBase(This,aReserved) ) 
+
+#define IExtPackFile_get_InternalAndReservedAttribute3IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IExtPackBase(This,aReserved) ) 
+
+#define IExtPackFile_get_InternalAndReservedAttribute4IExtPackBase(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IExtPackBase(This,aReserved) ) 
+
 #define IExtPackFile_QueryLicense(This,aPreferredLocale,aPreferredLanguage,aFormat,aLicenseText)	\
     ( (This)->lpVtbl -> QueryLicense(This,aPreferredLocale,aPreferredLanguage,aFormat,aLicenseText) ) 
+
+#define IExtPackFile_InternalAndReservedMethod1IExtPackBase(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IExtPackBase(This) ) 
 
 
 #define IExtPackFile_get_FilePath(This,aFilePath)	\
     ( (This)->lpVtbl -> get_FilePath(This,aFilePath) ) 
 
+#define IExtPackFile_get_InternalAndReservedAttribute1IExtPackFile(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IExtPackFile(This,aReserved) ) 
+
+#define IExtPackFile_get_InternalAndReservedAttribute2IExtPackFile(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IExtPackFile(This,aReserved) ) 
+
 #define IExtPackFile_Install(This,aReplace,aDisplayInfo,aProgess)	\
     ( (This)->lpVtbl -> Install(This,aReplace,aDisplayInfo,aProgess) ) 
+
+#define IExtPackFile_InternalAndReservedMethod1IExtPackFile(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IExtPackFile(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -31136,12 +36060,18 @@ EXTERN_C const IID IID_IExtPackManager;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("3295e6ce-b051-47b2-9514-2c588bfe7554")
+    MIDL_INTERFACE("edba9d10-45d8-b440-1712-46ac0c9bc4c5")
     IExtPackManager : public IDispatch
     {
     public:
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InstalledExtPacks( 
             /* [retval][out] */ SAFEARRAY * *aInstalledExtPacks) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IExtPackManager( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IExtPackManager( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE Find( 
             /* [in] */ BSTR aName,
@@ -31166,6 +36096,8 @@ EXTERN_C const IID IID_IExtPackManager;
         virtual HRESULT STDMETHODCALLTYPE IsExtPackUsable( 
             /* [in] */ BSTR aName,
             /* [retval][out] */ BOOL *aUsable) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IExtPackManager( void) = 0;
         
     };
     
@@ -31220,6 +36152,14 @@ EXTERN_C const IID IID_IExtPackManager;
             IExtPackManager * This,
             /* [retval][out] */ SAFEARRAY * *aInstalledExtPacks);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IExtPackManager )( 
+            IExtPackManager * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IExtPackManager )( 
+            IExtPackManager * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *Find )( 
             IExtPackManager * This,
             /* [in] */ BSTR aName,
@@ -31249,6 +36189,9 @@ EXTERN_C const IID IID_IExtPackManager;
             IExtPackManager * This,
             /* [in] */ BSTR aName,
             /* [retval][out] */ BOOL *aUsable);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IExtPackManager )( 
+            IExtPackManager * This);
         
         END_INTERFACE
     } IExtPackManagerVtbl;
@@ -31289,6 +36232,12 @@ EXTERN_C const IID IID_IExtPackManager;
 #define IExtPackManager_get_InstalledExtPacks(This,aInstalledExtPacks)	\
     ( (This)->lpVtbl -> get_InstalledExtPacks(This,aInstalledExtPacks) ) 
 
+#define IExtPackManager_get_InternalAndReservedAttribute1IExtPackManager(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IExtPackManager(This,aReserved) ) 
+
+#define IExtPackManager_get_InternalAndReservedAttribute2IExtPackManager(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IExtPackManager(This,aReserved) ) 
+
 #define IExtPackManager_Find(This,aName,aReturnData)	\
     ( (This)->lpVtbl -> Find(This,aName,aReturnData) ) 
 
@@ -31306,6 +36255,9 @@ EXTERN_C const IID IID_IExtPackManager;
 
 #define IExtPackManager_IsExtPackUsable(This,aName,aUsable)	\
     ( (This)->lpVtbl -> IsExtPackUsable(This,aName,aUsable) ) 
+
+#define IExtPackManager_InternalAndReservedMethod1IExtPackManager(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IExtPackManager(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -31329,7 +36281,7 @@ EXTERN_C const IID IID_IBandwidthGroup;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("badea2d7-0261-4146-89f0-6a57cc34833d")
+    MIDL_INTERFACE("31587f93-2d12-4d7c-ba6d-ce51d0d5b265")
     IBandwidthGroup : public IDispatch
     {
     public:
@@ -31347,6 +36299,18 @@ EXTERN_C const IID IID_IBandwidthGroup;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_MaxBytesPerSec( 
             /* [in] */ LONG64 aMaxBytesPerSec) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IBandwidthGroup( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IBandwidthGroup( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IBandwidthGroup( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IBandwidthGroup( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
     };
     
@@ -31417,6 +36381,22 @@ EXTERN_C const IID IID_IBandwidthGroup;
             IBandwidthGroup * This,
             /* [in] */ LONG64 aMaxBytesPerSec);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IBandwidthGroup )( 
+            IBandwidthGroup * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IBandwidthGroup )( 
+            IBandwidthGroup * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IBandwidthGroup )( 
+            IBandwidthGroup * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IBandwidthGroup )( 
+            IBandwidthGroup * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         END_INTERFACE
     } IBandwidthGroupVtbl;
 
@@ -31468,6 +36448,18 @@ EXTERN_C const IID IID_IBandwidthGroup;
 #define IBandwidthGroup_put_MaxBytesPerSec(This,aMaxBytesPerSec)	\
     ( (This)->lpVtbl -> put_MaxBytesPerSec(This,aMaxBytesPerSec) ) 
 
+#define IBandwidthGroup_get_InternalAndReservedAttribute1IBandwidthGroup(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IBandwidthGroup(This,aReserved) ) 
+
+#define IBandwidthGroup_get_InternalAndReservedAttribute2IBandwidthGroup(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IBandwidthGroup(This,aReserved) ) 
+
+#define IBandwidthGroup_get_InternalAndReservedAttribute3IBandwidthGroup(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IBandwidthGroup(This,aReserved) ) 
+
+#define IBandwidthGroup_get_InternalAndReservedAttribute4IBandwidthGroup(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IBandwidthGroup(This,aReserved) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -31490,12 +36482,18 @@ EXTERN_C const IID IID_IBandwidthControl;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("e2eb3930-d2f4-4f87-be17-0707e30f019f")
+    MIDL_INTERFACE("48c7f4c0-c9d6-4742-957c-a6fd52e8c4ae")
     IBandwidthControl : public IDispatch
     {
     public:
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NumGroups( 
             /* [retval][out] */ ULONG *aNumGroups) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IBandwidthControl( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IBandwidthControl( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE CreateBandwidthGroup( 
             /* [in] */ BSTR aName,
@@ -31511,6 +36509,10 @@ EXTERN_C const IID IID_IBandwidthControl;
         
         virtual HRESULT STDMETHODCALLTYPE GetAllBandwidthGroups( 
             /* [retval][out] */ SAFEARRAY * *aBandwidthGroups) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IBandwidthControl( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IBandwidthControl( void) = 0;
         
     };
     
@@ -31565,6 +36567,14 @@ EXTERN_C const IID IID_IBandwidthControl;
             IBandwidthControl * This,
             /* [retval][out] */ ULONG *aNumGroups);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IBandwidthControl )( 
+            IBandwidthControl * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IBandwidthControl )( 
+            IBandwidthControl * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *CreateBandwidthGroup )( 
             IBandwidthControl * This,
             /* [in] */ BSTR aName,
@@ -31583,6 +36593,12 @@ EXTERN_C const IID IID_IBandwidthControl;
         HRESULT ( STDMETHODCALLTYPE *GetAllBandwidthGroups )( 
             IBandwidthControl * This,
             /* [retval][out] */ SAFEARRAY * *aBandwidthGroups);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IBandwidthControl )( 
+            IBandwidthControl * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IBandwidthControl )( 
+            IBandwidthControl * This);
         
         END_INTERFACE
     } IBandwidthControlVtbl;
@@ -31623,6 +36639,12 @@ EXTERN_C const IID IID_IBandwidthControl;
 #define IBandwidthControl_get_NumGroups(This,aNumGroups)	\
     ( (This)->lpVtbl -> get_NumGroups(This,aNumGroups) ) 
 
+#define IBandwidthControl_get_InternalAndReservedAttribute1IBandwidthControl(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IBandwidthControl(This,aReserved) ) 
+
+#define IBandwidthControl_get_InternalAndReservedAttribute2IBandwidthControl(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IBandwidthControl(This,aReserved) ) 
+
 #define IBandwidthControl_CreateBandwidthGroup(This,aName,aType,aMaxBytesPerSec)	\
     ( (This)->lpVtbl -> CreateBandwidthGroup(This,aName,aType,aMaxBytesPerSec) ) 
 
@@ -31634,6 +36656,12 @@ EXTERN_C const IID IID_IBandwidthControl;
 
 #define IBandwidthControl_GetAllBandwidthGroups(This,aBandwidthGroups)	\
     ( (This)->lpVtbl -> GetAllBandwidthGroups(This,aBandwidthGroups) ) 
+
+#define IBandwidthControl_InternalAndReservedMethod1IBandwidthControl(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IBandwidthControl(This) ) 
+
+#define IBandwidthControl_InternalAndReservedMethod2IBandwidthControl(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IBandwidthControl(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -31657,7 +36685,7 @@ EXTERN_C const IID IID_IVirtualBoxClient;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("d191281f-b0cb-4d83-a8fa-0d9fd6ba234c")
+    MIDL_INTERFACE("d2937a8e-cb8d-4382-90ba-b7da78a74573")
     IVirtualBoxClient : public IDispatch
     {
     public:
@@ -31670,8 +36698,28 @@ EXTERN_C const IID IID_IVirtualBoxClient;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
             /* [retval][out] */ IEventSource **aEventSource) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IVirtualBoxClient( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IVirtualBoxClient( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IVirtualBoxClient( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IVirtualBoxClient( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE CheckMachineError( 
             /* [in] */ IMachine *aMachine) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IVirtualBoxClient( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IVirtualBoxClient( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IVirtualBoxClient( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IVirtualBoxClient( void) = 0;
         
     };
     
@@ -31734,9 +36782,37 @@ EXTERN_C const IID IID_IVirtualBoxClient;
             IVirtualBoxClient * This,
             /* [retval][out] */ IEventSource **aEventSource);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IVirtualBoxClient )( 
+            IVirtualBoxClient * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IVirtualBoxClient )( 
+            IVirtualBoxClient * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IVirtualBoxClient )( 
+            IVirtualBoxClient * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IVirtualBoxClient )( 
+            IVirtualBoxClient * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
         HRESULT ( STDMETHODCALLTYPE *CheckMachineError )( 
             IVirtualBoxClient * This,
             /* [in] */ IMachine *aMachine);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IVirtualBoxClient )( 
+            IVirtualBoxClient * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IVirtualBoxClient )( 
+            IVirtualBoxClient * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IVirtualBoxClient )( 
+            IVirtualBoxClient * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IVirtualBoxClient )( 
+            IVirtualBoxClient * This);
         
         END_INTERFACE
     } IVirtualBoxClientVtbl;
@@ -31783,8 +36859,32 @@ EXTERN_C const IID IID_IVirtualBoxClient;
 #define IVirtualBoxClient_get_EventSource(This,aEventSource)	\
     ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
 
+#define IVirtualBoxClient_get_InternalAndReservedAttribute1IVirtualBoxClient(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IVirtualBoxClient(This,aReserved) ) 
+
+#define IVirtualBoxClient_get_InternalAndReservedAttribute2IVirtualBoxClient(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IVirtualBoxClient(This,aReserved) ) 
+
+#define IVirtualBoxClient_get_InternalAndReservedAttribute3IVirtualBoxClient(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IVirtualBoxClient(This,aReserved) ) 
+
+#define IVirtualBoxClient_get_InternalAndReservedAttribute4IVirtualBoxClient(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IVirtualBoxClient(This,aReserved) ) 
+
 #define IVirtualBoxClient_CheckMachineError(This,aMachine)	\
     ( (This)->lpVtbl -> CheckMachineError(This,aMachine) ) 
+
+#define IVirtualBoxClient_InternalAndReservedMethod1IVirtualBoxClient(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IVirtualBoxClient(This) ) 
+
+#define IVirtualBoxClient_InternalAndReservedMethod2IVirtualBoxClient(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IVirtualBoxClient(This) ) 
+
+#define IVirtualBoxClient_InternalAndReservedMethod3IVirtualBoxClient(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IVirtualBoxClient(This) ) 
+
+#define IVirtualBoxClient_InternalAndReservedMethod4IVirtualBoxClient(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IVirtualBoxClient(This) ) 
 
 #endif /* COBJMACROS */
 

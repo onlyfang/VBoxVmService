@@ -28,7 +28,7 @@
 
 0. Change log
 
-2015-XX-XX Release 5.0 TBD
+2015-07-11 Release 5.0 "Litchi"
 * Updated COM API to make it work with VirtualBox 5.0. Note this is not compatible with old versions of VirtualBox. If you need to use VirtualBox 4.3.X, please stay with 4.1 "Ginger".
 * Changed VBOX_INSTALL_PATH to VBOX_MSI_INSTALL_PATH.
 * During installation, will try to guess out correct VBOX_USER_HOME when HOME environment variable is set.

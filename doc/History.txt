@@ -28,6 +28,9 @@
 
 0. Change log
 
+2017-10-19 Release 5.2 "Jujube"
+* Updated COM API to make it work with VirtualBox 5.2. Note this is not compatible with old versions of VirtualBox. If you need to use VirtualBox 5.1.X, please stay with 5.1 "Plum".
+
 2016-07-14 Release 5.1 "Plum"
 * Updated COM API to make it work with VirtualBox 5.1. Note this is not compatible with old versions of VirtualBox. If you need to use VirtualBox 5.0.X, please stay with 5.0 "Litchi".
 * Enable xp/2k3 campatible mode.

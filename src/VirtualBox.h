@@ -1,13 +1,19 @@
+#pragma warning(push) /* -Wall and windows.h */
+#pragma warning(disable:4668 4255)
+#if _MSC_VER >= 1800 /* RT_MSC_VER_VC120 */
+# pragma warning(disable:4005)
+#endif
+
 
 
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Tue Jul 12 15:15:23 2016
+/* at Wed Oct 18 05:15:32 2017
  */
 /* Compiler settings for Z:\home\vbox\tinderbox\sdk\out\linux.amd64\release\bin\sdk\bindings\mscom\idl\VirtualBox.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
+    Oicf, W4, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
@@ -93,6 +99,12 @@ typedef interface IVirtualSystemDescription IVirtualSystemDescription;
 #endif 	/* __IVirtualSystemDescription_FWD_DEFINED__ */
 
 
+#ifndef __IUnattended_FWD_DEFINED__
+#define __IUnattended_FWD_DEFINED__
+typedef interface IUnattended IUnattended;
+#endif 	/* __IUnattended_FWD_DEFINED__ */
+
+
 #ifndef __IInternalMachineControl_FWD_DEFINED__
 #define __IInternalMachineControl_FWD_DEFINED__
 typedef interface IInternalMachineControl IInternalMachineControl;
@@ -657,6 +669,12 @@ typedef interface INetworkAdapterChangedEvent INetworkAdapterChangedEvent;
 #endif 	/* __INetworkAdapterChangedEvent_FWD_DEFINED__ */
 
 
+#ifndef __IAudioAdapterChangedEvent_FWD_DEFINED__
+#define __IAudioAdapterChangedEvent_FWD_DEFINED__
+typedef interface IAudioAdapterChangedEvent IAudioAdapterChangedEvent;
+#endif 	/* __IAudioAdapterChangedEvent_FWD_DEFINED__ */
+
+
 #ifndef __ISerialPortChangedEvent_FWD_DEFINED__
 #define __ISerialPortChangedEvent_FWD_DEFINED__
 typedef interface ISerialPortChangedEvent ISerialPortChangedEvent;
@@ -979,6 +997,24 @@ typedef interface INATNetworkPortForwardEvent INATNetworkPortForwardEvent;
 #define __IHostNameResolutionConfigurationChangeEvent_FWD_DEFINED__
 typedef interface IHostNameResolutionConfigurationChangeEvent IHostNameResolutionConfigurationChangeEvent;
 #endif 	/* __IHostNameResolutionConfigurationChangeEvent_FWD_DEFINED__ */
+
+
+#ifndef __IProgressEvent_FWD_DEFINED__
+#define __IProgressEvent_FWD_DEFINED__
+typedef interface IProgressEvent IProgressEvent;
+#endif 	/* __IProgressEvent_FWD_DEFINED__ */
+
+
+#ifndef __IProgressPercentageChangedEvent_FWD_DEFINED__
+#define __IProgressPercentageChangedEvent_FWD_DEFINED__
+typedef interface IProgressPercentageChangedEvent IProgressPercentageChangedEvent;
+#endif 	/* __IProgressPercentageChangedEvent_FWD_DEFINED__ */
+
+
+#ifndef __IProgressTaskCompletedEvent_FWD_DEFINED__
+#define __IProgressTaskCompletedEvent_FWD_DEFINED__
+typedef interface IProgressTaskCompletedEvent IProgressTaskCompletedEvent;
+#endif 	/* __IProgressTaskCompletedEvent_FWD_DEFINED__ */
 
 
 #ifndef __IVirtualBoxErrorInfo_FWD_DEFINED__
@@ -1029,6 +1065,12 @@ typedef interface IVirtualSystemDescription IVirtualSystemDescription;
 #endif 	/* __IVirtualSystemDescription_FWD_DEFINED__ */
 
 
+#ifndef __IUnattended_FWD_DEFINED__
+#define __IUnattended_FWD_DEFINED__
+typedef interface IUnattended IUnattended;
+#endif 	/* __IUnattended_FWD_DEFINED__ */
+
+
 #ifndef __IInternalMachineControl_FWD_DEFINED__
 #define __IInternalMachineControl_FWD_DEFINED__
 typedef interface IInternalMachineControl IInternalMachineControl;
@@ -1593,6 +1635,12 @@ typedef interface INetworkAdapterChangedEvent INetworkAdapterChangedEvent;
 #endif 	/* __INetworkAdapterChangedEvent_FWD_DEFINED__ */
 
 
+#ifndef __IAudioAdapterChangedEvent_FWD_DEFINED__
+#define __IAudioAdapterChangedEvent_FWD_DEFINED__
+typedef interface IAudioAdapterChangedEvent IAudioAdapterChangedEvent;
+#endif 	/* __IAudioAdapterChangedEvent_FWD_DEFINED__ */
+
+
 #ifndef __ISerialPortChangedEvent_FWD_DEFINED__
 #define __ISerialPortChangedEvent_FWD_DEFINED__
 typedef interface ISerialPortChangedEvent ISerialPortChangedEvent;
@@ -1917,6 +1965,24 @@ typedef interface IHostNameResolutionConfigurationChangeEvent IHostNameResolutio
 #endif 	/* __IHostNameResolutionConfigurationChangeEvent_FWD_DEFINED__ */
 
 
+#ifndef __IProgressEvent_FWD_DEFINED__
+#define __IProgressEvent_FWD_DEFINED__
+typedef interface IProgressEvent IProgressEvent;
+#endif 	/* __IProgressEvent_FWD_DEFINED__ */
+
+
+#ifndef __IProgressPercentageChangedEvent_FWD_DEFINED__
+#define __IProgressPercentageChangedEvent_FWD_DEFINED__
+typedef interface IProgressPercentageChangedEvent IProgressPercentageChangedEvent;
+#endif 	/* __IProgressPercentageChangedEvent_FWD_DEFINED__ */
+
+
+#ifndef __IProgressTaskCompletedEvent_FWD_DEFINED__
+#define __IProgressTaskCompletedEvent_FWD_DEFINED__
+typedef interface IProgressTaskCompletedEvent IProgressTaskCompletedEvent;
+#endif 	/* __IProgressTaskCompletedEvent_FWD_DEFINED__ */
+
+
 #ifndef __VirtualBox_FWD_DEFINED__
 #define __VirtualBox_FWD_DEFINED__
 
@@ -1964,10 +2030,18 @@ extern "C"{
 /* interface __MIDL_itf_VirtualBox_0000_0000 */
 /* [local] */ 
 
+
+
+
 enum {
     kTypeLibraryMajorVersion = 1,
     kTypeLibraryMinorVersion = 3
 };
+
+
+
+
+
 
 
 
@@ -2145,6 +2219,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0001
 	SettingsVersion_v1_14	= 16,
 	SettingsVersion_v1_15	= 17,
 	SettingsVersion_v1_16	= 18,
+	SettingsVersion_v1_17	= 19,
 	SettingsVersion_Future	= 99999
     } 	SettingsVersion;
 
@@ -2589,7 +2664,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0038
     } 	HostNetworkInterfaceType;
 
 #define HostNetworkInterfaceType_T HostNetworkInterfaceType
-typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("98f7f957-89fb-49b6-a3b1-31e3285eb1d8") 
+typedef /* [public][public][public][v1_enum][uuid] */  DECLSPEC_UUID("c4b10d74-dd48-4ff4-9a40-785a2a389ade") 
 enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0039
     {	AdditionsFacilityType_None	= 0,
 	AdditionsFacilityType_VBoxGuestDriver	= 20,
@@ -2598,6 +2673,7 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0039
 	AdditionsFacilityType_VBoxTrayClient	= 101,
 	AdditionsFacilityType_Seamless	= 1000,
 	AdditionsFacilityType_Graphics	= 1100,
+	AdditionsFacilityType_MonitorAttach	= 1101,
 	AdditionsFacilityType_All	= 2147483646
     } 	AdditionsFacilityType;
 
@@ -3066,10 +3142,11 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0084
     } 	GuestMonitorStatus;
 
 #define GuestMonitorStatus_T GuestMonitorStatus
-typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("9a982f4f-b815-4802-8539-d0b46435a7b7") 
+typedef /* [public][public][v1_enum][uuid] */  DECLSPEC_UUID("c7a9ee66-cfed-438b-9f8c-d3adf7588a4d") 
 enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0085
     {	ScreenLayoutMode_Apply	= 0,
-	ScreenLayoutMode_Reset	= 1
+	ScreenLayoutMode_Reset	= 1,
+	ScreenLayoutMode_Attach	= 2
     } 	ScreenLayoutMode;
 
 #define ScreenLayoutMode_T ScreenLayoutMode
@@ -3339,7 +3416,10 @@ enum __MIDL___MIDL_itf_VirtualBox_0000_0000_0105
 	VBoxEventType_OnHostNameResolutionConfigurationChange	= 94,
 	VBoxEventType_OnSnapshotRestored	= 95,
 	VBoxEventType_OnMediumConfigChanged	= 96,
-	VBoxEventType_Last	= 97
+	VBoxEventType_OnAudioAdapterChanged	= 97,
+	VBoxEventType_OnProgressPercentageChanged	= 98,
+	VBoxEventType_OnProgressTaskCompleted	= 99,
+	VBoxEventType_Last	= 100
     } 	VBoxEventType;
 
 #define VBoxEventType_T VBoxEventType
@@ -4594,7 +4674,7 @@ EXTERN_C const IID IID_IVirtualBox;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("0169423f-46b4-cde9-91af-1e9d5b6cd945")
+    MIDL_INTERFACE("9570b9d5-f1a1-448a-10c5-e12f5285adad")
     IVirtualBox : public IDispatch
     {
     public:
@@ -4745,6 +4825,9 @@ EXTERN_C const IID IID_IVirtualBox;
         
         virtual HRESULT STDMETHODCALLTYPE CreateAppliance( 
             /* [retval][out] */ IAppliance **aAppliance) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE CreateUnattendedInstaller( 
+            /* [retval][out] */ IUnattended **aUnattended) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE CreateMedium( 
             /* [in] */ BSTR aFormat,
@@ -5074,6 +5157,10 @@ EXTERN_C const IID IID_IVirtualBox;
             IVirtualBox * This,
             /* [retval][out] */ IAppliance **aAppliance);
         
+        HRESULT ( STDMETHODCALLTYPE *CreateUnattendedInstaller )( 
+            IVirtualBox * This,
+            /* [retval][out] */ IUnattended **aUnattended);
+        
         HRESULT ( STDMETHODCALLTYPE *CreateMedium )( 
             IVirtualBox * This,
             /* [in] */ BSTR aFormat,
@@ -5355,6 +5442,9 @@ EXTERN_C const IID IID_IVirtualBox;
 #define IVirtualBox_CreateAppliance(This,aAppliance)	\
     ( (This)->lpVtbl -> CreateAppliance(This,aAppliance) ) 
 
+#define IVirtualBox_CreateUnattendedInstaller(This,aUnattended)	\
+    ( (This)->lpVtbl -> CreateUnattendedInstaller(This,aUnattended) ) 
+
 #define IVirtualBox_CreateMedium(This,aFormat,aLocation,aAccessMode,aADeviceTypeType,aMedium)	\
     ( (This)->lpVtbl -> CreateMedium(This,aFormat,aLocation,aAccessMode,aADeviceTypeType,aMedium) ) 
 
@@ -5540,6 +5630,9 @@ EXTERN_C const IID IID_IVirtualBox;
 #define COM_FORWARD_IVirtualBox_CreateAppliance_TO(smth) HRESULT STDMETHODCALLTYPE CreateAppliance (IAppliance * * aAppliance) { return smth CreateAppliance (aAppliance); }
 #define COM_FORWARD_IVirtualBox_CreateAppliance_TO_OBJ(obj) COM_FORWARD_IVirtualBox_CreateAppliance_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_CreateAppliance_TO_BASE(base) COM_FORWARD_IVirtualBox_CreateAppliance_TO (base::)
+#define COM_FORWARD_IVirtualBox_CreateUnattendedInstaller_TO(smth) HRESULT STDMETHODCALLTYPE CreateUnattendedInstaller (IUnattended * * aUnattended) { return smth CreateUnattendedInstaller (aUnattended); }
+#define COM_FORWARD_IVirtualBox_CreateUnattendedInstaller_TO_OBJ(obj) COM_FORWARD_IVirtualBox_CreateUnattendedInstaller_TO ((obj)->)
+#define COM_FORWARD_IVirtualBox_CreateUnattendedInstaller_TO_BASE(base) COM_FORWARD_IVirtualBox_CreateUnattendedInstaller_TO (base::)
 #define COM_FORWARD_IVirtualBox_CreateMedium_TO(smth) HRESULT STDMETHODCALLTYPE CreateMedium (BSTR aFormat, BSTR aLocation, AccessMode aAccessMode, DeviceType aADeviceTypeType, IMedium * * aMedium) { return smth CreateMedium (aFormat, aLocation, aAccessMode, aADeviceTypeType, aMedium); }
 #define COM_FORWARD_IVirtualBox_CreateMedium_TO_OBJ(obj) COM_FORWARD_IVirtualBox_CreateMedium_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_CreateMedium_TO_BASE(base) COM_FORWARD_IVirtualBox_CreateMedium_TO (base::)
@@ -5588,7 +5681,7 @@ EXTERN_C const IID IID_IVirtualBox;
 #define COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO(smth) HRESULT STDMETHODCALLTYPE CheckFirmwarePresent (FirmwareType aFirmwareType, BSTR aVersion, BSTR * aUrl, BSTR * aFile, BOOL * aResult) { return smth CheckFirmwarePresent (aFirmwareType, aVersion, aUrl, aFile, aResult); }
 #define COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO_OBJ(obj) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO_BASE(base) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO (base::)
-#define COM_FORWARD_IVirtualBox_TO(smth) COM_FORWARD_IVirtualBox_GETTER_Version_TO (smth) COM_FORWARD_IVirtualBox_GETTER_VersionNormalized_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Revision_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PackageType_TO (smth) COM_FORWARD_IVirtualBox_GETTER_APIVersion_TO (smth) COM_FORWARD_IVirtualBox_GETTER_APIRevision_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HomeFolder_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Host_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SystemProperties_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Machines_TO (smth) COM_FORWARD_IVirtualBox_GETTER_MachineGroups_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HardDisks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DVDImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_FloppyImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ProgressOperations_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GuestOSTypes_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SharedFolders_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PerformanceCollector_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DHCPServers_TO (smth) COM_FORWARD_IVirtualBox_GETTER_NATNetworks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_EventSource_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ExtensionPackManager_TO (smth) COM_FORWARD_IVirtualBox_GETTER_InternalNetworks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GenericNetworkDrivers_TO (smth) COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO (smth) COM_FORWARD_IVirtualBox_CreateMachine_TO (smth) COM_FORWARD_IVirtualBox_OpenMachine_TO (smth) COM_FORWARD_IVirtualBox_RegisterMachine_TO (smth) COM_FORWARD_IVirtualBox_FindMachine_TO (smth) COM_FORWARD_IVirtualBox_GetMachinesByGroups_TO (smth) COM_FORWARD_IVirtualBox_GetMachineStates_TO (smth) COM_FORWARD_IVirtualBox_CreateAppliance_TO (smth) COM_FORWARD_IVirtualBox_CreateMedium_TO (smth) COM_FORWARD_IVirtualBox_OpenMedium_TO (smth) COM_FORWARD_IVirtualBox_GetGuestOSType_TO (smth) COM_FORWARD_IVirtualBox_CreateSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_RemoveSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO (smth) COM_FORWARD_IVirtualBox_GetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetSettingsSecret_TO (smth) COM_FORWARD_IVirtualBox_CreateDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_FindDHCPServerByNetworkName_TO (smth) COM_FORWARD_IVirtualBox_RemoveDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_CreateNATNetwork_TO (smth) COM_FORWARD_IVirtualBox_FindNATNetworkByName_TO (smth) COM_FORWARD_IVirtualBox_RemoveNATNetwork_TO (smth) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO (smth) 
+#define COM_FORWARD_IVirtualBox_TO(smth) COM_FORWARD_IVirtualBox_GETTER_Version_TO (smth) COM_FORWARD_IVirtualBox_GETTER_VersionNormalized_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Revision_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PackageType_TO (smth) COM_FORWARD_IVirtualBox_GETTER_APIVersion_TO (smth) COM_FORWARD_IVirtualBox_GETTER_APIRevision_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HomeFolder_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Host_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SystemProperties_TO (smth) COM_FORWARD_IVirtualBox_GETTER_Machines_TO (smth) COM_FORWARD_IVirtualBox_GETTER_MachineGroups_TO (smth) COM_FORWARD_IVirtualBox_GETTER_HardDisks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DVDImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_FloppyImages_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ProgressOperations_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GuestOSTypes_TO (smth) COM_FORWARD_IVirtualBox_GETTER_SharedFolders_TO (smth) COM_FORWARD_IVirtualBox_GETTER_PerformanceCollector_TO (smth) COM_FORWARD_IVirtualBox_GETTER_DHCPServers_TO (smth) COM_FORWARD_IVirtualBox_GETTER_NATNetworks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_EventSource_TO (smth) COM_FORWARD_IVirtualBox_GETTER_ExtensionPackManager_TO (smth) COM_FORWARD_IVirtualBox_GETTER_InternalNetworks_TO (smth) COM_FORWARD_IVirtualBox_GETTER_GenericNetworkDrivers_TO (smth) COM_FORWARD_IVirtualBox_ComposeMachineFilename_TO (smth) COM_FORWARD_IVirtualBox_CreateMachine_TO (smth) COM_FORWARD_IVirtualBox_OpenMachine_TO (smth) COM_FORWARD_IVirtualBox_RegisterMachine_TO (smth) COM_FORWARD_IVirtualBox_FindMachine_TO (smth) COM_FORWARD_IVirtualBox_GetMachinesByGroups_TO (smth) COM_FORWARD_IVirtualBox_GetMachineStates_TO (smth) COM_FORWARD_IVirtualBox_CreateAppliance_TO (smth) COM_FORWARD_IVirtualBox_CreateUnattendedInstaller_TO (smth) COM_FORWARD_IVirtualBox_CreateMedium_TO (smth) COM_FORWARD_IVirtualBox_OpenMedium_TO (smth) COM_FORWARD_IVirtualBox_GetGuestOSType_TO (smth) COM_FORWARD_IVirtualBox_CreateSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_RemoveSharedFolder_TO (smth) COM_FORWARD_IVirtualBox_GetExtraDataKeys_TO (smth) COM_FORWARD_IVirtualBox_GetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetExtraData_TO (smth) COM_FORWARD_IVirtualBox_SetSettingsSecret_TO (smth) COM_FORWARD_IVirtualBox_CreateDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_FindDHCPServerByNetworkName_TO (smth) COM_FORWARD_IVirtualBox_RemoveDHCPServer_TO (smth) COM_FORWARD_IVirtualBox_CreateNATNetwork_TO (smth) COM_FORWARD_IVirtualBox_FindNATNetworkByName_TO (smth) COM_FORWARD_IVirtualBox_RemoveNATNetwork_TO (smth) COM_FORWARD_IVirtualBox_CheckFirmwarePresent_TO (smth) 
 #define COM_FORWARD_IVirtualBox_TO_OBJ(obj) COM_FORWARD_IVirtualBox_TO ((obj)->)
 #define COM_FORWARD_IVirtualBox_TO_BASE(base) COM_FORWARD_IVirtualBox_TO (base::)
 
@@ -7147,6 +7240,1038 @@ EXTERN_C const IID IID_IVirtualSystemDescription;
 extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0008_v0_0_s_ifspec;
 
+#ifndef __IUnattended_INTERFACE_DEFINED__
+#define __IUnattended_INTERFACE_DEFINED__
+
+/* interface IUnattended */
+/* [proxy][oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IUnattended;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("6f89464f-7193-426c-a41f-522e8f537fa0")
+    IUnattended : public IDispatch
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsoPath( 
+            /* [retval][out] */ BSTR *aIsoPath) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsoPath( 
+            /* [in] */ BSTR aIsoPath) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Machine( 
+            /* [retval][out] */ IMachine **aMachine) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Machine( 
+            /* [in] */ IMachine *aMachine) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_User( 
+            /* [retval][out] */ BSTR *aUser) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_User( 
+            /* [in] */ BSTR aUser) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Password( 
+            /* [retval][out] */ BSTR *aPassword) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Password( 
+            /* [in] */ BSTR aPassword) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_FullUserName( 
+            /* [retval][out] */ BSTR *aFullUserName) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_FullUserName( 
+            /* [in] */ BSTR aFullUserName) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProductKey( 
+            /* [retval][out] */ BSTR *aProductKey) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ProductKey( 
+            /* [in] */ BSTR aProductKey) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AdditionsIsoPath( 
+            /* [retval][out] */ BSTR *aAdditionsIsoPath) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AdditionsIsoPath( 
+            /* [in] */ BSTR aAdditionsIsoPath) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InstallGuestAdditions( 
+            /* [retval][out] */ BOOL *aInstallGuestAdditions) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_InstallGuestAdditions( 
+            /* [in] */ BOOL aInstallGuestAdditions) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ValidationKitIsoPath( 
+            /* [retval][out] */ BSTR *aValidationKitIsoPath) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ValidationKitIsoPath( 
+            /* [in] */ BSTR aValidationKitIsoPath) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InstallTestExecService( 
+            /* [retval][out] */ BOOL *aInstallTestExecService) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_InstallTestExecService( 
+            /* [in] */ BOOL aInstallTestExecService) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TimeZone( 
+            /* [retval][out] */ BSTR *aTimeZone) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_TimeZone( 
+            /* [in] */ BSTR aTimeZone) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Locale( 
+            /* [retval][out] */ BSTR *aLocale) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Locale( 
+            /* [in] */ BSTR aLocale) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Language( 
+            /* [retval][out] */ BSTR *aLanguage) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Language( 
+            /* [in] */ BSTR aLanguage) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Country( 
+            /* [retval][out] */ BSTR *aCountry) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Country( 
+            /* [in] */ BSTR aCountry) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Proxy( 
+            /* [retval][out] */ BSTR *aProxy) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Proxy( 
+            /* [in] */ BSTR aProxy) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PackageSelectionAdjustments( 
+            /* [retval][out] */ BSTR *aPackageSelectionAdjustments) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_PackageSelectionAdjustments( 
+            /* [in] */ BSTR aPackageSelectionAdjustments) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Hostname( 
+            /* [retval][out] */ BSTR *aHostname) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Hostname( 
+            /* [in] */ BSTR aHostname) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AuxiliaryBasePath( 
+            /* [retval][out] */ BSTR *aAuxiliaryBasePath) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AuxiliaryBasePath( 
+            /* [in] */ BSTR aAuxiliaryBasePath) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ImageIndex( 
+            /* [retval][out] */ ULONG *aImageIndex) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ImageIndex( 
+            /* [in] */ ULONG aImageIndex) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ScriptTemplatePath( 
+            /* [retval][out] */ BSTR *aScriptTemplatePath) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ScriptTemplatePath( 
+            /* [in] */ BSTR aScriptTemplatePath) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PostInstallScriptTemplatePath( 
+            /* [retval][out] */ BSTR *aPostInstallScriptTemplatePath) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_PostInstallScriptTemplatePath( 
+            /* [in] */ BSTR aPostInstallScriptTemplatePath) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PostInstallCommand( 
+            /* [retval][out] */ BSTR *aPostInstallCommand) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_PostInstallCommand( 
+            /* [in] */ BSTR aPostInstallCommand) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExtraInstallKernelParameters( 
+            /* [retval][out] */ BSTR *aExtraInstallKernelParameters) = 0;
+        
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ExtraInstallKernelParameters( 
+            /* [in] */ BSTR aExtraInstallKernelParameters) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DetectedOSTypeId( 
+            /* [retval][out] */ BSTR *aDetectedOSTypeId) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DetectedOSVersion( 
+            /* [retval][out] */ BSTR *aDetectedOSVersion) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DetectedOSFlavor( 
+            /* [retval][out] */ BSTR *aDetectedOSFlavor) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DetectedOSLanguages( 
+            /* [retval][out] */ BSTR *aDetectedOSLanguages) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DetectedOSHints( 
+            /* [retval][out] */ BSTR *aDetectedOSHints) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute2IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute3IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute4IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute5IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute6IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute7IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute8IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute9IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute10IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute11IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute12IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute13IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute14IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute15IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute16IUnattended( 
+            /* [retval][out] */ ULONG *aReserved) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE DetectIsoOS( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Prepare( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ConstructMedia( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ReconfigureVM( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Done( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IUnattended( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod2IUnattended( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod3IUnattended( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod4IUnattended( void) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IUnattendedVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IUnattended * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IUnattended * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IUnattended * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IUnattended * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IUnattended * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IUnattended * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IUnattended * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsoPath )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aIsoPath);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsoPath )( 
+            IUnattended * This,
+            /* [in] */ BSTR aIsoPath);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Machine )( 
+            IUnattended * This,
+            /* [retval][out] */ IMachine **aMachine);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Machine )( 
+            IUnattended * This,
+            /* [in] */ IMachine *aMachine);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_User )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aUser);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_User )( 
+            IUnattended * This,
+            /* [in] */ BSTR aUser);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Password )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aPassword);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Password )( 
+            IUnattended * This,
+            /* [in] */ BSTR aPassword);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_FullUserName )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aFullUserName);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_FullUserName )( 
+            IUnattended * This,
+            /* [in] */ BSTR aFullUserName);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProductKey )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aProductKey);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ProductKey )( 
+            IUnattended * This,
+            /* [in] */ BSTR aProductKey);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AdditionsIsoPath )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aAdditionsIsoPath);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AdditionsIsoPath )( 
+            IUnattended * This,
+            /* [in] */ BSTR aAdditionsIsoPath);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InstallGuestAdditions )( 
+            IUnattended * This,
+            /* [retval][out] */ BOOL *aInstallGuestAdditions);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_InstallGuestAdditions )( 
+            IUnattended * This,
+            /* [in] */ BOOL aInstallGuestAdditions);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ValidationKitIsoPath )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aValidationKitIsoPath);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ValidationKitIsoPath )( 
+            IUnattended * This,
+            /* [in] */ BSTR aValidationKitIsoPath);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InstallTestExecService )( 
+            IUnattended * This,
+            /* [retval][out] */ BOOL *aInstallTestExecService);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_InstallTestExecService )( 
+            IUnattended * This,
+            /* [in] */ BOOL aInstallTestExecService);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TimeZone )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aTimeZone);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_TimeZone )( 
+            IUnattended * This,
+            /* [in] */ BSTR aTimeZone);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Locale )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aLocale);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Locale )( 
+            IUnattended * This,
+            /* [in] */ BSTR aLocale);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Language )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aLanguage);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Language )( 
+            IUnattended * This,
+            /* [in] */ BSTR aLanguage);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Country )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aCountry);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Country )( 
+            IUnattended * This,
+            /* [in] */ BSTR aCountry);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Proxy )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aProxy);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Proxy )( 
+            IUnattended * This,
+            /* [in] */ BSTR aProxy);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PackageSelectionAdjustments )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aPackageSelectionAdjustments);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_PackageSelectionAdjustments )( 
+            IUnattended * This,
+            /* [in] */ BSTR aPackageSelectionAdjustments);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Hostname )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aHostname);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Hostname )( 
+            IUnattended * This,
+            /* [in] */ BSTR aHostname);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AuxiliaryBasePath )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aAuxiliaryBasePath);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AuxiliaryBasePath )( 
+            IUnattended * This,
+            /* [in] */ BSTR aAuxiliaryBasePath);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ImageIndex )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aImageIndex);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ImageIndex )( 
+            IUnattended * This,
+            /* [in] */ ULONG aImageIndex);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ScriptTemplatePath )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aScriptTemplatePath);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ScriptTemplatePath )( 
+            IUnattended * This,
+            /* [in] */ BSTR aScriptTemplatePath);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PostInstallScriptTemplatePath )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aPostInstallScriptTemplatePath);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_PostInstallScriptTemplatePath )( 
+            IUnattended * This,
+            /* [in] */ BSTR aPostInstallScriptTemplatePath);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PostInstallCommand )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aPostInstallCommand);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_PostInstallCommand )( 
+            IUnattended * This,
+            /* [in] */ BSTR aPostInstallCommand);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExtraInstallKernelParameters )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aExtraInstallKernelParameters);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ExtraInstallKernelParameters )( 
+            IUnattended * This,
+            /* [in] */ BSTR aExtraInstallKernelParameters);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DetectedOSTypeId )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aDetectedOSTypeId);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DetectedOSVersion )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aDetectedOSVersion);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DetectedOSFlavor )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aDetectedOSFlavor);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DetectedOSLanguages )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aDetectedOSLanguages);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DetectedOSHints )( 
+            IUnattended * This,
+            /* [retval][out] */ BSTR *aDetectedOSHints);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute2IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute3IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute4IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute5IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute6IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute7IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute8IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute9IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute10IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute11IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute12IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute13IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute14IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute15IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute16IUnattended )( 
+            IUnattended * This,
+            /* [retval][out] */ ULONG *aReserved);
+        
+        HRESULT ( STDMETHODCALLTYPE *DetectIsoOS )( 
+            IUnattended * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Prepare )( 
+            IUnattended * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *ConstructMedia )( 
+            IUnattended * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *ReconfigureVM )( 
+            IUnattended * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Done )( 
+            IUnattended * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IUnattended )( 
+            IUnattended * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod2IUnattended )( 
+            IUnattended * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod3IUnattended )( 
+            IUnattended * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod4IUnattended )( 
+            IUnattended * This);
+        
+        END_INTERFACE
+    } IUnattendedVtbl;
+
+    interface IUnattended
+    {
+        CONST_VTBL struct IUnattendedVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IUnattended_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IUnattended_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IUnattended_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IUnattended_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IUnattended_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IUnattended_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IUnattended_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IUnattended_get_IsoPath(This,aIsoPath)	\
+    ( (This)->lpVtbl -> get_IsoPath(This,aIsoPath) ) 
+
+#define IUnattended_put_IsoPath(This,aIsoPath)	\
+    ( (This)->lpVtbl -> put_IsoPath(This,aIsoPath) ) 
+
+#define IUnattended_get_Machine(This,aMachine)	\
+    ( (This)->lpVtbl -> get_Machine(This,aMachine) ) 
+
+#define IUnattended_put_Machine(This,aMachine)	\
+    ( (This)->lpVtbl -> put_Machine(This,aMachine) ) 
+
+#define IUnattended_get_User(This,aUser)	\
+    ( (This)->lpVtbl -> get_User(This,aUser) ) 
+
+#define IUnattended_put_User(This,aUser)	\
+    ( (This)->lpVtbl -> put_User(This,aUser) ) 
+
+#define IUnattended_get_Password(This,aPassword)	\
+    ( (This)->lpVtbl -> get_Password(This,aPassword) ) 
+
+#define IUnattended_put_Password(This,aPassword)	\
+    ( (This)->lpVtbl -> put_Password(This,aPassword) ) 
+
+#define IUnattended_get_FullUserName(This,aFullUserName)	\
+    ( (This)->lpVtbl -> get_FullUserName(This,aFullUserName) ) 
+
+#define IUnattended_put_FullUserName(This,aFullUserName)	\
+    ( (This)->lpVtbl -> put_FullUserName(This,aFullUserName) ) 
+
+#define IUnattended_get_ProductKey(This,aProductKey)	\
+    ( (This)->lpVtbl -> get_ProductKey(This,aProductKey) ) 
+
+#define IUnattended_put_ProductKey(This,aProductKey)	\
+    ( (This)->lpVtbl -> put_ProductKey(This,aProductKey) ) 
+
+#define IUnattended_get_AdditionsIsoPath(This,aAdditionsIsoPath)	\
+    ( (This)->lpVtbl -> get_AdditionsIsoPath(This,aAdditionsIsoPath) ) 
+
+#define IUnattended_put_AdditionsIsoPath(This,aAdditionsIsoPath)	\
+    ( (This)->lpVtbl -> put_AdditionsIsoPath(This,aAdditionsIsoPath) ) 
+
+#define IUnattended_get_InstallGuestAdditions(This,aInstallGuestAdditions)	\
+    ( (This)->lpVtbl -> get_InstallGuestAdditions(This,aInstallGuestAdditions) ) 
+
+#define IUnattended_put_InstallGuestAdditions(This,aInstallGuestAdditions)	\
+    ( (This)->lpVtbl -> put_InstallGuestAdditions(This,aInstallGuestAdditions) ) 
+
+#define IUnattended_get_ValidationKitIsoPath(This,aValidationKitIsoPath)	\
+    ( (This)->lpVtbl -> get_ValidationKitIsoPath(This,aValidationKitIsoPath) ) 
+
+#define IUnattended_put_ValidationKitIsoPath(This,aValidationKitIsoPath)	\
+    ( (This)->lpVtbl -> put_ValidationKitIsoPath(This,aValidationKitIsoPath) ) 
+
+#define IUnattended_get_InstallTestExecService(This,aInstallTestExecService)	\
+    ( (This)->lpVtbl -> get_InstallTestExecService(This,aInstallTestExecService) ) 
+
+#define IUnattended_put_InstallTestExecService(This,aInstallTestExecService)	\
+    ( (This)->lpVtbl -> put_InstallTestExecService(This,aInstallTestExecService) ) 
+
+#define IUnattended_get_TimeZone(This,aTimeZone)	\
+    ( (This)->lpVtbl -> get_TimeZone(This,aTimeZone) ) 
+
+#define IUnattended_put_TimeZone(This,aTimeZone)	\
+    ( (This)->lpVtbl -> put_TimeZone(This,aTimeZone) ) 
+
+#define IUnattended_get_Locale(This,aLocale)	\
+    ( (This)->lpVtbl -> get_Locale(This,aLocale) ) 
+
+#define IUnattended_put_Locale(This,aLocale)	\
+    ( (This)->lpVtbl -> put_Locale(This,aLocale) ) 
+
+#define IUnattended_get_Language(This,aLanguage)	\
+    ( (This)->lpVtbl -> get_Language(This,aLanguage) ) 
+
+#define IUnattended_put_Language(This,aLanguage)	\
+    ( (This)->lpVtbl -> put_Language(This,aLanguage) ) 
+
+#define IUnattended_get_Country(This,aCountry)	\
+    ( (This)->lpVtbl -> get_Country(This,aCountry) ) 
+
+#define IUnattended_put_Country(This,aCountry)	\
+    ( (This)->lpVtbl -> put_Country(This,aCountry) ) 
+
+#define IUnattended_get_Proxy(This,aProxy)	\
+    ( (This)->lpVtbl -> get_Proxy(This,aProxy) ) 
+
+#define IUnattended_put_Proxy(This,aProxy)	\
+    ( (This)->lpVtbl -> put_Proxy(This,aProxy) ) 
+
+#define IUnattended_get_PackageSelectionAdjustments(This,aPackageSelectionAdjustments)	\
+    ( (This)->lpVtbl -> get_PackageSelectionAdjustments(This,aPackageSelectionAdjustments) ) 
+
+#define IUnattended_put_PackageSelectionAdjustments(This,aPackageSelectionAdjustments)	\
+    ( (This)->lpVtbl -> put_PackageSelectionAdjustments(This,aPackageSelectionAdjustments) ) 
+
+#define IUnattended_get_Hostname(This,aHostname)	\
+    ( (This)->lpVtbl -> get_Hostname(This,aHostname) ) 
+
+#define IUnattended_put_Hostname(This,aHostname)	\
+    ( (This)->lpVtbl -> put_Hostname(This,aHostname) ) 
+
+#define IUnattended_get_AuxiliaryBasePath(This,aAuxiliaryBasePath)	\
+    ( (This)->lpVtbl -> get_AuxiliaryBasePath(This,aAuxiliaryBasePath) ) 
+
+#define IUnattended_put_AuxiliaryBasePath(This,aAuxiliaryBasePath)	\
+    ( (This)->lpVtbl -> put_AuxiliaryBasePath(This,aAuxiliaryBasePath) ) 
+
+#define IUnattended_get_ImageIndex(This,aImageIndex)	\
+    ( (This)->lpVtbl -> get_ImageIndex(This,aImageIndex) ) 
+
+#define IUnattended_put_ImageIndex(This,aImageIndex)	\
+    ( (This)->lpVtbl -> put_ImageIndex(This,aImageIndex) ) 
+
+#define IUnattended_get_ScriptTemplatePath(This,aScriptTemplatePath)	\
+    ( (This)->lpVtbl -> get_ScriptTemplatePath(This,aScriptTemplatePath) ) 
+
+#define IUnattended_put_ScriptTemplatePath(This,aScriptTemplatePath)	\
+    ( (This)->lpVtbl -> put_ScriptTemplatePath(This,aScriptTemplatePath) ) 
+
+#define IUnattended_get_PostInstallScriptTemplatePath(This,aPostInstallScriptTemplatePath)	\
+    ( (This)->lpVtbl -> get_PostInstallScriptTemplatePath(This,aPostInstallScriptTemplatePath) ) 
+
+#define IUnattended_put_PostInstallScriptTemplatePath(This,aPostInstallScriptTemplatePath)	\
+    ( (This)->lpVtbl -> put_PostInstallScriptTemplatePath(This,aPostInstallScriptTemplatePath) ) 
+
+#define IUnattended_get_PostInstallCommand(This,aPostInstallCommand)	\
+    ( (This)->lpVtbl -> get_PostInstallCommand(This,aPostInstallCommand) ) 
+
+#define IUnattended_put_PostInstallCommand(This,aPostInstallCommand)	\
+    ( (This)->lpVtbl -> put_PostInstallCommand(This,aPostInstallCommand) ) 
+
+#define IUnattended_get_ExtraInstallKernelParameters(This,aExtraInstallKernelParameters)	\
+    ( (This)->lpVtbl -> get_ExtraInstallKernelParameters(This,aExtraInstallKernelParameters) ) 
+
+#define IUnattended_put_ExtraInstallKernelParameters(This,aExtraInstallKernelParameters)	\
+    ( (This)->lpVtbl -> put_ExtraInstallKernelParameters(This,aExtraInstallKernelParameters) ) 
+
+#define IUnattended_get_DetectedOSTypeId(This,aDetectedOSTypeId)	\
+    ( (This)->lpVtbl -> get_DetectedOSTypeId(This,aDetectedOSTypeId) ) 
+
+#define IUnattended_get_DetectedOSVersion(This,aDetectedOSVersion)	\
+    ( (This)->lpVtbl -> get_DetectedOSVersion(This,aDetectedOSVersion) ) 
+
+#define IUnattended_get_DetectedOSFlavor(This,aDetectedOSFlavor)	\
+    ( (This)->lpVtbl -> get_DetectedOSFlavor(This,aDetectedOSFlavor) ) 
+
+#define IUnattended_get_DetectedOSLanguages(This,aDetectedOSLanguages)	\
+    ( (This)->lpVtbl -> get_DetectedOSLanguages(This,aDetectedOSLanguages) ) 
+
+#define IUnattended_get_DetectedOSHints(This,aDetectedOSHints)	\
+    ( (This)->lpVtbl -> get_DetectedOSHints(This,aDetectedOSHints) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute1IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute2IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute2IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute3IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute3IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute4IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute4IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute5IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute5IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute6IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute6IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute7IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute7IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute8IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute8IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute9IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute9IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute10IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute10IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute11IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute11IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute12IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute12IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute13IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute13IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute14IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute14IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute15IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute15IUnattended(This,aReserved) ) 
+
+#define IUnattended_get_InternalAndReservedAttribute16IUnattended(This,aReserved)	\
+    ( (This)->lpVtbl -> get_InternalAndReservedAttribute16IUnattended(This,aReserved) ) 
+
+#define IUnattended_DetectIsoOS(This)	\
+    ( (This)->lpVtbl -> DetectIsoOS(This) ) 
+
+#define IUnattended_Prepare(This)	\
+    ( (This)->lpVtbl -> Prepare(This) ) 
+
+#define IUnattended_ConstructMedia(This)	\
+    ( (This)->lpVtbl -> ConstructMedia(This) ) 
+
+#define IUnattended_ReconfigureVM(This)	\
+    ( (This)->lpVtbl -> ReconfigureVM(This) ) 
+
+#define IUnattended_Done(This)	\
+    ( (This)->lpVtbl -> Done(This) ) 
+
+#define IUnattended_InternalAndReservedMethod1IUnattended(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod1IUnattended(This) ) 
+
+#define IUnattended_InternalAndReservedMethod2IUnattended(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod2IUnattended(This) ) 
+
+#define IUnattended_InternalAndReservedMethod3IUnattended(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod3IUnattended(This) ) 
+
+#define IUnattended_InternalAndReservedMethod4IUnattended(This)	\
+    ( (This)->lpVtbl -> InternalAndReservedMethod4IUnattended(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IUnattended_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_VirtualBox_0000_0009 */
+/* [local] */ 
+
+#define COM_FORWARD_IUnattended_GETTER_IsoPath_TO(smth) HRESULT STDMETHODCALLTYPE get_IsoPath (BSTR * aIsoPath) { return smth get_IsoPath (aIsoPath); }
+#define COM_FORWARD_IUnattended_GETTER_IsoPath_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_IsoPath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_IsoPath_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_IsoPath_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_IsoPath_TO(smth) HRESULT STDMETHODCALLTYPE put_IsoPath (BSTR aIsoPath) { return smth put_IsoPath (aIsoPath); }
+#define COM_FORWARD_IUnattended_SETTER_IsoPath_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_IsoPath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_IsoPath_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_IsoPath_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_Machine_TO(smth) HRESULT STDMETHODCALLTYPE get_Machine (IMachine * * aMachine) { return smth get_Machine (aMachine); }
+#define COM_FORWARD_IUnattended_GETTER_Machine_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_Machine_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_Machine_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_Machine_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_Machine_TO(smth) HRESULT STDMETHODCALLTYPE put_Machine (IMachine * aMachine) { return smth put_Machine (aMachine); }
+#define COM_FORWARD_IUnattended_SETTER_Machine_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_Machine_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_Machine_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_Machine_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_User_TO(smth) HRESULT STDMETHODCALLTYPE get_User (BSTR * aUser) { return smth get_User (aUser); }
+#define COM_FORWARD_IUnattended_GETTER_User_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_User_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_User_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_User_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_User_TO(smth) HRESULT STDMETHODCALLTYPE put_User (BSTR aUser) { return smth put_User (aUser); }
+#define COM_FORWARD_IUnattended_SETTER_User_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_User_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_User_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_User_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_Password_TO(smth) HRESULT STDMETHODCALLTYPE get_Password (BSTR * aPassword) { return smth get_Password (aPassword); }
+#define COM_FORWARD_IUnattended_GETTER_Password_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_Password_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_Password_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_Password_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_Password_TO(smth) HRESULT STDMETHODCALLTYPE put_Password (BSTR aPassword) { return smth put_Password (aPassword); }
+#define COM_FORWARD_IUnattended_SETTER_Password_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_Password_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_Password_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_Password_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_FullUserName_TO(smth) HRESULT STDMETHODCALLTYPE get_FullUserName (BSTR * aFullUserName) { return smth get_FullUserName (aFullUserName); }
+#define COM_FORWARD_IUnattended_GETTER_FullUserName_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_FullUserName_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_FullUserName_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_FullUserName_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_FullUserName_TO(smth) HRESULT STDMETHODCALLTYPE put_FullUserName (BSTR aFullUserName) { return smth put_FullUserName (aFullUserName); }
+#define COM_FORWARD_IUnattended_SETTER_FullUserName_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_FullUserName_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_FullUserName_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_FullUserName_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_ProductKey_TO(smth) HRESULT STDMETHODCALLTYPE get_ProductKey (BSTR * aProductKey) { return smth get_ProductKey (aProductKey); }
+#define COM_FORWARD_IUnattended_GETTER_ProductKey_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_ProductKey_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_ProductKey_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_ProductKey_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_ProductKey_TO(smth) HRESULT STDMETHODCALLTYPE put_ProductKey (BSTR aProductKey) { return smth put_ProductKey (aProductKey); }
+#define COM_FORWARD_IUnattended_SETTER_ProductKey_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_ProductKey_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_ProductKey_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_ProductKey_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_AdditionsIsoPath_TO(smth) HRESULT STDMETHODCALLTYPE get_AdditionsIsoPath (BSTR * aAdditionsIsoPath) { return smth get_AdditionsIsoPath (aAdditionsIsoPath); }
+#define COM_FORWARD_IUnattended_GETTER_AdditionsIsoPath_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_AdditionsIsoPath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_AdditionsIsoPath_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_AdditionsIsoPath_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_AdditionsIsoPath_TO(smth) HRESULT STDMETHODCALLTYPE put_AdditionsIsoPath (BSTR aAdditionsIsoPath) { return smth put_AdditionsIsoPath (aAdditionsIsoPath); }
+#define COM_FORWARD_IUnattended_SETTER_AdditionsIsoPath_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_AdditionsIsoPath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_AdditionsIsoPath_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_AdditionsIsoPath_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_InstallGuestAdditions_TO(smth) HRESULT STDMETHODCALLTYPE get_InstallGuestAdditions (BOOL * aInstallGuestAdditions) { return smth get_InstallGuestAdditions (aInstallGuestAdditions); }
+#define COM_FORWARD_IUnattended_GETTER_InstallGuestAdditions_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_InstallGuestAdditions_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_InstallGuestAdditions_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_InstallGuestAdditions_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_InstallGuestAdditions_TO(smth) HRESULT STDMETHODCALLTYPE put_InstallGuestAdditions (BOOL aInstallGuestAdditions) { return smth put_InstallGuestAdditions (aInstallGuestAdditions); }
+#define COM_FORWARD_IUnattended_SETTER_InstallGuestAdditions_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_InstallGuestAdditions_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_InstallGuestAdditions_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_InstallGuestAdditions_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_ValidationKitIsoPath_TO(smth) HRESULT STDMETHODCALLTYPE get_ValidationKitIsoPath (BSTR * aValidationKitIsoPath) { return smth get_ValidationKitIsoPath (aValidationKitIsoPath); }
+#define COM_FORWARD_IUnattended_GETTER_ValidationKitIsoPath_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_ValidationKitIsoPath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_ValidationKitIsoPath_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_ValidationKitIsoPath_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_ValidationKitIsoPath_TO(smth) HRESULT STDMETHODCALLTYPE put_ValidationKitIsoPath (BSTR aValidationKitIsoPath) { return smth put_ValidationKitIsoPath (aValidationKitIsoPath); }
+#define COM_FORWARD_IUnattended_SETTER_ValidationKitIsoPath_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_ValidationKitIsoPath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_ValidationKitIsoPath_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_ValidationKitIsoPath_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_InstallTestExecService_TO(smth) HRESULT STDMETHODCALLTYPE get_InstallTestExecService (BOOL * aInstallTestExecService) { return smth get_InstallTestExecService (aInstallTestExecService); }
+#define COM_FORWARD_IUnattended_GETTER_InstallTestExecService_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_InstallTestExecService_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_InstallTestExecService_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_InstallTestExecService_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_InstallTestExecService_TO(smth) HRESULT STDMETHODCALLTYPE put_InstallTestExecService (BOOL aInstallTestExecService) { return smth put_InstallTestExecService (aInstallTestExecService); }
+#define COM_FORWARD_IUnattended_SETTER_InstallTestExecService_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_InstallTestExecService_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_InstallTestExecService_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_InstallTestExecService_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_TimeZone_TO(smth) HRESULT STDMETHODCALLTYPE get_TimeZone (BSTR * aTimeZone) { return smth get_TimeZone (aTimeZone); }
+#define COM_FORWARD_IUnattended_GETTER_TimeZone_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_TimeZone_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_TimeZone_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_TimeZone_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_TimeZone_TO(smth) HRESULT STDMETHODCALLTYPE put_TimeZone (BSTR aTimeZone) { return smth put_TimeZone (aTimeZone); }
+#define COM_FORWARD_IUnattended_SETTER_TimeZone_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_TimeZone_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_TimeZone_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_TimeZone_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_Locale_TO(smth) HRESULT STDMETHODCALLTYPE get_Locale (BSTR * aLocale) { return smth get_Locale (aLocale); }
+#define COM_FORWARD_IUnattended_GETTER_Locale_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_Locale_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_Locale_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_Locale_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_Locale_TO(smth) HRESULT STDMETHODCALLTYPE put_Locale (BSTR aLocale) { return smth put_Locale (aLocale); }
+#define COM_FORWARD_IUnattended_SETTER_Locale_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_Locale_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_Locale_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_Locale_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_Language_TO(smth) HRESULT STDMETHODCALLTYPE get_Language (BSTR * aLanguage) { return smth get_Language (aLanguage); }
+#define COM_FORWARD_IUnattended_GETTER_Language_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_Language_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_Language_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_Language_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_Language_TO(smth) HRESULT STDMETHODCALLTYPE put_Language (BSTR aLanguage) { return smth put_Language (aLanguage); }
+#define COM_FORWARD_IUnattended_SETTER_Language_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_Language_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_Language_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_Language_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_Country_TO(smth) HRESULT STDMETHODCALLTYPE get_Country (BSTR * aCountry) { return smth get_Country (aCountry); }
+#define COM_FORWARD_IUnattended_GETTER_Country_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_Country_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_Country_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_Country_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_Country_TO(smth) HRESULT STDMETHODCALLTYPE put_Country (BSTR aCountry) { return smth put_Country (aCountry); }
+#define COM_FORWARD_IUnattended_SETTER_Country_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_Country_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_Country_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_Country_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_Proxy_TO(smth) HRESULT STDMETHODCALLTYPE get_Proxy (BSTR * aProxy) { return smth get_Proxy (aProxy); }
+#define COM_FORWARD_IUnattended_GETTER_Proxy_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_Proxy_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_Proxy_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_Proxy_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_Proxy_TO(smth) HRESULT STDMETHODCALLTYPE put_Proxy (BSTR aProxy) { return smth put_Proxy (aProxy); }
+#define COM_FORWARD_IUnattended_SETTER_Proxy_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_Proxy_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_Proxy_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_Proxy_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_PackageSelectionAdjustments_TO(smth) HRESULT STDMETHODCALLTYPE get_PackageSelectionAdjustments (BSTR * aPackageSelectionAdjustments) { return smth get_PackageSelectionAdjustments (aPackageSelectionAdjustments); }
+#define COM_FORWARD_IUnattended_GETTER_PackageSelectionAdjustments_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_PackageSelectionAdjustments_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_PackageSelectionAdjustments_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_PackageSelectionAdjustments_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_PackageSelectionAdjustments_TO(smth) HRESULT STDMETHODCALLTYPE put_PackageSelectionAdjustments (BSTR aPackageSelectionAdjustments) { return smth put_PackageSelectionAdjustments (aPackageSelectionAdjustments); }
+#define COM_FORWARD_IUnattended_SETTER_PackageSelectionAdjustments_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_PackageSelectionAdjustments_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_PackageSelectionAdjustments_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_PackageSelectionAdjustments_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_Hostname_TO(smth) HRESULT STDMETHODCALLTYPE get_Hostname (BSTR * aHostname) { return smth get_Hostname (aHostname); }
+#define COM_FORWARD_IUnattended_GETTER_Hostname_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_Hostname_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_Hostname_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_Hostname_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_Hostname_TO(smth) HRESULT STDMETHODCALLTYPE put_Hostname (BSTR aHostname) { return smth put_Hostname (aHostname); }
+#define COM_FORWARD_IUnattended_SETTER_Hostname_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_Hostname_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_Hostname_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_Hostname_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_AuxiliaryBasePath_TO(smth) HRESULT STDMETHODCALLTYPE get_AuxiliaryBasePath (BSTR * aAuxiliaryBasePath) { return smth get_AuxiliaryBasePath (aAuxiliaryBasePath); }
+#define COM_FORWARD_IUnattended_GETTER_AuxiliaryBasePath_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_AuxiliaryBasePath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_AuxiliaryBasePath_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_AuxiliaryBasePath_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_AuxiliaryBasePath_TO(smth) HRESULT STDMETHODCALLTYPE put_AuxiliaryBasePath (BSTR aAuxiliaryBasePath) { return smth put_AuxiliaryBasePath (aAuxiliaryBasePath); }
+#define COM_FORWARD_IUnattended_SETTER_AuxiliaryBasePath_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_AuxiliaryBasePath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_AuxiliaryBasePath_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_AuxiliaryBasePath_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_ImageIndex_TO(smth) HRESULT STDMETHODCALLTYPE get_ImageIndex (ULONG * aImageIndex) { return smth get_ImageIndex (aImageIndex); }
+#define COM_FORWARD_IUnattended_GETTER_ImageIndex_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_ImageIndex_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_ImageIndex_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_ImageIndex_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_ImageIndex_TO(smth) HRESULT STDMETHODCALLTYPE put_ImageIndex (ULONG aImageIndex) { return smth put_ImageIndex (aImageIndex); }
+#define COM_FORWARD_IUnattended_SETTER_ImageIndex_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_ImageIndex_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_ImageIndex_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_ImageIndex_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_ScriptTemplatePath_TO(smth) HRESULT STDMETHODCALLTYPE get_ScriptTemplatePath (BSTR * aScriptTemplatePath) { return smth get_ScriptTemplatePath (aScriptTemplatePath); }
+#define COM_FORWARD_IUnattended_GETTER_ScriptTemplatePath_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_ScriptTemplatePath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_ScriptTemplatePath_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_ScriptTemplatePath_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_ScriptTemplatePath_TO(smth) HRESULT STDMETHODCALLTYPE put_ScriptTemplatePath (BSTR aScriptTemplatePath) { return smth put_ScriptTemplatePath (aScriptTemplatePath); }
+#define COM_FORWARD_IUnattended_SETTER_ScriptTemplatePath_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_ScriptTemplatePath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_ScriptTemplatePath_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_ScriptTemplatePath_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_PostInstallScriptTemplatePath_TO(smth) HRESULT STDMETHODCALLTYPE get_PostInstallScriptTemplatePath (BSTR * aPostInstallScriptTemplatePath) { return smth get_PostInstallScriptTemplatePath (aPostInstallScriptTemplatePath); }
+#define COM_FORWARD_IUnattended_GETTER_PostInstallScriptTemplatePath_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_PostInstallScriptTemplatePath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_PostInstallScriptTemplatePath_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_PostInstallScriptTemplatePath_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_PostInstallScriptTemplatePath_TO(smth) HRESULT STDMETHODCALLTYPE put_PostInstallScriptTemplatePath (BSTR aPostInstallScriptTemplatePath) { return smth put_PostInstallScriptTemplatePath (aPostInstallScriptTemplatePath); }
+#define COM_FORWARD_IUnattended_SETTER_PostInstallScriptTemplatePath_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_PostInstallScriptTemplatePath_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_PostInstallScriptTemplatePath_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_PostInstallScriptTemplatePath_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_PostInstallCommand_TO(smth) HRESULT STDMETHODCALLTYPE get_PostInstallCommand (BSTR * aPostInstallCommand) { return smth get_PostInstallCommand (aPostInstallCommand); }
+#define COM_FORWARD_IUnattended_GETTER_PostInstallCommand_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_PostInstallCommand_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_PostInstallCommand_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_PostInstallCommand_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_PostInstallCommand_TO(smth) HRESULT STDMETHODCALLTYPE put_PostInstallCommand (BSTR aPostInstallCommand) { return smth put_PostInstallCommand (aPostInstallCommand); }
+#define COM_FORWARD_IUnattended_SETTER_PostInstallCommand_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_PostInstallCommand_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_PostInstallCommand_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_PostInstallCommand_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_ExtraInstallKernelParameters_TO(smth) HRESULT STDMETHODCALLTYPE get_ExtraInstallKernelParameters (BSTR * aExtraInstallKernelParameters) { return smth get_ExtraInstallKernelParameters (aExtraInstallKernelParameters); }
+#define COM_FORWARD_IUnattended_GETTER_ExtraInstallKernelParameters_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_ExtraInstallKernelParameters_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_ExtraInstallKernelParameters_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_ExtraInstallKernelParameters_TO (base::)
+#define COM_FORWARD_IUnattended_SETTER_ExtraInstallKernelParameters_TO(smth) HRESULT STDMETHODCALLTYPE put_ExtraInstallKernelParameters (BSTR aExtraInstallKernelParameters) { return smth put_ExtraInstallKernelParameters (aExtraInstallKernelParameters); }
+#define COM_FORWARD_IUnattended_SETTER_ExtraInstallKernelParameters_TO_OBJ(obj) COM_FORWARD_IUnattended_SETTER_ExtraInstallKernelParameters_TO ((obj)->)
+#define COM_FORWARD_IUnattended_SETTER_ExtraInstallKernelParameters_TO_BASE(base) COM_FORWARD_IUnattended_SETTER_ExtraInstallKernelParameters_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSTypeId_TO(smth) HRESULT STDMETHODCALLTYPE get_DetectedOSTypeId (BSTR * aDetectedOSTypeId) { return smth get_DetectedOSTypeId (aDetectedOSTypeId); }
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSTypeId_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_DetectedOSTypeId_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSTypeId_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_DetectedOSTypeId_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSVersion_TO(smth) HRESULT STDMETHODCALLTYPE get_DetectedOSVersion (BSTR * aDetectedOSVersion) { return smth get_DetectedOSVersion (aDetectedOSVersion); }
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSVersion_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_DetectedOSVersion_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSVersion_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_DetectedOSVersion_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSFlavor_TO(smth) HRESULT STDMETHODCALLTYPE get_DetectedOSFlavor (BSTR * aDetectedOSFlavor) { return smth get_DetectedOSFlavor (aDetectedOSFlavor); }
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSFlavor_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_DetectedOSFlavor_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSFlavor_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_DetectedOSFlavor_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSLanguages_TO(smth) HRESULT STDMETHODCALLTYPE get_DetectedOSLanguages (BSTR * aDetectedOSLanguages) { return smth get_DetectedOSLanguages (aDetectedOSLanguages); }
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSLanguages_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_DetectedOSLanguages_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSLanguages_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_DetectedOSLanguages_TO (base::)
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSHints_TO(smth) HRESULT STDMETHODCALLTYPE get_DetectedOSHints (BSTR * aDetectedOSHints) { return smth get_DetectedOSHints (aDetectedOSHints); }
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSHints_TO_OBJ(obj) COM_FORWARD_IUnattended_GETTER_DetectedOSHints_TO ((obj)->)
+#define COM_FORWARD_IUnattended_GETTER_DetectedOSHints_TO_BASE(base) COM_FORWARD_IUnattended_GETTER_DetectedOSHints_TO (base::)
+#define COM_FORWARD_IUnattended_DetectIsoOS_TO(smth) HRESULT STDMETHODCALLTYPE DetectIsoOS() { return smth DetectIsoOS(); }
+#define COM_FORWARD_IUnattended_DetectIsoOS_TO_OBJ(obj) COM_FORWARD_IUnattended_DetectIsoOS_TO ((obj)->)
+#define COM_FORWARD_IUnattended_DetectIsoOS_TO_BASE(base) COM_FORWARD_IUnattended_DetectIsoOS_TO (base::)
+#define COM_FORWARD_IUnattended_Prepare_TO(smth) HRESULT STDMETHODCALLTYPE Prepare() { return smth Prepare(); }
+#define COM_FORWARD_IUnattended_Prepare_TO_OBJ(obj) COM_FORWARD_IUnattended_Prepare_TO ((obj)->)
+#define COM_FORWARD_IUnattended_Prepare_TO_BASE(base) COM_FORWARD_IUnattended_Prepare_TO (base::)
+#define COM_FORWARD_IUnattended_ConstructMedia_TO(smth) HRESULT STDMETHODCALLTYPE ConstructMedia() { return smth ConstructMedia(); }
+#define COM_FORWARD_IUnattended_ConstructMedia_TO_OBJ(obj) COM_FORWARD_IUnattended_ConstructMedia_TO ((obj)->)
+#define COM_FORWARD_IUnattended_ConstructMedia_TO_BASE(base) COM_FORWARD_IUnattended_ConstructMedia_TO (base::)
+#define COM_FORWARD_IUnattended_ReconfigureVM_TO(smth) HRESULT STDMETHODCALLTYPE ReconfigureVM() { return smth ReconfigureVM(); }
+#define COM_FORWARD_IUnattended_ReconfigureVM_TO_OBJ(obj) COM_FORWARD_IUnattended_ReconfigureVM_TO ((obj)->)
+#define COM_FORWARD_IUnattended_ReconfigureVM_TO_BASE(base) COM_FORWARD_IUnattended_ReconfigureVM_TO (base::)
+#define COM_FORWARD_IUnattended_Done_TO(smth) HRESULT STDMETHODCALLTYPE Done() { return smth Done(); }
+#define COM_FORWARD_IUnattended_Done_TO_OBJ(obj) COM_FORWARD_IUnattended_Done_TO ((obj)->)
+#define COM_FORWARD_IUnattended_Done_TO_BASE(base) COM_FORWARD_IUnattended_Done_TO (base::)
+#define COM_FORWARD_IUnattended_TO(smth) COM_FORWARD_IUnattended_GETTER_IsoPath_TO (smth) COM_FORWARD_IUnattended_SETTER_IsoPath_TO (smth) COM_FORWARD_IUnattended_GETTER_Machine_TO (smth) COM_FORWARD_IUnattended_SETTER_Machine_TO (smth) COM_FORWARD_IUnattended_GETTER_User_TO (smth) COM_FORWARD_IUnattended_SETTER_User_TO (smth) COM_FORWARD_IUnattended_GETTER_Password_TO (smth) COM_FORWARD_IUnattended_SETTER_Password_TO (smth) COM_FORWARD_IUnattended_GETTER_FullUserName_TO (smth) COM_FORWARD_IUnattended_SETTER_FullUserName_TO (smth) COM_FORWARD_IUnattended_GETTER_ProductKey_TO (smth) COM_FORWARD_IUnattended_SETTER_ProductKey_TO (smth) COM_FORWARD_IUnattended_GETTER_AdditionsIsoPath_TO (smth) COM_FORWARD_IUnattended_SETTER_AdditionsIsoPath_TO (smth) COM_FORWARD_IUnattended_GETTER_InstallGuestAdditions_TO (smth) COM_FORWARD_IUnattended_SETTER_InstallGuestAdditions_TO (smth) COM_FORWARD_IUnattended_GETTER_ValidationKitIsoPath_TO (smth) COM_FORWARD_IUnattended_SETTER_ValidationKitIsoPath_TO (smth) COM_FORWARD_IUnattended_GETTER_InstallTestExecService_TO (smth) COM_FORWARD_IUnattended_SETTER_InstallTestExecService_TO (smth) COM_FORWARD_IUnattended_GETTER_TimeZone_TO (smth) COM_FORWARD_IUnattended_SETTER_TimeZone_TO (smth) COM_FORWARD_IUnattended_GETTER_Locale_TO (smth) COM_FORWARD_IUnattended_SETTER_Locale_TO (smth) COM_FORWARD_IUnattended_GETTER_Language_TO (smth) COM_FORWARD_IUnattended_SETTER_Language_TO (smth) COM_FORWARD_IUnattended_GETTER_Country_TO (smth) COM_FORWARD_IUnattended_SETTER_Country_TO (smth) COM_FORWARD_IUnattended_GETTER_Proxy_TO (smth) COM_FORWARD_IUnattended_SETTER_Proxy_TO (smth) COM_FORWARD_IUnattended_GETTER_PackageSelectionAdjustments_TO (smth) COM_FORWARD_IUnattended_SETTER_PackageSelectionAdjustments_TO (smth) COM_FORWARD_IUnattended_GETTER_Hostname_TO (smth) COM_FORWARD_IUnattended_SETTER_Hostname_TO (smth) COM_FORWARD_IUnattended_GETTER_AuxiliaryBasePath_TO (smth) COM_FORWARD_IUnattended_SETTER_AuxiliaryBasePath_TO (smth) COM_FORWARD_IUnattended_GETTER_ImageIndex_TO (smth) COM_FORWARD_IUnattended_SETTER_ImageIndex_TO (smth) COM_FORWARD_IUnattended_GETTER_ScriptTemplatePath_TO (smth) COM_FORWARD_IUnattended_SETTER_ScriptTemplatePath_TO (smth) COM_FORWARD_IUnattended_GETTER_PostInstallScriptTemplatePath_TO (smth) COM_FORWARD_IUnattended_SETTER_PostInstallScriptTemplatePath_TO (smth) COM_FORWARD_IUnattended_GETTER_PostInstallCommand_TO (smth) COM_FORWARD_IUnattended_SETTER_PostInstallCommand_TO (smth) COM_FORWARD_IUnattended_GETTER_ExtraInstallKernelParameters_TO (smth) COM_FORWARD_IUnattended_SETTER_ExtraInstallKernelParameters_TO (smth) COM_FORWARD_IUnattended_GETTER_DetectedOSTypeId_TO (smth) COM_FORWARD_IUnattended_GETTER_DetectedOSVersion_TO (smth) COM_FORWARD_IUnattended_GETTER_DetectedOSFlavor_TO (smth) COM_FORWARD_IUnattended_GETTER_DetectedOSLanguages_TO (smth) COM_FORWARD_IUnattended_GETTER_DetectedOSHints_TO (smth) COM_FORWARD_IUnattended_DetectIsoOS_TO (smth) COM_FORWARD_IUnattended_Prepare_TO (smth) COM_FORWARD_IUnattended_ConstructMedia_TO (smth) COM_FORWARD_IUnattended_ReconfigureVM_TO (smth) COM_FORWARD_IUnattended_Done_TO (smth) 
+#define COM_FORWARD_IUnattended_TO_OBJ(obj) COM_FORWARD_IUnattended_TO ((obj)->)
+#define COM_FORWARD_IUnattended_TO_BASE(base) COM_FORWARD_IUnattended_TO (base::)
+
+
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0009_v0_0_s_ifspec;
+
 #ifndef __IInternalMachineControl_INTERFACE_DEFINED__
 #define __IInternalMachineControl_INTERFACE_DEFINED__
 
@@ -7498,7 +8623,7 @@ EXTERN_C const IID IID_IInternalMachineControl;
 #endif 	/* __IInternalMachineControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0009 */
+/* interface __MIDL_itf_VirtualBox_0000_0010 */
 /* [local] */ 
 
 #define COM_FORWARD_IInternalMachineControl_UpdateState_TO(smth) HRESULT STDMETHODCALLTYPE UpdateState (MachineState aState) { return smth UpdateState (aState); }
@@ -7563,8 +8688,8 @@ EXTERN_C const IID IID_IInternalMachineControl;
 #define COM_FORWARD_IInternalMachineControl_TO_BASE(base) COM_FORWARD_IInternalMachineControl_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0010_v0_0_s_ifspec;
 
 #ifndef __IBIOSSettings_INTERFACE_DEFINED__
 #define __IBIOSSettings_INTERFACE_DEFINED__
@@ -7975,7 +9100,7 @@ EXTERN_C const IID IID_IBIOSSettings;
 #endif 	/* __IBIOSSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0010 */
+/* interface __MIDL_itf_VirtualBox_0000_0011 */
 /* [local] */ 
 
 #define COM_FORWARD_IBIOSSettings_GETTER_LogoFadeIn_TO(smth) HRESULT STDMETHODCALLTYPE get_LogoFadeIn (BOOL * aLogoFadeIn) { return smth get_LogoFadeIn (aLogoFadeIn); }
@@ -8046,8 +9171,8 @@ EXTERN_C const IID IID_IBIOSSettings;
 #define COM_FORWARD_IBIOSSettings_TO_BASE(base) COM_FORWARD_IBIOSSettings_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0011_v0_0_s_ifspec;
 
 #ifndef __IPCIAddress_INTERFACE_DEFINED__
 #define __IPCIAddress_INTERFACE_DEFINED__
@@ -8240,7 +9365,7 @@ EXTERN_C const IID IID_IPCIAddress;
 #endif 	/* __IPCIAddress_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0011 */
+/* interface __MIDL_itf_VirtualBox_0000_0012 */
 /* [local] */ 
 
 #define COM_FORWARD_IPCIAddress_GETTER_Bus_TO(smth) HRESULT STDMETHODCALLTYPE get_Bus (SHORT * aBus) { return smth get_Bus (aBus); }
@@ -8272,8 +9397,8 @@ EXTERN_C const IID IID_IPCIAddress;
 #define COM_FORWARD_IPCIAddress_TO_BASE(base) COM_FORWARD_IPCIAddress_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0012_v0_0_s_ifspec;
 
 #ifndef __IPCIDeviceAttachment_INTERFACE_DEFINED__
 #define __IPCIDeviceAttachment_INTERFACE_DEFINED__
@@ -8426,7 +9551,7 @@ EXTERN_C const IID IID_IPCIDeviceAttachment;
 #endif 	/* __IPCIDeviceAttachment_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0012 */
+/* interface __MIDL_itf_VirtualBox_0000_0013 */
 /* [local] */ 
 
 #define COM_FORWARD_IPCIDeviceAttachment_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -8446,8 +9571,8 @@ EXTERN_C const IID IID_IPCIDeviceAttachment;
 #define COM_FORWARD_IPCIDeviceAttachment_TO_BASE(base) COM_FORWARD_IPCIDeviceAttachment_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0013_v0_0_s_ifspec;
 
 #ifndef __IMachine_INTERFACE_DEFINED__
 #define __IMachine_INTERFACE_DEFINED__
@@ -8460,7 +9585,7 @@ EXTERN_C const IID IID_IMachine;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("b2547866-a0a1-4391-8b86-6952d82efaa0")
+    MIDL_INTERFACE("85cd948e-a71f-4289-281e-0ca7ad48cd89")
     IMachine : public IDispatch
     {
     public:
@@ -8941,9 +10066,6 @@ EXTERN_C const IID IID_IMachine;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute9IMachine( 
             /* [retval][out] */ ULONG *aReserved) = 0;
         
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute10IMachine( 
-            /* [retval][out] */ ULONG *aReserved) = 0;
-        
         virtual HRESULT STDMETHODCALLTYPE LockMachine( 
             /* [in] */ ISession *aSession,
             /* [in] */ LockType aLockType) = 0;
@@ -9126,22 +10248,34 @@ EXTERN_C const IID IID_IMachine;
             /* [in] */ CPUPropertyType aProperty,
             /* [in] */ BOOL aValue) = 0;
         
+        virtual HRESULT STDMETHODCALLTYPE GetCPUIDLeafByOrdinal( 
+            /* [in] */ ULONG aOrdinal,
+            /* [out] */ ULONG *aIdx,
+            /* [out] */ ULONG *aIdxSub,
+            /* [out] */ ULONG *aValEax,
+            /* [out] */ ULONG *aValEbx,
+            /* [out] */ ULONG *aValEcx,
+            /* [out] */ ULONG *aValEdx) = 0;
+        
         virtual HRESULT STDMETHODCALLTYPE GetCPUIDLeaf( 
-            /* [in] */ ULONG aId,
+            /* [in] */ ULONG aIdx,
+            /* [in] */ ULONG aIdxSub,
             /* [out] */ ULONG *aValEax,
             /* [out] */ ULONG *aValEbx,
             /* [out] */ ULONG *aValEcx,
             /* [out] */ ULONG *aValEdx) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE SetCPUIDLeaf( 
-            /* [in] */ ULONG aId,
+            /* [in] */ ULONG aIdx,
+            /* [in] */ ULONG aIdxSub,
             /* [in] */ ULONG aValEax,
             /* [in] */ ULONG aValEbx,
             /* [in] */ ULONG aValEcx,
             /* [in] */ ULONG aValEdx) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE RemoveCPUIDLeaf( 
-            /* [in] */ ULONG aId) = 0;
+            /* [in] */ ULONG aIdx,
+            /* [in] */ ULONG aIdxSub) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE RemoveAllCPUIDLeaves( void) = 0;
         
@@ -9330,8 +10464,6 @@ EXTERN_C const IID IID_IMachine;
         virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod5IMachine( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod6IMachine( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod7IMachine( void) = 0;
         
     };
     
@@ -10018,10 +11150,6 @@ EXTERN_C const IID IID_IMachine;
             IMachine * This,
             /* [retval][out] */ ULONG *aReserved);
         
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute10IMachine )( 
-            IMachine * This,
-            /* [retval][out] */ ULONG *aReserved);
-        
         HRESULT ( STDMETHODCALLTYPE *LockMachine )( 
             IMachine * This,
             /* [in] */ ISession *aSession,
@@ -10242,9 +11370,20 @@ EXTERN_C const IID IID_IMachine;
             /* [in] */ CPUPropertyType aProperty,
             /* [in] */ BOOL aValue);
         
+        HRESULT ( STDMETHODCALLTYPE *GetCPUIDLeafByOrdinal )( 
+            IMachine * This,
+            /* [in] */ ULONG aOrdinal,
+            /* [out] */ ULONG *aIdx,
+            /* [out] */ ULONG *aIdxSub,
+            /* [out] */ ULONG *aValEax,
+            /* [out] */ ULONG *aValEbx,
+            /* [out] */ ULONG *aValEcx,
+            /* [out] */ ULONG *aValEdx);
+        
         HRESULT ( STDMETHODCALLTYPE *GetCPUIDLeaf )( 
             IMachine * This,
-            /* [in] */ ULONG aId,
+            /* [in] */ ULONG aIdx,
+            /* [in] */ ULONG aIdxSub,
             /* [out] */ ULONG *aValEax,
             /* [out] */ ULONG *aValEbx,
             /* [out] */ ULONG *aValEcx,
@@ -10252,7 +11391,8 @@ EXTERN_C const IID IID_IMachine;
         
         HRESULT ( STDMETHODCALLTYPE *SetCPUIDLeaf )( 
             IMachine * This,
-            /* [in] */ ULONG aId,
+            /* [in] */ ULONG aIdx,
+            /* [in] */ ULONG aIdxSub,
             /* [in] */ ULONG aValEax,
             /* [in] */ ULONG aValEbx,
             /* [in] */ ULONG aValEcx,
@@ -10260,7 +11400,8 @@ EXTERN_C const IID IID_IMachine;
         
         HRESULT ( STDMETHODCALLTYPE *RemoveCPUIDLeaf )( 
             IMachine * This,
-            /* [in] */ ULONG aId);
+            /* [in] */ ULONG aIdx,
+            /* [in] */ ULONG aIdxSub);
         
         HRESULT ( STDMETHODCALLTYPE *RemoveAllCPUIDLeaves )( 
             IMachine * This);
@@ -10495,9 +11636,6 @@ EXTERN_C const IID IID_IMachine;
             IMachine * This);
         
         HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod6IMachine )( 
-            IMachine * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod7IMachine )( 
             IMachine * This);
         
         END_INTERFACE
@@ -11013,9 +12151,6 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_get_InternalAndReservedAttribute9IMachine(This,aReserved)	\
     ( (This)->lpVtbl -> get_InternalAndReservedAttribute9IMachine(This,aReserved) ) 
 
-#define IMachine_get_InternalAndReservedAttribute10IMachine(This,aReserved)	\
-    ( (This)->lpVtbl -> get_InternalAndReservedAttribute10IMachine(This,aReserved) ) 
-
 #define IMachine_LockMachine(This,aSession,aLockType)	\
     ( (This)->lpVtbl -> LockMachine(This,aSession,aLockType) ) 
 
@@ -11130,14 +12265,17 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_SetCPUProperty(This,aProperty,aValue)	\
     ( (This)->lpVtbl -> SetCPUProperty(This,aProperty,aValue) ) 
 
-#define IMachine_GetCPUIDLeaf(This,aId,aValEax,aValEbx,aValEcx,aValEdx)	\
-    ( (This)->lpVtbl -> GetCPUIDLeaf(This,aId,aValEax,aValEbx,aValEcx,aValEdx) ) 
+#define IMachine_GetCPUIDLeafByOrdinal(This,aOrdinal,aIdx,aIdxSub,aValEax,aValEbx,aValEcx,aValEdx)	\
+    ( (This)->lpVtbl -> GetCPUIDLeafByOrdinal(This,aOrdinal,aIdx,aIdxSub,aValEax,aValEbx,aValEcx,aValEdx) ) 
 
-#define IMachine_SetCPUIDLeaf(This,aId,aValEax,aValEbx,aValEcx,aValEdx)	\
-    ( (This)->lpVtbl -> SetCPUIDLeaf(This,aId,aValEax,aValEbx,aValEcx,aValEdx) ) 
+#define IMachine_GetCPUIDLeaf(This,aIdx,aIdxSub,aValEax,aValEbx,aValEcx,aValEdx)	\
+    ( (This)->lpVtbl -> GetCPUIDLeaf(This,aIdx,aIdxSub,aValEax,aValEbx,aValEcx,aValEdx) ) 
 
-#define IMachine_RemoveCPUIDLeaf(This,aId)	\
-    ( (This)->lpVtbl -> RemoveCPUIDLeaf(This,aId) ) 
+#define IMachine_SetCPUIDLeaf(This,aIdx,aIdxSub,aValEax,aValEbx,aValEcx,aValEdx)	\
+    ( (This)->lpVtbl -> SetCPUIDLeaf(This,aIdx,aIdxSub,aValEax,aValEbx,aValEcx,aValEdx) ) 
+
+#define IMachine_RemoveCPUIDLeaf(This,aIdx,aIdxSub)	\
+    ( (This)->lpVtbl -> RemoveCPUIDLeaf(This,aIdx,aIdxSub) ) 
 
 #define IMachine_RemoveAllCPUIDLeaves(This)	\
     ( (This)->lpVtbl -> RemoveAllCPUIDLeaves(This) ) 
@@ -11280,9 +12418,6 @@ EXTERN_C const IID IID_IMachine;
 #define IMachine_InternalAndReservedMethod6IMachine(This)	\
     ( (This)->lpVtbl -> InternalAndReservedMethod6IMachine(This) ) 
 
-#define IMachine_InternalAndReservedMethod7IMachine(This)	\
-    ( (This)->lpVtbl -> InternalAndReservedMethod7IMachine(This) ) 
-
 #endif /* COBJMACROS */
 
 
@@ -11294,7 +12429,7 @@ EXTERN_C const IID IID_IMachine;
 #endif 	/* __IMachine_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0013 */
+/* interface __MIDL_itf_VirtualBox_0000_0014 */
 /* [local] */ 
 
 #define COM_FORWARD_IMachine_GETTER_Parent_TO(smth) HRESULT STDMETHODCALLTYPE get_Parent (IVirtualBox * * aParent) { return smth get_Parent (aParent); }
@@ -11861,13 +12996,16 @@ EXTERN_C const IID IID_IMachine;
 #define COM_FORWARD_IMachine_SetCPUProperty_TO(smth) HRESULT STDMETHODCALLTYPE SetCPUProperty (CPUPropertyType aProperty, BOOL aValue) { return smth SetCPUProperty (aProperty, aValue); }
 #define COM_FORWARD_IMachine_SetCPUProperty_TO_OBJ(obj) COM_FORWARD_IMachine_SetCPUProperty_TO ((obj)->)
 #define COM_FORWARD_IMachine_SetCPUProperty_TO_BASE(base) COM_FORWARD_IMachine_SetCPUProperty_TO (base::)
-#define COM_FORWARD_IMachine_GetCPUIDLeaf_TO(smth) HRESULT STDMETHODCALLTYPE GetCPUIDLeaf (ULONG aId, ULONG * aValEax, ULONG * aValEbx, ULONG * aValEcx, ULONG * aValEdx) { return smth GetCPUIDLeaf (aId, aValEax, aValEbx, aValEcx, aValEdx); }
+#define COM_FORWARD_IMachine_GetCPUIDLeafByOrdinal_TO(smth) HRESULT STDMETHODCALLTYPE GetCPUIDLeafByOrdinal (ULONG aOrdinal, ULONG * aIdx, ULONG * aIdxSub, ULONG * aValEax, ULONG * aValEbx, ULONG * aValEcx, ULONG * aValEdx) { return smth GetCPUIDLeafByOrdinal (aOrdinal, aIdx, aIdxSub, aValEax, aValEbx, aValEcx, aValEdx); }
+#define COM_FORWARD_IMachine_GetCPUIDLeafByOrdinal_TO_OBJ(obj) COM_FORWARD_IMachine_GetCPUIDLeafByOrdinal_TO ((obj)->)
+#define COM_FORWARD_IMachine_GetCPUIDLeafByOrdinal_TO_BASE(base) COM_FORWARD_IMachine_GetCPUIDLeafByOrdinal_TO (base::)
+#define COM_FORWARD_IMachine_GetCPUIDLeaf_TO(smth) HRESULT STDMETHODCALLTYPE GetCPUIDLeaf (ULONG aIdx, ULONG aIdxSub, ULONG * aValEax, ULONG * aValEbx, ULONG * aValEcx, ULONG * aValEdx) { return smth GetCPUIDLeaf (aIdx, aIdxSub, aValEax, aValEbx, aValEcx, aValEdx); }
 #define COM_FORWARD_IMachine_GetCPUIDLeaf_TO_OBJ(obj) COM_FORWARD_IMachine_GetCPUIDLeaf_TO ((obj)->)
 #define COM_FORWARD_IMachine_GetCPUIDLeaf_TO_BASE(base) COM_FORWARD_IMachine_GetCPUIDLeaf_TO (base::)
-#define COM_FORWARD_IMachine_SetCPUIDLeaf_TO(smth) HRESULT STDMETHODCALLTYPE SetCPUIDLeaf (ULONG aId, ULONG aValEax, ULONG aValEbx, ULONG aValEcx, ULONG aValEdx) { return smth SetCPUIDLeaf (aId, aValEax, aValEbx, aValEcx, aValEdx); }
+#define COM_FORWARD_IMachine_SetCPUIDLeaf_TO(smth) HRESULT STDMETHODCALLTYPE SetCPUIDLeaf (ULONG aIdx, ULONG aIdxSub, ULONG aValEax, ULONG aValEbx, ULONG aValEcx, ULONG aValEdx) { return smth SetCPUIDLeaf (aIdx, aIdxSub, aValEax, aValEbx, aValEcx, aValEdx); }
 #define COM_FORWARD_IMachine_SetCPUIDLeaf_TO_OBJ(obj) COM_FORWARD_IMachine_SetCPUIDLeaf_TO ((obj)->)
 #define COM_FORWARD_IMachine_SetCPUIDLeaf_TO_BASE(base) COM_FORWARD_IMachine_SetCPUIDLeaf_TO (base::)
-#define COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO(smth) HRESULT STDMETHODCALLTYPE RemoveCPUIDLeaf (ULONG aId) { return smth RemoveCPUIDLeaf (aId); }
+#define COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO(smth) HRESULT STDMETHODCALLTYPE RemoveCPUIDLeaf (ULONG aIdx, ULONG aIdxSub) { return smth RemoveCPUIDLeaf (aIdx, aIdxSub); }
 #define COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO_OBJ(obj) COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO ((obj)->)
 #define COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO_BASE(base) COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO (base::)
 #define COM_FORWARD_IMachine_RemoveAllCPUIDLeaves_TO(smth) HRESULT STDMETHODCALLTYPE RemoveAllCPUIDLeaves() { return smth RemoveAllCPUIDLeaves(); }
@@ -11993,13 +13131,13 @@ EXTERN_C const IID IID_IMachine;
 #define COM_FORWARD_IMachine_ApplyDefaults_TO(smth) HRESULT STDMETHODCALLTYPE ApplyDefaults (BSTR aFlags) { return smth ApplyDefaults (aFlags); }
 #define COM_FORWARD_IMachine_ApplyDefaults_TO_OBJ(obj) COM_FORWARD_IMachine_ApplyDefaults_TO ((obj)->)
 #define COM_FORWARD_IMachine_ApplyDefaults_TO_BASE(base) COM_FORWARD_IMachine_ApplyDefaults_TO (base::)
-#define COM_FORWARD_IMachine_TO(smth) COM_FORWARD_IMachine_GETTER_Parent_TO (smth) COM_FORWARD_IMachine_GETTER_Icon_TO (smth) COM_FORWARD_IMachine_SETTER_Icon_TO (smth) COM_FORWARD_IMachine_GETTER_Accessible_TO (smth) COM_FORWARD_IMachine_GETTER_AccessError_TO (smth) COM_FORWARD_IMachine_GETTER_Name_TO (smth) COM_FORWARD_IMachine_SETTER_Name_TO (smth) COM_FORWARD_IMachine_GETTER_Description_TO (smth) COM_FORWARD_IMachine_SETTER_Description_TO (smth) COM_FORWARD_IMachine_GETTER_Id_TO (smth) COM_FORWARD_IMachine_GETTER_Groups_TO (smth) COM_FORWARD_IMachine_SETTER_Groups_TO (smth) COM_FORWARD_IMachine_GETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_SETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_GETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_SETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_GETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_SETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_GETTER_CPUIDPortabilityLevel_TO (smth) COM_FORWARD_IMachine_SETTER_CPUIDPortabilityLevel_TO (smth) COM_FORWARD_IMachine_GETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_SETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_GETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_SETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_GETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_GraphicsControllerType_TO (smth) COM_FORWARD_IMachine_SETTER_GraphicsControllerType_TO (smth) COM_FORWARD_IMachine_GETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_SETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_SETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureScreens_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureScreens_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureRate_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureRate_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureFPS_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureFPS_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureMaxTime_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureMaxTime_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureMaxFileSize_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureMaxFileSize_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureOptions_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureOptions_TO (smth) COM_FORWARD_IMachine_GETTER_BIOSSettings_TO (smth) COM_FORWARD_IMachine_GETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_SETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_GETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_SETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_SETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_GETTER_VRDEServer_TO (smth) COM_FORWARD_IMachine_GETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MediumAttachments_TO (smth) COM_FORWARD_IMachine_GETTER_USBControllers_TO (smth) COM_FORWARD_IMachine_GETTER_USBDeviceFilters_TO (smth) COM_FORWARD_IMachine_GETTER_AudioAdapter_TO (smth) COM_FORWARD_IMachine_GETTER_StorageControllers_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsAuxFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsModified_TO (smth) COM_FORWARD_IMachine_GETTER_SessionState_TO (smth) COM_FORWARD_IMachine_GETTER_SessionName_TO (smth) COM_FORWARD_IMachine_GETTER_SessionPID_TO (smth) COM_FORWARD_IMachine_GETTER_State_TO (smth) COM_FORWARD_IMachine_GETTER_LastStateChange_TO (smth) COM_FORWARD_IMachine_GETTER_StateFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_LogFolder_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentSnapshot_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotCount_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentStateModified_TO (smth) COM_FORWARD_IMachine_GETTER_SharedFolders_TO (smth) COM_FORWARD_IMachine_GETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_SETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_GETTER_DnDMode_TO (smth) COM_FORWARD_IMachine_SETTER_DnDMode_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_GETTER_ParavirtProvider_TO (smth) COM_FORWARD_IMachine_SETTER_ParavirtProvider_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_GETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_SETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_GETTER_PCIDeviceAssignments_TO (smth) COM_FORWARD_IMachine_GETTER_BandwidthControl_TO (smth) COM_FORWARD_IMachine_GETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_SETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_GETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_SETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_GETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_SETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_GETTER_DefaultFrontend_TO (smth) COM_FORWARD_IMachine_SETTER_DefaultFrontend_TO (smth) COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO (smth) COM_FORWARD_IMachine_GETTER_VMProcessPriority_TO (smth) COM_FORWARD_IMachine_SETTER_VMProcessPriority_TO (smth) COM_FORWARD_IMachine_GETTER_ParavirtDebug_TO (smth) COM_FORWARD_IMachine_SETTER_ParavirtDebug_TO (smth) COM_FORWARD_IMachine_GETTER_CPUProfile_TO (smth) COM_FORWARD_IMachine_SETTER_CPUProfile_TO (smth) COM_FORWARD_IMachine_LockMachine_TO (smth) COM_FORWARD_IMachine_LaunchVMProcess_TO (smth) COM_FORWARD_IMachine_SetBootOrder_TO (smth) COM_FORWARD_IMachine_GetBootOrder_TO (smth) COM_FORWARD_IMachine_AttachDevice_TO (smth) COM_FORWARD_IMachine_AttachDeviceWithoutMedium_TO (smth) COM_FORWARD_IMachine_DetachDevice_TO (smth) COM_FORWARD_IMachine_PassthroughDevice_TO (smth) COM_FORWARD_IMachine_TemporaryEjectDevice_TO (smth) COM_FORWARD_IMachine_NonRotationalDevice_TO (smth) COM_FORWARD_IMachine_SetAutoDiscardForDevice_TO (smth) COM_FORWARD_IMachine_SetHotPluggableForDevice_TO (smth) COM_FORWARD_IMachine_SetBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_SetNoBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_UnmountMedium_TO (smth) COM_FORWARD_IMachine_MountMedium_TO (smth) COM_FORWARD_IMachine_GetMedium_TO (smth) COM_FORWARD_IMachine_GetMediumAttachmentsOfController_TO (smth) COM_FORWARD_IMachine_GetMediumAttachment_TO (smth) COM_FORWARD_IMachine_AttachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_DetachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_GetNetworkAdapter_TO (smth) COM_FORWARD_IMachine_AddStorageController_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByName_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByInstance_TO (smth) COM_FORWARD_IMachine_RemoveStorageController_TO (smth) COM_FORWARD_IMachine_SetStorageControllerBootable_TO (smth) COM_FORWARD_IMachine_AddUSBController_TO (smth) COM_FORWARD_IMachine_RemoveUSBController_TO (smth) COM_FORWARD_IMachine_GetUSBControllerByName_TO (smth) COM_FORWARD_IMachine_GetUSBControllerCountByType_TO (smth) COM_FORWARD_IMachine_GetSerialPort_TO (smth) COM_FORWARD_IMachine_GetParallelPort_TO (smth) COM_FORWARD_IMachine_GetExtraDataKeys_TO (smth) COM_FORWARD_IMachine_GetExtraData_TO (smth) COM_FORWARD_IMachine_SetExtraData_TO (smth) COM_FORWARD_IMachine_GetCPUProperty_TO (smth) COM_FORWARD_IMachine_SetCPUProperty_TO (smth) COM_FORWARD_IMachine_GetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_SetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveAllCPUIDLeaves_TO (smth) COM_FORWARD_IMachine_GetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SetSettingsFilePath_TO (smth) COM_FORWARD_IMachine_SaveSettings_TO (smth) COM_FORWARD_IMachine_DiscardSettings_TO (smth) COM_FORWARD_IMachine_Unregister_TO (smth) COM_FORWARD_IMachine_DeleteConfig_TO (smth) COM_FORWARD_IMachine_ExportTo_TO (smth) COM_FORWARD_IMachine_FindSnapshot_TO (smth) COM_FORWARD_IMachine_CreateSharedFolder_TO (smth) COM_FORWARD_IMachine_RemoveSharedFolder_TO (smth) COM_FORWARD_IMachine_CanShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_ShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_GetGuestProperty_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyTimestamp_TO (smth) COM_FORWARD_IMachine_SetGuestProperty_TO (smth) COM_FORWARD_IMachine_SetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_DeleteGuestProperty_TO (smth) COM_FORWARD_IMachine_EnumerateGuestProperties_TO (smth) COM_FORWARD_IMachine_QuerySavedGuestScreenInfo_TO (smth) COM_FORWARD_IMachine_ReadSavedThumbnailToArray_TO (smth) COM_FORWARD_IMachine_QuerySavedScreenshotInfo_TO (smth) COM_FORWARD_IMachine_ReadSavedScreenshotToArray_TO (smth) COM_FORWARD_IMachine_HotPlugCPU_TO (smth) COM_FORWARD_IMachine_HotUnplugCPU_TO (smth) COM_FORWARD_IMachine_GetCPUStatus_TO (smth) COM_FORWARD_IMachine_GetEffectiveParavirtProvider_TO (smth) COM_FORWARD_IMachine_QueryLogFilename_TO (smth) COM_FORWARD_IMachine_ReadLog_TO (smth) COM_FORWARD_IMachine_CloneTo_TO (smth) COM_FORWARD_IMachine_SaveState_TO (smth) COM_FORWARD_IMachine_AdoptSavedState_TO (smth) COM_FORWARD_IMachine_DiscardSavedState_TO (smth) COM_FORWARD_IMachine_TakeSnapshot_TO (smth) COM_FORWARD_IMachine_DeleteSnapshot_TO (smth) COM_FORWARD_IMachine_DeleteSnapshotAndAllChildren_TO (smth) COM_FORWARD_IMachine_DeleteSnapshotRange_TO (smth) COM_FORWARD_IMachine_RestoreSnapshot_TO (smth) COM_FORWARD_IMachine_ApplyDefaults_TO (smth) 
+#define COM_FORWARD_IMachine_TO(smth) COM_FORWARD_IMachine_GETTER_Parent_TO (smth) COM_FORWARD_IMachine_GETTER_Icon_TO (smth) COM_FORWARD_IMachine_SETTER_Icon_TO (smth) COM_FORWARD_IMachine_GETTER_Accessible_TO (smth) COM_FORWARD_IMachine_GETTER_AccessError_TO (smth) COM_FORWARD_IMachine_GETTER_Name_TO (smth) COM_FORWARD_IMachine_SETTER_Name_TO (smth) COM_FORWARD_IMachine_GETTER_Description_TO (smth) COM_FORWARD_IMachine_SETTER_Description_TO (smth) COM_FORWARD_IMachine_GETTER_Id_TO (smth) COM_FORWARD_IMachine_GETTER_Groups_TO (smth) COM_FORWARD_IMachine_SETTER_Groups_TO (smth) COM_FORWARD_IMachine_GETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_SETTER_OSTypeId_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareVersion_TO (smth) COM_FORWARD_IMachine_GETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_SETTER_HardwareUUID_TO (smth) COM_FORWARD_IMachine_GETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_SETTER_CPUCount_TO (smth) COM_FORWARD_IMachine_GETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_CPUHotPlugEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_SETTER_CPUExecutionCap_TO (smth) COM_FORWARD_IMachine_GETTER_CPUIDPortabilityLevel_TO (smth) COM_FORWARD_IMachine_SETTER_CPUIDPortabilityLevel_TO (smth) COM_FORWARD_IMachine_GETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_SETTER_MemorySize_TO (smth) COM_FORWARD_IMachine_GETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_SETTER_MemoryBalloonSize_TO (smth) COM_FORWARD_IMachine_GETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_PageFusionEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_GraphicsControllerType_TO (smth) COM_FORWARD_IMachine_SETTER_GraphicsControllerType_TO (smth) COM_FORWARD_IMachine_GETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_SETTER_VRAMSize_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate3DEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_Accelerate2DVideoEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_SETTER_MonitorCount_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureScreens_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureScreens_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureFile_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureWidth_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureHeight_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureRate_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureRate_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureFPS_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureFPS_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureMaxTime_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureMaxTime_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureMaxFileSize_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureMaxFileSize_TO (smth) COM_FORWARD_IMachine_GETTER_VideoCaptureOptions_TO (smth) COM_FORWARD_IMachine_SETTER_VideoCaptureOptions_TO (smth) COM_FORWARD_IMachine_GETTER_BIOSSettings_TO (smth) COM_FORWARD_IMachine_GETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_SETTER_FirmwareType_TO (smth) COM_FORWARD_IMachine_GETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_PointingHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_SETTER_KeyboardHIDType_TO (smth) COM_FORWARD_IMachine_GETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_HPETEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_SETTER_ChipsetType_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_SETTER_SnapshotFolder_TO (smth) COM_FORWARD_IMachine_GETTER_VRDEServer_TO (smth) COM_FORWARD_IMachine_GETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_EmulatedUSBCardReaderEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_MediumAttachments_TO (smth) COM_FORWARD_IMachine_GETTER_USBControllers_TO (smth) COM_FORWARD_IMachine_GETTER_USBDeviceFilters_TO (smth) COM_FORWARD_IMachine_GETTER_AudioAdapter_TO (smth) COM_FORWARD_IMachine_GETTER_StorageControllers_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsAuxFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_SettingsModified_TO (smth) COM_FORWARD_IMachine_GETTER_SessionState_TO (smth) COM_FORWARD_IMachine_GETTER_SessionName_TO (smth) COM_FORWARD_IMachine_GETTER_SessionPID_TO (smth) COM_FORWARD_IMachine_GETTER_State_TO (smth) COM_FORWARD_IMachine_GETTER_LastStateChange_TO (smth) COM_FORWARD_IMachine_GETTER_StateFilePath_TO (smth) COM_FORWARD_IMachine_GETTER_LogFolder_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentSnapshot_TO (smth) COM_FORWARD_IMachine_GETTER_SnapshotCount_TO (smth) COM_FORWARD_IMachine_GETTER_CurrentStateModified_TO (smth) COM_FORWARD_IMachine_GETTER_SharedFolders_TO (smth) COM_FORWARD_IMachine_GETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_SETTER_ClipboardMode_TO (smth) COM_FORWARD_IMachine_GETTER_DnDMode_TO (smth) COM_FORWARD_IMachine_SETTER_DnDMode_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPort_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterAddress_TO (smth) COM_FORWARD_IMachine_GETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_SETTER_TeleporterPassword_TO (smth) COM_FORWARD_IMachine_GETTER_ParavirtProvider_TO (smth) COM_FORWARD_IMachine_SETTER_ParavirtProvider_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceState_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePort_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceAddress_TO (smth) COM_FORWARD_IMachine_GETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_SETTER_FaultTolerancePassword_TO (smth) COM_FORWARD_IMachine_GETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_SETTER_FaultToleranceSyncInterval_TO (smth) COM_FORWARD_IMachine_GETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_SETTER_RTCUseUTC_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_SETTER_IOCacheSize_TO (smth) COM_FORWARD_IMachine_GETTER_PCIDeviceAssignments_TO (smth) COM_FORWARD_IMachine_GETTER_BandwidthControl_TO (smth) COM_FORWARD_IMachine_GETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_TracingEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_SETTER_TracingConfig_TO (smth) COM_FORWARD_IMachine_GETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_SETTER_AllowTracingToAccessVM_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartEnabled_TO (smth) COM_FORWARD_IMachine_GETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_SETTER_AutostartDelay_TO (smth) COM_FORWARD_IMachine_GETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_SETTER_AutostopType_TO (smth) COM_FORWARD_IMachine_GETTER_DefaultFrontend_TO (smth) COM_FORWARD_IMachine_SETTER_DefaultFrontend_TO (smth) COM_FORWARD_IMachine_GETTER_USBProxyAvailable_TO (smth) COM_FORWARD_IMachine_GETTER_VMProcessPriority_TO (smth) COM_FORWARD_IMachine_SETTER_VMProcessPriority_TO (smth) COM_FORWARD_IMachine_GETTER_ParavirtDebug_TO (smth) COM_FORWARD_IMachine_SETTER_ParavirtDebug_TO (smth) COM_FORWARD_IMachine_GETTER_CPUProfile_TO (smth) COM_FORWARD_IMachine_SETTER_CPUProfile_TO (smth) COM_FORWARD_IMachine_LockMachine_TO (smth) COM_FORWARD_IMachine_LaunchVMProcess_TO (smth) COM_FORWARD_IMachine_SetBootOrder_TO (smth) COM_FORWARD_IMachine_GetBootOrder_TO (smth) COM_FORWARD_IMachine_AttachDevice_TO (smth) COM_FORWARD_IMachine_AttachDeviceWithoutMedium_TO (smth) COM_FORWARD_IMachine_DetachDevice_TO (smth) COM_FORWARD_IMachine_PassthroughDevice_TO (smth) COM_FORWARD_IMachine_TemporaryEjectDevice_TO (smth) COM_FORWARD_IMachine_NonRotationalDevice_TO (smth) COM_FORWARD_IMachine_SetAutoDiscardForDevice_TO (smth) COM_FORWARD_IMachine_SetHotPluggableForDevice_TO (smth) COM_FORWARD_IMachine_SetBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_SetNoBandwidthGroupForDevice_TO (smth) COM_FORWARD_IMachine_UnmountMedium_TO (smth) COM_FORWARD_IMachine_MountMedium_TO (smth) COM_FORWARD_IMachine_GetMedium_TO (smth) COM_FORWARD_IMachine_GetMediumAttachmentsOfController_TO (smth) COM_FORWARD_IMachine_GetMediumAttachment_TO (smth) COM_FORWARD_IMachine_AttachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_DetachHostPCIDevice_TO (smth) COM_FORWARD_IMachine_GetNetworkAdapter_TO (smth) COM_FORWARD_IMachine_AddStorageController_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByName_TO (smth) COM_FORWARD_IMachine_GetStorageControllerByInstance_TO (smth) COM_FORWARD_IMachine_RemoveStorageController_TO (smth) COM_FORWARD_IMachine_SetStorageControllerBootable_TO (smth) COM_FORWARD_IMachine_AddUSBController_TO (smth) COM_FORWARD_IMachine_RemoveUSBController_TO (smth) COM_FORWARD_IMachine_GetUSBControllerByName_TO (smth) COM_FORWARD_IMachine_GetUSBControllerCountByType_TO (smth) COM_FORWARD_IMachine_GetSerialPort_TO (smth) COM_FORWARD_IMachine_GetParallelPort_TO (smth) COM_FORWARD_IMachine_GetExtraDataKeys_TO (smth) COM_FORWARD_IMachine_GetExtraData_TO (smth) COM_FORWARD_IMachine_SetExtraData_TO (smth) COM_FORWARD_IMachine_GetCPUProperty_TO (smth) COM_FORWARD_IMachine_SetCPUProperty_TO (smth) COM_FORWARD_IMachine_GetCPUIDLeafByOrdinal_TO (smth) COM_FORWARD_IMachine_GetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_SetCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveCPUIDLeaf_TO (smth) COM_FORWARD_IMachine_RemoveAllCPUIDLeaves_TO (smth) COM_FORWARD_IMachine_GetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SetHWVirtExProperty_TO (smth) COM_FORWARD_IMachine_SetSettingsFilePath_TO (smth) COM_FORWARD_IMachine_SaveSettings_TO (smth) COM_FORWARD_IMachine_DiscardSettings_TO (smth) COM_FORWARD_IMachine_Unregister_TO (smth) COM_FORWARD_IMachine_DeleteConfig_TO (smth) COM_FORWARD_IMachine_ExportTo_TO (smth) COM_FORWARD_IMachine_FindSnapshot_TO (smth) COM_FORWARD_IMachine_CreateSharedFolder_TO (smth) COM_FORWARD_IMachine_RemoveSharedFolder_TO (smth) COM_FORWARD_IMachine_CanShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_ShowConsoleWindow_TO (smth) COM_FORWARD_IMachine_GetGuestProperty_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_GetGuestPropertyTimestamp_TO (smth) COM_FORWARD_IMachine_SetGuestProperty_TO (smth) COM_FORWARD_IMachine_SetGuestPropertyValue_TO (smth) COM_FORWARD_IMachine_DeleteGuestProperty_TO (smth) COM_FORWARD_IMachine_EnumerateGuestProperties_TO (smth) COM_FORWARD_IMachine_QuerySavedGuestScreenInfo_TO (smth) COM_FORWARD_IMachine_ReadSavedThumbnailToArray_TO (smth) COM_FORWARD_IMachine_QuerySavedScreenshotInfo_TO (smth) COM_FORWARD_IMachine_ReadSavedScreenshotToArray_TO (smth) COM_FORWARD_IMachine_HotPlugCPU_TO (smth) COM_FORWARD_IMachine_HotUnplugCPU_TO (smth) COM_FORWARD_IMachine_GetCPUStatus_TO (smth) COM_FORWARD_IMachine_GetEffectiveParavirtProvider_TO (smth) COM_FORWARD_IMachine_QueryLogFilename_TO (smth) COM_FORWARD_IMachine_ReadLog_TO (smth) COM_FORWARD_IMachine_CloneTo_TO (smth) COM_FORWARD_IMachine_SaveState_TO (smth) COM_FORWARD_IMachine_AdoptSavedState_TO (smth) COM_FORWARD_IMachine_DiscardSavedState_TO (smth) COM_FORWARD_IMachine_TakeSnapshot_TO (smth) COM_FORWARD_IMachine_DeleteSnapshot_TO (smth) COM_FORWARD_IMachine_DeleteSnapshotAndAllChildren_TO (smth) COM_FORWARD_IMachine_DeleteSnapshotRange_TO (smth) COM_FORWARD_IMachine_RestoreSnapshot_TO (smth) COM_FORWARD_IMachine_ApplyDefaults_TO (smth) 
 #define COM_FORWARD_IMachine_TO_OBJ(obj) COM_FORWARD_IMachine_TO ((obj)->)
 #define COM_FORWARD_IMachine_TO_BASE(base) COM_FORWARD_IMachine_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0014_v0_0_s_ifspec;
 
 #ifndef __IEmulatedUSB_INTERFACE_DEFINED__
 #define __IEmulatedUSB_INTERFACE_DEFINED__
@@ -12216,7 +13354,7 @@ EXTERN_C const IID IID_IEmulatedUSB;
 #endif 	/* __IEmulatedUSB_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0014 */
+/* interface __MIDL_itf_VirtualBox_0000_0015 */
 /* [local] */ 
 
 #define COM_FORWARD_IEmulatedUSB_GETTER_Webcams_TO(smth) HRESULT STDMETHODCALLTYPE get_Webcams (SAFEARRAY * * aWebcams) { return smth get_Webcams (aWebcams); }
@@ -12233,8 +13371,8 @@ EXTERN_C const IID IID_IEmulatedUSB;
 #define COM_FORWARD_IEmulatedUSB_TO_BASE(base) COM_FORWARD_IEmulatedUSB_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0015_v0_0_s_ifspec;
 
 #ifndef __IVRDEServerInfo_INTERFACE_DEFINED__
 #define __IVRDEServerInfo_INTERFACE_DEFINED__
@@ -12577,7 +13715,7 @@ EXTERN_C const IID IID_IVRDEServerInfo;
 #endif 	/* __IVRDEServerInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0015 */
+/* interface __MIDL_itf_VirtualBox_0000_0016 */
 /* [local] */ 
 
 #define COM_FORWARD_IVRDEServerInfo_GETTER_Active_TO(smth) HRESULT STDMETHODCALLTYPE get_Active (BOOL * aActive) { return smth get_Active (aActive); }
@@ -12630,8 +13768,8 @@ EXTERN_C const IID IID_IVRDEServerInfo;
 #define COM_FORWARD_IVRDEServerInfo_TO_BASE(base) COM_FORWARD_IVRDEServerInfo_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0016_v0_0_s_ifspec;
 
 #ifndef __IConsole_INTERFACE_DEFINED__
 #define __IConsole_INTERFACE_DEFINED__
@@ -13288,7 +14426,7 @@ EXTERN_C const IID IID_IConsole;
 #endif 	/* __IConsole_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0016 */
+/* interface __MIDL_itf_VirtualBox_0000_0017 */
 /* [local] */ 
 
 #define COM_FORWARD_IConsole_GETTER_Machine_TO(smth) HRESULT STDMETHODCALLTYPE get_Machine (IMachine * * aMachine) { return smth get_Machine (aMachine); }
@@ -13410,8 +14548,8 @@ EXTERN_C const IID IID_IConsole;
 #define COM_FORWARD_IConsole_TO_BASE(base) COM_FORWARD_IConsole_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0017_v0_0_s_ifspec;
 
 #ifndef __IHostNetworkInterface_INTERFACE_DEFINED__
 #define __IHostNetworkInterface_INTERFACE_DEFINED__
@@ -13469,6 +14607,9 @@ EXTERN_C const IID IID_IHostNetworkInterface;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InterfaceType( 
             /* [retval][out] */ HostNetworkInterfaceType *aInterfaceType) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Wireless( 
+            /* [retval][out] */ BOOL *aWireless) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IHostNetworkInterface( 
             /* [retval][out] */ ULONG *aReserved) = 0;
@@ -13603,6 +14744,10 @@ EXTERN_C const IID IID_IHostNetworkInterface;
             IHostNetworkInterface * This,
             /* [retval][out] */ HostNetworkInterfaceType *aInterfaceType);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Wireless )( 
+            IHostNetworkInterface * This,
+            /* [retval][out] */ BOOL *aWireless);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IHostNetworkInterface )( 
             IHostNetworkInterface * This,
             /* [retval][out] */ ULONG *aReserved);
@@ -13719,6 +14864,9 @@ EXTERN_C const IID IID_IHostNetworkInterface;
 #define IHostNetworkInterface_get_InterfaceType(This,aInterfaceType)	\
     ( (This)->lpVtbl -> get_InterfaceType(This,aInterfaceType) ) 
 
+#define IHostNetworkInterface_get_Wireless(This,aWireless)	\
+    ( (This)->lpVtbl -> get_Wireless(This,aWireless) ) 
+
 #define IHostNetworkInterface_get_InternalAndReservedAttribute1IHostNetworkInterface(This,aReserved)	\
     ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IHostNetworkInterface(This,aReserved) ) 
 
@@ -13760,7 +14908,7 @@ EXTERN_C const IID IID_IHostNetworkInterface;
 #endif 	/* __IHostNetworkInterface_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0017 */
+/* interface __MIDL_itf_VirtualBox_0000_0018 */
 /* [local] */ 
 
 #define COM_FORWARD_IHostNetworkInterface_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -13805,6 +14953,9 @@ EXTERN_C const IID IID_IHostNetworkInterface;
 #define COM_FORWARD_IHostNetworkInterface_GETTER_InterfaceType_TO(smth) HRESULT STDMETHODCALLTYPE get_InterfaceType (HostNetworkInterfaceType * aInterfaceType) { return smth get_InterfaceType (aInterfaceType); }
 #define COM_FORWARD_IHostNetworkInterface_GETTER_InterfaceType_TO_OBJ(obj) COM_FORWARD_IHostNetworkInterface_GETTER_InterfaceType_TO ((obj)->)
 #define COM_FORWARD_IHostNetworkInterface_GETTER_InterfaceType_TO_BASE(base) COM_FORWARD_IHostNetworkInterface_GETTER_InterfaceType_TO (base::)
+#define COM_FORWARD_IHostNetworkInterface_GETTER_Wireless_TO(smth) HRESULT STDMETHODCALLTYPE get_Wireless (BOOL * aWireless) { return smth get_Wireless (aWireless); }
+#define COM_FORWARD_IHostNetworkInterface_GETTER_Wireless_TO_OBJ(obj) COM_FORWARD_IHostNetworkInterface_GETTER_Wireless_TO ((obj)->)
+#define COM_FORWARD_IHostNetworkInterface_GETTER_Wireless_TO_BASE(base) COM_FORWARD_IHostNetworkInterface_GETTER_Wireless_TO (base::)
 #define COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfig_TO(smth) HRESULT STDMETHODCALLTYPE EnableStaticIPConfig (BSTR aIPAddress, BSTR aNetworkMask) { return smth EnableStaticIPConfig (aIPAddress, aNetworkMask); }
 #define COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfig_TO_OBJ(obj) COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfig_TO ((obj)->)
 #define COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfig_TO_BASE(base) COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfig_TO (base::)
@@ -13817,13 +14968,13 @@ EXTERN_C const IID IID_IHostNetworkInterface;
 #define COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO(smth) HRESULT STDMETHODCALLTYPE DHCPRediscover() { return smth DHCPRediscover(); }
 #define COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO_OBJ(obj) COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO ((obj)->)
 #define COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO_BASE(base) COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO (base::)
-#define COM_FORWARD_IHostNetworkInterface_TO(smth) COM_FORWARD_IHostNetworkInterface_GETTER_Name_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_ShortName_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_Id_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_NetworkName_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_DHCPEnabled_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPAddress_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_NetworkMask_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6Supported_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6Address_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6NetworkMaskPrefixLength_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_HardwareAddress_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_MediumType_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_Status_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_InterfaceType_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfig_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfigV6_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableDynamicIPConfig_TO (smth) COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO (smth) 
+#define COM_FORWARD_IHostNetworkInterface_TO(smth) COM_FORWARD_IHostNetworkInterface_GETTER_Name_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_ShortName_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_Id_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_NetworkName_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_DHCPEnabled_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPAddress_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_NetworkMask_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6Supported_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6Address_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_IPV6NetworkMaskPrefixLength_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_HardwareAddress_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_MediumType_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_Status_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_InterfaceType_TO (smth) COM_FORWARD_IHostNetworkInterface_GETTER_Wireless_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfig_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableStaticIPConfigV6_TO (smth) COM_FORWARD_IHostNetworkInterface_EnableDynamicIPConfig_TO (smth) COM_FORWARD_IHostNetworkInterface_DHCPRediscover_TO (smth) 
 #define COM_FORWARD_IHostNetworkInterface_TO_OBJ(obj) COM_FORWARD_IHostNetworkInterface_TO ((obj)->)
 #define COM_FORWARD_IHostNetworkInterface_TO_BASE(base) COM_FORWARD_IHostNetworkInterface_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0018_v0_0_s_ifspec;
 
 #ifndef __IHostVideoInputDevice_INTERFACE_DEFINED__
 #define __IHostVideoInputDevice_INTERFACE_DEFINED__
@@ -14006,7 +15157,7 @@ EXTERN_C const IID IID_IHostVideoInputDevice;
 #endif 	/* __IHostVideoInputDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0018 */
+/* interface __MIDL_itf_VirtualBox_0000_0019 */
 /* [local] */ 
 
 #define COM_FORWARD_IHostVideoInputDevice_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -14023,8 +15174,8 @@ EXTERN_C const IID IID_IHostVideoInputDevice;
 #define COM_FORWARD_IHostVideoInputDevice_TO_BASE(base) COM_FORWARD_IHostVideoInputDevice_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0019_v0_0_s_ifspec;
 
 #ifndef __IHost_INTERFACE_DEFINED__
 #define __IHost_INTERFACE_DEFINED__
@@ -14685,7 +15836,7 @@ EXTERN_C const IID IID_IHost;
 #endif 	/* __IHost_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0019 */
+/* interface __MIDL_itf_VirtualBox_0000_0020 */
 /* [local] */ 
 
 #define COM_FORWARD_IHost_GETTER_DVDDrives_TO(smth) HRESULT STDMETHODCALLTYPE get_DVDDrives (SAFEARRAY * * aDVDDrives) { return smth get_DVDDrives (aDVDDrives); }
@@ -14807,8 +15958,8 @@ EXTERN_C const IID IID_IHost;
 #define COM_FORWARD_IHost_TO_BASE(base) COM_FORWARD_IHost_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0020_v0_0_s_ifspec;
 
 #ifndef __ISystemProperties_INTERFACE_DEFINED__
 #define __ISystemProperties_INTERFACE_DEFINED__
@@ -15689,7 +16840,7 @@ EXTERN_C const IID IID_ISystemProperties;
 #endif 	/* __ISystemProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0020 */
+/* interface __MIDL_itf_VirtualBox_0000_0021 */
 /* [local] */ 
 
 #define COM_FORWARD_ISystemProperties_GETTER_MinGuestRAM_TO(smth) HRESULT STDMETHODCALLTYPE get_MinGuestRAM (ULONG * aMinGuestRAM) { return smth get_MinGuestRAM (aMinGuestRAM); }
@@ -15862,8 +17013,8 @@ EXTERN_C const IID IID_ISystemProperties;
 #define COM_FORWARD_ISystemProperties_TO_BASE(base) COM_FORWARD_ISystemProperties_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0021_v0_0_s_ifspec;
 
 #ifndef __IGuestOSType_INTERFACE_DEFINED__
 #define __IGuestOSType_INTERFACE_DEFINED__
@@ -16436,7 +17587,7 @@ EXTERN_C const IID IID_IGuestOSType;
 #endif 	/* __IGuestOSType_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0021 */
+/* interface __MIDL_itf_VirtualBox_0000_0022 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestOSType_GETTER_FamilyId_TO(smth) HRESULT STDMETHODCALLTYPE get_FamilyId (BSTR * aFamilyId) { return smth get_FamilyId (aFamilyId); }
@@ -16537,8 +17688,8 @@ EXTERN_C const IID IID_IGuestOSType;
 #define COM_FORWARD_IGuestOSType_TO_BASE(base) COM_FORWARD_IGuestOSType_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0022_v0_0_s_ifspec;
 
 #ifndef __IAdditionsFacility_INTERFACE_DEFINED__
 #define __IAdditionsFacility_INTERFACE_DEFINED__
@@ -16721,7 +17872,7 @@ EXTERN_C const IID IID_IAdditionsFacility;
 #endif 	/* __IAdditionsFacility_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0022 */
+/* interface __MIDL_itf_VirtualBox_0000_0023 */
 /* [local] */ 
 
 #define COM_FORWARD_IAdditionsFacility_GETTER_ClassType_TO(smth) HRESULT STDMETHODCALLTYPE get_ClassType (AdditionsFacilityClass * aClassType) { return smth get_ClassType (aClassType); }
@@ -16744,8 +17895,8 @@ EXTERN_C const IID IID_IAdditionsFacility;
 #define COM_FORWARD_IAdditionsFacility_TO_BASE(base) COM_FORWARD_IAdditionsFacility_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0023_v0_0_s_ifspec;
 
 #ifndef __IDnDBase_INTERFACE_DEFINED__
 #define __IDnDBase_INTERFACE_DEFINED__
@@ -16938,7 +18089,7 @@ EXTERN_C const IID IID_IDnDBase;
 #endif 	/* __IDnDBase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0023 */
+/* interface __MIDL_itf_VirtualBox_0000_0024 */
 /* [local] */ 
 
 #define COM_FORWARD_IDnDBase_GETTER_Formats_TO(smth) HRESULT STDMETHODCALLTYPE get_Formats (SAFEARRAY * * aFormats) { return smth get_Formats (aFormats); }
@@ -16961,8 +18112,8 @@ EXTERN_C const IID IID_IDnDBase;
 #define COM_FORWARD_IDnDBase_TO_BASE(base) COM_FORWARD_IDnDBase_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0024_v0_0_s_ifspec;
 
 #ifndef __IDnDSource_INTERFACE_DEFINED__
 #define __IDnDSource_INTERFACE_DEFINED__
@@ -17200,7 +18351,7 @@ EXTERN_C const IID IID_IDnDSource;
 #endif 	/* __IDnDSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0024 */
+/* interface __MIDL_itf_VirtualBox_0000_0025 */
 /* [local] */ 
 
 #define COM_FORWARD_IDnDSource_DragIsPending_TO(smth) HRESULT STDMETHODCALLTYPE DragIsPending (ULONG aScreenId, SAFEARRAY * * aFormats, SAFEARRAY * * aAllowedActions, DnDAction * aDefaultAction) { return smth DragIsPending (aScreenId, aFormats, aAllowedActions, aDefaultAction); }
@@ -17217,8 +18368,8 @@ EXTERN_C const IID IID_IDnDSource;
 #define COM_FORWARD_IDnDSource_TO_BASE(base) COM_FORWARD_IDnDSource_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0025_v0_0_s_ifspec;
 
 #ifndef __IGuestDnDSource_INTERFACE_DEFINED__
 #define __IGuestDnDSource_INTERFACE_DEFINED__
@@ -17445,7 +18596,7 @@ EXTERN_C const IID IID_IGuestDnDSource;
 #endif 	/* __IGuestDnDSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0025 */
+/* interface __MIDL_itf_VirtualBox_0000_0026 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestDnDSource_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -17456,8 +18607,8 @@ EXTERN_C const IID IID_IGuestDnDSource;
 #define COM_FORWARD_IGuestDnDSource_TO_BASE(base) COM_FORWARD_IGuestDnDSource_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0026_v0_0_s_ifspec;
 
 #ifndef __IDnDTarget_INTERFACE_DEFINED__
 #define __IDnDTarget_INTERFACE_DEFINED__
@@ -17759,7 +18910,7 @@ EXTERN_C const IID IID_IDnDTarget;
 #endif 	/* __IDnDTarget_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0026 */
+/* interface __MIDL_itf_VirtualBox_0000_0027 */
 /* [local] */ 
 
 #define COM_FORWARD_IDnDTarget_Enter_TO(smth) HRESULT STDMETHODCALLTYPE Enter (ULONG aScreenId, ULONG aY, ULONG aX, DnDAction aDefaultAction, SAFEARRAY * * aAllowedActions, SAFEARRAY * * aFormats, DnDAction * aResultAction) { return smth Enter (aScreenId, aY, aX, aDefaultAction, aAllowedActions, aFormats, aResultAction); }
@@ -17785,8 +18936,8 @@ EXTERN_C const IID IID_IDnDTarget;
 #define COM_FORWARD_IDnDTarget_TO_BASE(base) COM_FORWARD_IDnDTarget_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0027_v0_0_s_ifspec;
 
 #ifndef __IGuestDnDTarget_INTERFACE_DEFINED__
 #define __IGuestDnDTarget_INTERFACE_DEFINED__
@@ -18051,7 +19202,7 @@ EXTERN_C const IID IID_IGuestDnDTarget;
 #endif 	/* __IGuestDnDTarget_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0027 */
+/* interface __MIDL_itf_VirtualBox_0000_0028 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestDnDTarget_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -18062,8 +19213,8 @@ EXTERN_C const IID IID_IGuestDnDTarget;
 #define COM_FORWARD_IGuestDnDTarget_TO_BASE(base) COM_FORWARD_IGuestDnDTarget_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0028_v0_0_s_ifspec;
 
 #ifndef __IGuestSession_INTERFACE_DEFINED__
 #define __IGuestSession_INTERFACE_DEFINED__
@@ -19030,7 +20181,7 @@ EXTERN_C const IID IID_IGuestSession;
 #endif 	/* __IGuestSession_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0028 */
+/* interface __MIDL_itf_VirtualBox_0000_0029 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestSession_GETTER_User_TO(smth) HRESULT STDMETHODCALLTYPE get_User (BSTR * aUser) { return smth get_User (aUser); }
@@ -19200,8 +20351,8 @@ EXTERN_C const IID IID_IGuestSession;
 #define COM_FORWARD_IGuestSession_TO_BASE(base) COM_FORWARD_IGuestSession_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0029_v0_0_s_ifspec;
 
 #ifndef __IProcess_INTERFACE_DEFINED__
 #define __IProcess_INTERFACE_DEFINED__
@@ -19530,7 +20681,7 @@ EXTERN_C const IID IID_IProcess;
 #endif 	/* __IProcess_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0029 */
+/* interface __MIDL_itf_VirtualBox_0000_0030 */
 /* [local] */ 
 
 #define COM_FORWARD_IProcess_GETTER_Arguments_TO(smth) HRESULT STDMETHODCALLTYPE get_Arguments (SAFEARRAY * * aArguments) { return smth get_Arguments (aArguments); }
@@ -19580,8 +20731,8 @@ EXTERN_C const IID IID_IProcess;
 #define COM_FORWARD_IProcess_TO_BASE(base) COM_FORWARD_IProcess_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0030_v0_0_s_ifspec;
 
 #ifndef __IGuestProcess_INTERFACE_DEFINED__
 #define __IGuestProcess_INTERFACE_DEFINED__
@@ -19851,7 +21002,7 @@ EXTERN_C const IID IID_IGuestProcess;
 #endif 	/* __IGuestProcess_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0030 */
+/* interface __MIDL_itf_VirtualBox_0000_0031 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestProcess_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -19862,8 +21013,8 @@ EXTERN_C const IID IID_IGuestProcess;
 #define COM_FORWARD_IGuestProcess_TO_BASE(base) COM_FORWARD_IGuestProcess_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0031_v0_0_s_ifspec;
 
 #ifndef __IDirectory_INTERFACE_DEFINED__
 #define __IDirectory_INTERFACE_DEFINED__
@@ -20070,7 +21221,7 @@ EXTERN_C const IID IID_IDirectory;
 #endif 	/* __IDirectory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0031 */
+/* interface __MIDL_itf_VirtualBox_0000_0032 */
 /* [local] */ 
 
 #define COM_FORWARD_IDirectory_GETTER_DirectoryName_TO(smth) HRESULT STDMETHODCALLTYPE get_DirectoryName (BSTR * aDirectoryName) { return smth get_DirectoryName (aDirectoryName); }
@@ -20090,8 +21241,8 @@ EXTERN_C const IID IID_IDirectory;
 #define COM_FORWARD_IDirectory_TO_BASE(base) COM_FORWARD_IDirectory_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0032_v0_0_s_ifspec;
 
 #ifndef __IGuestDirectory_INTERFACE_DEFINED__
 #define __IGuestDirectory_INTERFACE_DEFINED__
@@ -20282,7 +21433,7 @@ EXTERN_C const IID IID_IGuestDirectory;
 #endif 	/* __IGuestDirectory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0032 */
+/* interface __MIDL_itf_VirtualBox_0000_0033 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestDirectory_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -20293,8 +21444,8 @@ EXTERN_C const IID IID_IGuestDirectory;
 #define COM_FORWARD_IGuestDirectory_TO_BASE(base) COM_FORWARD_IGuestDirectory_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0033_v0_0_s_ifspec;
 
 #ifndef __IFile_INTERFACE_DEFINED__
 #define __IFile_INTERFACE_DEFINED__
@@ -20693,7 +21844,7 @@ EXTERN_C const IID IID_IFile;
 #endif 	/* __IFile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0033 */
+/* interface __MIDL_itf_VirtualBox_0000_0034 */
 /* [local] */ 
 
 #define COM_FORWARD_IFile_GETTER_EventSource_TO(smth) HRESULT STDMETHODCALLTYPE get_EventSource (IEventSource * * aEventSource) { return smth get_EventSource (aEventSource); }
@@ -20758,8 +21909,8 @@ EXTERN_C const IID IID_IFile;
 #define COM_FORWARD_IFile_TO_BASE(base) COM_FORWARD_IFile_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0034_v0_0_s_ifspec;
 
 #ifndef __IGuestFile_INTERFACE_DEFINED__
 #define __IGuestFile_INTERFACE_DEFINED__
@@ -21080,7 +22231,7 @@ EXTERN_C const IID IID_IGuestFile;
 #endif 	/* __IGuestFile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0034 */
+/* interface __MIDL_itf_VirtualBox_0000_0035 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestFile_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -21091,8 +22242,8 @@ EXTERN_C const IID IID_IGuestFile;
 #define COM_FORWARD_IGuestFile_TO_BASE(base) COM_FORWARD_IGuestFile_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0035_v0_0_s_ifspec;
 
 #ifndef __IFsObjInfo_INTERFACE_DEFINED__
 #define __IFsObjInfo_INTERFACE_DEFINED__
@@ -21435,7 +22586,7 @@ EXTERN_C const IID IID_IFsObjInfo;
 #endif 	/* __IFsObjInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0035 */
+/* interface __MIDL_itf_VirtualBox_0000_0036 */
 /* [local] */ 
 
 #define COM_FORWARD_IFsObjInfo_GETTER_AccessTime_TO(smth) HRESULT STDMETHODCALLTYPE get_AccessTime (LONG64 * aAccessTime) { return smth get_AccessTime (aAccessTime); }
@@ -21500,8 +22651,8 @@ EXTERN_C const IID IID_IFsObjInfo;
 #define COM_FORWARD_IFsObjInfo_TO_BASE(base) COM_FORWARD_IFsObjInfo_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0036_v0_0_s_ifspec;
 
 #ifndef __IGuestFsObjInfo_INTERFACE_DEFINED__
 #define __IGuestFsObjInfo_INTERFACE_DEFINED__
@@ -21786,7 +22937,7 @@ EXTERN_C const IID IID_IGuestFsObjInfo;
 #endif 	/* __IGuestFsObjInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0036 */
+/* interface __MIDL_itf_VirtualBox_0000_0037 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestFsObjInfo_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -21797,8 +22948,8 @@ EXTERN_C const IID IID_IGuestFsObjInfo;
 #define COM_FORWARD_IGuestFsObjInfo_TO_BASE(base) COM_FORWARD_IGuestFsObjInfo_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0037_v0_0_s_ifspec;
 
 #ifndef __IGuest_INTERFACE_DEFINED__
 #define __IGuest_INTERFACE_DEFINED__
@@ -22387,7 +23538,7 @@ EXTERN_C const IID IID_IGuest;
 #endif 	/* __IGuest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0037 */
+/* interface __MIDL_itf_VirtualBox_0000_0038 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuest_GETTER_OSTypeId_TO(smth) HRESULT STDMETHODCALLTYPE get_OSTypeId (BSTR * aOSTypeId) { return smth get_OSTypeId (aOSTypeId); }
@@ -22455,8 +23606,8 @@ EXTERN_C const IID IID_IGuest;
 #define COM_FORWARD_IGuest_TO_BASE(base) COM_FORWARD_IGuest_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0038_v0_0_s_ifspec;
 
 #ifndef __IProgress_INTERFACE_DEFINED__
 #define __IProgress_INTERFACE_DEFINED__
@@ -22469,7 +23620,7 @@ EXTERN_C const IID IID_IProgress;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("77faf1c0-489d-b123-274c-5a95e77ab286")
+    MIDL_INTERFACE("e0026dc0-0c55-47b1-aa64-d340a396b418")
     IProgress : public IDispatch
     {
     public:
@@ -22523,6 +23674,9 @@ EXTERN_C const IID IID_IProgress;
         
         virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Timeout( 
             /* [in] */ ULONG aTimeout) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventSource( 
+            /* [retval][out] */ IEventSource **aEventSource) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IProgress( 
             /* [retval][out] */ ULONG *aReserved) = 0;
@@ -22668,6 +23822,10 @@ EXTERN_C const IID IID_IProgress;
             IProgress * This,
             /* [in] */ ULONG aTimeout);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventSource )( 
+            IProgress * This,
+            /* [retval][out] */ IEventSource **aEventSource);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IProgress )( 
             IProgress * This,
             /* [retval][out] */ ULONG *aReserved);
@@ -22791,6 +23949,9 @@ EXTERN_C const IID IID_IProgress;
 #define IProgress_put_Timeout(This,aTimeout)	\
     ( (This)->lpVtbl -> put_Timeout(This,aTimeout) ) 
 
+#define IProgress_get_EventSource(This,aEventSource)	\
+    ( (This)->lpVtbl -> get_EventSource(This,aEventSource) ) 
+
 #define IProgress_get_InternalAndReservedAttribute1IProgress(This,aReserved)	\
     ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IProgress(This,aReserved) ) 
 
@@ -22829,7 +23990,7 @@ EXTERN_C const IID IID_IProgress;
 #endif 	/* __IProgress_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0038 */
+/* interface __MIDL_itf_VirtualBox_0000_0039 */
 /* [local] */ 
 
 #define COM_FORWARD_IProgress_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (BSTR * aId) { return smth get_Id (aId); }
@@ -22883,6 +24044,9 @@ EXTERN_C const IID IID_IProgress;
 #define COM_FORWARD_IProgress_SETTER_Timeout_TO(smth) HRESULT STDMETHODCALLTYPE put_Timeout (ULONG aTimeout) { return smth put_Timeout (aTimeout); }
 #define COM_FORWARD_IProgress_SETTER_Timeout_TO_OBJ(obj) COM_FORWARD_IProgress_SETTER_Timeout_TO ((obj)->)
 #define COM_FORWARD_IProgress_SETTER_Timeout_TO_BASE(base) COM_FORWARD_IProgress_SETTER_Timeout_TO (base::)
+#define COM_FORWARD_IProgress_GETTER_EventSource_TO(smth) HRESULT STDMETHODCALLTYPE get_EventSource (IEventSource * * aEventSource) { return smth get_EventSource (aEventSource); }
+#define COM_FORWARD_IProgress_GETTER_EventSource_TO_OBJ(obj) COM_FORWARD_IProgress_GETTER_EventSource_TO ((obj)->)
+#define COM_FORWARD_IProgress_GETTER_EventSource_TO_BASE(base) COM_FORWARD_IProgress_GETTER_EventSource_TO (base::)
 #define COM_FORWARD_IProgress_SetCurrentOperationProgress_TO(smth) HRESULT STDMETHODCALLTYPE SetCurrentOperationProgress (ULONG aPercent) { return smth SetCurrentOperationProgress (aPercent); }
 #define COM_FORWARD_IProgress_SetCurrentOperationProgress_TO_OBJ(obj) COM_FORWARD_IProgress_SetCurrentOperationProgress_TO ((obj)->)
 #define COM_FORWARD_IProgress_SetCurrentOperationProgress_TO_BASE(base) COM_FORWARD_IProgress_SetCurrentOperationProgress_TO (base::)
@@ -22901,13 +24065,13 @@ EXTERN_C const IID IID_IProgress;
 #define COM_FORWARD_IProgress_Cancel_TO(smth) HRESULT STDMETHODCALLTYPE Cancel() { return smth Cancel(); }
 #define COM_FORWARD_IProgress_Cancel_TO_OBJ(obj) COM_FORWARD_IProgress_Cancel_TO ((obj)->)
 #define COM_FORWARD_IProgress_Cancel_TO_BASE(base) COM_FORWARD_IProgress_Cancel_TO (base::)
-#define COM_FORWARD_IProgress_TO(smth) COM_FORWARD_IProgress_GETTER_Id_TO (smth) COM_FORWARD_IProgress_GETTER_Description_TO (smth) COM_FORWARD_IProgress_GETTER_Initiator_TO (smth) COM_FORWARD_IProgress_GETTER_Cancelable_TO (smth) COM_FORWARD_IProgress_GETTER_Percent_TO (smth) COM_FORWARD_IProgress_GETTER_TimeRemaining_TO (smth) COM_FORWARD_IProgress_GETTER_Completed_TO (smth) COM_FORWARD_IProgress_GETTER_Canceled_TO (smth) COM_FORWARD_IProgress_GETTER_ResultCode_TO (smth) COM_FORWARD_IProgress_GETTER_ErrorInfo_TO (smth) COM_FORWARD_IProgress_GETTER_OperationCount_TO (smth) COM_FORWARD_IProgress_GETTER_Operation_TO (smth) COM_FORWARD_IProgress_GETTER_OperationDescription_TO (smth) COM_FORWARD_IProgress_GETTER_OperationPercent_TO (smth) COM_FORWARD_IProgress_GETTER_OperationWeight_TO (smth) COM_FORWARD_IProgress_GETTER_Timeout_TO (smth) COM_FORWARD_IProgress_SETTER_Timeout_TO (smth) COM_FORWARD_IProgress_SetCurrentOperationProgress_TO (smth) COM_FORWARD_IProgress_SetNextOperation_TO (smth) COM_FORWARD_IProgress_WaitForCompletion_TO (smth) COM_FORWARD_IProgress_WaitForOperationCompletion_TO (smth) COM_FORWARD_IProgress_WaitForAsyncProgressCompletion_TO (smth) COM_FORWARD_IProgress_Cancel_TO (smth) 
+#define COM_FORWARD_IProgress_TO(smth) COM_FORWARD_IProgress_GETTER_Id_TO (smth) COM_FORWARD_IProgress_GETTER_Description_TO (smth) COM_FORWARD_IProgress_GETTER_Initiator_TO (smth) COM_FORWARD_IProgress_GETTER_Cancelable_TO (smth) COM_FORWARD_IProgress_GETTER_Percent_TO (smth) COM_FORWARD_IProgress_GETTER_TimeRemaining_TO (smth) COM_FORWARD_IProgress_GETTER_Completed_TO (smth) COM_FORWARD_IProgress_GETTER_Canceled_TO (smth) COM_FORWARD_IProgress_GETTER_ResultCode_TO (smth) COM_FORWARD_IProgress_GETTER_ErrorInfo_TO (smth) COM_FORWARD_IProgress_GETTER_OperationCount_TO (smth) COM_FORWARD_IProgress_GETTER_Operation_TO (smth) COM_FORWARD_IProgress_GETTER_OperationDescription_TO (smth) COM_FORWARD_IProgress_GETTER_OperationPercent_TO (smth) COM_FORWARD_IProgress_GETTER_OperationWeight_TO (smth) COM_FORWARD_IProgress_GETTER_Timeout_TO (smth) COM_FORWARD_IProgress_SETTER_Timeout_TO (smth) COM_FORWARD_IProgress_GETTER_EventSource_TO (smth) COM_FORWARD_IProgress_SetCurrentOperationProgress_TO (smth) COM_FORWARD_IProgress_SetNextOperation_TO (smth) COM_FORWARD_IProgress_WaitForCompletion_TO (smth) COM_FORWARD_IProgress_WaitForOperationCompletion_TO (smth) COM_FORWARD_IProgress_WaitForAsyncProgressCompletion_TO (smth) COM_FORWARD_IProgress_Cancel_TO (smth) 
 #define COM_FORWARD_IProgress_TO_OBJ(obj) COM_FORWARD_IProgress_TO ((obj)->)
 #define COM_FORWARD_IProgress_TO_BASE(base) COM_FORWARD_IProgress_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0039_v0_0_s_ifspec;
 
 #ifndef __ISnapshot_INTERFACE_DEFINED__
 #define __ISnapshot_INTERFACE_DEFINED__
@@ -23158,7 +24322,7 @@ EXTERN_C const IID IID_ISnapshot;
 #endif 	/* __ISnapshot_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0039 */
+/* interface __MIDL_itf_VirtualBox_0000_0040 */
 /* [local] */ 
 
 #define COM_FORWARD_ISnapshot_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (BSTR * aId) { return smth get_Id (aId); }
@@ -23199,8 +24363,8 @@ EXTERN_C const IID IID_ISnapshot;
 #define COM_FORWARD_ISnapshot_TO_BASE(base) COM_FORWARD_ISnapshot_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0040_v0_0_s_ifspec;
 
 #ifndef __IMediumAttachment_INTERFACE_DEFINED__
 #define __IMediumAttachment_INTERFACE_DEFINED__
@@ -23473,7 +24637,7 @@ EXTERN_C const IID IID_IMediumAttachment;
 #endif 	/* __IMediumAttachment_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0040 */
+/* interface __MIDL_itf_VirtualBox_0000_0041 */
 /* [local] */ 
 
 #define COM_FORWARD_IMediumAttachment_GETTER_Medium_TO(smth) HRESULT STDMETHODCALLTYPE get_Medium (IMedium * * aMedium) { return smth get_Medium (aMedium); }
@@ -23517,8 +24681,8 @@ EXTERN_C const IID IID_IMediumAttachment;
 #define COM_FORWARD_IMediumAttachment_TO_BASE(base) COM_FORWARD_IMediumAttachment_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0041_v0_0_s_ifspec;
 
 #ifndef __IMedium_INTERFACE_DEFINED__
 #define __IMedium_INTERFACE_DEFINED__
@@ -24263,7 +25427,7 @@ EXTERN_C const IID IID_IMedium;
 #endif 	/* __IMedium_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0041 */
+/* interface __MIDL_itf_VirtualBox_0000_0042 */
 /* [local] */ 
 
 #define COM_FORWARD_IMedium_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (BSTR * aId) { return smth get_Id (aId); }
@@ -24412,8 +25576,8 @@ EXTERN_C const IID IID_IMedium;
 #define COM_FORWARD_IMedium_TO_BASE(base) COM_FORWARD_IMedium_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0042_v0_0_s_ifspec;
 
 #ifndef __IMediumFormat_INTERFACE_DEFINED__
 #define __IMediumFormat_INTERFACE_DEFINED__
@@ -24614,7 +25778,7 @@ EXTERN_C const IID IID_IMediumFormat;
 #endif 	/* __IMediumFormat_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0042 */
+/* interface __MIDL_itf_VirtualBox_0000_0043 */
 /* [local] */ 
 
 #define COM_FORWARD_IMediumFormat_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (BSTR * aId) { return smth get_Id (aId); }
@@ -24637,8 +25801,8 @@ EXTERN_C const IID IID_IMediumFormat;
 #define COM_FORWARD_IMediumFormat_TO_BASE(base) COM_FORWARD_IMediumFormat_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0043_v0_0_s_ifspec;
 
 #ifndef __IToken_INTERFACE_DEFINED__
 #define __IToken_INTERFACE_DEFINED__
@@ -24795,7 +25959,7 @@ EXTERN_C const IID IID_IToken;
 #endif 	/* __IToken_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0043 */
+/* interface __MIDL_itf_VirtualBox_0000_0044 */
 /* [local] */ 
 
 #define COM_FORWARD_IToken_Abandon_TO(smth) HRESULT STDMETHODCALLTYPE Abandon() { return smth Abandon(); }
@@ -24809,8 +25973,8 @@ EXTERN_C const IID IID_IToken;
 #define COM_FORWARD_IToken_TO_BASE(base) COM_FORWARD_IToken_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0044_v0_0_s_ifspec;
 
 #ifndef __IKeyboard_INTERFACE_DEFINED__
 #define __IKeyboard_INTERFACE_DEFINED__
@@ -25009,7 +26173,7 @@ EXTERN_C const IID IID_IKeyboard;
 #endif 	/* __IKeyboard_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0044 */
+/* interface __MIDL_itf_VirtualBox_0000_0045 */
 /* [local] */ 
 
 #define COM_FORWARD_IKeyboard_GETTER_KeyboardLEDs_TO(smth) HRESULT STDMETHODCALLTYPE get_KeyboardLEDs (SAFEARRAY * * aKeyboardLEDs) { return smth get_KeyboardLEDs (aKeyboardLEDs); }
@@ -25035,8 +26199,8 @@ EXTERN_C const IID IID_IKeyboard;
 #define COM_FORWARD_IKeyboard_TO_BASE(base) COM_FORWARD_IKeyboard_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0045_v0_0_s_ifspec;
 
 #ifndef __IMousePointerShape_INTERFACE_DEFINED__
 #define __IMousePointerShape_INTERFACE_DEFINED__
@@ -25239,7 +26403,7 @@ EXTERN_C const IID IID_IMousePointerShape;
 #endif 	/* __IMousePointerShape_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0045 */
+/* interface __MIDL_itf_VirtualBox_0000_0046 */
 /* [local] */ 
 
 #define COM_FORWARD_IMousePointerShape_GETTER_Visible_TO(smth) HRESULT STDMETHODCALLTYPE get_Visible (BOOL * aVisible) { return smth get_Visible (aVisible); }
@@ -25268,8 +26432,8 @@ EXTERN_C const IID IID_IMousePointerShape;
 #define COM_FORWARD_IMousePointerShape_TO_BASE(base) COM_FORWARD_IMousePointerShape_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0046_v0_0_s_ifspec;
 
 #ifndef __IMouse_INTERFACE_DEFINED__
 #define __IMouse_INTERFACE_DEFINED__
@@ -25534,7 +26698,7 @@ EXTERN_C const IID IID_IMouse;
 #endif 	/* __IMouse_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0046 */
+/* interface __MIDL_itf_VirtualBox_0000_0047 */
 /* [local] */ 
 
 #define COM_FORWARD_IMouse_GETTER_AbsoluteSupported_TO(smth) HRESULT STDMETHODCALLTYPE get_AbsoluteSupported (BOOL * aAbsoluteSupported) { return smth get_AbsoluteSupported (aAbsoluteSupported); }
@@ -25572,8 +26736,8 @@ EXTERN_C const IID IID_IMouse;
 #define COM_FORWARD_IMouse_TO_BASE(base) COM_FORWARD_IMouse_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0047_v0_0_s_ifspec;
 
 #ifndef __IDisplaySourceBitmap_INTERFACE_DEFINED__
 #define __IDisplaySourceBitmap_INTERFACE_DEFINED__
@@ -25716,7 +26880,7 @@ EXTERN_C const IID IID_IDisplaySourceBitmap;
 #endif 	/* __IDisplaySourceBitmap_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0047 */
+/* interface __MIDL_itf_VirtualBox_0000_0048 */
 /* [local] */ 
 
 #define COM_FORWARD_IDisplaySourceBitmap_GETTER_ScreenId_TO(smth) HRESULT STDMETHODCALLTYPE get_ScreenId (ULONG * aScreenId) { return smth get_ScreenId (aScreenId); }
@@ -25730,8 +26894,8 @@ EXTERN_C const IID IID_IDisplaySourceBitmap;
 #define COM_FORWARD_IDisplaySourceBitmap_TO_BASE(base) COM_FORWARD_IDisplaySourceBitmap_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0048_v0_0_s_ifspec;
 
 #ifndef __IFramebuffer_INTERFACE_DEFINED__
 #define __IFramebuffer_INTERFACE_DEFINED__
@@ -26050,7 +27214,7 @@ EXTERN_C const IID IID_IFramebuffer;
 #endif 	/* __IFramebuffer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0048 */
+/* interface __MIDL_itf_VirtualBox_0000_0049 */
 /* [local] */ 
 
 #define COM_FORWARD_IFramebuffer_GETTER_Width_TO(smth) HRESULT STDMETHODCALLTYPE get_Width (ULONG * aWidth) { return smth get_Width (aWidth); }
@@ -26109,8 +27273,8 @@ EXTERN_C const IID IID_IFramebuffer;
 #define COM_FORWARD_IFramebuffer_TO_BASE(base) COM_FORWARD_IFramebuffer_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0049_v0_0_s_ifspec;
 
 #ifndef __IFramebufferOverlay_INTERFACE_DEFINED__
 #define __IFramebufferOverlay_INTERFACE_DEFINED__
@@ -26433,7 +27597,7 @@ EXTERN_C const IID IID_IFramebufferOverlay;
 #endif 	/* __IFramebufferOverlay_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0049 */
+/* interface __MIDL_itf_VirtualBox_0000_0050 */
 /* [local] */ 
 
 #define COM_FORWARD_IFramebufferOverlay_GETTER_X_TO(smth) HRESULT STDMETHODCALLTYPE get_X (ULONG * aX) { return smth get_X (aX); }
@@ -26462,8 +27626,8 @@ EXTERN_C const IID IID_IFramebufferOverlay;
 #define COM_FORWARD_IFramebufferOverlay_TO_BASE(base) COM_FORWARD_IFramebufferOverlay_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0050_v0_0_s_ifspec;
 
 #ifndef __IGuestScreenInfo_INTERFACE_DEFINED__
 #define __IGuestScreenInfo_INTERFACE_DEFINED__
@@ -26476,7 +27640,7 @@ EXTERN_C const IID IID_IGuestScreenInfo;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("5f99cd4d-bbd2-49ba-b24d-4b5b42fb4c3a")
+    MIDL_INTERFACE("6b2f98f8-9641-4397-854a-040439d0114b")
     IGuestScreenInfo : public IDispatch
     {
     public:
@@ -26506,6 +27670,9 @@ EXTERN_C const IID IID_IGuestScreenInfo;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_BitsPerPixel( 
             /* [retval][out] */ ULONG *aBitsPerPixel) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExtendedInfo( 
+            /* [retval][out] */ BSTR *aExtendedInfo) = 0;
         
     };
     
@@ -26592,6 +27759,10 @@ EXTERN_C const IID IID_IGuestScreenInfo;
             IGuestScreenInfo * This,
             /* [retval][out] */ ULONG *aBitsPerPixel);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExtendedInfo )( 
+            IGuestScreenInfo * This,
+            /* [retval][out] */ BSTR *aExtendedInfo);
+        
         END_INTERFACE
     } IGuestScreenInfoVtbl;
 
@@ -26655,6 +27826,9 @@ EXTERN_C const IID IID_IGuestScreenInfo;
 #define IGuestScreenInfo_get_BitsPerPixel(This,aBitsPerPixel)	\
     ( (This)->lpVtbl -> get_BitsPerPixel(This,aBitsPerPixel) ) 
 
+#define IGuestScreenInfo_get_ExtendedInfo(This,aExtendedInfo)	\
+    ( (This)->lpVtbl -> get_ExtendedInfo(This,aExtendedInfo) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -26666,7 +27840,7 @@ EXTERN_C const IID IID_IGuestScreenInfo;
 #endif 	/* __IGuestScreenInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0050 */
+/* interface __MIDL_itf_VirtualBox_0000_0051 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestScreenInfo_GETTER_ScreenId_TO(smth) HRESULT STDMETHODCALLTYPE get_ScreenId (ULONG * aScreenId) { return smth get_ScreenId (aScreenId); }
@@ -26696,13 +27870,16 @@ EXTERN_C const IID IID_IGuestScreenInfo;
 #define COM_FORWARD_IGuestScreenInfo_GETTER_BitsPerPixel_TO(smth) HRESULT STDMETHODCALLTYPE get_BitsPerPixel (ULONG * aBitsPerPixel) { return smth get_BitsPerPixel (aBitsPerPixel); }
 #define COM_FORWARD_IGuestScreenInfo_GETTER_BitsPerPixel_TO_OBJ(obj) COM_FORWARD_IGuestScreenInfo_GETTER_BitsPerPixel_TO ((obj)->)
 #define COM_FORWARD_IGuestScreenInfo_GETTER_BitsPerPixel_TO_BASE(base) COM_FORWARD_IGuestScreenInfo_GETTER_BitsPerPixel_TO (base::)
-#define COM_FORWARD_IGuestScreenInfo_TO(smth) COM_FORWARD_IGuestScreenInfo_GETTER_ScreenId_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_GuestMonitorStatus_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_Primary_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_Origin_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_OriginX_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_OriginY_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_Width_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_Height_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_BitsPerPixel_TO (smth) 
+#define COM_FORWARD_IGuestScreenInfo_GETTER_ExtendedInfo_TO(smth) HRESULT STDMETHODCALLTYPE get_ExtendedInfo (BSTR * aExtendedInfo) { return smth get_ExtendedInfo (aExtendedInfo); }
+#define COM_FORWARD_IGuestScreenInfo_GETTER_ExtendedInfo_TO_OBJ(obj) COM_FORWARD_IGuestScreenInfo_GETTER_ExtendedInfo_TO ((obj)->)
+#define COM_FORWARD_IGuestScreenInfo_GETTER_ExtendedInfo_TO_BASE(base) COM_FORWARD_IGuestScreenInfo_GETTER_ExtendedInfo_TO (base::)
+#define COM_FORWARD_IGuestScreenInfo_TO(smth) COM_FORWARD_IGuestScreenInfo_GETTER_ScreenId_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_GuestMonitorStatus_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_Primary_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_Origin_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_OriginX_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_OriginY_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_Width_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_Height_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_BitsPerPixel_TO (smth) COM_FORWARD_IGuestScreenInfo_GETTER_ExtendedInfo_TO (smth) 
 #define COM_FORWARD_IGuestScreenInfo_TO_OBJ(obj) COM_FORWARD_IGuestScreenInfo_TO ((obj)->)
 #define COM_FORWARD_IGuestScreenInfo_TO_BASE(base) COM_FORWARD_IGuestScreenInfo_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0051_v0_0_s_ifspec;
 
 #ifndef __IDisplay_INTERFACE_DEFINED__
 #define __IDisplay_INTERFACE_DEFINED__
@@ -26715,7 +27892,7 @@ EXTERN_C const IID IID_IDisplay;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("02326f63-bcb3-4481-96e0-30d1c2ee97f6")
+    MIDL_INTERFACE("76eed314-3c72-4bbb-95cf-5eb4947a4041")
     IDisplay : public IDispatch
     {
     public:
@@ -26815,6 +27992,9 @@ EXTERN_C const IID IID_IDisplay;
         virtual HRESULT STDMETHODCALLTYPE SetScreenLayout( 
             /* [in] */ ScreenLayoutMode aScreenLayoutMode,
             /* [in] */ SAFEARRAY * aGuestScreenInfo) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE DetachScreens( 
+            /* [in] */ SAFEARRAY * aScreenIds) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE InternalAndReservedMethod1IDisplay( void) = 0;
         
@@ -26990,6 +28170,10 @@ EXTERN_C const IID IID_IDisplay;
             /* [in] */ ScreenLayoutMode aScreenLayoutMode,
             /* [in] */ SAFEARRAY * aGuestScreenInfo);
         
+        HRESULT ( STDMETHODCALLTYPE *DetachScreens )( 
+            IDisplay * This,
+            /* [in] */ SAFEARRAY * aScreenIds);
+        
         HRESULT ( STDMETHODCALLTYPE *InternalAndReservedMethod1IDisplay )( 
             IDisplay * This);
         
@@ -27098,6 +28282,9 @@ EXTERN_C const IID IID_IDisplay;
 #define IDisplay_SetScreenLayout(This,aScreenLayoutMode,aGuestScreenInfo)	\
     ( (This)->lpVtbl -> SetScreenLayout(This,aScreenLayoutMode,aGuestScreenInfo) ) 
 
+#define IDisplay_DetachScreens(This,aScreenIds)	\
+    ( (This)->lpVtbl -> DetachScreens(This,aScreenIds) ) 
+
 #define IDisplay_InternalAndReservedMethod1IDisplay(This)	\
     ( (This)->lpVtbl -> InternalAndReservedMethod1IDisplay(This) ) 
 
@@ -27121,7 +28308,7 @@ EXTERN_C const IID IID_IDisplay;
 #endif 	/* __IDisplay_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0051 */
+/* interface __MIDL_itf_VirtualBox_0000_0052 */
 /* [local] */ 
 
 #define COM_FORWARD_IDisplay_GETTER_GuestScreenLayout_TO(smth) HRESULT STDMETHODCALLTYPE get_GuestScreenLayout (SAFEARRAY * * aGuestScreenLayout) { return smth get_GuestScreenLayout (aGuestScreenLayout); }
@@ -27178,13 +28365,16 @@ EXTERN_C const IID IID_IDisplay;
 #define COM_FORWARD_IDisplay_SetScreenLayout_TO(smth) HRESULT STDMETHODCALLTYPE SetScreenLayout (ScreenLayoutMode aScreenLayoutMode, SAFEARRAY * * aGuestScreenInfo) { return smth SetScreenLayout (aScreenLayoutMode, aGuestScreenInfo); }
 #define COM_FORWARD_IDisplay_SetScreenLayout_TO_OBJ(obj) COM_FORWARD_IDisplay_SetScreenLayout_TO ((obj)->)
 #define COM_FORWARD_IDisplay_SetScreenLayout_TO_BASE(base) COM_FORWARD_IDisplay_SetScreenLayout_TO (base::)
-#define COM_FORWARD_IDisplay_TO(smth) COM_FORWARD_IDisplay_GETTER_GuestScreenLayout_TO (smth) COM_FORWARD_IDisplay_GetScreenResolution_TO (smth) COM_FORWARD_IDisplay_AttachFramebuffer_TO (smth) COM_FORWARD_IDisplay_DetachFramebuffer_TO (smth) COM_FORWARD_IDisplay_QueryFramebuffer_TO (smth) COM_FORWARD_IDisplay_SetVideoModeHint_TO (smth) COM_FORWARD_IDisplay_SetSeamlessMode_TO (smth) COM_FORWARD_IDisplay_TakeScreenShot_TO (smth) COM_FORWARD_IDisplay_TakeScreenShotToArray_TO (smth) COM_FORWARD_IDisplay_DrawToScreen_TO (smth) COM_FORWARD_IDisplay_InvalidateAndUpdate_TO (smth) COM_FORWARD_IDisplay_InvalidateAndUpdateScreen_TO (smth) COM_FORWARD_IDisplay_CompleteVHWACommand_TO (smth) COM_FORWARD_IDisplay_ViewportChanged_TO (smth) COM_FORWARD_IDisplay_QuerySourceBitmap_TO (smth) COM_FORWARD_IDisplay_NotifyScaleFactorChange_TO (smth) COM_FORWARD_IDisplay_NotifyHiDPIOutputPolicyChange_TO (smth) COM_FORWARD_IDisplay_SetScreenLayout_TO (smth) 
+#define COM_FORWARD_IDisplay_DetachScreens_TO(smth) HRESULT STDMETHODCALLTYPE DetachScreens (SAFEARRAY * * aScreenIds) { return smth DetachScreens (aScreenIds); }
+#define COM_FORWARD_IDisplay_DetachScreens_TO_OBJ(obj) COM_FORWARD_IDisplay_DetachScreens_TO ((obj)->)
+#define COM_FORWARD_IDisplay_DetachScreens_TO_BASE(base) COM_FORWARD_IDisplay_DetachScreens_TO (base::)
+#define COM_FORWARD_IDisplay_TO(smth) COM_FORWARD_IDisplay_GETTER_GuestScreenLayout_TO (smth) COM_FORWARD_IDisplay_GetScreenResolution_TO (smth) COM_FORWARD_IDisplay_AttachFramebuffer_TO (smth) COM_FORWARD_IDisplay_DetachFramebuffer_TO (smth) COM_FORWARD_IDisplay_QueryFramebuffer_TO (smth) COM_FORWARD_IDisplay_SetVideoModeHint_TO (smth) COM_FORWARD_IDisplay_SetSeamlessMode_TO (smth) COM_FORWARD_IDisplay_TakeScreenShot_TO (smth) COM_FORWARD_IDisplay_TakeScreenShotToArray_TO (smth) COM_FORWARD_IDisplay_DrawToScreen_TO (smth) COM_FORWARD_IDisplay_InvalidateAndUpdate_TO (smth) COM_FORWARD_IDisplay_InvalidateAndUpdateScreen_TO (smth) COM_FORWARD_IDisplay_CompleteVHWACommand_TO (smth) COM_FORWARD_IDisplay_ViewportChanged_TO (smth) COM_FORWARD_IDisplay_QuerySourceBitmap_TO (smth) COM_FORWARD_IDisplay_NotifyScaleFactorChange_TO (smth) COM_FORWARD_IDisplay_NotifyHiDPIOutputPolicyChange_TO (smth) COM_FORWARD_IDisplay_SetScreenLayout_TO (smth) COM_FORWARD_IDisplay_DetachScreens_TO (smth) 
 #define COM_FORWARD_IDisplay_TO_OBJ(obj) COM_FORWARD_IDisplay_TO ((obj)->)
 #define COM_FORWARD_IDisplay_TO_BASE(base) COM_FORWARD_IDisplay_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0052_v0_0_s_ifspec;
 
 #ifndef __INetworkAdapter_INTERFACE_DEFINED__
 #define __INetworkAdapter_INTERFACE_DEFINED__
@@ -27723,7 +28913,7 @@ EXTERN_C const IID IID_INetworkAdapter;
 #endif 	/* __INetworkAdapter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0052 */
+/* interface __MIDL_itf_VirtualBox_0000_0053 */
 /* [local] */ 
 
 #define COM_FORWARD_INetworkAdapter_GETTER_AdapterType_TO(smth) HRESULT STDMETHODCALLTYPE get_AdapterType (NetworkAdapterType * aAdapterType) { return smth get_AdapterType (aAdapterType); }
@@ -27842,8 +29032,8 @@ EXTERN_C const IID IID_INetworkAdapter;
 #define COM_FORWARD_INetworkAdapter_TO_BASE(base) COM_FORWARD_INetworkAdapter_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0053_v0_0_s_ifspec;
 
 #ifndef __ISerialPort_INTERFACE_DEFINED__
 #define __ISerialPort_INTERFACE_DEFINED__
@@ -28106,7 +29296,7 @@ EXTERN_C const IID IID_ISerialPort;
 #endif 	/* __ISerialPort_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0053 */
+/* interface __MIDL_itf_VirtualBox_0000_0054 */
 /* [local] */ 
 
 #define COM_FORWARD_ISerialPort_GETTER_Slot_TO(smth) HRESULT STDMETHODCALLTYPE get_Slot (ULONG * aSlot) { return smth get_Slot (aSlot); }
@@ -28153,8 +29343,8 @@ EXTERN_C const IID IID_ISerialPort;
 #define COM_FORWARD_ISerialPort_TO_BASE(base) COM_FORWARD_ISerialPort_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0054_v0_0_s_ifspec;
 
 #ifndef __IParallelPort_INTERFACE_DEFINED__
 #define __IParallelPort_INTERFACE_DEFINED__
@@ -28397,7 +29587,7 @@ EXTERN_C const IID IID_IParallelPort;
 #endif 	/* __IParallelPort_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0054 */
+/* interface __MIDL_itf_VirtualBox_0000_0055 */
 /* [local] */ 
 
 #define COM_FORWARD_IParallelPort_GETTER_Slot_TO(smth) HRESULT STDMETHODCALLTYPE get_Slot (ULONG * aSlot) { return smth get_Slot (aSlot); }
@@ -28432,8 +29622,8 @@ EXTERN_C const IID IID_IParallelPort;
 #define COM_FORWARD_IParallelPort_TO_BASE(base) COM_FORWARD_IParallelPort_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0055_v0_0_s_ifspec;
 
 #ifndef __IMachineDebugger_INTERFACE_DEFINED__
 #define __IMachineDebugger_INTERFACE_DEFINED__
@@ -28540,6 +29730,9 @@ EXTERN_C const IID IID_IMachineDebugger;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VM( 
             /* [retval][out] */ LONG64 *aVM) = 0;
         
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Uptime( 
+            /* [retval][out] */ LONG64 *aUptime) = 0;
+        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute1IMachineDebugger( 
             /* [retval][out] */ ULONG *aReserved) = 0;
         
@@ -28583,9 +29776,6 @@ EXTERN_C const IID IID_IMachineDebugger;
             /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute15IMachineDebugger( 
-            /* [retval][out] */ ULONG *aReserved) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InternalAndReservedAttribute16IMachineDebugger( 
             /* [retval][out] */ ULONG *aReserved) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE DumpGuestCore( 
@@ -28884,6 +30074,10 @@ EXTERN_C const IID IID_IMachineDebugger;
             IMachineDebugger * This,
             /* [retval][out] */ LONG64 *aVM);
         
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Uptime )( 
+            IMachineDebugger * This,
+            /* [retval][out] */ LONG64 *aUptime);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute1IMachineDebugger )( 
             IMachineDebugger * This,
             /* [retval][out] */ ULONG *aReserved);
@@ -28941,10 +30135,6 @@ EXTERN_C const IID IID_IMachineDebugger;
             /* [retval][out] */ ULONG *aReserved);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute15IMachineDebugger )( 
-            IMachineDebugger * This,
-            /* [retval][out] */ ULONG *aReserved);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InternalAndReservedAttribute16IMachineDebugger )( 
             IMachineDebugger * This,
             /* [retval][out] */ ULONG *aReserved);
         
@@ -29240,6 +30430,9 @@ EXTERN_C const IID IID_IMachineDebugger;
 #define IMachineDebugger_get_VM(This,aVM)	\
     ( (This)->lpVtbl -> get_VM(This,aVM) ) 
 
+#define IMachineDebugger_get_Uptime(This,aUptime)	\
+    ( (This)->lpVtbl -> get_Uptime(This,aUptime) ) 
+
 #define IMachineDebugger_get_InternalAndReservedAttribute1IMachineDebugger(This,aReserved)	\
     ( (This)->lpVtbl -> get_InternalAndReservedAttribute1IMachineDebugger(This,aReserved) ) 
 
@@ -29284,9 +30477,6 @@ EXTERN_C const IID IID_IMachineDebugger;
 
 #define IMachineDebugger_get_InternalAndReservedAttribute15IMachineDebugger(This,aReserved)	\
     ( (This)->lpVtbl -> get_InternalAndReservedAttribute15IMachineDebugger(This,aReserved) ) 
-
-#define IMachineDebugger_get_InternalAndReservedAttribute16IMachineDebugger(This,aReserved)	\
-    ( (This)->lpVtbl -> get_InternalAndReservedAttribute16IMachineDebugger(This,aReserved) ) 
 
 #define IMachineDebugger_DumpGuestCore(This,aFilename,aCompression)	\
     ( (This)->lpVtbl -> DumpGuestCore(This,aFilename,aCompression) ) 
@@ -29416,7 +30606,7 @@ EXTERN_C const IID IID_IMachineDebugger;
 #endif 	/* __IMachineDebugger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0055 */
+/* interface __MIDL_itf_VirtualBox_0000_0056 */
 /* [local] */ 
 
 #define COM_FORWARD_IMachineDebugger_GETTER_SingleStep_TO(smth) HRESULT STDMETHODCALLTYPE get_SingleStep (BOOL * aSingleStep) { return smth get_SingleStep (aSingleStep); }
@@ -29509,6 +30699,9 @@ EXTERN_C const IID IID_IMachineDebugger;
 #define COM_FORWARD_IMachineDebugger_GETTER_VM_TO(smth) HRESULT STDMETHODCALLTYPE get_VM (LONG64 * aVM) { return smth get_VM (aVM); }
 #define COM_FORWARD_IMachineDebugger_GETTER_VM_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_GETTER_VM_TO ((obj)->)
 #define COM_FORWARD_IMachineDebugger_GETTER_VM_TO_BASE(base) COM_FORWARD_IMachineDebugger_GETTER_VM_TO (base::)
+#define COM_FORWARD_IMachineDebugger_GETTER_Uptime_TO(smth) HRESULT STDMETHODCALLTYPE get_Uptime (LONG64 * aUptime) { return smth get_Uptime (aUptime); }
+#define COM_FORWARD_IMachineDebugger_GETTER_Uptime_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_GETTER_Uptime_TO ((obj)->)
+#define COM_FORWARD_IMachineDebugger_GETTER_Uptime_TO_BASE(base) COM_FORWARD_IMachineDebugger_GETTER_Uptime_TO (base::)
 #define COM_FORWARD_IMachineDebugger_DumpGuestCore_TO(smth) HRESULT STDMETHODCALLTYPE DumpGuestCore (BSTR aFilename, BSTR aCompression) { return smth DumpGuestCore (aFilename, aCompression); }
 #define COM_FORWARD_IMachineDebugger_DumpGuestCore_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_DumpGuestCore_TO ((obj)->)
 #define COM_FORWARD_IMachineDebugger_DumpGuestCore_TO_BASE(base) COM_FORWARD_IMachineDebugger_DumpGuestCore_TO (base::)
@@ -29578,13 +30771,13 @@ EXTERN_C const IID IID_IMachineDebugger;
 #define COM_FORWARD_IMachineDebugger_GetStats_TO(smth) HRESULT STDMETHODCALLTYPE GetStats (BSTR aPattern, BOOL aWithDescriptions, BSTR * aStats) { return smth GetStats (aPattern, aWithDescriptions, aStats); }
 #define COM_FORWARD_IMachineDebugger_GetStats_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_GetStats_TO ((obj)->)
 #define COM_FORWARD_IMachineDebugger_GetStats_TO_BASE(base) COM_FORWARD_IMachineDebugger_GetStats_TO (base::)
-#define COM_FORWARD_IMachineDebugger_TO(smth) COM_FORWARD_IMachineDebugger_GETTER_SingleStep_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_SingleStep_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_RecompileUser_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_RecompileUser_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_RecompileSupervisor_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_RecompileSupervisor_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_ExecuteAllInIEM_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_ExecuteAllInIEM_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_PATMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_PATMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_CSAMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_CSAMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_LogEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgFlags_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgGroups_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgDestinations_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelFlags_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelGroups_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelDestinations_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExNestedPagingEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExVPIDEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExUXEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_OSName_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_OSVersion_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_PAEEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_VirtualTimeRate_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_VirtualTimeRate_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_VM_TO (smth) COM_FORWARD_IMachineDebugger_DumpGuestCore_TO (smth) COM_FORWARD_IMachineDebugger_DumpHostProcessCore_TO (smth) COM_FORWARD_IMachineDebugger_Info_TO (smth) COM_FORWARD_IMachineDebugger_InjectNMI_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogGroups_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogFlags_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogDestinations_TO (smth) COM_FORWARD_IMachineDebugger_ReadPhysicalMemory_TO (smth) COM_FORWARD_IMachineDebugger_WritePhysicalMemory_TO (smth) COM_FORWARD_IMachineDebugger_ReadVirtualMemory_TO (smth) COM_FORWARD_IMachineDebugger_WriteVirtualMemory_TO (smth) COM_FORWARD_IMachineDebugger_LoadPlugIn_TO (smth) COM_FORWARD_IMachineDebugger_UnloadPlugIn_TO (smth) COM_FORWARD_IMachineDebugger_DetectOS_TO (smth) COM_FORWARD_IMachineDebugger_QueryOSKernelLog_TO (smth) COM_FORWARD_IMachineDebugger_GetRegister_TO (smth) COM_FORWARD_IMachineDebugger_GetRegisters_TO (smth) COM_FORWARD_IMachineDebugger_SetRegister_TO (smth) COM_FORWARD_IMachineDebugger_SetRegisters_TO (smth) COM_FORWARD_IMachineDebugger_DumpGuestStack_TO (smth) COM_FORWARD_IMachineDebugger_ResetStats_TO (smth) COM_FORWARD_IMachineDebugger_DumpStats_TO (smth) COM_FORWARD_IMachineDebugger_GetStats_TO (smth) 
+#define COM_FORWARD_IMachineDebugger_TO(smth) COM_FORWARD_IMachineDebugger_GETTER_SingleStep_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_SingleStep_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_RecompileUser_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_RecompileUser_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_RecompileSupervisor_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_RecompileSupervisor_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_ExecuteAllInIEM_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_ExecuteAllInIEM_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_PATMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_PATMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_CSAMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_CSAMEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogEnabled_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_LogEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgFlags_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgGroups_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogDbgDestinations_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelFlags_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelGroups_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_LogRelDestinations_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExNestedPagingEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExVPIDEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_HWVirtExUXEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_OSName_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_OSVersion_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_PAEEnabled_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_VirtualTimeRate_TO (smth) COM_FORWARD_IMachineDebugger_SETTER_VirtualTimeRate_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_VM_TO (smth) COM_FORWARD_IMachineDebugger_GETTER_Uptime_TO (smth) COM_FORWARD_IMachineDebugger_DumpGuestCore_TO (smth) COM_FORWARD_IMachineDebugger_DumpHostProcessCore_TO (smth) COM_FORWARD_IMachineDebugger_Info_TO (smth) COM_FORWARD_IMachineDebugger_InjectNMI_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogGroups_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogFlags_TO (smth) COM_FORWARD_IMachineDebugger_ModifyLogDestinations_TO (smth) COM_FORWARD_IMachineDebugger_ReadPhysicalMemory_TO (smth) COM_FORWARD_IMachineDebugger_WritePhysicalMemory_TO (smth) COM_FORWARD_IMachineDebugger_ReadVirtualMemory_TO (smth) COM_FORWARD_IMachineDebugger_WriteVirtualMemory_TO (smth) COM_FORWARD_IMachineDebugger_LoadPlugIn_TO (smth) COM_FORWARD_IMachineDebugger_UnloadPlugIn_TO (smth) COM_FORWARD_IMachineDebugger_DetectOS_TO (smth) COM_FORWARD_IMachineDebugger_QueryOSKernelLog_TO (smth) COM_FORWARD_IMachineDebugger_GetRegister_TO (smth) COM_FORWARD_IMachineDebugger_GetRegisters_TO (smth) COM_FORWARD_IMachineDebugger_SetRegister_TO (smth) COM_FORWARD_IMachineDebugger_SetRegisters_TO (smth) COM_FORWARD_IMachineDebugger_DumpGuestStack_TO (smth) COM_FORWARD_IMachineDebugger_ResetStats_TO (smth) COM_FORWARD_IMachineDebugger_DumpStats_TO (smth) COM_FORWARD_IMachineDebugger_GetStats_TO (smth) 
 #define COM_FORWARD_IMachineDebugger_TO_OBJ(obj) COM_FORWARD_IMachineDebugger_TO ((obj)->)
 #define COM_FORWARD_IMachineDebugger_TO_BASE(base) COM_FORWARD_IMachineDebugger_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0056_v0_0_s_ifspec;
 
 #ifndef __IUSBDeviceFilters_INTERFACE_DEFINED__
 #define __IUSBDeviceFilters_INTERFACE_DEFINED__
@@ -29779,7 +30972,7 @@ EXTERN_C const IID IID_IUSBDeviceFilters;
 #endif 	/* __IUSBDeviceFilters_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0056 */
+/* interface __MIDL_itf_VirtualBox_0000_0057 */
 /* [local] */ 
 
 #define COM_FORWARD_IUSBDeviceFilters_GETTER_DeviceFilters_TO(smth) HRESULT STDMETHODCALLTYPE get_DeviceFilters (SAFEARRAY * * aDeviceFilters) { return smth get_DeviceFilters (aDeviceFilters); }
@@ -29799,8 +30992,8 @@ EXTERN_C const IID IID_IUSBDeviceFilters;
 #define COM_FORWARD_IUSBDeviceFilters_TO_BASE(base) COM_FORWARD_IUSBDeviceFilters_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0057_v0_0_s_ifspec;
 
 #ifndef __IUSBController_INTERFACE_DEFINED__
 #define __IUSBController_INTERFACE_DEFINED__
@@ -29983,7 +31176,7 @@ EXTERN_C const IID IID_IUSBController;
 #endif 	/* __IUSBController_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0057 */
+/* interface __MIDL_itf_VirtualBox_0000_0058 */
 /* [local] */ 
 
 #define COM_FORWARD_IUSBController_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -30006,8 +31199,8 @@ EXTERN_C const IID IID_IUSBController;
 #define COM_FORWARD_IUSBController_TO_BASE(base) COM_FORWARD_IUSBController_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0058_v0_0_s_ifspec;
 
 #ifndef __IUSBDevice_INTERFACE_DEFINED__
 #define __IUSBDevice_INTERFACE_DEFINED__
@@ -30290,7 +31483,7 @@ EXTERN_C const IID IID_IUSBDevice;
 #endif 	/* __IUSBDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0058 */
+/* interface __MIDL_itf_VirtualBox_0000_0059 */
 /* [local] */ 
 
 #define COM_FORWARD_IUSBDevice_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (BSTR * aId) { return smth get_Id (aId); }
@@ -30343,8 +31536,8 @@ EXTERN_C const IID IID_IUSBDevice;
 #define COM_FORWARD_IUSBDevice_TO_BASE(base) COM_FORWARD_IUSBDevice_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0059_v0_0_s_ifspec;
 
 #ifndef __IUSBDeviceFilter_INTERFACE_DEFINED__
 #define __IUSBDeviceFilter_INTERFACE_DEFINED__
@@ -30757,7 +31950,7 @@ EXTERN_C const IID IID_IUSBDeviceFilter;
 #endif 	/* __IUSBDeviceFilter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0059 */
+/* interface __MIDL_itf_VirtualBox_0000_0060 */
 /* [local] */ 
 
 #define COM_FORWARD_IUSBDeviceFilter_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -30831,8 +32024,8 @@ EXTERN_C const IID IID_IUSBDeviceFilter;
 #define COM_FORWARD_IUSBDeviceFilter_TO_BASE(base) COM_FORWARD_IUSBDeviceFilter_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0060_v0_0_s_ifspec;
 
 #ifndef __IHostUSBDevice_INTERFACE_DEFINED__
 #define __IHostUSBDevice_INTERFACE_DEFINED__
@@ -31115,7 +32308,7 @@ EXTERN_C const IID IID_IHostUSBDevice;
 #endif 	/* __IHostUSBDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0060 */
+/* interface __MIDL_itf_VirtualBox_0000_0061 */
 /* [local] */ 
 
 #define COM_FORWARD_IHostUSBDevice_GETTER_State_TO(smth) HRESULT STDMETHODCALLTYPE get_State (USBDeviceState * aState) { return smth get_State (aState); }
@@ -31126,8 +32319,8 @@ EXTERN_C const IID IID_IHostUSBDevice;
 #define COM_FORWARD_IHostUSBDevice_TO_BASE(base) COM_FORWARD_IHostUSBDevice_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0061_v0_0_s_ifspec;
 
 #ifndef __IHostUSBDeviceFilter_INTERFACE_DEFINED__
 #define __IHostUSBDeviceFilter_INTERFACE_DEFINED__
@@ -31551,7 +32744,7 @@ EXTERN_C const IID IID_IHostUSBDeviceFilter;
 #endif 	/* __IHostUSBDeviceFilter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0061 */
+/* interface __MIDL_itf_VirtualBox_0000_0062 */
 /* [local] */ 
 
 #define COM_FORWARD_IHostUSBDeviceFilter_GETTER_Action_TO(smth) HRESULT STDMETHODCALLTYPE get_Action (USBDeviceFilterAction * aAction) { return smth get_Action (aAction); }
@@ -31565,8 +32758,8 @@ EXTERN_C const IID IID_IHostUSBDeviceFilter;
 #define COM_FORWARD_IHostUSBDeviceFilter_TO_BASE(base) COM_FORWARD_IHostUSBDeviceFilter_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0062_v0_0_s_ifspec;
 
 #ifndef __IUSBProxyBackend_INTERFACE_DEFINED__
 #define __IUSBProxyBackend_INTERFACE_DEFINED__
@@ -31811,7 +33004,7 @@ EXTERN_C const IID IID_IUSBProxyBackend;
 #endif 	/* __IUSBProxyBackend_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0062 */
+/* interface __MIDL_itf_VirtualBox_0000_0063 */
 /* [local] */ 
 
 #define COM_FORWARD_IUSBProxyBackend_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -31825,8 +33018,8 @@ EXTERN_C const IID IID_IUSBProxyBackend;
 #define COM_FORWARD_IUSBProxyBackend_TO_BASE(base) COM_FORWARD_IUSBProxyBackend_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0063_v0_0_s_ifspec;
 
 #ifndef __IAudioAdapter_INTERFACE_DEFINED__
 #define __IAudioAdapter_INTERFACE_DEFINED__
@@ -32121,7 +33314,7 @@ EXTERN_C const IID IID_IAudioAdapter;
 #endif 	/* __IAudioAdapter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0063 */
+/* interface __MIDL_itf_VirtualBox_0000_0064 */
 /* [local] */ 
 
 #define COM_FORWARD_IAudioAdapter_GETTER_Enabled_TO(smth) HRESULT STDMETHODCALLTYPE get_Enabled (BOOL * aEnabled) { return smth get_Enabled (aEnabled); }
@@ -32174,8 +33367,8 @@ EXTERN_C const IID IID_IAudioAdapter;
 #define COM_FORWARD_IAudioAdapter_TO_BASE(base) COM_FORWARD_IAudioAdapter_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0064_v0_0_s_ifspec;
 
 #ifndef __IVRDEServer_INTERFACE_DEFINED__
 #define __IVRDEServer_INTERFACE_DEFINED__
@@ -32490,7 +33683,7 @@ EXTERN_C const IID IID_IVRDEServer;
 #endif 	/* __IVRDEServer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0064 */
+/* interface __MIDL_itf_VirtualBox_0000_0065 */
 /* [local] */ 
 
 #define COM_FORWARD_IVRDEServer_GETTER_Enabled_TO(smth) HRESULT STDMETHODCALLTYPE get_Enabled (BOOL * aEnabled) { return smth get_Enabled (aEnabled); }
@@ -32549,8 +33742,8 @@ EXTERN_C const IID IID_IVRDEServer;
 #define COM_FORWARD_IVRDEServer_TO_BASE(base) COM_FORWARD_IVRDEServer_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0065_v0_0_s_ifspec;
 
 #ifndef __ISharedFolder_INTERFACE_DEFINED__
 #define __ISharedFolder_INTERFACE_DEFINED__
@@ -32763,7 +33956,7 @@ EXTERN_C const IID IID_ISharedFolder;
 #endif 	/* __ISharedFolder_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0065 */
+/* interface __MIDL_itf_VirtualBox_0000_0066 */
 /* [local] */ 
 
 #define COM_FORWARD_ISharedFolder_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -32789,8 +33982,8 @@ EXTERN_C const IID IID_ISharedFolder;
 #define COM_FORWARD_ISharedFolder_TO_BASE(base) COM_FORWARD_ISharedFolder_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0066_v0_0_s_ifspec;
 
 #ifndef __IInternalSessionControl_INTERFACE_DEFINED__
 #define __IInternalSessionControl_INTERFACE_DEFINED__
@@ -32828,6 +34021,9 @@ EXTERN_C const IID IID_IInternalSessionControl;
         virtual HRESULT STDMETHODCALLTYPE OnNetworkAdapterChange( 
             /* [in] */ INetworkAdapter *aNetworkAdapter,
             /* [in] */ BOOL aChangeAdapter) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE OnAudioAdapterChange( 
+            /* [in] */ IAudioAdapter *aAudioAdapter) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE OnSerialPortChange( 
             /* [in] */ ISerialPort *aSerialPort) = 0;
@@ -32924,6 +34120,7 @@ EXTERN_C const IID IID_IInternalSessionControl;
         virtual HRESULT STDMETHODCALLTYPE SaveStateWithReason( 
             /* [in] */ Reason aReason,
             /* [in] */ IProgress *aProgress,
+            /* [in] */ ISnapshot *aSnapshot,
             /* [in] */ BSTR aStateFilePath,
             /* [in] */ BOOL aPauseVM,
             /* [retval][out] */ BOOL *aLeftPaused) = 0;
@@ -33012,6 +34209,10 @@ EXTERN_C const IID IID_IInternalSessionControl;
             IInternalSessionControl * This,
             /* [in] */ INetworkAdapter *aNetworkAdapter,
             /* [in] */ BOOL aChangeAdapter);
+        
+        HRESULT ( STDMETHODCALLTYPE *OnAudioAdapterChange )( 
+            IInternalSessionControl * This,
+            /* [in] */ IAudioAdapter *aAudioAdapter);
         
         HRESULT ( STDMETHODCALLTYPE *OnSerialPortChange )( 
             IInternalSessionControl * This,
@@ -33133,6 +34334,7 @@ EXTERN_C const IID IID_IInternalSessionControl;
             IInternalSessionControl * This,
             /* [in] */ Reason aReason,
             /* [in] */ IProgress *aProgress,
+            /* [in] */ ISnapshot *aSnapshot,
             /* [in] */ BSTR aStateFilePath,
             /* [in] */ BOOL aPauseVM,
             /* [retval][out] */ BOOL *aLeftPaused);
@@ -33202,6 +34404,9 @@ EXTERN_C const IID IID_IInternalSessionControl;
 
 #define IInternalSessionControl_OnNetworkAdapterChange(This,aNetworkAdapter,aChangeAdapter)	\
     ( (This)->lpVtbl -> OnNetworkAdapterChange(This,aNetworkAdapter,aChangeAdapter) ) 
+
+#define IInternalSessionControl_OnAudioAdapterChange(This,aAudioAdapter)	\
+    ( (This)->lpVtbl -> OnAudioAdapterChange(This,aAudioAdapter) ) 
 
 #define IInternalSessionControl_OnSerialPortChange(This,aSerialPort)	\
     ( (This)->lpVtbl -> OnSerialPortChange(This,aSerialPort) ) 
@@ -33275,8 +34480,8 @@ EXTERN_C const IID IID_IInternalSessionControl;
 #define IInternalSessionControl_ResumeWithReason(This,aReason)	\
     ( (This)->lpVtbl -> ResumeWithReason(This,aReason) ) 
 
-#define IInternalSessionControl_SaveStateWithReason(This,aReason,aProgress,aStateFilePath,aPauseVM,aLeftPaused)	\
-    ( (This)->lpVtbl -> SaveStateWithReason(This,aReason,aProgress,aStateFilePath,aPauseVM,aLeftPaused) ) 
+#define IInternalSessionControl_SaveStateWithReason(This,aReason,aProgress,aSnapshot,aStateFilePath,aPauseVM,aLeftPaused)	\
+    ( (This)->lpVtbl -> SaveStateWithReason(This,aReason,aProgress,aSnapshot,aStateFilePath,aPauseVM,aLeftPaused) ) 
 
 #define IInternalSessionControl_CancelSaveStateWithReason(This)	\
     ( (This)->lpVtbl -> CancelSaveStateWithReason(This) ) 
@@ -33295,7 +34500,7 @@ EXTERN_C const IID IID_IInternalSessionControl;
 #endif 	/* __IInternalSessionControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0066 */
+/* interface __MIDL_itf_VirtualBox_0000_0067 */
 /* [local] */ 
 
 #define COM_FORWARD_IInternalSessionControl_GETTER_PID_TO(smth) HRESULT STDMETHODCALLTYPE get_PID (ULONG * aPID) { return smth get_PID (aPID); }
@@ -33319,6 +34524,9 @@ EXTERN_C const IID IID_IInternalSessionControl;
 #define COM_FORWARD_IInternalSessionControl_OnNetworkAdapterChange_TO(smth) HRESULT STDMETHODCALLTYPE OnNetworkAdapterChange (INetworkAdapter * aNetworkAdapter, BOOL aChangeAdapter) { return smth OnNetworkAdapterChange (aNetworkAdapter, aChangeAdapter); }
 #define COM_FORWARD_IInternalSessionControl_OnNetworkAdapterChange_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_OnNetworkAdapterChange_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_OnNetworkAdapterChange_TO_BASE(base) COM_FORWARD_IInternalSessionControl_OnNetworkAdapterChange_TO (base::)
+#define COM_FORWARD_IInternalSessionControl_OnAudioAdapterChange_TO(smth) HRESULT STDMETHODCALLTYPE OnAudioAdapterChange (IAudioAdapter * aAudioAdapter) { return smth OnAudioAdapterChange (aAudioAdapter); }
+#define COM_FORWARD_IInternalSessionControl_OnAudioAdapterChange_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_OnAudioAdapterChange_TO ((obj)->)
+#define COM_FORWARD_IInternalSessionControl_OnAudioAdapterChange_TO_BASE(base) COM_FORWARD_IInternalSessionControl_OnAudioAdapterChange_TO (base::)
 #define COM_FORWARD_IInternalSessionControl_OnSerialPortChange_TO(smth) HRESULT STDMETHODCALLTYPE OnSerialPortChange (ISerialPort * aSerialPort) { return smth OnSerialPortChange (aSerialPort); }
 #define COM_FORWARD_IInternalSessionControl_OnSerialPortChange_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_OnSerialPortChange_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_OnSerialPortChange_TO_BASE(base) COM_FORWARD_IInternalSessionControl_OnSerialPortChange_TO (base::)
@@ -33391,7 +34599,7 @@ EXTERN_C const IID IID_IInternalSessionControl;
 #define COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO(smth) HRESULT STDMETHODCALLTYPE ResumeWithReason (Reason aReason) { return smth ResumeWithReason (aReason); }
 #define COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO_BASE(base) COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO (base::)
-#define COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO(smth) HRESULT STDMETHODCALLTYPE SaveStateWithReason (Reason aReason, IProgress * aProgress, BSTR aStateFilePath, BOOL aPauseVM, BOOL * aLeftPaused) { return smth SaveStateWithReason (aReason, aProgress, aStateFilePath, aPauseVM, aLeftPaused); }
+#define COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO(smth) HRESULT STDMETHODCALLTYPE SaveStateWithReason (Reason aReason, IProgress * aProgress, ISnapshot * aSnapshot, BSTR aStateFilePath, BOOL aPauseVM, BOOL * aLeftPaused) { return smth SaveStateWithReason (aReason, aProgress, aSnapshot, aStateFilePath, aPauseVM, aLeftPaused); }
 #define COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO_BASE(base) COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO (base::)
 #define COM_FORWARD_IInternalSessionControl_CancelSaveStateWithReason_TO(smth) HRESULT STDMETHODCALLTYPE CancelSaveStateWithReason() { return smth CancelSaveStateWithReason(); }
@@ -33400,13 +34608,13 @@ EXTERN_C const IID IID_IInternalSessionControl;
 #define COM_FORWARD_IInternalSessionControl_AssignMachine_TO(smth) HRESULT STDMETHODCALLTYPE AssignMachine (IMachine * aMachine, LockType aLockType, BSTR aTokenId) { return smth AssignMachine (aMachine, aLockType, aTokenId); }
 #define COM_FORWARD_IInternalSessionControl_AssignMachine_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_AssignMachine_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_AssignMachine_TO_BASE(base) COM_FORWARD_IInternalSessionControl_AssignMachine_TO (base::)
-#define COM_FORWARD_IInternalSessionControl_TO(smth) COM_FORWARD_IInternalSessionControl_GETTER_PID_TO (smth) COM_FORWARD_IInternalSessionControl_GETTER_RemoteConsole_TO (smth) COM_FORWARD_IInternalSessionControl_GETTER_NominalState_TO (smth) COM_FORWARD_IInternalSessionControl_AssignRemoteMachine_TO (smth) COM_FORWARD_IInternalSessionControl_UpdateMachineState_TO (smth) COM_FORWARD_IInternalSessionControl_Uninitialize_TO (smth) COM_FORWARD_IInternalSessionControl_OnNetworkAdapterChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnSerialPortChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnParallelPortChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnStorageControllerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnMediumChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnStorageDeviceChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnClipboardModeChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnDnDModeChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnCPUChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnCPUExecutionCapChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnVRDEServerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnVideoCaptureChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBControllerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnSharedFolderChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBDeviceAttach_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBDeviceDetach_TO (smth) COM_FORWARD_IInternalSessionControl_OnShowWindow_TO (smth) COM_FORWARD_IInternalSessionControl_OnBandwidthGroupChange_TO (smth) COM_FORWARD_IInternalSessionControl_AccessGuestProperty_TO (smth) COM_FORWARD_IInternalSessionControl_EnumerateGuestProperties_TO (smth) COM_FORWARD_IInternalSessionControl_OnlineMergeMedium_TO (smth) COM_FORWARD_IInternalSessionControl_ReconfigureMediumAttachments_TO (smth) COM_FORWARD_IInternalSessionControl_EnableVMMStatistics_TO (smth) COM_FORWARD_IInternalSessionControl_PauseWithReason_TO (smth) COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO (smth) COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO (smth) COM_FORWARD_IInternalSessionControl_CancelSaveStateWithReason_TO (smth) COM_FORWARD_IInternalSessionControl_AssignMachine_TO (smth) 
+#define COM_FORWARD_IInternalSessionControl_TO(smth) COM_FORWARD_IInternalSessionControl_GETTER_PID_TO (smth) COM_FORWARD_IInternalSessionControl_GETTER_RemoteConsole_TO (smth) COM_FORWARD_IInternalSessionControl_GETTER_NominalState_TO (smth) COM_FORWARD_IInternalSessionControl_AssignRemoteMachine_TO (smth) COM_FORWARD_IInternalSessionControl_UpdateMachineState_TO (smth) COM_FORWARD_IInternalSessionControl_Uninitialize_TO (smth) COM_FORWARD_IInternalSessionControl_OnNetworkAdapterChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnAudioAdapterChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnSerialPortChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnParallelPortChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnStorageControllerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnMediumChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnStorageDeviceChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnClipboardModeChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnDnDModeChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnCPUChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnCPUExecutionCapChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnVRDEServerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnVideoCaptureChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBControllerChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnSharedFolderChange_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBDeviceAttach_TO (smth) COM_FORWARD_IInternalSessionControl_OnUSBDeviceDetach_TO (smth) COM_FORWARD_IInternalSessionControl_OnShowWindow_TO (smth) COM_FORWARD_IInternalSessionControl_OnBandwidthGroupChange_TO (smth) COM_FORWARD_IInternalSessionControl_AccessGuestProperty_TO (smth) COM_FORWARD_IInternalSessionControl_EnumerateGuestProperties_TO (smth) COM_FORWARD_IInternalSessionControl_OnlineMergeMedium_TO (smth) COM_FORWARD_IInternalSessionControl_ReconfigureMediumAttachments_TO (smth) COM_FORWARD_IInternalSessionControl_EnableVMMStatistics_TO (smth) COM_FORWARD_IInternalSessionControl_PauseWithReason_TO (smth) COM_FORWARD_IInternalSessionControl_ResumeWithReason_TO (smth) COM_FORWARD_IInternalSessionControl_SaveStateWithReason_TO (smth) COM_FORWARD_IInternalSessionControl_CancelSaveStateWithReason_TO (smth) COM_FORWARD_IInternalSessionControl_AssignMachine_TO (smth) 
 #define COM_FORWARD_IInternalSessionControl_TO_OBJ(obj) COM_FORWARD_IInternalSessionControl_TO ((obj)->)
 #define COM_FORWARD_IInternalSessionControl_TO_BASE(base) COM_FORWARD_IInternalSessionControl_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0067_v0_0_s_ifspec;
 
 #ifndef __ISession_INTERFACE_DEFINED__
 #define __ISession_INTERFACE_DEFINED__
@@ -33651,7 +34859,7 @@ EXTERN_C const IID IID_ISession;
 #endif 	/* __ISession_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0067 */
+/* interface __MIDL_itf_VirtualBox_0000_0068 */
 /* [local] */ 
 
 #define COM_FORWARD_ISession_GETTER_State_TO(smth) HRESULT STDMETHODCALLTYPE get_State (SessionState * aState) { return smth get_State (aState); }
@@ -33680,8 +34888,8 @@ EXTERN_C const IID IID_ISession;
 #define COM_FORWARD_ISession_TO_BASE(base) COM_FORWARD_ISession_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0068_v0_0_s_ifspec;
 
 #ifndef __IStorageController_INTERFACE_DEFINED__
 #define __IStorageController_INTERFACE_DEFINED__
@@ -33972,7 +35180,7 @@ EXTERN_C const IID IID_IStorageController;
 #endif 	/* __IStorageController_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0068 */
+/* interface __MIDL_itf_VirtualBox_0000_0069 */
 /* [local] */ 
 
 #define COM_FORWARD_IStorageController_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -34025,8 +35233,8 @@ EXTERN_C const IID IID_IStorageController;
 #define COM_FORWARD_IStorageController_TO_BASE(base) COM_FORWARD_IStorageController_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0069_v0_0_s_ifspec;
 
 #ifndef __IPerformanceMetric_INTERFACE_DEFINED__
 #define __IPerformanceMetric_INTERFACE_DEFINED__
@@ -34299,7 +35507,7 @@ EXTERN_C const IID IID_IPerformanceMetric;
 #endif 	/* __IPerformanceMetric_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0069 */
+/* interface __MIDL_itf_VirtualBox_0000_0070 */
 /* [local] */ 
 
 #define COM_FORWARD_IPerformanceMetric_GETTER_MetricName_TO(smth) HRESULT STDMETHODCALLTYPE get_MetricName (BSTR * aMetricName) { return smth get_MetricName (aMetricName); }
@@ -34331,8 +35539,8 @@ EXTERN_C const IID IID_IPerformanceMetric;
 #define COM_FORWARD_IPerformanceMetric_TO_BASE(base) COM_FORWARD_IPerformanceMetric_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0070_v0_0_s_ifspec;
 
 #ifndef __IPerformanceCollector_INTERFACE_DEFINED__
 #define __IPerformanceCollector_INTERFACE_DEFINED__
@@ -34655,7 +35863,7 @@ EXTERN_C const IID IID_IPerformanceCollector;
 #endif 	/* __IPerformanceCollector_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0070 */
+/* interface __MIDL_itf_VirtualBox_0000_0071 */
 /* [local] */ 
 
 #define COM_FORWARD_IPerformanceCollector_GETTER_MetricNames_TO(smth) HRESULT STDMETHODCALLTYPE get_MetricNames (SAFEARRAY * * aMetricNames) { return smth get_MetricNames (aMetricNames); }
@@ -34681,8 +35889,8 @@ EXTERN_C const IID IID_IPerformanceCollector;
 #define COM_FORWARD_IPerformanceCollector_TO_BASE(base) COM_FORWARD_IPerformanceCollector_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0071_v0_0_s_ifspec;
 
 #ifndef __INATEngine_INTERFACE_DEFINED__
 #define __INATEngine_INTERFACE_DEFINED__
@@ -35107,7 +36315,7 @@ EXTERN_C const IID IID_INATEngine;
 #endif 	/* __INATEngine_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0071 */
+/* interface __MIDL_itf_VirtualBox_0000_0072 */
 /* [local] */ 
 
 #define COM_FORWARD_INATEngine_GETTER_Network_TO(smth) HRESULT STDMETHODCALLTYPE get_Network (BSTR * aNetwork) { return smth get_Network (aNetwork); }
@@ -35184,8 +36392,8 @@ EXTERN_C const IID IID_INATEngine;
 #define COM_FORWARD_INATEngine_TO_BASE(base) COM_FORWARD_INATEngine_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0072_v0_0_s_ifspec;
 
 #ifndef __IExtPackPlugIn_INTERFACE_DEFINED__
 #define __IExtPackPlugIn_INTERFACE_DEFINED__
@@ -35358,7 +36566,7 @@ EXTERN_C const IID IID_IExtPackPlugIn;
 #endif 	/* __IExtPackPlugIn_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0072 */
+/* interface __MIDL_itf_VirtualBox_0000_0073 */
 /* [local] */ 
 
 #define COM_FORWARD_IExtPackPlugIn_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -35378,8 +36586,8 @@ EXTERN_C const IID IID_IExtPackPlugIn;
 #define COM_FORWARD_IExtPackPlugIn_TO_BASE(base) COM_FORWARD_IExtPackPlugIn_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0073_v0_0_s_ifspec;
 
 #ifndef __IExtPackBase_INTERFACE_DEFINED__
 #define __IExtPackBase_INTERFACE_DEFINED__
@@ -35666,7 +36874,7 @@ EXTERN_C const IID IID_IExtPackBase;
 #endif 	/* __IExtPackBase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0073 */
+/* interface __MIDL_itf_VirtualBox_0000_0074 */
 /* [local] */ 
 
 #define COM_FORWARD_IExtPackBase_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -35710,8 +36918,8 @@ EXTERN_C const IID IID_IExtPackBase;
 #define COM_FORWARD_IExtPackBase_TO_BASE(base) COM_FORWARD_IExtPackBase_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0074_v0_0_s_ifspec;
 
 #ifndef __IExtPack_INTERFACE_DEFINED__
 #define __IExtPack_INTERFACE_DEFINED__
@@ -35958,7 +37166,7 @@ EXTERN_C const IID IID_IExtPack;
 #endif 	/* __IExtPack_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0074 */
+/* interface __MIDL_itf_VirtualBox_0000_0075 */
 /* [local] */ 
 
 #define COM_FORWARD_IExtPack_QueryObject_TO(smth) HRESULT STDMETHODCALLTYPE QueryObject (BSTR aObjUuid, IUnknown * * aReturnInterface) { return smth QueryObject (aObjUuid, aReturnInterface); }
@@ -35969,8 +37177,8 @@ EXTERN_C const IID IID_IExtPack;
 #define COM_FORWARD_IExtPack_TO_BASE(base) COM_FORWARD_IExtPack_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0075_v0_0_s_ifspec;
 
 #ifndef __IExtPackFile_INTERFACE_DEFINED__
 #define __IExtPackFile_INTERFACE_DEFINED__
@@ -36257,7 +37465,7 @@ EXTERN_C const IID IID_IExtPackFile;
 #endif 	/* __IExtPackFile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0075 */
+/* interface __MIDL_itf_VirtualBox_0000_0076 */
 /* [local] */ 
 
 #define COM_FORWARD_IExtPackFile_GETTER_FilePath_TO(smth) HRESULT STDMETHODCALLTYPE get_FilePath (BSTR * aFilePath) { return smth get_FilePath (aFilePath); }
@@ -36271,8 +37479,8 @@ EXTERN_C const IID IID_IExtPackFile;
 #define COM_FORWARD_IExtPackFile_TO_BASE(base) COM_FORWARD_IExtPackFile_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0076_v0_0_s_ifspec;
 
 #ifndef __IExtPackManager_INTERFACE_DEFINED__
 #define __IExtPackManager_INTERFACE_DEFINED__
@@ -36495,7 +37703,7 @@ EXTERN_C const IID IID_IExtPackManager;
 #endif 	/* __IExtPackManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0076 */
+/* interface __MIDL_itf_VirtualBox_0000_0077 */
 /* [local] */ 
 
 #define COM_FORWARD_IExtPackManager_GETTER_InstalledExtPacks_TO(smth) HRESULT STDMETHODCALLTYPE get_InstalledExtPacks (SAFEARRAY * * aInstalledExtPacks) { return smth get_InstalledExtPacks (aInstalledExtPacks); }
@@ -36524,8 +37732,8 @@ EXTERN_C const IID IID_IExtPackManager;
 #define COM_FORWARD_IExtPackManager_TO_BASE(base) COM_FORWARD_IExtPackManager_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0077_v0_0_s_ifspec;
 
 #ifndef __IBandwidthGroup_INTERFACE_DEFINED__
 #define __IBandwidthGroup_INTERFACE_DEFINED__
@@ -36728,7 +37936,7 @@ EXTERN_C const IID IID_IBandwidthGroup;
 #endif 	/* __IBandwidthGroup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0077 */
+/* interface __MIDL_itf_VirtualBox_0000_0078 */
 /* [local] */ 
 
 #define COM_FORWARD_IBandwidthGroup_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -36751,8 +37959,8 @@ EXTERN_C const IID IID_IBandwidthGroup;
 #define COM_FORWARD_IBandwidthGroup_TO_BASE(base) COM_FORWARD_IBandwidthGroup_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0078_v0_0_s_ifspec;
 
 #ifndef __IBandwidthControl_INTERFACE_DEFINED__
 #define __IBandwidthControl_INTERFACE_DEFINED__
@@ -36957,7 +38165,7 @@ EXTERN_C const IID IID_IBandwidthControl;
 #endif 	/* __IBandwidthControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0078 */
+/* interface __MIDL_itf_VirtualBox_0000_0079 */
 /* [local] */ 
 
 #define COM_FORWARD_IBandwidthControl_GETTER_NumGroups_TO(smth) HRESULT STDMETHODCALLTYPE get_NumGroups (ULONG * aNumGroups) { return smth get_NumGroups (aNumGroups); }
@@ -36980,8 +38188,8 @@ EXTERN_C const IID IID_IBandwidthControl;
 #define COM_FORWARD_IBandwidthControl_TO_BASE(base) COM_FORWARD_IBandwidthControl_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0079_v0_0_s_ifspec;
 
 #ifndef __IVirtualBoxClient_INTERFACE_DEFINED__
 #define __IVirtualBoxClient_INTERFACE_DEFINED__
@@ -37206,7 +38414,7 @@ EXTERN_C const IID IID_IVirtualBoxClient;
 #endif 	/* __IVirtualBoxClient_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0079 */
+/* interface __MIDL_itf_VirtualBox_0000_0080 */
 /* [local] */ 
 
 #define COM_FORWARD_IVirtualBoxClient_GETTER_VirtualBox_TO(smth) HRESULT STDMETHODCALLTYPE get_VirtualBox (IVirtualBox * * aVirtualBox) { return smth get_VirtualBox (aVirtualBox); }
@@ -37226,8 +38434,8 @@ EXTERN_C const IID IID_IVirtualBoxClient;
 #define COM_FORWARD_IVirtualBoxClient_TO_BASE(base) COM_FORWARD_IVirtualBoxClient_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0080_v0_0_s_ifspec;
 
 #ifndef __IEventSource_INTERFACE_DEFINED__
 #define __IEventSource_INTERFACE_DEFINED__
@@ -37426,7 +38634,7 @@ EXTERN_C const IID IID_IEventSource;
 #endif 	/* __IEventSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0080 */
+/* interface __MIDL_itf_VirtualBox_0000_0081 */
 /* [local] */ 
 
 #define COM_FORWARD_IEventSource_CreateListener_TO(smth) HRESULT STDMETHODCALLTYPE CreateListener (IEventListener * * aListener) { return smth CreateListener (aListener); }
@@ -37455,8 +38663,8 @@ EXTERN_C const IID IID_IEventSource;
 #define COM_FORWARD_IEventSource_TO_BASE(base) COM_FORWARD_IEventSource_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0081_v0_0_s_ifspec;
 
 #ifndef __IEventListener_INTERFACE_DEFINED__
 #define __IEventListener_INTERFACE_DEFINED__
@@ -37579,7 +38787,7 @@ EXTERN_C const IID IID_IEventListener;
 #endif 	/* __IEventListener_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0081 */
+/* interface __MIDL_itf_VirtualBox_0000_0082 */
 /* [local] */ 
 
 #define COM_FORWARD_IEventListener_HandleEvent_TO(smth) HRESULT STDMETHODCALLTYPE HandleEvent (IEvent * aEvent) { return smth HandleEvent (aEvent); }
@@ -37590,8 +38798,8 @@ EXTERN_C const IID IID_IEventListener;
 #define COM_FORWARD_IEventListener_TO_BASE(base) COM_FORWARD_IEventListener_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0082_v0_0_s_ifspec;
 
 #ifndef __IEvent_INTERFACE_DEFINED__
 #define __IEvent_INTERFACE_DEFINED__
@@ -37754,7 +38962,7 @@ EXTERN_C const IID IID_IEvent;
 #endif 	/* __IEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0082 */
+/* interface __MIDL_itf_VirtualBox_0000_0083 */
 /* [local] */ 
 
 #define COM_FORWARD_IEvent_GETTER_Type_TO(smth) HRESULT STDMETHODCALLTYPE get_Type (VBoxEventType * aType) { return smth get_Type (aType); }
@@ -37777,8 +38985,8 @@ EXTERN_C const IID IID_IEvent;
 #define COM_FORWARD_IEvent_TO_BASE(base) COM_FORWARD_IEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0083_v0_0_s_ifspec;
 
 #ifndef __IReusableEvent_INTERFACE_DEFINED__
 #define __IReusableEvent_INTERFACE_DEFINED__
@@ -37945,7 +39153,7 @@ EXTERN_C const IID IID_IReusableEvent;
 #endif 	/* __IReusableEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0083 */
+/* interface __MIDL_itf_VirtualBox_0000_0084 */
 /* [local] */ 
 
 #define COM_FORWARD_IReusableEvent_GETTER_Generation_TO(smth) HRESULT STDMETHODCALLTYPE get_Generation (ULONG * aGeneration) { return smth get_Generation (aGeneration); }
@@ -37959,8 +39167,8 @@ EXTERN_C const IID IID_IReusableEvent;
 #define COM_FORWARD_IReusableEvent_TO_BASE(base) COM_FORWARD_IReusableEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0084_v0_0_s_ifspec;
 
 #ifndef __IMachineEvent_INTERFACE_DEFINED__
 #define __IMachineEvent_INTERFACE_DEFINED__
@@ -38119,7 +39327,7 @@ EXTERN_C const IID IID_IMachineEvent;
 #endif 	/* __IMachineEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0084 */
+/* interface __MIDL_itf_VirtualBox_0000_0085 */
 /* [local] */ 
 
 #define COM_FORWARD_IMachineEvent_GETTER_MachineId_TO(smth) HRESULT STDMETHODCALLTYPE get_MachineId (BSTR * aMachineId) { return smth get_MachineId (aMachineId); }
@@ -38130,8 +39338,8 @@ EXTERN_C const IID IID_IMachineEvent;
 #define COM_FORWARD_IMachineEvent_TO_BASE(base) COM_FORWARD_IMachineEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0085_v0_0_s_ifspec;
 
 #ifndef __IMachineStateChangedEvent_INTERFACE_DEFINED__
 #define __IMachineStateChangedEvent_INTERFACE_DEFINED__
@@ -38298,7 +39506,7 @@ EXTERN_C const IID IID_IMachineStateChangedEvent;
 #endif 	/* __IMachineStateChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0085 */
+/* interface __MIDL_itf_VirtualBox_0000_0086 */
 /* [local] */ 
 
 #define COM_FORWARD_IMachineStateChangedEvent_GETTER_State_TO(smth) HRESULT STDMETHODCALLTYPE get_State (MachineState * aState) { return smth get_State (aState); }
@@ -38309,8 +39517,8 @@ EXTERN_C const IID IID_IMachineStateChangedEvent;
 #define COM_FORWARD_IMachineStateChangedEvent_TO_BASE(base) COM_FORWARD_IMachineStateChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0086_v0_0_s_ifspec;
 
 #ifndef __IMachineDataChangedEvent_INTERFACE_DEFINED__
 #define __IMachineDataChangedEvent_INTERFACE_DEFINED__
@@ -38477,7 +39685,7 @@ EXTERN_C const IID IID_IMachineDataChangedEvent;
 #endif 	/* __IMachineDataChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0086 */
+/* interface __MIDL_itf_VirtualBox_0000_0087 */
 /* [local] */ 
 
 #define COM_FORWARD_IMachineDataChangedEvent_GETTER_Temporary_TO(smth) HRESULT STDMETHODCALLTYPE get_Temporary (BOOL * aTemporary) { return smth get_Temporary (aTemporary); }
@@ -38488,8 +39696,8 @@ EXTERN_C const IID IID_IMachineDataChangedEvent;
 #define COM_FORWARD_IMachineDataChangedEvent_TO_BASE(base) COM_FORWARD_IMachineDataChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0087_v0_0_s_ifspec;
 
 #ifndef __IMediumRegisteredEvent_INTERFACE_DEFINED__
 #define __IMediumRegisteredEvent_INTERFACE_DEFINED__
@@ -38668,7 +39876,7 @@ EXTERN_C const IID IID_IMediumRegisteredEvent;
 #endif 	/* __IMediumRegisteredEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0087 */
+/* interface __MIDL_itf_VirtualBox_0000_0088 */
 /* [local] */ 
 
 #define COM_FORWARD_IMediumRegisteredEvent_GETTER_MediumId_TO(smth) HRESULT STDMETHODCALLTYPE get_MediumId (BSTR * aMediumId) { return smth get_MediumId (aMediumId); }
@@ -38685,8 +39893,8 @@ EXTERN_C const IID IID_IMediumRegisteredEvent;
 #define COM_FORWARD_IMediumRegisteredEvent_TO_BASE(base) COM_FORWARD_IMediumRegisteredEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0088_v0_0_s_ifspec;
 
 #ifndef __IMediumConfigChangedEvent_INTERFACE_DEFINED__
 #define __IMediumConfigChangedEvent_INTERFACE_DEFINED__
@@ -38845,7 +40053,7 @@ EXTERN_C const IID IID_IMediumConfigChangedEvent;
 #endif 	/* __IMediumConfigChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0088 */
+/* interface __MIDL_itf_VirtualBox_0000_0089 */
 /* [local] */ 
 
 #define COM_FORWARD_IMediumConfigChangedEvent_GETTER_Medium_TO(smth) HRESULT STDMETHODCALLTYPE get_Medium (IMedium * * aMedium) { return smth get_Medium (aMedium); }
@@ -38856,8 +40064,8 @@ EXTERN_C const IID IID_IMediumConfigChangedEvent;
 #define COM_FORWARD_IMediumConfigChangedEvent_TO_BASE(base) COM_FORWARD_IMediumConfigChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0089_v0_0_s_ifspec;
 
 #ifndef __IMachineRegisteredEvent_INTERFACE_DEFINED__
 #define __IMachineRegisteredEvent_INTERFACE_DEFINED__
@@ -39024,7 +40232,7 @@ EXTERN_C const IID IID_IMachineRegisteredEvent;
 #endif 	/* __IMachineRegisteredEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0089 */
+/* interface __MIDL_itf_VirtualBox_0000_0090 */
 /* [local] */ 
 
 #define COM_FORWARD_IMachineRegisteredEvent_GETTER_Registered_TO(smth) HRESULT STDMETHODCALLTYPE get_Registered (BOOL * aRegistered) { return smth get_Registered (aRegistered); }
@@ -39035,8 +40243,8 @@ EXTERN_C const IID IID_IMachineRegisteredEvent;
 #define COM_FORWARD_IMachineRegisteredEvent_TO_BASE(base) COM_FORWARD_IMachineRegisteredEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0090_v0_0_s_ifspec;
 
 #ifndef __ISessionStateChangedEvent_INTERFACE_DEFINED__
 #define __ISessionStateChangedEvent_INTERFACE_DEFINED__
@@ -39203,7 +40411,7 @@ EXTERN_C const IID IID_ISessionStateChangedEvent;
 #endif 	/* __ISessionStateChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0090 */
+/* interface __MIDL_itf_VirtualBox_0000_0091 */
 /* [local] */ 
 
 #define COM_FORWARD_ISessionStateChangedEvent_GETTER_State_TO(smth) HRESULT STDMETHODCALLTYPE get_State (SessionState * aState) { return smth get_State (aState); }
@@ -39214,8 +40422,8 @@ EXTERN_C const IID IID_ISessionStateChangedEvent;
 #define COM_FORWARD_ISessionStateChangedEvent_TO_BASE(base) COM_FORWARD_ISessionStateChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0091_v0_0_s_ifspec;
 
 #ifndef __IGuestPropertyChangedEvent_INTERFACE_DEFINED__
 #define __IGuestPropertyChangedEvent_INTERFACE_DEFINED__
@@ -39402,7 +40610,7 @@ EXTERN_C const IID IID_IGuestPropertyChangedEvent;
 #endif 	/* __IGuestPropertyChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0091 */
+/* interface __MIDL_itf_VirtualBox_0000_0092 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestPropertyChangedEvent_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -39419,8 +40627,8 @@ EXTERN_C const IID IID_IGuestPropertyChangedEvent;
 #define COM_FORWARD_IGuestPropertyChangedEvent_TO_BASE(base) COM_FORWARD_IGuestPropertyChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0092_v0_0_s_ifspec;
 
 #ifndef __ISnapshotEvent_INTERFACE_DEFINED__
 #define __ISnapshotEvent_INTERFACE_DEFINED__
@@ -39587,7 +40795,7 @@ EXTERN_C const IID IID_ISnapshotEvent;
 #endif 	/* __ISnapshotEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0092 */
+/* interface __MIDL_itf_VirtualBox_0000_0093 */
 /* [local] */ 
 
 #define COM_FORWARD_ISnapshotEvent_GETTER_SnapshotId_TO(smth) HRESULT STDMETHODCALLTYPE get_SnapshotId (BSTR * aSnapshotId) { return smth get_SnapshotId (aSnapshotId); }
@@ -39598,8 +40806,8 @@ EXTERN_C const IID IID_ISnapshotEvent;
 #define COM_FORWARD_ISnapshotEvent_TO_BASE(base) COM_FORWARD_ISnapshotEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0093_v0_0_s_ifspec;
 
 #ifndef __ISnapshotTakenEvent_INTERFACE_DEFINED__
 #define __ISnapshotTakenEvent_INTERFACE_DEFINED__
@@ -39774,7 +40982,7 @@ EXTERN_C const IID IID_ISnapshotTakenEvent;
 #endif 	/* __ISnapshotTakenEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0093 */
+/* interface __MIDL_itf_VirtualBox_0000_0094 */
 /* [local] */ 
 
 #define COM_FORWARD_ISnapshotTakenEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -39785,8 +40993,8 @@ EXTERN_C const IID IID_ISnapshotTakenEvent;
 #define COM_FORWARD_ISnapshotTakenEvent_TO_BASE(base) COM_FORWARD_ISnapshotTakenEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0094_v0_0_s_ifspec;
 
 #ifndef __ISnapshotDeletedEvent_INTERFACE_DEFINED__
 #define __ISnapshotDeletedEvent_INTERFACE_DEFINED__
@@ -39961,7 +41169,7 @@ EXTERN_C const IID IID_ISnapshotDeletedEvent;
 #endif 	/* __ISnapshotDeletedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0094 */
+/* interface __MIDL_itf_VirtualBox_0000_0095 */
 /* [local] */ 
 
 #define COM_FORWARD_ISnapshotDeletedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -39972,8 +41180,8 @@ EXTERN_C const IID IID_ISnapshotDeletedEvent;
 #define COM_FORWARD_ISnapshotDeletedEvent_TO_BASE(base) COM_FORWARD_ISnapshotDeletedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0095_v0_0_s_ifspec;
 
 #ifndef __ISnapshotRestoredEvent_INTERFACE_DEFINED__
 #define __ISnapshotRestoredEvent_INTERFACE_DEFINED__
@@ -40148,7 +41356,7 @@ EXTERN_C const IID IID_ISnapshotRestoredEvent;
 #endif 	/* __ISnapshotRestoredEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0095 */
+/* interface __MIDL_itf_VirtualBox_0000_0096 */
 /* [local] */ 
 
 #define COM_FORWARD_ISnapshotRestoredEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -40159,8 +41367,8 @@ EXTERN_C const IID IID_ISnapshotRestoredEvent;
 #define COM_FORWARD_ISnapshotRestoredEvent_TO_BASE(base) COM_FORWARD_ISnapshotRestoredEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0096_v0_0_s_ifspec;
 
 #ifndef __ISnapshotChangedEvent_INTERFACE_DEFINED__
 #define __ISnapshotChangedEvent_INTERFACE_DEFINED__
@@ -40335,7 +41543,7 @@ EXTERN_C const IID IID_ISnapshotChangedEvent;
 #endif 	/* __ISnapshotChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0096 */
+/* interface __MIDL_itf_VirtualBox_0000_0097 */
 /* [local] */ 
 
 #define COM_FORWARD_ISnapshotChangedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -40346,8 +41554,8 @@ EXTERN_C const IID IID_ISnapshotChangedEvent;
 #define COM_FORWARD_ISnapshotChangedEvent_TO_BASE(base) COM_FORWARD_ISnapshotChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0097_v0_0_s_ifspec;
 
 #ifndef __IMousePointerShapeChangedEvent_INTERFACE_DEFINED__
 #define __IMousePointerShapeChangedEvent_INTERFACE_DEFINED__
@@ -40566,7 +41774,7 @@ EXTERN_C const IID IID_IMousePointerShapeChangedEvent;
 #endif 	/* __IMousePointerShapeChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0097 */
+/* interface __MIDL_itf_VirtualBox_0000_0098 */
 /* [local] */ 
 
 #define COM_FORWARD_IMousePointerShapeChangedEvent_GETTER_Visible_TO(smth) HRESULT STDMETHODCALLTYPE get_Visible (BOOL * aVisible) { return smth get_Visible (aVisible); }
@@ -40595,8 +41803,8 @@ EXTERN_C const IID IID_IMousePointerShapeChangedEvent;
 #define COM_FORWARD_IMousePointerShapeChangedEvent_TO_BASE(base) COM_FORWARD_IMousePointerShapeChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0098_v0_0_s_ifspec;
 
 #ifndef __IMouseCapabilityChangedEvent_INTERFACE_DEFINED__
 #define __IMouseCapabilityChangedEvent_INTERFACE_DEFINED__
@@ -40785,7 +41993,7 @@ EXTERN_C const IID IID_IMouseCapabilityChangedEvent;
 #endif 	/* __IMouseCapabilityChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0098 */
+/* interface __MIDL_itf_VirtualBox_0000_0099 */
 /* [local] */ 
 
 #define COM_FORWARD_IMouseCapabilityChangedEvent_GETTER_SupportsAbsolute_TO(smth) HRESULT STDMETHODCALLTYPE get_SupportsAbsolute (BOOL * aSupportsAbsolute) { return smth get_SupportsAbsolute (aSupportsAbsolute); }
@@ -40805,8 +42013,8 @@ EXTERN_C const IID IID_IMouseCapabilityChangedEvent;
 #define COM_FORWARD_IMouseCapabilityChangedEvent_TO_BASE(base) COM_FORWARD_IMouseCapabilityChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0099_v0_0_s_ifspec;
 
 #ifndef __IKeyboardLedsChangedEvent_INTERFACE_DEFINED__
 #define __IKeyboardLedsChangedEvent_INTERFACE_DEFINED__
@@ -40985,7 +42193,7 @@ EXTERN_C const IID IID_IKeyboardLedsChangedEvent;
 #endif 	/* __IKeyboardLedsChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0099 */
+/* interface __MIDL_itf_VirtualBox_0000_0100 */
 /* [local] */ 
 
 #define COM_FORWARD_IKeyboardLedsChangedEvent_GETTER_NumLock_TO(smth) HRESULT STDMETHODCALLTYPE get_NumLock (BOOL * aNumLock) { return smth get_NumLock (aNumLock); }
@@ -41002,8 +42210,8 @@ EXTERN_C const IID IID_IKeyboardLedsChangedEvent;
 #define COM_FORWARD_IKeyboardLedsChangedEvent_TO_BASE(base) COM_FORWARD_IKeyboardLedsChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0100_v0_0_s_ifspec;
 
 #ifndef __IStateChangedEvent_INTERFACE_DEFINED__
 #define __IStateChangedEvent_INTERFACE_DEFINED__
@@ -41162,7 +42370,7 @@ EXTERN_C const IID IID_IStateChangedEvent;
 #endif 	/* __IStateChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0100 */
+/* interface __MIDL_itf_VirtualBox_0000_0101 */
 /* [local] */ 
 
 #define COM_FORWARD_IStateChangedEvent_GETTER_State_TO(smth) HRESULT STDMETHODCALLTYPE get_State (MachineState * aState) { return smth get_State (aState); }
@@ -41173,8 +42381,8 @@ EXTERN_C const IID IID_IStateChangedEvent;
 #define COM_FORWARD_IStateChangedEvent_TO_BASE(base) COM_FORWARD_IStateChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0101_v0_0_s_ifspec;
 
 #ifndef __IAdditionsStateChangedEvent_INTERFACE_DEFINED__
 #define __IAdditionsStateChangedEvent_INTERFACE_DEFINED__
@@ -41333,7 +42541,7 @@ EXTERN_C const IID IID_IAdditionsStateChangedEvent;
 #endif 	/* __IAdditionsStateChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0101 */
+/* interface __MIDL_itf_VirtualBox_0000_0102 */
 /* [local] */ 
 
 #define COM_FORWARD_IAdditionsStateChangedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -41344,8 +42552,8 @@ EXTERN_C const IID IID_IAdditionsStateChangedEvent;
 #define COM_FORWARD_IAdditionsStateChangedEvent_TO_BASE(base) COM_FORWARD_IAdditionsStateChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0102_v0_0_s_ifspec;
 
 #ifndef __INetworkAdapterChangedEvent_INTERFACE_DEFINED__
 #define __INetworkAdapterChangedEvent_INTERFACE_DEFINED__
@@ -41504,7 +42712,7 @@ EXTERN_C const IID IID_INetworkAdapterChangedEvent;
 #endif 	/* __INetworkAdapterChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0102 */
+/* interface __MIDL_itf_VirtualBox_0000_0103 */
 /* [local] */ 
 
 #define COM_FORWARD_INetworkAdapterChangedEvent_GETTER_NetworkAdapter_TO(smth) HRESULT STDMETHODCALLTYPE get_NetworkAdapter (INetworkAdapter * * aNetworkAdapter) { return smth get_NetworkAdapter (aNetworkAdapter); }
@@ -41515,8 +42723,179 @@ EXTERN_C const IID IID_INetworkAdapterChangedEvent;
 #define COM_FORWARD_INetworkAdapterChangedEvent_TO_BASE(base) COM_FORWARD_INetworkAdapterChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0103_v0_0_s_ifspec;
+
+#ifndef __IAudioAdapterChangedEvent_INTERFACE_DEFINED__
+#define __IAudioAdapterChangedEvent_INTERFACE_DEFINED__
+
+/* interface IAudioAdapterChangedEvent */
+/* [proxy][oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IAudioAdapterChangedEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("D5ABC823-04D0-4DB6-8D66-DC2F033120E1")
+    IAudioAdapterChangedEvent : public IEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AudioAdapter( 
+            /* [retval][out] */ IAudioAdapter **aAudioAdapter) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IAudioAdapterChangedEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IAudioAdapterChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IAudioAdapterChangedEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IAudioAdapterChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IAudioAdapterChangedEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IAudioAdapterChangedEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IAudioAdapterChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IAudioAdapterChangedEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IAudioAdapterChangedEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IAudioAdapterChangedEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IAudioAdapterChangedEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IAudioAdapterChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IAudioAdapterChangedEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AudioAdapter )( 
+            IAudioAdapterChangedEvent * This,
+            /* [retval][out] */ IAudioAdapter **aAudioAdapter);
+        
+        END_INTERFACE
+    } IAudioAdapterChangedEventVtbl;
+
+    interface IAudioAdapterChangedEvent
+    {
+        CONST_VTBL struct IAudioAdapterChangedEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IAudioAdapterChangedEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IAudioAdapterChangedEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IAudioAdapterChangedEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IAudioAdapterChangedEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IAudioAdapterChangedEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IAudioAdapterChangedEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IAudioAdapterChangedEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IAudioAdapterChangedEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IAudioAdapterChangedEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IAudioAdapterChangedEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IAudioAdapterChangedEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IAudioAdapterChangedEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IAudioAdapterChangedEvent_get_AudioAdapter(This,aAudioAdapter)	\
+    ( (This)->lpVtbl -> get_AudioAdapter(This,aAudioAdapter) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IAudioAdapterChangedEvent_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_VirtualBox_0000_0104 */
+/* [local] */ 
+
+#define COM_FORWARD_IAudioAdapterChangedEvent_GETTER_AudioAdapter_TO(smth) HRESULT STDMETHODCALLTYPE get_AudioAdapter (IAudioAdapter * * aAudioAdapter) { return smth get_AudioAdapter (aAudioAdapter); }
+#define COM_FORWARD_IAudioAdapterChangedEvent_GETTER_AudioAdapter_TO_OBJ(obj) COM_FORWARD_IAudioAdapterChangedEvent_GETTER_AudioAdapter_TO ((obj)->)
+#define COM_FORWARD_IAudioAdapterChangedEvent_GETTER_AudioAdapter_TO_BASE(base) COM_FORWARD_IAudioAdapterChangedEvent_GETTER_AudioAdapter_TO (base::)
+#define COM_FORWARD_IAudioAdapterChangedEvent_TO(smth) COM_FORWARD_IAudioAdapterChangedEvent_GETTER_AudioAdapter_TO (smth) 
+#define COM_FORWARD_IAudioAdapterChangedEvent_TO_OBJ(obj) COM_FORWARD_IAudioAdapterChangedEvent_TO ((obj)->)
+#define COM_FORWARD_IAudioAdapterChangedEvent_TO_BASE(base) COM_FORWARD_IAudioAdapterChangedEvent_TO (base::)
+
+
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0104_v0_0_s_ifspec;
 
 #ifndef __ISerialPortChangedEvent_INTERFACE_DEFINED__
 #define __ISerialPortChangedEvent_INTERFACE_DEFINED__
@@ -41675,7 +43054,7 @@ EXTERN_C const IID IID_ISerialPortChangedEvent;
 #endif 	/* __ISerialPortChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0103 */
+/* interface __MIDL_itf_VirtualBox_0000_0105 */
 /* [local] */ 
 
 #define COM_FORWARD_ISerialPortChangedEvent_GETTER_SerialPort_TO(smth) HRESULT STDMETHODCALLTYPE get_SerialPort (ISerialPort * * aSerialPort) { return smth get_SerialPort (aSerialPort); }
@@ -41686,8 +43065,8 @@ EXTERN_C const IID IID_ISerialPortChangedEvent;
 #define COM_FORWARD_ISerialPortChangedEvent_TO_BASE(base) COM_FORWARD_ISerialPortChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0105_v0_0_s_ifspec;
 
 #ifndef __IParallelPortChangedEvent_INTERFACE_DEFINED__
 #define __IParallelPortChangedEvent_INTERFACE_DEFINED__
@@ -41846,7 +43225,7 @@ EXTERN_C const IID IID_IParallelPortChangedEvent;
 #endif 	/* __IParallelPortChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0104 */
+/* interface __MIDL_itf_VirtualBox_0000_0106 */
 /* [local] */ 
 
 #define COM_FORWARD_IParallelPortChangedEvent_GETTER_ParallelPort_TO(smth) HRESULT STDMETHODCALLTYPE get_ParallelPort (IParallelPort * * aParallelPort) { return smth get_ParallelPort (aParallelPort); }
@@ -41857,8 +43236,8 @@ EXTERN_C const IID IID_IParallelPortChangedEvent;
 #define COM_FORWARD_IParallelPortChangedEvent_TO_BASE(base) COM_FORWARD_IParallelPortChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0106_v0_0_s_ifspec;
 
 #ifndef __IStorageControllerChangedEvent_INTERFACE_DEFINED__
 #define __IStorageControllerChangedEvent_INTERFACE_DEFINED__
@@ -42017,7 +43396,7 @@ EXTERN_C const IID IID_IStorageControllerChangedEvent;
 #endif 	/* __IStorageControllerChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0105 */
+/* interface __MIDL_itf_VirtualBox_0000_0107 */
 /* [local] */ 
 
 #define COM_FORWARD_IStorageControllerChangedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -42028,8 +43407,8 @@ EXTERN_C const IID IID_IStorageControllerChangedEvent;
 #define COM_FORWARD_IStorageControllerChangedEvent_TO_BASE(base) COM_FORWARD_IStorageControllerChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0107_v0_0_s_ifspec;
 
 #ifndef __IMediumChangedEvent_INTERFACE_DEFINED__
 #define __IMediumChangedEvent_INTERFACE_DEFINED__
@@ -42188,7 +43567,7 @@ EXTERN_C const IID IID_IMediumChangedEvent;
 #endif 	/* __IMediumChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0106 */
+/* interface __MIDL_itf_VirtualBox_0000_0108 */
 /* [local] */ 
 
 #define COM_FORWARD_IMediumChangedEvent_GETTER_MediumAttachment_TO(smth) HRESULT STDMETHODCALLTYPE get_MediumAttachment (IMediumAttachment * * aMediumAttachment) { return smth get_MediumAttachment (aMediumAttachment); }
@@ -42199,8 +43578,8 @@ EXTERN_C const IID IID_IMediumChangedEvent;
 #define COM_FORWARD_IMediumChangedEvent_TO_BASE(base) COM_FORWARD_IMediumChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0108_v0_0_s_ifspec;
 
 #ifndef __IClipboardModeChangedEvent_INTERFACE_DEFINED__
 #define __IClipboardModeChangedEvent_INTERFACE_DEFINED__
@@ -42359,7 +43738,7 @@ EXTERN_C const IID IID_IClipboardModeChangedEvent;
 #endif 	/* __IClipboardModeChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0107 */
+/* interface __MIDL_itf_VirtualBox_0000_0109 */
 /* [local] */ 
 
 #define COM_FORWARD_IClipboardModeChangedEvent_GETTER_ClipboardMode_TO(smth) HRESULT STDMETHODCALLTYPE get_ClipboardMode (ClipboardMode * aClipboardMode) { return smth get_ClipboardMode (aClipboardMode); }
@@ -42370,8 +43749,8 @@ EXTERN_C const IID IID_IClipboardModeChangedEvent;
 #define COM_FORWARD_IClipboardModeChangedEvent_TO_BASE(base) COM_FORWARD_IClipboardModeChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0109_v0_0_s_ifspec;
 
 #ifndef __IDnDModeChangedEvent_INTERFACE_DEFINED__
 #define __IDnDModeChangedEvent_INTERFACE_DEFINED__
@@ -42530,7 +43909,7 @@ EXTERN_C const IID IID_IDnDModeChangedEvent;
 #endif 	/* __IDnDModeChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0108 */
+/* interface __MIDL_itf_VirtualBox_0000_0110 */
 /* [local] */ 
 
 #define COM_FORWARD_IDnDModeChangedEvent_GETTER_DndMode_TO(smth) HRESULT STDMETHODCALLTYPE get_DndMode (DnDMode * aDndMode) { return smth get_DndMode (aDndMode); }
@@ -42541,8 +43920,8 @@ EXTERN_C const IID IID_IDnDModeChangedEvent;
 #define COM_FORWARD_IDnDModeChangedEvent_TO_BASE(base) COM_FORWARD_IDnDModeChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0110_v0_0_s_ifspec;
 
 #ifndef __ICPUChangedEvent_INTERFACE_DEFINED__
 #define __ICPUChangedEvent_INTERFACE_DEFINED__
@@ -42711,7 +44090,7 @@ EXTERN_C const IID IID_ICPUChangedEvent;
 #endif 	/* __ICPUChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0109 */
+/* interface __MIDL_itf_VirtualBox_0000_0111 */
 /* [local] */ 
 
 #define COM_FORWARD_ICPUChangedEvent_GETTER_CPU_TO(smth) HRESULT STDMETHODCALLTYPE get_CPU (ULONG * aCPU) { return smth get_CPU (aCPU); }
@@ -42725,8 +44104,8 @@ EXTERN_C const IID IID_ICPUChangedEvent;
 #define COM_FORWARD_ICPUChangedEvent_TO_BASE(base) COM_FORWARD_ICPUChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0111_v0_0_s_ifspec;
 
 #ifndef __ICPUExecutionCapChangedEvent_INTERFACE_DEFINED__
 #define __ICPUExecutionCapChangedEvent_INTERFACE_DEFINED__
@@ -42885,7 +44264,7 @@ EXTERN_C const IID IID_ICPUExecutionCapChangedEvent;
 #endif 	/* __ICPUExecutionCapChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0110 */
+/* interface __MIDL_itf_VirtualBox_0000_0112 */
 /* [local] */ 
 
 #define COM_FORWARD_ICPUExecutionCapChangedEvent_GETTER_ExecutionCap_TO(smth) HRESULT STDMETHODCALLTYPE get_ExecutionCap (ULONG * aExecutionCap) { return smth get_ExecutionCap (aExecutionCap); }
@@ -42896,8 +44275,8 @@ EXTERN_C const IID IID_ICPUExecutionCapChangedEvent;
 #define COM_FORWARD_ICPUExecutionCapChangedEvent_TO_BASE(base) COM_FORWARD_ICPUExecutionCapChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0112_v0_0_s_ifspec;
 
 #ifndef __IGuestKeyboardEvent_INTERFACE_DEFINED__
 #define __IGuestKeyboardEvent_INTERFACE_DEFINED__
@@ -43056,7 +44435,7 @@ EXTERN_C const IID IID_IGuestKeyboardEvent;
 #endif 	/* __IGuestKeyboardEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0111 */
+/* interface __MIDL_itf_VirtualBox_0000_0113 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestKeyboardEvent_GETTER_Scancodes_TO(smth) HRESULT STDMETHODCALLTYPE get_Scancodes (SAFEARRAY * * aScancodes) { return smth get_Scancodes (aScancodes); }
@@ -43067,8 +44446,8 @@ EXTERN_C const IID IID_IGuestKeyboardEvent;
 #define COM_FORWARD_IGuestKeyboardEvent_TO_BASE(base) COM_FORWARD_IGuestKeyboardEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0113_v0_0_s_ifspec;
 
 #ifndef __IGuestMouseEvent_INTERFACE_DEFINED__
 #define __IGuestMouseEvent_INTERFACE_DEFINED__
@@ -43291,7 +44670,7 @@ EXTERN_C const IID IID_IGuestMouseEvent;
 #endif 	/* __IGuestMouseEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0112 */
+/* interface __MIDL_itf_VirtualBox_0000_0114 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestMouseEvent_GETTER_Mode_TO(smth) HRESULT STDMETHODCALLTYPE get_Mode (GuestMouseEventMode * aMode) { return smth get_Mode (aMode); }
@@ -43317,8 +44696,8 @@ EXTERN_C const IID IID_IGuestMouseEvent;
 #define COM_FORWARD_IGuestMouseEvent_TO_BASE(base) COM_FORWARD_IGuestMouseEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0114_v0_0_s_ifspec;
 
 #ifndef __IGuestMultiTouchEvent_INTERFACE_DEFINED__
 #define __IGuestMultiTouchEvent_INTERFACE_DEFINED__
@@ -43527,7 +44906,7 @@ EXTERN_C const IID IID_IGuestMultiTouchEvent;
 #endif 	/* __IGuestMultiTouchEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0113 */
+/* interface __MIDL_itf_VirtualBox_0000_0115 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestMultiTouchEvent_GETTER_ContactCount_TO(smth) HRESULT STDMETHODCALLTYPE get_ContactCount (LONG * aContactCount) { return smth get_ContactCount (aContactCount); }
@@ -43553,8 +44932,8 @@ EXTERN_C const IID IID_IGuestMultiTouchEvent;
 #define COM_FORWARD_IGuestMultiTouchEvent_TO_BASE(base) COM_FORWARD_IGuestMultiTouchEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0115_v0_0_s_ifspec;
 
 #ifndef __IGuestSessionEvent_INTERFACE_DEFINED__
 #define __IGuestSessionEvent_INTERFACE_DEFINED__
@@ -43713,7 +45092,7 @@ EXTERN_C const IID IID_IGuestSessionEvent;
 #endif 	/* __IGuestSessionEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0114 */
+/* interface __MIDL_itf_VirtualBox_0000_0116 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestSessionEvent_GETTER_Session_TO(smth) HRESULT STDMETHODCALLTYPE get_Session (IGuestSession * * aSession) { return smth get_Session (aSession); }
@@ -43724,8 +45103,8 @@ EXTERN_C const IID IID_IGuestSessionEvent;
 #define COM_FORWARD_IGuestSessionEvent_TO_BASE(base) COM_FORWARD_IGuestSessionEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0116_v0_0_s_ifspec;
 
 #ifndef __IGuestSessionStateChangedEvent_INTERFACE_DEFINED__
 #define __IGuestSessionStateChangedEvent_INTERFACE_DEFINED__
@@ -43912,7 +45291,7 @@ EXTERN_C const IID IID_IGuestSessionStateChangedEvent;
 #endif 	/* __IGuestSessionStateChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0115 */
+/* interface __MIDL_itf_VirtualBox_0000_0117 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestSessionStateChangedEvent_GETTER_Id_TO(smth) HRESULT STDMETHODCALLTYPE get_Id (ULONG * aId) { return smth get_Id (aId); }
@@ -43929,8 +45308,8 @@ EXTERN_C const IID IID_IGuestSessionStateChangedEvent;
 #define COM_FORWARD_IGuestSessionStateChangedEvent_TO_BASE(base) COM_FORWARD_IGuestSessionStateChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0117_v0_0_s_ifspec;
 
 #ifndef __IGuestSessionRegisteredEvent_INTERFACE_DEFINED__
 #define __IGuestSessionRegisteredEvent_INTERFACE_DEFINED__
@@ -44097,7 +45476,7 @@ EXTERN_C const IID IID_IGuestSessionRegisteredEvent;
 #endif 	/* __IGuestSessionRegisteredEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0116 */
+/* interface __MIDL_itf_VirtualBox_0000_0118 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestSessionRegisteredEvent_GETTER_Registered_TO(smth) HRESULT STDMETHODCALLTYPE get_Registered (BOOL * aRegistered) { return smth get_Registered (aRegistered); }
@@ -44108,8 +45487,8 @@ EXTERN_C const IID IID_IGuestSessionRegisteredEvent;
 #define COM_FORWARD_IGuestSessionRegisteredEvent_TO_BASE(base) COM_FORWARD_IGuestSessionRegisteredEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0118_v0_0_s_ifspec;
 
 #ifndef __IGuestProcessEvent_INTERFACE_DEFINED__
 #define __IGuestProcessEvent_INTERFACE_DEFINED__
@@ -44286,7 +45665,7 @@ EXTERN_C const IID IID_IGuestProcessEvent;
 #endif 	/* __IGuestProcessEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0117 */
+/* interface __MIDL_itf_VirtualBox_0000_0119 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestProcessEvent_GETTER_Process_TO(smth) HRESULT STDMETHODCALLTYPE get_Process (IGuestProcess * * aProcess) { return smth get_Process (aProcess); }
@@ -44300,8 +45679,8 @@ EXTERN_C const IID IID_IGuestProcessEvent;
 #define COM_FORWARD_IGuestProcessEvent_TO_BASE(base) COM_FORWARD_IGuestProcessEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0119_v0_0_s_ifspec;
 
 #ifndef __IGuestProcessRegisteredEvent_INTERFACE_DEFINED__
 #define __IGuestProcessRegisteredEvent_INTERFACE_DEFINED__
@@ -44483,7 +45862,7 @@ EXTERN_C const IID IID_IGuestProcessRegisteredEvent;
 #endif 	/* __IGuestProcessRegisteredEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0118 */
+/* interface __MIDL_itf_VirtualBox_0000_0120 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestProcessRegisteredEvent_GETTER_Registered_TO(smth) HRESULT STDMETHODCALLTYPE get_Registered (BOOL * aRegistered) { return smth get_Registered (aRegistered); }
@@ -44494,8 +45873,8 @@ EXTERN_C const IID IID_IGuestProcessRegisteredEvent;
 #define COM_FORWARD_IGuestProcessRegisteredEvent_TO_BASE(base) COM_FORWARD_IGuestProcessRegisteredEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0120_v0_0_s_ifspec;
 
 #ifndef __IGuestProcessStateChangedEvent_INTERFACE_DEFINED__
 #define __IGuestProcessStateChangedEvent_INTERFACE_DEFINED__
@@ -44687,7 +46066,7 @@ EXTERN_C const IID IID_IGuestProcessStateChangedEvent;
 #endif 	/* __IGuestProcessStateChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0119 */
+/* interface __MIDL_itf_VirtualBox_0000_0121 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestProcessStateChangedEvent_GETTER_Status_TO(smth) HRESULT STDMETHODCALLTYPE get_Status (ProcessStatus * aStatus) { return smth get_Status (aStatus); }
@@ -44701,8 +46080,8 @@ EXTERN_C const IID IID_IGuestProcessStateChangedEvent;
 #define COM_FORWARD_IGuestProcessStateChangedEvent_TO_BASE(base) COM_FORWARD_IGuestProcessStateChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0121_v0_0_s_ifspec;
 
 #ifndef __IGuestProcessIOEvent_INTERFACE_DEFINED__
 #define __IGuestProcessIOEvent_INTERFACE_DEFINED__
@@ -44894,7 +46273,7 @@ EXTERN_C const IID IID_IGuestProcessIOEvent;
 #endif 	/* __IGuestProcessIOEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0120 */
+/* interface __MIDL_itf_VirtualBox_0000_0122 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestProcessIOEvent_GETTER_Handle_TO(smth) HRESULT STDMETHODCALLTYPE get_Handle (ULONG * aHandle) { return smth get_Handle (aHandle); }
@@ -44908,8 +46287,8 @@ EXTERN_C const IID IID_IGuestProcessIOEvent;
 #define COM_FORWARD_IGuestProcessIOEvent_TO_BASE(base) COM_FORWARD_IGuestProcessIOEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0122_v0_0_s_ifspec;
 
 #ifndef __IGuestProcessInputNotifyEvent_INTERFACE_DEFINED__
 #define __IGuestProcessInputNotifyEvent_INTERFACE_DEFINED__
@@ -45106,7 +46485,7 @@ EXTERN_C const IID IID_IGuestProcessInputNotifyEvent;
 #endif 	/* __IGuestProcessInputNotifyEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0121 */
+/* interface __MIDL_itf_VirtualBox_0000_0123 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestProcessInputNotifyEvent_GETTER_Status_TO(smth) HRESULT STDMETHODCALLTYPE get_Status (ProcessInputStatus * aStatus) { return smth get_Status (aStatus); }
@@ -45117,8 +46496,8 @@ EXTERN_C const IID IID_IGuestProcessInputNotifyEvent;
 #define COM_FORWARD_IGuestProcessInputNotifyEvent_TO_BASE(base) COM_FORWARD_IGuestProcessInputNotifyEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0123_v0_0_s_ifspec;
 
 #ifndef __IGuestProcessOutputEvent_INTERFACE_DEFINED__
 #define __IGuestProcessOutputEvent_INTERFACE_DEFINED__
@@ -45315,7 +46694,7 @@ EXTERN_C const IID IID_IGuestProcessOutputEvent;
 #endif 	/* __IGuestProcessOutputEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0122 */
+/* interface __MIDL_itf_VirtualBox_0000_0124 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestProcessOutputEvent_GETTER_Data_TO(smth) HRESULT STDMETHODCALLTYPE get_Data (SAFEARRAY * * aData) { return smth get_Data (aData); }
@@ -45326,8 +46705,8 @@ EXTERN_C const IID IID_IGuestProcessOutputEvent;
 #define COM_FORWARD_IGuestProcessOutputEvent_TO_BASE(base) COM_FORWARD_IGuestProcessOutputEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0124_v0_0_s_ifspec;
 
 #ifndef __IGuestFileEvent_INTERFACE_DEFINED__
 #define __IGuestFileEvent_INTERFACE_DEFINED__
@@ -45494,7 +46873,7 @@ EXTERN_C const IID IID_IGuestFileEvent;
 #endif 	/* __IGuestFileEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0123 */
+/* interface __MIDL_itf_VirtualBox_0000_0125 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestFileEvent_GETTER_File_TO(smth) HRESULT STDMETHODCALLTYPE get_File (IGuestFile * * aFile) { return smth get_File (aFile); }
@@ -45505,8 +46884,8 @@ EXTERN_C const IID IID_IGuestFileEvent;
 #define COM_FORWARD_IGuestFileEvent_TO_BASE(base) COM_FORWARD_IGuestFileEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0125_v0_0_s_ifspec;
 
 #ifndef __IGuestFileRegisteredEvent_INTERFACE_DEFINED__
 #define __IGuestFileRegisteredEvent_INTERFACE_DEFINED__
@@ -45681,7 +47060,7 @@ EXTERN_C const IID IID_IGuestFileRegisteredEvent;
 #endif 	/* __IGuestFileRegisteredEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0124 */
+/* interface __MIDL_itf_VirtualBox_0000_0126 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestFileRegisteredEvent_GETTER_Registered_TO(smth) HRESULT STDMETHODCALLTYPE get_Registered (BOOL * aRegistered) { return smth get_Registered (aRegistered); }
@@ -45692,8 +47071,8 @@ EXTERN_C const IID IID_IGuestFileRegisteredEvent;
 #define COM_FORWARD_IGuestFileRegisteredEvent_TO_BASE(base) COM_FORWARD_IGuestFileRegisteredEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0126_v0_0_s_ifspec;
 
 #ifndef __IGuestFileStateChangedEvent_INTERFACE_DEFINED__
 #define __IGuestFileStateChangedEvent_INTERFACE_DEFINED__
@@ -45878,7 +47257,7 @@ EXTERN_C const IID IID_IGuestFileStateChangedEvent;
 #endif 	/* __IGuestFileStateChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0125 */
+/* interface __MIDL_itf_VirtualBox_0000_0127 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestFileStateChangedEvent_GETTER_Status_TO(smth) HRESULT STDMETHODCALLTYPE get_Status (FileStatus * aStatus) { return smth get_Status (aStatus); }
@@ -45892,8 +47271,8 @@ EXTERN_C const IID IID_IGuestFileStateChangedEvent;
 #define COM_FORWARD_IGuestFileStateChangedEvent_TO_BASE(base) COM_FORWARD_IGuestFileStateChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0127_v0_0_s_ifspec;
 
 #ifndef __IGuestFileIOEvent_INTERFACE_DEFINED__
 #define __IGuestFileIOEvent_INTERFACE_DEFINED__
@@ -46078,7 +47457,7 @@ EXTERN_C const IID IID_IGuestFileIOEvent;
 #endif 	/* __IGuestFileIOEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0126 */
+/* interface __MIDL_itf_VirtualBox_0000_0128 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestFileIOEvent_GETTER_Offset_TO(smth) HRESULT STDMETHODCALLTYPE get_Offset (LONG64 * aOffset) { return smth get_Offset (aOffset); }
@@ -46092,8 +47471,8 @@ EXTERN_C const IID IID_IGuestFileIOEvent;
 #define COM_FORWARD_IGuestFileIOEvent_TO_BASE(base) COM_FORWARD_IGuestFileIOEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0128_v0_0_s_ifspec;
 
 #ifndef __IGuestFileOffsetChangedEvent_INTERFACE_DEFINED__
 #define __IGuestFileOffsetChangedEvent_INTERFACE_DEFINED__
@@ -46283,7 +47662,7 @@ EXTERN_C const IID IID_IGuestFileOffsetChangedEvent;
 #endif 	/* __IGuestFileOffsetChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0127 */
+/* interface __MIDL_itf_VirtualBox_0000_0129 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestFileOffsetChangedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -46294,8 +47673,8 @@ EXTERN_C const IID IID_IGuestFileOffsetChangedEvent;
 #define COM_FORWARD_IGuestFileOffsetChangedEvent_TO_BASE(base) COM_FORWARD_IGuestFileOffsetChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0129_v0_0_s_ifspec;
 
 #ifndef __IGuestFileReadEvent_INTERFACE_DEFINED__
 #define __IGuestFileReadEvent_INTERFACE_DEFINED__
@@ -46485,7 +47864,7 @@ EXTERN_C const IID IID_IGuestFileReadEvent;
 #endif 	/* __IGuestFileReadEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0128 */
+/* interface __MIDL_itf_VirtualBox_0000_0130 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestFileReadEvent_GETTER_Data_TO(smth) HRESULT STDMETHODCALLTYPE get_Data (SAFEARRAY * * aData) { return smth get_Data (aData); }
@@ -46496,8 +47875,8 @@ EXTERN_C const IID IID_IGuestFileReadEvent;
 #define COM_FORWARD_IGuestFileReadEvent_TO_BASE(base) COM_FORWARD_IGuestFileReadEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0130_v0_0_s_ifspec;
 
 #ifndef __IGuestFileWriteEvent_INTERFACE_DEFINED__
 #define __IGuestFileWriteEvent_INTERFACE_DEFINED__
@@ -46687,7 +48066,7 @@ EXTERN_C const IID IID_IGuestFileWriteEvent;
 #endif 	/* __IGuestFileWriteEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0129 */
+/* interface __MIDL_itf_VirtualBox_0000_0131 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestFileWriteEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -46698,8 +48077,8 @@ EXTERN_C const IID IID_IGuestFileWriteEvent;
 #define COM_FORWARD_IGuestFileWriteEvent_TO_BASE(base) COM_FORWARD_IGuestFileWriteEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0131_v0_0_s_ifspec;
 
 #ifndef __IVRDEServerChangedEvent_INTERFACE_DEFINED__
 #define __IVRDEServerChangedEvent_INTERFACE_DEFINED__
@@ -46858,7 +48237,7 @@ EXTERN_C const IID IID_IVRDEServerChangedEvent;
 #endif 	/* __IVRDEServerChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0130 */
+/* interface __MIDL_itf_VirtualBox_0000_0132 */
 /* [local] */ 
 
 #define COM_FORWARD_IVRDEServerChangedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -46869,8 +48248,8 @@ EXTERN_C const IID IID_IVRDEServerChangedEvent;
 #define COM_FORWARD_IVRDEServerChangedEvent_TO_BASE(base) COM_FORWARD_IVRDEServerChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0132_v0_0_s_ifspec;
 
 #ifndef __IVRDEServerInfoChangedEvent_INTERFACE_DEFINED__
 #define __IVRDEServerInfoChangedEvent_INTERFACE_DEFINED__
@@ -47029,7 +48408,7 @@ EXTERN_C const IID IID_IVRDEServerInfoChangedEvent;
 #endif 	/* __IVRDEServerInfoChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0131 */
+/* interface __MIDL_itf_VirtualBox_0000_0133 */
 /* [local] */ 
 
 #define COM_FORWARD_IVRDEServerInfoChangedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -47040,8 +48419,8 @@ EXTERN_C const IID IID_IVRDEServerInfoChangedEvent;
 #define COM_FORWARD_IVRDEServerInfoChangedEvent_TO_BASE(base) COM_FORWARD_IVRDEServerInfoChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0133_v0_0_s_ifspec;
 
 #ifndef __IVideoCaptureChangedEvent_INTERFACE_DEFINED__
 #define __IVideoCaptureChangedEvent_INTERFACE_DEFINED__
@@ -47200,7 +48579,7 @@ EXTERN_C const IID IID_IVideoCaptureChangedEvent;
 #endif 	/* __IVideoCaptureChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0132 */
+/* interface __MIDL_itf_VirtualBox_0000_0134 */
 /* [local] */ 
 
 #define COM_FORWARD_IVideoCaptureChangedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -47211,8 +48590,8 @@ EXTERN_C const IID IID_IVideoCaptureChangedEvent;
 #define COM_FORWARD_IVideoCaptureChangedEvent_TO_BASE(base) COM_FORWARD_IVideoCaptureChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0134_v0_0_s_ifspec;
 
 #ifndef __IUSBControllerChangedEvent_INTERFACE_DEFINED__
 #define __IUSBControllerChangedEvent_INTERFACE_DEFINED__
@@ -47371,7 +48750,7 @@ EXTERN_C const IID IID_IUSBControllerChangedEvent;
 #endif 	/* __IUSBControllerChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0133 */
+/* interface __MIDL_itf_VirtualBox_0000_0135 */
 /* [local] */ 
 
 #define COM_FORWARD_IUSBControllerChangedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -47382,8 +48761,8 @@ EXTERN_C const IID IID_IUSBControllerChangedEvent;
 #define COM_FORWARD_IUSBControllerChangedEvent_TO_BASE(base) COM_FORWARD_IUSBControllerChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0135_v0_0_s_ifspec;
 
 #ifndef __IUSBDeviceStateChangedEvent_INTERFACE_DEFINED__
 #define __IUSBDeviceStateChangedEvent_INTERFACE_DEFINED__
@@ -47562,7 +48941,7 @@ EXTERN_C const IID IID_IUSBDeviceStateChangedEvent;
 #endif 	/* __IUSBDeviceStateChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0134 */
+/* interface __MIDL_itf_VirtualBox_0000_0136 */
 /* [local] */ 
 
 #define COM_FORWARD_IUSBDeviceStateChangedEvent_GETTER_Device_TO(smth) HRESULT STDMETHODCALLTYPE get_Device (IUSBDevice * * aDevice) { return smth get_Device (aDevice); }
@@ -47579,8 +48958,8 @@ EXTERN_C const IID IID_IUSBDeviceStateChangedEvent;
 #define COM_FORWARD_IUSBDeviceStateChangedEvent_TO_BASE(base) COM_FORWARD_IUSBDeviceStateChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0136_v0_0_s_ifspec;
 
 #ifndef __ISharedFolderChangedEvent_INTERFACE_DEFINED__
 #define __ISharedFolderChangedEvent_INTERFACE_DEFINED__
@@ -47739,7 +49118,7 @@ EXTERN_C const IID IID_ISharedFolderChangedEvent;
 #endif 	/* __ISharedFolderChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0135 */
+/* interface __MIDL_itf_VirtualBox_0000_0137 */
 /* [local] */ 
 
 #define COM_FORWARD_ISharedFolderChangedEvent_GETTER_Scope_TO(smth) HRESULT STDMETHODCALLTYPE get_Scope (Scope * aScope) { return smth get_Scope (aScope); }
@@ -47750,8 +49129,8 @@ EXTERN_C const IID IID_ISharedFolderChangedEvent;
 #define COM_FORWARD_ISharedFolderChangedEvent_TO_BASE(base) COM_FORWARD_ISharedFolderChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0137_v0_0_s_ifspec;
 
 #ifndef __IRuntimeErrorEvent_INTERFACE_DEFINED__
 #define __IRuntimeErrorEvent_INTERFACE_DEFINED__
@@ -47930,7 +49309,7 @@ EXTERN_C const IID IID_IRuntimeErrorEvent;
 #endif 	/* __IRuntimeErrorEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0136 */
+/* interface __MIDL_itf_VirtualBox_0000_0138 */
 /* [local] */ 
 
 #define COM_FORWARD_IRuntimeErrorEvent_GETTER_Fatal_TO(smth) HRESULT STDMETHODCALLTYPE get_Fatal (BOOL * aFatal) { return smth get_Fatal (aFatal); }
@@ -47947,8 +49326,8 @@ EXTERN_C const IID IID_IRuntimeErrorEvent;
 #define COM_FORWARD_IRuntimeErrorEvent_TO_BASE(base) COM_FORWARD_IRuntimeErrorEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0138_v0_0_s_ifspec;
 
 #ifndef __IEventSourceChangedEvent_INTERFACE_DEFINED__
 #define __IEventSourceChangedEvent_INTERFACE_DEFINED__
@@ -48117,7 +49496,7 @@ EXTERN_C const IID IID_IEventSourceChangedEvent;
 #endif 	/* __IEventSourceChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0137 */
+/* interface __MIDL_itf_VirtualBox_0000_0139 */
 /* [local] */ 
 
 #define COM_FORWARD_IEventSourceChangedEvent_GETTER_Listener_TO(smth) HRESULT STDMETHODCALLTYPE get_Listener (IEventListener * * aListener) { return smth get_Listener (aListener); }
@@ -48131,8 +49510,8 @@ EXTERN_C const IID IID_IEventSourceChangedEvent;
 #define COM_FORWARD_IEventSourceChangedEvent_TO_BASE(base) COM_FORWARD_IEventSourceChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0139_v0_0_s_ifspec;
 
 #ifndef __IExtraDataChangedEvent_INTERFACE_DEFINED__
 #define __IExtraDataChangedEvent_INTERFACE_DEFINED__
@@ -48311,7 +49690,7 @@ EXTERN_C const IID IID_IExtraDataChangedEvent;
 #endif 	/* __IExtraDataChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0138 */
+/* interface __MIDL_itf_VirtualBox_0000_0140 */
 /* [local] */ 
 
 #define COM_FORWARD_IExtraDataChangedEvent_GETTER_MachineId_TO(smth) HRESULT STDMETHODCALLTYPE get_MachineId (BSTR * aMachineId) { return smth get_MachineId (aMachineId); }
@@ -48328,8 +49707,8 @@ EXTERN_C const IID IID_IExtraDataChangedEvent;
 #define COM_FORWARD_IExtraDataChangedEvent_TO_BASE(base) COM_FORWARD_IExtraDataChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0140_v0_0_s_ifspec;
 
 #ifndef __IVetoEvent_INTERFACE_DEFINED__
 #define __IVetoEvent_INTERFACE_DEFINED__
@@ -48538,7 +49917,7 @@ EXTERN_C const IID IID_IVetoEvent;
 #endif 	/* __IVetoEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0139 */
+/* interface __MIDL_itf_VirtualBox_0000_0141 */
 /* [local] */ 
 
 #define COM_FORWARD_IVetoEvent_AddVeto_TO(smth) HRESULT STDMETHODCALLTYPE AddVeto (BSTR aReason) { return smth AddVeto (aReason); }
@@ -48564,8 +49943,8 @@ EXTERN_C const IID IID_IVetoEvent;
 #define COM_FORWARD_IVetoEvent_TO_BASE(base) COM_FORWARD_IVetoEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0141_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0141_v0_0_s_ifspec;
 
 #ifndef __IExtraDataCanChangeEvent_INTERFACE_DEFINED__
 #define __IExtraDataCanChangeEvent_INTERFACE_DEFINED__
@@ -48787,7 +50166,7 @@ EXTERN_C const IID IID_IExtraDataCanChangeEvent;
 #endif 	/* __IExtraDataCanChangeEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0140 */
+/* interface __MIDL_itf_VirtualBox_0000_0142 */
 /* [local] */ 
 
 #define COM_FORWARD_IExtraDataCanChangeEvent_GETTER_MachineId_TO(smth) HRESULT STDMETHODCALLTYPE get_MachineId (BSTR * aMachineId) { return smth get_MachineId (aMachineId); }
@@ -48804,8 +50183,8 @@ EXTERN_C const IID IID_IExtraDataCanChangeEvent;
 #define COM_FORWARD_IExtraDataCanChangeEvent_TO_BASE(base) COM_FORWARD_IExtraDataCanChangeEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0142_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0142_v0_0_s_ifspec;
 
 #ifndef __ICanShowWindowEvent_INTERFACE_DEFINED__
 #define __ICanShowWindowEvent_INTERFACE_DEFINED__
@@ -49007,7 +50386,7 @@ EXTERN_C const IID IID_ICanShowWindowEvent;
 #endif 	/* __ICanShowWindowEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0141 */
+/* interface __MIDL_itf_VirtualBox_0000_0143 */
 /* [local] */ 
 
 #define COM_FORWARD_ICanShowWindowEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -49018,8 +50397,8 @@ EXTERN_C const IID IID_ICanShowWindowEvent;
 #define COM_FORWARD_ICanShowWindowEvent_TO_BASE(base) COM_FORWARD_ICanShowWindowEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0143_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0143_v0_0_s_ifspec;
 
 #ifndef __IShowWindowEvent_INTERFACE_DEFINED__
 #define __IShowWindowEvent_INTERFACE_DEFINED__
@@ -49188,7 +50567,7 @@ EXTERN_C const IID IID_IShowWindowEvent;
 #endif 	/* __IShowWindowEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0142 */
+/* interface __MIDL_itf_VirtualBox_0000_0144 */
 /* [local] */ 
 
 #define COM_FORWARD_IShowWindowEvent_GETTER_WinId_TO(smth) HRESULT STDMETHODCALLTYPE get_WinId (LONG64 * aWinId) { return smth get_WinId (aWinId); }
@@ -49202,8 +50581,8 @@ EXTERN_C const IID IID_IShowWindowEvent;
 #define COM_FORWARD_IShowWindowEvent_TO_BASE(base) COM_FORWARD_IShowWindowEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0144_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0144_v0_0_s_ifspec;
 
 #ifndef __INATRedirectEvent_INTERFACE_DEFINED__
 #define __INATRedirectEvent_INTERFACE_DEFINED__
@@ -49440,7 +50819,7 @@ EXTERN_C const IID IID_INATRedirectEvent;
 #endif 	/* __INATRedirectEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0143 */
+/* interface __MIDL_itf_VirtualBox_0000_0145 */
 /* [local] */ 
 
 #define COM_FORWARD_INATRedirectEvent_GETTER_Slot_TO(smth) HRESULT STDMETHODCALLTYPE get_Slot (ULONG * aSlot) { return smth get_Slot (aSlot); }
@@ -49472,8 +50851,8 @@ EXTERN_C const IID IID_INATRedirectEvent;
 #define COM_FORWARD_INATRedirectEvent_TO_BASE(base) COM_FORWARD_INATRedirectEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0145_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0145_v0_0_s_ifspec;
 
 #ifndef __IHostPCIDevicePlugEvent_INTERFACE_DEFINED__
 #define __IHostPCIDevicePlugEvent_INTERFACE_DEFINED__
@@ -49670,7 +51049,7 @@ EXTERN_C const IID IID_IHostPCIDevicePlugEvent;
 #endif 	/* __IHostPCIDevicePlugEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0144 */
+/* interface __MIDL_itf_VirtualBox_0000_0146 */
 /* [local] */ 
 
 #define COM_FORWARD_IHostPCIDevicePlugEvent_GETTER_Plugged_TO(smth) HRESULT STDMETHODCALLTYPE get_Plugged (BOOL * aPlugged) { return smth get_Plugged (aPlugged); }
@@ -49690,8 +51069,8 @@ EXTERN_C const IID IID_IHostPCIDevicePlugEvent;
 #define COM_FORWARD_IHostPCIDevicePlugEvent_TO_BASE(base) COM_FORWARD_IHostPCIDevicePlugEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0146_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0146_v0_0_s_ifspec;
 
 #ifndef __IVBoxSVCAvailabilityChangedEvent_INTERFACE_DEFINED__
 #define __IVBoxSVCAvailabilityChangedEvent_INTERFACE_DEFINED__
@@ -49850,7 +51229,7 @@ EXTERN_C const IID IID_IVBoxSVCAvailabilityChangedEvent;
 #endif 	/* __IVBoxSVCAvailabilityChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0145 */
+/* interface __MIDL_itf_VirtualBox_0000_0147 */
 /* [local] */ 
 
 #define COM_FORWARD_IVBoxSVCAvailabilityChangedEvent_GETTER_Available_TO(smth) HRESULT STDMETHODCALLTYPE get_Available (BOOL * aAvailable) { return smth get_Available (aAvailable); }
@@ -49861,8 +51240,8 @@ EXTERN_C const IID IID_IVBoxSVCAvailabilityChangedEvent;
 #define COM_FORWARD_IVBoxSVCAvailabilityChangedEvent_TO_BASE(base) COM_FORWARD_IVBoxSVCAvailabilityChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0147_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0147_v0_0_s_ifspec;
 
 #ifndef __IBandwidthGroupChangedEvent_INTERFACE_DEFINED__
 #define __IBandwidthGroupChangedEvent_INTERFACE_DEFINED__
@@ -50021,7 +51400,7 @@ EXTERN_C const IID IID_IBandwidthGroupChangedEvent;
 #endif 	/* __IBandwidthGroupChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0146 */
+/* interface __MIDL_itf_VirtualBox_0000_0148 */
 /* [local] */ 
 
 #define COM_FORWARD_IBandwidthGroupChangedEvent_GETTER_BandwidthGroup_TO(smth) HRESULT STDMETHODCALLTYPE get_BandwidthGroup (IBandwidthGroup * * aBandwidthGroup) { return smth get_BandwidthGroup (aBandwidthGroup); }
@@ -50032,8 +51411,8 @@ EXTERN_C const IID IID_IBandwidthGroupChangedEvent;
 #define COM_FORWARD_IBandwidthGroupChangedEvent_TO_BASE(base) COM_FORWARD_IBandwidthGroupChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0148_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0148_v0_0_s_ifspec;
 
 #ifndef __IGuestMonitorChangedEvent_INTERFACE_DEFINED__
 #define __IGuestMonitorChangedEvent_INTERFACE_DEFINED__
@@ -50242,7 +51621,7 @@ EXTERN_C const IID IID_IGuestMonitorChangedEvent;
 #endif 	/* __IGuestMonitorChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0147 */
+/* interface __MIDL_itf_VirtualBox_0000_0149 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestMonitorChangedEvent_GETTER_ChangeType_TO(smth) HRESULT STDMETHODCALLTYPE get_ChangeType (GuestMonitorChangedEventType * aChangeType) { return smth get_ChangeType (aChangeType); }
@@ -50268,8 +51647,8 @@ EXTERN_C const IID IID_IGuestMonitorChangedEvent;
 #define COM_FORWARD_IGuestMonitorChangedEvent_TO_BASE(base) COM_FORWARD_IGuestMonitorChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0149_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0149_v0_0_s_ifspec;
 
 #ifndef __IGuestUserStateChangedEvent_INTERFACE_DEFINED__
 #define __IGuestUserStateChangedEvent_INTERFACE_DEFINED__
@@ -50458,7 +51837,7 @@ EXTERN_C const IID IID_IGuestUserStateChangedEvent;
 #endif 	/* __IGuestUserStateChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0148 */
+/* interface __MIDL_itf_VirtualBox_0000_0150 */
 /* [local] */ 
 
 #define COM_FORWARD_IGuestUserStateChangedEvent_GETTER_Name_TO(smth) HRESULT STDMETHODCALLTYPE get_Name (BSTR * aName) { return smth get_Name (aName); }
@@ -50478,8 +51857,8 @@ EXTERN_C const IID IID_IGuestUserStateChangedEvent;
 #define COM_FORWARD_IGuestUserStateChangedEvent_TO_BASE(base) COM_FORWARD_IGuestUserStateChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0150_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0150_v0_0_s_ifspec;
 
 #ifndef __IStorageDeviceChangedEvent_INTERFACE_DEFINED__
 #define __IStorageDeviceChangedEvent_INTERFACE_DEFINED__
@@ -50658,7 +52037,7 @@ EXTERN_C const IID IID_IStorageDeviceChangedEvent;
 #endif 	/* __IStorageDeviceChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0149 */
+/* interface __MIDL_itf_VirtualBox_0000_0151 */
 /* [local] */ 
 
 #define COM_FORWARD_IStorageDeviceChangedEvent_GETTER_StorageDevice_TO(smth) HRESULT STDMETHODCALLTYPE get_StorageDevice (IMediumAttachment * * aStorageDevice) { return smth get_StorageDevice (aStorageDevice); }
@@ -50675,8 +52054,8 @@ EXTERN_C const IID IID_IStorageDeviceChangedEvent;
 #define COM_FORWARD_IStorageDeviceChangedEvent_TO_BASE(base) COM_FORWARD_IStorageDeviceChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0151_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0151_v0_0_s_ifspec;
 
 #ifndef __INATNetworkChangedEvent_INTERFACE_DEFINED__
 #define __INATNetworkChangedEvent_INTERFACE_DEFINED__
@@ -50835,7 +52214,7 @@ EXTERN_C const IID IID_INATNetworkChangedEvent;
 #endif 	/* __INATNetworkChangedEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0150 */
+/* interface __MIDL_itf_VirtualBox_0000_0152 */
 /* [local] */ 
 
 #define COM_FORWARD_INATNetworkChangedEvent_GETTER_NetworkName_TO(smth) HRESULT STDMETHODCALLTYPE get_NetworkName (BSTR * aNetworkName) { return smth get_NetworkName (aNetworkName); }
@@ -50846,8 +52225,8 @@ EXTERN_C const IID IID_INATNetworkChangedEvent;
 #define COM_FORWARD_INATNetworkChangedEvent_TO_BASE(base) COM_FORWARD_INATNetworkChangedEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0152_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0152_v0_0_s_ifspec;
 
 #ifndef __INATNetworkStartStopEvent_INTERFACE_DEFINED__
 #define __INATNetworkStartStopEvent_INTERFACE_DEFINED__
@@ -51014,7 +52393,7 @@ EXTERN_C const IID IID_INATNetworkStartStopEvent;
 #endif 	/* __INATNetworkStartStopEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0151 */
+/* interface __MIDL_itf_VirtualBox_0000_0153 */
 /* [local] */ 
 
 #define COM_FORWARD_INATNetworkStartStopEvent_GETTER_StartEvent_TO(smth) HRESULT STDMETHODCALLTYPE get_StartEvent (BOOL * aStartEvent) { return smth get_StartEvent (aStartEvent); }
@@ -51025,8 +52404,8 @@ EXTERN_C const IID IID_INATNetworkStartStopEvent;
 #define COM_FORWARD_INATNetworkStartStopEvent_TO_BASE(base) COM_FORWARD_INATNetworkStartStopEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0153_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0153_v0_0_s_ifspec;
 
 #ifndef __INATNetworkAlterEvent_INTERFACE_DEFINED__
 #define __INATNetworkAlterEvent_INTERFACE_DEFINED__
@@ -51193,7 +52572,7 @@ EXTERN_C const IID IID_INATNetworkAlterEvent;
 #endif 	/* __INATNetworkAlterEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0152 */
+/* interface __MIDL_itf_VirtualBox_0000_0154 */
 /* [local] */ 
 
 #define COM_FORWARD_INATNetworkAlterEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -51204,8 +52583,8 @@ EXTERN_C const IID IID_INATNetworkAlterEvent;
 #define COM_FORWARD_INATNetworkAlterEvent_TO_BASE(base) COM_FORWARD_INATNetworkAlterEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0154_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0154_v0_0_s_ifspec;
 
 #ifndef __INATNetworkCreationDeletionEvent_INTERFACE_DEFINED__
 #define __INATNetworkCreationDeletionEvent_INTERFACE_DEFINED__
@@ -51380,7 +52759,7 @@ EXTERN_C const IID IID_INATNetworkCreationDeletionEvent;
 #endif 	/* __INATNetworkCreationDeletionEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0153 */
+/* interface __MIDL_itf_VirtualBox_0000_0155 */
 /* [local] */ 
 
 #define COM_FORWARD_INATNetworkCreationDeletionEvent_GETTER_CreationEvent_TO(smth) HRESULT STDMETHODCALLTYPE get_CreationEvent (BOOL * aCreationEvent) { return smth get_CreationEvent (aCreationEvent); }
@@ -51391,8 +52770,8 @@ EXTERN_C const IID IID_INATNetworkCreationDeletionEvent;
 #define COM_FORWARD_INATNetworkCreationDeletionEvent_TO_BASE(base) COM_FORWARD_INATNetworkCreationDeletionEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0155_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0155_v0_0_s_ifspec;
 
 #ifndef __INATNetworkSettingEvent_INTERFACE_DEFINED__
 #define __INATNetworkSettingEvent_INTERFACE_DEFINED__
@@ -51607,7 +52986,7 @@ EXTERN_C const IID IID_INATNetworkSettingEvent;
 #endif 	/* __INATNetworkSettingEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0154 */
+/* interface __MIDL_itf_VirtualBox_0000_0156 */
 /* [local] */ 
 
 #define COM_FORWARD_INATNetworkSettingEvent_GETTER_Enabled_TO(smth) HRESULT STDMETHODCALLTYPE get_Enabled (BOOL * aEnabled) { return smth get_Enabled (aEnabled); }
@@ -51630,8 +53009,8 @@ EXTERN_C const IID IID_INATNetworkSettingEvent;
 #define COM_FORWARD_INATNetworkSettingEvent_TO_BASE(base) COM_FORWARD_INATNetworkSettingEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0156_v0_0_s_ifspec;
 
 #ifndef __INATNetworkPortForwardEvent_INTERFACE_DEFINED__
 #define __INATNetworkPortForwardEvent_INTERFACE_DEFINED__
@@ -51876,7 +53255,7 @@ EXTERN_C const IID IID_INATNetworkPortForwardEvent;
 #endif 	/* __INATNetworkPortForwardEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0155 */
+/* interface __MIDL_itf_VirtualBox_0000_0157 */
 /* [local] */ 
 
 #define COM_FORWARD_INATNetworkPortForwardEvent_GETTER_Create_TO(smth) HRESULT STDMETHODCALLTYPE get_Create (BOOL * aCreate) { return smth get_Create (aCreate); }
@@ -51908,8 +53287,8 @@ EXTERN_C const IID IID_INATNetworkPortForwardEvent;
 #define COM_FORWARD_INATNetworkPortForwardEvent_TO_BASE(base) COM_FORWARD_INATNetworkPortForwardEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0157_v0_0_s_ifspec;
 
 #ifndef __IHostNameResolutionConfigurationChangeEvent_INTERFACE_DEFINED__
 #define __IHostNameResolutionConfigurationChangeEvent_INTERFACE_DEFINED__
@@ -52068,7 +53447,7 @@ EXTERN_C const IID IID_IHostNameResolutionConfigurationChangeEvent;
 #endif 	/* __IHostNameResolutionConfigurationChangeEvent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_VirtualBox_0000_0156 */
+/* interface __MIDL_itf_VirtualBox_0000_0158 */
 /* [local] */ 
 
 #define COM_FORWARD_IHostNameResolutionConfigurationChangeEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
@@ -52079,8 +53458,537 @@ EXTERN_C const IID IID_IHostNameResolutionConfigurationChangeEvent;
 #define COM_FORWARD_IHostNameResolutionConfigurationChangeEvent_TO_BASE(base) COM_FORWARD_IHostNameResolutionConfigurationChangeEvent_TO (base::)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0158_v0_0_s_ifspec;
+
+#ifndef __IProgressEvent_INTERFACE_DEFINED__
+#define __IProgressEvent_INTERFACE_DEFINED__
+
+/* interface IProgressEvent */
+/* [proxy][oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IProgressEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("daaf9016-1f04-4191-aa2f-1fac9646ae4c")
+    IProgressEvent : public IEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProgressId( 
+            /* [retval][out] */ BSTR *aProgressId) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IProgressEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IProgressEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IProgressEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IProgressEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IProgressEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IProgressEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IProgressEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IProgressEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IProgressEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IProgressEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IProgressEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IProgressEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IProgressEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProgressId )( 
+            IProgressEvent * This,
+            /* [retval][out] */ BSTR *aProgressId);
+        
+        END_INTERFACE
+    } IProgressEventVtbl;
+
+    interface IProgressEvent
+    {
+        CONST_VTBL struct IProgressEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IProgressEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IProgressEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IProgressEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IProgressEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IProgressEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IProgressEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IProgressEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IProgressEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IProgressEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IProgressEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IProgressEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IProgressEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IProgressEvent_get_ProgressId(This,aProgressId)	\
+    ( (This)->lpVtbl -> get_ProgressId(This,aProgressId) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IProgressEvent_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_VirtualBox_0000_0159 */
+/* [local] */ 
+
+#define COM_FORWARD_IProgressEvent_GETTER_ProgressId_TO(smth) HRESULT STDMETHODCALLTYPE get_ProgressId (BSTR * aProgressId) { return smth get_ProgressId (aProgressId); }
+#define COM_FORWARD_IProgressEvent_GETTER_ProgressId_TO_OBJ(obj) COM_FORWARD_IProgressEvent_GETTER_ProgressId_TO ((obj)->)
+#define COM_FORWARD_IProgressEvent_GETTER_ProgressId_TO_BASE(base) COM_FORWARD_IProgressEvent_GETTER_ProgressId_TO (base::)
+#define COM_FORWARD_IProgressEvent_TO(smth) COM_FORWARD_IProgressEvent_GETTER_ProgressId_TO (smth) 
+#define COM_FORWARD_IProgressEvent_TO_OBJ(obj) COM_FORWARD_IProgressEvent_TO ((obj)->)
+#define COM_FORWARD_IProgressEvent_TO_BASE(base) COM_FORWARD_IProgressEvent_TO (base::)
+
+
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0159_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0159_v0_0_s_ifspec;
+
+#ifndef __IProgressPercentageChangedEvent_INTERFACE_DEFINED__
+#define __IProgressPercentageChangedEvent_INTERFACE_DEFINED__
+
+/* interface IProgressPercentageChangedEvent */
+/* [proxy][oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IProgressPercentageChangedEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("f05d7e60-1bcf-4218-9807-04e036cc70f1")
+    IProgressPercentageChangedEvent : public IProgressEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Percent( 
+            /* [retval][out] */ LONG *aPercent) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IProgressPercentageChangedEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IProgressPercentageChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IProgressPercentageChangedEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IProgressPercentageChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IProgressPercentageChangedEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IProgressPercentageChangedEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IProgressPercentageChangedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IProgressPercentageChangedEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IProgressPercentageChangedEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IProgressPercentageChangedEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IProgressPercentageChangedEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IProgressPercentageChangedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IProgressPercentageChangedEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProgressId )( 
+            IProgressPercentageChangedEvent * This,
+            /* [retval][out] */ BSTR *aProgressId);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Percent )( 
+            IProgressPercentageChangedEvent * This,
+            /* [retval][out] */ LONG *aPercent);
+        
+        END_INTERFACE
+    } IProgressPercentageChangedEventVtbl;
+
+    interface IProgressPercentageChangedEvent
+    {
+        CONST_VTBL struct IProgressPercentageChangedEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IProgressPercentageChangedEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IProgressPercentageChangedEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IProgressPercentageChangedEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IProgressPercentageChangedEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IProgressPercentageChangedEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IProgressPercentageChangedEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IProgressPercentageChangedEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IProgressPercentageChangedEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IProgressPercentageChangedEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IProgressPercentageChangedEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IProgressPercentageChangedEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IProgressPercentageChangedEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IProgressPercentageChangedEvent_get_ProgressId(This,aProgressId)	\
+    ( (This)->lpVtbl -> get_ProgressId(This,aProgressId) ) 
+
+
+#define IProgressPercentageChangedEvent_get_Percent(This,aPercent)	\
+    ( (This)->lpVtbl -> get_Percent(This,aPercent) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IProgressPercentageChangedEvent_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_VirtualBox_0000_0160 */
+/* [local] */ 
+
+#define COM_FORWARD_IProgressPercentageChangedEvent_GETTER_Percent_TO(smth) HRESULT STDMETHODCALLTYPE get_Percent (LONG * aPercent) { return smth get_Percent (aPercent); }
+#define COM_FORWARD_IProgressPercentageChangedEvent_GETTER_Percent_TO_OBJ(obj) COM_FORWARD_IProgressPercentageChangedEvent_GETTER_Percent_TO ((obj)->)
+#define COM_FORWARD_IProgressPercentageChangedEvent_GETTER_Percent_TO_BASE(base) COM_FORWARD_IProgressPercentageChangedEvent_GETTER_Percent_TO (base::)
+#define COM_FORWARD_IProgressPercentageChangedEvent_TO(smth) COM_FORWARD_IProgressPercentageChangedEvent_GETTER_Percent_TO (smth) 
+#define COM_FORWARD_IProgressPercentageChangedEvent_TO_OBJ(obj) COM_FORWARD_IProgressPercentageChangedEvent_TO ((obj)->)
+#define COM_FORWARD_IProgressPercentageChangedEvent_TO_BASE(base) COM_FORWARD_IProgressPercentageChangedEvent_TO (base::)
+
+
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0160_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0160_v0_0_s_ifspec;
+
+#ifndef __IProgressTaskCompletedEvent_INTERFACE_DEFINED__
+#define __IProgressTaskCompletedEvent_INTERFACE_DEFINED__
+
+/* interface IProgressTaskCompletedEvent */
+/* [proxy][oleautomation][dual][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IProgressTaskCompletedEvent;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("a5bbdb7d-8ce7-469f-a4c2-6476f581ff72")
+    IProgressTaskCompletedEvent : public IProgressEvent
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces( 
+            /* [retval][out] */ BOOL *aMidlDoesNotLikeEmptyInterfaces) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IProgressTaskCompletedEventVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IProgressTaskCompletedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IProgressTaskCompletedEvent * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IProgressTaskCompletedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IProgressTaskCompletedEvent * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IProgressTaskCompletedEvent * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IProgressTaskCompletedEvent * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IProgressTaskCompletedEvent * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IProgressTaskCompletedEvent * This,
+            /* [retval][out] */ VBoxEventType *aType);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Source )( 
+            IProgressTaskCompletedEvent * This,
+            /* [retval][out] */ IEventSource **aSource);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Waitable )( 
+            IProgressTaskCompletedEvent * This,
+            /* [retval][out] */ BOOL *aWaitable);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProcessed )( 
+            IProgressTaskCompletedEvent * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *WaitProcessed )( 
+            IProgressTaskCompletedEvent * This,
+            /* [in] */ LONG aTimeout,
+            /* [retval][out] */ BOOL *aResult);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProgressId )( 
+            IProgressTaskCompletedEvent * This,
+            /* [retval][out] */ BSTR *aProgressId);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MidlDoesNotLikeEmptyInterfaces )( 
+            IProgressTaskCompletedEvent * This,
+            /* [retval][out] */ BOOL *aMidlDoesNotLikeEmptyInterfaces);
+        
+        END_INTERFACE
+    } IProgressTaskCompletedEventVtbl;
+
+    interface IProgressTaskCompletedEvent
+    {
+        CONST_VTBL struct IProgressTaskCompletedEventVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IProgressTaskCompletedEvent_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IProgressTaskCompletedEvent_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IProgressTaskCompletedEvent_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IProgressTaskCompletedEvent_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IProgressTaskCompletedEvent_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IProgressTaskCompletedEvent_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IProgressTaskCompletedEvent_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IProgressTaskCompletedEvent_get_Type(This,aType)	\
+    ( (This)->lpVtbl -> get_Type(This,aType) ) 
+
+#define IProgressTaskCompletedEvent_get_Source(This,aSource)	\
+    ( (This)->lpVtbl -> get_Source(This,aSource) ) 
+
+#define IProgressTaskCompletedEvent_get_Waitable(This,aWaitable)	\
+    ( (This)->lpVtbl -> get_Waitable(This,aWaitable) ) 
+
+#define IProgressTaskCompletedEvent_SetProcessed(This)	\
+    ( (This)->lpVtbl -> SetProcessed(This) ) 
+
+#define IProgressTaskCompletedEvent_WaitProcessed(This,aTimeout,aResult)	\
+    ( (This)->lpVtbl -> WaitProcessed(This,aTimeout,aResult) ) 
+
+
+#define IProgressTaskCompletedEvent_get_ProgressId(This,aProgressId)	\
+    ( (This)->lpVtbl -> get_ProgressId(This,aProgressId) ) 
+
+
+#define IProgressTaskCompletedEvent_get_MidlDoesNotLikeEmptyInterfaces(This,aMidlDoesNotLikeEmptyInterfaces)	\
+    ( (This)->lpVtbl -> get_MidlDoesNotLikeEmptyInterfaces(This,aMidlDoesNotLikeEmptyInterfaces) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IProgressTaskCompletedEvent_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_VirtualBox_0000_0161 */
+/* [local] */ 
+
+#define COM_FORWARD_IProgressTaskCompletedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO(smth) HRESULT STDMETHODCALLTYPE get_MidlDoesNotLikeEmptyInterfaces (BOOL * aMidlDoesNotLikeEmptyInterfaces) { return smth get_MidlDoesNotLikeEmptyInterfaces (aMidlDoesNotLikeEmptyInterfaces); }
+#define COM_FORWARD_IProgressTaskCompletedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO_OBJ(obj) COM_FORWARD_IProgressTaskCompletedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO ((obj)->)
+#define COM_FORWARD_IProgressTaskCompletedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO_BASE(base) COM_FORWARD_IProgressTaskCompletedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO (base::)
+#define COM_FORWARD_IProgressTaskCompletedEvent_TO(smth) COM_FORWARD_IProgressTaskCompletedEvent_GETTER_MidlDoesNotLikeEmptyInterfaces_TO (smth) 
+#define COM_FORWARD_IProgressTaskCompletedEvent_TO_OBJ(obj) COM_FORWARD_IProgressTaskCompletedEvent_TO ((obj)->)
+#define COM_FORWARD_IProgressTaskCompletedEvent_TO_BASE(base) COM_FORWARD_IProgressTaskCompletedEvent_TO (base::)
+
+
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0161_v0_0_s_ifspec;
 
 
 #ifndef __VirtualBox_LIBRARY_DEFINED__
@@ -52102,6 +54010,11 @@ extern RPC_IF_HANDLE __MIDL_itf_VirtualBox_0000_0156_v0_0_s_ifspec;
 #define VBOX_E_INVALID_SESSION_STATE ((HRESULT)0x80BB000B)
 #define VBOX_E_OBJECT_IN_USE ((HRESULT)0x80BB000C)
 #define VBOX_E_PASSWORD_INCORRECT ((HRESULT)0x80BB000D)
+
+
+
+
+
 
 
 
@@ -52423,4 +54336,7 @@ void                      __RPC_USER  LPSAFEARRAY_UserFree64(     unsigned long 
 
 #endif
 
+
+
+#pragma warning(pop)
 

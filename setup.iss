@@ -4,7 +4,7 @@
 #define MyAppName "VBoxVmService"
 #define MyAppVersion "5.2-Jujube"
 #define MyAppPublisher "VBoxVmService Developmenet Team"
-#define MyAppURL "http://sourceforge.net/projects/vboxvmservice/"
+#define MyAppURL "https://github.com/onlyfang/VBoxVmService"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -20,7 +20,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName=C:\vms
 DefaultGroupName={#MyAppName}
-LicenseFile=..\doc\Licence.txt
+LicenseFile=doc\Licence.txt
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
@@ -32,23 +32,13 @@ CloseApplications=no
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
-Source: "..\VBoxVmService.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\VBoxVmService64.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\VmServiceControl.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\VmServiceTray.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\VBoxVmService.ini"; DestDir: "{app}"; Flags: ignoreversion onlyifdoesntexist uninsneveruninstall; AfterInstall: UpdateUserHome
-Source: "..\doc\Howto.txt"; DestDir: "{app}\doc"; Flags: ignoreversion isreadme 
-Source: "..\doc\History.txt"; DestDir: "{app}\doc"; Flags: ignoreversion
-Source: "..\doc\Licence.txt"; DestDir: "{app}\doc"; Flags: ignoreversion
-Source: "*.bat"; DestDir: "{app}\src"; Flags: ignoreversion
-Source: "*.h"; DestDir: "{app}\src"; Flags: ignoreversion
-Source: "*.c"; DestDir: "{app}\src"; Flags: ignoreversion
-Source: "*.cpp"; DestDir: "{app}\src"; Flags: ignoreversion
-Source: "*.rc"; DestDir: "{app}\src"; Flags: ignoreversion
-Source: "*.sln"; DestDir: "{app}\src"; Flags: ignoreversion
-Source: "*.vcxproj"; DestDir: "{app}\src"; Flags: ignoreversion
-Source: "*.iss"; DestDir: "{app}\src"; Flags: ignoreversion
-Source: "gfx\*"; DestDir: "{app}\src\gfx"; Flags: ignoreversion
+Source: "build\Release\VBoxVmService.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "build_x64\Release\VBoxVmService.exe"; DestName: "VBoxVmService64.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "build\Release\VmServiceControl.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "build\Release\VmServiceTray.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "doc\VBoxVmService.ini"; DestDir: "{app}"; Flags: ignoreversion onlyifdoesntexist uninsneveruninstall; AfterInstall: UpdateUserHome
+Source: "doc\Howto.txt"; DestDir: "{app}\doc"; Flags: ignoreversion isreadme 
+Source: "doc\Licence.txt"; DestDir: "{app}\doc"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -309,7 +299,6 @@ begin
 end;
 
 procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
-var winHwnd: longint;
 begin
   if (CurUninstallStep=usUninstall) then
   begin

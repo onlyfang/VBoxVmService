@@ -5,7 +5,7 @@
 #include <process.h>
 
 #include "VirtualBox.h"
-#include "VBoxVmPipeManager.h"
+//#include "VBoxVmPipeManager.h"
 #include "Util.h"
 
 const int nBufferSize = 500;

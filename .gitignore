@@ -1,1 +1,4 @@
 *.exe
+Output
+build
+build_x64

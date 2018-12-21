@@ -1,5 +1,8 @@
 ## Change log
 
+### 2018-12-21 Release 6.0 "Pumpkin"
+* Updated COM API to make it work with VirtualBox 6.0. Note this is not compatible with old versions of VirtualBox. If you need to use VirtualBox 5.2.X, please stay with 5.2 "Jujube".
+
 ### 2018-10-28 Move code to GitHub
 
 Hope this will make it easier for other people to contribute to this project, by sending pull requests.

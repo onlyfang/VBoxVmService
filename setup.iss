@@ -64,7 +64,7 @@ begin
       vbox_user_home := vbox_home + '\.VirtualBox'
     else
       vbox_user_home := GetEnv('UserProfile') + '\.VirtualBox';
-  end
+  end;
   SetIniString('Settings', 'VBOX_USER_HOME', vbox_user_home, ExpandConstant('{app}') + '\VBoxVmService.INI');
 end;
 

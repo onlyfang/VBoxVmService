@@ -14,7 +14,7 @@ IMPORTANT: If you want to control your VMs with VRDP, enable remote display at d
 #
 ##############################################################################
 
-Step 1. Run the VBoxVmService setup program.
+Step 1. Run the VBoxVmService setup program as Administrator
 
 Step 2. Open up VBoxVmService.ini in installation folder and modify it to fit your needs. The file contains an example setup with two virtual machines.
 

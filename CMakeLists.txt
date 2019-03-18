@@ -1,6 +1,13 @@
 # CMake version
 cmake_minimum_required(VERSION 3.4)
 
+# Use static runtime library
+foreach(var CMAKE_C_FLAGS_RELEASE CMAKE_CXX_FLAGS_RELEASE)
+  if(${var} MATCHES "/MD")
+    string(REGEX REPLACE "/MD" "/MT" ${var} "${${var}}")
+  endif()
+endforeach()
+
 # define project
 project (VBoxVmService)
 

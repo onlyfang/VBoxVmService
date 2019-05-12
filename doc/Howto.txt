@@ -103,9 +103,9 @@ If you can't see any error in VBoxVmService.log, but the VM just don't run as ex
 
 Step 4. Ask for help
 
-Refer to the project wiki at http://sourceforge.net/p/vboxvmservice/wiki/ for a list of known issues.
+Refer to the project wiki at https://github.com/onlyfang/VBoxVmService/wiki or https://github.com/onlyfang/VBoxVmService/issues for a list of known issues.
 
-If you are still in trouble, you are welcome to create a support ticket at http://sourceforge.net/p/vboxvmservice/support-requests/. Please be sure to include your VBoxVmService.ini and VBoxVmService.log, so that we can help checking what might be wrong. We might be on VirtualBox's official forums now and then, so feel free to contact us there, too.
+If you are still in trouble, you are welcome to create a support ticket at https://github.com/onlyfang/VBoxVmService/issues. Please be sure to include your VBoxVmService.ini and VBoxVmService.log, so that we can help checking what might be wrong. We might be on VirtualBox's official forums now and then, so feel free to contact us there, too.
 
 
 

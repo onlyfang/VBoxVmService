@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "VBoxVmService"
-#define MyAppVersion "6.0-Pumpkin"
+#define MyAppVersion "6.1-Kiwi"
 #define MyAppPublisher "VBoxVmService Developmenet Team"
 #define MyAppURL "https://github.com/onlyfang/VBoxVmService"
 
@@ -25,7 +25,7 @@ OutputBaseFilename={#MyAppName}-{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=admin
-MinVersion=5.1
+MinVersion=6.0
 CloseApplications=no
 
 [Languages]

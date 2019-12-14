@@ -67,8 +67,6 @@ No. VBoxVmService is specially designed to suit the Windows operating system. An
 
 ### 7. Credits
 
-The VBoxVmService was based on sourcecode originally written by Xiangyang Liu and published on codeproject.com ( http://www.codeproject.com/KB/system/xyntservice.aspx ).
-
 The puzzlework on "how the %$&!? this thing works", patching together the C++ code of VBoxVmService and the helper tool "sleep.exe", messing with some c# for "bcompile.exe" plus all the batch-scripting was done by Mathias Herrmann .
 
 Only Fang (aka FB2000) joined the project in August 2010, and had become main contributor since then. He re-designed the service, added VmServiceControl.exe to do all the controlling job and changed VBoxVmService.exe to become a pure service program.

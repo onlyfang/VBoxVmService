@@ -16,4 +16,4 @@ cmake .. -G "Visual Studio 16 2019" -A x64
 msbuild VBoxVmService.sln /p:Configuration=Release;Platform=x64 /m
 cd ..
 
-"C:\Program Files (x86)\Inno Setup 5\ISCC.exe" setup.iss
+"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" setup.iss

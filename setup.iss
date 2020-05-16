@@ -3,14 +3,14 @@
 
 #define MyAppName "VBoxVmService"
 #define MyAppVersion "6.1-Kiwi"
-#define MyAppPublisher "VBoxVmService Developmenet Team"
+#define MyAppPublisher "VBoxVmService Development Team"
 #define MyAppURL "https://github.com/onlyfang/VBoxVmService"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{BAD2E2CE-479E-4FE9-BDCA-D9A5C0ABB566}
+AppId=BAD2E2CE-479E-4FE9-BDCA-D9A5C0ABB566
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppVerName={#MyAppName} {#MyAppVersion}
@@ -43,7 +43,6 @@ Source: "doc\Licence.txt"; DestDir: "{app}\doc"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\VmServiceTray"; Filename: "{app}\VmServiceTray.exe"; WorkingDir: "{app}"
-Name: "{userdesktop}\VmServiceTray"; Filename: "{app}\VmServiceTray.exe"; WorkingDir: "{app}"
 
 [Run]
 Filename: "{app}\VmServiceControl.exe"; Parameters: "-i"; StatusMsg: "Installing VBoxVmService service..."; Flags: runhidden

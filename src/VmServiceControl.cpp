@@ -258,7 +258,7 @@ VOID Install()
                 pExeFile,             /* service's binary        */ 
                 NULL,                 /* no load ordering group  */ 
                 NULL,                 /* no tag identifier       */ 
-                "LanmanWorkstation\0ComSysApp\0\0", /* service dependencies */ 
+                "LanmanServer,LanmanWorkstation\0ComSysApp\0\0", /* service dependencies */ 
                 NULL,                 /* LocalSystem account     */ 
                 NULL                  /* no password             */
                 );                      
@@ -339,7 +339,7 @@ void StopVM(int nIndex)
     vmName[len] = 0;
 
 
-    printf("VM%d: %s has been shutted down.\n", nIndex, vmName);
+    printf("VM%d: %s has been shut down.\n", nIndex, vmName);
 }
 
 // show specified VM status

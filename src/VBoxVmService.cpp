@@ -435,7 +435,7 @@ int StopVM(char *vm, char *method, LPPIPEINST pipe)
 
             // write to log
             char pTemp[nBufferSize+1];
-            sprintf_s(pTemp, nBufferSize, "  VM %s has being shutted down.", vm);
+            sprintf_s(pTemp, nBufferSize, "  VM %s is being shut down.", vm);
             WriteLog(pTemp);
 
             // write to pipe

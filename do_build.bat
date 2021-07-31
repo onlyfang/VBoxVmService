@@ -5,15 +5,11 @@ if not defined DevEnvDir (
 )
 
 if not exist build mkdir build
-cd build
-cmake .. -G "Visual Studio 16 2019" -A Win32
-msbuild VBoxVmService.sln /p:Configuration=Release;Platform=Win32 /m
-cd ..
+cmake -B build -G "Visual Studio 16 2019" -A Win32
+cmake --build build --config Release
 
-if not exist build_x64 mkdir build_x64
-cd build_x64
-cmake .. -G "Visual Studio 16 2019" -A x64
-msbuild VBoxVmService.sln /p:Configuration=Release;Platform=x64 /m
-cd ..
+if not exist build mkdir build_x64
+cmake -B build_x64 -G "Visual Studio 16 2019" -A x64
+cmake --build build_x64 --config Release
 
 "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" setup.iss

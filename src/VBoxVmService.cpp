@@ -87,7 +87,7 @@ BOOL CtrlHandler( DWORD fdwCtrlType )
         PipeManagerExit();
 
         // wait till all VMs stopped, but we must respond in 20 seconds
-        // in the control hander, use 15 seconds for safety here.
+        // in the control handler, use 15 seconds for safety here.
         if (WaitForSingleObject(ghVMStoppedEvent, 15000) == WAIT_OBJECT_0)
             WriteLog("Received all VM stopped event.");
     }
@@ -154,7 +154,7 @@ char *nIndexToVmName(int nIndex) {
 
 //***********************************************************
 //  Run a console app by calling the pCommandLine.
-//  The stdout is loged to the VBoxVmService.log logfile. 
+//  The stdout is logged to the VBoxVmService.log logfile. 
 //  The process ID of the started process is returned
 //***********************************************************
 
@@ -785,7 +785,7 @@ unsigned __stdcall WorkerProc(void* pParam)
         }
     }
 
-    //PipeManager will handel all pipe connections
+    //PipeManager will handle all pipe connections
     PipeManager("\\\\.\\pipe\\VBoxVmService", WorkerHandleCommand);
 
     //gracefully ending the service

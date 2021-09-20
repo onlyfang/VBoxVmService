@@ -18,7 +18,7 @@ When windows starts up, the wrapper-service will start running. It will check fo
 
 If RunWebService=yes is specified in VBoxVmService.ini file,  the wrapper-service will also try to start VirtualBox web service automatically. This might be useful for people who use the web service a lot, like users of phpVirtualBox.
 
-When windows shuts down, the wrapper-service will try to stop all the VMs configuered in VBoxVmService.ini.
+When windows shuts down, the wrapper-service will try to stop all the VMs configured in VBoxVmService.ini.
 
 VmServiceControl.exe is the CLI (command line interface) client that sends control commands to VBoxVmService and display returned results.
 

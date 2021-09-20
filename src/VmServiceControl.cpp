@@ -431,7 +431,7 @@ void main(int argc, char *argv[] )
     {           
         KillService();
     }
-    // Simulates a shuddown if VBoxVmService is started with -d
+    // Simulates a shutdown if VBoxVmService is started with -d
     else if(argc==2&&_stricmp("-dk",argv[1])==0)
     {           
         if(SendCommandToService("shutdown", chBuf, sizeof(chBuf)))
@@ -459,7 +459,7 @@ void main(int argc, char *argv[] )
     {
         printf("Shutdown option needs to be followed by a VM index.\n");
     }
-    // shutdown a specifc vm (if the index is supplied)
+    // shutdown a specific vm (if the index is supplied)
     else if(argc==3&&_stricmp("-sd",argv[1])==0)
     {
         int nIndex = atoi(argv[2]);
@@ -471,7 +471,7 @@ void main(int argc, char *argv[] )
         int nIndex = atoi(argv[2]);
         VMStatus(nIndex);
     }
-    // list all configed VMs' status if switch is "-l"
+    // list all configured VMs' status if switch is "-l"
     else if(argc==2&&_stricmp("-l",argv[1])==0)
     {           
         ListVMs();

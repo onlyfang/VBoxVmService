@@ -133,7 +133,7 @@ int PipeManager(LPTSTR lpszPipename, void __cdecl GetAnswerToRequest(LPPIPEINST 
             READING_STATE;     // ready to read 
     } 
 
-    // Create an event object used to signal that PipeManager shuld exit. 
+    // Create an event object used to signal that PipeManager should exit. 
     hEvents[INSTANCES] = CreateEvent( 
             NULL,    // default security attribute 
             TRUE,    // manual-reset event 
@@ -283,7 +283,7 @@ int PipeManager(LPTSTR lpszPipename, void __cdecl GetAnswerToRequest(LPPIPEINST 
                 { 
                     Pipe[i].fPendingIO = FALSE; 
                     Pipe[i].dwState = READING_STATE; 
-                    Pipe[i].cbToWrite = 0; //All data is writen
+                    Pipe[i].cbToWrite = 0; //All data is written
                     continue; 
                 } 
 

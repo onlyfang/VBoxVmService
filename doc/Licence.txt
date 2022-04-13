@@ -6,7 +6,7 @@ All the tools, all the sourcecode and just everything we used was
 
 "free to use by anybody", so VBoxVmService is too, of course.
 
-Since we do not take any responsability for any eventual damage 
+Since we do not take any responsibility for any eventual damage 
 
 using this software might possibly do to your system(s) and since 
 

@@ -3,7 +3,7 @@
 
 #include "VirtualBox.h"
 
-// Tests whether the current user and prossess has admin privileges.
+// Tests whether the current user and process has admin privileges.
 // Note that this will return FALSE if called from a Vista program running in an administrator account if the process was not launched with 'run as administrator'
 BOOL isAdmin();
 

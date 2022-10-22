@@ -1,5 +1,11 @@
 ## Change log
 
+### 2022-10-22 Release 7.0 "Persimmon"
+* Updated COM API to make it work with VirtualBox 7.0. Note this is not compatible with old versions of VirtualBox. If you need to use VirtualBox 6.1.X, please stay with 6.1 "Kiwi".
+* Add a dependency on LanmanServer to ensure networking is available.
+* Fix a few typos.
+* Project is now built with Visual Studio 2022.
+
 ### 2019-12-14 Release 6.1 "Kiwi"
 * Updated COM API to make it work with VirtualBox 6.1. Note this is not compatible with old versions of VirtualBox. If you need to use VirtualBox 6.0.X, please stay with 6.0 "Pumpkin".
 

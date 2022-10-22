@@ -23,6 +23,7 @@ char pServiceName[nBufferSize+1];
 char pExeFile[nBufferSize+1];
 char pInitFile[nBufferSize+1];
 char pLogFile[nBufferSize+1];
+IVirtualBoxClient *virtualBoxClient;
 IVirtualBox *virtualBox;
 ISession *session = NULL;
 HANDLE ghVMStoppedEvent = NULL;
@@ -702,17 +703,26 @@ unsigned __stdcall WorkerProc(void* pParam)
     HRESULT rc;
     rc = CoInitialize(NULL);
 
-    rc = CoCreateInstance(CLSID_VirtualBox,
+    rc = CoCreateInstance(CLSID_VirtualBoxClient,
             NULL,
-            CLSCTX_LOCAL_SERVER,
-            IID_IVirtualBox,
-            (void**)&virtualBox);
+            CLSCTX_INPROC_SERVER,
+            IID_IVirtualBoxClient,
+            (void**)&virtualBoxClient);
+    if (!SUCCEEDED(rc))
+    {
+        char pTemp[nBufferSize + 1];
+        sprintf_s(pTemp, nBufferSize, "Error creating VirtualBoxClient instance! rc = 0x%x", rc);
+        if (rc == CO_E_SERVER_EXEC_FAILURE)
+            strcat_s(pTemp, nBufferSize, ". You need to stop VirtualBox GUI before starting VBoxVmService.");
+
+        WriteLog(pTemp);
+        goto end;
+    }
+    rc = virtualBoxClient->get_VirtualBox(&virtualBox);
     if (!SUCCEEDED(rc))
     {
         char pTemp[nBufferSize + 1];
         sprintf_s(pTemp, nBufferSize, "Error creating VirtualBox instance! rc = 0x%x", rc);
-        if (rc == CO_E_SERVER_EXEC_FAILURE)
-            strcat_s(pTemp, nBufferSize, ". You need to stop VirtualBox GUI before starting VBoxVmService.");
 
         WriteLog(pTemp);
         goto end;
@@ -826,6 +836,7 @@ unsigned __stdcall WorkerProc(void* pParam)
     }
 
     virtualBox->Release();
+    virtualBoxClient->Release();
     CoUninitialize();
 
 end:

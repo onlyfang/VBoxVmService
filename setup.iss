@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "VBoxVmService"
-#define MyAppVersion "6.1-Kiwi"
+#define MyAppVersion "7.0-Persimmon"
 #define MyAppPublisher "VBoxVmService Development Team"
 #define MyAppURL "https://github.com/onlyfang/VBoxVmService"
 

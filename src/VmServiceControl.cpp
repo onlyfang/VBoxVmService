@@ -258,7 +258,7 @@ VOID Install()
                 pExeFile,             /* service's binary        */ 
                 NULL,                 /* no load ordering group  */ 
                 NULL,                 /* no tag identifier       */ 
-                "LanmanServer,LanmanWorkstation\0ComSysApp\0\0", /* service dependencies */ 
+                "LanmanServer\0LanmanWorkstation\0ComSysApp\0\0", /* service dependencies */ 
                 NULL,                 /* LocalSystem account     */ 
                 NULL                  /* no password             */
                 );                      

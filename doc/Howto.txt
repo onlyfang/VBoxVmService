@@ -41,6 +41,17 @@ Step 3. Reboot your system.
 If everything goes on right, you could now connect to your VMs with VRDP clients (or ssh clients, if you've configured ssh server inside your VM). If not, refer to TROUBLESHOOTING section below for how to debug.
 
 
+- OPTIONAL STEPS -
+
+
+Step 4. Find VBoxVmService in your computer’s service directory and edit it to start with your personal user account and password instead of running it from your local system account.
+If you leave it running as local system it will still work, but when opening the official VirtualBox application to check or even edit the VMs they will appear as stopped (even though they are running in the background) as there is a conflict of scope.
+
+Step 5. Stop and restart the service or just reboot your computer one more time.
+
+Now you should be able to interact with your auto started VMs also through the official VirtualBox application.
+
+
 ##############################################################################
 #
 #   PART III - UNINSTALL

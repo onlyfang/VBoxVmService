@@ -105,7 +105,7 @@ BOOL SendCommandToService(char * message, char chBuf[], int chBufSize)
             sprintf_s(chBuf, chBufSize, "Connect to pipe failed: %s\nIs VBoxVmService running?", LastErrorString());
             return FALSE;
         }
-        // The named pipe is busy. Let¡¯s wait for 2 seconds. 
+        // The named pipe is busy. Let's wait for 2 seconds. 
         if (!WaitNamedPipe((LPSTR)"\\\\.\\pipe\\VBoxVmService", 2000)) 
         { 
             sprintf_s(chBuf, chBufSize, "WaitNamedPipe failed: %s\n", LastErrorString());

@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "VBoxVmService"
-#define MyAppVersion "7.1-Pitaya"
+#define MyAppVersion "7.2-Prune"
 #define MyAppPublisher "VBoxVmService Development Team"
 #define MyAppURL "https://github.com/onlyfang/VBoxVmService"
 
@@ -25,7 +25,7 @@ OutputBaseFilename={#MyAppName}-{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=admin
-MinVersion=6.0
+MinVersion=6.3
 CloseApplications=no
 
 [Languages]
@@ -33,7 +33,6 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
 Source: "build\Release\VBoxVmService.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "build_x64\Release\VBoxVmService.exe"; DestName: "VBoxVmService64.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "build\Release\VmServiceControl.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "build\Release\VmServiceTray.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "doc\VBoxVmService.ini"; DestDir: "{app}"; Flags: ignoreversion onlyifdoesntexist uninsneveruninstall; AfterInstall: UpdateUserHome

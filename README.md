@@ -2,7 +2,7 @@
 
 ### 1. What is VBoxVmService?
 
-VBoxVmService is a Windows Service, that enables the host-system to run or shutdown VirtualBox Virtual Machines (VMs) without a user being logged on to the host-system running Windows (Win10/2012/2016, both x86 and x64 supported).
+VBoxVmService is a Windows Service, that enables the host-system to run or shutdown VirtualBox Virtual Machines (VMs) without a user being logged on to the host-system running Windows.
 
 ### 2. How to use VBoxVmService?
 
@@ -36,7 +36,7 @@ Actually, there are no plans for future releases of this software, other than ke
 
 Old Windows versions like Windows 7 are no longer supported.
 
-It hasn't been fully tested on systems other than Windows 10, but it is supposed to work on server systems like Win2012, Win2016, ... etc, both 32bit and 64bit versions.
+It hasn't been fully tested on systems other than Windows 10/11, but it is supposed to work on server systems like Win2012, Win2016, ... etc. Only 64bit versions of Windows are supported.
 
 
 ### 6. Will VBoxVmService run on Mac OS-X or Linux?

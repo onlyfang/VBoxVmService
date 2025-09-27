@@ -5,11 +5,7 @@ if not defined DevEnvDir (
 )
 
 if not exist build mkdir build
-cmake -B build -G "Visual Studio 17 2022" -A Win32
+cmake -B build -G "Visual Studio 17 2022" -A x64
 cmake --build build --config Release
-
-if not exist build mkdir build_x64
-cmake -B build_x64 -G "Visual Studio 17 2022" -A x64
-cmake --build build_x64 --config Release
 
 "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" setup.iss

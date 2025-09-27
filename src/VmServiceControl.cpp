@@ -162,24 +162,7 @@ VOID Install()
     pModuleFile[dwSize] = 0;
     *(strrchr(pModuleFile, '\\')) = 0;
 
-    // check 64bit or 32bit system
-    BOOL bIs64Bit = FALSE;
-
-#if defined(_WIN64)
-    bIs64Bit = TRUE;  // 64-bit programs run only on Win64
-#elif defined(_WIN32)
-    typedef BOOL (WINAPI *LPFNISWOW64PROCESS) (HANDLE, PBOOL);
-    LPFNISWOW64PROCESS pfnIsWow64Process = (LPFNISWOW64PROCESS)GetProcAddress(GetModuleHandle("kernel32"), "IsWow64Process");
-
-    if (pfnIsWow64Process)
-        pfnIsWow64Process(GetCurrentProcess(), &bIs64Bit);
-#endif
-
-
-    if (bIs64Bit)
-        sprintf_s(pExeFile, nBufferSize, "%s\\VBoxVmService64.exe",pModuleFile);
-    else
-        sprintf_s(pExeFile, nBufferSize, "%s\\VBoxVmService.exe",pModuleFile);
+    sprintf_s(pExeFile, nBufferSize, "%s\\VBoxVmService.exe",pModuleFile);
     sprintf_s(pInitFile, nBufferSize, "%s\\VBoxVmService.ini",pModuleFile);
 
     //sanitizing VBoxVmService.ini

@@ -1,5 +1,9 @@
 ## Change log
 
+### 2025-09-27 Release 7.2 "Prune"
+* Updated COM API to make it work with VirtualBox 7.2. Note this is not compatible with old versions of VirtualBox. If you need to use VirtualBox 7.1.X, please stay with 7.1 "Pitaya".
+* Drop support to 32Bit Windows, and only support 64Bit Windows from now on.
+
 ### 2024-09-18 Release 7.1 "Pitaya"
 * Updated COM API to make it work with VirtualBox 7.1. Note this is not compatible with old versions of VirtualBox. If you need to use VirtualBox 7.0.X, please stay with 7.0 "Persimmon".
 

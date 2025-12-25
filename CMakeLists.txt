@@ -1,5 +1,5 @@
 # CMake version
-cmake_minimum_required(VERSION 3.4)
+cmake_minimum_required(VERSION 4.2)
 
 # Use static runtime library
 foreach(var CMAKE_C_FLAGS_RELEASE CMAKE_CXX_FLAGS_RELEASE)

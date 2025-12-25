@@ -301,7 +301,7 @@ void ShowContextMenu(HWND hWnd)
                 MENUITEMINFO mii = { sizeof(mii) };
                 mii.fMask = MIIM_BITMAP;
                 mii.hbmpItem = hBitmap;
-                SetMenuItemInfo(hMenu, (UINT)hSubMenu, false, &mii);
+                SetMenuItemInfo(hMenu, (UINT_PTR)hSubMenu, false, &mii);
 
                 // disable Start or Stop sub menu
                 if (running)
